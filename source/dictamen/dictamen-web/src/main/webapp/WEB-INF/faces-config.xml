@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+
+	<application>
+		<locale-config>
+			<default-locale>es_MX</default-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>bundles.messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>bundles.messages_notificacion</base-name>
+			<var>msgError</var>
+		</resource-bundle>
+	</application>
+	<factory>
+		<exception-handler-factory>mx.gob.tab.sigitab.portal.util.CustomExceptionHandlerFactory</exception-handler-factory>
+	</factory>
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/views/home/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>principal</from-outcome>
+			<to-view-id>/views/principal/principal.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<!-- Bandejas -->
+		<navigation-case>
+			<from-outcome>bandejaOficialia</from-outcome>
+			<to-view-id>/views/oficialiaPartes/oficial/bandejaEntrada.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaUnidadSala</from-outcome>
+			<to-view-id>/views/unidadSala/bandejaUnidadSala.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaUnidadCausa</from-outcome>
+			<to-view-id>/views/unidadCausa/bandejaEntrada.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaJefeUnidadSala</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/bandejaEntrada.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaJuez</from-outcome>
+			<to-view-id>/views/juez/bandejaEntrada.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>juezCarpetaJudicial</from-outcome>
+			<to-view-id>/views/carpetaJudicial/consultarCarpetaJudicial.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaNotificador</from-outcome>
+			<to-view-id>/views/notificador/bandejaEntrada.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaAudioVideo</from-outcome>
+			<to-view-id>/views/audioVideo/bandejaEntrada.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaAdministradorSistema</from-outcome>
+			<to-view-id>/views/admonSistema/bandejaEntrada.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaAdmonCatalogos</from-outcome>
+			<to-view-id>/views/admonSistema/bandejaAdmonCatalogos.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarTipoDoc</from-outcome>
+			<to-view-id>/views/admonSistema/consultarTipoDocumento.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarTipoDoc</from-outcome>
+			<to-view-id>/views/admonSistema/registrarTipoDocumento.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarAsunto</from-outcome>
+			<to-view-id>/views/admonSistema/consultarAsunto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarAsunto</from-outcome>
+			<to-view-id>/views/admonSistema/registrarAsunto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarEmpleado</from-outcome>
+			<to-view-id>/views/admonSistema/consultarEmpleado.xhtmll</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarEmpleado</from-outcome>
+			<to-view-id>/views/admonSistema/registrarEmpleado.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaUsuarios</from-outcome>
+			<to-view-id>/views/admonSistema/consultarUsuario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>administrarUsuarios</from-outcome>
+			<to-view-id>/views/admonSistema/registrarUsuario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>generarPlantilla</from-outcome>
+			<to-view-id>/views/admonSistema/registrarPlantilla.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarPlantilla</from-outcome>
+			<to-view-id>/views/admonSistema/consultarPlantilla.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listadoDependencias</from-outcome>
+			<to-view-id>/views/admonSistema/administracionDependencias.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDependencia</from-outcome>
+			<to-view-id>/views/admonSistema/registrarDependencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDetalleArchivoAdjunto</from-outcome>
+			<to-view-id>/views/commons/detalle/consultarDetalleDocumentoAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumento</from-outcome>
+			<to-view-id>/views/commons/registro/registrarDocumento.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalleDocumento</from-outcome>
+			<to-view-id>/views/commons/detalle/consultarDetalleDocumento.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalleDelito</from-outcome>
+			<to-view-id>/views/commons/detalle/consultarDetalleDelito.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalleInterviniente</from-outcome>
+			<to-view-id>/views/commons/detalle/consultarDetalleInterviniente.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarInterviniente</from-outcome>
+			<to-view-id>/views/commons/registro/registrarInterviniente.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDelito</from-outcome>
+			<to-view-id>/views/commons/registro/registrarDelito.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>RevisionDoucmentoAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/revisionDocumentosDeAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>ConsultaCalendaroAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/consultaCalendarioDeAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>detSolAudienciaBack</from-outcome>
+			<to-view-id>/views/unidadSala/bandejaEntrada.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalleDocumentoUS</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/revisarDocumentosAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>actualizarInformacionCausa</from-outcome>
+			<to-view-id>/views/commons/registro/actualizarCausa.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>transcripcionEscrita</from-outcome>
+			<to-view-id>/views/unidadSala/transcripcionEscrita.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/views/error/error.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDetalleArchivo</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/consultarDetalleArchivo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>generarAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/registroAgendarAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>generarSolicitudDisco</from-outcome>
+			<to-view-id>/views/unidadSala/encargado/generarSolicitudDiscos.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>registroTrabajoAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/encargado/registrarTrabajoAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>registroTrabajoAudienciaAuxiliar</from-outcome>
+			<to-view-id>/views/unidadSala/auxiliar/registroTrabajoAudienciaAuxiliar.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>solicitudAudiencia</from-outcome>
+			<to-view-id>/views/commons/buscador/solicitudAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registroSolicitudAudiencia</from-outcome>
+			<to-view-id>/views/unidadCausa/registroSolicitudAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarLiberaciones</from-outcome>
+			<to-view-id>/views/unidadCausa/consultarLiberaciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>asignarEditarDocumentos</from-outcome>
+			<to-view-id>/views/commons/registro/asignarEditarDocumentos.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarAudienciasAgendadas</from-outcome>
+			<to-view-id>/views/unidadCausa/consultarAudienciasAgendadas.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>actInfoCausa</from-outcome>
+			<to-view-id>/views/unidadCausa/jefeUnidadCausa/actualizarCausa.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarCalendarioAudiencia</from-outcome>
+			<to-view-id>/views/commons/buscador/consultarCalendarioAudiencias.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registroDocumentoDatosGenerales</from-outcome>
+			<to-view-id>/views/unidadCausa/registroDocumentoDatosGenerales.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaDocAsigyGenerados</from-outcome>
+			<to-view-id>/views/unidadCausa/consultarDocumentosAsignadosyGenerados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaAudienciaAtendidaCausa</from-outcome>
+			<to-view-id>/views/unidadCausa/consultarAudienciaAtendida.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarOficios</from-outcome>
+			<to-view-id>/views/notificador/consultarOficios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarOficioDetalle</from-outcome>
+			<to-view-id>/views/notificador/consultarDetalleOficio.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarAcuseOficio</from-outcome>
+			<to-view-id>/views/notificador/registrarAcuseNotificacion.xhtml</to-view-id>
+		</navigation-case>
+
+
+		<navigation-case>
+			<from-outcome>consultarOrdenesCateo</from-outcome>
+			<to-view-id>/views/juez/ConsultaSolicitudesOrdenesCateo.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>registroDocumentoJuez</from-outcome>
+			<to-view-id>/views/juez/registrarDocumentoJuez.xhtml</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>consultarDetalleAudiencia</from-outcome>
+			<to-view-id>/views/commons/detalle/consultarDetalleAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>generarSolicitudTranscripcion</from-outcome>
+			<to-view-id>/views/unidadSala/encargado/generarSolicitudTranscripcion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
+		<navigation-case>
+			<from-outcome>generarActaMinima</from-outcome>
+			<to-view-id>/views/unidadSala/encargado/RegistrarActaMinima.xhtml</to-view-id>
+		</navigation-case>
+
+
+		<navigation-case>
+			<from-outcome>consultarCalendarioAudiencias</from-outcome>
+			<to-view-id>/views/commons/detalle/consultarCalendarioAudiencias.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registroDocumentoDatosGenerales</from-outcome>
+			<to-view-id>/views/unidadCausa/registroDocumentoDatosGenerales.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>solicitudesAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/solicitudesAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalleAsignacionRechazo</from-outcome>
+			<to-view-id>/views/unidadSala/consultarDetalleAsignacionRechazo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalleSolicitudAudiencia</from-outcome>
+			<to-view-id>/views/commons/detalle/consultarDetalleSolicitudAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaDoctosAsignadosJuez</from-outcome>
+			<to-view-id>/views/juez/consultarDocumentosAsignados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaAudienciaAtendida</from-outcome>
+			<to-view-id>/views/unidadSala/encargado/consultarAudienciaAtendida.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>encargadoDetalleAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/encargado/detalleAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>jConsultarLiberaciones</from-outcome>
+			<to-view-id>/views/juez/jConsultarLiberaciones.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>jAsignaEditarDocumentosr</from-outcome>
+			<to-view-id>/views/juez/asignarEditarDocumentos.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarAgendarAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/registroAgendarAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarCalendarioAudienciaJefe</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/consultarCalendarioAudienciasJefe.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>revisionDocumentosAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/revisionDocumentosDeAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalleDocumentosAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/consultarDetalleDocumentoAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaDocumentosAsignados</from-outcome>
+			<to-view-id>/views/unidadSala/bandejaDocumentosAsignados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>actualizarCausa</from-outcome>
+			<to-view-id>/views/unidadSala/actualizarCausa.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>seleccionarPlantillaDecreto</from-outcome>
+			<to-view-id>/views/commons/plantilla/seleccionarPlantillaDecreto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>asignarDocumentoDeAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/asignarDocumento.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>autorizarDocumentoAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/jefe/autorizarDocumentoAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDocumentosPendientes</from-outcome>
+			<to-view-id>/views/unidadSala/consultarDocumentosPendientes.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>trabajoAudiencia</from-outcome>
+			<to-view-id>/views/unidadSala/encargado/trabajoAudiencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>asignaModificarDocumento</from-outcome>
+			<to-view-id>/views/unidadSala/encargado/asignarModificarDocumento.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarAudienciaJuez</from-outcome>
+			<to-view-id>/views/juez/consultarAudienciaJuez.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDetalleAudienciaJuez</from-outcome>
+			<to-view-id>/views/juez/consultarDetalleAudienciaJuez.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDetalleDecreto</from-outcome>
+			<to-view-id>/views/juez/consultarDetalleDecreto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>revisarOrdenesAsignadas</from-outcome>
+			<to-view-id>/views/juez/revisarOrdenesAsignadas.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarSolicitudesTranscripcion</from-outcome>
+			<to-view-id>/views/unidadSala/auxiliar/consultarSolicitudesTranscripcion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDetalleSolicitudTranscipcion</from-outcome>
+			<to-view-id>/views/unidadSala/auxiliar/consultarDetalleSolicitudTranscripcion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDocumentoGeneradosJuez</from-outcome>
+			<to-view-id>/views/juez/consultarDocumentosGenerados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>bandejaAdministradorRegional</from-outcome>
+			<to-view-id>/views/admonRegional/bandejaAdmonRegional.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarSolicitudesDisco</from-outcome>
+			<to-view-id>/views/audioVideo/consultarSolicitudesDisco.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarRecibo</from-outcome>
+			<to-view-id>/views/admonRegional/consultarRecibos.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarRecibo</from-outcome>
+			<to-view-id>/views/admonRegional/registrarRecibos.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>reporteador</from-outcome>
+			<to-view-id>/views/admonRegional/reporteador.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>consultarDetalleSolicitudAV</from-outcome>
+			<to-view-id>/views/audioVideo/consultarDetalleSolicitudDisco.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarPlantillaEstatica</from-outcome>
+			<to-view-id>/views/commons/plantilla/visorPlantillaEstatica.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>arDocumentosAsignados</from-outcome>
+			<to-view-id>/views/admonRegional/bandejaDocumentosAsignados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>arConsultarBandejas</from-outcome>
+			<to-view-id>/views/admonRegional/consultarBandejas.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>arConsultarBandejasOP</from-outcome>
+			<to-view-id>/views/admonRegional/bandejaOficialPartes.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>arConsultarBandejasUC</from-outcome>
+			<to-view-id>/views/admonRegional/bandejaUnidadCausa.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>estadoProcesalPrincipal</from-outcome>
+			<to-view-id>/views/edoProcesal/principal.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>arDetalleRecibo</from-outcome>
+			<to-view-id>/views/commons/detalle/consultarDetalleRecibos.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarNotificacion</from-outcome>
+			<to-view-id>/views/commons/registro/registrarNotificacion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDetalleDecretoUS</from-outcome>
+			<to-view-id>/views/unidadSala/consultarDetalleDecreto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>unificarCarpetas</from-outcome>
+			<to-view-id>/views/carpetaJudicial/unificarCarpetas.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>estadoProcesalRegistro</from-outcome>
+			<to-view-id>/views/edoProcesal/estadoProcesalRegistro.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalleSentencia</from-outcome>
+			<to-view-id>/views/edoProcesal/detalleSentencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>estadoProcesalRegistrarSentencia</from-outcome>
+			<to-view-id>/views/edoProcesal/estadoProcesalRegistrarSentencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>estadoProcesalDetalle</from-outcome>
+			<to-view-id>/views/edoProcesal/estadoProcesalDetalle.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultaIntervinientesCarpetaJudicial</from-outcome>
+			<to-view-id>/views/carpetaJudicial/consultarIntervinientesCarpetaJudicial.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>generarReportePorDocumento</from-outcome>
+			<to-view-id>/views/carpetaJudicial/generarReportePorSeleccion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>configuracionDocumento</from-outcome>
+			<to-view-id>/views/commons/configuracion/configuracionDocumento.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarOficioVarioOP</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/inicio/correspondencia.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoCausa</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/inicio/registrarCausaOP.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoCausaPromocion</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/promocion/registrarCausaPromocion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarDetalleDocumentoExterno</from-outcome>
+			<to-view-id>/views/commons/detalle/documento/consultarDetalleDocumentoExterno.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoInicioApelacionOP</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/inicio/apelacion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
+		<navigation-case>
+			<from-outcome>registrarDocumentoCausaPromocionUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/unidadCausa/promocion/causa.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoCausaInicioUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/unidadCausa/inicio/causa.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoPromocionApelacionOP</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/promocion/apelacion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoApelacionInicioUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/inicio/apelacion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoApelacionInicioEnvioUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/inicio/apelacionEnvio.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>modificarDocumentoCausaInicionUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/unidadCausa/inicio/causa.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>modificarDocumentoCausaPromocionUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/unidadCausa/promocion/causa.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoPromocionApelacionUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/promocion/apelacion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoExhortoOP</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/inicio/registrarExhortoOP.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoAmparoInicioOficialia</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/inicio/amparo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoAmparoInicioUnidadCausa</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/inicio/amparo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarAnexoJuez</from-outcome>
+			<to-view-id>/views/juez/anexoJuez.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoAmparoPromocioOP</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/promocion/amparo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoAmparoPromocioAsoscUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/promocion/amparo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoAmparoPromocionNuevoUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/promocion/amparoNuevo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoExhortoInicioUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/inicio/exhorto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoExhortoInicioNuevoUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/inicio/exhortoNuevo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoExhortoPromocionUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/promocion/exhorto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registrarDocumentoExhortoPromocionNuevoUC</from-outcome>
+			<to-view-id>/views/commons/registro/documento/causa/promocion/exhortoNuevo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarCalendarioAudienciaAV</from-outcome>
+			<to-view-id>/views/audioVideo/consultarCalendarioAudiencias.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>arConsultarBandejasUS</from-outcome>
+			<to-view-id>/views/admonRegional/bandejaUnidadSala.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+		<navigation-case>
+		    <from-outcome>registrarDocumentoExhortoPromocionOP</from-outcome>
+			<to-view-id>/views/commons/registro/documento/oficialiaPartes/promocion/exhorto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+		    <from-outcome>registrarDocumentoExhortoInicioUS</from-outcome>
+			<to-view-id>/views/commons/registro/documento/sala/inicio/exhorto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

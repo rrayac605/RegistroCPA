@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+  version="1.0">
+
+  <named-query name="DocumentDO.findDocumentosBandejaOficialia">
+    <query>
+    <![CDATA[
+      SELECT d.idDocumento, d.fhRegistro, d.fhRecepcion, d.fhDocumento, d.descripcionDoc, d.numOficio,
+           d.activo, a.idAsignacion, a.comentarios, ed.idEstatusDocumento, ed.clave, ed.descripcion,
+           od.idOrigenDoc, od.clave, od.descripcion,
+           td.idTipoDocumento, td.clave, td.descripcion, td.tipoExterno, td.causaOrigen, td.promocion,
+           ttd.idTipoTramiteDoc, ttd.clave, ttd.descripcion, 
+           tr.idTipoRegistroDoc, tr.clave, tr.descripcion,
+           c.idCarpeta, c.esCausa, c.esCuadernillo, c.promovido, c.fhPromocion, c.unificado, c.fhUnificacion,
+           c.fhCreacion, c.activo, 
+           ec.idEstatusCarpeta, ec.clave, ec.descripcion,
+           causa.idNumCausa, causa.numCausa, causa.anio, causa.activo,
+           cuadernillo.idNumCuadernillo, cuadernillo.numCuadernillo, cuadernillo.anio, cuadernillo.activo,
+           tpcuadernillo.idTipoCuadernillo, tpcuadernillo.clave, tpcuadernillo.descripcion,
+           numctrl.idNumCtrlDoc, numctrl.numControl, 
+           dest.idPersona, dest.numeroIdentificacion, dest.nombres, dest.apPaterno, dest.apMaterno, dest.fhNacimiento,
+           destsexo.idSexo, destsexo.clave, destsexo.descripcion,
+           depdest.idDependencia, depdest.nombreDependencia, depdest.activo,
+           depdesttp.idTipoDependencia, depdesttp.clave, depdesttp.descripcion, 
+           remi.idPersona, remi.numeroIdentificacion, remi.nombres, remi.apPaterno, remi.apMaterno, remi.fhNacimiento,
+           remisexo.idSexo, remisexo.clave, remisexo.descripcion,
+           depremi.idDependencia, depremi.nombreDependencia, depremi.activo,
+           depremitp.idTipoDependencia, depremitp.clave, depremitp.descripcion,
+           asu.idAsuntoDoc, asu.clave, asu.descripcion, asu.confidencial,
+           ms.idModuloOrigen,
+           ms.clave,
+           ms.descripcion,
+           ms.activo,
+           ms.fhUltModificacion,
+           ms.usuarioModificador,
+           mso.idModuloOrigen,
+           mso.clave,
+           mso.descripcion,
+           mso.activo,
+           mso.fhUltModificacion,
+           mso.usuarioModificador,
+           td.inicioTramite,
+           d.idDependenciaRemitente.idDependencia,
+           d.idDependenciaDestinatario.idDependencia,
+           d.idDependenciaRemitente.nombreDependencia,
+           d.idDependenciaDestinatario.nombreDependencia,
+
+           int.idInterviniente, int.activo, 
+           tpint.idTipoInterviniente, tpint.descripcion, tpint.clave,
+           detint.idDetalleInterviniente, detint.relacionPersonaMoral, detint.solicitudEscritoAcusacion,
+           detint.fhEscritoAcusacion, detint.fhCorreccionEscAcusacion, detint.solicitoAsesor, 
+           detint.fhSolcicitudAsesor, detint.fhAudienciaJuicio, detint.fhRadicacionCausaPenal,
+           detint.fhAutoAperturaJuicio, gdo.idGdoEstudios, gdo.clave, gdo.descripcion,
+           oc.idOcupacion, oc.clave, oc.descripcion,
+           detint.requirioTraductor, dom.idDomEspaniol, dom.clave, dom.descripcion,
+           alfa.idAlfabetismo, alfa.clave, alfa.descripcion,
+           tpvic.idTipoVicitma, tpvic.clave, tpvic.descripcion,
+           cond.idCondicionReincidencia, cond.clave, cond.descripcion,
+           edocp.idEdoCausaPenal, edocp.clave, edocp.descripcion,
+           edopf.idEdoPsicofisico, edopf.clave, edopf.descripcion,
+           tppm.idTipoPersonaMoral, tppm.clave, tppm.descripcion,
+           faml.idFamLinguistica, faml.clave, faml.descripcion,
+           tpoj.idTipoOrdenJudicial, tpoj.clave, tpoj.descripcion,
+           leng.idLenguaDialecto, leng.clave, leng.descripcion,
+           tpdet.idTipoDetencion, tpdet.clave, tpdet.descripcion,
+           oprot.idOrdenProteccion, oprot.clave, oprot.descripcion,
+           asej.idTipoAsesorJuridico, asej.clave, asej.descripcion,
+           tpcr.idTipoConsignRemision, tpcr.clave, tpcr.descripcion, 
+           tpdef.idTipoDefensor, tpdef.clave, tpdef.descripcion,
+           intper.idPersona, intper.numeroIdentificacion, 
+           intper.nombres, intper.apPaterno, intper.apMaterno, intper.fhNacimiento, 
+           intpers.idSexo, intpers.clave, intpers.descripcion,
+           intperedoc.idEdoCivil, intperedoc.clave, intperedoc.descripcion,
+           intper.curp, intper.rfc, intperesc.idGdoEstudios, intperesc.clave, intperesc.descripcion,
+           intperoc.idOcupacion, intperoc.clave, intperoc.descripcion, 
+           intpernac.idNacionalidad, intpernac.clave, intpernac.descripcion,
+           intpertpi.idTipoIdentificacion, intpertpi.clave, intpertpi.descripcion,
+           intperdep.idDependencia, intperdep.nombreDependencia,
+           inpertpdep.idTipoDependencia, inpertpdep.clave, inpertpdep.descripcion 
+       FROM DocumentoDO d 
+           INNER JOIN d.idEstatusDocumento ed
+           INNER JOIN d.idTipoDocumento td
+           INNER JOIN td.idTipoTramiteDoc ttd
+           INNER JOIN d.asignacionDocDO a 
+           INNER JOIN d.idModuloSistema ms
+           INNER JOIN d.idModuloOrigen mso
+           LEFT JOIN d.idTipoRegistroDoc tr
+           LEFT JOIN d.idOrigenDoc od
+           LEFT JOIN d.idCarpeta c
+           LEFT JOIN c.numCausa causa 
+           LEFT JOIN c.numCuadernillo cuadernillo 
+           LEFT JOIN cuadernillo.idTipoCuadernillo tpcuadernillo
+           LEFT JOIN c.idEstatusCarpeta ec
+           LEFT JOIN d.idNumCtrlDoc numctrl
+           LEFT JOIN d.idDestinatario dest
+           LEFT JOIN dest.sexo destsexo
+           LEFT JOIN d.idRemitente remi
+           LEFT JOIN remi.sexo remisexo
+           LEFT JOIN d.asuntoDoc asu
+           LEFT JOIN d.idDependenciaRemitente depremi
+           LEFT JOIN depremi.idTipoDependencia depremitp
+           LEFT JOIN d.idDependenciaDestinatario depdest
+           LEFT JOIN depremi.idTipoDependencia depdesttp
+           LEFT JOIN c.intervinientes int
+           LEFT JOIN int.idTipoInterviniente tpint
+           LEFT JOIN int.idDetalleInterviniente detint
+           LEFT JOIN int.idPersona intper
+           LEFT JOIN detint.gradoEstudios gdo
+           LEFT JOIN detint.ocupacionCondicionEstudiante oc 
+           LEFT JOIN detint.idDominioEspaniol dom
+           LEFT JOIN detint.idAlfabetismo alfa
+           LEFT JOIN detint.idTipoVicitima tpvic
+           LEFT JOIN detint.idCondicionReincidencia cond
+           LEFT JOIN detint.idEdoCausaPenal edocp
+           LEFT JOIN detint.idEdoPsicofisico edopf
+           LEFT JOIN detint.idTipoPersonaMoral tppm
+           LEFT JOIN detint.idFamLinguistica faml
+           LEFT JOIN detint.idTipoOrdenJudicial tpoj
+           LEFT JOIN detint.idLenguaDialecto leng
+           LEFT JOIN detint.idTipoDetencion tpdet
+           LEFT JOIN detint.idOrdenProteccion oprot
+           LEFT JOIN detint.idAsesorJuridico asej
+           LEFT JOIN detint.idTipoConsignRemision tpcr
+           LEFT JOIN detint.idTipoDefensor tpdef
+           LEFT JOIN intper.sexo intpers
+           LEFT JOIN intper.estadoCivil intperedoc
+           LEFT JOIN intper.escolaridad intperesc
+           LEFT JOIN intper.ocupacion intperoc
+           LEFT JOIN intper.nacionalidad intpernac
+           LEFT JOIN intper.idTipoIdentificacion intpertpi
+           LEFT JOIN intper.dependencia intperdep
+           LEFT JOIN intperdep.idTipoDependencia inpertpdep
+       WHERE d.activo = :activo AND c.activo = 'Y' 
+       AND (:idusuario IS NULL  OR (:idusuario IS NOT NULL AND a.idUsuario = :idusuario) )
+       AND (:numCausaCuadernillo IS NULL 
+            OR(c.activo = 'Y' AND causa.numCausa =:numCausaCuadernillo AND c.esCausa = 'Y')
+            OR (c.activo = 'Y' AND cuadernillo.numCuadernillo =:numCausaCuadernillo AND c.esCuadernillo = 'Y' ))
+       AND (:idTipoDocumento IS NULL OR td.idTipoDocumento = :idTipoDocumento)
+       AND (td.tipoExterno = 'Y' AND td.activo = 'Y')
+       AND (:idDependencia IS NULL OR depremi.idDependencia = :idDependencia )
+       AND ( (:fechaInicio IS NULL AND :fechaFin IS NULL )
+             OR (:fechaInicio IS NOT NULL AND :fechaFin IS NULL AND d.fhRegistro > :fechaInicio )
+             OR(:fechaInicio IS NULL AND :fechaFin IS NOT NULL AND d.fhRegistro < :fechaFin )
+             OR (:fechaInicio IS NOT NULL AND :fechaFin IS NOT NULL AND d.fhRegistro BETWEEN :fechaInicio AND :fechaFin)
+           )
+       AND (:idEstatusDocumento IS NULL OR ed.idEstatusDocumento = :idEstatusDocumento)
+       AND (:idTipoRegistroDoc IS NULL 
+       		OR (1 = :idTipoRegistroDoc AND td.promocion = 'N')
+       		OR (2 = :idTipoRegistroDoc AND td.promocion = 'Y')
+     		)
+       AND (:idOrigenDoc IS NULL
+            OR ( d.idOrigenDoc.idOrigenDoc = :idOrigenDoc ) )
+       AND (0 = :filterByEstatusporModulo 
+            OR  (1 = :filterByEstatusporModulo AND ed.idEstatusDocumento IN :estatusporModulo)) 
+       ORDER BY d.fhUltModificacion DESC
+    ]]>
+    </query>
+  </named-query>
+  
+  <named-query name="DocumentDO.findDocumentosBandejaUnidadDeCausa">
+    <query>
+    <![CDATA[
+      SELECT d.idDocumento, d.fhRegistro, d.fhRecepcion, d.fhDocumento, d.descripcionDoc, d.numOficio,
+           d.activo, a.idAsignacion, a.comentarios, ed.idEstatusDocumento, ed.clave, ed.descripcion,
+           od.idOrigenDoc, od.clave, od.descripcion,
+           td.idTipoDocumento, td.clave, td.descripcion, td.tipoExterno, td.causaOrigen, td.promocion,
+           ttd.idTipoTramiteDoc, ttd.clave, ttd.descripcion, 
+           tr.idTipoRegistroDoc, tr.clave, tr.descripcion,
+           c.idCarpeta, c.esCausa, c.esCuadernillo, c.promovido, c.fhPromocion, c.unificado, c.fhUnificacion,
+           c.fhCreacion, c.activo, 
+           ec.idEstatusCarpeta, ec.clave, ec.descripcion,
+           causa.idNumCausa, causa.numCausa, causa.anio, causa.activo,
+           cuadernillo.idNumCuadernillo, cuadernillo.numCuadernillo, cuadernillo.anio, cuadernillo.activo,
+           tpcuadernillo.idTipoCuadernillo, tpcuadernillo.clave, tpcuadernillo.descripcion,
+           numctrl.idNumCtrlDoc, numctrl.numControl, 
+           dest.idPersona, dest.numeroIdentificacion, dest.nombres, dest.apPaterno, dest.apMaterno, dest.fhNacimiento,
+           destsexo.idSexo, destsexo.clave, destsexo.descripcion,
+           depdest.idDependencia, depdest.nombreDependencia, depdest.activo,
+           depdesttp.idTipoDependencia, depdesttp.clave, depdesttp.descripcion, 
+           remi.idPersona, remi.numeroIdentificacion, remi.nombres, remi.apPaterno, remi.apMaterno, remi.fhNacimiento,
+           remisexo.idSexo, remisexo.clave, remisexo.descripcion,
+           depremi.idDependencia, depremi.nombreDependencia, depremi.activo,
+           depremitp.idTipoDependencia, depremitp.clave, depremitp.descripcion,
+           asu.idAsuntoDoc, asu.clave, asu.descripcion, asu.confidencial,
+            ms.idModuloOrigen,
+           ms.clave,
+           ms.descripcion,
+           ms.activo,
+           ms.fhUltModificacion,
+           ms.usuarioModificador,
+           mso.idModuloOrigen,
+           mso.clave,
+           mso.descripcion,
+           mso.activo,
+           mso.fhUltModificacion,
+           mso.usuarioModificador,
+           td.inicioTramite, 
+           d.idDependenciaRemitente.idDependencia,
+           d.idDependenciaDestinatario.idDependencia,
+           d.idDependenciaRemitente.nombreDependencia,
+           d.idDependenciaDestinatario.nombreDependencia,
+           
+           int.idInterviniente, int.activo, 
+           tpint.idTipoInterviniente, tpint.descripcion, tpint.clave,
+           detint.idDetalleInterviniente, detint.relacionPersonaMoral, detint.solicitudEscritoAcusacion,
+           detint.fhEscritoAcusacion, detint.fhCorreccionEscAcusacion, detint.solicitoAsesor, 
+           detint.fhSolcicitudAsesor, detint.fhAudienciaJuicio, detint.fhRadicacionCausaPenal,
+           detint.fhAutoAperturaJuicio, gdo.idGdoEstudios, gdo.clave, gdo.descripcion,
+           oc.idOcupacion, oc.clave, oc.descripcion,
+           detint.requirioTraductor, dom.idDomEspaniol, dom.clave, dom.descripcion,
+           alfa.idAlfabetismo, alfa.clave, alfa.descripcion,
+           tpvic.idTipoVicitma, tpvic.clave, tpvic.descripcion,
+           cond.idCondicionReincidencia, cond.clave, cond.descripcion,
+           edocp.idEdoCausaPenal, edocp.clave, edocp.descripcion,
+           edopf.idEdoPsicofisico, edopf.clave, edopf.descripcion,
+           tppm.idTipoPersonaMoral, tppm.clave, tppm.descripcion,
+           faml.idFamLinguistica, faml.clave, faml.descripcion,
+           tpoj.idTipoOrdenJudicial, tpoj.clave, tpoj.descripcion,
+           leng.idLenguaDialecto, leng.clave, leng.descripcion,
+           tpdet.idTipoDetencion, tpdet.clave, tpdet.descripcion,
+           oprot.idOrdenProteccion, oprot.clave, oprot.descripcion,
+           asej.idTipoAsesorJuridico, asej.clave, asej.descripcion,
+           tpcr.idTipoConsignRemision, tpcr.clave, tpcr.descripcion, 
+           tpdef.idTipoDefensor, tpdef.clave, tpdef.descripcion,
+           intper.idPersona, intper.numeroIdentificacion, 
+           intper.nombres, intper.apPaterno, intper.apMaterno, intper.fhNacimiento, 
+           intpers.idSexo, intpers.clave, intpers.descripcion,
+           intperedoc.idEdoCivil, intperedoc.clave, intperedoc.descripcion,
+           intper.curp, intper.rfc, intperesc.idGdoEstudios, intperesc.clave, intperesc.descripcion,
+           intperoc.idOcupacion, intperoc.clave, intperoc.descripcion, 
+           intpernac.idNacionalidad, intpernac.clave, intpernac.descripcion,
+           intpertpi.idTipoIdentificacion, intpertpi.clave, intpertpi.descripcion,
+           intperdep.idDependencia, intperdep.nombreDependencia,
+           inpertpdep.idTipoDependencia, inpertpdep.clave, inpertpdep.descripcion
+           
+       FROM DocumentoDO d 
+           INNER JOIN d.idEstatusDocumento ed
+           INNER JOIN d.idTipoDocumento td
+           INNER JOIN td.idTipoTramiteDoc ttd
+           INNER JOIN d.asignacionDocDO a 
+           INNER JOIN d.idModuloSistema ms
+           INNER JOIN d.idModuloOrigen mso
+           LEFT JOIN d.idTipoRegistroDoc tr
+           LEFT JOIN d.idOrigenDoc od
+           LEFT JOIN d.idCarpeta c
+           LEFT JOIN c.numCausa causa 
+           LEFT JOIN c.numCuadernillo cuadernillo 
+           LEFT JOIN cuadernillo.idTipoCuadernillo tpcuadernillo
+           LEFT JOIN c.idEstatusCarpeta ec
+           LEFT JOIN d.idNumCtrlDoc numctrl
+           LEFT JOIN d.idDestinatario dest
+           LEFT JOIN dest.sexo destsexo
+           LEFT JOIN d.idRemitente remi
+           LEFT JOIN remi.sexo remisexo
+           LEFT JOIN d.asuntoDoc asu
+           LEFT JOIN d.idDependenciaRemitente depremi
+           LEFT JOIN depremi.idTipoDependencia depremitp
+           LEFT JOIN d.idDependenciaDestinatario depdest
+           LEFT JOIN depremi.idTipoDependencia depdesttp
+           LEFT JOIN c.intervinientes int
+           LEFT JOIN int.idTipoInterviniente tpint
+           LEFT JOIN int.idDetalleInterviniente detint
+           LEFT JOIN int.idPersona intper
+           LEFT JOIN detint.gradoEstudios gdo
+           LEFT JOIN detint.ocupacionCondicionEstudiante oc 
+           LEFT JOIN detint.idDominioEspaniol dom
+           LEFT JOIN detint.idAlfabetismo alfa
+           LEFT JOIN detint.idTipoVicitima tpvic
+           LEFT JOIN detint.idCondicionReincidencia cond
+           LEFT JOIN detint.idEdoCausaPenal edocp
+           LEFT JOIN detint.idEdoPsicofisico edopf
+           LEFT JOIN detint.idTipoPersonaMoral tppm
+           LEFT JOIN detint.idFamLinguistica faml
+           LEFT JOIN detint.idTipoOrdenJudicial tpoj
+           LEFT JOIN detint.idLenguaDialecto leng
+           LEFT JOIN detint.idTipoDetencion tpdet
+           LEFT JOIN detint.idOrdenProteccion oprot
+           LEFT JOIN detint.idAsesorJuridico asej
+           LEFT JOIN detint.idTipoConsignRemision tpcr
+           LEFT JOIN detint.idTipoDefensor tpdef
+           LEFT JOIN intper.sexo intpers
+           LEFT JOIN intper.estadoCivil intperedoc
+           LEFT JOIN intper.escolaridad intperesc
+           LEFT JOIN intper.ocupacion intperoc
+           LEFT JOIN intper.nacionalidad intpernac
+           LEFT JOIN intper.idTipoIdentificacion intpertpi
+           LEFT JOIN intper.dependencia intperdep
+           LEFT JOIN intperdep.idTipoDependencia inpertpdep
+       WHERE d.activo = :activo  AND c.activo = 'Y' 
+       AND (:idusuario IS NULL  OR (:idusuario IS NOT NULL AND a.idUsuario = :idusuario) )
+       AND (:numCausa IS NULL 
+            OR(c.activo = 'Y' AND causa.numCausa =:numCausa AND c.esCausa = 'Y')
+            OR (c.activo = 'Y' AND cuadernillo.numCuadernillo =:numCausa AND c.esCuadernillo = 'Y' ))
+       AND (:asignado = 0
+            OR (:asignado = 1 
+               AND td.tipoExterno = 'Y' 
+               AND td.activo = 'Y' 
+               AND asu.confidencial = 'N' 
+               AND asu.activo = 'Y' 
+               AND d.idModuloOrigen.clave IN ( 'OP' ) 
+               AND (ed.clave in ('SOLI') OR (td.clave='CORR' AND ed.clave='PROC')) ) )
+       AND (:generado = 0
+            OR (:generado = 1 
+                AND td.tipoExterno = 'N' 
+                AND td.activo = 'Y'
+                AND asu.confidencial = 'N' 
+                AND asu.activo = 'Y' 
+                AND ed.clave NOT IN ( 'LIBE', 'CANC' )
+                AND d.idModuloOrigen.clave IN ( 'JU', 'UC' ) ) )
+       AND (:sala = 0
+           OR (:sala = 1
+              AND td.tipoExterno = 'N' 
+              AND td.activo = 'Y' 
+              AND asu.confidencial = 'N' 
+              AND asu.activo = 'Y' 
+              AND ed.clave NOT IN ( 'LIBE', 'CANC' )
+              AND d.idModuloOrigen.clave IN ('US') ) )
+       AND (:claveOrigen IS NULL 
+            OR (:claveOrigen IS NOT NULL AND d.idOrigenDoc.clave = :claveOrigen) )
+       AND ( (:fechaInicio IS NULL AND :fechaFin IS NULL )
+             OR (:fechaInicio IS NOT NULL AND :fechaFin IS NULL AND d.fhRegistro > :fechaInicio )
+             OR(:fechaInicio IS NULL AND :fechaFin IS NOT NULL AND d.fhRegistro < :fechaFin )
+             OR (:fechaInicio IS NOT NULL AND :fechaFin IS NOT NULL AND d.fhRegistro BETWEEN :fechaInicio AND :fechaFin)
+           )      
+       AND (:idUsuarioAnterior IS NULL
+           OR (:idUsuarioAnterior IS NOT NULL
+               AND d.idDocumento in (SELECT DISTINCT hd.idDocumento.idDocumento 
+                            FROM HistDocumentoDO hd 
+                            WHERE hd.idUsuarioAnt.idUsuario = :idUsuarioAnterior 
+                            AND (:idusuario IS NULL 
+                                 OR (:idusuario IS NOT NULL AND hd.idUsuarioAct.idUsuario = :idusuario ) ) ) ) )
+       AND (:claveTipoDocumento IS NULL
+            OR (:claveTipoDocumento IS NOT NULL AND  td.clave = :claveTipoDocumento) )
+       AND (:idTipoRegistroDoc IS NULL 
+       		OR (1 = :idTipoRegistroDoc AND td.promocion = 'N')
+       		OR (2 = :idTipoRegistroDoc AND td.promocion = 'Y'))
+            
+       ORDER BY d.fhUltModificacion DESC
+    ]]>
+    </query>
+  </named-query>
+  <named-query name="DocAudienciaDO.findDocumentosAudiencia">
+    <query>
+    <![CDATA[
+      SELECT daud.idDocAudiencia, daud.nombreDocumento, daud.comentarios, 
+          aud.idAudiencia, aud.numeroAudiencia, aud.fhInicioDefinitiva, aud.fhFinDefinitiva,
+          aud.fhSuspencionAud, aud.fhReinicioAud, aud.duracion, aud.motivoSuspension, 
+          aud.motivoCambioHorario, aud.comentario, 
+          eaud.idEstatusAudiencia, eaud.clave, eaud.descripcion,
+          saud.idSalaAudiencia, saud.clave, saud.descripcion,
+          tpaud.idTipoAudiencia, tpaud.clave, tpaud.descripcion,
+          uelab.idUsuario, perelab.idPersona, perelab.numeroIdentificacion, perelab.nombres,
+          perelab.apPaterno, perelab.apMaterno, perelab.fhNacimiento, perelab.curp, perelab.rfc,
+          perelabsexo.idSexo, perelabsexo.clave, perelabsexo.descripcion,
+          perelabnac.idNacionalidad, perelabnac.clave, perelabnac.descripcion,
+          d.idDocumento, d.fhRegistro, d.fhRecepcion, d.fhDocumento, d.descripcionDoc, d.numOficio,
+           d.activo, a.idAsignacion, a.comentarios, ed.idEstatusDocumento, ed.clave, ed.descripcion,
+           od.idOrigenDoc, od.clave, od.descripcion,
+           td.idTipoDocumento, td.clave, td.descripcion, td.tipoExterno, td.causaOrigen, td.promocion,
+           ttd.idTipoTramiteDoc, ttd.clave, ttd.descripcion, 
+           tr.idTipoRegistroDoc, tr.clave, tr.descripcion,
+           c.idCarpeta, c.esCausa, c.esCuadernillo, c.promovido, c.fhPromocion, c.unificado, c.fhUnificacion,
+           c.fhCreacion, c.activo, 
+           ec.idEstatusCarpeta, ec.clave, ec.descripcion,
+           causa.idNumCausa, causa.numCausa, causa.anio, causa.activo,
+           cuadernillo.idNumCuadernillo, cuadernillo.numCuadernillo, cuadernillo.anio, cuadernillo.activo,
+           tpcuadernillo.idTipoCuadernillo, tpcuadernillo.clave, tpcuadernillo.descripcion,
+           numctrl.idNumCtrlDoc, numctrl.numControl,
+           trdaud.idTipoResolucion, trdaud.clave, trdaud.descripcion
+      FROM DocAudienciaDO daud
+          INNER JOIN daud.idAudiencia aud
+          INNER JOIN aud.idEstatusAudiencia eaud
+          INNER JOIN aud.idSalaAudiencia saud
+          INNER JOIN aud.idTipoAudiencia tpaud
+          INNER JOIN daud.idDocumento d
+          INNER JOIN d.idEstatusDocumento ed
+          INNER JOIN d.idTipoDocumento td
+          INNER JOIN td.idTipoTramiteDoc ttd
+          INNER JOIN d.asignacionDocDO a 
+          INNER JOIN daud.tipoResolucion trdaud
+          LEFT JOIN d.idTipoRegistroDoc tr
+          LEFT JOIN d.idOrigenDoc od
+          LEFT JOIN d.idCarpeta c
+          LEFT JOIN c.numCausa causa 
+          LEFT JOIN c.numCuadernillo cuadernillo 
+          LEFT JOIN cuadernillo.idTipoCuadernillo tpcuadernillo
+          LEFT JOIN c.idEstatusCarpeta ec
+          LEFT JOIN d.idNumCtrlDoc numctrl,
+          UsuariosDO uelab
+          LEFT JOIN uelab.idPersona perelab
+          LEFT JOIN perelab.sexo perelabsexo
+          LEFT JOIN perelab.nacionalidad perelabnac  
+      WHERE daud.activo = 'Y'  AND c.activo = 'Y' 
+          AND uelab.idUsuario in (SELECT distinct hd.idUsuarioAct.idUsuario 
+                         FROM HistDocumentoDO hd 
+                         WHERE hd.idDocumento.idDocumento = d.idDocumento
+                         AND (:idUsuarioElaborador IS NULL OR hd.idUsuarioAct.idUsuario = :idUsuarioElaborador)
+                         AND hd.idUsuarioAnt IS NULL)
+          AND (:idTipoDocumento IS NULL
+               OR (:idTipoDocumento IS NOT NULL AND td.idTipoDocumento = :idTipoDocumento) )
+          AND (:idusuario IS NULL  OR (:idusuario IS NOT NULL AND a.idUsuario = :idusuario) )
+          AND (:idEstatusDocumento IS NULL OR ed.idEstatusDocumento = :idEstatusDocumento)
+          AND (:idTipoAudiencia IS NULL OR tpaud.idTipoAudiencia = :idTipoAudiencia)
+          AND (:idSalaAudiencia IS NULL OR saud.idSalaAudiencia = :idSalaAudiencia)
+          AND ( (:fechaInicio IS NULL AND :fechaFin IS NULL )
+                 OR (:fechaInicio IS NOT NULL AND :fechaFin IS NULL AND aud.fhInicioDefinitiva >= :fechaInicio )
+                 OR (:fechaInicio IS NULL AND :fechaFin IS NOT NULL AND aud.fhInicioDefinitiva <= :fechaFin )
+                 OR (:fechaInicio IS NOT NULL AND :fechaFin IS NOT NULL AND aud.fhInicioDefinitiva BETWEEN :fechaInicio AND :fechaFin)
+              )
+          AND (:incluyeTramites = 0
+                OR (:incluyeTramites = 1 AND ttd.idTipoTramiteDoc IN :tramitesIncluidos) )
+      ORDER BY daud.fhUltModificacion DESC
+    ]]>
+    </query>
+  </named-query>
+
+  <named-query name="DocumentDO.findDocumentosAsignados">
+    <query>
+    <![CDATA[
+      SELECT d.idDocumento, d.fhRegistro, d.fhRecepcion, d.fhDocumento, d.descripcionDoc, d.numOficio,
+           d.activo, a.idAsignacion, a.comentarios, ed.idEstatusDocumento, ed.clave, ed.descripcion,
+           od.idOrigenDoc, od.clave, od.descripcion,
+           td.idTipoDocumento, td.clave, td.descripcion, td.tipoExterno, td.causaOrigen, td.promocion,
+           ttd.idTipoTramiteDoc, ttd.clave, ttd.descripcion, 
+           tr.idTipoRegistroDoc, tr.clave, tr.descripcion,
+           c.idCarpeta, c.esCausa, c.esCuadernillo, c.promovido, c.fhPromocion, c.unificado, c.fhUnificacion,
+           c.fhCreacion, c.activo, 
+           ec.idEstatusCarpeta, ec.clave, ec.descripcion,
+           causa.idNumCausa, causa.numCausa, causa.anio, causa.activo,
+           cuadernillo.idNumCuadernillo, cuadernillo.numCuadernillo, cuadernillo.anio, cuadernillo.activo,
+           tpcuadernillo.idTipoCuadernillo, tpcuadernillo.clave, tpcuadernillo.descripcion,
+           numctrl.idNumCtrlDoc, numctrl.numControl, 
+           dest.idPersona, dest.numeroIdentificacion, dest.nombres, dest.apPaterno, dest.apMaterno, dest.fhNacimiento,
+           destsexo.idSexo, destsexo.clave, destsexo.descripcion,
+           depdest.idDependencia, depdest.nombreDependencia, depdest.activo,
+           depdesttp.idTipoDependencia, depdesttp.clave, depdesttp.descripcion, 
+           remi.idPersona, remi.numeroIdentificacion, remi.nombres, remi.apPaterno, remi.apMaterno, remi.fhNacimiento,
+           remisexo.idSexo, remisexo.clave, remisexo.descripcion,
+           depremi.idDependencia, depremi.nombreDependencia, depremi.activo,
+           depremitp.idTipoDependencia, depremitp.clave, depremitp.descripcion,
+           asu.idAsuntoDoc, asu.clave, asu.descripcion, asu.confidencial,
+           ms.idModuloOrigen,
+           ms.clave,
+           ms.descripcion,
+           ms.activo,
+           ms.fhUltModificacion,
+           ms.usuarioModificador,
+           mso.idModuloOrigen,
+           mso.clave,
+           mso.descripcion,
+           mso.activo,
+           mso.fhUltModificacion,
+           mso.usuarioModificador,
+           td.inicioTramite,          
+           d.idDependenciaRemitente.idDependencia,
+           d.idDependenciaDestinatario.idDependencia,
+           d.idDependenciaRemitente.nombreDependencia,
+           d.idDependenciaDestinatario.nombreDependencia,
+
+           int.idInterviniente, int.activo, 
+           tpint.idTipoInterviniente, tpint.descripcion, tpint.clave,
+           detint.idDetalleInterviniente, detint.relacionPersonaMoral, detint.solicitudEscritoAcusacion,
+           detint.fhEscritoAcusacion, detint.fhCorreccionEscAcusacion, detint.solicitoAsesor, 
+           detint.fhSolcicitudAsesor, detint.fhAudienciaJuicio, detint.fhRadicacionCausaPenal,
+           detint.fhAutoAperturaJuicio, gdo.idGdoEstudios, gdo.clave, gdo.descripcion,
+           oc.idOcupacion, oc.clave, oc.descripcion,
+           detint.requirioTraductor, dom.idDomEspaniol, dom.clave, dom.descripcion,
+           alfa.idAlfabetismo, alfa.clave, alfa.descripcion,
+           tpvic.idTipoVicitma, tpvic.clave, tpvic.descripcion,
+           cond.idCondicionReincidencia, cond.clave, cond.descripcion,
+           edocp.idEdoCausaPenal, edocp.clave, edocp.descripcion,
+           edopf.idEdoPsicofisico, edopf.clave, edopf.descripcion,
+           tppm.idTipoPersonaMoral, tppm.clave, tppm.descripcion,
+           faml.idFamLinguistica, faml.clave, faml.descripcion,
+           tpoj.idTipoOrdenJudicial, tpoj.clave, tpoj.descripcion,
+           leng.idLenguaDialecto, leng.clave, leng.descripcion,
+           tpdet.idTipoDetencion, tpdet.clave, tpdet.descripcion,
+           oprot.idOrdenProteccion, oprot.clave, oprot.descripcion,
+           asej.idTipoAsesorJuridico, asej.clave, asej.descripcion,
+           tpcr.idTipoConsignRemision, tpcr.clave, tpcr.descripcion, 
+           tpdef.idTipoDefensor, tpdef.clave, tpdef.descripcion,
+           intper.idPersona, intper.numeroIdentificacion, 
+           intper.nombres, intper.apPaterno, intper.apMaterno, intper.fhNacimiento, 
+           intpers.idSexo, intpers.clave, intpers.descripcion,
+           intperedoc.idEdoCivil, intperedoc.clave, intperedoc.descripcion,
+           intper.curp, intper.rfc, intperesc.idGdoEstudios, intperesc.clave, intperesc.descripcion,
+           intperoc.idOcupacion, intperoc.clave, intperoc.descripcion, 
+           intpernac.idNacionalidad, intpernac.clave, intpernac.descripcion,
+           intpertpi.idTipoIdentificacion, intpertpi.clave, intpertpi.descripcion,
+           intperdep.idDependencia, intperdep.nombreDependencia,
+           inpertpdep.idTipoDependencia, inpertpdep.clave, inpertpdep.descripcion                     
+           
+       FROM DocumentoDO d 
+           INNER JOIN d.idEstatusDocumento ed
+           INNER JOIN d.idTipoDocumento td
+           INNER JOIN td.idTipoTramiteDoc ttd
+           INNER JOIN d.asignacionDocDO a 
+           INNER JOIN d.idModuloSistema ms
+           INNER JOIN d.idModuloOrigen mso
+           LEFT JOIN d.idTipoRegistroDoc tr
+           LEFT JOIN d.idOrigenDoc od
+           LEFT JOIN d.idCarpeta c
+           LEFT JOIN c.numCausa causa 
+           LEFT JOIN c.numCuadernillo cuadernillo 
+           LEFT JOIN cuadernillo.idTipoCuadernillo tpcuadernillo
+           LEFT JOIN c.idEstatusCarpeta ec
+           LEFT JOIN d.idNumCtrlDoc numctrl
+           LEFT JOIN d.idDestinatario dest
+           LEFT JOIN dest.sexo destsexo
+           LEFT JOIN d.idRemitente remi
+           LEFT JOIN remi.sexo remisexo
+           LEFT JOIN d.asuntoDoc asu
+           LEFT JOIN d.idDependenciaRemitente depremi
+           LEFT JOIN depremi.idTipoDependencia depremitp
+           LEFT JOIN d.idDependenciaDestinatario depdest
+           LEFT JOIN depremi.idTipoDependencia depdesttp
+           LEFT JOIN c.intervinientes int
+           LEFT JOIN int.idTipoInterviniente tpint
+           LEFT JOIN int.idDetalleInterviniente detint
+           LEFT JOIN int.idPersona intper
+           LEFT JOIN detint.gradoEstudios gdo
+           LEFT JOIN detint.ocupacionCondicionEstudiante oc 
+           LEFT JOIN detint.idDominioEspaniol dom
+           LEFT JOIN detint.idAlfabetismo alfa
+           LEFT JOIN detint.idTipoVicitima tpvic
+           LEFT JOIN detint.idCondicionReincidencia cond
+           LEFT JOIN detint.idEdoCausaPenal edocp
+           LEFT JOIN detint.idEdoPsicofisico edopf
+           LEFT JOIN detint.idTipoPersonaMoral tppm
+           LEFT JOIN detint.idFamLinguistica faml
+           LEFT JOIN detint.idTipoOrdenJudicial tpoj
+           LEFT JOIN detint.idLenguaDialecto leng
+           LEFT JOIN detint.idTipoDetencion tpdet
+           LEFT JOIN detint.idOrdenProteccion oprot
+           LEFT JOIN detint.idAsesorJuridico asej
+           LEFT JOIN detint.idTipoConsignRemision tpcr
+           LEFT JOIN detint.idTipoDefensor tpdef
+           LEFT JOIN intper.sexo intpers
+           LEFT JOIN intper.estadoCivil intperedoc
+           LEFT JOIN intper.escolaridad intperesc
+           LEFT JOIN intper.ocupacion intperoc
+           LEFT JOIN intper.nacionalidad intpernac
+           LEFT JOIN intper.idTipoIdentificacion intpertpi
+           LEFT JOIN intper.dependencia intperdep
+           LEFT JOIN intperdep.idTipoDependencia inpertpdep
+       WHERE d.activo = :activo  AND c.activo = 'Y' 
+       AND NOT ed.clave = 'LIBE'
+       AND ttd.idTipoTramiteDoc NOT IN :excludeIdTipoTramites
+       AND asu.confidencial = 'N'
+       AND (:idusuario IS NULL  OR (:idusuario IS NOT NULL AND a.idUsuario = :idusuario) )
+       AND (:idTipoDocumento IS NULL OR td.idTipoDocumento = :idTipoDocumento)
+       AND (:idEstatusDocumento IS NULL OR ed.idEstatusDocumento = :idEstatusDocumento)
+       AND (:idPersonaRemitente IS NULL OR remi.idPersona = :idPersonaRemitente )
+       AND (:idUsuarioAsignador IS NULL
+             OR d.idDocumento IN (SELECT h.idDocumento.idDocumento 
+                                  FROM HistDocumentoDO h 
+                                  WHERE (:idusuario  IS NULL OR h.idUsuarioAct.idUsuario = :idusuario) 
+                                  AND h.idUsuarioAnt.idUsuario = :idUsuarioAsignador ) )
+       AND ( (:fechaInicio IS NULL AND :fechaFin IS NULL )
+             OR (:fechaInicio IS NOT NULL AND :fechaFin IS NULL AND d.fhRegistro > :fechaInicio )
+             OR(:fechaInicio IS NULL AND :fechaFin IS NOT NULL AND d.fhRegistro < :fechaFin )
+             OR (:fechaInicio IS NOT NULL AND :fechaFin IS NOT NULL AND d.fhRegistro BETWEEN :fechaInicio AND :fechaFin)
+           )
+       AND (:idOrigenDoc IS NULL
+            OR ( d.idOrigenDoc.idOrigenDoc = :idOrigenDoc ) )
+       AND (:numCausaCuadernillo IS NULL 
+            OR(c.activo = 'Y' AND causa.numCausa =:numCausaCuadernillo AND c.esCausa = 'Y')
+            OR (c.activo = 'Y' AND cuadernillo.numCuadernillo =:numCausaCuadernillo AND c.esCuadernillo = 'Y' ))
+       AND (:idModuloSistema IS NULL OR ms.clave = :idModuloSistema )
+       AND (:idTipoRegistroDoc IS NULL OR tr.idTipoRegistroDoc = :idTipoRegistroDoc )
+       ORDER BY d.fhUltModificacion DESC
+    ]]>
+	</query>
+  </named-query>
+  <named-query name="DocumentDO.findDocumentosAsignadosJuez">
+    <query>
+	<![CDATA[
+		SELECT d.idDocumento, d.fhRegistro, d.fhRecepcion, d.fhDocumento, d.descripcionDoc, d.numOficio,
+			d.activo, a.idAsignacion, a.comentarios, ed.idEstatusDocumento, ed.clave, ed.descripcion,
+           	od.idOrigenDoc, od.clave, od.descripcion,
+           	td.idTipoDocumento, td.clave, td.descripcion, td.tipoExterno, td.causaOrigen, td.promocion,
+           	ttd.idTipoTramiteDoc, ttd.clave, ttd.descripcion, 
+           	tr.idTipoRegistroDoc, tr.clave, tr.descripcion,
+           	c.idCarpeta, c.esCausa, c.esCuadernillo, c.promovido, c.fhPromocion, c.unificado, c.fhUnificacion,
+           	c.fhCreacion, c.activo, 
+           	ec.idEstatusCarpeta, ec.clave, ec.descripcion,
+           	causa.idNumCausa, causa.numCausa, causa.anio, causa.activo,
+           	cuadernillo.idNumCuadernillo, cuadernillo.numCuadernillo, cuadernillo.anio, cuadernillo.activo,
+           	tpcuadernillo.idTipoCuadernillo, tpcuadernillo.clave, tpcuadernillo.descripcion,
+           	numctrl.idNumCtrlDoc, numctrl.numControl, 
+           	dest.idPersona, dest.numeroIdentificacion, dest.nombres, dest.apPaterno, dest.apMaterno, dest.fhNacimiento,
+           	destsexo.idSexo, destsexo.clave, destsexo.descripcion,
+           	depdest.idDependencia, depdest.nombreDependencia, depdest.activo,
+           	depdesttp.idTipoDependencia, depdesttp.clave, depdesttp.descripcion, 
+           	remi.idPersona, remi.numeroIdentificacion, remi.nombres, remi.apPaterno, remi.apMaterno, remi.fhNacimiento,
+           	remisexo.idSexo, remisexo.clave, remisexo.descripcion,
+           	depremi.idDependencia, depremi.nombreDependencia, depremi.activo,
+           	depremitp.idTipoDependencia, depremitp.clave, depremitp.descripcion,
+           	asu.idAsuntoDoc, asu.clave, asu.descripcion, asu.confidencial,
+           	ms.idModuloOrigen,
+           	ms.clave,
+           	ms.descripcion,
+           	ms.activo,
+           	ms.fhUltModificacion,
+           	ms.usuarioModificador,
+           	mso.idModuloOrigen,
+           	mso.clave,
+           	mso.descripcion,
+           	mso.activo,
+           	mso.fhUltModificacion,
+           	mso.usuarioModificador,
+           	td.inicioTramite,
+           	depremi.idDependencia,
+           	depdest.idDependencia,
+           	depremi.nombreDependencia,
+           	depdest.nombreDependencia
+		FROM DocumentoDO d
+			INNER JOIN d.idEstatusDocumento ed
+           	INNER JOIN d.idTipoDocumento td
+           	INNER JOIN td.idTipoTramiteDoc ttd
+           	INNER JOIN d.asignacionDocDO a 
+           	INNER JOIN d.idModuloSistema ms
+           	INNER JOIN d.idModuloOrigen mso           
+           	LEFT JOIN d.idTipoRegistroDoc tr
+           	LEFT JOIN d.idOrigenDoc od
+           	LEFT JOIN d.idCarpeta c
+           	LEFT JOIN c.numCausa causa 
+           	LEFT JOIN c.numCuadernillo cuadernillo 
+           	LEFT JOIN cuadernillo.idTipoCuadernillo tpcuadernillo
+           	LEFT JOIN c.idEstatusCarpeta ec
+           	LEFT JOIN d.idNumCtrlDoc numctrl
+           	LEFT JOIN d.idDestinatario dest
+           	LEFT JOIN dest.sexo destsexo
+           	LEFT JOIN d.idRemitente remi
+           	LEFT JOIN remi.sexo remisexo
+           	LEFT JOIN d.asuntoDoc asu
+           	LEFT JOIN d.idDependenciaRemitente depremi
+           	LEFT JOIN depremi.idTipoDependencia depremitp
+           	LEFT JOIN d.idDependenciaDestinatario depdest
+           	LEFT JOIN depremi.idTipoDependencia depdesttp
+           	
+		WHERE d.activo = :activo  AND c.activo = 'Y' 
+       	AND ed.clave IN :estatusDocumento
+       	AND (:idusuario IS NULL  OR (:idusuario IS NOT NULL AND a.idUsuario = :idusuario) )
+       	AND (:numCausaCuadernillo IS NULL
+			OR(c.activo = 'Y' AND causa.numCausa =:numCausaCuadernillo AND c.esCausa = 'Y')
+            OR (c.activo = 'Y' AND cuadernillo.numCuadernillo =:numCausaCuadernillo AND c.esCuadernillo = 'Y' ))
+       	AND (:idOrigenDoc IS NULL
+            OR ( d.idOrigenDoc.idOrigenDoc = :idOrigenDoc ) )
+       	AND ( (:fechaInicio IS NULL AND :fechaFin IS NULL )
+        	OR (:fechaInicio IS NOT NULL AND :fechaFin IS NULL AND d.fhRegistro > :fechaInicio )
+			OR(:fechaInicio IS NULL AND :fechaFin IS NOT NULL AND d.fhRegistro < :fechaFin )
+			OR (:fechaInicio IS NOT NULL AND :fechaFin IS NOT NULL AND d.fhRegistro BETWEEN :fechaInicio AND :fechaFin)
+			)
+		AND (:idDependencia IS NULL OR depremi.idDependencia = :idDependencia )
+		AND (:idUsuarioAsignador IS NULL
+			OR d.idDocumento IN (SELECT h.idDocumento.idDocumento 
+                                  FROM HistDocumentoDO h 
+                                  WHERE (:idusuario  IS NULL OR h.idUsuarioAct.idUsuario = :idusuario) 
+                                  AND h.idUsuarioAnt.idPersona.idPersona  = :idUsuarioAsignador ) )
+		AND ((d.idModuloOrigen.clave = 'OP' AND d.idEstatusDocumento.clave = 'PROC')
+			OR (d.idModuloOrigen.clave = 'JU' AND d.idEstatusDocumento.clave IN ('LIBR','NEGA','CUMP','LIBCUMP')))
+		AND asu.confidencial = 'Y'
+		ORDER BY d.fhUltModificacion DESC
+		]]>
+	</query>
+  </named-query>
+  <named-query name="AsignacionDocDO.findDocumentosAsignadosJuez">
+    <query>
+    <![CDATA[
+      SELECT d.idDocumento, d.fhRegistro, d.fhRecepcion, d.fhDocumento, d.descripcionDoc, d.numOficio,
+           d.activo, a.idAsignacion, a.comentarios, ed.idEstatusDocumento, ed.clave, ed.descripcion,
+           od.idOrigenDoc, od.clave, od.descripcion,
+           td.idTipoDocumento, td.clave, td.descripcion, td.tipoExterno, td.causaOrigen, td.promocion,
+           ttd.idTipoTramiteDoc, ttd.clave, ttd.descripcion, 
+           tr.idTipoRegistroDoc, tr.clave, tr.descripcion,
+           c.idCarpeta, c.esCausa, c.esCuadernillo, c.promovido, c.fhPromocion, c.unificado, c.fhUnificacion,
+           c.fhCreacion, c.activo, 
+           ec.idEstatusCarpeta, ec.clave, ec.descripcion,
+           causa.idNumCausa, causa.numCausa, causa.anio, causa.activo,
+           cuadernillo.idNumCuadernillo, cuadernillo.numCuadernillo, cuadernillo.anio, cuadernillo.activo,
+           tpcuadernillo.idTipoCuadernillo, tpcuadernillo.clave, tpcuadernillo.descripcion,
+           numctrl.idNumCtrlDoc, numctrl.numControl, 
+           dest.idPersona, dest.numeroIdentificacion, dest.nombres, dest.apPaterno, dest.apMaterno, dest.fhNacimiento,
+           destsexo.idSexo, destsexo.clave, destsexo.descripcion,
+           depdest.idDependencia, depdest.nombreDependencia, depdest.activo,
+           depdesttp.idTipoDependencia, depdesttp.clave, depdesttp.descripcion, 
+           remi.idPersona, remi.numeroIdentificacion, remi.nombres, remi.apPaterno, remi.apMaterno, remi.fhNacimiento,
+           remisexo.idSexo, remisexo.clave, remisexo.descripcion,
+           depremi.idDependencia, depremi.nombreDependencia, depremi.activo,
+           depremitp.idTipoDependencia, depremitp.clave, depremitp.descripcion,
+           asu.idAsuntoDoc, asu.clave, asu.descripcion, asu.confidencial,
+           ms.idModuloOrigen,
+           ms.clave,
+           ms.descripcion,
+           ms.activo,
+           ms.fhUltModificacion,
+           ms.usuarioModificador,
+           mso.idModuloOrigen,
+           mso.clave,
+           mso.descripcion,
+           mso.activo,
+           mso.fhUltModificacion,
+           mso.usuarioModificador,
+           td.inicioTramite,
+          	depremi.idDependencia,
+          	depdest.idDependencia,
+          	depremi.nombreDependencia,
+          	depdest.nombreDependencia
+           	
+       FROM DocumentoDO d 
+           INNER JOIN d.idEstatusDocumento ed
+           INNER JOIN d.idTipoDocumento td
+           INNER JOIN td.idTipoTramiteDoc ttd
+           INNER JOIN d.asignacionDocDO a 
+           INNER JOIN d.idModuloSistema ms
+           INNER JOIN d.idModuloOrigen mso           
+           LEFT JOIN d.idTipoRegistroDoc tr
+           LEFT JOIN d.idOrigenDoc od
+           LEFT JOIN d.idCarpeta c
+           LEFT JOIN c.numCausa causa 
+           LEFT JOIN c.numCuadernillo cuadernillo 
+           LEFT JOIN cuadernillo.idTipoCuadernillo tpcuadernillo
+           LEFT JOIN c.idEstatusCarpeta ec
+           LEFT JOIN d.idNumCtrlDoc numctrl
+           LEFT JOIN d.idDestinatario dest
+           LEFT JOIN dest.sexo destsexo
+           LEFT JOIN d.idRemitente remi
+           LEFT JOIN remi.sexo remisexo
+           LEFT JOIN d.asuntoDoc asu
+           LEFT JOIN d.idDependenciaRemitente depremi
+           LEFT JOIN depremi.idTipoDependencia depremitp
+           LEFT JOIN d.idDependenciaDestinatario depdest
+           LEFT JOIN depremi.idTipoDependencia depdesttp
+       WHERE d.activo = :activo  AND c.activo = 'Y' 
+       AND NOT ed.clave = 'LIBE'
+       AND asu.confidencial = 'N'
+       AND ttd.idTipoTramiteDoc NOT IN :idTipoTramiteDoc
+       AND d.idDocumento NOT IN (SELECT j.idDocumento.idDocumento FROM DocJuezDO j WHERE j.activo = 'Y' AND j.idDocumento.idDocumento = d.idDocumento )
+       
+       AND (:idusuario IS NULL  OR a.idUsuario = :idusuario) 
+       AND (:idTipoDocumento IS NULL OR td.idTipoDocumento = :idTipoDocumento)
+       AND (:idEstatusDocumento IS NULL OR ed.idEstatusDocumento = :idEstatusDocumento)
+       AND (:idPersonaRemitente IS NULL OR remi.idPersona = :idPersonaRemitente )
+       AND (:idUsuarioAsignador IS NULL
+             OR d.idDocumento IN (SELECT h.idDocumento.idDocumento 
+                                  FROM HistDocumentoDO h 
+                                  WHERE (:idusuario  IS NULL OR h.idUsuarioAct.idUsuario = :idusuario) 
+                                  AND h.idUsuarioAnt.idPersona.idPersona = :idUsuarioAsignador ) )
+       AND ( (:fechaInicio IS NULL AND :fechaFin IS NULL )
+             OR (:fechaInicio IS NOT NULL AND :fechaFin IS NULL AND d.fhRegistro > :fechaInicio )
+             OR(:fechaInicio IS NULL AND :fechaFin IS NOT NULL AND d.fhRegistro < :fechaFin )
+             OR (:fechaInicio IS NOT NULL AND :fechaFin IS NOT NULL AND d.fhRegistro BETWEEN :fechaInicio AND :fechaFin)
+           )
+       AND (:idOrigenDoc IS NULL
+            OR ( d.idOrigenDoc.clave = :idOrigenDoc ) )
+       AND (:numCausaCuadernillo IS NULL 
+            OR(c.activo = 'Y' AND causa.numCausa =:numCausaCuadernillo AND c.esCausa = 'Y')
+            OR (c.activo = 'Y' AND cuadernillo.numCuadernillo =:numCausaCuadernillo AND c.esCuadernillo = 'Y' ))
+       AND (:claveModuloSistema IS NULL OR d.idModuloSistema.clave = :claveModuloSistema )
+       AND (:idTipoRegistroDoc IS NULL OR tr.idTipoRegistroDoc = :idTipoRegistroDoc ) 
+       AND (d.idModuloOrigen.clave IN ('UC', 'US') OR (d.idModuloOrigen.clave = 'OP' AND ttd.clave = 'DOVA'))
+       ORDER BY d.fhUltModificacion DESC
+       ]]>
+    </query>
+  </named-query>
+
+</entity-mappings>

@@ -1,0 +1,1909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.PlantillaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.PlantillaTO</class-b>
+		<field>
+			<a>idPlantilla</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idPlantilla</a>
+			<b>idPlantilla</b>
+		</field>
+		<field>
+		    <a>idTipoPlantilla</a>
+		    <b>tipoPlantilla</b>
+		</field>
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AtributoPlantillaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AtributoPlantillaTO</class-b>
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DependenciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DependenciaTO</class-b>
+		<field>
+			<a>idDependencia</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>nombreDependencia</a>
+			<b>descripcion</b>
+		</field>
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoAudienciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoAudienciaTO</class-b>
+		<field>
+			<a>idTipoAudiencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoCuadernilloDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoCuadernilloTO</class-b>
+		<field>
+			<a>idTipoCuadernillo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping>
+		<class-a>mx.gob.tab.sigitab.model.NacionalidadDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.NacionalidadTO</class-b>
+		<field>
+			<a>idNacionalidad</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping>
+		<class-a>mx.gob.tab.sigitab.model.EstadoCivilDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstadoCivilTO</class-b>
+		<field>
+			<a>idEdoCivil</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping>
+		<class-a>mx.gob.tab.sigitab.model.TipoVictimaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoVictimaTO</class-b>
+		<field>
+			<a>idTipoVicitma</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping>
+		<class-a>mx.gob.tab.sigitab.model.TipoDocIdentificacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoIdentificacionTO</class-b>
+		<field>
+			<a>idTipoIdentificacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping>
+		<class-a>mx.gob.tab.sigitab.model.OcupacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.OcupacionTO</class-b>
+		<field>
+			<a>idOcupacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping>
+		<class-a>mx.gob.tab.sigitab.model.DomEspaniolDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DominioEspaniolTO</class-b>
+		<field>
+			<a>idDomEspaniol</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SalaAudienciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SalaAudienciaTO</class-b>
+		<field>
+			<a>idSalaAudiencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoDocumentoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoDocumentoTO</class-b>
+		<field>
+			<a>idTipoDocumento</a>
+			<b>id</b>
+		</field>
+        <field>
+            <a>idTipoTramiteDoc</a>
+            <b>idTipoTramiteDoc</b>
+        </field>
+        <field>
+            <a>promocion</a>
+            <b>promocion</b>
+        </field>
+        <field>
+            <a>inicioTramite</a>
+            <b>inicioTramite</b>
+        </field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.OrigenDocDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.OrigenDocTO</class-b>
+		<field>
+			<a>idOrigenDoc</a>
+			<b>id</b>
+		</field>
+
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AreaDependenciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AreaTO</class-b>
+		<field>
+			<a>idAreaDependencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AreaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AreaTO</class-b>
+		<field>
+			<a>idArea</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ContinenteDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ContinenteTO</class-b>
+		<field>
+			<a>idContinente</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.PaisDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.PaisTO</class-b>
+		<field>
+			<a>idPais</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstadoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstadoTO</class-b>
+		<field>
+			<a>idEstado</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.MunicipioDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.MunicipioTO</class-b>
+		<field>
+			<a>idMunicipio</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ObjetoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ObjetoTO</class-b>
+		<field>
+			<a>idObjeto</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoObjetoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoObjetoTO</class-b>
+		<field>
+			<a>idTipoObjeto</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoDetencionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoDetencionTO</class-b>
+		<field>
+			<a>idTipoDetencion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CondReincidenciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CondicionReincidenciaTO</class-b>
+		<field>
+			<a>idCondicionReincidencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.UnidadMedCautelarDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.UnidadTO</class-b>
+		<field>
+			<a>idUnidadMedCautelar</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>clave</a>
+			<b>codigo</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoDomicilioDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoDomicilioTO</class-b>
+		<field>
+			<a>idTipoDomicilio</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ModulosSistemaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ModulosSistemaTO</class-b>
+		<field>
+			<a>idModuloOrigen</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AsuntoDocDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AsuntoDocTO</class-b>
+		<field>
+			<a>idAsuntoDoc</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoConsignRemisionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoConsignRemisionTO</class-b>
+		<field>
+			<a>idTipoConsignRemision</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoDependenciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoDependenciaTO</class-b>
+		<field>
+			<a>idTipoDependencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EdoPsicofisicoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EdoPsicofisicoTO</class-b>
+		<field>
+			<a>idEdoPsicofisico</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AreaDependenciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AreaDependenciaTO</class-b>
+		<field>
+			<a>idAreaDependencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AliasPersonaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AliasPersonaTO</class-b>
+		<field>
+			<a>idAliasPersona</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>alias</a>
+			<b>descripcion</b>
+		</field>
+	</mapping>
+	<mapping>
+		<class-a>mx.gob.tab.sigitab.model.ArchivoAdjuntoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ArchivoAdjuntoTO</class-b>
+		<field>
+			<a>idArchivoAdjunto</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>nombreArchivo</a>
+			<b>nombre</b>
+		</field>
+		<field>
+			<a>nombreArchivo</a>
+			<b>descripcion</b>
+		</field>
+		<field>
+			<a>extensionArchivo</a>
+			<b>extension</b>
+		</field>
+		<field>
+			<a>archivoFisico</a>
+			<b>archivoFisico</b>
+		</field>
+		<field>
+			<a>fhRegistro</a>
+			<b>fechaRegistro</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+	    <class-a>mx.gob.tab.sigitab.model.ArchivoFisicoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ArchivoFisicoTO</class-b>
+	    <field>
+			<a>idArchivoFisico</a>
+			<b>id</b>
+		</field>
+		<field-exclude>
+			<a>archivo</a>
+			<b>archivo</b>
+		</field-exclude>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CodLeyMedCautelarDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CodLeyMedCautelarTO</class-b>
+		<field>
+			<a>idCodigoLey</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ArticuloMedCautelarDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ArticuloMedCautelarTO</class-b>
+		<field>
+			<a>idArtMedCautelar</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.FamLinguisticaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.FamiliaLinguisticaTO</class-b>
+		<field>
+			<a>idFamLinguistica</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.IntervinienteDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.IntervinienteTO</class-b>
+		<field>
+			<a>idInterviniente</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idPersona</a>
+			<b>persona</b>
+		</field>
+		<field>
+			<a>idTipoInterviniente</a>
+			<b>tipoInterviniente</b>
+		</field>
+		<field>
+			<a>idCarpeta</a>
+			<b>carpeta</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CarpetaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CarpetaTO</class-b>
+		<field>
+			<a>idCarpeta</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>numCausa</a>
+			<b>numCausa</b>
+		</field>
+		<field>
+			<a>numCuadernillo</a>
+			<b>numCuadernillo</b>
+		</field>
+		<field>
+			<a>idEstatusCarpeta</a>
+			<b>idEstatusCarpeta</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DetalleIntervinienteDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DetalleIntervinienteTO</class-b>
+		<field>
+			<a>idDetalleInterviniente</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ContactosPersonaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ContactosPersonaTO</class-b>
+		<field>
+			<a>contactosPersonaDOPK.idPersona</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>contactosPersonaDOPK.idContacto</a>
+			<b>idContacto</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ObjetosIntervinienteDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ObjetosIntervinienteTO</class-b>
+		<field>
+			<a>objetosIntervinienteDOPK.idObjeto</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>objetosIntervinienteDOPK.idInterviniente</a>
+			<b>idInterviniente</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.MedidasCautelaresDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.MedidaCautelarTO</class-b>
+		<field>
+			<a>idMedidaCautelar</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idArtMedCautelar</a>
+			<b>articulo</b>
+		</field>
+		<field>
+			<a>idCodigoLey</a>
+			<b>codigo</b>
+		</field>
+		<field>
+			<a>idFraccMedCautelar</a>
+			<b>fraccion</b>
+		</field>
+		<field>
+			<a>idUnidadMedCautelar</a>
+			<b>unidad</b>
+		</field>
+	</mapping>
+	<mapping map-null="false" type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DocumentoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DocumentoTO</class-b>
+		<field>
+			<a>idOrigenDoc</a>
+			<b>origen</b>
+		</field>
+		<field>
+			<a>idOrigenDoc</a>
+			<b>idOrigenDoc</b>
+		</field>
+		<field>
+		   <a>idEstatusDocumento</a>
+		   <b>idEstatusDocumento</b>
+		</field>
+		<field>
+			<a>idDocumento</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a date-format="MM/dd/yyyy">fhRegistro</a>
+			<b>fechaRegistro</b>
+		</field>
+		<field>
+		   <a date-format="HH:mm:ss">fhRegistro</a>
+		   <b>horaRegistro</b>
+		</field>
+		<field>
+			<a date-format="MM/dd/yyyy">fhRecepcion</a>
+			<b>fechaRecepcion</b>
+		</field>
+		<field>
+		   <a date-format="HH:mm:ss">fhRecepcion</a>
+		   <b>horaRecepcion</b>
+		</field>
+		<field>
+			<a>fhDocumento</a>
+			<b>fechaDocumento</b>
+		</field>
+		<field>
+			<a>descripcionDoc</a>
+			<b>descripcion</b>
+		</field>
+		<field>
+			<a>asignacionDocDO</a>
+			<b>asignacionDocTO</b>
+		</field>
+		<field>
+			<a>idTipoDocumento</a>
+			<b>tipoDocumento</b>
+		</field>
+		<field>
+			<a>idTipoRegistroDoc</a>
+			<b>tipoRegistro</b>
+		</field>
+		<field>
+			<a>idDestinatario.idPersona</a>
+			<b>idDestinatario.id</b>
+		</field>
+		<field>
+		   <a>idRemitente.idPersona</a>
+		   <b>idRemitente.id</b>
+		</field>
+
+		<field>
+		   <a>idRemitente.sexo</a>
+		   <b>idRemitente.sexo</b>
+		</field>
+		<field>
+		   <a>idDestinatario.sexo</a>
+		   <b>idDestinatario.sexo</b>
+		</field>
+		<field>
+		   <a>idRemitente.ocupacion</a>
+		   <b>idRemitente.ocupacion</b>
+		</field>
+		<field>
+		   <a>idDestinatario.ocupacion</a>
+		   <b>idDestinatario.ocupacion</b>
+		</field>
+		<field>
+		   <a>idRemitente.estadoCivil</a>
+		   <b>idRemitente.estadoCivil</b>
+		</field>
+		<field>
+		   <a>idDestinatario.estadoCivil</a>
+		   <b>idDestinatario.estadoCivil</b>
+		</field>
+		<field>
+		   <a>idRemitente.nombres</a>
+		   <b>idRemitente.primerNombre</b>
+		</field>
+		<field>
+		   <a>idDestinatario.nombres</a>
+		   <b>idDestinatario.primerNombre</b>
+		</field>
+		<field>
+		   <a>idRemitente.apPaterno</a>
+		   <b>idRemitente.apellidoPaterno</b>
+		</field>
+		<field>
+		   <a>idDestinatario.apPaterno</a>
+		   <b>idDestinatario.apellidoPaterno</b>
+		</field>
+		<field>
+		   <a>idRemitente.apMaterno</a>
+		   <b>idRemitente.apellidoMaterno</b>
+		</field>
+		<field>
+		   <a>idDestinatario.apMaterno</a>
+		   <b>idDestinatario.apellidoMaterno</b>
+		</field>
+		
+		<field>
+		   <a>idRemitente.fhNacimiento</a>
+		   <b>idRemitente.fechaNacimiento</b>
+		</field>
+		<field>
+		   <a>idDestinatario.fhNacimiento</a>
+		   <b>idDestinatario.fechaNacimiento</b>
+		</field>
+		
+		<field>
+		   <a>idCarpeta</a>
+		   <b>idCarpeta</b>
+		</field>
+		<field>
+		   <a>idNumCtrlDoc.idNumCtrlDoc</a>
+		   <b>idNumCtrlDoc.id</b>
+		</field>
+		<field>
+		   <a>idNumCtrlDoc.numControl</a>
+		   <b>idNumCtrlDoc.numControl</b>
+		</field>
+		<field>
+		   <a>numOficio</a>
+		   <b>numOficio</b>
+		</field>
+		<field>
+		   <a>idCarpeta.numCuadernillo.idTipoCuadernillo</a>
+		   <b>tipoCuadernillo</b>
+		</field>
+		
+		<field>
+		<a>asuntoDoc</a>
+		<b>asunto</b>
+		</field>
+		<field>
+			<a>idCarpeta</a>
+			<b>idCarpeta</b>
+		</field>
+		<field>
+			<a>idDependenciaRemitente.idDependencia</a>
+			<b>idDependenciaRemitente.id</b>
+		</field>
+		<field>
+			<a>idDependenciaRemitente.nombreDependencia</a>
+			<b>idDependenciaRemitente.descripcion</b>
+		</field>
+		<field>
+			<a>idDependenciaDestinatario.idDependencia</a>
+			<b>idDependenciaDestinatario.id</b>
+		</field>
+		<field>
+			<a>idDependenciaDestinatario.nombreDependencia</a>
+			<b>idDependenciaDestinatario.descripcion</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AsignacionDocDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AsignacionDocTO</class-b>
+		<field>
+			<a>idAsignacion</a>
+			<b>id</b>
+		</field>
+
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstatusDocumentoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstatusDocumentoTO</class-b>
+		<field>
+			<a>idEstatusDocumento</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoRegistroDocDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoRegistroDocTO</class-b>
+		<field>
+			<a>idTipoRegistroDoc</a>
+			<b>id</b>
+		</field>
+
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.NumCtrlDocDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.NumCtrlDocTO</class-b>
+		<field>
+			<a>idNumCtrlDoc</a>
+			<b>id</b>
+		</field>
+
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DocJuezDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DocJuezTO</class-b>
+		<field>
+			<a>idDocJuez</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idDocumento</a>
+			<b>documento</b>
+		</field>
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.PersonaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.PersonaTO</class-b>
+		<field>
+			<a>idPersona</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>nombres</a>
+			<b>primerNombre</b>
+		</field>
+		<field>
+			<a>apPaterno</a>
+			<b>apellidoPaterno</b>
+		</field>
+		<field>
+			<a>apMaterno</a>
+			<b>apellidoMaterno</b>
+		</field>
+		<field>
+			<a>fhNacimiento</a>
+			<b>fechaNacimiento</b>
+		</field>
+		<field>
+			<a>sexo</a>
+			<b>sexo</b>
+		</field>
+		<field>
+			<a>estadoCivil</a>
+			<b>estadoCivil</b>
+		</field>
+		<field>
+			<a>escolaridad</a>
+			<b>gradoEstudios</b>
+		</field>
+		<field>
+			<a>ocupacion</a>
+			<b>ocupacion</b>
+		</field>
+		<field>
+			<a>nacionalidad</a>
+			<b>nacionalidad</b>
+		</field>
+		<field>
+			<a>idTipoIdentificacion</a>
+			<b>tipoIdentificacion</b>
+		</field>
+		<field>
+            <a>dependencia</a>
+            <b>dependencia</b>
+        </field>
+        <field>
+            <a>dependencia.idDependencia</a>
+            <b>dependencia.id</b>
+        </field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoOrdenJudDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoOrdenJudicialTO</class-b>
+		<field>
+			<a>idTipoOrdenJudicial</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoDefensorDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoDefensorTO</class-b>
+		<field>
+			<a>idTipoDefensor</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CodigoLeyDelitoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CodigoLeyTO</class-b>
+		<field>
+			<a>idCodigoLey</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoContactoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoContactoTO</class-b>
+		<field>
+			<a>idTipoContacto</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ContactoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ContactoTO</class-b>
+		<field>
+			<a>idContacto</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>valor</a>
+			<b>descripcion</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ColoniaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ColoniaTO</class-b>
+		<field>
+			<a>idColonia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.UsuariosDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.UsuarioTO</class-b>
+		<field>
+			<a>idUsuario</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idRol</a>
+			<b>idRol</b>
+		</field>
+		<field>
+			<a>usuario</a>
+			<b>user</b>
+		</field>
+		<field>
+			<a>contrasenia</a>
+			<b>password</b>
+		</field>
+		<field>
+			<a>idPersona.idPersona</a>
+			<b>persona.id</b>
+		</field>
+		<field>
+			<a>idPersona.nombres</a>
+			<b>persona.primerNombre</b>
+		</field>
+		<field>
+			<a>idPersona.apPaterno</a>
+			<b>persona.apellidoPaterno</b>
+		</field>
+		<field>
+			<a>idPersona.apMaterno</a>
+			<b>persona.apellidoMaterno</b>
+		</field>
+		<field>
+			<a>idPersona.fhNacimiento</a>
+			<b>persona.fechaNacimiento</b>
+		</field>
+		<field>
+			<a>idPersona.rfc</a>
+			<b>persona.rfc</b>
+		</field>
+        <field>
+            <a>idPersona.curp</a>
+            <b>persona.curp</b>
+        </field>
+		<field>
+			<a>idPersona.nacionalidad</a>
+			<b>persona.nacionalidad</b>
+		</field>
+        <field>
+            <a>idPersona.sexo</a>
+            <b>persona.sexo</b>
+        </field>
+        <field>
+            <a>idPersona.activo</a>
+            <b>persona.activo</b>
+        </field>
+        <field>
+            <a>idPersona.fhUltModificacion</a>
+            <b>persona.fhUltModificacion</b>
+        </field>
+        <field>
+            <a>idPersona.usuarioModificador</a>
+            <b>persona.usuarioModificador</b>
+        </field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoIntervinienteDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoIntervinienteTO</class-b>
+		<field>
+			<a>idTipoInterviniente</a>
+			<b>id</b>
+		</field>
+
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoPersonaMoralDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoPersonaMoralTO</class-b>
+		<field>
+			<a>idTipoPersonaMoral</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+	    <class-a>mx.gob.tab.sigitab.model.DomiciliosDependenciaDO</class-a>
+	    <class-b>mx.gob.tab.sigitab.to.DomiciliosDependenciaTO</class-b>
+	    <field>
+	    	<a>domicilioDO</a>
+	    	<b>direccion</b>
+	    </field>
+	    <field>
+	    	<a>dependenciaDO</a>
+	    	<b>dependencia</b>
+	    </field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DomicilioDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DireccionTO</class-b>
+		<field>
+		   <a>idDomicilio</a>
+		   <b>id</b>
+		</field>
+		<field>
+		   <a>referencias</a>
+		   <b>referencia</b>
+		</field>		
+		<field>
+		   <a>idTipoDomicilio</a>
+		   <b>tipoDomicilio</b>
+		</field>	
+		<field>
+		   <a>idEstado</a>
+		   <b>estado</b>
+		</field>	
+		<field>
+		   <a>idMunicipio</a>
+		   <b>municipio</b>
+		</field>	
+		<field>
+		   <a>idPais</a>
+		   <b>pais</b>
+		</field>	
+		<field>
+		   <a>idColonia</a>
+		   <b>colonia</b>
+		</field>	
+		<field>
+		   <a>idContinente</a>
+		   <b>continente</b>
+		</field>									
+	</mapping> 
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DomiciliosPersonaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DomicilioPersonaTO</class-b>
+		<field>
+		   <a>domicilioDO</a>
+		   <b>direccionTO</b>
+		</field>
+		<field>
+		   <a>personaDO</a>
+		   <b>personaTO</b>
+		</field>
+	</mapping> 	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DelitoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DelitoTO</class-b>
+		<field>
+		   <a>idDelito</a>
+		   <b>id</b>
+		</field>
+		<field>
+			<a>fhComision</a>
+			<b>fechaComision</b>
+		</field>
+		<field>
+			<a>observacionesDelito</a>
+			<b>comentarios</b>
+		</field>
+		<field>
+			<a>observacionesDelito</a>
+			<b>comentarios</b>
+		</field>
+		<field>
+			<a>idCalificacion</a>
+			<b>calificacion</b>
+		</field>
+		<field>
+			<a>idClasificacionResultado</a>
+			<b>clasificacion</b>
+		</field>
+		<field>
+			<a>idCodigoLey</a>
+			<b>codigo</b>
+		</field>
+		<field>
+			<a>idFormaAccion</a>
+			<b>formaAccion</b>
+		</field>
+		<field>
+			<a>idFormaComision</a>
+			<b>formaComision</b>
+		</field>
+		<field>
+			<a>idModalidad</a>
+			<b>modalidad</b>
+		</field>
+		<field>
+			<a>idTipoDelito</a>
+			<b>tipoDelito</b>
+		</field>
+		<field>
+			<a>idDomicilioComision</a>
+			<b>lugarComision</b>
+		</field>
+		<field>
+			<a>idArtFracDelito</a>
+			<b>listaArticulosFraccion</b>
+		</field>
+		<field>
+			<a>idGradoConsumacion</a>
+			<b>gradoConsumacion</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AlfabetismoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AlfabetismoTO</class-b>
+		<field>
+		   <a>idAlfabetismo</a>
+		   <b>id</b>
+		</field>
+	</mapping>	
+		<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoTramiteDocDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoTramiteDocTO</class-b>
+		<field>
+			<a>idTipoTramiteDoc</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ObjetosDocumentoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ObjetoTO</class-b>
+		<field>
+		   <a>objetoDO.idObjeto</a>
+		   <b>id</b>
+		</field>
+		<field>
+		   <a>objetoDO.acuerdoProbatorio</a>
+		   <b>acuerdoProbatorio</b>
+		</field>
+		<field>
+		   <a>objetoDO.nombreObjeto</a>
+		   <b>nombreObjeto</b>
+		</field>
+		<field>
+		   <a>objetoDO.descripcionObjeto</a>
+		   <b>descripcionObjeto</b>
+		</field>
+		<field>
+		   <a>objetoDO.ubicacionObjeto</a>
+		   <b>ubicacionObjeto</b>
+		</field>
+		<field>
+		   <a>objetoDO.comentarios</a>
+		   <b>comentarios</b>
+		</field>
+		<field>
+		   <a>objetoDO.idTipoObjeto</a>
+		   <b>idTipoObjeto</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SexoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SexoTO</class-b>
+		<field>
+			<a>idSexo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.GradoEstudiosDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.GradoEstudiosTO</class-b>
+		<field>
+			<a>idGdoEstudios</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoDelitoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoDelitoTO</class-b>
+		<field>
+			<a>idTipoDelito</a>
+			<b>id</b>
+		</field>
+	</mapping>
+		<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ArticulosDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ArticuloTO</class-b>
+		<field>
+			<a>idArticulo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.NumeroCuadernilloDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.NumeroCuadernilloTO</class-b>
+		<field>
+			<a>idNumCuadernillo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.NumeroCausaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.NumeroCausaTO</class-b>
+		<field>
+			<a>idNumCausa</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.FraccionesDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.FraccionTO</class-b>
+		<field>
+			<a>idFraccion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.FraccionMedCautelarDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.FraccionMedCautelarTO</class-b>
+		<field>
+			<a>idFraccMedCautelar</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.GradoParticipacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.GradoParticipacionTO</class-b>
+		<field>
+			<a>idGradoParticipacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ModalidadDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ModalidadTO</class-b>
+		<field>
+			<a>idModalidad</a>
+			<b>id</b>
+		</field>
+	</mapping>	
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ClasifResultadoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ClasificacionDelitoTO</class-b>
+		<field>
+			<a>idClasifResultado</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.FormaAccionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.FormaAccionDelitoTO</class-b>
+		<field>
+			<a>idFormaAccion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.FormaComisionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.FormaComisionTO</class-b>
+		<field>
+			<a>idFormaComision</a>
+			<b>id</b>
+		</field>
+	</mapping>
+
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CalificacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CalificacionDelitoTO</class-b>
+		<field>
+			<a>idCalificacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoAsesorJuridicoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoAsesorJuridicoTO</class-b>
+		<field>
+			<a>idTipoAsesorJuridico</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.OrdenProteccionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.OrdenProteccionTO</class-b>
+		<field>
+			<a>idOrdenProteccion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.LengDialectoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.LengDialectoTO</class-b>
+		<field>
+			<a>idLenguaDialecto</a>
+			<b>idLenguaDialecto</b>
+		</field>
+	</mapping>	
+		<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ObjetosDelitoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ObjetoTO</class-b>
+		<field>
+		   <a>objetoDO.idObjeto</a>
+		   <b>id</b>
+		</field>
+		<field>
+		   <a>objetoDO.acuerdoProbatorio</a>
+		   <b>acuerdoProbatorio</b>
+		</field>
+		<field>
+		   <a>objetoDO.nombreObjeto</a>
+		   <b>nombreObjeto</b>
+		</field>
+		<field>
+		   <a>objetoDO.descripcionObjeto</a>
+		   <b>descripcionObjeto</b>
+		</field>
+		<field>
+		   <a>objetoDO.ubicacionObjeto</a>
+		   <b>ubicacionObjeto</b>
+		</field>
+		<field>
+		   <a>objetoDO.comentarios</a>
+		   <b>comentarios</b>
+		</field>
+		<field>
+		   <a>objetoDO.idTipoObjeto</a>
+		   <b>idTipoObjeto</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstadoProcesalDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstadoProcesalTO</class-b>
+		<field>
+			<a>idEstadoProcesal</a>
+			<b>id</b>
+		</field>
+	</mapping>	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.RelImpuVictDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.VictimaTO</class-b>		
+		<field>
+		   <a>idRelacionDelitoInterviniente</a>
+		   <b>idRelImpuVict</b>
+		</field>
+		<field>
+		   <a>idIntVictima</a>
+		   <b>interviniente</b>
+		</field>
+		<field>
+		   <a>idTipoRelDelito.descripcion</a>
+		   <b>tipoRelacionVictimaImputado.descripcion</b>
+		</field>		
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DocIntervinienteDelitoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DocIntervinienteDelitoTO</class-b>
+		<field>
+		   <a>idRelDocIntDel</a>
+		   <b>id</b>
+		</field>	
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AudienciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AudienciaTO</class-b>
+		<field>
+			<a>idAudiencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SolicitudAudienciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SolicitudAudienciaTO</class-b>
+		<field>
+			<a>idSoltdAudiencia</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idAudiencia</a>
+			<b>idAudiencia</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.IntervinientesAudienciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.IntervinientesAudienciaTO</class-b>
+		<field>
+			<a>intervinientesAudienciaDOPK.idAudiencia</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>intervinientesAudienciaDOPK.idInterviniente</a>
+			<b>idInterviniente</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstatusAudienciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstatusAudienciaTO</class-b>
+		<field>
+			<a>idEstatusAudiencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ArtFracDelitoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ArticuloFraccionTO</class-b>
+		<field>
+			<a>idArtFracDelito</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idArticulo</a>
+			<b>articulo</b>
+		</field>
+		<field>
+			<a>idFraccion</a>
+			<b>fraccion</b>
+		</field>
+		<field>
+			<a>idDelito</a>
+			<b>idDelito</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DocAudienciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DocAudienciaTO</class-b>
+		<field>
+		   <a>idDocAudiencia</a>
+		   <b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ApelacionFalloDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ApelacionFalloTO</class-b>
+		<field>
+		   <a>idApelacionFallo</a>
+		   <b>id</b>
+		</field>
+		<field>
+		   <a>idApelacion</a>
+		   <b>idApelacion</b>
+		</field>	
+	</mapping>	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AmparoContraDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AmparoContraTO</class-b>
+		<field>
+		   <a>idAmparoContra</a>
+		   <b>id</b>
+		</field>
+		<field>
+		   <a>docAudienciaDO</a>
+		   <b>docAudiencia</b>
+		</field>		
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoAutoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoAutoTO</class-b>
+		<field>
+			<a>idTipoAuto</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoRelDelitoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoRelDelitoTO</class-b>
+		<field>
+			<a>idTipoRelDelito</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AlfabetismoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CondicionAlfabetismoTO</class-b>
+		<field>
+		   <a>idAlfabetismo</a>
+		   <b>id</b>
+		</field>
+	</mapping>	
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AudienciaPersonaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AudienciaPersonaTO</class-b>
+		<field>
+		   <a>idAudienciaPersona</a>
+		   <b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoResolucionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoResolucionTO</class-b>
+		<field>
+		   <a>idTipoResolucion</a>
+		   <b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.GradoConsumacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.GradoConsumacionTO</class-b>
+		<field>
+			<a>idGradoConsumacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SolicitudTranscripcionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SolicitudTranscripcionTO</class-b>
+		<field>
+			<a>idSolicitudTranscripcion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstadoSolicitudDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstadoSolicitudTO</class-b>
+		<field>
+			<a>idEstadoSolicitud</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.IntegraDocYDocCausaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.IntegraDocYDocCausaTO</class-b>
+		<field>
+			<a>idIntegraCausa</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DocUnidadCausaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DocUnidadCausaTO</class-b>
+		<field>
+			<a>idDocUnidadCausa</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SolicitudAudiovisualDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SolicitudAudiovisualTO</class-b>
+		<field>
+			<a>idSolicitudAudiovisual</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CopiaAudiovisualDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CopiaAudiovisualTO</class-b>
+		<field>
+			<a>idCopiaAudiovisual</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CopiaADO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CopiaATO</class-b>
+		<field>
+			<a>idCopiaA</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.PlantillaEstaticaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.PlantillaEstaticaTO</class-b>
+		<field>
+			<a>idPlantillaEstatica</a>
+			<b>id</b>
+		</field>
+		<field>
+		    <a>idArchivoFisicoDO</a>
+		    <b>idArchivoFisico</b>
+		</field>
+		<field>
+		    <a>idArchivoFisicoPDFDO</a>
+		    <b>idArchivoFisicoPDF</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoPlantillaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoPlantillaTO</class-b>
+		<field>
+			<a>idTipoPlantilla</a>
+			<b>id</b>
+		</field>
+	</mapping>	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ReciboDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ReciboTO</class-b>
+		<field>
+			<a>idRecibo</a>
+			<b>id</b>
+		</field>
+	</mapping>	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoReciboDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoReciboTO</class-b>
+		<field>
+			<a>idTipoRecibo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstatusReciboDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstatusReciboTO</class-b>
+		<field>
+			<a>idEstatusRecibo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.RolesDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.RolesTO</class-b>
+		<field>
+			<a>idRol</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idArea</a>
+			<b>area</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.IntermediaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.IntermediaTO</class-b>
+		<field>
+			<a>idIntermedia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstatusEdoProcesalDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstatusEdoProcesalTO</class-b>
+		<field>
+			<a>idEstatusEdoProcesal</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SentenciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SentenciaTO</class-b>
+		<field>
+			<a>idSentencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SancionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SancionTO</class-b>
+		<field>
+			<a>idSancion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoSentenciaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoSentenciaTO</class-b>
+		<field>
+			<a>idTipoSentencia</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoBeneficioDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoBeneficioTO</class-b>
+		<field>
+			<a>idTipoBeneficio</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ImpugnacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ImpugnacionTO</class-b>
+		<field>
+			<a>idImpugnacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CarpetaIntervDelitoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CarpetaIntervDelitoTO</class-b>
+		<field>
+			<a>idCarpetaIntDel</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SentidoImpugnacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SentidoImpugnacionTO</class-b>
+		<field>
+			<a>idSentidoImpugnacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.LibertadDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.LibertadTO</class-b>
+		<field>
+			<a>idLibertad</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.UnidadSancionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.UnidadSancionTO</class-b>
+		<field>
+			<a>idUnidadSancion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.InvestigacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.InvestigacionTO</class-b>
+		<field>
+			<a>idInvestigacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.DetenidoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.DetenidoTO</class-b>
+		<field>
+			<a>idDetenido</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.MandamientoJudicialDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.MandamientoJudicialTO</class-b>
+		<field>
+			<a>idMandamientoJudicial</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ResolucionMandamientoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ResolucionMandamientoTO</class-b>
+		<field>
+			<a>idResolucionMandamiento</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoAutoTerminoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoAutoTerminoTO</class-b>
+		<field>
+			<a>idTipoAutoTermino</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.PlazoCierreInvestigaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.PlazoCierreInvestigaTO</class-b>
+		<field>
+			<a>idPlazoCierreInvestiga</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.JuicioDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.JuicioTO</class-b>
+		<field>
+			<a>idJuicio</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SentenciaResolucionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SentenciaResolucionTO</class-b>
+		<field>
+			<a>idSentenciaResolucion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.MediosProbatoriosDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.MediosProbatoriosTO</class-b>
+		<field>
+			<a>idMediosProbatorios</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.HistDocumentoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.HistDocumentoTO</class-b>
+		<field>
+			<a>idHistDocumento</a>
+			<b>id</b>
+		</field>
+	</mapping>	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.HistArchivoAdjuntoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.HistArchivoAdjuntoTO</class-b>
+		<field>
+			<a>idHistAnexo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstatusCarpetaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstatusCarpetaTO</class-b>
+		<field>
+			<a>idEstatusCarpeta</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping>
+	    <class-a>mx.gob.tab.sigitab.model.OficiosNotificacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.OficiosNotificacionTO</class-b>
+		<field>
+			<a>idOficioNotificacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping>
+	    <class-a>mx.gob.tab.sigitab.model.SolicitudNotificacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SolicitudNotificacionTO</class-b>
+		<field>
+			<a>idSolicitudNotificacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping>
+	    <class-a>mx.gob.tab.sigitab.model.CausaDocDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CausaDocTO</class-b>
+		<field>
+			<a>idCausa</a>
+			<b>id</b>
+		</field>	
+	</mapping>
+	<mapping>
+	    <class-a>mx.gob.tab.sigitab.model.TipoIngresoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoIngresoTO</class-b>
+		<field>
+			<a>idTipoIngreso</a>
+			<b>id</b>
+		</field>	
+	</mapping>
+	<mapping>
+	    <class-a>mx.gob.tab.sigitab.model.TurnoMPDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TurnoMinisterioTO</class-b>
+		<field>
+			<a>idTurnoMP</a>
+			<b>id</b>
+		</field>	
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ApelacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ApelacionTO</class-b>
+		<field>
+			<a>idApelacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ApelacionAutoridadContraDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ApelacionAutoridadContraTO</class-b>
+		<field>
+			<a>idApelacionAutoridadContra</a>
+			<b>id</b>
+		</field>
+	</mapping>	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.CausaTramiteDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.CausaTramiteTO</class-b>
+		<field>
+			<a>idCausaTramite</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoCarpetaInvestigacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoCarpetaInvestigacionTO</class-b>
+		<field>
+			<a>idTipoCarpetaInvestigacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ApelacionInicioDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ApelacionInicioTO</class-b>
+		<field>
+			<a>idApelacionInicio</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ResultadoApelacionDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ResultadoApelacionTO</class-b>
+		<field>
+			<a>idResultadoApelacion</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.SentidoFalloDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.SentidoFalloTO</class-b>
+		<field>
+			<a>idSentidoFallo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ApelFalloIntervinienteDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ApelFalloIntervinienteTO</class-b>
+		<field>
+			<a>apelacionFallo</a>
+			<b>apelacionFallo</b>
+		</field>
+		<field>
+			<a>interviniente</a>
+			<b>interviniente</b>
+		</field>
+	</mapping>
+	
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoAmparoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoAmparoTO</class-b>
+		<field>
+			<a>idTipoAmparo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	
+	
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstadoAmparoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstadoAmparoTO</class-b>
+		<field>
+			<a>idEstadoAmparo</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AmparoAutoridadContraDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AmparoAutoridadContraTO</class-b>
+		<field>
+			<a>idAmparoAutoridadContra</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.AmparoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.AmparoTO</class-b>
+		<field>
+			<a>idAmparo</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>idAmparoAutoridadContra</a>
+			<b>amparoAutoridadContra</b>
+		</field>
+		<field>
+			<a>fechaTermino</a>
+			<b>fhTermino</b>
+		</field>	
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoDocumentoAreaDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoDocumentoAreaTO</class-b>
+		<field>
+			<a>tipoDocumentoAreaDOPK.idArea</a>
+			<b>idArea.id</b>
+		</field>
+		<field>
+			<a>tipoDocumentoAreaDOPK.idTipoDocumento</a>
+			<b>idTipoDocumento.id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.OrigenExhortoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.OrigenExhortoTO</class-b>
+		<field>
+			<a>idOrigenExhorto</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.TipoExhortoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.TipoExhortoTO</class-b>
+		<field>
+			<a>idTipoExhorto</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.EstadoExhortoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.EstadoExhortoTO</class-b>
+		<field>
+			<a>idEstadoExhorto</a>
+			<b>id</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ExhortoDocumentoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ExhortoDocumentoTO</class-b>
+		<field>
+			<a>idDocumento</a>
+			<b>idDocumento</b>
+		</field>
+		<field>
+			<a>idExhorto</a>
+			<b>idExhorto</b>
+		</field>
+	</mapping>
+	<mapping type="bi-directional">
+		<class-a>mx.gob.tab.sigitab.model.ExhortoDO</class-a>
+		<class-b>mx.gob.tab.sigitab.to.ExhortoTO</class-b>
+		<field>
+			<a>idExhorto</a>
+			<b>id</b>
+		</field>
+	</mapping>
+</mappings>
