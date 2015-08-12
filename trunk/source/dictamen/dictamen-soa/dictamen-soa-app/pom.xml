@@ -14,12 +14,12 @@
 	<name>dictamen - soa - app</name>
 
 	<dependencies>
-		<dependency>
+		<!--  dependency>
 			<groupId>mx.gob.imss.cit.dictamen</groupId>
 			<artifactId>dictamen-soa-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
-		</dependency>
+		</dependency-->
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen</groupId>
 			<artifactId>dictamen-soa-services</artifactId>
@@ -45,10 +45,10 @@
 					<generateApplicationXml>false</generateApplicationXml>
 				 	<finalName>${project.ear.final.name}</finalName>
 					<modules>
-						<ejbModule>
+						<!-- ejbModule>
 							<groupId>mx.gob.imss.cit.dictamen</groupId>
 							<artifactId>dictamen-soa-persistence</artifactId>
-						</ejbModule>
+						</ejbModule-->
 						<ejbModule>
 							<groupId>mx.gob.imss.cit.dictamen</groupId>
 							<artifactId>dictamen-soa-services</artifactId>
