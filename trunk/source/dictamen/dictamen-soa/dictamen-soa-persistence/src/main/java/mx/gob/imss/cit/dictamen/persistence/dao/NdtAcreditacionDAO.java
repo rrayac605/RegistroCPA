@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdtAcreditacionDAO;
+import mx.gob.imss.cit.dictamen.model.NdtAcreditacionDO;
 
 @Local
 public interface NdtAcreditacionDAO {
@@ -12,32 +12,32 @@ public interface NdtAcreditacionDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtAcreditacionDAO entity);
+	void create(NdtAcreditacionDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtAcreditacionDAO entity);
+	void edit(NdtAcreditacionDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtAcreditacionDAO entity);
+	void remove(NdtAcreditacionDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdtAcreditacionDAO get(Object id);
+	NdtAcreditacionDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtAcreditacionDAO> findAll();
+	List<NdtAcreditacionDO> findAll();
 	
 	
 	void flush();

@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicTipoSolicitudDAO;
+import mx.gob.imss.cit.dictamen.model.DicTipoSolicitudDO;
 
 @Local
 public interface DicTipoSolicitudDAO {
@@ -12,32 +12,32 @@ public interface DicTipoSolicitudDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicTipoSolicitudDAO entity);
+	void create(DicTipoSolicitudDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicTipoSolicitudDAO entity);
+	void edit(DicTipoSolicitudDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicTipoSolicitudDAO entity);
+	void remove(DicTipoSolicitudDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicTipoSolicitudDAO get(Object id);
+	DicTipoSolicitudDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicTipoSolicitudDAO> findAll();
+	List<DicTipoSolicitudDO> findAll();
 	
 	
 	void flush();

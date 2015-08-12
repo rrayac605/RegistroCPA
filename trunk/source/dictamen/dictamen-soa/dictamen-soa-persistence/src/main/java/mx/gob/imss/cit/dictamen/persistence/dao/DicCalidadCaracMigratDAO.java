@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicCalidadCaracMigratDAO;
+import mx.gob.imss.cit.dictamen.model.DicCalidadCaracMigratDO;
 
 @Local
 public interface DicCalidadCaracMigratDAO {
@@ -12,21 +12,21 @@ public interface DicCalidadCaracMigratDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicCalidadCaracMigratDAO entity);
+	void create(DicCalidadCaracMigratDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicCalidadCaracMigratDAO entity);
+	void edit(DicCalidadCaracMigratDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicCalidadCaracMigratDAO entity);
+	void remove(DicCalidadCaracMigratDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DicCalidadCaracMigratDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicCalidadCaracMigratDAO get(Object id);
+	DicCalidadCaracMigratDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicCalidadCaracMigratDAO> findAll();
+	List<DicCalidadCaracMigratDO> findAll();
 
 	void flush();
 }

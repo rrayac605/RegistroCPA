@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitDocumentoPorTipoDAO;
+import mx.gob.imss.cit.dictamen.model.DitDocumentoPorTipoDO;
 
 @Local
 public interface DitDocumentoPorTipoDAO {
@@ -12,32 +12,32 @@ public interface DitDocumentoPorTipoDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitDocumentoPorTipoDAO entity);
+	void create(DitDocumentoPorTipoDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitDocumentoPorTipoDAO entity);
+	void edit(DitDocumentoPorTipoDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitDocumentoPorTipoDAO entity);
+	void remove(DitDocumentoPorTipoDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitDocumentoPorTipoDAO get(Object id);
+	DitDocumentoPorTipoDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitDocumentoPorTipoDAO> findAll();
+	List<DitDocumentoPorTipoDO> findAll();
 	
 	
 	void flush();

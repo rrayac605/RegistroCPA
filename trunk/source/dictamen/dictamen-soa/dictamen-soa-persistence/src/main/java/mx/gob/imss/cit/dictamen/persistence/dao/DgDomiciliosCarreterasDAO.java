@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DgDomiciliosCarreterasDAO;
+import mx.gob.imss.cit.dictamen.model.DgDomiciliosCarreterasDO;
 
 @Local
 public interface DgDomiciliosCarreterasDAO {
@@ -12,21 +12,21 @@ public interface DgDomiciliosCarreterasDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DgDomiciliosCarreterasDAO entity);
+	void create(DgDomiciliosCarreterasDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DgDomiciliosCarreterasDAO entity);
+	void edit(DgDomiciliosCarreterasDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DgDomiciliosCarreterasDAO entity);
+	void remove(DgDomiciliosCarreterasDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DgDomiciliosCarreterasDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DgDomiciliosCarreterasDAO get(Object id);
+	DgDomiciliosCarreterasDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DgDomiciliosCarreterasDAO> findAll();
+	List<DgDomiciliosCarreterasDO> findAll();
 
 	void flush();
 }

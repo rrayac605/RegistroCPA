@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdtDoctosProbCpaDAO;
+import mx.gob.imss.cit.dictamen.model.NdtDoctosProbCpaDO;
 
 @Local
 public interface NdtDoctosProbCpaDAO {
@@ -12,32 +12,32 @@ public interface NdtDoctosProbCpaDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtDoctosProbCpaDAO entity);
+	void create(NdtDoctosProbCpaDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtDoctosProbCpaDAO entity);
+	void edit(NdtDoctosProbCpaDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtDoctosProbCpaDAO entity);
+	void remove(NdtDoctosProbCpaDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdtDoctosProbCpaDAO get(Object id);
+	NdtDoctosProbCpaDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtDoctosProbCpaDAO> findAll();
+	List<NdtDoctosProbCpaDO> findAll();
 	
 	
 	void flush();

@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DgCatTermGenDAO;
+import mx.gob.imss.cit.dictamen.model.DgCatTermGenDO;
 
 @Local
 public interface DgCatTermGenDAO {
@@ -12,21 +12,21 @@ public interface DgCatTermGenDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DgCatTermGenDAO entity);
+	void create(DgCatTermGenDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DgCatTermGenDAO entity);
+	void edit(DgCatTermGenDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DgCatTermGenDAO entity);
+	void remove(DgCatTermGenDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DgCatTermGenDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DgCatTermGenDAO get(Object id);
+	DgCatTermGenDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DgCatTermGenDAO> findAll();
+	List<DgCatTermGenDO> findAll();
 
 	void flush();
 }

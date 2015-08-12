@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicDocumentoDAO;
+import mx.gob.imss.cit.dictamen.model.DicDocumentoDO;
 
 @Local
 public interface DicDocumentoDAO {
@@ -12,21 +12,21 @@ public interface DicDocumentoDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicDocumentoDAO entity);
+	void create(DicDocumentoDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicDocumentoDAO entity);
+	void edit(DicDocumentoDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicDocumentoDAO entity);
+	void remove(DicDocumentoDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DicDocumentoDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicDocumentoDAO get(Object id);
+	DicDocumentoDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicDocumentoDAO> findAll();
+	List<DicDocumentoDO> findAll();
 
 	void flush();
 }

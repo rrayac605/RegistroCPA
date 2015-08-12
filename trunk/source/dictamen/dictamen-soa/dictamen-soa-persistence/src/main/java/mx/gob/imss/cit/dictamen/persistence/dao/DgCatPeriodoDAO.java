@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DgCatPeriodoDAO;
+import mx.gob.imss.cit.dictamen.model.DgCatPeriodoDO;
 
 @Local
 public interface DgCatPeriodoDAO {
@@ -12,21 +12,21 @@ public interface DgCatPeriodoDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DgCatPeriodoDAO entity);
+	void create(DgCatPeriodoDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DgCatPeriodoDAO entity);
+	void edit(DgCatPeriodoDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DgCatPeriodoDAO entity);
+	void remove(DgCatPeriodoDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DgCatPeriodoDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DgCatPeriodoDAO get(Object id);
+	DgCatPeriodoDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DgCatPeriodoDAO> findAll();
+	List<DgCatPeriodoDO> findAll();
 
 	void flush();
 }

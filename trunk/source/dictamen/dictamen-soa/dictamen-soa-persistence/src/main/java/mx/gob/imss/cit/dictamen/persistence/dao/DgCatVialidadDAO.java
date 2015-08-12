@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DgCatVialidadDAO;
+import mx.gob.imss.cit.dictamen.model.DgCatVialidadDO;
 
 @Local
 public interface DgCatVialidadDAO {
@@ -12,21 +12,21 @@ public interface DgCatVialidadDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DgCatVialidadDAO entity);
+	void create(DgCatVialidadDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DgCatVialidadDAO entity);
+	void edit(DgCatVialidadDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DgCatVialidadDAO entity);
+	void remove(DgCatVialidadDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DgCatVialidadDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DgCatVialidadDAO get(Object id);
+	DgCatVialidadDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DgCatVialidadDAO> findAll();
+	List<DgCatVialidadDO> findAll();
 
 	void flush();
 }

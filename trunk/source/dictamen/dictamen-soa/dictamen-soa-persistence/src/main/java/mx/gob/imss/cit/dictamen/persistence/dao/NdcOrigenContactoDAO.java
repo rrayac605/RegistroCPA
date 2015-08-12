@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdcOrigenContactoDAO;
+import mx.gob.imss.cit.dictamen.model.NdcOrigenContactoDO;
 
 @Local
 public interface NdcOrigenContactoDAO {
@@ -12,32 +12,32 @@ public interface NdcOrigenContactoDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdcOrigenContactoDAO entity);
+	void create(NdcOrigenContactoDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdcOrigenContactoDAO entity);
+	void edit(NdcOrigenContactoDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdcOrigenContactoDAO entity);
+	void remove(NdcOrigenContactoDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdcOrigenContactoDAO get(Object id);
+	NdcOrigenContactoDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdcOrigenContactoDAO> findAll();
+	List<NdcOrigenContactoDO> findAll();
 	
 	
 	void flush();

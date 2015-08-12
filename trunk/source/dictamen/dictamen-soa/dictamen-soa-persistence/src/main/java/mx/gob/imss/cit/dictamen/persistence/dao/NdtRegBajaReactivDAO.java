@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdtRegBajaReactivDAO;
+import mx.gob.imss.cit.dictamen.model.NdtRegBajaReactivDO;
 
 @Local
 public interface NdtRegBajaReactivDAO {	
@@ -12,32 +12,32 @@ public interface NdtRegBajaReactivDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtRegBajaReactivDAO entity);
+	void create(NdtRegBajaReactivDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtRegBajaReactivDAO entity);
+	void edit(NdtRegBajaReactivDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtRegBajaReactivDAO entity);
+	void remove(NdtRegBajaReactivDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdtRegBajaReactivDAO get(Object id);
+	NdtRegBajaReactivDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtRegBajaReactivDAO> findAll();
+	List<NdtRegBajaReactivDO> findAll();
 	
 	
 	void flush();

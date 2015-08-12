@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDAO;
+import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
 
 @Local
 public interface NdtPatronDictamenDAO {
@@ -12,32 +12,32 @@ public interface NdtPatronDictamenDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtPatronDictamenDAO entity);
+	void create(NdtPatronDictamenDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtPatronDictamenDAO entity);
+	void edit(NdtPatronDictamenDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtPatronDictamenDAO entity);
+	void remove(NdtPatronDictamenDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdtPatronDictamenDAO get(Object id);
+	NdtPatronDictamenDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtPatronDictamenDAO> findAll();
+	List<NdtPatronDictamenDO> findAll();
 	
 	
 	void flush();

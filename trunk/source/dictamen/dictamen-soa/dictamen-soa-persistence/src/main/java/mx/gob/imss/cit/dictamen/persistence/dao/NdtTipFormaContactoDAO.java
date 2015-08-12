@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdtTipFormaContactoDAO;
+import mx.gob.imss.cit.dictamen.model.NdtTipFormaContactoDO;
 
 @Local
 public interface NdtTipFormaContactoDAO {
@@ -13,32 +13,32 @@ public interface NdtTipFormaContactoDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtTipFormaContactoDAO entity);
+	void create(NdtTipFormaContactoDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtTipFormaContactoDAO entity);
+	void edit(NdtTipFormaContactoDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtTipFormaContactoDAO entity);
+	void remove(NdtTipFormaContactoDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdtTipFormaContactoDAO get(Object id);
+	NdtTipFormaContactoDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtTipFormaContactoDAO> findAll();
+	List<NdtTipFormaContactoDO> findAll();
 	
 	
 	void flush();

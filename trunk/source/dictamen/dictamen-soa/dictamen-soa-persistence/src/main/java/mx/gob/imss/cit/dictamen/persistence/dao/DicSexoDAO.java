@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicSexoDAO;
+import mx.gob.imss.cit.dictamen.model.DicSexoDO;
 
 @Local
 public interface DicSexoDAO {
@@ -12,32 +12,32 @@ public interface DicSexoDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicSexoDAO entity);
+	void create(DicSexoDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicSexoDAO entity);
+	void edit(DicSexoDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicSexoDAO entity);
+	void remove(DicSexoDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicSexoDAO get(Object id);
+	DicSexoDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicSexoDAO> findAll();
+	List<DicSexoDO> findAll();
 	
 	
 	void flush();

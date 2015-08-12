@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitSituacionSatDAO;
+import mx.gob.imss.cit.dictamen.model.DitSituacionSatDO;
 
 @Local
 public interface DitSituacionSatDAO {
@@ -12,32 +12,32 @@ public interface DitSituacionSatDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitSituacionSatDAO entity);
+	void create(DitSituacionSatDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitSituacionSatDAO entity);
+	void edit(DitSituacionSatDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitSituacionSatDAO entity);
+	void remove(DitSituacionSatDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitSituacionSatDAO get(Object id);
+	DitSituacionSatDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitSituacionSatDAO> findAll();
+	List<DitSituacionSatDO> findAll();
 	
 	
 	void flush();

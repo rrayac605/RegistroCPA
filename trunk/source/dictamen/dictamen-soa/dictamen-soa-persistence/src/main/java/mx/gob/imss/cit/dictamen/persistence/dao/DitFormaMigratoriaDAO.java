@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitFormaMigratoriaDAO;
+import mx.gob.imss.cit.dictamen.model.DitFormaMigratoriaDO;
 
 @Local
 public interface DitFormaMigratoriaDAO {
@@ -12,32 +12,32 @@ public interface DitFormaMigratoriaDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitFormaMigratoriaDAO entity);
+	void create(DitFormaMigratoriaDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitFormaMigratoriaDAO entity);
+	void edit(DitFormaMigratoriaDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitFormaMigratoriaDAO entity);
+	void remove(DitFormaMigratoriaDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitFormaMigratoriaDAO get(Object id);
+	DitFormaMigratoriaDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitFormaMigratoriaDAO> findAll();
+	List<DitFormaMigratoriaDO> findAll();
 	
 	
 	void flush();

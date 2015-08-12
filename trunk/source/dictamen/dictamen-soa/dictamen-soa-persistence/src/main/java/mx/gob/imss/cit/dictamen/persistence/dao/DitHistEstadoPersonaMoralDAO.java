@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitHistEstadoPersonaMoralDAO;
+import mx.gob.imss.cit.dictamen.model.DitHistEstadoPersonaMoralDO;
 
 @Local
 public interface DitHistEstadoPersonaMoralDAO {
@@ -12,32 +12,32 @@ public interface DitHistEstadoPersonaMoralDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitHistEstadoPersonaMoralDAO entity);
+	void create(DitHistEstadoPersonaMoralDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitHistEstadoPersonaMoralDAO entity);
+	void edit(DitHistEstadoPersonaMoralDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitHistEstadoPersonaMoralDAO entity);
+	void remove(DitHistEstadoPersonaMoralDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitHistEstadoPersonaMoralDAO get(Object id);
+	DitHistEstadoPersonaMoralDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitHistEstadoPersonaMoralDAO> findAll();
+	List<DitHistEstadoPersonaMoralDO> findAll();
 	
 	
 	void flush();
