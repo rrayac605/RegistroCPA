@@ -41,7 +41,7 @@ public class NdtAsociacionDO implements Serializable {
 	private DitPersonaMoralDO ditPersonaMoral;
 
 	//bi-directional many-to-one association to NdtColegioContadorDO
-	@OneToMany(mappedBy="ndtAsociacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtAsociacion")
 	private List<NdtColegioContadorDO> ndtColegioContadors;
 
 	public NdtAsociacionDO() {

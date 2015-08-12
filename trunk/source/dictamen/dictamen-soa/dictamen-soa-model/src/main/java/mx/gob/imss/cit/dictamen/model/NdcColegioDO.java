@@ -51,15 +51,15 @@ public class NdcColegioDO implements Serializable {
 	private NdcAsociacionDO ndcAsociacion;
 
 	//bi-directional many-to-one association to NdtAcreditacionDO
-	@OneToMany(mappedBy="ndcColegio")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcColegio")
 	private List<NdtAcreditacionDO> ndtAcreditacions;
 
 	//bi-directional many-to-one association to NdtColegioContactoDO
-	@OneToMany(mappedBy="ndcColegio")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcColegio")
 	private List<NdtColegioContactoDO> ndtColegioContactos;
 
 	//bi-directional many-to-one association to NdtR3ColegioXcontadorDO
-	@OneToMany(mappedBy="ndcColegio")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcColegio")
 	private List<NdtR3ColegioXcontadorDO> ndtR3ColegioXcontadors;
 
 	public NdcColegioDO() {

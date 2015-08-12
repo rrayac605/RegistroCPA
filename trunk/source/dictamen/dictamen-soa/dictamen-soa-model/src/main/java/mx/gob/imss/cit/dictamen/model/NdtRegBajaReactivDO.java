@@ -47,7 +47,7 @@ public class NdtRegBajaReactivDO implements Serializable {
 	private Date fecSolicitudMovimiento;
 
 	//bi-directional many-to-one association to NdtDoctosProbCpaDO
-	@OneToMany(mappedBy="ndtRegBajaReactiv")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtRegBajaReactiv")
 	private List<NdtDoctosProbCpaDO> ndtDoctosProbCpas;
 
 	//bi-directional many-to-one association to DitTramiteDO

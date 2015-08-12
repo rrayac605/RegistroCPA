@@ -46,11 +46,11 @@ public class NdcAsociacionDO implements Serializable {
 	private DgDomicilioGeograficoDO dgDomicilioGeografico;
 
 	//bi-directional many-to-one association to NdcColegioDO
-	@OneToMany(mappedBy="ndcAsociacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcAsociacion")
 	private List<NdcColegioDO> ndcColegios;
 
 	//bi-directional many-to-one association to NdtAsociacionContactoDO
-	@OneToMany(mappedBy="ndcAsociacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcAsociacion")
 	private List<NdtAsociacionContactoDO> ndtAsociacionContactos;
 
 	public NdcAsociacionDO() {

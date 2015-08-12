@@ -39,7 +39,7 @@ public class DicEstadoTramiteDO implements Serializable {
 	private String refSigla;
 
 	//bi-directional many-to-one association to DitTramiteDO
-	@OneToMany(mappedBy="dicEstadoTramite")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicEstadoTramite")
 	private List<DitTramiteDO> ditTramites;
 
 	public DicEstadoTramiteDO() {

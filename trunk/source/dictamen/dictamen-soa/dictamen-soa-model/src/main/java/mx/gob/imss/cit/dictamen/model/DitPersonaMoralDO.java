@@ -51,43 +51,43 @@ public class DitPersonaMoralDO implements Serializable {
 	private String rfc;
 
 	//bi-directional many-to-one association to DitActaConstitutivaDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitActaConstitutivaDO> ditActaConstitutivas;
 
 	//bi-directional many-to-one association to DitDatosCertificadoFielDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitDatosCertificadoFielDO> ditDatosCertificadoFiels;
 
 	//bi-directional many-to-one association to DitDatosPersonaSatDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitDatosPersonaSatDO> ditDatosPersonaSats;
 
 	//bi-directional many-to-one association to DitHistEstadoPersonaMoralDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitHistEstadoPersonaMoralDO> ditHistEstadoPersonaMorals;
 
 	//bi-directional many-to-one association to DitIdentificadorMoralDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitIdentificadorMoralDO> ditIdentificadorMorals;
 
 	//bi-directional many-to-one association to DitPatronSujetoObligadoDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitPatronSujetoObligadoDO> ditPatronSujetoObligados;
 
 	//bi-directional many-to-one association to DitPersonamContactoDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitPersonamContactoDO> ditPersonamContactos;
 
 	//bi-directional many-to-one association to DitPersonamContactoFiscalDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitPersonamContactoFiscalDO> ditPersonamContactoFiscals;
 
 	//bi-directional many-to-one association to DitPersonamDomDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitPersonamDomDO> ditPersonamDoms;
 
 	//bi-directional many-to-one association to DitPersonamDomFiscalDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitPersonamDomFiscalDO> ditPersonamDomFiscals;
 
 	//bi-directional many-to-one association to DicTipoSociedadDO
@@ -96,23 +96,23 @@ public class DitPersonaMoralDO implements Serializable {
 	private DicTipoSociedadDO dicTipoSociedad;
 
 	//bi-directional many-to-one association to DitRepresentanteLegalDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitRepresentanteLegalDO> ditRepresentanteLegals;
 
 	//bi-directional many-to-one association to DitSindicatoDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitSindicatoDO> ditSindicatos;
 
 	//bi-directional many-to-one association to DitSituacionSatDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<DitSituacionSatDO> ditSituacionSats;
 
 	//bi-directional many-to-one association to DitSocioDO
-	@OneToMany(mappedBy="ditPersonaMoral1")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral1")
 	private List<DitSocioDO> ditSocios1;
 
 	//bi-directional many-to-one association to DitSocioDO
-	@OneToMany(mappedBy="ditPersonaMoral2")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral2")
 	private List<DitSocioDO> ditSocios2;
 
 	//bi-directional many-to-many association to DitTramiteDO
@@ -120,11 +120,11 @@ public class DitPersonaMoralDO implements Serializable {
 	private List<DitTramiteDO> ditTramites;
 
 	//bi-directional many-to-one association to NdtAsociacionDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<NdtAsociacionDO> ndtAsociacions;
 
 	//bi-directional many-to-one association to NdtColegioContadorDO
-	@OneToMany(mappedBy="ditPersonaMoral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaMoral")
 	private List<NdtColegioContadorDO> ndtColegioContadors;
 
 	public DitPersonaMoralDO() {

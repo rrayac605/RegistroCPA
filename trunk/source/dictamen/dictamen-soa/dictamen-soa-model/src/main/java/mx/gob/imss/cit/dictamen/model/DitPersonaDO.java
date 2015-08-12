@@ -66,7 +66,7 @@ public class DitPersonaDO implements Serializable {
 	private String rfc;
 
 	//bi-directional many-to-one association to DitFormaMigratoriaDO
-	@OneToMany(mappedBy="ditPersona")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersona")
 	private List<DitFormaMigratoriaDO> ditFormaMigratorias;
 
 	//bi-directional many-to-one association to DgCatEstadoDO
@@ -90,31 +90,31 @@ public class DitPersonaDO implements Serializable {
 	private DicSexoDO dicSexo;
 
 	//bi-directional many-to-one association to DitPersonafContactoDO
-	@OneToMany(mappedBy="ditPersona")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersona")
 	private List<DitPersonafContactoDO> ditPersonafContactos;
 
 	//bi-directional many-to-one association to DitPersonafDomDO
-	@OneToMany(mappedBy="ditPersona")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersona")
 	private List<DitPersonafDomDO> ditPersonafDoms;
 
 	//bi-directional many-to-one association to DitPersonaDefuncionDO
-	@OneToMany(mappedBy="ditPersona")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersona")
 	private List<DitPersonaDefuncionDO> ditPersonaDefuncions;
 
 	//bi-directional many-to-one association to DitPersonaDomExtranjeroDO
-	@OneToMany(mappedBy="ditPersona")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersona")
 	private List<DitPersonaDomExtranjeroDO> ditPersonaDomExtranjeros;
 
 	//bi-directional many-to-one association to DitPersonaFisicaDO
-	@OneToMany(mappedBy="ditPersona")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersona")
 	private List<DitPersonaFisicaDO> ditPersonaFisicas;
 
 	//bi-directional many-to-one association to DitRepresentanteLegalDO
-	@OneToMany(mappedBy="ditPersona")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersona")
 	private List<DitRepresentanteLegalDO> ditRepresentanteLegals;
 
 	//bi-directional many-to-one association to NdtContadorPublicoAutDO
-	@OneToMany(mappedBy="ditPersona")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersona")
 	private List<NdtContadorPublicoAutDO> ndtContadorPublicoAuts;
 
 	public DitPersonaDO() {

@@ -40,19 +40,19 @@ public class DitFormaContactoDO implements Serializable {
 	private Date fecRegistroBaja;
 
 	//bi-directional many-to-one association to NdtAsociacionContactoDO
-	@OneToMany(mappedBy="ditFormaContacto")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditFormaContacto")
 	private List<NdtAsociacionContactoDO> ndtAsociacionContactos;
 
 	//bi-directional many-to-one association to NdtColegioContactoDO
-	@OneToMany(mappedBy="ditFormaContacto")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditFormaContacto")
 	private List<NdtColegioContactoDO> ndtColegioContactos;
 
 	//bi-directional many-to-one association to NdtDespachoContactoDO
-	@OneToMany(mappedBy="ditFormaContacto")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditFormaContacto")
 	private List<NdtDespachoContactoDO> ndtDespachoContactos;
 
 	//bi-directional many-to-one association to NdtTipFormaContactoDO
-	@OneToMany(mappedBy="ditFormaContacto")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditFormaContacto")
 	private List<NdtTipFormaContactoDO> ndtTipFormaContactos;
 
 	public DitFormaContactoDO() {

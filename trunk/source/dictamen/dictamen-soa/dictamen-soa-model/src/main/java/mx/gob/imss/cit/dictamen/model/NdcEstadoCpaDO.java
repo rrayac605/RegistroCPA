@@ -36,11 +36,11 @@ public class NdcEstadoCpaDO implements Serializable {
 	private Date fecRegistroBaja;
 
 	//bi-directional many-to-one association to NdtContadorPublicoAutDO
-	@OneToMany(mappedBy="ndcEstadoCpa")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcEstadoCpa")
 	private List<NdtContadorPublicoAutDO> ndtContadorPublicoAuts;
 
 	//bi-directional many-to-one association to NdtRegBajaReactivDO
-	@OneToMany(mappedBy="ndcEstadoCpa")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcEstadoCpa")
 	private List<NdtRegBajaReactivDO> ndtRegBajaReactivs;
 
 	public NdcEstadoCpaDO() {

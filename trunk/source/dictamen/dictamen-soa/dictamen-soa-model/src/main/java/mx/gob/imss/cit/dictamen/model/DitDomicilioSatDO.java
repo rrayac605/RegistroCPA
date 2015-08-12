@@ -64,11 +64,11 @@ public class DitDomicilioSatDO implements Serializable {
 	private String vialidad;
 
 	//bi-directional many-to-one association to DitPersonafDomFiscalDO
-	@OneToMany(mappedBy="ditDomicilioSat")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditDomicilioSat")
 	private List<DitPersonafDomFiscalDO> ditPersonafDomFiscals;
 
 	//bi-directional many-to-one association to DitPersonamDomFiscalDO
-	@OneToMany(mappedBy="ditDomicilioSat")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditDomicilioSat")
 	private List<DitPersonamDomFiscalDO> ditPersonamDomFiscals;
 
 	public DitDomicilioSatDO() {

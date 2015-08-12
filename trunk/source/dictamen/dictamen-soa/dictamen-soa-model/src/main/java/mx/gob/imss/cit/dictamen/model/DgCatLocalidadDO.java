@@ -42,11 +42,11 @@ public class DgCatLocalidadDO implements Serializable {
 	private DgCatPeriodoDO dgCatPeriodo;
 
 	//bi-directional many-to-one association to DgDomicilioGeograficoDO
-	@OneToMany(mappedBy="dgCatLocalidad")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatLocalidad")
 	private List<DgDomicilioGeograficoDO> dgDomicilioGeograficos;
 
 	//bi-directional many-to-one association to DgVialidadDO
-	@OneToMany(mappedBy="dgCatLocalidad")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatLocalidad")
 	private List<DgVialidadDO> dgVialidads;
 
 	public DgCatLocalidadDO() {
@@ -107,8 +107,6 @@ public class DgCatLocalidadDO implements Serializable {
 	public void setDgDomicilioGeograficos(List<DgDomicilioGeograficoDO> dgDomicilioGeograficos) {
 		this.dgDomicilioGeograficos = dgDomicilioGeograficos;
 	}
-
-	
 
 	public List<DgVialidadDO> getDgVialidads() {
 		return this.dgVialidads;

@@ -125,35 +125,35 @@ public class DgDomicilioGeograficoDO implements Serializable {
 	private DgCodigosPostalesDO dgCodigosPostale;
 
 	//bi-directional many-to-one association to DicDelegacionDO
-	@OneToMany(mappedBy="dgDomicilioGeografico")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgDomicilioGeografico")
 	private List<DicDelegacionDO> dicDelegacions;
 
 	//bi-directional many-to-one association to DicSubdelegacionDO
-	@OneToMany(mappedBy="dgDomicilioGeografico")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgDomicilioGeografico")
 	private List<DicSubdelegacionDO> dicSubdelegacions;
 
 	//bi-directional many-to-one association to DitPersonafDomDO
-	@OneToMany(mappedBy="dgDomicilioGeografico")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgDomicilioGeografico")
 	private List<DitPersonafDomDO> ditPersonafDoms;
 
 	//bi-directional many-to-one association to DitPersonamDomDO
-	@OneToMany(mappedBy="dgDomicilioGeografico")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgDomicilioGeografico")
 	private List<DitPersonamDomDO> ditPersonamDoms;
 
 	//bi-directional many-to-one association to NdcAsociacionDO
-	@OneToMany(mappedBy="dgDomicilioGeografico")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgDomicilioGeografico")
 	private List<NdcAsociacionDO> ndcAsociacions;
 
 	//bi-directional many-to-one association to NdcColegioDO
-	@OneToMany(mappedBy="dgDomicilioGeografico")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgDomicilioGeografico")
 	private List<NdcColegioDO> ndcColegios;
 
 	//bi-directional many-to-one association to NdcDespachoDO
-	@OneToMany(mappedBy="dgDomicilioGeografico")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgDomicilioGeografico")
 	private List<NdcDespachoDO> ndcDespachos;
 
 	//bi-directional many-to-one association to NdtR1DomFiscalDO
-	@OneToMany(mappedBy="dgDomicilioGeografico")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgDomicilioGeografico")
 	private List<NdtR1DomFiscalDO> ndtR1DomFiscals;
 
 	public DgDomicilioGeograficoDO() {

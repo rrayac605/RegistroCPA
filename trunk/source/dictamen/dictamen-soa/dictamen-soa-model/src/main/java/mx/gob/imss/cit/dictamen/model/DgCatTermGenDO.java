@@ -22,11 +22,11 @@ public class DgCatTermGenDO implements Serializable {
 	private String nombre;
 
 	//bi-directional many-to-one association to DgDomiciliosCaminosDO
-	@OneToMany(mappedBy="dgCatTermGen")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatTermGen")
 	private List<DgDomiciliosCaminosDO> dgDomiciliosCaminos;
 
 	//bi-directional many-to-one association to DgDomiciliosCarreterasDO
-	@OneToMany(mappedBy="dgCatTermGen")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatTermGen")
 	private List<DgDomiciliosCarreterasDO> dgDomiciliosCarreteras;
 
 	public DgCatTermGenDO() {

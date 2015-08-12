@@ -46,7 +46,7 @@ public class NdtContadorPublicoAutDO implements Serializable {
 	private String urlAcuseNotaria;
 
 	//bi-directional many-to-one association to NdtAcreditacionDO
-	@OneToMany(mappedBy="ndtContadorPublicoAut")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtContadorPublicoAut")
 	private List<NdtAcreditacionDO> ndtAcreditacions;
 
 	//bi-directional many-to-one association to DitPersonaDO
@@ -73,23 +73,23 @@ public class NdtContadorPublicoAutDO implements Serializable {
 	private List<NdcTipoSancionDO> ndcTipoSancions;
 
 	//bi-directional many-to-one association to NdtPatronDictamenCpaDO
-	@OneToMany(mappedBy="ndtContadorPublicoAut")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtContadorPublicoAut")
 	private List<NdtPatronDictamenCpaDO> ndtPatronDictamenCpas;
 
 	//bi-directional many-to-one association to NdtR1DatosPersonaleDO
-	@OneToMany(mappedBy="ndtContadorPublicoAut")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtContadorPublicoAut")
 	private List<NdtR1DatosPersonaleDO> ndtR1DatosPersonales;
 
 	//bi-directional many-to-one association to NdtR2DespachoDO
-	@OneToMany(mappedBy="ndtContadorPublicoAut")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtContadorPublicoAut")
 	private List<NdtR2DespachoDO> ndtR2Despachos;
 
 	//bi-directional many-to-one association to NdtR3ColegioXcontadorDO
-	@OneToMany(mappedBy="ndtContadorPublicoAut")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtContadorPublicoAut")
 	private List<NdtR3ColegioXcontadorDO> ndtR3ColegioXcontadors;
 
 	//bi-directional many-to-one association to NdtRegBajaReactivDO
-	@OneToMany(mappedBy="ndtContadorPublicoAut")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtContadorPublicoAut")
 	private List<NdtRegBajaReactivDO> ndtRegBajaReactivs;
 
 	public NdtContadorPublicoAutDO() {

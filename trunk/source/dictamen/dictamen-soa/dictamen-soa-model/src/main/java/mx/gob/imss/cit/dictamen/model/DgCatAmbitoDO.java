@@ -21,11 +21,11 @@ public class DgCatAmbitoDO implements Serializable {
 	private String nombre;
 
 	//bi-directional many-to-one association to DgCatLocalidadDO
-	@OneToMany(mappedBy="dgCatAmbito")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatAmbito")
 	private List<DgCatLocalidadDO> dgCatLocalidads;
 
 	//bi-directional many-to-one association to DgVialidadDO
-	@OneToMany(mappedBy="dgCatAmbito")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatAmbito")
 	private List<DgVialidadDO> dgVialidads;
 
 	public DgCatAmbitoDO() {

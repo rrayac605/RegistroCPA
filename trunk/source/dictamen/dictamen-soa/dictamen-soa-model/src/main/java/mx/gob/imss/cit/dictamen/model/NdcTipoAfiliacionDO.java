@@ -36,7 +36,7 @@ public class NdcTipoAfiliacionDO implements Serializable {
 	private Date fecRegistroBaja;
 
 	//bi-directional many-to-one association to NdtPatronDictamenDO
-	@OneToMany(mappedBy="ndcTipoAfiliacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcTipoAfiliacion")
 	private List<NdtPatronDictamenDO> ndtPatronDictamens;
 
 	public NdcTipoAfiliacionDO() {

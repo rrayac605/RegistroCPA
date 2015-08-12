@@ -43,7 +43,7 @@ public class DitDocumentoPorTipoDO implements Serializable {
 	private DicTipoDocumentoProbatorioDO dicTipoDocumentoProbatorio;
 
 	//bi-directional many-to-one association to NdtDoctosProbCpaDO
-	@OneToMany(mappedBy="ditDocumentoPorTipo")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditDocumentoPorTipo")
 	private List<NdtDoctosProbCpaDO> ndtDoctosProbCpas;
 
 	public DitDocumentoPorTipoDO() {

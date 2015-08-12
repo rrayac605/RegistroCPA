@@ -61,7 +61,7 @@ public class DitPatronSujetoObligadoDO implements Serializable {
 	private BigDecimal indPatronConfirmado;
 
 	//bi-directional many-to-one association to DitPatronGeneralDO
-	@OneToMany(mappedBy="ditPatronSujetoObligado")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPatronSujetoObligado")
 	private List<DitPatronGeneralDO> ditPatronGenerals;
 
 	//bi-directional many-to-one association to DitPersonaFisicaDO
@@ -75,15 +75,15 @@ public class DitPatronSujetoObligadoDO implements Serializable {
 	private DitPersonaMoralDO ditPersonaMoral;
 
 	//bi-directional many-to-one association to DitRepresentanteLegalDO
-	@OneToMany(mappedBy="ditPatronSujetoObligado")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPatronSujetoObligado")
 	private List<DitRepresentanteLegalDO> ditRepresentanteLegals;
 
 	//bi-directional many-to-one association to NdtPatronDictamenDO
-	@OneToMany(mappedBy="ditPatronSujetoObligado")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPatronSujetoObligado")
 	private List<NdtPatronDictamenDO> ndtPatronDictamens;
 
 	//bi-directional many-to-one association to NdtR2DespachoDO
-	@OneToMany(mappedBy="ditPatronSujetoObligado")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPatronSujetoObligado")
 	private List<NdtR2DespachoDO> ndtR2Despachos;
 
 	public DitPatronSujetoObligadoDO() {

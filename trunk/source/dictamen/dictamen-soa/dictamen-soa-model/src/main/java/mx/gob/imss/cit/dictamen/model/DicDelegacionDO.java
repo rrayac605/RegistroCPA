@@ -54,7 +54,7 @@ public class DicDelegacionDO implements Serializable {
 	private DgDomicilioGeograficoDO dgDomicilioGeografico;
 
 	//bi-directional many-to-one association to DicSubdelegacionDO
-	@OneToMany(mappedBy="dicDelegacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicDelegacion")
 	private List<DicSubdelegacionDO> dicSubdelegacions;
 
 	public DicDelegacionDO() {

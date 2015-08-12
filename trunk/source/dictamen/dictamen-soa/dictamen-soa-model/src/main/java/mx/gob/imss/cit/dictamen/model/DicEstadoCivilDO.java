@@ -36,7 +36,7 @@ public class DicEstadoCivilDO implements Serializable {
 	private Date fecRegistroBaja;
 
 	//bi-directional many-to-one association to DitPersonaDO
-	@OneToMany(mappedBy="dicEstadoCivil")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicEstadoCivil")
 	private List<DitPersonaDO> ditPersonas;
 
 	public DicEstadoCivilDO() {

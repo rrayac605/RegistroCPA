@@ -43,7 +43,7 @@ public class DitPatronGeneralDO implements Serializable {
 	private DitPatronGeneralDO ditPatronGeneral;
 
 	//bi-directional many-to-one association to DitPatronGeneralDO
-	@OneToMany(mappedBy="ditPatronGeneral")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPatronGeneral")
 	private List<DitPatronGeneralDO> ditPatronGenerals;
 
 	//bi-directional many-to-one association to DitPatronSujetoObligadoDO
