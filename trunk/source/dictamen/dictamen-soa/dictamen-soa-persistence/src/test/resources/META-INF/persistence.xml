@@ -10,8 +10,100 @@
 		<mapping-file>native-queries.xml</mapping-file>
 
 
+		<class>mx.gob.imss.cit.dictamen.model.DgAsentamientoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgAsentamientoDOPK</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatAdministracionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatAmbitoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatDerechosTransitoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatEstadoCpDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatEstadoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatLocalidadDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatLocalidadDOPK</class>		
+		<class>mx.gob.imss.cit.dictamen.model.DgCatMargenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatMunicipioDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatMunicipioDOPK</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatPeriodoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatTermGenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatTipoAsenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatTipoDomDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCatVialidadDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgCodigosPostalesDO</class>									
+		<class>mx.gob.imss.cit.dictamen.model.DgCodigosPostalesDOPK</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgDomicilioGeograficoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgDomiciliosCaminosDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgDomiciliosCarreterasDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DgVialidadDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicCalidadCaracMigratDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicDelegacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicDocumentoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicEstadoCivilDO</class>		
+		<class>mx.gob.imss.cit.dictamen.model.DicEstadoSolicitudDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicEstadoTramiteDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicModuloDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.DicPaisDO</class>
-
+		<class>mx.gob.imss.cit.dictamen.model.DicSexoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicSubdelegacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicTipoDocumentoProbatorioDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicTipoFormaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicTipoSociedadDO</class>	
+		<class>mx.gob.imss.cit.dictamen.model.DicTipoSolicitudDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DicTipoTramiteDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitActaConstitutivaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitDatosCertificadoFielDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitDatosPersonaSatDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitDocumentoPorTipoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitDomicilioSatDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitFormaContactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitFormaMigratoriaDO</class>		
+		<class>mx.gob.imss.cit.dictamen.model.DitHistEstadoPersonaMoralDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitHistEstadoPersonaMoralDOPK</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitIdentificadorMoralDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPatronGeneralDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPatronSujetoObligadoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonaDefuncionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonaDomExtranjeroDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonafContactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonafDomDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonafDomFiscalDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonaFisicaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonamContactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonamContactoFiscalDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonamDomDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonamDomFiscalDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitPersonaMoralDO</class>		
+		<class>mx.gob.imss.cit.dictamen.model.DitRepresentanteLegalDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitSindicatoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitSituacionSatDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitSocioDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitSolicitudDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitTipoContactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.DitTramiteDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcAsociacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcColegioDO</class>	
+		<class>mx.gob.imss.cit.dictamen.model.NdcDespachoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoCpaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcOrigenContactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoAfiliacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoConvenioCotizacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoSancionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtAcreditacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtAsociacionContactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtAsociacionDO</class>		
+		<class>mx.gob.imss.cit.dictamen.model.NdtColegioContactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtColegioContadorDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtDespachoContactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtDoctosProbCpaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtPatronDictamenCpaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtR1DatosPersonaleDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtR1DomFiscalDO</class>	
+		<class>mx.gob.imss.cit.dictamen.model.NdtR2DespachoDO</class>	
+		<class>mx.gob.imss.cit.dictamen.model.NdtR3ColegioXcontadorDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtRegBajaReactivDO</class>	
+		<class>mx.gob.imss.cit.dictamen.model.NdtTipFormaContactoDO</class>	
+		
 		<properties>
 	
 <!-- 		
