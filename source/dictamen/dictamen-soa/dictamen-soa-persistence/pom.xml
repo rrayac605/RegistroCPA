@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
- <parent>
-	    <groupId>mx.gob.imss.cit.dictamen</groupId>
-	    <artifactId>dictamen-soa</artifactId>
-	    <version>1.0</version>
-	  </parent>
+	<parent>
+		<groupId>mx.gob.imss.cit.dictamen</groupId>
+		<artifactId>dictamen-soa</artifactId>
+		<version>1.0</version>
+	</parent>
 	<artifactId>dictamen-soa-persistence</artifactId>
 	<version>${project.parent.version}</version>
 	<name>dictamen - soa - persistence</name>
@@ -39,6 +39,24 @@
 			<artifactId>javaee-api</artifactId>
 			<version>${java-ee.version}</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb.driver.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

@@ -4,12 +4,14 @@
 http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
   version="1.0">
   <!-- Base de datos de la 10.11.6.238 -->
-  <persistence-unit name="SigitabPU" transaction-type="JTA">
+  <persistence-unit name="DictamenPU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>jdbc/dictamenDS</jta-data-source>
     <mapping-file>named-queries.xml</mapping-file>
     <mapping-file>native-queries.xml</mapping-file>
 
+
+    <class>mx.gob.imss.cit.dictamen.model.DicPaisDO</class>
     
     <properties>
       <property name="eclipselink.logging.level" value="${eclipselink.logging.level.project}" />

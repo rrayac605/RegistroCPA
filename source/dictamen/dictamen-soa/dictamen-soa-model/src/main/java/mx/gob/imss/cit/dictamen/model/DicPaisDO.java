@@ -1,9 +1,15 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 /**
@@ -40,14 +46,7 @@ public class DicPaisDO implements Serializable {
 
 	private String siglas;
 
-	//bi-directional many-to-one association to DgCatEstadoDO
-	@OneToMany(mappedBy="dicPai")
-	private List<DgCatEstadoDO> dgCatEstados;
-
-	//bi-directional many-to-one association to DitPersonaDO
-	@OneToMany(mappedBy="dicPai")
-	private List<DitPersonaDO> ditPersonas;
-
+	
 	public DicPaisDO() {
 	}
 
@@ -107,20 +106,8 @@ public class DicPaisDO implements Serializable {
 		this.siglas = siglas;
 	}
 
-	public List<DgCatEstadoDO> getDgCatEstados() {
-		return this.dgCatEstados;
-	}
+	
 
-	public void setDgCatEstados(List<DgCatEstadoDO> dgCatEstados) {
-		this.dgCatEstados = dgCatEstados;
-	}
 
-	public List<DitPersonaDO> getDitPersonas() {
-		return this.ditPersonas;
-	}
-
-	public void setDitPersonas(List<DitPersonaDO> ditPersonas) {
-		this.ditPersonas = ditPersonas;
-	}
 
 }
