@@ -22,7 +22,7 @@ public class DgCatAdministracionDO implements Serializable {
 	private String nombre;
 
 	//bi-directional many-to-one association to DgDomiciliosCarreterasDO
-	@OneToMany(mappedBy="dgCatAdministracion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatAdministracion")
 	private List<DgDomiciliosCarreterasDO> dgDomiciliosCarreteras;
 
 	public DgCatAdministracionDO() {

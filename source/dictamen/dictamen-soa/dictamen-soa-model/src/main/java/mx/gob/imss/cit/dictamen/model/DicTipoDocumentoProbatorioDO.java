@@ -36,7 +36,7 @@ public class DicTipoDocumentoProbatorioDO implements Serializable {
 	private Date fecRegistroBaja;
 
 	//bi-directional many-to-one association to DitDocumentoPorTipoDO
-	@OneToMany(mappedBy="dicTipoDocumentoProbatorio")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicTipoDocumentoProbatorio")
 	private List<DitDocumentoPorTipoDO> ditDocumentoPorTipos;
 
 	public DicTipoDocumentoProbatorioDO() {

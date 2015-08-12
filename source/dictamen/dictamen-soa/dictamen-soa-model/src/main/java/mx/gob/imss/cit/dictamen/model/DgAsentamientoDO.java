@@ -37,11 +37,11 @@ public class DgAsentamientoDO implements Serializable {
 	private DgCatTipoAsenDO dgCatTipoAsen;
 
 	//bi-directional many-to-one association to DgCodigosPostalesDO
-	@OneToMany(mappedBy="dgAsentamiento")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="dgAsentamiento" )
 	private List<DgCodigosPostalesDO> dgCodigosPostales;
 
 	//bi-directional many-to-one association to DgDomicilioGeograficoDO
-	@OneToMany(mappedBy="dgAsentamiento")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="dgAsentamiento")
 	private List<DgDomicilioGeograficoDO> dgDomicilioGeograficos;
 
 	public DgAsentamientoDO() {

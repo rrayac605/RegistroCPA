@@ -67,7 +67,7 @@ public class DicTipoTramiteDO implements Serializable {
 	private List<DicModuloDO> dicModulos;
 
 	//bi-directional many-to-one association to DitTramiteDO
-	@OneToMany(mappedBy="dicTipoTramite")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicTipoTramite")
 	private List<DitTramiteDO> ditTramites;
 
 	public DicTipoTramiteDO() {

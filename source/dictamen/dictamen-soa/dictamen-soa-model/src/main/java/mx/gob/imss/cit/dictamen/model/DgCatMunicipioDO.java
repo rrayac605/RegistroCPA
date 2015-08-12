@@ -22,11 +22,11 @@ public class DgCatMunicipioDO implements Serializable {
 	private String nomMun;
 
 	//bi-directional many-to-one association to DgAsentamientoDO
-	@OneToMany(mappedBy="dgCatMunicipio")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatMunicipio")
 	private List<DgAsentamientoDO> dgAsentamientos;
 
 	//bi-directional many-to-one association to DgCatLocalidadDO
-	@OneToMany(mappedBy="dgCatMunicipio")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatMunicipio")
 	private List<DgCatLocalidadDO> dgCatLocalidads;
 
 	//bi-directional many-to-one association to DgCatEstadoDO
@@ -35,11 +35,11 @@ public class DgCatMunicipioDO implements Serializable {
 	private DgCatEstadoDO dgCatEstado;
 
 	//bi-directional many-to-one association to DitActaConstitutivaDO
-	@OneToMany(mappedBy="dgCatMunicipio")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatMunicipio")
 	private List<DitActaConstitutivaDO> ditActaConstitutivas;
 
 	//bi-directional many-to-one association to DitPersonaDefuncionDO
-	@OneToMany(mappedBy="dgCatMunicipio")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatMunicipio")
 	private List<DitPersonaDefuncionDO> ditPersonaDefuncions;
 
 	public DgCatMunicipioDO() {

@@ -83,7 +83,7 @@ public class NdtPatronDictamenDO implements Serializable {
 	private NdcTipoConvenioCotizacionDO ndcTipoConvenioCotizacion;
 
 	//bi-directional many-to-one association to NdtPatronDictamenCpaDO
-	@OneToMany(mappedBy="ndtPatronDictamen")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndtPatronDictamen")
 	private List<NdtPatronDictamenCpaDO> ndtPatronDictamenCpas;
 
 	public NdtPatronDictamenDO() {

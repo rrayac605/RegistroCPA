@@ -45,19 +45,19 @@ public class DitPersonaFisicaDO implements Serializable {
 	private String rfc;
 
 	//bi-directional many-to-one association to DitDatosCertificadoFielDO
-	@OneToMany(mappedBy="ditPersonaFisica")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaFisica")
 	private List<DitDatosCertificadoFielDO> ditDatosCertificadoFiels;
 
 	//bi-directional many-to-one association to DitDatosPersonaSatDO
-	@OneToMany(mappedBy="ditPersonaFisica")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaFisica")
 	private List<DitDatosPersonaSatDO> ditDatosPersonaSats;
 
 	//bi-directional many-to-one association to DitPatronSujetoObligadoDO
-	@OneToMany(mappedBy="ditPersonaFisica")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaFisica")
 	private List<DitPatronSujetoObligadoDO> ditPatronSujetoObligados;
 
 	//bi-directional many-to-one association to DitPersonafDomFiscalDO
-	@OneToMany(mappedBy="ditPersonaFisica")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaFisica")
 	private List<DitPersonafDomFiscalDO> ditPersonafDomFiscals;
 
 	//bi-directional many-to-one association to DitPersonaDO
@@ -66,15 +66,15 @@ public class DitPersonaFisicaDO implements Serializable {
 	private DitPersonaDO ditPersona;
 
 	//bi-directional many-to-one association to DitRepresentanteLegalDO
-	@OneToMany(mappedBy="ditPersonaFisica")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaFisica")
 	private List<DitRepresentanteLegalDO> ditRepresentanteLegals;
 
 	//bi-directional many-to-one association to DitSituacionSatDO
-	@OneToMany(mappedBy="ditPersonaFisica")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaFisica")
 	private List<DitSituacionSatDO> ditSituacionSats;
 
 	//bi-directional many-to-one association to DitSocioDO
-	@OneToMany(mappedBy="ditPersonaFisica")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditPersonaFisica")
 	private List<DitSocioDO> ditSocios;
 
 	public DitPersonaFisicaDO() {

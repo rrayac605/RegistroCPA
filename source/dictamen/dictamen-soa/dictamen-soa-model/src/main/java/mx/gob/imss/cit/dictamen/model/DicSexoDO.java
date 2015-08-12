@@ -36,7 +36,7 @@ public class DicSexoDO implements Serializable {
 	private Date fecRegistroBaja;
 
 	//bi-directional many-to-one association to DitPersonaDO
-	@OneToMany(mappedBy="dicSexo")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicSexo")
 	private List<DitPersonaDO> ditPersonas;
 
 	public DicSexoDO() {

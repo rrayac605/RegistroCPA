@@ -26,7 +26,7 @@ public class DgCatPeriodoDO implements Serializable {
 	private Date fecha;
 
 	//bi-directional many-to-one association to DgCatLocalidadDO
-	@OneToMany(mappedBy="dgCatPeriodo")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatPeriodo")
 	private List<DgCatLocalidadDO> dgCatLocalidads;
 
 	public DgCatPeriodoDO() {

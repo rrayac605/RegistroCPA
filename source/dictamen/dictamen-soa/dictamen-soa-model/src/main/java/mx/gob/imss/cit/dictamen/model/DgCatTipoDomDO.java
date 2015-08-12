@@ -25,7 +25,7 @@ public class DgCatTipoDomDO implements Serializable {
 	private String descripcion;
 
 	//bi-directional many-to-one association to DgDomicilioGeograficoDO
-	@OneToMany(mappedBy="dgCatTipoDom")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatTipoDom")
 	private List<DgDomicilioGeograficoDO> dgDomicilioGeograficos;
 
 	public DgCatTipoDomDO() {

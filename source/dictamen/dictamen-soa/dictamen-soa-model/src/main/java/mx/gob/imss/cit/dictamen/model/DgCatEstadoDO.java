@@ -37,15 +37,15 @@ public class DgCatEstadoDO implements Serializable {
 	private DgCatEstadoCpDO dgCatEstadoCp;
 
 	//bi-directional many-to-one association to DgCatMunicipioDO
-	@OneToMany(mappedBy="dgCatEstado")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatEstado")
 	private List<DgCatMunicipioDO> dgCatMunicipios;
 
 	//bi-directional many-to-one association to DitPersonaDO
-	@OneToMany(mappedBy="dgCatEstado")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatEstado")
 	private List<DitPersonaDO> ditPersonas;
 
 	//bi-directional many-to-one association to DitSocioDO
-	@OneToMany(mappedBy="dgCatEstado")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dgCatEstado")
 	private List<DitSocioDO> ditSocios;
 
 	public DgCatEstadoDO() {

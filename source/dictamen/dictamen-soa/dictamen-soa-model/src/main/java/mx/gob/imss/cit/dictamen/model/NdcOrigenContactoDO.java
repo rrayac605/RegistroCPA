@@ -23,7 +23,7 @@ public class NdcOrigenContactoDO implements Serializable {
 	private String desTablaOrigen;
 
 	//bi-directional many-to-one association to NdtTipFormaContactoDO
-	@OneToMany(mappedBy="ndcOrigenContacto")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcOrigenContacto")
 	private List<NdtTipFormaContactoDO> ndtTipFormaContactos;
 
 	public NdcOrigenContactoDO() {

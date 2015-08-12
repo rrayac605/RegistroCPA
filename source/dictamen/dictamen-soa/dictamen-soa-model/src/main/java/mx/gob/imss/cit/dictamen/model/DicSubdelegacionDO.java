@@ -52,19 +52,19 @@ public class DicSubdelegacionDO implements Serializable {
 	private DicDelegacionDO dicDelegacion;
 
 	//bi-directional many-to-one association to DitSolicitudDO
-	@OneToMany(mappedBy="dicSubdelegacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicSubdelegacion")
 	private List<DitSolicitudDO> ditSolicituds;
 
 	//bi-directional many-to-one association to NdtPatronDictamenDO
-	@OneToMany(mappedBy="dicSubdelegacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicSubdelegacion")
 	private List<NdtPatronDictamenDO> ndtPatronDictamens;
 
 	//bi-directional many-to-one association to NdtR1DatosPersonaleDO
-	@OneToMany(mappedBy="dicSubdelegacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicSubdelegacion")
 	private List<NdtR1DatosPersonaleDO> ndtR1DatosPersonales;
 
 	//bi-directional many-to-one association to NdtR1DomFiscalDO
-	@OneToMany(mappedBy="dicSubdelegacion")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="dicSubdelegacion")
 	private List<NdtR1DomFiscalDO> ndtR1DomFiscals;
 
 	public DicSubdelegacionDO() {

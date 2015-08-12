@@ -99,27 +99,27 @@ public class DitTramiteDO implements Serializable {
 	private DitSolicitudDO ditSolicitud;
 
 	//bi-directional many-to-one association to NdtAcreditacionDO
-	@OneToMany(mappedBy="ditTramite")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditTramite")
 	private List<NdtAcreditacionDO> ndtAcreditacions;
 
 	//bi-directional many-to-one association to NdtR1DatosPersonaleDO
-	@OneToMany(mappedBy="ditTramite")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditTramite")
 	private List<NdtR1DatosPersonaleDO> ndtR1DatosPersonales;
 
 	//bi-directional many-to-one association to NdtR1DomFiscalDO
-	@OneToMany(mappedBy="ditTramite")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditTramite")
 	private List<NdtR1DomFiscalDO> ndtR1DomFiscals;
 
 	//bi-directional many-to-one association to NdtR2DespachoDO
-	@OneToMany(mappedBy="ditTramite")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditTramite")
 	private List<NdtR2DespachoDO> ndtR2Despachos;
 
 	//bi-directional many-to-one association to NdtR3ColegioXcontadorDO
-	@OneToMany(mappedBy="ditTramite")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditTramite")
 	private List<NdtR3ColegioXcontadorDO> ndtR3ColegioXcontadors;
 
 	//bi-directional many-to-one association to NdtRegBajaReactivDO
-	@OneToMany(mappedBy="ditTramite")
+	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ditTramite")
 	private List<NdtRegBajaReactivDO> ndtRegBajaReactivs;
 
 	public DitTramiteDO() {
