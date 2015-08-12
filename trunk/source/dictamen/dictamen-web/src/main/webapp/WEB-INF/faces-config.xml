@@ -5,22 +5,20 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 	version="2.0">
 
+	<lifecycle>
+		<phase-listener>com.liferay.faces.util.lifecycle.DebugPhaseListener</phase-listener>
+	</lifecycle>
+
 	<application>
 		<locale-config>
-			<default-locale>es_MX</default-locale>
+			<default-locale>en</default-locale>
 		</locale-config>
 		<resource-bundle>
 			<base-name>bundles.messages</base-name>
 			<var>msg</var>
 		</resource-bundle>
-		<resource-bundle>
-			<base-name>bundles.messages_notificacion</base-name>
-			<var>msgError</var>
-		</resource-bundle>
+		<message-bundle>bundles.customMessages</message-bundle>
+		<message-bundle>resources.application</message-bundle>
 	</application>
 
-	<navigation-rule>
-	
-	
-	</navigation-rule>
 </faces-config>

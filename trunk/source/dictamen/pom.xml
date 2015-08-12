@@ -70,6 +70,7 @@
 		<commons-fileupload.version>1.2.1</commons-fileupload.version> 		<!-- portal -->
 		<commons-io.version>1.3.2</commons-io.version> 						<!-- portal -->
 		<poi.version>3.8</poi.version> 										<!-- model -->
+		<apache.velocity.version>1.7</apache.velocity.version>
 		<!-- plugins -->
 		<resources-plugin.version>2.4.3</resources-plugin.version> 			<!-- portal -->
 		<maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version> 	<!-- portal -->
@@ -90,6 +91,8 @@
 		<jsf-api.version>2.1.21</jsf-api.version> 							<!-- portal -->
 		<javax.persistence.version>2.0.0</javax.persistence.version> 		<!-- model -->
 		<jstl.version>1.2</jstl.version> 									<!-- portal -->
+		<javax-el-api.version>1.0</javax-el-api.version>
+		<javax-portlet-api.version>2.0</javax-portlet-api.version>
 		<el-impl.version>2.2</el-impl.version> 								<!-- portal -->
 		<xmlbeans.version>2.4.0</xmlbeans.version> 							<!-- services -->
 		<!-- Prime Faces -->
@@ -102,6 +105,20 @@
 		<jtdsdriver.version>1.2.4</jtdsdriver.version>  					<!-- persistence -->
 		<persistence.api.version>1.0</persistence.api.version> 				<!-- persistence -->
 		<hsqldb.driver.version>1.8.0.10</hsqldb.driver.version>				<!-- persistence, services -->
+		<!-- Liferay -->
+		<liferay-bridge.version>3.2.4-ga5</liferay-bridge.version>
+		<liferay-portal.version>6.2.1</liferay-portal.version>
+		<jboss-el.version>2.0.0.GA</jboss-el.version>
+		<liferay-maven-plugin.version>6.2.10.6</liferay-maven-plugin.version>
+	
+		<!-- Configuracion jasper Report -->
+		<commons-collections>3.0</commons-collections>
+		<jasperreport>5.6.1</jasperreport>
+		<commons-logging-3>1.1.3</commons-logging-3>
+		<commons-logging-1>1.1.1</commons-logging-1>
+		<commons-digester>2.1</commons-digester>
+		<commons-beanutils>1.9.0</commons-beanutils>
+		<com.lowagie.text>2.1.7</com.lowagie.text>
 	</properties>
 
 
