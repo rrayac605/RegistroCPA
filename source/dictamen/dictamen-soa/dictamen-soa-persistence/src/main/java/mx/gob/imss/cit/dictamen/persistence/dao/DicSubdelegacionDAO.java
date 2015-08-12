@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicSubdelegacionDAO;
+import mx.gob.imss.cit.dictamen.model.DicSubdelegacionDO;
 
 @Local
 public interface DicSubdelegacionDAO {
@@ -12,32 +12,32 @@ public interface DicSubdelegacionDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicSubdelegacionDAO entity);
+	void create(DicSubdelegacionDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicSubdelegacionDAO entity);
+	void edit(DicSubdelegacionDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicSubdelegacionDAO entity);
+	void remove(DicSubdelegacionDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicSubdelegacionDAO get(Object id);
+	DicSubdelegacionDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicSubdelegacionDAO> findAll();
+	List<DicSubdelegacionDO> findAll();
 	
 	
 	void flush();

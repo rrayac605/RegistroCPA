@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDAO;
+import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
 
 @Local
 public interface NdtContadorPublicoAutDAO {
@@ -12,32 +12,32 @@ public interface NdtContadorPublicoAutDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtContadorPublicoAutDAO entity);
+	void create(NdtContadorPublicoAutDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtContadorPublicoAutDAO entity);
+	void edit(NdtContadorPublicoAutDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtContadorPublicoAutDAO entity);
+	void remove(NdtContadorPublicoAutDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdtContadorPublicoAutDAO get(Object id);
+	NdtContadorPublicoAutDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtContadorPublicoAutDAO> findAll();
+	List<NdtContadorPublicoAutDO> findAll();
 	
 	
 	void flush();

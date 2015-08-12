@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DgCodigosPostalesDAO;
+import mx.gob.imss.cit.dictamen.model.DgCodigosPostalesDO;
 
 @Local
 public interface DgCodigosPostalesDAO {
@@ -12,21 +12,21 @@ public interface DgCodigosPostalesDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DgCodigosPostalesDAO entity);
+	void create(DgCodigosPostalesDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DgCodigosPostalesDAO entity);
+	void edit(DgCodigosPostalesDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DgCodigosPostalesDAO entity);
+	void remove(DgCodigosPostalesDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DgCodigosPostalesDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DgCodigosPostalesDAO get(Object id);
+	DgCodigosPostalesDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DgCodigosPostalesDAO> findAll();
+	List<DgCodigosPostalesDO> findAll();
 
 	void flush();
 }

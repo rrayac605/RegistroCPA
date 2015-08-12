@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdcColegioDAO;
+import mx.gob.imss.cit.dictamen.model.NdcColegioDO;
 
 @Local
 public interface NdcColegioDAO {
@@ -12,32 +12,32 @@ public interface NdcColegioDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdcColegioDAO entity);
+	void create(NdcColegioDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdcColegioDAO entity);
+	void edit(NdcColegioDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdcColegioDAO entity);
+	void remove(NdcColegioDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdcColegioDAO get(Object id);
+	NdcColegioDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdcColegioDAO> findAll();
+	List<NdcColegioDO> findAll();
 	
 	
 	void flush();

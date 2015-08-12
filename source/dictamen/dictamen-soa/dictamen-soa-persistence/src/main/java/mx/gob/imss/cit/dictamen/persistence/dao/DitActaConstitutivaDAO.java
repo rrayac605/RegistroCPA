@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitActaConstitutivaDAO;
+import mx.gob.imss.cit.dictamen.model.DitActaConstitutivaDO;
 
 @Local
 public interface DitActaConstitutivaDAO {
@@ -12,32 +12,32 @@ public interface DitActaConstitutivaDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitActaConstitutivaDAO entity);
+	void create(DitActaConstitutivaDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitActaConstitutivaDAO entity);
+	void edit(DitActaConstitutivaDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitActaConstitutivaDAO entity);
+	void remove(DitActaConstitutivaDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitActaConstitutivaDAO get(Object id);
+	DitActaConstitutivaDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitActaConstitutivaDAO> findAll();
+	List<DitActaConstitutivaDO> findAll();
 	
 	
 	void flush();

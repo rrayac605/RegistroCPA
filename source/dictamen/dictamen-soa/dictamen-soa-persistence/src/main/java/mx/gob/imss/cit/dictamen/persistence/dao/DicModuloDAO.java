@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicModuloDAO;
+import mx.gob.imss.cit.dictamen.model.DicModuloDO;
 
 @Local
 public interface DicModuloDAO {
@@ -12,32 +12,32 @@ public interface DicModuloDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicModuloDAO entity);
+	void create(DicModuloDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicModuloDAO entity);
+	void edit(DicModuloDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicModuloDAO entity);
+	void remove(DicModuloDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicModuloDAO get(Object id);
+	DicModuloDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicModuloDAO> findAll();
+	List<DicModuloDO> findAll();
 	
 	
 	void flush();

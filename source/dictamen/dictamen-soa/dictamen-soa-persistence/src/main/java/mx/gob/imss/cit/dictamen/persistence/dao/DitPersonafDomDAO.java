@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitPersonafDomDAO;
+import mx.gob.imss.cit.dictamen.model.DitPersonafDomDO;
 
 @Local
 public interface DitPersonafDomDAO {
@@ -12,32 +12,32 @@ public interface DitPersonafDomDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitPersonafDomDAO entity);
+	void create(DitPersonafDomDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitPersonafDomDAO entity);
+	void edit(DitPersonafDomDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitPersonafDomDAO entity);
+	void remove(DitPersonafDomDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitPersonafDomDAO get(Object id);
+	DitPersonafDomDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitPersonafDomDAO> findAll();
+	List<DitPersonafDomDO> findAll();
 	
 	
 	void flush();

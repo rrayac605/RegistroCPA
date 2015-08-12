@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DgCatMargenDAO;
+import mx.gob.imss.cit.dictamen.model.DgCatMargenDO;
 
 @Local
 public interface DgCatMargenDAO {
@@ -12,21 +12,21 @@ public interface DgCatMargenDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DgCatMargenDAO entity);
+	void create(DgCatMargenDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DgCatMargenDAO entity);
+	void edit(DgCatMargenDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DgCatMargenDAO entity);
+	void remove(DgCatMargenDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DgCatMargenDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DgCatMargenDAO get(Object id);
+	DgCatMargenDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DgCatMargenDAO> findAll();
+	List<DgCatMargenDO> findAll();
 
 	void flush();
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitIdentificadorMoralDAO;
+import mx.gob.imss.cit.dictamen.model.DitIdentificadorMoralDO;
 
 @Local
 public interface DitIdentificadorMoralDAO {
@@ -12,32 +12,32 @@ public interface DitIdentificadorMoralDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitIdentificadorMoralDAO entity);
+	void create(DitIdentificadorMoralDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitIdentificadorMoralDAO entity);
+	void edit(DitIdentificadorMoralDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitIdentificadorMoralDAO entity);
+	void remove(DitIdentificadorMoralDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitIdentificadorMoralDAO get(Object id);
+	DitIdentificadorMoralDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitIdentificadorMoralDAO> findAll();
+	List<DitIdentificadorMoralDO> findAll();
 	
 	
 	void flush();

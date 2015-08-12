@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicEstadoTramiteDAO;
+import mx.gob.imss.cit.dictamen.model.DicEstadoTramiteDO;
 
 @Local
 public interface DicEstadoTramiteDAO {
@@ -12,32 +12,32 @@ public interface DicEstadoTramiteDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicEstadoTramiteDAO entity);
+	void create(DicEstadoTramiteDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicEstadoTramiteDAO entity);
+	void edit(DicEstadoTramiteDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicEstadoTramiteDAO entity);
+	void remove(DicEstadoTramiteDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicEstadoTramiteDAO get(Object id);
+	DicEstadoTramiteDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicEstadoTramiteDAO> findAll();
+	List<DicEstadoTramiteDO> findAll();
 	
 	
 	void flush();

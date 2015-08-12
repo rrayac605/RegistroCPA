@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DgCatDerechosTransitoDAO;
+import mx.gob.imss.cit.dictamen.model.DgCatDerechosTransitoDO;
 
 @Local
 public interface DgCatDerechosTransitoDAO {
@@ -12,21 +12,21 @@ public interface DgCatDerechosTransitoDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DgCatDerechosTransitoDAO entity);
+	void create(DgCatDerechosTransitoDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DgCatDerechosTransitoDAO entity);
+	void edit(DgCatDerechosTransitoDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DgCatDerechosTransitoDAO entity);
+	void remove(DgCatDerechosTransitoDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DgCatDerechosTransitoDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DgCatDerechosTransitoDAO get(Object id);
+	DgCatDerechosTransitoDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DgCatDerechosTransitoDAO> findAll();
+	List<DgCatDerechosTransitoDO> findAll();
 
 	void flush();
 }

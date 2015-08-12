@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdtR1DatosPersonaleDAO;
+import mx.gob.imss.cit.dictamen.model.NdtR1DatosPersonaleDO;
 
 @Local
 public interface NdtR1DatosPersonaleDAO {
@@ -12,32 +12,32 @@ public interface NdtR1DatosPersonaleDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtR1DatosPersonaleDAO entity);
+	void create(NdtR1DatosPersonaleDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtR1DatosPersonaleDAO entity);
+	void edit(NdtR1DatosPersonaleDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtR1DatosPersonaleDAO entity);
+	void remove(NdtR1DatosPersonaleDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdtR1DatosPersonaleDAO get(Object id);
+	NdtR1DatosPersonaleDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtR1DatosPersonaleDAO> findAll();
+	List<NdtR1DatosPersonaleDO> findAll();
 	
 	
 	void flush();

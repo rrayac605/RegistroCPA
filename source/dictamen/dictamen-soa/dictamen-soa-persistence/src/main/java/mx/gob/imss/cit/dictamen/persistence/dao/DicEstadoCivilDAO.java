@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicEstadoCivilDAO;
+import mx.gob.imss.cit.dictamen.model.DicEstadoCivilDO;
 
 @Local
 public interface DicEstadoCivilDAO {
@@ -12,32 +12,32 @@ public interface DicEstadoCivilDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicEstadoCivilDAO entity);
+	void create(DicEstadoCivilDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicEstadoCivilDAO entity);
+	void edit(DicEstadoCivilDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicEstadoCivilDAO entity);
+	void remove(DicEstadoCivilDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicEstadoCivilDAO get(Object id);
+	DicEstadoCivilDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicEstadoCivilDAO> findAll();
+	List<DicEstadoCivilDO> findAll();
 	
 	
 	void flush();

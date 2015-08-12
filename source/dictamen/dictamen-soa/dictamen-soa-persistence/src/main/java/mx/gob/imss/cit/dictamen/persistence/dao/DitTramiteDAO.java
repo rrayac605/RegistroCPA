@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitTramiteDAO;
+import mx.gob.imss.cit.dictamen.model.DitTramiteDO;
 
 @Local
 public interface DitTramiteDAO {
@@ -12,32 +12,32 @@ public interface DitTramiteDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitTramiteDAO entity);
+	void create(DitTramiteDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitTramiteDAO entity);
+	void edit(DitTramiteDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitTramiteDAO entity);
+	void remove(DitTramiteDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitTramiteDAO get(Object id);
+	DitTramiteDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitTramiteDAO> findAll();
+	List<DitTramiteDO> findAll();
 	
 	
 	void flush();

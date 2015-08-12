@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DgCatTipoAsenDAO;
+import mx.gob.imss.cit.dictamen.model.DgCatTipoAsenDO;
 
 @Local
 public interface DgCatTipoAsenDAO {
@@ -12,21 +12,21 @@ public interface DgCatTipoAsenDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DgCatTipoAsenDAO entity);
+	void create(DgCatTipoAsenDO entity);
 
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DgCatTipoAsenDAO entity);
+	void edit(DgCatTipoAsenDO entity);
 
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DgCatTipoAsenDAO entity);
+	void remove(DgCatTipoAsenDO entity);
 
 	/**
 	 * Metodo de busqueda por Id.
@@ -34,14 +34,14 @@ public interface DgCatTipoAsenDAO {
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DgCatTipoAsenDAO get(Object id);
+	DgCatTipoAsenDO get(Object id);
 
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DgCatTipoAsenDAO> findAll();
+	List<DgCatTipoAsenDO> findAll();
 
 	void flush();
 }

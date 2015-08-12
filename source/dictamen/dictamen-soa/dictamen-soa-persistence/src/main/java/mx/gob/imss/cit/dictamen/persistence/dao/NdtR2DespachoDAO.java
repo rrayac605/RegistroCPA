@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.NdtR2DespachoDAO;
+import mx.gob.imss.cit.dictamen.model.NdtR2DespachoDO;
 
 @Local
 public interface NdtR2DespachoDAO {
@@ -12,32 +12,32 @@ public interface NdtR2DespachoDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtR2DespachoDAO entity);
+	void create(NdtR2DespachoDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtR2DespachoDAO entity);
+	void edit(NdtR2DespachoDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtR2DespachoDAO entity);
+	void remove(NdtR2DespachoDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	NdtR2DespachoDAO get(Object id);
+	NdtR2DespachoDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtR2DespachoDAO> findAll();
+	List<NdtR2DespachoDO> findAll();
 	
 	
 	void flush();

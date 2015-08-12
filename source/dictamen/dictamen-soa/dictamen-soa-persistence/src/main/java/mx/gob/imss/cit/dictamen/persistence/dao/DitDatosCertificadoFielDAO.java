@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DitDatosCertificadoFielDAO;
+import mx.gob.imss.cit.dictamen.model.DitDatosCertificadoFielDO;
 
 @Local
 public interface DitDatosCertificadoFielDAO {
@@ -12,32 +12,32 @@ public interface DitDatosCertificadoFielDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DitDatosCertificadoFielDAO entity);
+	void create(DitDatosCertificadoFielDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DitDatosCertificadoFielDAO entity);
+	void edit(DitDatosCertificadoFielDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DitDatosCertificadoFielDAO entity);
+	void remove(DitDatosCertificadoFielDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DitDatosCertificadoFielDAO get(Object id);
+	DitDatosCertificadoFielDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DitDatosCertificadoFielDAO> findAll();
+	List<DitDatosCertificadoFielDO> findAll();
 	
 	
 	void flush();

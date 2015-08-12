@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.dictamen.model.DicTipoDocumentoProbatorioDAO;
+import mx.gob.imss.cit.dictamen.model.DicTipoDocumentoProbatorioDO;
 
 @Local
 public interface DicTipoDocumentoProbatorioDAO {
@@ -12,32 +12,32 @@ public interface DicTipoDocumentoProbatorioDAO {
 	 *
 	 * @param entity the entity
 	 */
-	void create(DicTipoDocumentoProbatorioDAO entity);
+	void create(DicTipoDocumentoProbatorioDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(DicTipoDocumentoProbatorioDAO entity);
+	void edit(DicTipoDocumentoProbatorioDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(DicTipoDocumentoProbatorioDAO entity);
+	void remove(DicTipoDocumentoProbatorioDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the AliasPersonaDO do
 	 */
-	DicTipoDocumentoProbatorioDAO get(Object id);
+	DicTipoDocumentoProbatorioDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<DicTipoDocumentoProbatorioDAO> findAll();
+	List<DicTipoDocumentoProbatorioDO> findAll();
 	
 	
 	void flush();
