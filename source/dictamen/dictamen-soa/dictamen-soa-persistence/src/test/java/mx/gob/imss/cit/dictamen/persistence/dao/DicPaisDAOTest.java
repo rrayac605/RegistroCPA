@@ -3,7 +3,7 @@ package mx.gob.imss.cit.dictamen.persistence.dao;
 import java.util.List;
 
 import mx.gob.imss.cit.dictamen.model.DicPaisDO;
-import mx.gob.imss.cit.dictamen.persistence.dao.base.AbstractDBEJBTestUnit;
+import mx.gob.imss.cit.dictamen.persistence.dao.base.AbstractDBTestUnit;
 import mx.gob.imss.cit.dictamen.persistence.dao.impl.DicPaisDAOImpl;
 
 import org.apache.log4j.Logger;
@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author emartinezo
  * 
  */
-public class DicPaisDAOTest extends AbstractDBEJBTestUnit {
+public class DicPaisDAOTest extends AbstractDBTestUnit {
 	
 	private DicPaisDAO dicPaisDAO = new DicPaisDAOImpl();
 
@@ -31,7 +31,6 @@ public class DicPaisDAOTest extends AbstractDBEJBTestUnit {
 		// Llamar la prueba padre para obtener el EntityManager
 		super.setUp();
 		// Llamar los datos de negocio
-	//	this.initializeData("dataset/business/pollServiceTest.sql");
 		// Conectar el EntityManager al servicio y sus daos
 		connect(dicPaisDAO);
 
@@ -39,6 +38,7 @@ public class DicPaisDAOTest extends AbstractDBEJBTestUnit {
 
 	@Test
 	public void testFindAll() {
+		LOG.info("prueba");
 		List<DicPaisDO> resultList = dicPaisDAO.findAll();
 		LOG.info("Lista: " + resultList.size());
 		Assert.assertNotNull(resultList);

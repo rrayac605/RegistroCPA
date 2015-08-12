@@ -9,6 +9,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.ejb.EJB;
 import javax.persistence.EntityManager;
@@ -29,7 +30,7 @@ import org.junit.Before;
  * 
  * @author ajfuentes
  */
-public abstract class AbstractDBEJBTestUnit
+public abstract class AbstractDBTestUnit
 {
 
   public Map<Class<?>, Class<?>> mapDAO;
@@ -39,24 +40,36 @@ public abstract class AbstractDBEJBTestUnit
   @Before
   public void setUp()
   {
+	  Properties prop = new Properties();
+	  try {
+		prop.load(AbstractDBTestUnit.class.getClassLoader().getResourceAsStream("db_embedida.properties"));
+	} catch (IOException e) {
+	
+		e.printStackTrace();
+	}
+	
     if( em == null )
     {
 
-      EntityManagerFactory emf = Persistence.createEntityManagerFactory( "DictamenPUHSQLDBTest" );
+      EntityManagerFactory emf = Persistence.createEntityManagerFactory( "DictamenPUTest" );
       em = emf.createEntityManager();
       // Agregar la relación de daos y sus implementaciones
       initMapDAO();
-      // Llamar la inicialización de los catálogos
-      initializeData( "dataset/init.sql" );
+
+      if( !em.getTransaction().isActive() ) {
+        em.getTransaction().begin();
+      }
+      
+      if("true".equals(prop.getProperty("db_embedida"))){
+    	  initializeData( "dataset/init.sql" );
+      }
+     
     }
   }
 
   public void initializeData( String path )
   {
-    if( !em.getTransaction().isActive() )
-    {
-      em.getTransaction().begin();
-    }
+    
 
     InputStream is = ClassLoader.getSystemResourceAsStream( path );
     InputStreamReader isr = new InputStreamReader( is );
