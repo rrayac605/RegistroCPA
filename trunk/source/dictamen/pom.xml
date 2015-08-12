@@ -1,150 +1,174 @@
 ﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>mx.gob.imss.cit.dictamen</groupId>
-  <artifactId>dictamen</artifactId>
-  <version>1.0</version>
-  <packaging>pom</packaging>
-  <name>dictamen</name>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mx.gob.imss.cit.dictamen</groupId>
+	<artifactId>dictamen</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>dictamen</name>
 
-  <modules>
-    <module>dictamen-soa</module>
-    <module>dictamen-web</module>
-    <module>dictamen-ws</module>
-  </modules>
+	<modules>
+		<module>dictamen-soa</module>
+		<module>dictamen-web</module>
+		<module>dictamen-ws</module>
+	</modules>
 
-  <profiles>
-    <profile>
-      <id>local</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-    </profile>
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<javax.persistence.jdbc.driver>org.hsqldb.jdbcDriver</javax.persistence.jdbc.driver>
+				<javax.persistence.jdbc.url>jdbc:hsqldb:mem:testdb</javax.persistence.jdbc.url>
+				<javax.persistence.jdbc.user>sa</javax.persistence.jdbc.user>
+				<javax.persistence.jdbc.password></javax.persistence.jdbc.password>
+				<eclipselink.ddl-generation.output-mode>database</eclipselink.ddl-generation.output-mode>
+				<eclipselink.ddl-generation>create-tables</eclipselink.ddl-generation>
+				<eclipselink.logging.level>FINE</eclipselink.logging.level>
+				<db.embedida>true</db.embedida>
+			
+			</properties>
+		</profile>
 
+		<profile>
+			<id>localPersistencia</id>
+			<properties>
+				<javax.persistence.jdbc.driver>oracle.jdbc.OracleDriver</javax.persistence.jdbc.driver>
+				<javax.persistence.jdbc.url>jdbc:oracle:thin:@172.16.8.166:1630/MGPBDTU9X</javax.persistence.jdbc.url>
+				<javax.persistence.jdbc.user>MGPNDIC1</javax.persistence.jdbc.user>
+				<javax.persistence.jdbc.password>MGPnd1cI</javax.persistence.jdbc.password>
+				<eclipselink.ddl-generation.output-mode>sql-script</eclipselink.ddl-generation.output-mode>
+				<eclipselink.ddl-generation>none</eclipselink.ddl-generation>
+				<eclipselink.logging.level>FINE</eclipselink.logging.level>
+				<db.embedida>false</db.embedida>
+					
+			</properties>
+			
+		</profile>
 
-
-
-  </profiles>
-
-
-
-  <properties>
-    <certum.mvn.repo>192.168.0.211:8081</certum.mvn.repo> 				<!-- local -->
-    <java.version>1.6</java.version> 									<!-- local -->
-    <project.encoding>UTF-8</project.encoding> 							<!-- local, portal -->
-
-    <!-- Logging -->
-    <org.slf4j-version>1.5.2</org.slf4j-version>						<!-- local -->
-    <log4j.version>1.2.16</log4j.version> 								<!-- local, integration, persistence , portal, services -->
-    <!-- Certum Commons Lang -->
-    <certum.commons.lang.version>2.0.7</certum.commons.lang.version> 	<!--portal -->
-    <!-- Librerías de Apache -->
-    <commons-lang.version>2.6</commons-lang.version> 					<!-- local, model , portal -->
-    <commons-collections.version>3.2.1</commons-collections.version> 	<!-- local, portal -->
-    <commons-configuration.version>1.7</commons-configuration.version>
-    <commons-email.version>1.2</commons-email.version>
-    <commons-fileupload.version>1.2.1</commons-fileupload.version> 		<!-- portal -->
-    <commons-io.version>1.3.2</commons-io.version> 						<!-- portal -->
-    <poi.version>3.8</poi.version> 										<!-- model -->
-    <!-- plugins -->
-    <resources-plugin.version>2.4.3</resources-plugin.version> 			<!-- portal -->
-    <maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version> 	<!-- portal -->
-    <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
-    <maven-ejb-plugin.version>2.3</maven-ejb-plugin.version> 			<!-- integration, persistence -->
-    <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version> 		<!-- persistence -->
-    <maven-war-plugin.version>2.1.1</maven-war-plugin.version> 			<!-- portal -->
-    <maven-ear-plugin.version>2.8</maven-ear-plugin.version> 			<!-- app -->
-    <jaxws.plugin.version>2.1</jaxws.plugin.version>
-    <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version> 		<!--app -->
-    <!-- Estandares Java -->
-    <servlet-api.version>2.5</servlet-api.version> 						<!-- portal -->
-    <jsp-api.version>2.1</jsp-api.version> 								<!-- portal -->
-    <java-ee.version>6.0</java-ee.version> 								<!-- commons , persistence, portal, services -->
-    <javax-mail.version>1.4</javax-mail.version>
-    <javax-validation>1.1.0.Final</javax-validation> 					<!-- model -->
-    <jsf.version>2.1.21</jsf.version>
-    <jsf-api.version>2.1.21</jsf-api.version> 							<!-- portal -->
-    <javax.persistence.version>2.0.0</javax.persistence.version> 		<!-- model -->
-    <jstl.version>1.2</jstl.version> 									<!-- portal -->
-    <el-impl.version>2.2</el-impl.version> 								<!-- portal -->
-    <xmlbeans.version>2.4.0</xmlbeans.version> 							<!-- services -->
-    <!-- Prime Faces -->
-    <prime-faces.version>4.0</prime-faces.version> 						<!-- portal -->
-    <javamelody-core.version>1.52.0</javamelody-core.version> 			<!-- portal -->
-    <prime-theme.version>1.0.10</prime-theme.version> 				<!-- portal -->
+	</profiles>
 
 
-    <eclipse-link.version>2.5.1</eclipse-link.version> 					<!-- persistence -->
-    <jtdsdriver.version>1.2.4</jtdsdriver.version>  					<!-- persistence -->
-    <persistence.api.version>1.0</persistence.api.version> 				<!-- persistence -->
-    <hsqldb.driver.version>1.8.0.10</hsqldb.driver.version>				<!-- persistence, services -->
-  </properties>
+
+	<properties>
+		<certum.mvn.repo>192.168.0.211:8081</certum.mvn.repo> 				<!-- local -->
+		<java.version>1.6</java.version> 									<!-- local -->
+		<project.encoding>UTF-8</project.encoding> 							<!-- local, portal -->
+
+		<!-- Logging -->
+		<org.slf4j-version>1.5.2</org.slf4j-version>						<!-- local -->
+		<log4j.version>1.2.16</log4j.version> 								<!-- local, integration, persistence , portal, services -->
+		<!-- Certum Commons Lang -->
+		<certum.commons.lang.version>2.0.7</certum.commons.lang.version> 	<!--portal -->
+		<!-- Librerías de Apache -->
+		<commons-lang.version>2.6</commons-lang.version> 					<!-- local, model , portal -->
+		<commons-collections.version>3.2.1</commons-collections.version> 	<!-- local, portal -->
+		<commons-configuration.version>1.7</commons-configuration.version>
+		<commons-email.version>1.2</commons-email.version>
+		<commons-fileupload.version>1.2.1</commons-fileupload.version> 		<!-- portal -->
+		<commons-io.version>1.3.2</commons-io.version> 						<!-- portal -->
+		<poi.version>3.8</poi.version> 										<!-- model -->
+		<!-- plugins -->
+		<resources-plugin.version>2.4.3</resources-plugin.version> 			<!-- portal -->
+		<maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version> 	<!-- portal -->
+		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+		<maven-ejb-plugin.version>2.3</maven-ejb-plugin.version> 			<!-- integration, persistence -->
+		<maven-antrun-plugin.version>1.7</maven-antrun-plugin.version> 		<!-- persistence -->
+		<maven-war-plugin.version>2.1.1</maven-war-plugin.version> 			<!-- portal -->
+		<maven-ear-plugin.version>2.8</maven-ear-plugin.version> 			<!-- app -->
+		<jaxws.plugin.version>2.1</jaxws.plugin.version>
+		<lifecycle-mapping.version>1.0.0</lifecycle-mapping.version> 		<!--app -->
+		<!-- Estandares Java -->
+		<servlet-api.version>2.5</servlet-api.version> 						<!-- portal -->
+		<jsp-api.version>2.1</jsp-api.version> 								<!-- portal -->
+		<java-ee.version>6.0</java-ee.version> 								<!-- commons , persistence, portal, services -->
+		<javax-mail.version>1.4</javax-mail.version>
+		<javax-validation>1.1.0.Final</javax-validation> 					<!-- model -->
+		<jsf.version>2.1.21</jsf.version>
+		<jsf-api.version>2.1.21</jsf-api.version> 							<!-- portal -->
+		<javax.persistence.version>2.0.0</javax.persistence.version> 		<!-- model -->
+		<jstl.version>1.2</jstl.version> 									<!-- portal -->
+		<el-impl.version>2.2</el-impl.version> 								<!-- portal -->
+		<xmlbeans.version>2.4.0</xmlbeans.version> 							<!-- services -->
+		<!-- Prime Faces -->
+		<prime-faces.version>4.0</prime-faces.version> 						<!-- portal -->
+		<javamelody-core.version>1.52.0</javamelody-core.version> 			<!-- portal -->
+		<prime-theme.version>1.0.10</prime-theme.version> 				<!-- portal -->
 
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-          <encoding>${project.encoding}</encoding>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>${resources-plugin.version}</version>
-        <configuration>
-          <encoding>${project.encoding}</encoding>
-        </configuration>
-      </plugin>
-    </plugins>
+		<eclipse-link.version>2.5.1</eclipse-link.version> 					<!-- persistence -->
+		<jtdsdriver.version>1.2.4</jtdsdriver.version>  					<!-- persistence -->
+		<persistence.api.version>1.0</persistence.api.version> 				<!-- persistence -->
+		<hsqldb.driver.version>1.8.0.10</hsqldb.driver.version>				<!-- persistence, services -->
+	</properties>
 
 
-  </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${resources-plugin.version}</version>
+				<configuration>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
 
-  <repositories>
-    <repository>
-      <id>prime-repo</id>
-      <name>PrimeFaces Maven Repository</name>
-      <url>http://repository.primefaces.org</url>
-      <layout>default</layout>
-    </repository>
-    <repository>
-      <id>oss.sonatype.org</id>
-      <name>OSS Sonatype Staging</name>
-      <url>https://oss.sonatype.org/content/groups/staging</url>
-    </repository>
-    <repository>
-      <id>EclipseLink Repo</id>
-      <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>java.net.glassfish</id>
-      <name>Repository hosting the jee6 artifacts</name>
-      <url>http://download.java.net/maven/glassfish</url>
-    </repository>
-    <repository>
-      <id>certum-mvn</id>
-      <name>Repositorio central / certum</name>
-      <url>http://${certum.mvn.repo}/nexus/content/repositories/certum-mvn</url>
-    </repository>
-    <repository>
-      <id>certum-mvn-snapshot</id>
-      <name>Repositorio central snapshot / certum</name>
-      <url>http://${certum.mvn.repo}/nexus/content/repositories/certum-mvn-snapshot</url>
-    </repository>
-    <repository>
-      <id>jboss-public-repository-group</id>
-      <name>JBoss Public Maven Repository Group</name>
-      <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-    </repository>
-  </repositories>
+
+	</build>
+
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>oss.sonatype.org</id>
+			<name>OSS Sonatype Staging</name>
+			<url>https://oss.sonatype.org/content/groups/staging</url>
+		</repository>
+		<repository>
+			<id>EclipseLink Repo</id>
+			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>java.net.glassfish</id>
+			<name>Repository hosting the jee6 artifacts</name>
+			<url>http://download.java.net/maven/glassfish</url>
+		</repository>
+		<repository>
+			<id>certum-mvn</id>
+			<name>Repositorio central / certum</name>
+			<url>http://${certum.mvn.repo}/nexus/content/repositories/certum-mvn</url>
+		</repository>
+		<repository>
+			<id>certum-mvn-snapshot</id>
+			<name>Repositorio central snapshot / certum</name>
+			<url>http://${certum.mvn.repo}/nexus/content/repositories/certum-mvn-snapshot</url>
+		</repository>
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>
+	</repositories>
 
 </project>
