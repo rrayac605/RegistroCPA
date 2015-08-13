@@ -26,7 +26,7 @@ public class DgCatEstadoCpDO implements Serializable {
 
 	//bi-directional one-to-one association to DgCatEstadoDO
 	@OneToOne
-	@JoinColumn(name="CVE_ENT")
+	@JoinColumn(name="CVE_ENT", insertable=false, updatable=false)
 	private DgCatEstadoDO dgCatEstado;
 
 	public DgCatEstadoCpDO() {
