@@ -10,13 +10,13 @@ import java.util.Date;
  * 
  * @author gsegura
  */
-public final class SolicitudPensionServiciosNegocioExceptionBuilder
+public final class DictamenNegocioExceptionBuilder
 {
 
   private static final int ERROR_DESCONOCIDO = 0;
 
   /* Se ofusca el constructor */
-  private SolicitudPensionServiciosNegocioExceptionBuilder()
+  private DictamenNegocioExceptionBuilder()
   {
   }
 
@@ -26,7 +26,7 @@ public final class SolicitudPensionServiciosNegocioExceptionBuilder
    * @param bookingExceptionCode CÃ³digo de Error
    * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
    */
-  public static DictamenNegocioException build( SolicitudPensionServiciosNegocioExceptionCode code )
+  public static DictamenNegocioException build( DictamenNegocioExceptionCode code )
   {
     return build( code.getId(), null, null );
   }
@@ -61,7 +61,7 @@ public final class SolicitudPensionServiciosNegocioExceptionBuilder
    * @param args ParÃ¡metros
    * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
    */
-  public static DictamenNegocioException build( SolicitudPensionServiciosNegocioExceptionCode code, Object[] args )
+  public static DictamenNegocioException build( DictamenNegocioExceptionCode code, Object[] args )
   {
     return build( code.getId(), null, args );
   }
@@ -85,7 +85,7 @@ public final class SolicitudPensionServiciosNegocioExceptionBuilder
    * @param cause Causa de error
    * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
    */
-  public static DictamenNegocioException build( SolicitudPensionServiciosNegocioExceptionCode code, Throwable cause )
+  public static DictamenNegocioException build( DictamenNegocioExceptionCode code, Throwable cause )
   {
     return build( code.getId(), cause, null );
   }
@@ -99,7 +99,7 @@ public final class SolicitudPensionServiciosNegocioExceptionBuilder
    * @param args ParÃ¡metros
    * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
    */
-  public static DictamenNegocioException build( SolicitudPensionServiciosNegocioExceptionCode code, Throwable cause, Object[] args )
+  public static DictamenNegocioException build( DictamenNegocioExceptionCode code, Throwable cause, Object[] args )
   {
     return build( code.getId(), cause, args );
   }

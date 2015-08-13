@@ -5,7 +5,7 @@ package mx.gob.imss.cit.dictamen.integration.api.exception;
  * @author rgarcia
  *
  */
-public enum SolicitudPensionServiciosNegocioExceptionCode
+public enum DictamenNegocioExceptionCode
 {
 
   /** Error desconocido */
@@ -41,7 +41,7 @@ public enum SolicitudPensionServiciosNegocioExceptionCode
    * 
    * @param id
    */
-  private SolicitudPensionServiciosNegocioExceptionCode( int id )
+  private DictamenNegocioExceptionCode( int id )
   {
     this.id = id;
   }
