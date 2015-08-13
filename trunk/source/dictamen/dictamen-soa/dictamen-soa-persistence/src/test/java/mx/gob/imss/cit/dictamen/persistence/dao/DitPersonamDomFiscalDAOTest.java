@@ -2,9 +2,9 @@ package mx.gob.imss.cit.dictamen.persistence.dao;
 
 import java.util.List;
 
-import mx.gob.imss.cit.dictamen.model.NdtR1DomFiscalDO;
+import mx.gob.imss.cit.dictamen.model.DitPersonamDomFiscalDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.base.AbstractDBTestUnit;
-import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtR1DomFiscalDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.DitPersonamDomFiscalDAOImpl;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -18,10 +18,10 @@ import org.junit.Test;
  * 
  */
 
-public class NdtR1DomFiscalDAOTest extends AbstractDBTestUnit{
-	private NdtR1DomFiscalDAO localDAO = new NdtR1DomFiscalDAOImpl();
+public class DitPersonamDomFiscalDAOTest extends AbstractDBTestUnit {
+	private DitPersonamDomFiscalDAO localDAO = new DitPersonamDomFiscalDAOImpl();
 
-	private static final Logger LOG = Logger.getLogger(NdtR1DomFiscalDAOTest.class);
+	private static final Logger LOG = Logger.getLogger(DitPersonamDomFiscalDAOTest.class);
 
 	/**
 	 * Método para configuración de pruebas unitarias
@@ -39,7 +39,7 @@ public class NdtR1DomFiscalDAOTest extends AbstractDBTestUnit{
 	@Test
 	public void testFindAll() {
 		LOG.info("prueba");
-		List<NdtR1DomFiscalDO> resultList = localDAO.findAll();
+		List<DitPersonamDomFiscalDO> resultList = localDAO.findAll();
 		LOG.info("Lista: " + resultList.size());
 		Assert.assertNotNull(resultList);
 	}

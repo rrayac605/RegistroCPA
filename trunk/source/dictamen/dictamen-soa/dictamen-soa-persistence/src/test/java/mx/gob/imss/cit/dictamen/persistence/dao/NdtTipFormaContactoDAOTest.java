@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author cmarmolejo
  * 
  */
-@Local
+
 public class NdtTipFormaContactoDAOTest extends AbstractDBTestUnit {
 	private NdtTipFormaContactoDAO localDAO = new NdtTipFormaContactoDAOImpl();
 

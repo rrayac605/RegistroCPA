@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author cmarmolejo
  * 
  */
-@Local
+
 public class NdtR1DatosPersonaleDAOTest extends AbstractDBTestUnit{
 	private NdtR1DatosPersonaleDAO localDAO = new NdtR1DatosPersonaleDAOImpl();
 
