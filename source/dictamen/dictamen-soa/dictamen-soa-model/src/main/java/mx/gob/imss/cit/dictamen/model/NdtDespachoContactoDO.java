@@ -16,7 +16,9 @@ public class NdtDespachoContactoDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_DESPACHO_CONTACTO")
+    @Column(name = "CVE_ID_DESPACHO_CONTACTO", nullable = false)
+    @SequenceGenerator(name = "NdtDespachoContacto_Id_Seq_Gen", sequenceName = "SEQ_NDTDESPACHOCONTACTO")
+    @GeneratedValue(generator = "NdtDespachoContacto_Id_Seq_Gen")
 	private long cveIdDespachoContacto;
 
 	@Temporal(TemporalType.TIMESTAMP)

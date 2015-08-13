@@ -17,7 +17,9 @@ public class NdcTipoSancionDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_TIPOSANCION")
+    @Column(name = "CVE_ID_TIPOSANCION", nullable = false)
+    @SequenceGenerator(name = "NdcTipoSancion_Id_Seq_Gen", sequenceName = "SEQ_NDCTIPOSANCION")
+    @GeneratedValue(generator = "NdcTipoSancion_Id_Seq_Gen")
 	private long cveIdTiposancion;
 
 	@Temporal(TemporalType.TIMESTAMP)

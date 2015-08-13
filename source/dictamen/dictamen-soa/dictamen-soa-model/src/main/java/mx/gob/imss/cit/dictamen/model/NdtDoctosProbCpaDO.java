@@ -16,7 +16,9 @@ public class NdtDoctosProbCpaDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_DOCTOS_PROB_CPA")
+    @Column(name = "CVE_ID_DOCTOS_PROB_CPA", nullable = false)
+    @SequenceGenerator(name = "NdtDoctosProbCpa_Id_Seq_Gen", sequenceName = "SEQ_NDTDOCTOSPROBCPA")
+    @GeneratedValue(generator = "NdtDoctosProbCpa_Id_Seq_Gen")
 	private long cveIdDoctosProbCpa;
 
 	@Temporal(TemporalType.TIMESTAMP)

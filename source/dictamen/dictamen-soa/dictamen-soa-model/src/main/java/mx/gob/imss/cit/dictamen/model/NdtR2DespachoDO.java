@@ -17,7 +17,9 @@ public class NdtR2DespachoDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_CPA_DESPACHO")
+    @Column(name = "CVE_ID_CPA_DESPACHO", nullable = false)
+    @SequenceGenerator(name = "NdtR2Despacho_Id_Seq_Gen", sequenceName = "SEQ_NDTR2DESPACHO")
+    @GeneratedValue(generator = "NdtR2Despacho_Id_Seq_Gen")
 	private long cveIdCpaDespacho;
 
 	@Column(name="CARGO_QUE_DESEMPENA")

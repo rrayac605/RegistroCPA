@@ -17,7 +17,9 @@ public class NdtR1DomFiscalDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_R1_DOM_FISCAL")
+    @Column(name = "CVE_ID_R1_DOM_FISCAL", nullable = false)
+    @SequenceGenerator(name = "NdtR1DomFiscal_Id_Seq_Gen", sequenceName = "SEQ_NDTR1DOMFISCAL")
+    @GeneratedValue(generator = "NdtR1DomFiscal_Id_Seq_Gen")
 	private long cveIdR1DomFiscal;
 
 	@Column(name="CEDULA_PROFESIONAL")

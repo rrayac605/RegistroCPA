@@ -16,7 +16,9 @@ public class NdtR1DatosPersonaleDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_R1_DATOS_PERSONALES")
+    @Column(name = "CVE_ID_R1_DATOS_PERSONALES", nullable = false)
+    @SequenceGenerator(name = "NdtR1DatosPersonales_Id_Seq_Gen", sequenceName = "SEQ_NDTR1DATOSPERSONALES")
+    @GeneratedValue(generator = "NdtR1DatosPersonales_Id_Seq_Gen")
 	private long cveIdR1DatosPersonales;
 
 	@Column(name="CEDULA_PROFESIONAL")

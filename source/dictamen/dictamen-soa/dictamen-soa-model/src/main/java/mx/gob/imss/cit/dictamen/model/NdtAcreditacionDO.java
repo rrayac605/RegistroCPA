@@ -16,7 +16,9 @@ public class NdtAcreditacionDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_CPA_ACREDITACION")
+    @Column(name = "CVE_ID_CPA_ACREDITACION", nullable = false)
+    @SequenceGenerator(name = "NdtAcreditacion_Id_Seq_Gen", sequenceName = "SEQ_NDTACREDITACION")
+    @GeneratedValue(generator = "NdtAcreditacion_Id_Seq_Gen")
 	private long cveIdCpaAcreditacion;
 
 	@Column(name="CVE_ID_USUARIO")

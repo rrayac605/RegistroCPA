@@ -16,7 +16,9 @@ public class NdtAsociacionContactoDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_ASOCIACION_CONTACTO")
+    @Column(name = "CVE_ID_ASOCIACION_CONTACTO", nullable = false)
+    @SequenceGenerator(name = "NdtAsociacionContacto_Id_Seq_Gen", sequenceName = "SEQ_NDTASOCIACIONCONTACTO")
+    @GeneratedValue(generator = "NdtAsociacionContacto_Id_Seq_Gen")
 	private long cveIdAsociacionContacto;
 
 	@Temporal(TemporalType.TIMESTAMP)

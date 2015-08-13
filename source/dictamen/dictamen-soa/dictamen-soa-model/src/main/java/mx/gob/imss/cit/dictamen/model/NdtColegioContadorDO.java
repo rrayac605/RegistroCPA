@@ -16,7 +16,9 @@ public class NdtColegioContadorDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_COLEGIO")
+    @Column(name = "CVE_ID_COLEGIO", nullable = false)
+    @SequenceGenerator(name = "NdtColegioContador_Id_Seq_Gen", sequenceName = "SEQ_NDTCOLEGIOCONTADOR")
+    @GeneratedValue(generator = "NdtColegioContador_Id_Seq_Gen")
 	private long cveIdColegio;
 
 	@Column(name="CVE_ID_USUARIO")

@@ -17,7 +17,9 @@ public class NdcAsociacionDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_ASOCIACION")
+    @Column(name = "CVE_ID_ASOCIACION", nullable = false)
+	@SequenceGenerator(name = "NdcAsociacion_Id_Seq_Gen", sequenceName = "SEQ_NDCASOCIACION")
+    @GeneratedValue(generator = "NdcAsociacion_Id_Seq_Gen")
 	private long cveIdAsociacion;
 
 	@Column(name="CVE_ID_USUARIO")
