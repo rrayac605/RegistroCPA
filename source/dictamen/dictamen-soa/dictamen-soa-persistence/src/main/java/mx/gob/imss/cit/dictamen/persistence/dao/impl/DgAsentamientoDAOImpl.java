@@ -33,34 +33,5 @@ public class DgAsentamientoDAOImpl extends AbstractBaseDAO<DgAsentamientoDO> imp
 	}
 
 
-	@Override
-	public void create(DgAsentamientoDAO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgAsentamientoDAO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgAsentamientoDAO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgAsentamientoDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	
 
 }

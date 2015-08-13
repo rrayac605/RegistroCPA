@@ -32,31 +32,4 @@ public class DgCatTermGenDAOImpl extends AbstractBaseDAO<DgCatTermGenDO> impleme
 	}
 
 
-	@Override
-	public void create(DgCatTermGenDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatTermGenDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatTermGenDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatTermGenDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

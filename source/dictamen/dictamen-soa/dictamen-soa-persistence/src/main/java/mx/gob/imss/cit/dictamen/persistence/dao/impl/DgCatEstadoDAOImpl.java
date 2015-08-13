@@ -33,32 +33,4 @@ public class DgCatEstadoDAOImpl extends AbstractBaseDAO<DgCatEstadoDO> implement
 		return em;
 	}
 
-
-	@Override
-	public void create(DgCatEstadoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatEstadoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatEstadoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatEstadoDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

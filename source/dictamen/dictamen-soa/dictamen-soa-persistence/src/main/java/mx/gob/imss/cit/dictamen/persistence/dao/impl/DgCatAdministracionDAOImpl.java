@@ -31,33 +31,4 @@ public class DgCatAdministracionDAOImpl extends AbstractBaseDAO<DgCatAdministrac
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-
-
-	@Override
-	public void create(DgCatAdministracionDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatAdministracionDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatAdministracionDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatAdministracionDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

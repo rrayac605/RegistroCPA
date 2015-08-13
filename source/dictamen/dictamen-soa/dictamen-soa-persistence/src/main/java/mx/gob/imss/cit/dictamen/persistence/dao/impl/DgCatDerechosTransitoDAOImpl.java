@@ -31,32 +31,4 @@ public class DgCatDerechosTransitoDAOImpl extends AbstractBaseDAO<DgCatDerechosT
 		return em;
 	}
 
-
-	@Override
-	public void create(DgCatDerechosTransitoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatDerechosTransitoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatDerechosTransitoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatDerechosTransitoDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
