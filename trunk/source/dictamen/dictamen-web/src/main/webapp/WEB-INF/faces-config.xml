@@ -13,12 +13,20 @@
 		<locale-config>
 			<default-locale>en</default-locale>
 		</locale-config>
+		
 		<resource-bundle>
 			<base-name>bundles.messages</base-name>
 			<var>msg</var>
 		</resource-bundle>
+		
+		<resource-bundle>
+			<base-name>bundles.messages_notificacion</base-name>
+			<var>msgNotificacion</var>
+		</resource-bundle>
+		
 		<message-bundle>bundles.customMessages</message-bundle>
-		<message-bundle>resources.application</message-bundle>
+		
 	</application>
+	
 
 </faces-config>

@@ -115,11 +115,7 @@
 			<artifactId>commons-collections</artifactId>
 			<version>${commons-collections}</version>
 		</dependency>
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>${jasperreport}</version>
-		</dependency>
+
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
@@ -150,13 +146,13 @@
 			<groupId>com.liferay.faces.patches</groupId>
 			<artifactId>liferay-faces-1513-patch</artifactId>
 			<version>3.2.4-ga5</version>
-			<classifier>ga5</classifier>
+			
 		</dependency>
-		<dependency>
+		<!-- dependency>
 			<groupId>mx.gob.imss</groupId>
 			<artifactId>liferay-utility</artifactId>
 			<version>0.0.1</version>
-		</dependency>
+		</dependency-->
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
