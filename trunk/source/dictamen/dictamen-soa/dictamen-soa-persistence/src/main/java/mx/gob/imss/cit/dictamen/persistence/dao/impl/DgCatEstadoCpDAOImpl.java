@@ -32,33 +32,4 @@ public class DgCatEstadoCpDAOImpl extends AbstractBaseDAO<DgCatEstadoCpDO> imple
 	protected EntityManager getEntityManager() {
 		return em;
 	}
-
-
-	@Override
-	public void create(DgCatEstadoCpDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatEstadoCpDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatEstadoCpDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatEstadoCpDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

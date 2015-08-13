@@ -31,32 +31,4 @@ public class DgCatVialidadDAOImpl extends AbstractBaseDAO<DgCatVialidadDO> imple
 		return em;
 	}
 
-
-	@Override
-	public void create(DgCatVialidadDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatVialidadDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatVialidadDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatVialidadDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

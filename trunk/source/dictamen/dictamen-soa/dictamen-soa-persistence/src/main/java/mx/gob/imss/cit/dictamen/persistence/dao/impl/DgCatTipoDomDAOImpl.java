@@ -32,31 +32,4 @@ public class DgCatTipoDomDAOImpl extends AbstractBaseDAO<DgCatTipoDomDO> impleme
 	}
 
 
-	@Override
-	public void create(DgCatTipoDomDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatTipoDomDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatTipoDomDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatTipoDomDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

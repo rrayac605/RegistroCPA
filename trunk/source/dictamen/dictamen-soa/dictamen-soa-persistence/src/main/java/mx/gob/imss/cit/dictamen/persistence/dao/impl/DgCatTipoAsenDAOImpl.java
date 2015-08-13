@@ -32,31 +32,4 @@ public class DgCatTipoAsenDAOImpl extends AbstractBaseDAO<DgCatTipoAsenDO> imple
 	}
 
 
-	@Override
-	public void create(DgCatTipoAsenDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatTipoAsenDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatTipoAsenDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatTipoAsenDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

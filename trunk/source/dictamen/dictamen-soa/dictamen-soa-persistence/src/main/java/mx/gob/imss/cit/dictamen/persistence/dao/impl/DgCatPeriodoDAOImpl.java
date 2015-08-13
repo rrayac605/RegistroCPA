@@ -32,31 +32,4 @@ public class DgCatPeriodoDAOImpl extends AbstractBaseDAO<DgCatPeriodoDO> impleme
 	}
 
 
-	@Override
-	public void create(DgCatPeriodoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatPeriodoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatPeriodoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatPeriodoDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

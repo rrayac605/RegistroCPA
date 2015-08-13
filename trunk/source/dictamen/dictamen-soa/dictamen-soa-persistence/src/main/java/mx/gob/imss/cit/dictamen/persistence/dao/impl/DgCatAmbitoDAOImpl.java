@@ -33,32 +33,4 @@ public class DgCatAmbitoDAOImpl extends AbstractBaseDAO<DgCatAmbitoDO> implement
 		return em;
 	}
 
-
-	@Override
-	public void create(DgCatAmbitoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatAmbitoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatAmbitoDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatAmbitoDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

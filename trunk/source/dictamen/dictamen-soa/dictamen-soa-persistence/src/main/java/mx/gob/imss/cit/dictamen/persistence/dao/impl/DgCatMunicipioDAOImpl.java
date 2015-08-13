@@ -31,32 +31,4 @@ public class DgCatMunicipioDAOImpl extends AbstractBaseDAO<DgCatMunicipioDO> imp
 		return em;
 	}
 
-
-	@Override
-	public void create(DgCatMunicipioDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatMunicipioDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatMunicipioDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatMunicipioDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

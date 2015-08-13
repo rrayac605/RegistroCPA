@@ -4,26 +4,24 @@ import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import mx.gob.imss.cit.dictamen.model.DitPersonamDomFiscalDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.AbstractBaseDAO;
-import mx.gob.imss.cit.dictamen.persistence.dao.DgCatMargenDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.DitPersonamDomFiscalDAO;
 import mx.gob.imss.cit.dictamen.persistence.util.ExceptionHandlerDAOInterceptor;
-import mx.gob.imss.cit.dictamen.model.DgCatMargenDO;
+
 
 
 @Stateless
 @Interceptors({ ExceptionHandlerDAOInterceptor.class })
-public class DgCatMargenDAOImpl extends AbstractBaseDAO<DgCatMargenDO> implements DgCatMargenDAO{
+public class DitPersonamDomFiscalDAOImpl extends AbstractBaseDAO<DitPersonamDomFiscalDO> implements DitPersonamDomFiscalDAO {
+	/** The em. */
+	@PersistenceContext(unitName = "DictamenPU")
+	private EntityManager em;
 
-	  /** The em. */
-    @PersistenceContext(unitName = "DictamenPU")
-    private EntityManager em;
-	
-    
-	public DgCatMargenDAOImpl() {
-		super(DgCatMargenDO.class);
-	
+	public DitPersonamDomFiscalDAOImpl() {
+		super(DitPersonamDomFiscalDO.class);
+
 	}
-	
 
 	@Override
 	protected EntityManager getEntityManager() {
@@ -31,3 +29,4 @@ public class DgCatMargenDAOImpl extends AbstractBaseDAO<DgCatMargenDO> implement
 	}
 
 }
+

@@ -30,32 +30,4 @@ public class DgCatLocalidadDAOImpl extends AbstractBaseDAO<DgCatLocalidadDO> imp
 		return em;
 	}
 
-
-	@Override
-	public void create(DgCatLocalidadDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void edit(DgCatLocalidadDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void remove(DgCatLocalidadDO entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public DgCatLocalidadDO get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
