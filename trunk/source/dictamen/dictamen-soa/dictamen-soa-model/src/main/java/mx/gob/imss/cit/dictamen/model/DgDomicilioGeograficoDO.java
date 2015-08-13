@@ -102,9 +102,9 @@ public class DgDomicilioGeograficoDO implements Serializable {
 	//bi-directional many-to-one association to DgCatLocalidadDO
 	@ManyToOne
 	@JoinColumns({
-		@JoinColumn(name="CVE_ENT", referencedColumnName="CVE_ENT"),
+		@JoinColumn(name="CVE_ENT", referencedColumnName="CVE_ENT", insertable=false, updatable=false),
 		@JoinColumn(name="CVE_LOC", referencedColumnName="CVE_LOC"),
-		@JoinColumn(name="CVE_MUN", referencedColumnName="CVE_MUN"),
+		@JoinColumn(name="CVE_MUN", referencedColumnName="CVE_MUN", insertable=false, updatable=false),
 		@JoinColumn(name="CVE_PERIODO", referencedColumnName="CVE_PERIODO")
 		})
 	private DgCatLocalidadDO dgCatLocalidad;
@@ -118,9 +118,9 @@ public class DgDomicilioGeograficoDO implements Serializable {
 	@ManyToOne
 	@JoinColumns({
 		@JoinColumn(name="CODIGO", referencedColumnName="CODIGO"),
-		@JoinColumn(name="CVE_ASEN", referencedColumnName="CVE_ASEN"),
-		@JoinColumn(name="CVE_ENT", referencedColumnName="CVE_ENT"),
-		@JoinColumn(name="CVE_MUN", referencedColumnName="CVE_MUN")
+		@JoinColumn(name="CVE_ASEN", referencedColumnName="CVE_ASEN", insertable=false, updatable=false),
+		@JoinColumn(name="CVE_ENT", referencedColumnName="CVE_ENT", insertable=false, updatable=false),
+		@JoinColumn(name="CVE_MUN", referencedColumnName="CVE_MUN", insertable=false, updatable=false)
 		})
 	private DgCodigosPostalesDO dgCodigosPostale;
 

@@ -46,7 +46,7 @@ public class DgDomiciliosCarreterasDO implements Serializable {
 
 	//bi-directional one-to-one association to DgDomicilioGeograficoDO
 	@OneToOne
-	@JoinColumn(name="DOMICILIO_ID")
+	@JoinColumn(name="DOMICILIO_ID", insertable=false, updatable=false)
 	private DgDomicilioGeograficoDO dgDomicilioGeografico;
 
 	public DgDomiciliosCarreterasDO() {
