@@ -14,13 +14,9 @@
 	<h4>Inicio</h4>
 	<p:imageSwitch effect="slideX" slideshowSpeed="6000">
 		<ui:repeat value="#{bienvenidaPage.images}" var="image">
-			<img height="98%" width="98%"
-				src="#{liferay.themeImagesURL}/banner/#{image}" />
+			<img height="98%" width="98%" src="#{liferay.themeImagesURL}/banner/#{image}" />
 		</ui:repeat>
 	</p:imageSwitch>
 
-	<p:panel >
-	 	<p:commandButton  value="#{msg['message.button.aceptar']}" action="#{bienvenidaBean.enviarRegistro}"/>
-	</p:panel>
 </h:body>
 </html>
