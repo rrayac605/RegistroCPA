@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author cmarmolejo
  * 
  */
-@Local
+
 public class NdcTipoConvenioCotizacionDAOTest extends AbstractDBTestUnit {
 	private NdcTipoConvenioCotizacionDAO localDAO = new NdcTipoConvenioCotizacionDAOImpl();
 

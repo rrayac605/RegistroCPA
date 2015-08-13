@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author cmarmolejo
  * 
  */
-@Local
+
 public class NdcEstadoCpaDAOTest extends AbstractDBTestUnit {
 	private NdcEstadoCpaDAO localDAO = new NdcEstadoCpaDAOImpl();
 

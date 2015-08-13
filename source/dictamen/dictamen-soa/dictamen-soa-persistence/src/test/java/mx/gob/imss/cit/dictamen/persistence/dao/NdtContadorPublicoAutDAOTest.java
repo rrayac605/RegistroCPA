@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author cmarmolejo
  * 
  */
-@Local
+
 public class NdtContadorPublicoAutDAOTest extends AbstractDBTestUnit {
 	private NdtContadorPublicoAutDAO localDAO = new NdtContadorPublicoAutDAOImpl();
 

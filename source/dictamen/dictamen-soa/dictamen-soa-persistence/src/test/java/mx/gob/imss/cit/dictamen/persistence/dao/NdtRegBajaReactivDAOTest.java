@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author cmarmolejo
  * 
  */
-@Local
+
 public class NdtRegBajaReactivDAOTest extends AbstractDBTestUnit {
 	private NdtRegBajaReactivDAO localDAO = new NdtRegBajaReactivDAOImpl();
 

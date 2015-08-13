@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author cmarmolejo
  * 
  */
-@Local
+
 public class NdtPatronDictamenDAOTest extends AbstractDBTestUnit {
 	private NdtPatronDictamenDAO localDAO = new NdtPatronDictamenDAOImpl();
 
