@@ -17,7 +17,9 @@ public class NdcDespachoDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_DESPACHO")
+    @Column(name = "CVE_ID_DESPACHO", nullable = false)
+    @SequenceGenerator(name = "NdcDespacho_Id_Seq_Gen", sequenceName = "SEQ_NDCDESPACHO")
+    @GeneratedValue(generator = "NdcDespacho_Id_Seq_Gen")
 	private long cveIdDespacho;
 
 	@Column(name="CVE_ID_USUARIO")

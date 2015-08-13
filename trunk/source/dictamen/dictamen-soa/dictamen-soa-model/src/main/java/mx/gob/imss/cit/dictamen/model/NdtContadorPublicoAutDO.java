@@ -18,7 +18,9 @@ public class NdtContadorPublicoAutDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_CPA")
+    @Column(name = "CVE_ID_CPA", nullable = false)
+    @SequenceGenerator(name = "NdtContadorPublicoAut_Id_Seq_Gen", sequenceName = "SEQ_NDTCONTADORPUBLICOAUT")
+    @GeneratedValue(generator = "NdtContadorPublicoAut_Id_Seq_Gen")
 	private long cveIdCpa;
 
 	@Column(name="CVE_ID_USUARIO")

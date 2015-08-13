@@ -18,7 +18,9 @@ public class DitPersonaDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_PERSONA")
+    @SequenceGenerator(name = "DIT_PERSONA_CVEIDPERSONA_GENERATOR", sequenceName = "SEQ_DITPERSONA", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DIT_PERSONA_CVEIDPERSONA_GENERATOR")
+	@Column(name="CVE_ID_PERSONA", nullable=false, precision=22)
 	private long cveIdPersona;
 
 	private String curp;

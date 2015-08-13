@@ -17,7 +17,9 @@ public class NdtRegBajaReactivDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_CPA_REGISTRO")
+    @Column(name = "CVE_ID_CPA_REGISTRO", nullable = false)
+    @SequenceGenerator(name = "NdtRegBajaReactiv_Id_Seq_Gen", sequenceName = "SEQ_NDTREGBAJAREACTIV")
+    @GeneratedValue(generator = "NdtRegBajaReactiv_Id_Seq_Gen")
 	private long cveIdCpaRegistro;
 
 	@Column(name="CVE_ID_USUARIO")

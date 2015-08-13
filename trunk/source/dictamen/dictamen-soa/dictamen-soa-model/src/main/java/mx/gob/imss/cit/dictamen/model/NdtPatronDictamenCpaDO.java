@@ -16,7 +16,9 @@ public class NdtPatronDictamenCpaDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_PATRON_CPA_DICTAMEN")
+    @Column(name = "CVE_ID_PATRON_CPA_DICTAMEN", nullable = false)
+    @SequenceGenerator(name = "NdtPatronDictamenCpa_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONDICTAMENCPA")
+    @GeneratedValue(generator = "NdtPatronDictamenCpa_Id_Seq_Gen")
 	private long cveIdPatronCpaDictamen;
 
 	@Column(name="CVE_ID_USUARIO")

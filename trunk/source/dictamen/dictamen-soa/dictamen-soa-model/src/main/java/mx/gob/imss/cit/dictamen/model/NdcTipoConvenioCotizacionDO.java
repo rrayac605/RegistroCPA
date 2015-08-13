@@ -17,7 +17,9 @@ public class NdcTipoConvenioCotizacionDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_TIPO_CONVENIO_COT")
+    @Column(name = "CVE_ID_TIPO_CONVENIO_COT", nullable = false)
+	@SequenceGenerator(name = "NdcTipoConvenioCotizacion_Id_Seq_Gen", sequenceName = "SEQ_NDCTIPOCONVENIOCOTIZACION")
+    @GeneratedValue(generator = "NdcTipoConvenioCotizacion_Id_Seq_Gen")
 	private long cveIdTipoConvenioCot;
 
 	@Column(name="DES_TIPO_CONVENIO_COT")

@@ -17,7 +17,9 @@ public class NdcColegioDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_COLEGIO")
+    @Column(name = "CVE_ID_COLEGIO", nullable = false)
+    @SequenceGenerator(name = "NdcColegio_Id_Seq_Gen", sequenceName = "SEQ_NDCCOLEGIO")
+    @GeneratedValue(generator = "NdcColegio_Id_Seq_Gen")
 	private long cveIdColegio;
 
 	@Column(name="CVE_ID_USUARIO")

@@ -16,7 +16,9 @@ public class NdcOrigenContactoDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_ORIGEN_CONTACTO")
+    @Column(name = "CVE_ID_ORIGEN_CONTACTO", nullable = false)
+    @SequenceGenerator(name = "NdcOrigenContacto_Id_Seq_Gen", sequenceName = "SEQ_NDCORIGENCONTACTO")
+    @GeneratedValue(generator = "NdcOrigenContacto_Id_Seq_Gen")
 	private long cveIdOrigenContacto;
 
 	@Column(name="DES_TABLA_ORIGEN")

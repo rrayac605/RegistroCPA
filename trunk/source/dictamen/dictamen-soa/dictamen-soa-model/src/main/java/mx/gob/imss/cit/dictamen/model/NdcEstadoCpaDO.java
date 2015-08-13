@@ -17,7 +17,9 @@ public class NdcEstadoCpaDO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CVE_ID_ESTADO_CPA")
+    @Column(name = "CVE_ID_ESTADO_CPA", nullable = false)
+    @SequenceGenerator(name = "NdcEstadoCpa_Id_Seq_Gen", sequenceName = "SEQ_NDCESTADOCPA")
+    @GeneratedValue(generator = "NdcEstadoCpa_Id_Seq_Gen")
 	private long cveIdEstadoCpa;
 
 	@Column(name="DES_ESTADO_CPA")
