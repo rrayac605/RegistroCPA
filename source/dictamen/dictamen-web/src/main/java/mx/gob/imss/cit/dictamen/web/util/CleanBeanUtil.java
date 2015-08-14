@@ -3,7 +3,11 @@ package mx.gob.imss.cit.dictamen.web.util;
 
 import java.beans.Statement;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
+import java.util.Collection;
 
+import mx.gob.imss.cit.dictamen.web.constants.WebConstants;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 
 import org.apache.log4j.Logger;
@@ -55,20 +59,36 @@ public final class CleanBeanUtil {
                 //Statement stmt = null;
                 field.setAccessible(Boolean.TRUE);
                 if (reset.enabled()) {
-                    if(field.getType().isPrimitive()) {
+                	//List
+                	if(Collection.class.isAssignableFrom(field.getType())){
+
+            			Object[] values = new Object[WebConstants.UNO];                            
+                        ArrayList<?> myList = (ArrayList<?>) field.get(beanObject);
+                        if(myList!=null){
+                        	myList.clear();
+                        }
+                        values[WebConstants.CERO] = myList;
+                        
+            	        Statement stmt = new Statement(beanObject, createSetter(field.getName()),values );
+                        stmt.execute();
+                            
+                	} else if(field.getType().isPrimitive()) { 
                         // boolean
                         if(field.getType().equals(boolean.class)) {
                             field.setBoolean(beanObject, false);
+                        }else if(field.getType().equals( int.class)){
+                        	field.setInt(beanObject, WebConstants.CERO);
                         }
                     } else {
-                        Object[] values = new Object[1];
-                        values[0] = null;
+                        Object[] values = new Object[WebConstants.UNO];
+                        values[WebConstants.CERO] = null;
                         Statement stmt = new Statement(beanObject, createSetter(field.getName()), values);
                         stmt.execute();
                     }
                 }
             }
         } catch (Exception e) {
+        	e.printStackTrace();
             LOGGER.error("Se produjo un error al borrar los campos de " + beanObject.getClass().getName() + " en el campo " + field.getName(), e);
         }
     }
@@ -81,6 +101,10 @@ public final class CleanBeanUtil {
      * @return the string
      */
     private static String createSetter(String fieldName) {
-        return SETTER_PREFIX + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
+        return SETTER_PREFIX + fieldName.substring(WebConstants.CERO, WebConstants.UNO).toUpperCase() + fieldName.substring(WebConstants.UNO);
+    }
+
+    public static <T> T instanceOf (Class<T> clazz) throws Exception {
+        return clazz.newInstance();
     }
 }
