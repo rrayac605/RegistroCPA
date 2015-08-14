@@ -64,5 +64,9 @@ public final class WebConstants {
 	
 	public static final String SEPARADOR_PARAM_CLAVE="-";
 	
-
+	public static int CERO=0;
+	
+	public static int UNO=1;
+	
+	
 }
