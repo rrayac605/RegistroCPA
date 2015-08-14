@@ -11,6 +11,15 @@
 		<ajaxable>false</ajaxable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 	</portlet>
+	
+	<!-- Menú de Contado Público -->
+	<portlet>
+		<portlet-name>MenuContadorPublico</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>	
 
 	<role-mapper>
 		<role-name>administrator</role-name>
