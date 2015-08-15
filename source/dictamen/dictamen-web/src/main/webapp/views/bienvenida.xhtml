@@ -18,9 +18,12 @@
 				src="#{liferay.themeImagesURL}/banner/#{image}" />
 		</ui:repeat>
 	</p:imageSwitch>
-
 	<p:panel >
-	 	<p:commandButton  value="#{msg['message.button.aceptar']}" action="#{bienvenidaBean.enviarRegistro}"/>
+		<h:form>
+		 	<p:commandButton  value="#{msg['message.button.aceptar']}" action="#{bienvenidaBean.enviarRegistro}"/>
+		 	<p:commandButton  value="#{msg['message.button.vetanilla']}" action="#{bienvenidaBean.enviarVentanilla}"/>
+
+		</h:form>
 	</p:panel>
 </h:body>
 </html>
