@@ -20,6 +20,25 @@
 		<ajaxable>false</ajaxable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 	</portlet>	
+	
+	<!-- Solicitud Registro -->
+	<portlet>
+		<portlet-name>SolicitudRegistro</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>		
+
+	
+	<!-- Medios de Contacto -->
+	<portlet>
+		<portlet-name>MedioContacto</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>		
 
 	<role-mapper>
 		<role-name>administrator</role-name>

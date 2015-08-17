@@ -71,5 +71,74 @@
 		<security-role-ref>
 			<role-name>user</role-name>
 		</security-role-ref>
-	</portlet>	
+	</portlet>
+		
+	<!-- Solicitud Registro -->
+	<portlet>
+		
+		<portlet-name>SolicitudRegistro</portlet-name>
+		<display-name>SolicitudRegistro</display-name>
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/registro/solicitudRegistro/solicitudRegistro.xhtml</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Solicitud de Registro del Contador Público</title>
+			<short-title>Solicitud Registro</short-title>
+			<keywords>Solicitud Registro Contado Público</keywords>
+		</portlet-info>
+				
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+	<!-- Medios de Contacto -->
+	<portlet>
+		
+		<portlet-name>MedioContacto</portlet-name>
+		<display-name>MedioContacto</display-name>
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/registro/solicitudRegistro/medioContacto.xhtml</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Medios de Contacto y Datos Profesionales</title>
+			<short-title>Medios de Contacto y Datos Profesionales</short-title>
+			<keywords>Medios Contacto Datos Profesionales</keywords>
+		</portlet-info>
+				
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>		
+		
 </portlet-app>
