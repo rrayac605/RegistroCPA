@@ -8,10 +8,10 @@
 
 	
 	<p:dialog widgetVar="dialogFirmaElectronica" id="dialogFirmaElectronica" modal="true" resizable="false" width="80%" height="480" dynamic="true">
-		<p:ajax event="close" update="dialogFirmaElectronica" listener="#{firmaElectronicaBean.cerrarDialog()}" />
+		<p:ajax event="close" update="dialogFirmaElectronica" listener="#{firmaElectronicaBean.cerrarDialog}" />
     	<p:panel id="panelFirmaElectronica" widgetVar="panelFirmaElectronica" rendered="#{firmaElectronicaPage.mostrarDialogFirma}">
 	        <applet width="100%" height="460" 
-	            archive="#{firmaElectronicaPage.firmaElectronicaDTO..fielArchive}" 
+	            archive="#{firmaElectronicaPage.firmaElectronicaDTO.fielArchive}" 
 				code="#{firmaElectronicaPage.firmaElectronicaDTO.fielCode}" 
 				codebase="#{firmaElectronicaPage.firmaElectronicaDTO.fielCodebase}">
                 <param value="16" name="fontSize"></param>

@@ -25,6 +25,9 @@ public class BienvenidaBean extends BaseBean{
 
 	@ManagedProperty(value = "#{configuracionCatalogoBean}")
 	private  ConfiguracionCatalogoBean  configuracionCatalogoBean;
+	
+	@ManagedProperty(value = "#{firmaElectronicaBean}")
+	private FirmaElectronicaBean firmaElectronicaBean;
 
 	
 	public void enviarRegistro(){
@@ -38,6 +41,10 @@ public class BienvenidaBean extends BaseBean{
 		return NavigationConstants.VENTANILLA_CATALOGOS;
 	}
 	
+	public String enviarFirmaElectronica(){		
+		return firmaElectronicaBean.initPaginaPrueba();
+	}
+	
 	
 	public void setBienvenidaPage(BienvenidaPage bienvenidaPage) {
 		this.bienvenidaPage = bienvenidaPage;
@@ -48,6 +55,15 @@ public class BienvenidaBean extends BaseBean{
 	public void setConfiguracionCatalogoBean(
 			ConfiguracionCatalogoBean configuracionCatalogoBean) {
 		this.configuracionCatalogoBean = configuracionCatalogoBean;
+	}
+
+
+
+	/**
+	 * @param firmaElectronicaBean the firmaElectronicaBean to set
+	 */
+	public void setFirmaElectronicaBean(FirmaElectronicaBean firmaElectronicaBean) {
+		this.firmaElectronicaBean = firmaElectronicaBean;
 	}
 
 	

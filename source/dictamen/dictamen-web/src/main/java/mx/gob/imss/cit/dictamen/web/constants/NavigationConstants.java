@@ -10,6 +10,8 @@ public final class NavigationConstants {
     public static final String HOME_ACTION_PAGE = "home";
     
     public static final String VENTANILLA_CATALOGOS = "ventanillaConfiguracion";
+    
+    public static final String PAG_PRUEBA_FIRMA_ELECT = "pruebaFirmaElectronica";
 	
     
     /**
