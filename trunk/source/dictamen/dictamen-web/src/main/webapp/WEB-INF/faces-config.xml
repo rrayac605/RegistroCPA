@@ -36,5 +36,14 @@
 			<to-view-id>/views/ventanilla/catalogos/configuracionCatalogo.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>pruebaFirmaElectronica</from-outcome>
+			<to-view-id>/views/comun/llamadaFirmaElectronica.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
 	</navigation-rule>
+	
+	
 </faces-config>

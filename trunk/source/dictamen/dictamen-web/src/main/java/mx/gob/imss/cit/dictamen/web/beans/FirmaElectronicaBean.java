@@ -7,6 +7,7 @@ import javax.faces.bean.ViewScoped;
 
 import mx.gob.imss.cit.dictamen.integration.api.FirmaElectronicaIntegrator;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.web.constants.NavigationConstants;
 import mx.gob.imss.cit.dictamen.web.pages.FirmaElectronicaPage;
 
 /**
@@ -31,6 +32,13 @@ public class FirmaElectronicaBean extends BaseBean{
 	private FirmaElectronicaPage firmaElectronicaPage;
 
 	
+	public String initPaginaPrueba() {
+
+		return NavigationConstants.PAG_PRUEBA_FIRMA_ELECT;
+	
+	}
+	
+	
 	
 	public void initDialog() {
 
@@ -42,6 +50,24 @@ public class FirmaElectronicaBean extends BaseBean{
 	
 	public void cerrarDialog(){
 		firmaElectronicaPage.setMostrarDialogFirma(false);
+	}
+
+
+
+	/**
+	 * @return the firmaElectronicaPage
+	 */
+	public FirmaElectronicaPage getFirmaElectronicaPage() {
+		return firmaElectronicaPage;
+	}
+
+
+
+	/**
+	 * @param firmaElectronicaPage the firmaElectronicaPage to set
+	 */
+	public void setFirmaElectronicaPage(FirmaElectronicaPage firmaElectronicaPage) {
+		this.firmaElectronicaPage = firmaElectronicaPage;
 	}
 
 	
