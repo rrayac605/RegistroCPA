@@ -83,7 +83,7 @@
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="correoTxt" value="#{solicitudRegistroPage.correo}" maxlength="255" validatorMessage="Por favor introduzca un correo electrónico válido.">
-					<f:validateRegex pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+					<f:validateRegex pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"/>
 				</h:inputText>
 			</p:column>		
 		</p:row>
