@@ -309,4 +309,18 @@ public abstract class AbstractDBTestUnit
   {
     return this.em;
   }
+
+/**
+ * @return the mapDAO
+ */
+public Map<Class<?>, Class<?>> getMapDAO() {
+	return mapDAO;
+}
+
+/**
+ * @param mapDAO the mapDAO to set
+ */
+public void setMapDAO(Map<Class<?>, Class<?>> mapDAO) {
+	this.mapDAO = mapDAO;
+}
 }
