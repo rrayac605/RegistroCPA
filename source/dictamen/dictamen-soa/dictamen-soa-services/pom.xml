@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	  <parent>
-	    <groupId>mx.gob.imss.cit.dictamen</groupId>
-	    <artifactId>dictamen-soa</artifactId>
-	    <version>1.0</version>
-	  </parent>
+	<parent>
+		<groupId>mx.gob.imss.cit.dictamen</groupId>
+		<artifactId>dictamen-soa</artifactId>
+		<version>1.0</version>
+	</parent>
 
 	<artifactId>dictamen-soa-services</artifactId>
 	<version>${project.parent.version}</version>
@@ -32,7 +32,7 @@
 			<artifactId>dictamen-soa-persistence</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen</groupId>
 			<artifactId>dictamen-soa-integration-api</artifactId>
@@ -50,6 +50,26 @@
 			<groupId>net.sf.dozer</groupId>
 			<artifactId>dozer</artifactId>
 			<version>5.5.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.5</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Mockito -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.17</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
