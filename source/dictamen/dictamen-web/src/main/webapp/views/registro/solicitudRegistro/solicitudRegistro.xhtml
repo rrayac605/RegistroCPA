@@ -25,7 +25,9 @@
 				<h:outputLabel for="curpTxt" value="CURP: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="curpTxt" value="#{solicitudRegistroPage.curp}" ></h:inputText>
+				<h:inputText id="curpTxt" value="#{solicitudRegistroPage.curp}" validatorMessage="Por favor introduzca un CURP válido.">
+					<f:validateRegex pattern="^([A-Z][A,E,I,O,U,X][A-Z]{2})(\d{2})((01|03|05|07|08|10|12)(0[1-9]|[12]\d|3[01])|02(0[1-9]|[12]\d)|(04|06|09|11)(0[1-9]|[12]\d|30))([M,H])(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)([B,C,D,F,G,H,J,K,L,M,N,Ñ,P,Q,R,S,T,V,W,X,Y,Z]{3})([0-9,A-Z][0-9])$"/>
+				</h:inputText>
 			</p:column>			
 		</p:row>	
 		<p:row>
@@ -38,10 +40,12 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="nombreTxt" value="Nombre: "></h:outputLabel>
+				<h:outputLabel for="nombreTxt" value="Nombre(s): "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="nombreTxt" value="#{solicitudRegistroPage.nombre}" ></h:inputText>
+				<h:inputText id="nombreTxt" value="#{solicitudRegistroPage.nombre}" maxlength="255" validatorMessage="En el campo Nombre sólo se permiten caracteres de la A a la Z.">
+					<f:validateRegex pattern="[a-zA-ZñáéíóúÑÁÉÍÓÚ ]+"/>
+				</h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -52,7 +56,9 @@
 				<h:outputLabel for="paternoTxt" value="Apellido Paterno: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="paternoTxt" value="#{solicitudRegistroPage.paterno}" ></h:inputText>
+				<h:inputText id="paternoTxt" value="#{solicitudRegistroPage.paterno}" maxlength="255" validatorMessage="En el campo Apellido Paterno sólo se permiten caracteres de la A a la Z.">
+					<f:validateRegex pattern="[a-zA-ZñáéíóúÑÁÉÍÓÚ ]+"/>
+				</h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -63,7 +69,9 @@
 				<h:outputLabel for="maternoTxt" value="Apellido Materno: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="maternoTxt" value="#{solicitudRegistroPage.materno}" ></h:inputText>
+				<h:inputText id="maternoTxt" value="#{solicitudRegistroPage.materno}" maxlength="255" validatorMessage="En el campo Apellido Materno sólo se permiten caracteres de la A a la Z.">
+					<f:validateRegex pattern="[a-zA-ZñáéíóúÑÁÉÍÓÚ ]+"/>
+				</h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -74,7 +82,9 @@
 				<h:outputLabel for="correoTxt" value="Correo Electrónico: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="correoTxt" value="#{solicitudRegistroPage.correo}" ></h:inputText>
+				<h:inputText id="correoTxt" value="#{solicitudRegistroPage.correo}" maxlength="255" validatorMessage="Por favor introduzca un correo electrónico válido.">
+					<f:validateRegex pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+				</h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -85,136 +95,12 @@
 				<h:outputLabel for="telefonoTxt" value="Teléfono: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="telefonoTxt" value="#{solicitudRegistroPage.telefono}" ></h:inputText>
+				<h:inputText id="telefonoTxt" value="#{solicitudRegistroPage.telefono}" maxlength="10" validatorMessage="Por favor introduzca un número telefónico de diez dígitos." >
+					<f:validateRegex pattern="[0-9]+"/>
+				</h:inputText>
 			</p:column>		
 		</p:row>		
-		<p:row>
-			<p:column colspan="3" style="text-align:left;">
-				<h4><h:outputText value="Datos Fiscales"/></h4><hr/>
-			</p:column>
-		</p:row>					
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="rfcTxt" value="RFC: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="rfcTxt" value="#{solicitudRegistroPage.rfc}" ></h:inputText>
-			</p:column>		
-		</p:row>	
-		<p:row>
-			<p:column colspan="3" style="text-align:left;">
-				<h4><h:outputText value="Domicilio Fiscal"/></h4><hr/>
-			</p:column>
-		</p:row>					
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">				
-				<h:outputLabel for="direccionTxt" value="Calle: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="direccionTxt" required="true" value="#{solicitudRegistroPage.direccion}" requiredMessage="El campo Calle es obligatorio." />			
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">		
-				<h:outputLabel for="numeroExteriorTxt" value="Número Exterior: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="numeroExteriorTxt" required="true" value="#{solicitudRegistroPage.numeroExterior}" requiredMessage="El campo Número Exterior es obligatorio."></h:inputText>
-			</p:column>		
-		</p:row>				
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">		
-				<h:outputLabel for="numeroInteriorTxt" value="Número Interior: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="numeroInteriorTxt" value="#{solicitudRegistroPage.numeroInterior}" ></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="direccion2Txt" value="Entre Calles: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="direccion2Txt" value="#{solicitudRegistroPage.direccion2}" ></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="codigoPostalTxt" value="Código Postal: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="codigoPostalTxt" required="true" value="#{solicitudRegistroPage.codigoPostal}" requiredMessage="El campo Código Postal es obligatorio."></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="municipioTxt" value="Municipio: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="municipioTxt" required="true" value="#{solicitudRegistroPage.municipio}" requiredMessage="El campo Municipio es obligatorio."></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="entidadFederativaTxt" value="Entidad Federativa: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="entidadFederativaTxt" required="true" value="#{solicitudRegistroPage.entidadFederativa}" requiredMessage="El campo Entidad Federativa es obligatorio."></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="coloniaTxt" value="Colonia: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="coloniaTxt" required="true" value="#{solicitudRegistroPage.colonia}"  requiredMessage="El campo Colonia es obligatorio."></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="localidadTxt" value="Localidad: "></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="localidadTxt" required="true" value="#{solicitudRegistroPage.localidad}" requiredMessage="El campo Localidad es obligatorio."></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column colspan="3" style="text-align:right;">
-				<p:commandButton type="submit" value="Siguiente " update="solicitudRegistroGrid">
-				</p:commandButton>	
-			</p:column>		
-		</p:row>			
-	</p:panelGrid>
+		</p:panelGrid>		
 </h:form>		 			 			
 </h:body>
 </html>
