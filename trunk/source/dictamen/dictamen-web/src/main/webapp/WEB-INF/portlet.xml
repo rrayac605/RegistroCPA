@@ -141,4 +141,136 @@
 		</security-role-ref>
 	</portlet>		
 		
+	
+	
+<!-- Captura Despacho Contador -->
+	<portlet>
+		
+		<portlet-name>CapturaDespachoContador</portlet-name>
+		<display-name>CapturaDespachoContador</display-name>
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/registro/despachoContador/capturaDespachoContador.xhtml</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Captura Despacho Contador</title>
+			<short-title>Captura Despacho Contador</short-title>
+			<keywords>Captura Despacho Contador</keywords>
+		</portlet-info>
+			<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>		
+				
+	
+	<!-- Busqueda Colegio -->
+	<portlet>
+		<portlet-name>BusquedaColegio</portlet-name>
+		<display-name>BusquedaColegio</display-name>
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/registro/colegioContador/busquedaColegio.xhtml</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Busqueda Colegio</title>
+			<short-title>Busqueda Colegior</short-title>
+			<keywords>Busqueda Colegio</keywords>
+		</portlet-info>	
+			<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>	
+	
+	<!-- Busqueda Contador -->
+	<portlet>
+		<portlet-name>BusquedaContador</portlet-name>
+		<display-name>BusquedaContador</display-name>
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/registro/buscarRegistro/busquedaRegistro.xhtml</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Busqueda Contador</title>
+			<short-title>Busqueda Contador</short-title>
+			<keywords>Busqueda Contador</keywords>
+		</portlet-info>	
+			<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+	<!-- Modificar Datos Personales -->
+	<portlet>
+		<portlet-name>ModificarDatosPersonales</portlet-name>
+		<display-name>ModificarDatosPersonales</display-name>
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/registro/modificarDatos/modificarDatosPersonales.xhtml</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Modificar Datos Personales</title>
+			<short-title>Modificar Datos Personales</short-title>
+			<keywords>Modificar Datos Personales</keywords>
+		</portlet-info>	
+			<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+		
 </portlet-app>
