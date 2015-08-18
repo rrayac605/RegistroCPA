@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="solicitudRegistro">
+		<p:wizard>
+			<p:tab id="datosPersonalesTab" title="Datos Personales">
+				<ui:include src="solicitudRegistro/solicitudRegistro.xhtml"></ui:include>
+			</p:tab>
+			<p:tab id="datosFiscalesTab" title="Datos Fiscales">
+				<ui:include src="solicitudRegistro/solicitudRegistro2.xhtml"></ui:include>
+			</p:tab>
+			<p:tab id="mediosContactoTab" title="Medios de Contacto">
+				<ui:include src="solicitudRegistro/medioContacto.xhtml"></ui:include>
+			</p:tab>
+			<p:tab id="firmaDigitalsTab" title="Firma Digital">
+			</p:tab>
+			<p:tab id="informacionDespachoTab" title="Información del Despacho">
+			</p:tab>
+			<p:tab id="datosColegioTab" title="Datos del Colegio">
+			</p:tab>
+			<p:tab id="acuseTab" title="Acuse">
+			</p:tab>																																									
+		</p:wizard>
+	</h:form>
+</h:body>
+</html>
