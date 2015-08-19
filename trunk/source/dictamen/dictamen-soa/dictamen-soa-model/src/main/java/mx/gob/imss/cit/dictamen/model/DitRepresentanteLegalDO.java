@@ -173,4 +173,100 @@ public class DitRepresentanteLegalDO implements Serializable {
 		this.ditPersonaMoral = ditPersonaMoral;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cveIdMandato == null) ? 0 : cveIdMandato.hashCode());
+		result = prime * result + (int) (cveIdRepresentanteLegal ^ (cveIdRepresentanteLegal >>> 32));
+		result = prime * result + ((cveIdTipoPoder == null) ? 0 : cveIdTipoPoder.hashCode());
+		result = prime * result + ((ditPatronSujetoObligado == null) ? 0 : ditPatronSujetoObligado.hashCode());
+		result = prime * result + ((ditPersona == null) ? 0 : ditPersona.hashCode());
+		result = prime * result + ((ditPersonaFisica == null) ? 0 : ditPersonaFisica.hashCode());
+		result = prime * result + ((ditPersonaMoral == null) ? 0 : ditPersonaMoral.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((indActAdmonDominio == null) ? 0 : indActAdmonDominio.hashCode());
+		result = prime * result + ((indEstatus == null) ? 0 : indEstatus.hashCode());
+		result = prime * result + ((rupa == null) ? 0 : rupa.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitRepresentanteLegalDO other = (DitRepresentanteLegalDO) obj;
+		if (cveIdMandato == null) {
+			if (other.cveIdMandato != null)
+				return false;
+		} else if (!cveIdMandato.equals(other.cveIdMandato))
+			return false;
+		if (cveIdRepresentanteLegal != other.cveIdRepresentanteLegal)
+			return false;
+		if (cveIdTipoPoder == null) {
+			if (other.cveIdTipoPoder != null)
+				return false;
+		} else if (!cveIdTipoPoder.equals(other.cveIdTipoPoder))
+			return false;
+		if (ditPatronSujetoObligado == null) {
+			if (other.ditPatronSujetoObligado != null)
+				return false;
+		} else if (!ditPatronSujetoObligado.equals(other.ditPatronSujetoObligado))
+			return false;
+		if (ditPersona == null) {
+			if (other.ditPersona != null)
+				return false;
+		} else if (!ditPersona.equals(other.ditPersona))
+			return false;
+		if (ditPersonaFisica == null) {
+			if (other.ditPersonaFisica != null)
+				return false;
+		} else if (!ditPersonaFisica.equals(other.ditPersonaFisica))
+			return false;
+		if (ditPersonaMoral == null) {
+			if (other.ditPersonaMoral != null)
+				return false;
+		} else if (!ditPersonaMoral.equals(other.ditPersonaMoral))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (indActAdmonDominio == null) {
+			if (other.indActAdmonDominio != null)
+				return false;
+		} else if (!indActAdmonDominio.equals(other.indActAdmonDominio))
+			return false;
+		if (indEstatus == null) {
+			if (other.indEstatus != null)
+				return false;
+		} else if (!indEstatus.equals(other.indEstatus))
+			return false;
+		if (rupa == null) {
+			if (other.rupa != null)
+				return false;
+		} else if (!rupa.equals(other.rupa))
+			return false;
+		return true;
+	}
+	
+	
+	
 }

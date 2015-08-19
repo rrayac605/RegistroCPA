@@ -52,6 +52,40 @@ public class DgCatAdministracionDO implements Serializable {
 		this.dgDomiciliosCarreteras = dgDomiciliosCarreteras;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveCac ^ (cveCac >>> 32));
+		result = prime * result + ((dgDomiciliosCarreteras == null) ? 0 : dgDomiciliosCarreteras.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatAdministracionDO other = (DgCatAdministracionDO) obj;
+		if (cveCac != other.cveCac)
+			return false;
+		if (dgDomiciliosCarreteras == null) {
+			if (other.dgDomiciliosCarreteras != null)
+				return false;
+		} else if (!dgDomiciliosCarreteras.equals(other.dgDomiciliosCarreteras))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		return true;
+	}
+
 	
 
 }

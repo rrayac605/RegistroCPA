@@ -166,4 +166,94 @@ public class NdtRegBajaReactivDO implements Serializable {
 		this.ndtContadorPublicoAut = ndtContadorPublicoAut;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdCpaRegistro ^ (cveIdCpaRegistro >>> 32));
+		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
+		result = prime * result + ((desComentarios == null) ? 0 : desComentarios.hashCode());
+		result = prime * result + ((ditTramite == null) ? 0 : ditTramite.hashCode());
+		result = prime * result + ((fecAutorizacionMovimiento == null) ? 0 : fecAutorizacionMovimiento.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((fecSolicitudMovimiento == null) ? 0 : fecSolicitudMovimiento.hashCode());
+		result = prime * result + ((ndcEstadoCpa == null) ? 0 : ndcEstadoCpa.hashCode());
+		result = prime * result + ((ndtContadorPublicoAut == null) ? 0 : ndtContadorPublicoAut.hashCode());
+		result = prime * result + ((ndtDoctosProbCpas == null) ? 0 : ndtDoctosProbCpas.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdtRegBajaReactivDO other = (NdtRegBajaReactivDO) obj;
+		if (cveIdCpaRegistro != other.cveIdCpaRegistro)
+			return false;
+		if (cveIdUsuario == null) {
+			if (other.cveIdUsuario != null)
+				return false;
+		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
+			return false;
+		if (desComentarios == null) {
+			if (other.desComentarios != null)
+				return false;
+		} else if (!desComentarios.equals(other.desComentarios))
+			return false;
+		if (ditTramite == null) {
+			if (other.ditTramite != null)
+				return false;
+		} else if (!ditTramite.equals(other.ditTramite))
+			return false;
+		if (fecAutorizacionMovimiento == null) {
+			if (other.fecAutorizacionMovimiento != null)
+				return false;
+		} else if (!fecAutorizacionMovimiento.equals(other.fecAutorizacionMovimiento))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (fecSolicitudMovimiento == null) {
+			if (other.fecSolicitudMovimiento != null)
+				return false;
+		} else if (!fecSolicitudMovimiento.equals(other.fecSolicitudMovimiento))
+			return false;
+		if (ndcEstadoCpa == null) {
+			if (other.ndcEstadoCpa != null)
+				return false;
+		} else if (!ndcEstadoCpa.equals(other.ndcEstadoCpa))
+			return false;
+		if (ndtContadorPublicoAut == null) {
+			if (other.ndtContadorPublicoAut != null)
+				return false;
+		} else if (!ndtContadorPublicoAut.equals(other.ndtContadorPublicoAut))
+			return false;
+		if (ndtDoctosProbCpas == null) {
+			if (other.ndtDoctosProbCpas != null)
+				return false;
+		} else if (!ndtDoctosProbCpas.equals(other.ndtDoctosProbCpas))
+			return false;
+		return true;
+	}
+	
+	
+
 }

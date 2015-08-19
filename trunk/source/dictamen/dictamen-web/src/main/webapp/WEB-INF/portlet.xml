@@ -216,7 +216,7 @@
 		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
 		<init-param>
 			<name>javax.portlet.faces.defaultViewId.view</name>
-			<value>/views/registro/buscarRegistro/busquedaRegistro.xhtml</value>
+			<value>/views/registro/buscarRegistro/busquedaContador.xhtml</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -273,4 +273,35 @@
 		</security-role-ref>
 	</portlet>
 		
+	<!-- Captura Baja -->
+	<portlet>
+		<portlet-name>CapturaBaja</portlet-name>
+		<display-name>CapturaBaja</display-name>
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/views/registro/baja/capturaBaja.xhtml</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Captura Baja</title>
+			<short-title>Captura Baja</short-title>
+			<keywords>Captura Baja</keywords>
+		</portlet-info>	
+			<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
 </portlet-app>

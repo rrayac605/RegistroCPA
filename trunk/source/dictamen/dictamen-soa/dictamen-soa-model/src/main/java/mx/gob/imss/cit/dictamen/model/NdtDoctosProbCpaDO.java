@@ -2,6 +2,8 @@ package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.Arrays;
 import java.util.Date;
 
 
@@ -105,5 +107,62 @@ public class NdtDoctosProbCpaDO implements Serializable {
 	public void setNdtRegBajaReactiv(NdtRegBajaReactivDO ndtRegBajaReactiv) {
 		this.ndtRegBajaReactiv = ndtRegBajaReactiv;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdDoctosProbCpa ^ (cveIdDoctosProbCpa >>> 32));
+		result = prime * result + ((ditDocumentoPorTipo == null) ? 0 : ditDocumentoPorTipo.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndtRegBajaReactiv == null) ? 0 : ndtRegBajaReactiv.hashCode());
+		result = prime * result + Arrays.hashCode(refDocumentoDigitalizado);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdtDoctosProbCpaDO other = (NdtDoctosProbCpaDO) obj;
+		if (cveIdDoctosProbCpa != other.cveIdDoctosProbCpa)
+			return false;
+		if (ditDocumentoPorTipo == null) {
+			if (other.ditDocumentoPorTipo != null)
+				return false;
+		} else if (!ditDocumentoPorTipo.equals(other.ditDocumentoPorTipo))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (ndtRegBajaReactiv == null) {
+			if (other.ndtRegBajaReactiv != null)
+				return false;
+		} else if (!ndtRegBajaReactiv.equals(other.ndtRegBajaReactiv))
+			return false;
+		if (!Arrays.equals(refDocumentoDigitalizado, other.refDocumentoDigitalizado))
+			return false;
+		return true;
+	}
+	
+	
 
 }

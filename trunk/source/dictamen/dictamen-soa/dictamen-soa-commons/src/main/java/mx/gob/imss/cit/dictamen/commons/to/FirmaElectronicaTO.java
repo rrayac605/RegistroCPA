@@ -124,6 +124,65 @@ public class FirmaElectronicaTO extends BaseTO{
 	public void setFielParamUrlWsAuth(String fielParamUrlWsAuth) {
 		this.fielParamUrlWsAuth = fielParamUrlWsAuth;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((fiel == null) ? 0 : fiel.hashCode());
+		result = prime * result + ((fielArchive == null) ? 0 : fielArchive.hashCode());
+		result = prime * result + ((fielCode == null) ? 0 : fielCode.hashCode());
+		result = prime * result + ((fielCodebase == null) ? 0 : fielCodebase.hashCode());
+		result = prime * result + ((fielParamOption == null) ? 0 : fielParamOption.hashCode());
+		result = prime * result + ((fielParamUrlWsAuth == null) ? 0 : fielParamUrlWsAuth.hashCode());
+		result = prime * result + ((fielParamUrlWsFe == null) ? 0 : fielParamUrlWsFe.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FirmaElectronicaTO other = (FirmaElectronicaTO) obj;
+		if (fiel == null) {
+			if (other.fiel != null)
+				return false;
+		} else if (!fiel.equals(other.fiel))
+			return false;
+		if (fielArchive == null) {
+			if (other.fielArchive != null)
+				return false;
+		} else if (!fielArchive.equals(other.fielArchive))
+			return false;
+		if (fielCode == null) {
+			if (other.fielCode != null)
+				return false;
+		} else if (!fielCode.equals(other.fielCode))
+			return false;
+		if (fielCodebase == null) {
+			if (other.fielCodebase != null)
+				return false;
+		} else if (!fielCodebase.equals(other.fielCodebase))
+			return false;
+		if (fielParamOption == null) {
+			if (other.fielParamOption != null)
+				return false;
+		} else if (!fielParamOption.equals(other.fielParamOption))
+			return false;
+		if (fielParamUrlWsAuth == null) {
+			if (other.fielParamUrlWsAuth != null)
+				return false;
+		} else if (!fielParamUrlWsAuth.equals(other.fielParamUrlWsAuth))
+			return false;
+		if (fielParamUrlWsFe == null) {
+			if (other.fielParamUrlWsFe != null)
+				return false;
+		} else if (!fielParamUrlWsFe.equals(other.fielParamUrlWsFe))
+			return false;
+		return true;
+	}
 
-
+	
 }

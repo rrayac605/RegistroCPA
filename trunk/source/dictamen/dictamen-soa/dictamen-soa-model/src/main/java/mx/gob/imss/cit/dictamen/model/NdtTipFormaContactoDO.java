@@ -67,4 +67,49 @@ public class NdtTipFormaContactoDO implements Serializable {
 		this.ndcOrigenContacto = ndcOrigenContacto;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cveIdTipFormaContacto == null) ? 0 : cveIdTipFormaContacto.hashCode());
+		result = prime * result + ((cveOrigen == null) ? 0 : cveOrigen.hashCode());
+		result = prime * result + ((ditFormaContacto == null) ? 0 : ditFormaContacto.hashCode());
+		result = prime * result + ((ndcOrigenContacto == null) ? 0 : ndcOrigenContacto.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdtTipFormaContactoDO other = (NdtTipFormaContactoDO) obj;
+		if (cveIdTipFormaContacto == null) {
+			if (other.cveIdTipFormaContacto != null)
+				return false;
+		} else if (!cveIdTipFormaContacto.equals(other.cveIdTipFormaContacto))
+			return false;
+		if (cveOrigen == null) {
+			if (other.cveOrigen != null)
+				return false;
+		} else if (!cveOrigen.equals(other.cveOrigen))
+			return false;
+		if (ditFormaContacto == null) {
+			if (other.ditFormaContacto != null)
+				return false;
+		} else if (!ditFormaContacto.equals(other.ditFormaContacto))
+			return false;
+		if (ndcOrigenContacto == null) {
+			if (other.ndcOrigenContacto != null)
+				return false;
+		} else if (!ndcOrigenContacto.equals(other.ndcOrigenContacto))
+			return false;
+		return true;
+	}
+	
+	
+
 }

@@ -117,4 +117,70 @@ public class NdtPatronDictamenCpaDO implements Serializable {
 		this.ndtPatronDictamen = ndtPatronDictamen;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdPatronCpaDictamen ^ (cveIdPatronCpaDictamen >>> 32));
+		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((fecSolicitudPatronCpa == null) ? 0 : fecSolicitudPatronCpa.hashCode());
+		result = prime * result + ((ndtContadorPublicoAut == null) ? 0 : ndtContadorPublicoAut.hashCode());
+		result = prime * result + ((ndtPatronDictamen == null) ? 0 : ndtPatronDictamen.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdtPatronDictamenCpaDO other = (NdtPatronDictamenCpaDO) obj;
+		if (cveIdPatronCpaDictamen != other.cveIdPatronCpaDictamen)
+			return false;
+		if (cveIdUsuario == null) {
+			if (other.cveIdUsuario != null)
+				return false;
+		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (fecSolicitudPatronCpa == null) {
+			if (other.fecSolicitudPatronCpa != null)
+				return false;
+		} else if (!fecSolicitudPatronCpa.equals(other.fecSolicitudPatronCpa))
+			return false;
+		if (ndtContadorPublicoAut == null) {
+			if (other.ndtContadorPublicoAut != null)
+				return false;
+		} else if (!ndtContadorPublicoAut.equals(other.ndtContadorPublicoAut))
+			return false;
+		if (ndtPatronDictamen == null) {
+			if (other.ndtPatronDictamen != null)
+				return false;
+		} else if (!ndtPatronDictamen.equals(other.ndtPatronDictamen))
+			return false;
+		return true;
+	}
+	
+	
+
 }

@@ -11,7 +11,7 @@ import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.pages.CapturaDespachoContadorPage;
 
 
-@ManagedBean(name = "capturaDespachoContador")
+@ManagedBean(name = "capturaDespachoContadorBean")
 @ViewScoped
 public class CapturaDespachoContadorBean  extends BaseBean{
 	

@@ -90,4 +90,58 @@ public class DicEstadoCivilDO implements Serializable {
 		this.ditPersonas = ditPersonas;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdEstadoCivil ^ (cveIdEstadoCivil >>> 32));
+		result = prime * result + ((desEstadoCivil == null) ? 0 : desEstadoCivil.hashCode());
+		result = prime * result + ((ditPersonas == null) ? 0 : ditPersonas.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DicEstadoCivilDO other = (DicEstadoCivilDO) obj;
+		if (cveIdEstadoCivil != other.cveIdEstadoCivil)
+			return false;
+		if (desEstadoCivil == null) {
+			if (other.desEstadoCivil != null)
+				return false;
+		} else if (!desEstadoCivil.equals(other.desEstadoCivil))
+			return false;
+		if (ditPersonas == null) {
+			if (other.ditPersonas != null)
+				return false;
+		} else if (!ditPersonas.equals(other.ditPersonas))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		return true;
+	}
+	
+	
+
 }

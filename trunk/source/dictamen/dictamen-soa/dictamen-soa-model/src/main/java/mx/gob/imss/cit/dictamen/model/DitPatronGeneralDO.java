@@ -126,4 +126,76 @@ public class DitPatronGeneralDO implements Serializable {
 		this.ditPatronSujetoObligado = ditPatronSujetoObligado;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdPatronGeneral ^ (cveIdPatronGeneral >>> 32));
+		result = prime * result + ((cveIdTipoRegPatron == null) ? 0 : cveIdTipoRegPatron.hashCode());
+		result = prime * result + ((digVer == null) ? 0 : digVer.hashCode());
+		result = prime * result + ((ditPatronGeneral == null) ? 0 : ditPatronGeneral.hashCode());
+		result = prime * result + ((ditPatronGenerals == null) ? 0 : ditPatronGenerals.hashCode());
+		result = prime * result + ((ditPatronSujetoObligado == null) ? 0 : ditPatronSujetoObligado.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((porAusentismo == null) ? 0 : porAusentismo.hashCode());
+		result = prime * result + ((regPatron == null) ? 0 : regPatron.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitPatronGeneralDO other = (DitPatronGeneralDO) obj;
+		if (cveIdPatronGeneral != other.cveIdPatronGeneral)
+			return false;
+		if (cveIdTipoRegPatron == null) {
+			if (other.cveIdTipoRegPatron != null)
+				return false;
+		} else if (!cveIdTipoRegPatron.equals(other.cveIdTipoRegPatron))
+			return false;
+		if (digVer == null) {
+			if (other.digVer != null)
+				return false;
+		} else if (!digVer.equals(other.digVer))
+			return false;
+		if (ditPatronGeneral == null) {
+			if (other.ditPatronGeneral != null)
+				return false;
+		} else if (!ditPatronGeneral.equals(other.ditPatronGeneral))
+			return false;
+		if (ditPatronGenerals == null) {
+			if (other.ditPatronGenerals != null)
+				return false;
+		} else if (!ditPatronGenerals.equals(other.ditPatronGenerals))
+			return false;
+		if (ditPatronSujetoObligado == null) {
+			if (other.ditPatronSujetoObligado != null)
+				return false;
+		} else if (!ditPatronSujetoObligado.equals(other.ditPatronSujetoObligado))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (porAusentismo == null) {
+			if (other.porAusentismo != null)
+				return false;
+		} else if (!porAusentismo.equals(other.porAusentismo))
+			return false;
+		if (regPatron == null) {
+			if (other.regPatron != null)
+				return false;
+		} else if (!regPatron.equals(other.regPatron))
+			return false;
+		return true;
+	}
+	
+	
+	
 }

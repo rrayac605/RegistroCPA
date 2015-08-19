@@ -94,4 +94,57 @@ public class NdtDespachoContactoDO implements Serializable {
 		this.ndcDespacho = ndcDespacho;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdDespachoContacto ^ (cveIdDespachoContacto >>> 32));
+		result = prime * result + ((ditFormaContacto == null) ? 0 : ditFormaContacto.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndcDespacho == null) ? 0 : ndcDespacho.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdtDespachoContactoDO other = (NdtDespachoContactoDO) obj;
+		if (cveIdDespachoContacto != other.cveIdDespachoContacto)
+			return false;
+		if (ditFormaContacto == null) {
+			if (other.ditFormaContacto != null)
+				return false;
+		} else if (!ditFormaContacto.equals(other.ditFormaContacto))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (ndcDespacho == null) {
+			if (other.ndcDespacho != null)
+				return false;
+		} else if (!ndcDespacho.equals(other.ndcDespacho))
+			return false;
+		return true;
+	}
+
+	
 }

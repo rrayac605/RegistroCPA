@@ -102,6 +102,69 @@ public class DgAsentamientoDO implements Serializable {
 	public void setDgDomicilioGeograficos(List<DgDomicilioGeograficoDO> dgDomicilioGeograficos) {
 		this.dgDomicilioGeograficos = dgDomicilioGeograficos;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((agregado == null) ? 0 : agregado.hashCode());
+		result = prime * result + ((dgCatMunicipio == null) ? 0 : dgCatMunicipio.hashCode());
+		result = prime * result + ((dgCatTipoAsen == null) ? 0 : dgCatTipoAsen.hashCode());
+		result = prime * result + ((dgCodigosPostales == null) ? 0 : dgCodigosPostales.hashCode());
+		result = prime * result + ((dgDomicilioGeograficos == null) ? 0 : dgDomicilioGeograficos.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nomAsen == null) ? 0 : nomAsen.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgAsentamientoDO other = (DgAsentamientoDO) obj;
+		if (agregado == null) {
+			if (other.agregado != null)
+				return false;
+		} else if (!agregado.equals(other.agregado))
+			return false;
+		if (dgCatMunicipio == null) {
+			if (other.dgCatMunicipio != null)
+				return false;
+		} else if (!dgCatMunicipio.equals(other.dgCatMunicipio))
+			return false;
+		if (dgCatTipoAsen == null) {
+			if (other.dgCatTipoAsen != null)
+				return false;
+		} else if (!dgCatTipoAsen.equals(other.dgCatTipoAsen))
+			return false;
+		if (dgCodigosPostales == null) {
+			if (other.dgCodigosPostales != null)
+				return false;
+		} else if (!dgCodigosPostales.equals(other.dgCodigosPostales))
+			return false;
+		if (dgDomicilioGeograficos == null) {
+			if (other.dgDomicilioGeograficos != null)
+				return false;
+		} else if (!dgDomicilioGeograficos.equals(other.dgDomicilioGeograficos))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nomAsen == null) {
+			if (other.nomAsen != null)
+				return false;
+		} else if (!nomAsen.equals(other.nomAsen))
+			return false;
+		return true;
+	}
+	
+	
 	
 
 }

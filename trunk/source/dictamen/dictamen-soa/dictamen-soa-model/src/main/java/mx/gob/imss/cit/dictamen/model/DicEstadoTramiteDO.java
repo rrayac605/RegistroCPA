@@ -101,4 +101,64 @@ public class DicEstadoTramiteDO implements Serializable {
 		this.ditTramites = ditTramites;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdEstadoTramite ^ (cveIdEstadoTramite >>> 32));
+		result = prime * result + ((desEstadoTramite == null) ? 0 : desEstadoTramite.hashCode());
+		result = prime * result + ((ditTramites == null) ? 0 : ditTramites.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((refSigla == null) ? 0 : refSigla.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DicEstadoTramiteDO other = (DicEstadoTramiteDO) obj;
+		if (cveIdEstadoTramite != other.cveIdEstadoTramite)
+			return false;
+		if (desEstadoTramite == null) {
+			if (other.desEstadoTramite != null)
+				return false;
+		} else if (!desEstadoTramite.equals(other.desEstadoTramite))
+			return false;
+		if (ditTramites == null) {
+			if (other.ditTramites != null)
+				return false;
+		} else if (!ditTramites.equals(other.ditTramites))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (refSigla == null) {
+			if (other.refSigla != null)
+				return false;
+		} else if (!refSigla.equals(other.refSigla))
+			return false;
+		return true;
+	}
+	
+	
+
 }

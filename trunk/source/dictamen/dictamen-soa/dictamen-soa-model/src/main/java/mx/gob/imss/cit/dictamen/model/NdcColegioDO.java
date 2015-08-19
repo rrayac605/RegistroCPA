@@ -164,4 +164,94 @@ public class NdcColegioDO implements Serializable {
 		this.ndtR3ColegioXcontadors = ndtR3ColegioXcontadors;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdColegio ^ (cveIdColegio >>> 32));
+		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
+		result = prime * result + ((dgDomicilioGeografico == null) ? 0 : dgDomicilioGeografico.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndcAsociacion == null) ? 0 : ndcAsociacion.hashCode());
+		result = prime * result + ((ndtAcreditacions == null) ? 0 : ndtAcreditacions.hashCode());
+		result = prime * result + ((ndtColegioContactos == null) ? 0 : ndtColegioContactos.hashCode());
+		result = prime * result + ((ndtR3ColegioXcontadors == null) ? 0 : ndtR3ColegioXcontadors.hashCode());
+		result = prime * result + ((nomNombre == null) ? 0 : nomNombre.hashCode());
+		result = prime * result + ((rfc == null) ? 0 : rfc.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdcColegioDO other = (NdcColegioDO) obj;
+		if (cveIdColegio != other.cveIdColegio)
+			return false;
+		if (cveIdUsuario == null) {
+			if (other.cveIdUsuario != null)
+				return false;
+		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
+			return false;
+		if (dgDomicilioGeografico == null) {
+			if (other.dgDomicilioGeografico != null)
+				return false;
+		} else if (!dgDomicilioGeografico.equals(other.dgDomicilioGeografico))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (ndcAsociacion == null) {
+			if (other.ndcAsociacion != null)
+				return false;
+		} else if (!ndcAsociacion.equals(other.ndcAsociacion))
+			return false;
+		if (ndtAcreditacions == null) {
+			if (other.ndtAcreditacions != null)
+				return false;
+		} else if (!ndtAcreditacions.equals(other.ndtAcreditacions))
+			return false;
+		if (ndtColegioContactos == null) {
+			if (other.ndtColegioContactos != null)
+				return false;
+		} else if (!ndtColegioContactos.equals(other.ndtColegioContactos))
+			return false;
+		if (ndtR3ColegioXcontadors == null) {
+			if (other.ndtR3ColegioXcontadors != null)
+				return false;
+		} else if (!ndtR3ColegioXcontadors.equals(other.ndtR3ColegioXcontadors))
+			return false;
+		if (nomNombre == null) {
+			if (other.nomNombre != null)
+				return false;
+		} else if (!nomNombre.equals(other.nomNombre))
+			return false;
+		if (rfc == null) {
+			if (other.rfc != null)
+				return false;
+		} else if (!rfc.equals(other.rfc))
+			return false;
+		return true;
+	}
+	
+	
+	
 }

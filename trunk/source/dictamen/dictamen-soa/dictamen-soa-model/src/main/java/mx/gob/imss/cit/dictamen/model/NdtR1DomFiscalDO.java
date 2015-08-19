@@ -186,4 +186,106 @@ public class NdtR1DomFiscalDO implements Serializable {
 		this.ditTramite = ditTramite;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cedulaProfesional == null) ? 0 : cedulaProfesional.hashCode());
+		result = prime * result + ((curp == null) ? 0 : curp.hashCode());
+		result = prime * result + ((cveIdCpa == null) ? 0 : cveIdCpa.hashCode());
+		result = prime * result + (int) (cveIdR1DomFiscal ^ (cveIdR1DomFiscal >>> 32));
+		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
+		result = prime * result + ((desTituloExpedidoPor == null) ? 0 : desTituloExpedidoPor.hashCode());
+		result = prime * result + ((dgDomicilioGeografico == null) ? 0 : dgDomicilioGeografico.hashCode());
+		result = prime * result + ((dicSubdelegacion == null) ? 0 : dicSubdelegacion.hashCode());
+		result = prime * result + ((ditTramite == null) ? 0 : ditTramite.hashCode());
+		result = prime * result + ((fecExpedicionCedprof == null) ? 0 : fecExpedicionCedprof.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((fecSolicitudR1 == null) ? 0 : fecSolicitudR1.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdtR1DomFiscalDO other = (NdtR1DomFiscalDO) obj;
+		if (cedulaProfesional == null) {
+			if (other.cedulaProfesional != null)
+				return false;
+		} else if (!cedulaProfesional.equals(other.cedulaProfesional))
+			return false;
+		if (curp == null) {
+			if (other.curp != null)
+				return false;
+		} else if (!curp.equals(other.curp))
+			return false;
+		if (cveIdCpa == null) {
+			if (other.cveIdCpa != null)
+				return false;
+		} else if (!cveIdCpa.equals(other.cveIdCpa))
+			return false;
+		if (cveIdR1DomFiscal != other.cveIdR1DomFiscal)
+			return false;
+		if (cveIdUsuario == null) {
+			if (other.cveIdUsuario != null)
+				return false;
+		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
+			return false;
+		if (desTituloExpedidoPor == null) {
+			if (other.desTituloExpedidoPor != null)
+				return false;
+		} else if (!desTituloExpedidoPor.equals(other.desTituloExpedidoPor))
+			return false;
+		if (dgDomicilioGeografico == null) {
+			if (other.dgDomicilioGeografico != null)
+				return false;
+		} else if (!dgDomicilioGeografico.equals(other.dgDomicilioGeografico))
+			return false;
+		if (dicSubdelegacion == null) {
+			if (other.dicSubdelegacion != null)
+				return false;
+		} else if (!dicSubdelegacion.equals(other.dicSubdelegacion))
+			return false;
+		if (ditTramite == null) {
+			if (other.ditTramite != null)
+				return false;
+		} else if (!ditTramite.equals(other.ditTramite))
+			return false;
+		if (fecExpedicionCedprof == null) {
+			if (other.fecExpedicionCedprof != null)
+				return false;
+		} else if (!fecExpedicionCedprof.equals(other.fecExpedicionCedprof))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (fecSolicitudR1 == null) {
+			if (other.fecSolicitudR1 != null)
+				return false;
+		} else if (!fecSolicitudR1.equals(other.fecSolicitudR1))
+			return false;
+		return true;
+	}
+	
+	
+
 }

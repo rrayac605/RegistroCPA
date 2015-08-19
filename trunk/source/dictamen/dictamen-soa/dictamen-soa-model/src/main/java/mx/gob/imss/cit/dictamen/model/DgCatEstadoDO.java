@@ -116,4 +116,73 @@ public class DgCatEstadoDO implements Serializable {
 		this.ditSocios = ditSocios;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cveEnt == null) ? 0 : cveEnt.hashCode());
+		result = prime * result + ((dgCatEstadoCp == null) ? 0 : dgCatEstadoCp.hashCode());
+		result = prime * result + ((dgCatMunicipios == null) ? 0 : dgCatMunicipios.hashCode());
+		result = prime * result + ((dicPai == null) ? 0 : dicPai.hashCode());
+		result = prime * result + ((ditPersonas == null) ? 0 : ditPersonas.hashCode());
+		result = prime * result + ((ditSocios == null) ? 0 : ditSocios.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((nomEnt == null) ? 0 : nomEnt.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatEstadoDO other = (DgCatEstadoDO) obj;
+		if (cveEnt == null) {
+			if (other.cveEnt != null)
+				return false;
+		} else if (!cveEnt.equals(other.cveEnt))
+			return false;
+		if (dgCatEstadoCp == null) {
+			if (other.dgCatEstadoCp != null)
+				return false;
+		} else if (!dgCatEstadoCp.equals(other.dgCatEstadoCp))
+			return false;
+		if (dgCatMunicipios == null) {
+			if (other.dgCatMunicipios != null)
+				return false;
+		} else if (!dgCatMunicipios.equals(other.dgCatMunicipios))
+			return false;
+		if (dicPai == null) {
+			if (other.dicPai != null)
+				return false;
+		} else if (!dicPai.equals(other.dicPai))
+			return false;
+		if (ditPersonas == null) {
+			if (other.ditPersonas != null)
+				return false;
+		} else if (!ditPersonas.equals(other.ditPersonas))
+			return false;
+		if (ditSocios == null) {
+			if (other.ditSocios != null)
+				return false;
+		} else if (!ditSocios.equals(other.ditSocios))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (nomEnt == null) {
+			if (other.nomEnt != null)
+				return false;
+		} else if (!nomEnt.equals(other.nomEnt))
+			return false;
+		return true;
+	}
+	
+	
+
 }

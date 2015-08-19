@@ -101,4 +101,67 @@ public class DgCatMunicipioDO implements Serializable {
 		this.ditPersonaDefuncions = ditPersonaDefuncions;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dgAsentamientos == null) ? 0 : dgAsentamientos.hashCode());
+		result = prime * result + ((dgCatEstado == null) ? 0 : dgCatEstado.hashCode());
+		result = prime * result + ((dgCatLocalidads == null) ? 0 : dgCatLocalidads.hashCode());
+		result = prime * result + ((ditActaConstitutivas == null) ? 0 : ditActaConstitutivas.hashCode());
+		result = prime * result + ((ditPersonaDefuncions == null) ? 0 : ditPersonaDefuncions.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nomMun == null) ? 0 : nomMun.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatMunicipioDO other = (DgCatMunicipioDO) obj;
+		if (dgAsentamientos == null) {
+			if (other.dgAsentamientos != null)
+				return false;
+		} else if (!dgAsentamientos.equals(other.dgAsentamientos))
+			return false;
+		if (dgCatEstado == null) {
+			if (other.dgCatEstado != null)
+				return false;
+		} else if (!dgCatEstado.equals(other.dgCatEstado))
+			return false;
+		if (dgCatLocalidads == null) {
+			if (other.dgCatLocalidads != null)
+				return false;
+		} else if (!dgCatLocalidads.equals(other.dgCatLocalidads))
+			return false;
+		if (ditActaConstitutivas == null) {
+			if (other.ditActaConstitutivas != null)
+				return false;
+		} else if (!ditActaConstitutivas.equals(other.ditActaConstitutivas))
+			return false;
+		if (ditPersonaDefuncions == null) {
+			if (other.ditPersonaDefuncions != null)
+				return false;
+		} else if (!ditPersonaDefuncions.equals(other.ditPersonaDefuncions))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nomMun == null) {
+			if (other.nomMun != null)
+				return false;
+		} else if (!nomMun.equals(other.nomMun))
+			return false;
+		return true;
+	}
+	
+	
+
 }

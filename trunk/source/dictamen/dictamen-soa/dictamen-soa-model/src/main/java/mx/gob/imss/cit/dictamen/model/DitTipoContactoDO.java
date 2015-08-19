@@ -62,4 +62,45 @@ public class DitTipoContactoDO implements Serializable {
 		this.desTipoContacto = desTipoContacto;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdTipoContacto ^ (cveIdTipoContacto >>> 32));
+		result = prime * result + ((desEstructura == null) ? 0 : desEstructura.hashCode());
+		result = prime * result + ((desMascara == null) ? 0 : desMascara.hashCode());
+		result = prime * result + ((desTipoContacto == null) ? 0 : desTipoContacto.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitTipoContactoDO other = (DitTipoContactoDO) obj;
+		if (cveIdTipoContacto != other.cveIdTipoContacto)
+			return false;
+		if (desEstructura == null) {
+			if (other.desEstructura != null)
+				return false;
+		} else if (!desEstructura.equals(other.desEstructura))
+			return false;
+		if (desMascara == null) {
+			if (other.desMascara != null)
+				return false;
+		} else if (!desMascara.equals(other.desMascara))
+			return false;
+		if (desTipoContacto == null) {
+			if (other.desTipoContacto != null)
+				return false;
+		} else if (!desTipoContacto.equals(other.desTipoContacto))
+			return false;
+		return true;
+	}
+	
+	
 }
