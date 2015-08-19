@@ -19,7 +19,24 @@
 		<requires-namespaced-parameters>false</requires-namespaced-parameters>
 		<ajaxable>false</ajaxable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>
+	<!-- Captura Despacho Contador -->
+	<portlet>
+		<portlet-name>CapturaDespachoContador</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
 	</portlet>	
+	<!-- Busqueda Colegio  -->
+	<portlet>
+		<portlet-name>BusquedaColegio</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>	
+
 	
 	<!-- Solicitud Registro -->
 	<portlet>
@@ -29,6 +46,35 @@
 		<ajaxable>false</ajaxable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 	</portlet>		
+	
+	<!-- Busqueda Contador  -->
+	<portlet>
+		<portlet-name>BusquedaContador</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>	
+	
+	<!-- Modificar Datos Personales  -->
+	<portlet>
+		<portlet-name>ModificarDatosPersonales</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>	
+	
+	
+	<!-- Solicitud Registro -->
+	<portlet>
+		<portlet-name>SolicitudRegistro</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>
+			
 
 	
 	<!-- Medios de Contacto -->
