@@ -65,4 +65,45 @@ public class DgCatAmbitoDO implements Serializable {
 		this.dgVialidads = dgVialidads;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (ambito ^ (ambito >>> 32));
+		result = prime * result + ((dgCatLocalidads == null) ? 0 : dgCatLocalidads.hashCode());
+		result = prime * result + ((dgVialidads == null) ? 0 : dgVialidads.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatAmbitoDO other = (DgCatAmbitoDO) obj;
+		if (ambito != other.ambito)
+			return false;
+		if (dgCatLocalidads == null) {
+			if (other.dgCatLocalidads != null)
+				return false;
+		} else if (!dgCatLocalidads.equals(other.dgCatLocalidads))
+			return false;
+		if (dgVialidads == null) {
+			if (other.dgVialidads != null)
+				return false;
+		} else if (!dgVialidads.equals(other.dgVialidads))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		return true;
+	}
+	
+	
 }

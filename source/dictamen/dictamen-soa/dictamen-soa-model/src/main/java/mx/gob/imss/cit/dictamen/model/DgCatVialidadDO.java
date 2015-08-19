@@ -52,4 +52,40 @@ public class DgCatVialidadDO implements Serializable {
 		this.dgVialidads = dgVialidads;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveTipoVial ^ (cveTipoVial >>> 32));
+		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
+		result = prime * result + ((dgVialidads == null) ? 0 : dgVialidads.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatVialidadDO other = (DgCatVialidadDO) obj;
+		if (cveTipoVial != other.cveTipoVial)
+			return false;
+		if (descripcion == null) {
+			if (other.descripcion != null)
+				return false;
+		} else if (!descripcion.equals(other.descripcion))
+			return false;
+		if (dgVialidads == null) {
+			if (other.dgVialidads != null)
+				return false;
+		} else if (!dgVialidads.equals(other.dgVialidads))
+			return false;
+		return true;
+	}
+	
+	
+
 }

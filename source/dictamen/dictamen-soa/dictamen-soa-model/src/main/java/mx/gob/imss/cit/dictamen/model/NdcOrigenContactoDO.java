@@ -55,4 +55,40 @@ public class NdcOrigenContactoDO implements Serializable {
 		this.ndtTipFormaContactos = ndtTipFormaContactos;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdOrigenContacto ^ (cveIdOrigenContacto >>> 32));
+		result = prime * result + ((desTablaOrigen == null) ? 0 : desTablaOrigen.hashCode());
+		result = prime * result + ((ndtTipFormaContactos == null) ? 0 : ndtTipFormaContactos.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdcOrigenContactoDO other = (NdcOrigenContactoDO) obj;
+		if (cveIdOrigenContacto != other.cveIdOrigenContacto)
+			return false;
+		if (desTablaOrigen == null) {
+			if (other.desTablaOrigen != null)
+				return false;
+		} else if (!desTablaOrigen.equals(other.desTablaOrigen))
+			return false;
+		if (ndtTipFormaContactos == null) {
+			if (other.ndtTipFormaContactos != null)
+				return false;
+		} else if (!ndtTipFormaContactos.equals(other.ndtTipFormaContactos))
+			return false;
+		return true;
+	}
+	
+	
+	
 }

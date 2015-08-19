@@ -52,4 +52,40 @@ public class DgCatMargenDO implements Serializable {
 		this.dgDomiciliosCaminos = dgDomiciliosCaminos;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveMargen ^ (cveMargen >>> 32));
+		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
+		result = prime * result + ((dgDomiciliosCaminos == null) ? 0 : dgDomiciliosCaminos.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatMargenDO other = (DgCatMargenDO) obj;
+		if (cveMargen != other.cveMargen)
+			return false;
+		if (descripcion == null) {
+			if (other.descripcion != null)
+				return false;
+		} else if (!descripcion.equals(other.descripcion))
+			return false;
+		if (dgDomiciliosCaminos == null) {
+			if (other.dgDomiciliosCaminos != null)
+				return false;
+		} else if (!dgDomiciliosCaminos.equals(other.dgDomiciliosCaminos))
+			return false;
+		return true;
+	}
+	
+	
+
 }

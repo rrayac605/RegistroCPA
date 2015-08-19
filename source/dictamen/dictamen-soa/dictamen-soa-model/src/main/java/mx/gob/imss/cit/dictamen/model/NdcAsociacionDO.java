@@ -137,4 +137,82 @@ public class NdcAsociacionDO implements Serializable {
 	public void setNdtAsociacionContactos(List<NdtAsociacionContactoDO> ndtAsociacionContactos) {
 		this.ndtAsociacionContactos = ndtAsociacionContactos;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdAsociacion ^ (cveIdAsociacion >>> 32));
+		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
+		result = prime * result + ((dgDomicilioGeografico == null) ? 0 : dgDomicilioGeografico.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndcColegios == null) ? 0 : ndcColegios.hashCode());
+		result = prime * result + ((ndtAsociacionContactos == null) ? 0 : ndtAsociacionContactos.hashCode());
+		result = prime * result + ((nomNombre == null) ? 0 : nomNombre.hashCode());
+		result = prime * result + ((rfc == null) ? 0 : rfc.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdcAsociacionDO other = (NdcAsociacionDO) obj;
+		if (cveIdAsociacion != other.cveIdAsociacion)
+			return false;
+		if (cveIdUsuario == null) {
+			if (other.cveIdUsuario != null)
+				return false;
+		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
+			return false;
+		if (dgDomicilioGeografico == null) {
+			if (other.dgDomicilioGeografico != null)
+				return false;
+		} else if (!dgDomicilioGeografico.equals(other.dgDomicilioGeografico))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (ndcColegios == null) {
+			if (other.ndcColegios != null)
+				return false;
+		} else if (!ndcColegios.equals(other.ndcColegios))
+			return false;
+		if (ndtAsociacionContactos == null) {
+			if (other.ndtAsociacionContactos != null)
+				return false;
+		} else if (!ndtAsociacionContactos.equals(other.ndtAsociacionContactos))
+			return false;
+		if (nomNombre == null) {
+			if (other.nomNombre != null)
+				return false;
+		} else if (!nomNombre.equals(other.nomNombre))
+			return false;
+		if (rfc == null) {
+			if (other.rfc != null)
+				return false;
+		} else if (!rfc.equals(other.rfc))
+			return false;
+		return true;
+	}
+	
+	
 }

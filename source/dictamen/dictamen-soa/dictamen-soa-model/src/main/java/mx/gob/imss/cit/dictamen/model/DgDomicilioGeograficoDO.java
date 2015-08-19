@@ -448,4 +448,238 @@ public class DgDomicilioGeograficoDO implements Serializable {
 		this.ndtR1DomFiscals = ndtR1DomFiscals;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cveUsuario == null) ? 0 : cveUsuario.hashCode());
+		result = prime * result + ((cveViaPrin == null) ? 0 : cveViaPrin.hashCode());
+		result = prime * result + ((cveViaRef1 == null) ? 0 : cveViaRef1.hashCode());
+		result = prime * result + ((cveViaRef2 == null) ? 0 : cveViaRef2.hashCode());
+		result = prime * result + ((cveViaRef3 == null) ? 0 : cveViaRef3.hashCode());
+		result = prime * result + ((desUbicacion == null) ? 0 : desUbicacion.hashCode());
+		result = prime * result + ((descripc == null) ? 0 : descripc.hashCode());
+		result = prime * result + ((dgAsentamiento == null) ? 0 : dgAsentamiento.hashCode());
+		result = prime * result + ((dgCatLocalidad == null) ? 0 : dgCatLocalidad.hashCode());
+		result = prime * result + ((dgCatTipoDom == null) ? 0 : dgCatTipoDom.hashCode());
+		result = prime * result + ((dgCodigosPostale == null) ? 0 : dgCodigosPostale.hashCode());
+		result = prime * result + ((dgDomiciliosCamino == null) ? 0 : dgDomiciliosCamino.hashCode());
+		result = prime * result + ((dgDomiciliosCarretera == null) ? 0 : dgDomiciliosCarretera.hashCode());
+		result = prime * result + ((dicDelegacions == null) ? 0 : dicDelegacions.hashCode());
+		result = prime * result + ((dicSubdelegacions == null) ? 0 : dicSubdelegacions.hashCode());
+		result = prime * result + ((ditPersonafDoms == null) ? 0 : ditPersonafDoms.hashCode());
+		result = prime * result + ((ditPersonamDoms == null) ? 0 : ditPersonamDoms.hashCode());
+		result = prime * result + ((domGeog == null) ? 0 : domGeog.hashCode());
+		result = prime * result + (int) (domicilioId ^ (domicilioId >>> 32));
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((fechaHoraAlta == null) ? 0 : fechaHoraAlta.hashCode());
+		result = prime * result + ((indDomAutorizado == null) ? 0 : indDomAutorizado.hashCode());
+		result = prime * result + ((ndcAsociacions == null) ? 0 : ndcAsociacions.hashCode());
+		result = prime * result + ((ndcColegios == null) ? 0 : ndcColegios.hashCode());
+		result = prime * result + ((ndcDespachos == null) ? 0 : ndcDespachos.hashCode());
+		result = prime * result + ((ndtR1DomFiscals == null) ? 0 : ndtR1DomFiscals.hashCode());
+		result = prime * result + ((nomvial == null) ? 0 : nomvial.hashCode());
+		result = prime * result + ((numextAnt == null) ? 0 : numextAnt.hashCode());
+		result = prime * result + ((numextalf == null) ? 0 : numextalf.hashCode());
+		result = prime * result + ((numextnum == null) ? 0 : numextnum.hashCode());
+		result = prime * result + ((numintalf == null) ? 0 : numintalf.hashCode());
+		result = prime * result + ((numintnum == null) ? 0 : numintnum.hashCode());
+		result = prime * result + ((refLatitud == null) ? 0 : refLatitud.hashCode());
+		result = prime * result + ((refLongitud == null) ? 0 : refLongitud.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgDomicilioGeograficoDO other = (DgDomicilioGeograficoDO) obj;
+		if (cveUsuario == null) {
+			if (other.cveUsuario != null)
+				return false;
+		} else if (!cveUsuario.equals(other.cveUsuario))
+			return false;
+		if (cveViaPrin == null) {
+			if (other.cveViaPrin != null)
+				return false;
+		} else if (!cveViaPrin.equals(other.cveViaPrin))
+			return false;
+		if (cveViaRef1 == null) {
+			if (other.cveViaRef1 != null)
+				return false;
+		} else if (!cveViaRef1.equals(other.cveViaRef1))
+			return false;
+		if (cveViaRef2 == null) {
+			if (other.cveViaRef2 != null)
+				return false;
+		} else if (!cveViaRef2.equals(other.cveViaRef2))
+			return false;
+		if (cveViaRef3 == null) {
+			if (other.cveViaRef3 != null)
+				return false;
+		} else if (!cveViaRef3.equals(other.cveViaRef3))
+			return false;
+		if (desUbicacion == null) {
+			if (other.desUbicacion != null)
+				return false;
+		} else if (!desUbicacion.equals(other.desUbicacion))
+			return false;
+		if (descripc == null) {
+			if (other.descripc != null)
+				return false;
+		} else if (!descripc.equals(other.descripc))
+			return false;
+		if (dgAsentamiento == null) {
+			if (other.dgAsentamiento != null)
+				return false;
+		} else if (!dgAsentamiento.equals(other.dgAsentamiento))
+			return false;
+		if (dgCatLocalidad == null) {
+			if (other.dgCatLocalidad != null)
+				return false;
+		} else if (!dgCatLocalidad.equals(other.dgCatLocalidad))
+			return false;
+		if (dgCatTipoDom == null) {
+			if (other.dgCatTipoDom != null)
+				return false;
+		} else if (!dgCatTipoDom.equals(other.dgCatTipoDom))
+			return false;
+		if (dgCodigosPostale == null) {
+			if (other.dgCodigosPostale != null)
+				return false;
+		} else if (!dgCodigosPostale.equals(other.dgCodigosPostale))
+			return false;
+		if (dgDomiciliosCamino == null) {
+			if (other.dgDomiciliosCamino != null)
+				return false;
+		} else if (!dgDomiciliosCamino.equals(other.dgDomiciliosCamino))
+			return false;
+		if (dgDomiciliosCarretera == null) {
+			if (other.dgDomiciliosCarretera != null)
+				return false;
+		} else if (!dgDomiciliosCarretera.equals(other.dgDomiciliosCarretera))
+			return false;
+		if (dicDelegacions == null) {
+			if (other.dicDelegacions != null)
+				return false;
+		} else if (!dicDelegacions.equals(other.dicDelegacions))
+			return false;
+		if (dicSubdelegacions == null) {
+			if (other.dicSubdelegacions != null)
+				return false;
+		} else if (!dicSubdelegacions.equals(other.dicSubdelegacions))
+			return false;
+		if (ditPersonafDoms == null) {
+			if (other.ditPersonafDoms != null)
+				return false;
+		} else if (!ditPersonafDoms.equals(other.ditPersonafDoms))
+			return false;
+		if (ditPersonamDoms == null) {
+			if (other.ditPersonamDoms != null)
+				return false;
+		} else if (!ditPersonamDoms.equals(other.ditPersonamDoms))
+			return false;
+		if (domGeog == null) {
+			if (other.domGeog != null)
+				return false;
+		} else if (!domGeog.equals(other.domGeog))
+			return false;
+		if (domicilioId != other.domicilioId)
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (fechaHoraAlta == null) {
+			if (other.fechaHoraAlta != null)
+				return false;
+		} else if (!fechaHoraAlta.equals(other.fechaHoraAlta))
+			return false;
+		if (indDomAutorizado == null) {
+			if (other.indDomAutorizado != null)
+				return false;
+		} else if (!indDomAutorizado.equals(other.indDomAutorizado))
+			return false;
+		if (ndcAsociacions == null) {
+			if (other.ndcAsociacions != null)
+				return false;
+		} else if (!ndcAsociacions.equals(other.ndcAsociacions))
+			return false;
+		if (ndcColegios == null) {
+			if (other.ndcColegios != null)
+				return false;
+		} else if (!ndcColegios.equals(other.ndcColegios))
+			return false;
+		if (ndcDespachos == null) {
+			if (other.ndcDespachos != null)
+				return false;
+		} else if (!ndcDespachos.equals(other.ndcDespachos))
+			return false;
+		if (ndtR1DomFiscals == null) {
+			if (other.ndtR1DomFiscals != null)
+				return false;
+		} else if (!ndtR1DomFiscals.equals(other.ndtR1DomFiscals))
+			return false;
+		if (nomvial == null) {
+			if (other.nomvial != null)
+				return false;
+		} else if (!nomvial.equals(other.nomvial))
+			return false;
+		if (numextAnt == null) {
+			if (other.numextAnt != null)
+				return false;
+		} else if (!numextAnt.equals(other.numextAnt))
+			return false;
+		if (numextalf == null) {
+			if (other.numextalf != null)
+				return false;
+		} else if (!numextalf.equals(other.numextalf))
+			return false;
+		if (numextnum == null) {
+			if (other.numextnum != null)
+				return false;
+		} else if (!numextnum.equals(other.numextnum))
+			return false;
+		if (numintalf == null) {
+			if (other.numintalf != null)
+				return false;
+		} else if (!numintalf.equals(other.numintalf))
+			return false;
+		if (numintnum == null) {
+			if (other.numintnum != null)
+				return false;
+		} else if (!numintnum.equals(other.numintnum))
+			return false;
+		if (refLatitud == null) {
+			if (other.refLatitud != null)
+				return false;
+		} else if (!refLatitud.equals(other.refLatitud))
+			return false;
+		if (refLongitud == null) {
+			if (other.refLongitud != null)
+				return false;
+		} else if (!refLongitud.equals(other.refLongitud))
+			return false;
+		return true;
+	}
+	
+	
+	
 }

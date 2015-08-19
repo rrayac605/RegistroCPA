@@ -62,4 +62,46 @@ public class DgCatTipoDomDO implements Serializable {
 	public void setDgDomicilioGeograficos(List<DgDomicilioGeograficoDO> dgDomicilioGeograficos) {
 		this.dgDomicilioGeograficos = dgDomicilioGeograficos;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((compEspac == null) ? 0 : compEspac.hashCode());
+		result = prime * result + (int) (cveTipoDom ^ (cveTipoDom >>> 32));
+		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
+		result = prime * result + ((dgDomicilioGeograficos == null) ? 0 : dgDomicilioGeograficos.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatTipoDomDO other = (DgCatTipoDomDO) obj;
+		if (compEspac == null) {
+			if (other.compEspac != null)
+				return false;
+		} else if (!compEspac.equals(other.compEspac))
+			return false;
+		if (cveTipoDom != other.cveTipoDom)
+			return false;
+		if (descripcion == null) {
+			if (other.descripcion != null)
+				return false;
+		} else if (!descripcion.equals(other.descripcion))
+			return false;
+		if (dgDomicilioGeograficos == null) {
+			if (other.dgDomicilioGeograficos != null)
+				return false;
+		} else if (!dgDomicilioGeograficos.equals(other.dgDomicilioGeograficos))
+			return false;
+		return true;
+	}
+	
+	
 }

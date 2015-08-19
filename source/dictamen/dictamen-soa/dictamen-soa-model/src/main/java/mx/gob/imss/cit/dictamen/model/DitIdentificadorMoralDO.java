@@ -113,4 +113,70 @@ public class DitIdentificadorMoralDO implements Serializable {
 		this.ditPersonaMoral = ditPersonaMoral;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdIdentificadorMoral ^ (cveIdIdentificadorMoral >>> 32));
+		result = prime * result + ((cveIdTipoIdentificador == null) ? 0 : cveIdTipoIdentificador.hashCode());
+		result = prime * result + ((cveIdentificadora == null) ? 0 : cveIdentificadora.hashCode());
+		result = prime * result + ((ditPersonaMoral == null) ? 0 : ditPersonaMoral.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((indVigente == null) ? 0 : indVigente.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitIdentificadorMoralDO other = (DitIdentificadorMoralDO) obj;
+		if (cveIdIdentificadorMoral != other.cveIdIdentificadorMoral)
+			return false;
+		if (cveIdTipoIdentificador == null) {
+			if (other.cveIdTipoIdentificador != null)
+				return false;
+		} else if (!cveIdTipoIdentificador.equals(other.cveIdTipoIdentificador))
+			return false;
+		if (cveIdentificadora == null) {
+			if (other.cveIdentificadora != null)
+				return false;
+		} else if (!cveIdentificadora.equals(other.cveIdentificadora))
+			return false;
+		if (ditPersonaMoral == null) {
+			if (other.ditPersonaMoral != null)
+				return false;
+		} else if (!ditPersonaMoral.equals(other.ditPersonaMoral))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (indVigente == null) {
+			if (other.indVigente != null)
+				return false;
+		} else if (!indVigente.equals(other.indVigente))
+			return false;
+		return true;
+	}
+	
+	
+
 }

@@ -244,4 +244,136 @@ public class DitSolicitudDO implements Serializable {
 		this.ditTramites = ditTramites;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cveIdOrigenSolicitud == null) ? 0 : cveIdOrigenSolicitud.hashCode());
+		result = prime * result + ((cveIdRazonCancelacion == null) ? 0 : cveIdRazonCancelacion.hashCode());
+		result = prime * result + (int) (cveIdSolicitud ^ (cveIdSolicitud >>> 32));
+		result = prime * result + ((cveIdTurno == null) ? 0 : cveIdTurno.hashCode());
+		result = prime * result + ((cveIdUmf == null) ? 0 : cveIdUmf.hashCode());
+		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
+		result = prime * result + ((dicEstadoSolicitud == null) ? 0 : dicEstadoSolicitud.hashCode());
+		result = prime * result + ((dicSubdelegacion == null) ? 0 : dicSubdelegacion.hashCode());
+		result = prime * result + ((dicTipoSolicitud == null) ? 0 : dicTipoSolicitud.hashCode());
+		result = prime * result + ((ditTramites == null) ? 0 : ditTramites.hashCode());
+		result = prime * result + ((fecCita == null) ? 0 : fecCita.hashCode());
+		result = prime * result + ((fecConclusion == null) ? 0 : fecConclusion.hashCode());
+		result = prime * result + ((fecPresentacion == null) ? 0 : fecPresentacion.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((fecSolicitud == null) ? 0 : fecSolicitud.hashCode());
+		result = prime * result + ((refFolio == null) ? 0 : refFolio.hashCode());
+		result = prime * result + ((refObservacion == null) ? 0 : refObservacion.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitSolicitudDO other = (DitSolicitudDO) obj;
+		if (cveIdOrigenSolicitud == null) {
+			if (other.cveIdOrigenSolicitud != null)
+				return false;
+		} else if (!cveIdOrigenSolicitud.equals(other.cveIdOrigenSolicitud))
+			return false;
+		if (cveIdRazonCancelacion == null) {
+			if (other.cveIdRazonCancelacion != null)
+				return false;
+		} else if (!cveIdRazonCancelacion.equals(other.cveIdRazonCancelacion))
+			return false;
+		if (cveIdSolicitud != other.cveIdSolicitud)
+			return false;
+		if (cveIdTurno == null) {
+			if (other.cveIdTurno != null)
+				return false;
+		} else if (!cveIdTurno.equals(other.cveIdTurno))
+			return false;
+		if (cveIdUmf == null) {
+			if (other.cveIdUmf != null)
+				return false;
+		} else if (!cveIdUmf.equals(other.cveIdUmf))
+			return false;
+		if (cveIdUsuario == null) {
+			if (other.cveIdUsuario != null)
+				return false;
+		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
+			return false;
+		if (dicEstadoSolicitud == null) {
+			if (other.dicEstadoSolicitud != null)
+				return false;
+		} else if (!dicEstadoSolicitud.equals(other.dicEstadoSolicitud))
+			return false;
+		if (dicSubdelegacion == null) {
+			if (other.dicSubdelegacion != null)
+				return false;
+		} else if (!dicSubdelegacion.equals(other.dicSubdelegacion))
+			return false;
+		if (dicTipoSolicitud == null) {
+			if (other.dicTipoSolicitud != null)
+				return false;
+		} else if (!dicTipoSolicitud.equals(other.dicTipoSolicitud))
+			return false;
+		if (ditTramites == null) {
+			if (other.ditTramites != null)
+				return false;
+		} else if (!ditTramites.equals(other.ditTramites))
+			return false;
+		if (fecCita == null) {
+			if (other.fecCita != null)
+				return false;
+		} else if (!fecCita.equals(other.fecCita))
+			return false;
+		if (fecConclusion == null) {
+			if (other.fecConclusion != null)
+				return false;
+		} else if (!fecConclusion.equals(other.fecConclusion))
+			return false;
+		if (fecPresentacion == null) {
+			if (other.fecPresentacion != null)
+				return false;
+		} else if (!fecPresentacion.equals(other.fecPresentacion))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (fecSolicitud == null) {
+			if (other.fecSolicitud != null)
+				return false;
+		} else if (!fecSolicitud.equals(other.fecSolicitud))
+			return false;
+		if (refFolio == null) {
+			if (other.refFolio != null)
+				return false;
+		} else if (!refFolio.equals(other.refFolio))
+			return false;
+		if (refObservacion == null) {
+			if (other.refObservacion != null)
+				return false;
+		} else if (!refObservacion.equals(other.refObservacion))
+			return false;
+		return true;
+	}
+	
+	
+
 }

@@ -136,4 +136,82 @@ public class DitPersonaDefuncionDO implements Serializable {
 		this.ditPersona = ditPersona;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((anioRegistro == null) ? 0 : anioRegistro.hashCode());
+		result = prime * result + ((crip == null) ? 0 : crip.hashCode());
+		result = prime * result + (int) (cveIdPersonaDefuncion ^ (cveIdPersonaDefuncion >>> 32));
+		result = prime * result + ((desOficRegCivil == null) ? 0 : desOficRegCivil.hashCode());
+		result = prime * result + ((dgCatMunicipio == null) ? 0 : dgCatMunicipio.hashCode());
+		result = prime * result + ((ditPersona == null) ? 0 : ditPersona.hashCode());
+		result = prime * result + ((numActa == null) ? 0 : numActa.hashCode());
+		result = prime * result + ((numFoja == null) ? 0 : numFoja.hashCode());
+		result = prime * result + ((numLibro == null) ? 0 : numLibro.hashCode());
+		result = prime * result + ((numTomo == null) ? 0 : numTomo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitPersonaDefuncionDO other = (DitPersonaDefuncionDO) obj;
+		if (anioRegistro == null) {
+			if (other.anioRegistro != null)
+				return false;
+		} else if (!anioRegistro.equals(other.anioRegistro))
+			return false;
+		if (crip == null) {
+			if (other.crip != null)
+				return false;
+		} else if (!crip.equals(other.crip))
+			return false;
+		if (cveIdPersonaDefuncion != other.cveIdPersonaDefuncion)
+			return false;
+		if (desOficRegCivil == null) {
+			if (other.desOficRegCivil != null)
+				return false;
+		} else if (!desOficRegCivil.equals(other.desOficRegCivil))
+			return false;
+		if (dgCatMunicipio == null) {
+			if (other.dgCatMunicipio != null)
+				return false;
+		} else if (!dgCatMunicipio.equals(other.dgCatMunicipio))
+			return false;
+		if (ditPersona == null) {
+			if (other.ditPersona != null)
+				return false;
+		} else if (!ditPersona.equals(other.ditPersona))
+			return false;
+		if (numActa == null) {
+			if (other.numActa != null)
+				return false;
+		} else if (!numActa.equals(other.numActa))
+			return false;
+		if (numFoja == null) {
+			if (other.numFoja != null)
+				return false;
+		} else if (!numFoja.equals(other.numFoja))
+			return false;
+		if (numLibro == null) {
+			if (other.numLibro != null)
+				return false;
+		} else if (!numLibro.equals(other.numLibro))
+			return false;
+		if (numTomo == null) {
+			if (other.numTomo != null)
+				return false;
+		} else if (!numTomo.equals(other.numTomo))
+			return false;
+		return true;
+	}
+	
+	
+
 }

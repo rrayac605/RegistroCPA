@@ -356,5 +356,196 @@ public class DitPersonaMoralDO implements Serializable {
 	public void setNdtColegioContadors(List<NdtColegioContadorDO> ndtColegioContadors) {
 		this.ndtColegioContadors = ndtColegioContadors;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdPersonaMoral ^ (cveIdPersonaMoral >>> 32));
+		result = prime * result + ((denominacionRazonSocial == null) ? 0 : denominacionRazonSocial.hashCode());
+		result = prime * result + ((desCamaraOrganizacion == null) ? 0 : desCamaraOrganizacion.hashCode());
+		result = prime * result + ((dicTipoSociedad == null) ? 0 : dicTipoSociedad.hashCode());
+		result = prime * result + ((ditActaConstitutivas == null) ? 0 : ditActaConstitutivas.hashCode());
+		result = prime * result + ((ditDatosCertificadoFiels == null) ? 0 : ditDatosCertificadoFiels.hashCode());
+		result = prime * result + ((ditDatosPersonaSats == null) ? 0 : ditDatosPersonaSats.hashCode());
+		result = prime * result + ((ditHistEstadoPersonaMorals == null) ? 0 : ditHistEstadoPersonaMorals.hashCode());
+		result = prime * result + ((ditIdentificadorMorals == null) ? 0 : ditIdentificadorMorals.hashCode());
+		result = prime * result + ((ditPatronSujetoObligados == null) ? 0 : ditPatronSujetoObligados.hashCode());
+		result = prime * result + ((ditPersonamContactoFiscals == null) ? 0 : ditPersonamContactoFiscals.hashCode());
+		result = prime * result + ((ditPersonamContactos == null) ? 0 : ditPersonamContactos.hashCode());
+		result = prime * result + ((ditPersonamDomFiscals == null) ? 0 : ditPersonamDomFiscals.hashCode());
+		result = prime * result + ((ditPersonamDoms == null) ? 0 : ditPersonamDoms.hashCode());
+		result = prime * result + ((ditRepresentanteLegals == null) ? 0 : ditRepresentanteLegals.hashCode());
+		result = prime * result + ((ditSindicatos == null) ? 0 : ditSindicatos.hashCode());
+		result = prime * result + ((ditSituacionSats == null) ? 0 : ditSituacionSats.hashCode());
+		result = prime * result + ((ditSocios1 == null) ? 0 : ditSocios1.hashCode());
+		result = prime * result + ((ditSocios2 == null) ? 0 : ditSocios2.hashCode());
+		result = prime * result + ((ditTramites == null) ? 0 : ditTramites.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((indAcreditado == null) ? 0 : indAcreditado.hashCode());
+		result = prime * result + ((indConcursoMer == null) ? 0 : indConcursoMer.hashCode());
+		result = prime * result + ((ndtAsociacions == null) ? 0 : ndtAsociacions.hashCode());
+		result = prime * result + ((ndtColegioContadors == null) ? 0 : ndtColegioContadors.hashCode());
+		result = prime * result + ((nombreComercial == null) ? 0 : nombreComercial.hashCode());
+		result = prime * result + ((rfc == null) ? 0 : rfc.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitPersonaMoralDO other = (DitPersonaMoralDO) obj;
+		if (cveIdPersonaMoral != other.cveIdPersonaMoral)
+			return false;
+		if (denominacionRazonSocial == null) {
+			if (other.denominacionRazonSocial != null)
+				return false;
+		} else if (!denominacionRazonSocial.equals(other.denominacionRazonSocial))
+			return false;
+		if (desCamaraOrganizacion == null) {
+			if (other.desCamaraOrganizacion != null)
+				return false;
+		} else if (!desCamaraOrganizacion.equals(other.desCamaraOrganizacion))
+			return false;
+		if (dicTipoSociedad == null) {
+			if (other.dicTipoSociedad != null)
+				return false;
+		} else if (!dicTipoSociedad.equals(other.dicTipoSociedad))
+			return false;
+		if (ditActaConstitutivas == null) {
+			if (other.ditActaConstitutivas != null)
+				return false;
+		} else if (!ditActaConstitutivas.equals(other.ditActaConstitutivas))
+			return false;
+		if (ditDatosCertificadoFiels == null) {
+			if (other.ditDatosCertificadoFiels != null)
+				return false;
+		} else if (!ditDatosCertificadoFiels.equals(other.ditDatosCertificadoFiels))
+			return false;
+		if (ditDatosPersonaSats == null) {
+			if (other.ditDatosPersonaSats != null)
+				return false;
+		} else if (!ditDatosPersonaSats.equals(other.ditDatosPersonaSats))
+			return false;
+		if (ditHistEstadoPersonaMorals == null) {
+			if (other.ditHistEstadoPersonaMorals != null)
+				return false;
+		} else if (!ditHistEstadoPersonaMorals.equals(other.ditHistEstadoPersonaMorals))
+			return false;
+		if (ditIdentificadorMorals == null) {
+			if (other.ditIdentificadorMorals != null)
+				return false;
+		} else if (!ditIdentificadorMorals.equals(other.ditIdentificadorMorals))
+			return false;
+		if (ditPatronSujetoObligados == null) {
+			if (other.ditPatronSujetoObligados != null)
+				return false;
+		} else if (!ditPatronSujetoObligados.equals(other.ditPatronSujetoObligados))
+			return false;
+		if (ditPersonamContactoFiscals == null) {
+			if (other.ditPersonamContactoFiscals != null)
+				return false;
+		} else if (!ditPersonamContactoFiscals.equals(other.ditPersonamContactoFiscals))
+			return false;
+		if (ditPersonamContactos == null) {
+			if (other.ditPersonamContactos != null)
+				return false;
+		} else if (!ditPersonamContactos.equals(other.ditPersonamContactos))
+			return false;
+		if (ditPersonamDomFiscals == null) {
+			if (other.ditPersonamDomFiscals != null)
+				return false;
+		} else if (!ditPersonamDomFiscals.equals(other.ditPersonamDomFiscals))
+			return false;
+		if (ditPersonamDoms == null) {
+			if (other.ditPersonamDoms != null)
+				return false;
+		} else if (!ditPersonamDoms.equals(other.ditPersonamDoms))
+			return false;
+		if (ditRepresentanteLegals == null) {
+			if (other.ditRepresentanteLegals != null)
+				return false;
+		} else if (!ditRepresentanteLegals.equals(other.ditRepresentanteLegals))
+			return false;
+		if (ditSindicatos == null) {
+			if (other.ditSindicatos != null)
+				return false;
+		} else if (!ditSindicatos.equals(other.ditSindicatos))
+			return false;
+		if (ditSituacionSats == null) {
+			if (other.ditSituacionSats != null)
+				return false;
+		} else if (!ditSituacionSats.equals(other.ditSituacionSats))
+			return false;
+		if (ditSocios1 == null) {
+			if (other.ditSocios1 != null)
+				return false;
+		} else if (!ditSocios1.equals(other.ditSocios1))
+			return false;
+		if (ditSocios2 == null) {
+			if (other.ditSocios2 != null)
+				return false;
+		} else if (!ditSocios2.equals(other.ditSocios2))
+			return false;
+		if (ditTramites == null) {
+			if (other.ditTramites != null)
+				return false;
+		} else if (!ditTramites.equals(other.ditTramites))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (indAcreditado == null) {
+			if (other.indAcreditado != null)
+				return false;
+		} else if (!indAcreditado.equals(other.indAcreditado))
+			return false;
+		if (indConcursoMer == null) {
+			if (other.indConcursoMer != null)
+				return false;
+		} else if (!indConcursoMer.equals(other.indConcursoMer))
+			return false;
+		if (ndtAsociacions == null) {
+			if (other.ndtAsociacions != null)
+				return false;
+		} else if (!ndtAsociacions.equals(other.ndtAsociacions))
+			return false;
+		if (ndtColegioContadors == null) {
+			if (other.ndtColegioContadors != null)
+				return false;
+		} else if (!ndtColegioContadors.equals(other.ndtColegioContadors))
+			return false;
+		if (nombreComercial == null) {
+			if (other.nombreComercial != null)
+				return false;
+		} else if (!nombreComercial.equals(other.nombreComercial))
+			return false;
+		if (rfc == null) {
+			if (other.rfc != null)
+				return false;
+		} else if (!rfc.equals(other.rfc))
+			return false;
+		return true;
+	}
+	
 	
 }

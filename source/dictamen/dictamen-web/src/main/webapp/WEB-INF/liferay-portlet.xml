@@ -86,6 +86,15 @@
 		<header-portlet-css>/css/main.css</header-portlet-css>
 	</portlet>		
 
+		<!-- Captura Baja -->
+	<portlet>
+		<portlet-name>CapturaBaja</portlet-name>
+		<icon>/icon.png</icon>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+	</portlet>	
+	
 	<role-mapper>
 		<role-name>administrator</role-name>
 		<role-link>Administrator</role-link>

@@ -106,8 +106,62 @@ public class DicPaisDO implements Serializable {
 		this.siglas = siglas;
 	}
 
-	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdPais ^ (cveIdPais >>> 32));
+		result = prime * result + ((desNacionalidad == null) ? 0 : desNacionalidad.hashCode());
+		result = prime * result + ((desPais == null) ? 0 : desPais.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((siglas == null) ? 0 : siglas.hashCode());
+		return result;
+	}
 
-
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DicPaisDO other = (DicPaisDO) obj;
+		if (cveIdPais != other.cveIdPais)
+			return false;
+		if (desNacionalidad == null) {
+			if (other.desNacionalidad != null)
+				return false;
+		} else if (!desNacionalidad.equals(other.desNacionalidad))
+			return false;
+		if (desPais == null) {
+			if (other.desPais != null)
+				return false;
+		} else if (!desPais.equals(other.desPais))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (siglas == null) {
+			if (other.siglas != null)
+				return false;
+		} else if (!siglas.equals(other.siglas))
+			return false;
+		return true;
+	}
 
 }

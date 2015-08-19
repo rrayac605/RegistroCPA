@@ -105,4 +105,64 @@ public class NdcEstadoCpaDO implements Serializable {
 		this.ndtRegBajaReactivs = ndtRegBajaReactivs;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdEstadoCpa ^ (cveIdEstadoCpa >>> 32));
+		result = prime * result + ((desEstadoCpa == null) ? 0 : desEstadoCpa.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndtContadorPublicoAuts == null) ? 0 : ndtContadorPublicoAuts.hashCode());
+		result = prime * result + ((ndtRegBajaReactivs == null) ? 0 : ndtRegBajaReactivs.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdcEstadoCpaDO other = (NdcEstadoCpaDO) obj;
+		if (cveIdEstadoCpa != other.cveIdEstadoCpa)
+			return false;
+		if (desEstadoCpa == null) {
+			if (other.desEstadoCpa != null)
+				return false;
+		} else if (!desEstadoCpa.equals(other.desEstadoCpa))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (ndtContadorPublicoAuts == null) {
+			if (other.ndtContadorPublicoAuts != null)
+				return false;
+		} else if (!ndtContadorPublicoAuts.equals(other.ndtContadorPublicoAuts))
+			return false;
+		if (ndtRegBajaReactivs == null) {
+			if (other.ndtRegBajaReactivs != null)
+				return false;
+		} else if (!ndtRegBajaReactivs.equals(other.ndtRegBajaReactivs))
+			return false;
+		return true;
+	}
+	
+	
+
 }

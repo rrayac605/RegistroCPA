@@ -94,4 +94,56 @@ public class DgVialidadDO implements Serializable {
 		this.dgCatVialidad = dgCatVialidad;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((agregada == null) ? 0 : agregada.hashCode());
+		result = prime * result + (int) (cveVia ^ (cveVia >>> 32));
+		result = prime * result + ((dgCatAmbito == null) ? 0 : dgCatAmbito.hashCode());
+		result = prime * result + ((dgCatLocalidad == null) ? 0 : dgCatLocalidad.hashCode());
+		result = prime * result + ((dgCatVialidad == null) ? 0 : dgCatVialidad.hashCode());
+		result = prime * result + ((nomVia == null) ? 0 : nomVia.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgVialidadDO other = (DgVialidadDO) obj;
+		if (agregada == null) {
+			if (other.agregada != null)
+				return false;
+		} else if (!agregada.equals(other.agregada))
+			return false;
+		if (cveVia != other.cveVia)
+			return false;
+		if (dgCatAmbito == null) {
+			if (other.dgCatAmbito != null)
+				return false;
+		} else if (!dgCatAmbito.equals(other.dgCatAmbito))
+			return false;
+		if (dgCatLocalidad == null) {
+			if (other.dgCatLocalidad != null)
+				return false;
+		} else if (!dgCatLocalidad.equals(other.dgCatLocalidad))
+			return false;
+		if (dgCatVialidad == null) {
+			if (other.dgCatVialidad != null)
+				return false;
+		} else if (!dgCatVialidad.equals(other.dgCatVialidad))
+			return false;
+		if (nomVia == null) {
+			if (other.nomVia != null)
+				return false;
+		} else if (!nomVia.equals(other.nomVia))
+			return false;
+		return true;
+	}
+
 }

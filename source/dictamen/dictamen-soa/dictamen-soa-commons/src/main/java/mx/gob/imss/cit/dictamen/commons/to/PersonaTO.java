@@ -487,6 +487,110 @@ public class PersonaTO  extends BaseTO{
 				+ ", ndtContadorPublicoAuts=" + ndtContadorPublicoAuts + "]";
 	}
 
-	
+		@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((curp == null) ? 0 : curp.hashCode());
+		result = prime * result + (int) (cveIdPersona ^ (cveIdPersona >>> 32));
+		result = prime * result + ((fecDefuncion == null) ? 0 : fecDefuncion.hashCode());
+		result = prime * result + ((fecNacimiento == null) ? 0 : fecNacimiento.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((indPerAutorizada == null) ? 0 : indPerAutorizada.hashCode());
+		result = prime * result + ((nomNombre == null) ? 0 : nomNombre.hashCode());
+		result = prime * result + ((nomPrimerApellido == null) ? 0 : nomPrimerApellido.hashCode());
+		result = prime * result + ((nomSegundoApellido == null) ? 0 : nomSegundoApellido.hashCode());
+		result = prime * result + ((numAnioNacReg == null) ? 0 : numAnioNacReg.hashCode());
+		result = prime * result + ((numMesNacReg == null) ? 0 : numMesNacReg.hashCode());
+		result = prime * result + ((observaciones == null) ? 0 : observaciones.hashCode());
+		result = prime * result + ((rfc == null) ? 0 : rfc.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PersonaTO other = (PersonaTO) obj;
+		if (curp == null) {
+			if (other.curp != null)
+				return false;
+		} else if (!curp.equals(other.curp))
+			return false;
+		if (cveIdPersona != other.cveIdPersona)
+			return false;
+		if (fecDefuncion == null) {
+			if (other.fecDefuncion != null)
+				return false;
+		} else if (!fecDefuncion.equals(other.fecDefuncion))
+			return false;
+		if (fecNacimiento == null) {
+			if (other.fecNacimiento != null)
+				return false;
+		} else if (!fecNacimiento.equals(other.fecNacimiento))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (indPerAutorizada == null) {
+			if (other.indPerAutorizada != null)
+				return false;
+		} else if (!indPerAutorizada.equals(other.indPerAutorizada))
+			return false;
+		if (nomNombre == null) {
+			if (other.nomNombre != null)
+				return false;
+		} else if (!nomNombre.equals(other.nomNombre))
+			return false;
+		if (nomPrimerApellido == null) {
+			if (other.nomPrimerApellido != null)
+				return false;
+		} else if (!nomPrimerApellido.equals(other.nomPrimerApellido))
+			return false;
+		if (nomSegundoApellido == null) {
+			if (other.nomSegundoApellido != null)
+				return false;
+		} else if (!nomSegundoApellido.equals(other.nomSegundoApellido))
+			return false;
+		if (numAnioNacReg == null) {
+			if (other.numAnioNacReg != null)
+				return false;
+		} else if (!numAnioNacReg.equals(other.numAnioNacReg))
+			return false;
+		if (numMesNacReg == null) {
+			if (other.numMesNacReg != null)
+				return false;
+		} else if (!numMesNacReg.equals(other.numMesNacReg))
+			return false;
+		if (observaciones == null) {
+			if (other.observaciones != null)
+				return false;
+		} else if (!observaciones.equals(other.observaciones))
+			return false;
+		if (rfc == null) {
+			if (other.rfc != null)
+				return false;
+		} else if (!rfc.equals(other.rfc))
+			return false;
+		return true;
+	}
 	
 }

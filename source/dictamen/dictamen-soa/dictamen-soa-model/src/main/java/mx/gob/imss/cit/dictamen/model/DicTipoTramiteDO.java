@@ -3,6 +3,7 @@ package mx.gob.imss.cit.dictamen.model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -168,5 +169,89 @@ public class DicTipoTramiteDO implements Serializable {
 	public void setDitTramites(List<DitTramiteDO> ditTramites) {
 		this.ditTramites = ditTramites;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdTipoTramite ^ (cveIdTipoTramite >>> 32));
+		result = prime * result + ((desTipoTramite == null) ? 0 : desTipoTramite.hashCode());
+		result = prime * result + ((dicModulos == null) ? 0 : dicModulos.hashCode());
+		result = prime * result + ((ditTramites == null) ? 0 : ditTramites.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + Arrays.hashCode(refGuiaDetallada);
+		result = prime * result + Arrays.hashCode(refGuiaRapida);
+		result = prime * result + ((refSigla == null) ? 0 : refSigla.hashCode());
+		result = prime * result + ((tipTipoConclusion == null) ? 0 : tipTipoConclusion.hashCode());
+		result = prime * result + ((tipTipoTramite == null) ? 0 : tipTipoTramite.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DicTipoTramiteDO other = (DicTipoTramiteDO) obj;
+		if (cveIdTipoTramite != other.cveIdTipoTramite)
+			return false;
+		if (desTipoTramite == null) {
+			if (other.desTipoTramite != null)
+				return false;
+		} else if (!desTipoTramite.equals(other.desTipoTramite))
+			return false;
+		if (dicModulos == null) {
+			if (other.dicModulos != null)
+				return false;
+		} else if (!dicModulos.equals(other.dicModulos))
+			return false;
+		if (ditTramites == null) {
+			if (other.ditTramites != null)
+				return false;
+		} else if (!ditTramites.equals(other.ditTramites))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (!Arrays.equals(refGuiaDetallada, other.refGuiaDetallada))
+			return false;
+		if (!Arrays.equals(refGuiaRapida, other.refGuiaRapida))
+			return false;
+		if (refSigla == null) {
+			if (other.refSigla != null)
+				return false;
+		} else if (!refSigla.equals(other.refSigla))
+			return false;
+		if (tipTipoConclusion == null) {
+			if (other.tipTipoConclusion != null)
+				return false;
+		} else if (!tipTipoConclusion.equals(other.tipTipoConclusion))
+			return false;
+		if (tipTipoTramite == null) {
+			if (other.tipTipoTramite != null)
+				return false;
+		} else if (!tipTipoTramite.equals(other.tipTipoTramite))
+			return false;
+		return true;
+	}
+	
+	
 	
 }

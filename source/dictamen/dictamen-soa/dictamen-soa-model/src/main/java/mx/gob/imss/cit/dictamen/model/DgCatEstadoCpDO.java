@@ -64,4 +64,47 @@ public class DgCatEstadoCpDO implements Serializable {
 		this.dgCatEstado = dgCatEstado;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cpFinal == null) ? 0 : cpFinal.hashCode());
+		result = prime * result + ((cpInicial == null) ? 0 : cpInicial.hashCode());
+		result = prime * result + ((cveEnt == null) ? 0 : cveEnt.hashCode());
+		result = prime * result + ((dgCatEstado == null) ? 0 : dgCatEstado.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatEstadoCpDO other = (DgCatEstadoCpDO) obj;
+		if (cpFinal == null) {
+			if (other.cpFinal != null)
+				return false;
+		} else if (!cpFinal.equals(other.cpFinal))
+			return false;
+		if (cpInicial == null) {
+			if (other.cpInicial != null)
+				return false;
+		} else if (!cpInicial.equals(other.cpInicial))
+			return false;
+		if (cveEnt == null) {
+			if (other.cveEnt != null)
+				return false;
+		} else if (!cveEnt.equals(other.cveEnt))
+			return false;
+		if (dgCatEstado == null) {
+			if (other.dgCatEstado != null)
+				return false;
+		} else if (!dgCatEstado.equals(other.dgCatEstado))
+			return false;
+		return true;
+	}
+
 }

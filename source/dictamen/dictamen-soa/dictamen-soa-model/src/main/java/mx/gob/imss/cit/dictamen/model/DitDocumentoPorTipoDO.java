@@ -105,4 +105,64 @@ public class DitDocumentoPorTipoDO implements Serializable {
 		this.ndtDoctosProbCpas = ndtDoctosProbCpas;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdDoctoProbPorTipo ^ (cveIdDoctoProbPorTipo >>> 32));
+		result = prime * result + ((dicDocumento == null) ? 0 : dicDocumento.hashCode());
+		result = prime * result + ((dicTipoDocumentoProbatorio == null) ? 0 : dicTipoDocumentoProbatorio.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndtDoctosProbCpas == null) ? 0 : ndtDoctosProbCpas.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitDocumentoPorTipoDO other = (DitDocumentoPorTipoDO) obj;
+		if (cveIdDoctoProbPorTipo != other.cveIdDoctoProbPorTipo)
+			return false;
+		if (dicDocumento == null) {
+			if (other.dicDocumento != null)
+				return false;
+		} else if (!dicDocumento.equals(other.dicDocumento))
+			return false;
+		if (dicTipoDocumentoProbatorio == null) {
+			if (other.dicTipoDocumentoProbatorio != null)
+				return false;
+		} else if (!dicTipoDocumentoProbatorio.equals(other.dicTipoDocumentoProbatorio))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (ndtDoctosProbCpas == null) {
+			if (other.ndtDoctosProbCpas != null)
+				return false;
+		} else if (!ndtDoctosProbCpas.equals(other.ndtDoctosProbCpas))
+			return false;
+		return true;
+	}
+	
+	
+	
 }

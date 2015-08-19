@@ -128,4 +128,76 @@ public class DitFormaMigratoriaDO implements Serializable {
 		this.ditPersona = ditPersona;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cveIdDocumentoProbatorio == null) ? 0 : cveIdDocumentoProbatorio.hashCode());
+		result = prime * result + (int) (cveIdFormaMigratoria ^ (cveIdFormaMigratoria >>> 32));
+		result = prime * result + ((dicCalidadCaracMigrat == null) ? 0 : dicCalidadCaracMigrat.hashCode());
+		result = prime * result + ((dicTipoForma == null) ? 0 : dicTipoForma.hashCode());
+		result = prime * result + ((ditPersona == null) ? 0 : ditPersona.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((numFormaMigratoria == null) ? 0 : numFormaMigratoria.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitFormaMigratoriaDO other = (DitFormaMigratoriaDO) obj;
+		if (cveIdDocumentoProbatorio == null) {
+			if (other.cveIdDocumentoProbatorio != null)
+				return false;
+		} else if (!cveIdDocumentoProbatorio.equals(other.cveIdDocumentoProbatorio))
+			return false;
+		if (cveIdFormaMigratoria != other.cveIdFormaMigratoria)
+			return false;
+		if (dicCalidadCaracMigrat == null) {
+			if (other.dicCalidadCaracMigrat != null)
+				return false;
+		} else if (!dicCalidadCaracMigrat.equals(other.dicCalidadCaracMigrat))
+			return false;
+		if (dicTipoForma == null) {
+			if (other.dicTipoForma != null)
+				return false;
+		} else if (!dicTipoForma.equals(other.dicTipoForma))
+			return false;
+		if (ditPersona == null) {
+			if (other.ditPersona != null)
+				return false;
+		} else if (!ditPersona.equals(other.ditPersona))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (numFormaMigratoria == null) {
+			if (other.numFormaMigratoria != null)
+				return false;
+		} else if (!numFormaMigratoria.equals(other.numFormaMigratoria))
+			return false;
+		return true;
+	}
+	
+	
+	
 }

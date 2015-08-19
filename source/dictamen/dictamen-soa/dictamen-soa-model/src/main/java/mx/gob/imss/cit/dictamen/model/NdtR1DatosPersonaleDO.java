@@ -174,4 +174,100 @@ public class NdtR1DatosPersonaleDO implements Serializable {
 		this.ndtContadorPublicoAut = ndtContadorPublicoAut;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cedulaProfesional == null) ? 0 : cedulaProfesional.hashCode());
+		result = prime * result + (int) (cveIdR1DatosPersonales ^ (cveIdR1DatosPersonales >>> 32));
+		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
+		result = prime * result + ((desTituloExpedidoPor == null) ? 0 : desTituloExpedidoPor.hashCode());
+		result = prime * result + ((dicSubdelegacion == null) ? 0 : dicSubdelegacion.hashCode());
+		result = prime * result + ((ditTramite == null) ? 0 : ditTramite.hashCode());
+		result = prime * result + ((fecExpedicionCedprof == null) ? 0 : fecExpedicionCedprof.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((fecSolicitudR1 == null) ? 0 : fecSolicitudR1.hashCode());
+		result = prime * result + ((ndtContadorPublicoAut == null) ? 0 : ndtContadorPublicoAut.hashCode());
+		result = prime * result + ((numTramiteNotaria == null) ? 0 : numTramiteNotaria.hashCode());
+		result = prime * result + ((urlAcuseNotaria == null) ? 0 : urlAcuseNotaria.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdtR1DatosPersonaleDO other = (NdtR1DatosPersonaleDO) obj;
+		if (cedulaProfesional == null) {
+			if (other.cedulaProfesional != null)
+				return false;
+		} else if (!cedulaProfesional.equals(other.cedulaProfesional))
+			return false;
+		if (cveIdR1DatosPersonales != other.cveIdR1DatosPersonales)
+			return false;
+		if (cveIdUsuario == null) {
+			if (other.cveIdUsuario != null)
+				return false;
+		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
+			return false;
+		if (desTituloExpedidoPor == null) {
+			if (other.desTituloExpedidoPor != null)
+				return false;
+		} else if (!desTituloExpedidoPor.equals(other.desTituloExpedidoPor))
+			return false;
+		if (dicSubdelegacion == null) {
+			if (other.dicSubdelegacion != null)
+				return false;
+		} else if (!dicSubdelegacion.equals(other.dicSubdelegacion))
+			return false;
+		if (ditTramite == null) {
+			if (other.ditTramite != null)
+				return false;
+		} else if (!ditTramite.equals(other.ditTramite))
+			return false;
+		if (fecExpedicionCedprof == null) {
+			if (other.fecExpedicionCedprof != null)
+				return false;
+		} else if (!fecExpedicionCedprof.equals(other.fecExpedicionCedprof))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (fecSolicitudR1 == null) {
+			if (other.fecSolicitudR1 != null)
+				return false;
+		} else if (!fecSolicitudR1.equals(other.fecSolicitudR1))
+			return false;
+		if (ndtContadorPublicoAut == null) {
+			if (other.ndtContadorPublicoAut != null)
+				return false;
+		} else if (!ndtContadorPublicoAut.equals(other.ndtContadorPublicoAut))
+			return false;
+		if (numTramiteNotaria == null) {
+			if (other.numTramiteNotaria != null)
+				return false;
+		} else if (!numTramiteNotaria.equals(other.numTramiteNotaria))
+			return false;
+		if (urlAcuseNotaria == null) {
+			if (other.urlAcuseNotaria != null)
+				return false;
+		} else if (!urlAcuseNotaria.equals(other.urlAcuseNotaria))
+			return false;
+		return true;
+	}
+	
+	
+
 }

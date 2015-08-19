@@ -167,4 +167,100 @@ public class DitPersonaDomExtranjeroDO implements Serializable {
 		this.ditPersona = ditPersona;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdDomPersonaExtranjero ^ (cveIdDomPersonaExtranjero >>> 32));
+		result = prime * result + ((desCalle == null) ? 0 : desCalle.hashCode());
+		result = prime * result + ((desCiudad == null) ? 0 : desCiudad.hashCode());
+		result = prime * result + ((desEntidad == null) ? 0 : desEntidad.hashCode());
+		result = prime * result + ((desLocalidad == null) ? 0 : desLocalidad.hashCode());
+		result = prime * result + ((desPais == null) ? 0 : desPais.hashCode());
+		result = prime * result + ((ditPersona == null) ? 0 : ditPersona.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((numExt == null) ? 0 : numExt.hashCode());
+		result = prime * result + ((numInt == null) ? 0 : numInt.hashCode());
+		result = prime * result + ((refCodigo == null) ? 0 : refCodigo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitPersonaDomExtranjeroDO other = (DitPersonaDomExtranjeroDO) obj;
+		if (cveIdDomPersonaExtranjero != other.cveIdDomPersonaExtranjero)
+			return false;
+		if (desCalle == null) {
+			if (other.desCalle != null)
+				return false;
+		} else if (!desCalle.equals(other.desCalle))
+			return false;
+		if (desCiudad == null) {
+			if (other.desCiudad != null)
+				return false;
+		} else if (!desCiudad.equals(other.desCiudad))
+			return false;
+		if (desEntidad == null) {
+			if (other.desEntidad != null)
+				return false;
+		} else if (!desEntidad.equals(other.desEntidad))
+			return false;
+		if (desLocalidad == null) {
+			if (other.desLocalidad != null)
+				return false;
+		} else if (!desLocalidad.equals(other.desLocalidad))
+			return false;
+		if (desPais == null) {
+			if (other.desPais != null)
+				return false;
+		} else if (!desPais.equals(other.desPais))
+			return false;
+		if (ditPersona == null) {
+			if (other.ditPersona != null)
+				return false;
+		} else if (!ditPersona.equals(other.ditPersona))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (numExt == null) {
+			if (other.numExt != null)
+				return false;
+		} else if (!numExt.equals(other.numExt))
+			return false;
+		if (numInt == null) {
+			if (other.numInt != null)
+				return false;
+		} else if (!numInt.equals(other.numInt))
+			return false;
+		if (refCodigo == null) {
+			if (other.refCodigo != null)
+				return false;
+		} else if (!refCodigo.equals(other.refCodigo))
+			return false;
+		return true;
+	}
+	
+	
+
 }

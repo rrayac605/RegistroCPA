@@ -115,4 +115,70 @@ public class DitPersonafDomDO implements Serializable {
 		this.ditPersona = ditPersona;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdPersonafDom ^ (cveIdPersonafDom >>> 32));
+		result = prime * result + ((cveIdTipoDomicilio == null) ? 0 : cveIdTipoDomicilio.hashCode());
+		result = prime * result + ((desSectorDistribucion == null) ? 0 : desSectorDistribucion.hashCode());
+		result = prime * result + ((dgDomicilioGeografico == null) ? 0 : dgDomicilioGeografico.hashCode());
+		result = prime * result + ((ditPersona == null) ? 0 : ditPersona.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitPersonafDomDO other = (DitPersonafDomDO) obj;
+		if (cveIdPersonafDom != other.cveIdPersonafDom)
+			return false;
+		if (cveIdTipoDomicilio == null) {
+			if (other.cveIdTipoDomicilio != null)
+				return false;
+		} else if (!cveIdTipoDomicilio.equals(other.cveIdTipoDomicilio))
+			return false;
+		if (desSectorDistribucion == null) {
+			if (other.desSectorDistribucion != null)
+				return false;
+		} else if (!desSectorDistribucion.equals(other.desSectorDistribucion))
+			return false;
+		if (dgDomicilioGeografico == null) {
+			if (other.dgDomicilioGeografico != null)
+				return false;
+		} else if (!dgDomicilioGeografico.equals(other.dgDomicilioGeografico))
+			return false;
+		if (ditPersona == null) {
+			if (other.ditPersona != null)
+				return false;
+		} else if (!ditPersona.equals(other.ditPersona))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		return true;
+	}
+	
+	
+
 }

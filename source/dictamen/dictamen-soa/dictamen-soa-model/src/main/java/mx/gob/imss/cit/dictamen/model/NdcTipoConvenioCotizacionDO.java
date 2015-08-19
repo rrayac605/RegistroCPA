@@ -92,4 +92,58 @@ public class NdcTipoConvenioCotizacionDO implements Serializable {
 		this.ndtPatronDictamens = ndtPatronDictamens;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdTipoConvenioCot ^ (cveIdTipoConvenioCot >>> 32));
+		result = prime * result + ((desTipoConvenioCot == null) ? 0 : desTipoConvenioCot.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndtPatronDictamens == null) ? 0 : ndtPatronDictamens.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdcTipoConvenioCotizacionDO other = (NdcTipoConvenioCotizacionDO) obj;
+		if (cveIdTipoConvenioCot != other.cveIdTipoConvenioCot)
+			return false;
+		if (desTipoConvenioCot == null) {
+			if (other.desTipoConvenioCot != null)
+				return false;
+		} else if (!desTipoConvenioCot.equals(other.desTipoConvenioCot))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (ndtPatronDictamens == null) {
+			if (other.ndtPatronDictamens != null)
+				return false;
+		} else if (!ndtPatronDictamens.equals(other.ndtPatronDictamens))
+			return false;
+		return true;
+	}
+	
+	
+
 }

@@ -7,7 +7,7 @@ import javax.faces.bean.ViewScoped;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.pages.ModificarDatosPersonalesPage;
 
-@ManagedBean(name = "menuContadorPublicoBean")
+@ManagedBean(name = "modificarDatosPersonalesBean")
 @ViewScoped
 public class ModificarDatosPersonalesBean extends BaseBean {
 

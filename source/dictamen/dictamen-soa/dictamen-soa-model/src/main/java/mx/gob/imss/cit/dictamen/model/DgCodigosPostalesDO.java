@@ -67,5 +67,50 @@ public class DgCodigosPostalesDO implements Serializable {
 	public void setDgDomicilioGeograficos(List<DgDomicilioGeograficoDO> dgDomicilioGeograficos) {
 		this.dgDomicilioGeograficos = dgDomicilioGeograficos;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((agregado == null) ? 0 : agregado.hashCode());
+		result = prime * result + ((dgAsentamiento == null) ? 0 : dgAsentamiento.hashCode());
+		result = prime * result + ((dgDomicilioGeograficos == null) ? 0 : dgDomicilioGeograficos.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCodigosPostalesDO other = (DgCodigosPostalesDO) obj;
+		if (agregado == null) {
+			if (other.agregado != null)
+				return false;
+		} else if (!agregado.equals(other.agregado))
+			return false;
+		if (dgAsentamiento == null) {
+			if (other.dgAsentamiento != null)
+				return false;
+		} else if (!dgAsentamiento.equals(other.dgAsentamiento))
+			return false;
+		if (dgDomicilioGeograficos == null) {
+			if (other.dgDomicilioGeograficos != null)
+				return false;
+		} else if (!dgDomicilioGeograficos.equals(other.dgDomicilioGeograficos))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+	
+	
 	
 }

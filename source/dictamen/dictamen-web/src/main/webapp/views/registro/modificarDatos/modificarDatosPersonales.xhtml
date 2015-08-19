@@ -10,8 +10,8 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form id="solicitudRegistro">	
-	<p:panelGrid id="solicitudRegistroGrid">
+<h:form id="modificarDatosPersonales">	
+	<p:panelGrid id="modificarDatosPersonalesGrid">
 		<p:row>
 			<p:column colspan="3">
 				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
@@ -102,7 +102,7 @@
 				<h:outputLabel for="registroIMSSTxt" value="Registro IMSS "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="registroIMSSTxt" value="#{modificarDatosPersonalesPage.rfc}" ></h:inputText>
+				<h:inputText id="registroIMSSTxt" value="#{modificarDatosPersonalesPage.registroIMSS}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -113,7 +113,7 @@
 				<h:outputLabel for="estadoSolTxt" value="Estado "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="estadoSolTxt" value="#{modificarDatosPersonalesPage.rfc}" ></h:inputText>
+				<h:inputText id="estadoSolTxt" value="#{modificarDatosPersonalesPage.estadoSolicitud}" ></h:inputText>
 			</p:column>		
 		</p:row>
 				
@@ -142,7 +142,7 @@
 				<h:outputLabel for="emailTxt" value="Correo Electronico: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="emailTxt" value="#{modificarDatosPersonalesPage.rfc}" ></h:inputText>
+				<h:inputText id="emailTxt" value="#{modificarDatosPersonalesPage.coreoFiscal}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -153,7 +153,7 @@
 				<h:outputLabel for="telfonoTxt" value="Telefono "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="telfonoTxt" value="#{modificarDatosPersonalesPage.rfc}" ></h:inputText>
+				<h:inputText id="telfonoTxt" value="#{modificarDatosPersonalesPage.telefonoFiscal}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		
@@ -171,7 +171,7 @@
 				<h:outputLabel for="direccionTxt" value="Calle: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="direccionTxt" required="true" value="#{modificarDatosPersonalesPage.direccion}" requiredMessage="El campo Calle es obligatorio." />			
+				<h:inputText id="direccionTxt" required="true" value="#{modificarDatosPersonalesPage.calle}" requiredMessage="El campo Calle es obligatorio." />			
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -193,7 +193,7 @@
 				<h:outputLabel for="letraExteriorTxt" value="Letra Exterior: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="letraExteriorTxt" required="true" value="#{modificarDatosPersonalesPage.numeroExterior}" requiredMessage="El campo Número Exterior es obligatorio."></h:inputText>
+				<h:inputText id="letraExteriorTxt" required="true" value="#{modificarDatosPersonalesPage.letraExterior}"></h:inputText>
 			</p:column>		
 		</p:row>	
 		<p:row>
@@ -215,7 +215,7 @@
 				<h:outputLabel for="letraInteriorTxt" value="Letra Interior: "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="letraInteriorTxt" value="#{modificarDatosPersonalesPage.numeroInterior}" ></h:inputText>
+				<h:inputText id="letraInteriorTxt" value="#{modificarDatosPersonalesPage.letraInterior}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -226,7 +226,7 @@
 				<h:outputLabel for="calle1Txt" value="Entre Calle "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="calle1Txt" value="#{modificarDatosPersonalesPage.direccion2}" ></h:inputText>
+				<h:inputText id="calle1Txt" value="#{modificarDatosPersonalesPage.calle1}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -237,7 +237,7 @@
 				<h:outputLabel for="calle2Txt" value="Y Calle "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="calle2Txt" value="#{modificarDatosPersonalesPage.direccion2}" ></h:inputText>
+				<h:inputText id="calle2Txt" value="#{modificarDatosPersonalesPage.calle1}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -309,7 +309,7 @@
 				<h:outputLabel for="medioContactoTxt" value="Medio de Contacto"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="medioContactoTxt" required="true" value="#{modificarDatosPersonalesPage.codigoPostal}" ></h:inputText>
+				<h:inputText id="medioContactoTxt" required="true" value="#{modificarDatosPersonalesPage.medioContacto}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -320,7 +320,7 @@
 				<h:outputLabel for="descricionTxt" value="Descripción"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="descricionTxt" required="true" value="#{modificarDatosPersonalesPage.codigoPostal}" ></h:inputText>
+				<h:inputText id="descricionTxt" required="true" value="#{modificarDatosPersonalesPage.descripcion}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		
@@ -337,7 +337,7 @@
 				<h:outputLabel for="institucionTxt" value="Institución que expidio su Titulo Profesional"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="institucionTxt" required="true" value="#{modificarDatosPersonalesPage.codigoPostal}" ></h:inputText>
+				<h:inputText id="institucionTxt" required="true" value="#{modificarDatosPersonalesPage.institucion}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -348,12 +348,12 @@
 				<h:outputLabel for="cedulanTxt" value="Número de cedula profesional"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="cedulaTxt" required="true" value="#{modificarDatosPersonalesPage.codigoPostal}" ></h:inputText>
+				<h:inputText id="cedulaTxt" required="true" value="#{modificarDatosPersonalesPage.cedula}" ></h:inputText>
 			</p:column>		
 		</p:row> 	
 		<p:row>
 			<p:column colspan="3" style="text-align:right;">
-				<p:commandButton type="submit" value="Acciones" update="solicitudRegistroGrid">
+				<p:commandButton type="submit" value="Acciones" update="modificarDatosPersonales">
 				</p:commandButton>	
 			</p:column>		
 		</p:row>			

@@ -91,4 +91,58 @@ public class NdcTipoSancionDO implements Serializable {
 		this.ndtContadorPublicoAuts = ndtContadorPublicoAuts;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdTiposancion ^ (cveIdTiposancion >>> 32));
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndtContadorPublicoAuts == null) ? 0 : ndtContadorPublicoAuts.hashCode());
+		result = prime * result + ((sancion == null) ? 0 : sancion.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NdcTipoSancionDO other = (NdcTipoSancionDO) obj;
+		if (cveIdTiposancion != other.cveIdTiposancion)
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (ndtContadorPublicoAuts == null) {
+			if (other.ndtContadorPublicoAuts != null)
+				return false;
+		} else if (!ndtContadorPublicoAuts.equals(other.ndtContadorPublicoAuts))
+			return false;
+		if (sancion == null) {
+			if (other.sancion != null)
+				return false;
+		} else if (!sancion.equals(other.sancion))
+			return false;
+		return true;
+	}
+	
+	
+
 }

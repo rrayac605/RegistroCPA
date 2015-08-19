@@ -305,6 +305,69 @@ public class ContadorPublicoTO extends BaseTO{
 		return serialVersionUID;
 	}
 
-	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveIdCpa ^ (cveIdCpa >>> 32));
+		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((numRegistroCpa == null) ? 0 : numRegistroCpa.hashCode());
+		result = prime * result + ((numTramiteNotaria == null) ? 0 : numTramiteNotaria.hashCode());
+		result = prime * result + ((urlAcuseNotaria == null) ? 0 : urlAcuseNotaria.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ContadorPublicoTO other = (ContadorPublicoTO) obj;
+		if (cveIdCpa != other.cveIdCpa)
+			return false;
+		if (cveIdUsuario == null) {
+			if (other.cveIdUsuario != null)
+				return false;
+		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (numRegistroCpa == null) {
+			if (other.numRegistroCpa != null)
+				return false;
+		} else if (!numRegistroCpa.equals(other.numRegistroCpa))
+			return false;
+		if (numTramiteNotaria == null) {
+			if (other.numTramiteNotaria != null)
+				return false;
+		} else if (!numTramiteNotaria.equals(other.numTramiteNotaria))
+			return false;
+		if (urlAcuseNotaria == null) {
+			if (other.urlAcuseNotaria != null)
+				return false;
+		} else if (!urlAcuseNotaria.equals(other.urlAcuseNotaria))
+			return false;
+		return true;
+	}
 	
 }

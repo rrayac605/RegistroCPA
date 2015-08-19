@@ -132,4 +132,82 @@ public class DgDomiciliosCarreterasDO implements Serializable {
 		this.dgDomicilioGeografico = dgDomicilioGeografico;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cadenamiento == null) ? 0 : cadenamiento.hashCode());
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		result = prime * result + ((destino == null) ? 0 : destino.hashCode());
+		result = prime * result + ((dgCatAdministracion == null) ? 0 : dgCatAdministracion.hashCode());
+		result = prime * result + ((dgCatDerechosTransito == null) ? 0 : dgCatDerechosTransito.hashCode());
+		result = prime * result + ((dgCatTermGen == null) ? 0 : dgCatTermGen.hashCode());
+		result = prime * result + ((dgDomicilioGeografico == null) ? 0 : dgDomicilioGeografico.hashCode());
+		result = prime * result + (int) (domicilioId ^ (domicilioId >>> 32));
+		result = prime * result + ((nomvial == null) ? 0 : nomvial.hashCode());
+		result = prime * result + ((origen == null) ? 0 : origen.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgDomiciliosCarreterasDO other = (DgDomiciliosCarreterasDO) obj;
+		if (cadenamiento == null) {
+			if (other.cadenamiento != null)
+				return false;
+		} else if (!cadenamiento.equals(other.cadenamiento))
+			return false;
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
+			return false;
+		if (destino == null) {
+			if (other.destino != null)
+				return false;
+		} else if (!destino.equals(other.destino))
+			return false;
+		if (dgCatAdministracion == null) {
+			if (other.dgCatAdministracion != null)
+				return false;
+		} else if (!dgCatAdministracion.equals(other.dgCatAdministracion))
+			return false;
+		if (dgCatDerechosTransito == null) {
+			if (other.dgCatDerechosTransito != null)
+				return false;
+		} else if (!dgCatDerechosTransito.equals(other.dgCatDerechosTransito))
+			return false;
+		if (dgCatTermGen == null) {
+			if (other.dgCatTermGen != null)
+				return false;
+		} else if (!dgCatTermGen.equals(other.dgCatTermGen))
+			return false;
+		if (dgDomicilioGeografico == null) {
+			if (other.dgDomicilioGeografico != null)
+				return false;
+		} else if (!dgDomicilioGeografico.equals(other.dgDomicilioGeografico))
+			return false;
+		if (domicilioId != other.domicilioId)
+			return false;
+		if (nomvial == null) {
+			if (other.nomvial != null)
+				return false;
+		} else if (!nomvial.equals(other.nomvial))
+			return false;
+		if (origen == null) {
+			if (other.origen != null)
+				return false;
+		} else if (!origen.equals(other.origen))
+			return false;
+		return true;
+	}
+	
+	
+
 }

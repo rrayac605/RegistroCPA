@@ -116,4 +116,73 @@ public class DgCatLocalidadDO implements Serializable {
 		this.dgVialidads = dgVialidads;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((agregada == null) ? 0 : agregada.hashCode());
+		result = prime * result + ((dgCatAmbito == null) ? 0 : dgCatAmbito.hashCode());
+		result = prime * result + ((dgCatMunicipio == null) ? 0 : dgCatMunicipio.hashCode());
+		result = prime * result + ((dgCatPeriodo == null) ? 0 : dgCatPeriodo.hashCode());
+		result = prime * result + ((dgDomicilioGeograficos == null) ? 0 : dgDomicilioGeograficos.hashCode());
+		result = prime * result + ((dgVialidads == null) ? 0 : dgVialidads.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nomLoc == null) ? 0 : nomLoc.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatLocalidadDO other = (DgCatLocalidadDO) obj;
+		if (agregada == null) {
+			if (other.agregada != null)
+				return false;
+		} else if (!agregada.equals(other.agregada))
+			return false;
+		if (dgCatAmbito == null) {
+			if (other.dgCatAmbito != null)
+				return false;
+		} else if (!dgCatAmbito.equals(other.dgCatAmbito))
+			return false;
+		if (dgCatMunicipio == null) {
+			if (other.dgCatMunicipio != null)
+				return false;
+		} else if (!dgCatMunicipio.equals(other.dgCatMunicipio))
+			return false;
+		if (dgCatPeriodo == null) {
+			if (other.dgCatPeriodo != null)
+				return false;
+		} else if (!dgCatPeriodo.equals(other.dgCatPeriodo))
+			return false;
+		if (dgDomicilioGeograficos == null) {
+			if (other.dgDomicilioGeograficos != null)
+				return false;
+		} else if (!dgDomicilioGeograficos.equals(other.dgDomicilioGeograficos))
+			return false;
+		if (dgVialidads == null) {
+			if (other.dgVialidads != null)
+				return false;
+		} else if (!dgVialidads.equals(other.dgVialidads))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nomLoc == null) {
+			if (other.nomLoc != null)
+				return false;
+		} else if (!nomLoc.equals(other.nomLoc))
+			return false;
+		return true;
+	}
+	
+	
+
 }

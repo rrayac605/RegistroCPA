@@ -91,4 +91,58 @@ public class DitPersonamContactoFiscalDO implements Serializable {
 		this.ditPersonaMoral = ditPersonaMoral;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cveIdFormaContacto == null) ? 0 : cveIdFormaContacto.hashCode());
+		result = prime * result + (int) (cveIdPmcontFiscal ^ (cveIdPmcontFiscal >>> 32));
+		result = prime * result + ((ditPersonaMoral == null) ? 0 : ditPersonaMoral.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DitPersonamContactoFiscalDO other = (DitPersonamContactoFiscalDO) obj;
+		if (cveIdFormaContacto == null) {
+			if (other.cveIdFormaContacto != null)
+				return false;
+		} else if (!cveIdFormaContacto.equals(other.cveIdFormaContacto))
+			return false;
+		if (cveIdPmcontFiscal != other.cveIdPmcontFiscal)
+			return false;
+		if (ditPersonaMoral == null) {
+			if (other.ditPersonaMoral != null)
+				return false;
+		} else if (!ditPersonaMoral.equals(other.ditPersonaMoral))
+			return false;
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
+				return false;
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
+			return false;
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
+				return false;
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		return true;
+	}
+	
+	
+
 }

@@ -64,4 +64,44 @@ public class DgCatTermGenDO implements Serializable {
 		this.dgDomiciliosCarreteras = dgDomiciliosCarreteras;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cveTer ^ (cveTer >>> 32));
+		result = prime * result + ((dgDomiciliosCaminos == null) ? 0 : dgDomiciliosCaminos.hashCode());
+		result = prime * result + ((dgDomiciliosCarreteras == null) ? 0 : dgDomiciliosCarreteras.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DgCatTermGenDO other = (DgCatTermGenDO) obj;
+		if (cveTer != other.cveTer)
+			return false;
+		if (dgDomiciliosCaminos == null) {
+			if (other.dgDomiciliosCaminos != null)
+				return false;
+		} else if (!dgDomiciliosCaminos.equals(other.dgDomiciliosCaminos))
+			return false;
+		if (dgDomiciliosCarreteras == null) {
+			if (other.dgDomiciliosCarreteras != null)
+				return false;
+		} else if (!dgDomiciliosCarreteras.equals(other.dgDomiciliosCarreteras))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		return true;
+	}
+
 }

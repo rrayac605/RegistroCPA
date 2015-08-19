@@ -8,62 +8,68 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<style>
-		h5 {
-			position: relative;
-			background: #1A79A7;
-			padding: 5px 15px;
-			color: white !important;
-			text-align:center;
-			margin: 0 !important;
-		}
-	</style>
 </h:head>
 <h:body>
-	
-	<p:panelGrid>
+<h:form id="colegioContador">	
+	<p:panelGrid id="colegioContadorGrid">
 		<p:row>
-			<p:column>
-				<h4><h:outputText value="IMSS Digital"/></h4>
-			</p:column>
-		</p:row>	
-		<p:row>
-			<p:column>
-				<h4><h:outputText value="Datos del Colegio o Asociacion Profesional de Contadores Públicos"/></h4>
-			</p:column>
-		</p:row>	
-		<p:row>
-			<p:column>
-				<h5><h:outputText value="RFC"/></h5>
-				<h:inputHidden></h:inputHidden>
-			</p:column>	
-			<p:column style="width: 300px; text-align:center;">
-				<p:button value="Buscar" style="width: 300px;">
-				</p:button>						
+			<p:column colspan="3">
+				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
 			</p:column>
 		</p:row>
 		<p:row>
-			<p:column>
-				<h5><h:outputText value="RFC"/></h5>
-				<h:inputHidden></h:inputHidden>
-			</p:column>	
-			<p:column>
-				<h5><h:outputText value="Razón Social"/></h5>
-				<h:inputHidden></h:inputHidden>
-			</p:column>	
-		</p:row>
-		<p:row>
-			<p:column>
-				<h:selectManyListbox>
-				  	<f:selectItem itemValue="" itemLabel="Acciones" />
-				</h:selectManyListbox>	 	
-			</p:column>	
-			<p:column>
-				<p:button value="Anterior" style="width: 567px;"></p:button>
+			<p:column colspan="3" style="text-align:left;">	
+				<h4><h:outputText value="IMSS Digital"/></h4><hr/>
 			</p:column>
 		</p:row>
-												 	
+		<p:row>
+			<p:column colspan="3" style="text-align:left;">	
+				<h4><h:outputText value="Datos del Colegio o Asociacion Profesional de Contadores Públicos"/></h4><hr/>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column style="text-align:right; width:5px;">
+				<h:outputLabel style="color:red;"></h:outputLabel>
+			</p:column>
+			<p:column style="text-align:left;">	
+				<h:outputLabel for="rfcTxt" value="RFC: "></h:outputLabel>
+			</p:column>
+			<p:column style="text-align:left;">
+				<h:inputText id="rfcTxt" value="#{busquedaColegioPage.rfc}" ></h:inputText>
+			</p:column>	
+			<p:column colspan="3" style="text-align:right;">
+			<p:commandButton type="submit" value="Buscar" update="colegioContador"></p:commandButton>	
+			</p:column>		
+		</p:row>
+		<p:row>
+			<p:column style="text-align:right; width:5px;">
+				<h:outputLabel style="color:red;"></h:outputLabel>
+			</p:column>
+			<p:column style="text-align:left;">	
+				<h:outputLabel for="rfcrTxt" value="RFC "></h:outputLabel>
+			</p:column>
+			<p:column style="text-align:left;">
+				<h:inputText id="rfcrTxt" value="#{busquedaColegioPage.rfcr}" ></h:inputText>
+			</p:column>		
+		</p:row>
+		<p:row>
+			<p:column style="text-align:right; width:5px;">
+				<h:outputLabel style="color:red;"></h:outputLabel>
+			</p:column>
+			<p:column style="text-align:left;">	
+				<h:outputLabel for="razonSocialTxt" value="Razon Social "></h:outputLabel>
+			</p:column>
+			<p:column style="text-align:left;">
+				<h:inputText id="razonSocialTxt" value="#{busquedaColegioPage.razonSocial}" ></h:inputText>
+			</p:column>		
+		</p:row>
+		<p:row>
+			<p:column colspan="3" style="text-align:right;">
+				<p:commandButton type="submit" value="Acciones" update="colegioContador"></p:commandButton>	
+				<p:commandButton type="submit" value="Anterior" update="colegioContador"></p:commandButton>	
+			</p:column>	
+		</p:row>			
 	</p:panelGrid>
-	 			 			 			
+</h:form>		 			 			
 </h:body>
 </html>
