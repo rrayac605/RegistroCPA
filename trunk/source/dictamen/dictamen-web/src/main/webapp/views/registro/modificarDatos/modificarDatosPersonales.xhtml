@@ -18,11 +18,16 @@
 			</p:column>
 		</p:row>
 		<p:row>
+			<p:column colspan="3" style="text-align:left;">	
+				<h4><h:outputText value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.immsDigital']}"/></h4><hr/>
+			</p:column>
+		</p:row>
+		<p:row>
 			<p:column style="text-align:right; width:5px;">
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="curpTxt" value="CURP: "></h:outputLabel>
+				<h:outputLabel for="curpTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.curp']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="curpTxt" value="#{modificarDatosPersonalesPage.curp}" ></h:inputText>
@@ -30,7 +35,7 @@
 		</p:row>	
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="Datos Personales"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.datosPersonales']}"/></h4><hr/>
 			</p:column>
 		</p:row>	
 		<p:row>
@@ -38,7 +43,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="nombreTxt" value="Nombre: "></h:outputLabel>
+				<h:outputLabel for="nombreTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.nombre']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="nombreTxt" value="#{modificarDatosPersonalesPage.nombre}" ></h:inputText>
@@ -49,7 +54,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="paternoTxt" value="Apellido Paterno: "></h:outputLabel>
+				<h:outputLabel for="paternoTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.aPaterno']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="paternoTxt" value="#{modificarDatosPersonalesPage.paterno}" ></h:inputText>
@@ -60,7 +65,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="maternoTxt" value="Apellido Materno: "></h:outputLabel>
+				<h:outputLabel for="maternoTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.aMaterno']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="maternoTxt" value="#{modificarDatosPersonalesPage.materno}" ></h:inputText>
@@ -71,7 +76,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="correoTxt" value="Correo Electrónico: "></h:outputLabel>
+				<h:outputLabel for="correoTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.correo']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="correoTxt" value="#{modificarDatosPersonalesPage.correo}" ></h:inputText>
@@ -82,7 +87,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="telefonoTxt" value="Teléfono: "></h:outputLabel>
+				<h:outputLabel for="telefonoTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.telefono']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="telefonoTxt" value="#{modificarDatosPersonalesPage.telefono}" ></h:inputText>
@@ -91,7 +96,7 @@
 		
 			<p:row>
 			<p:column colspan="3" style="text-align:left;">
-				<h4><h:outputText value="Datos Registro ante el IMSS"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.datosRegistro']}"/></h4><hr/>
 			</p:column>
 		</p:row>	
 		<p:row>
@@ -99,7 +104,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="registroIMSSTxt" value="Registro IMSS "></h:outputLabel>
+				<h:outputLabel for="registroIMSSTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.registroIMSS']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="registroIMSSTxt" value="#{modificarDatosPersonalesPage.registroIMSS}" ></h:inputText>
@@ -110,17 +115,15 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="estadoSolTxt" value="Estado "></h:outputLabel>
+				<h:outputLabel for="estadoSolTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.estadoSol']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="estadoSolTxt" value="#{modificarDatosPersonalesPage.estadoSolicitud}" ></h:inputText>
 			</p:column>		
 		</p:row>
-				
-				
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">
-				<h4><h:outputText value="Datos Fiscales"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.datosFiscales']}"/></h4><hr/>
 			</p:column>
 		</p:row>					
 		<p:row>
@@ -128,7 +131,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="rfcTxt" value="RFC: "></h:outputLabel>
+				<h:outputLabel for="rfcTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.rfc']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="rfcTxt" value="#{modificarDatosPersonalesPage.rfc}" ></h:inputText>
@@ -139,7 +142,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="emailTxt" value="Correo Electronico: "></h:outputLabel>
+				<h:outputLabel for="emailTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.correo']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="emailTxt" value="#{modificarDatosPersonalesPage.coreoFiscal}" ></h:inputText>
@@ -150,7 +153,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="telfonoTxt" value="Telefono "></h:outputLabel>
+				<h:outputLabel for="telfonoTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.telefono']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="telfonoTxt" value="#{modificarDatosPersonalesPage.telefonoFiscal}" ></h:inputText>
@@ -160,7 +163,7 @@
 			
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">
-				<h4><h:outputText value="Domicilio Fiscal"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.domicilioFiscal']}"/></h4><hr/>
 			</p:column>
 		</p:row>					
 		<p:row>
@@ -168,10 +171,10 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">				
-				<h:outputLabel for="direccionTxt" value="Calle: "></h:outputLabel>
+				<h:outputLabel for="calleTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.calle']} "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="direccionTxt" required="true" value="#{modificarDatosPersonalesPage.calle}" requiredMessage="El campo Calle es obligatorio." />			
+				<h:inputText id="calleTxt" required="true" value="#{modificarDatosPersonalesPage.calle}" requiredMessage="El campo Calle es obligatorio." />			
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -179,7 +182,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">		
-				<h:outputLabel for="numeroExteriorTxt" value="Número Exterior: "></h:outputLabel>
+				<h:outputLabel for="numeroExteriorTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.numeroExterior']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="numeroExteriorTxt" required="true" value="#{modificarDatosPersonalesPage.numeroExterior}" requiredMessage="El campo Número Exterior es obligatorio."></h:inputText>
@@ -190,7 +193,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">		
-				<h:outputLabel for="letraExteriorTxt" value="Letra Exterior: "></h:outputLabel>
+				<h:outputLabel for="letraExteriorTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.letraExterior']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="letraExteriorTxt" required="true" value="#{modificarDatosPersonalesPage.letraExterior}"></h:inputText>
@@ -201,7 +204,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">		
-				<h:outputLabel for="numeroInteriorTxt" value="Número Interior: "></h:outputLabel>
+				<h:outputLabel for="numeroInteriorTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.numeroInterior']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="numeroInteriorTxt" value="#{modificarDatosPersonalesPage.numeroInterior}" ></h:inputText>
@@ -212,7 +215,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">		
-				<h:outputLabel for="letraInteriorTxt" value="Letra Interior: "></h:outputLabel>
+				<h:outputLabel for="letraInteriorTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.letraInterior']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="letraInteriorTxt" value="#{modificarDatosPersonalesPage.letraInterior}" ></h:inputText>
@@ -223,7 +226,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="calle1Txt" value="Entre Calle "></h:outputLabel>
+				<h:outputLabel for="calle1Txt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.calle1']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="calle1Txt" value="#{modificarDatosPersonalesPage.calle1}" ></h:inputText>
@@ -234,10 +237,10 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="calle2Txt" value="Y Calle "></h:outputLabel>
+				<h:outputLabel for="calle2Txt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.calle2']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
-				<h:inputText id="calle2Txt" value="#{modificarDatosPersonalesPage.calle1}" ></h:inputText>
+				<h:inputText id="calle2Txt" value="#{modificarDatosPersonalesPage.calle2}" ></h:inputText>
 			</p:column>		
 		</p:row>
 		<p:row>
@@ -245,7 +248,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="coloniaTxt" value="Colonia (Asentamineto) "></h:outputLabel>
+				<h:outputLabel for="coloniaTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.colonia']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="coloniaTxt" required="true" value="#{modificarDatosPersonalesPage.colonia}"  requiredMessage="El campo Colonia es obligatorio."></h:inputText>
@@ -256,7 +259,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="localidadTxt" value="Localidad: "></h:outputLabel>
+				<h:outputLabel for="localidadTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.localidad']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="localidadTxt" required="true" value="#{modificarDatosPersonalesPage.localidad}" requiredMessage="El campo Localidad es obligatorio."></h:inputText>
@@ -267,7 +270,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="municipioTxt" value="Municipio: "></h:outputLabel>
+				<h:outputLabel for="municipioTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.municipio']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="municipioTxt" required="true" value="#{modificarDatosPersonalesPage.municipio}" requiredMessage="El campo Municipio es obligatorio."></h:inputText>
@@ -278,7 +281,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="entidadFederativaTxt" value="Entidad Federativa: "></h:outputLabel>
+				<h:outputLabel for="entidadFederativaTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.entidadFederativa']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="entidadFederativaTxt" required="true" value="#{modificarDatosPersonalesPage.entidadFederativa}" requiredMessage="El campo Entidad Federativa es obligatorio."></h:inputText>
@@ -289,7 +292,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="codigoPostalTxt" value="Código Postal: "></h:outputLabel>
+				<h:outputLabel for="codigoPostalTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.codigoPostal']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="codigoPostalTxt" required="true" value="#{modificarDatosPersonalesPage.codigoPostal}" requiredMessage="El campo Código Postal es obligatorio."></h:inputText>
@@ -298,7 +301,7 @@
 		
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">
-				<h4><h:outputText value="Medios de Contacto"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.medioContacto']}"/></h4><hr/>
 			</p:column>
 		</p:row>
 		<p:row>
@@ -306,7 +309,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="medioContactoTxt" value="Medio de Contacto"></h:outputLabel>
+				<h:outputLabel for="medioContactoTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.medio']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="medioContactoTxt" required="true" value="#{modificarDatosPersonalesPage.medioContacto}" ></h:inputText>
@@ -317,7 +320,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="descricionTxt" value="Descripción"></h:outputLabel>
+				<h:outputLabel for="descricionTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.descripcion']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="descricionTxt" required="true" value="#{modificarDatosPersonalesPage.descripcion}" ></h:inputText>
@@ -326,7 +329,7 @@
 		
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">
-				<h4><h:outputText value="Datos Profesionales"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.datosProfesionales']}"/></h4><hr/>
 			</p:column>
 		</p:row>
 		<p:row>
@@ -334,7 +337,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="institucionTxt" value="Institución que expidio su Titulo Profesional"></h:outputLabel>
+				<h:outputLabel for="institucionTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.institucion']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="institucionTxt" required="true" value="#{modificarDatosPersonalesPage.institucion}" ></h:inputText>
@@ -345,7 +348,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="cedulanTxt" value="Número de cedula profesional"></h:outputLabel>
+				<h:outputLabel for="cedulanTxt" value="#{msg['message.label.views.registro.modificarDatos.modificarDatosPersonales.cedula']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="cedulaTxt" required="true" value="#{modificarDatosPersonalesPage.cedula}" ></h:inputText>
@@ -353,7 +356,7 @@
 		</p:row> 	
 		<p:row>
 			<p:column colspan="3" style="text-align:right;">
-				<p:commandButton type="submit" value="Acciones" update="modificarDatosPersonales">
+				<p:commandButton type="submit" value="#{msg['message.button.acciones']}" update="modificarDatosPersonales">
 				</p:commandButton>	
 			</p:column>		
 		</p:row>			

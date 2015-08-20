@@ -19,13 +19,13 @@
 		</p:row>
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="IMSS Digital"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.baja.capturaBaja.immsDigital']}"/></h4><hr/>
 			</p:column>
 		</p:row>
 		
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="Datos del Contador Público"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.baja.capturaBaja.titulo']}"/></h4><hr/>
 			</p:column>
 		</p:row>
 		<p:row>
@@ -33,7 +33,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="rfcTxt" value="RFC "></h:outputLabel>
+				<h:outputLabel for="rfcTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.rfc']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="rfcTxt" value="#{capturaBajaPage.rfc}" ></h:inputText>
@@ -44,7 +44,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="curpTxt" value="CURP: "></h:outputLabel>
+				<h:outputLabel for="curpTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.curp']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="curpTxt" value="#{capturaBajaPage.curp}" ></h:inputText>
@@ -55,7 +55,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="nombreTxt" value="Nombre: "></h:outputLabel>
+				<h:outputLabel for="nombreTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.nombre']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="nombreTxt" value="#{capturaBajaPage.nombre}" ></h:inputText>
@@ -66,7 +66,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="registroIMSSTxt" value="Registro IMSS "></h:outputLabel>
+				<h:outputLabel for="registroIMSSTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.registroIMSS']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="registroIMSSTxt" value="#{capturaBajaPage.registroIMSS}" ></h:inputText>
@@ -77,7 +77,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="estadoSolTxt" value="Estado "></h:outputLabel>
+				<h:outputLabel for="estadoSolTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.estado']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="estadoSolTxt" value="#{capturaBajaPage.estadoSolicitud}" ></h:inputText>
@@ -88,7 +88,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="delegacionTxt" value="Delegacion "></h:outputLabel>
+				<h:outputLabel for="delegacionTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.delegacion']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="delegacionTxt" value="#{capturaBajaPage.delegacion}" ></h:inputText>
@@ -99,23 +99,18 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="subdelegacionTxt" value="Subdelegacion "></h:outputLabel>
+				<h:outputLabel for="subdelegacionTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.subdelegacion']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="subdelegacionTxt" value="#{capturaBajaPage.subdelegacion}" ></h:inputText>
 			</p:column>		
 		</p:row>	
 		<p:row>
-			<p:column colspan="3" style="text-align:left;">
-				<h4><h:outputText value="Datos Registro ante el IMSS"/></h4><hr/>
-			</p:column>
-		</p:row>	
-		<p:row>
 			<p:column style="text-align:right; width:5px;">
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">				
-				<h:outputLabel for="direccionTxt" value="Calle: "></h:outputLabel>
+				<h:outputLabel for="direccionTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.calle']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="direccionTxt" required="true" value="#{capturaBajaPage.calle}" requiredMessage="El campo Calle es obligatorio." />			
@@ -126,7 +121,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">		
-				<h:outputLabel for="numeroExteriorTxt" value="Número Exterior: "></h:outputLabel>
+				<h:outputLabel for="numeroExteriorTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.numeroExterior']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="numeroExteriorTxt" required="true" value="#{capturaBajaPage.numeroExterior}" requiredMessage="El campo Número Exterior es obligatorio."></h:inputText>
@@ -137,7 +132,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">		
-				<h:outputLabel for="letraExteriorTxt" value="Letra Exterior: "></h:outputLabel>
+				<h:outputLabel for="letraExteriorTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.letraExterior']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="letraExteriorTxt" required="true" value="#{capturaBajaPage.letraExterior}"></h:inputText>
@@ -148,7 +143,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">		
-				<h:outputLabel for="numeroInteriorTxt" value="Número Interior: "></h:outputLabel>
+				<h:outputLabel for="numeroInteriorTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.numeroInterior']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="numeroInteriorTxt" value="#{capturaBajaPage.numeroInterior}" ></h:inputText>
@@ -159,7 +154,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">		
-				<h:outputLabel for="letraInteriorTxt" value="Letra Interior: "></h:outputLabel>
+				<h:outputLabel for="letraInteriorTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.letraInterior']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="letraInteriorTxt" value="#{capturaBajaPage.letraInterior}" ></h:inputText>
@@ -170,7 +165,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="calle1Txt" value="Entre Calle "></h:outputLabel>
+				<h:outputLabel for="calle1Txt" value="#{msg['message.label.views.registro.baja.capturaBaja.calle1']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="calle1Txt" value="#{capturaBajaPage.calle1}" ></h:inputText>
@@ -181,7 +176,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="calle2Txt" value="Y Calle "></h:outputLabel>
+				<h:outputLabel for="calle2Txt" value="#{msg['message.label.views.registro.baja.capturaBaja.calle2']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="calle2Txt" value="#{capturaBajaPage.calle2}" ></h:inputText>
@@ -192,7 +187,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="coloniaTxt" value="Colonia (Asentamineto) "></h:outputLabel>
+				<h:outputLabel for="coloniaTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.colonia']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="coloniaTxt" required="true" value="#{capturaBajaPage.colonia}"  requiredMessage="El campo Colonia es obligatorio."></h:inputText>
@@ -203,7 +198,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="localidadTxt" value="Localidad: "></h:outputLabel>
+				<h:outputLabel for="localidadTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.localidad']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="localidadTxt" required="true" value="#{capturaBajaPage.localidad}" requiredMessage="El campo Localidad es obligatorio."></h:inputText>
@@ -214,7 +209,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="municipioTxt" value="Municipio: "></h:outputLabel>
+				<h:outputLabel for="municipioTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.municipio']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="municipioTxt" required="true" value="#{capturaBajaPage.municipio}" requiredMessage="El campo Municipio es obligatorio."></h:inputText>
@@ -225,7 +220,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="entidadFederativaTxt" value="Entidad Federativa: "></h:outputLabel>
+				<h:outputLabel for="entidadFederativaTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.entidadFederativa']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="entidadFederativaTxt" required="true" value="#{capturaBajaPage.entidadFederativa}" requiredMessage="El campo Entidad Federativa es obligatorio."></h:inputText>
@@ -236,7 +231,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="codigoPostalTxt" value="Código Postal: "></h:outputLabel>
+				<h:outputLabel for="codigoPostalTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.codigoPostal']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="codigoPostalTxt" required="true" value="#{capturaBajaPage.codigoPostal}" requiredMessage="El campo Código Postal es obligatorio."></h:inputText>
@@ -247,7 +242,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="correoTxt" value="Correo Electrónico: "></h:outputLabel>
+				<h:outputLabel for="correoTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.correo']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="correoTxt" value="#{capturaBajaPage.correo}" ></h:inputText>
@@ -258,7 +253,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="telefonoTxt" value="Teléfono: "></h:outputLabel>
+				<h:outputLabel for="telefonoTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.telefono']} "></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="telefonoTxt" value="#{capturaBajaPage.telefono}" ></h:inputText>
@@ -269,7 +264,7 @@
 				<h:outputLabel style="color:red;">*</h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="descricionTxt" value="Motivo de Baja"></h:outputLabel>
+				<h:outputLabel for="descricionTxt" value="#{msg['message.label.views.registro.baja.capturaBaja.motivo']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputTextarea id="descricionTxt" required="true" value="#{capturaBajaPage.codigoPostal}" ></h:inputTextarea>
@@ -277,7 +272,7 @@
 		</p:row>	
 		<p:row>
 			<p:column colspan="3" style="text-align:right;">
-				<p:commandButton type="submit" value="Acciones" update="capturaBajaGrid">
+				<p:commandButton type="submit" value="#{msg['message.button.acciones']}" update="capturaBajaGrid">
 				</p:commandButton>	
 			</p:column>		
 		</p:row>			
