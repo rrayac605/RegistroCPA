@@ -1,0 +1,269 @@
+.ui-stack {
+	bottom: 28px;
+	left: 10%;
+}
+
+.panelGridBorder td {
+	border: none;
+	width: 100%
+}
+
+.panelGrid tr,.panelGrid td {
+	border: none;
+	align-text: top;
+}
+
+.ui-panelgrid td,.ui-panelgrid tr {
+	border-style: none !important;
+	vertical-align: top;
+}
+
+.ui-editor {
+	width: 100px;
+}
+
+.docDialog1 {
+	left: 10px;
+}
+
+
+.fileupload-buttonbar .ui-button {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+.ui-fileupload .start {
+	display: none;
+}
+
+.ui-fileupload .cancel {
+	display: none;
+}
+
+.ui-fileupload .progress {
+	display: none;
+}
+
+.fileupload-buttonbar {
+	width: 120px;
+}
+
+.fileupload-content {
+	display: none !important;
+}
+
+
+.ui-panelgrid, .ui-panelgrid td, .ui-panelgrid tr{
+	border-style: none !important;
+	vertical-align: top;
+	padding: 0px !important;
+}
+
+.ui-panel{
+	border-style: none !important;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    border: 0 none;
+    padding: 3px;
+    position: relative;
+}
+.ui-dialog-title-dialog{
+	margin-left: 25px;
+}
+/*
+.dateTimeField input {
+	width: 110px;
+}
+
+.dateTimeField button {
+    height: 30px;
+    margin-top: -7px;
+    width: 40px;
+}*/
+
+/*
+.ui-selectonemenu .ui-selectonemenu-label .ui-selectonemenu-trigger .ui-selectonemenu-items .ui-selectonemenu-items{
+	height: 40px !important;
+}
+*/
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: #f79c23 !important;
+    color: #ffffff !important;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover{
+    color: #ffffff !important;
+}
+
+.ui-panelgrid, .ui-panelgrid td, .ui-panelgrid tr {
+    padding: 3px !important;
+}
+.ui-dialog .ui-dialog-titlebar {
+   /* background: #70ae25 !important;*/
+    background: #f79c23 !important;
+}
+/*
+.aui input[title] {
+    background: #22aa22 !important;
+	color: #FFFFFF !important;
+}
+
+.aui input[title]:hover:after {
+    background: #444444 !important;
+	color: #FFFFFF !important;
+}
+
+.ui-inputfield[title]{
+    background: #2288ff !important;
+	color: #FFFFFF !important;
+	
+}*/
+/*.ui-tooltip-content .ui-widget-content{*/
+/*.ui-tooltip-tip {
+    background: #22aa22 !important;
+	color: #FFFFFF !important;
+}
+
+.ui-tooltip-rounded, .ui-tooltip-rounded .ui-tooltip-content, .ui-tooltip-tipsy, .ui-tooltip-tipsy .ui-tooltip-content, .ui-tooltip-youtube, .ui-tooltip-youtube .ui-tooltip-content {
+    background: #81aa12 !important;
+}
+
+.ui-tooltip-shadow .ui-tooltip-titlebar, .ui-tooltip-shadow .ui-tooltip-content {
+    background: #09aae1 !important;
+}
+.ui-tooltip-content {
+    background: #ea0912 !important;
+}*/
+
+.ui-tooltip {
+    background: #f79c23 !important;
+    color: #ffffff !important;
+	border-radius: 5px !important;
+	font-weight: bold;
+	padding: 15px;
+}
+
+.ui-button-icon-only{
+    background: #ffffff !important;
+    margin-bottom: 0px !important;
+}
+
+
+
+.tabWizard {
+    background: #ffffff !important;
+	font-size: 12pt !important;
+	font-weight:bold !important;
+	margin: 1px !important;
+	padding-top:5px !important;
+	padding-bottom:5px !important;
+	color: #333333 !important;
+}
+
+.tabWizardActive {
+    background: #f79c23 !important;
+	color: #ffffff !important;
+}
+
+
+
+.panelClosable{
+	border: 1px !important;
+	background: #eeeeee !important;
+}
+
+
+
+
+.panelDatosPaciente{
+/*	border: 1px !important;*/
+	background: #f79c23 !important;
+	color: #ffffff !important;
+/*	border-radius: 10px !important;*/
+	padding: 2px !important;
+	font-weight: bold !important;
+}
+
+
+
+
+
+
+
+
+
+.estiloTabla {
+	font-size: .8em;
+	table-layout: fixed;
+	overflow: auto;
+}
+
+.estiloBoton {
+	font-size: .8em;
+	white-space: normal;
+	width: 100px;
+}
+
+.estiloTabla thead th, .estiloTabla tbody td, .estiloTabla tfoot td {
+	font-size: .95em;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	white-space: normal;
+}
+
+
+.panelDatosPaciente_header{
+/*	border: 1px !important;*/
+	background: #CA5D2C !important;
+	color: #ffffff !important;
+/*	border-radius: 10px !important;*/
+	padding: 2px !important;
+	font-weight: normal !important;
+	text-align: right !important;
+}
+
+.panelDatosPaciente_info_ececec{
+/*	border: 1px !important;*/
+	background: #ececec !important;
+	color: #1a1a1a !important;
+/*	border-radius: 10px !important;*/
+	padding: 1px !important;
+	font-weight: normal !important;
+}
+
+.panelDatosPaciente_info_ffffff{
+/*	border: 1px !important;*/
+	background: #ffffff !important;
+	color: #1a1a1a !important;
+/*	border-radius: 10px !important;*/
+	padding: 1px !important;
+	font-weight: normal !important;
+}
+
+.ui-datatable .ui-datatable-header, .ui-datatable .ui-datatable-footer {
+    /*	border: 1px !important;*/
+	background: #ffffff !important;
+	color: #1a1a1a !important;
+	text-align: right !important;
+}
+
+
+.ui-helper-clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.ui-dialog .ui-dialog-buttonpane {
+    background-image: none;
+    border-width: 1px 0 0;
+    margin: 0.5em 0 0;
+    padding: 0.3em 1em 0.5em 0.4em;
+    text-align: center !important;
+}
+
