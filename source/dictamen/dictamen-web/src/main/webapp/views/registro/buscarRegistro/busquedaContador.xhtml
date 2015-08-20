@@ -19,12 +19,12 @@
 		</p:row>
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="IMSS Digital"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.buscarRegistro.busquedaContador.immsDigital']}"/></h4><hr/>
 			</p:column>
 		</p:row>
 		<p:row>
 			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="¿El Registro IMSS es correcto?"/></h4><hr/>
+				<h4><h:outputText value="#{msg['message.label.views.registro.buscarRegistro.busquedaContador.titulo']}"/></h4><hr/>
 			</p:column>
 		</p:row>
 		<p:row>
@@ -32,7 +32,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="paternoTxt" value="Apellido Paterno: "></h:outputLabel>
+				<h:outputLabel for="paternoTxt" value="#{msg['message.label.views.registro.buscarRegistro.busquedaContador.aPaterno']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="paternoTxt" value="#{busquedaContadorPage.paterno}" ></h:inputText>
@@ -43,7 +43,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="maternoTxt" value="Apellido Materno: "></h:outputLabel>
+				<h:outputLabel for="maternoTxt" value="#{msg['message.label.views.registro.buscarRegistro.busquedaContador.aMaterno']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="maternoTxt" value="#{busquedaContadorPage.materno}" ></h:inputText>
@@ -54,7 +54,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="nombreTxt" value="Nombre: "></h:outputLabel>
+				<h:outputLabel for="nombreTxt" value="#{msg['message.label.views.registro.buscarRegistro.busquedaContador.nombre']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="nombreTxt" value="#{busquedaContadorPage.nombre}" ></h:inputText>
@@ -65,7 +65,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="curpTxt" value="CURP: "></h:outputLabel>
+				<h:outputLabel for="curpTxt" value="#{msg['message.label.views.registro.buscarRegistro.busquedaContador.curp']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="curpTxt" value="#{busquedaContadorPage.curp}" ></h:inputText>
@@ -76,7 +76,7 @@
 				<h:outputLabel style="color:red;"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">	
-				<h:outputLabel for="numRegistroTxt" value="Num. de Registro "></h:outputLabel>
+				<h:outputLabel for="numRegistroTxt" value="#{msg['message.label.views.registro.buscarRegistro.busquedaContador.numRegistro']}"></h:outputLabel>
 			</p:column>
 			<p:column style="text-align:left;">
 				<h:inputText id="numRegistroTxt" value="#{busquedaContadorPage.numRegistro}" ></h:inputText>
@@ -84,8 +84,8 @@
 		</p:row>
 		<p:row>
 			<p:column colspan="3" style="text-align:right;">
-				<p:commandButton type="submit" value="SI" update="busquedaContador"></p:commandButton>	
-				<p:commandButton type="submit" value="NO" update="busquedaContador"></p:commandButton>	
+				<p:commandButton type="submit" value="#{msg['message.button.si']}" update="busquedaContador"></p:commandButton>	
+				<p:commandButton type="submit" value="#{msg['message.button.no']}" update="busquedaContador"></p:commandButton>	
 			</p:column>	
 		</p:row>			
 	</p:panelGrid>
