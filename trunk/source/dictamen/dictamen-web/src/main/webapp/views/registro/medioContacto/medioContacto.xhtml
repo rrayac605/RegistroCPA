@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	
+
+	<!-- <p:dialog header="#{msg['message.registro.medioContacto.menuMedioContacto.dialog.titulo']}" widgetVar="medioContactoDialog" modal="true" resizable="false" dynamic="true"> -->
+		<h:form>
+			   <!-- <p:dataTable id="basicDT" var="medio" value="#{dtSelectionView.medios1}">
+			        <p:column headerText="Medio de Contacto">
+			            <h:outputText value="#{medio.tipo}" /> <br/>
+			        </p:column>
+			        <p:column headerText="Descripcion" >
+			            <h:outputText value="#{medio.valor}" />
+			        </p:column>
+			        <p:column style="width:32px;text-align: center">
+			             <p:commandButton icon="ui-icon-pencil" title="Editar">
+			                <f:setPropertyActionListener value="#{medio}" target="#{dtSelectionView.selectedMedio}" />
+			            </p:commandButton>
+			            <p:commandButton icon="ui-icon-trash" title="Borrar">
+			                <f:setPropertyActionListener value="#{medio}" target="#{dtSelectionView.selectedMedio}" />
+			            </p:commandButton>
+			        </p:column>
+			    </p:dataTable> -->
+			    
+			    <ui:include src="/views/registro/medioContacto/registroMedioContacto.xhtml"/>
+			    
+			    <p:dataTable id="radioDT" var="medio" value="#{medioContactoPage.medios1}" selection="#{medioContactoPage.selectedMedio}" rowKey="#{medio.descripcion}">
+			        <p:column selectionMode="single" style="width:16px;text-align:center"/>
+			        <p:column headerText="#{msg['message.registro.medioContacto.tabla.column.medioContacto']}">
+			            <h:outputText value="#{medio.tipo}" />
+			        </p:column>
+			        <p:column headerText="#{msg['message.registro.medioContacto.tabla.column.descripcion']}">
+			            <h:outputText value="#{medio.valor}" />
+			        </p:column>
+			        <f:facet name="footer">
+			            <p:commandButton process="radioDT" icon="ui-icon-pencil" value="#{msg['message.button.modificar']}" styleClass="estiloFondoBlanco" />
+			            <p:commandButton process="radioDT" icon="ui-icon-trash" value="#{msg['message.button.eliminar']}" styleClass="estiloFondoBlanco" />
+			        </f:facet>
+			    </p:dataTable>
+		</h:form>
+	<!-- </p:dialog> -->
+</ui:composition>

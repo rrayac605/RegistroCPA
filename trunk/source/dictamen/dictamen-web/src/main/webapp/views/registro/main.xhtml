@@ -10,8 +10,11 @@
 <h:head>
 </h:head>
 <h:body>
+
+	<ui:include src="/views/registro/medioContacto/menuMedioContacto.xhtml"/>
+
 	<h:form id="solicitudRegistro">
-		<p:wizard>
+		<p:wizard flowListener="#{wizardRegistroMedioContactoBean.onFlowProcess}">
 			<p:tab id="datosPersonalesTab" title="Datos Personales">
 				<ui:include src="solicitudRegistro/solicitudRegistro.xhtml"></ui:include>
 			</p:tab>

@@ -10,8 +10,7 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form id="medioContacto">	
-	<p:panelGrid id="medioContactoGrid">
+<!-- 	<p:panelGrid id="medioContactoGrid">
 		<p:row>
 			<p:column colspan="4" style="resize: none !important;">
 				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
@@ -49,40 +48,45 @@
 			<p:column style="text-align:left;">	
 				<h:inputText id="descripcionTxt" value="#{medioContactoPage.descripcion}" ></h:inputText>
 			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column colspan="4" style="text-align:left;">	
-				<h4><h:outputText value="Datos Profesionales"/></h4><hr/>
-			</p:column>
-		</p:row>	
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="institucionTxt" value="Institución que Expidió su Título Profesional: "></h:outputLabel>
-			</p:column>			
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;">*</h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="cedulaTxt" value="Número de Cédula Profesional: "></h:outputLabel>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:inputText id="institucionTxt" required="true" value="#{medioContactoPage.institucion}" requiredMessage="El campo Institución es obligatorio."></h:inputText>
-			</p:column>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:inputText id="cedulaTxt" required="true" value="#{medioContactoPage.cedula}" requiredMessage="El campo Número de Cédula es obligatorio."></h:inputText>
-			</p:column>		
-		</p:row>
+		</p:row> -->
+		
+	<ui:include src="/views/registro/medioContacto/medioContacto.xhtml"/>	
+		
+	<h:form id="medioContacto">	
+		<p:panelGrid id="medioContactoGrid">
+			<p:row>
+				<p:column colspan="4" style="text-align:left;">	
+					<h4><h:outputText value="Datos Profesionales"/></h4><hr/>
+				</p:column>
+			</p:row>	
+			<p:row>
+				<p:column style="text-align:right; width:5px;">
+					<h:outputLabel style="color:red;">*</h:outputLabel>
+				</p:column>
+				<p:column style="text-align:left;">	
+					<h:outputLabel for="institucionTxt" value="Institución que Expidió su Título Profesional: "></h:outputLabel>
+				</p:column>			
+				<p:column style="text-align:right; width:5px;">
+					<h:outputLabel style="color:red;">*</h:outputLabel>
+				</p:column>
+				<p:column style="text-align:left;">	
+					<h:outputLabel for="cedulaTxt" value="Número de Cédula Profesional: "></h:outputLabel>
+				</p:column>		
+			</p:row>
+			<p:row>
+				<p:column style="text-align:right; width:5px;">
+					<h:outputLabel style="color:red;"></h:outputLabel>
+				</p:column>
+				<p:column style="text-align:left;">	
+					<h:inputText id="institucionTxt" required="true" value="#{medioContactoPage.institucion}" requiredMessage="El campo Institución es obligatorio."></h:inputText>
+				</p:column>
+				<p:column style="text-align:right; width:5px;">
+					<h:outputLabel style="color:red;"></h:outputLabel>
+				</p:column>
+				<p:column style="text-align:left;">	
+					<h:inputText id="cedulaTxt" required="true" value="#{medioContactoPage.cedula}" requiredMessage="El campo Número de Cédula es obligatorio."></h:inputText>
+				</p:column>		
+			</p:row>
 	</p:panelGrid>
 </h:form>		 			 			
 </h:body>
