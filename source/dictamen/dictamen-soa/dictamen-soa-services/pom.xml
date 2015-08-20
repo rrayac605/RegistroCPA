@@ -32,6 +32,14 @@
 			<artifactId>dictamen-soa-persistence</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamen</groupId>
+			<artifactId>dictamen-soa-persistence</artifactId>
+			<type>test-jar</type>
+			<version>${project.parent.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen</groupId>
