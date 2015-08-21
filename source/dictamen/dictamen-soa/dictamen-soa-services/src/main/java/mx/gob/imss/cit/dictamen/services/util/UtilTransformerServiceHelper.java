@@ -3,6 +3,7 @@ package mx.gob.imss.cit.dictamen.services.util;
 import java.beans.Statement;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -89,7 +90,7 @@ public class UtilTransformerServiceHelper {
 	                	//List
 	                	if(Collection.class.isAssignableFrom(field.getType())){
 
-//	            			Object[] values = new Object[ServicesConstants.UNO];                            
+//	            			                       
 //	                        ArrayList<?> myList = (ArrayList<?>) field.get(origenObject);
 //	                        if(myList!=null){
 //	                        	myList.clear();

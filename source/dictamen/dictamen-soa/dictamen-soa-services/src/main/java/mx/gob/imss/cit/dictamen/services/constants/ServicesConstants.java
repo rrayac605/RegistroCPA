@@ -22,7 +22,7 @@ public final class ServicesConstants {
 	
 	public static final int UNO=1;
 	
-	public static final int PROFUNDIDAD_MAPEO=1;
+	public static final int PROFUNDIDAD_MAPEO=2;
 	
 	
 }
