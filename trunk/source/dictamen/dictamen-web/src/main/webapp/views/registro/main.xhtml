@@ -14,7 +14,7 @@
 	<ui:include src="/views/registro/medioContacto/menuMedioContacto.xhtml"/>
 
 	<h:form id="solicitudRegistro">
-		<p:wizard flowListener="#{wizardRegistroMedioContactoBean.onFlowProcess}">
+		<p:wizard id="solicitudWizard" flowListener="#{wizardRegistroMedioContactoBean.onFlowProcess}" backLabel="#{msg['message.button.anterior']}" nextLabel="#{msg['message.button.siguiente']}">
 			<p:tab id="datosPersonalesTab" title="Datos Personales">
 				<ui:include src="solicitudRegistro/solicitudRegistro.xhtml"></ui:include>
 			</p:tab>
