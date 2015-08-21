@@ -33,6 +33,11 @@ public class ConfiguracionCatalogoBean extends BaseBean {
     @ManagedProperty(value = "#{configuracionCatalogoPage}")
     private ConfiguracionCatalogoPage configuracionCatalogoPage;
 
+
+    /** The configuracionDocumentoPage. */
+    @ManagedProperty(value = "#{catalogoContadoresBean}")
+    private CatalogoContadoresBean catalogoContadoresBean;
+
     
 
     //@EJB
@@ -90,6 +95,7 @@ public class ConfiguracionCatalogoBean extends BaseBean {
         if(configuracionCatalogoPage.getCatalogo()!=null){
 	        if (configuracionCatalogoPage.getCatalogo().getClave().equals(TipoCatalogoEnum.CONTADORES.getClv())) {
 	        	view= ConfiguracionCatalogosConstants.CATALOGO_CONTADORES;
+	        	catalogoContadoresBean.init();
 	        }else if (configuracionCatalogoPage.getCatalogo().getClave().equals(TipoCatalogoEnum.DESPACHOS.getClv())) {
 	        	view= ConfiguracionCatalogosConstants.CATALOGO_DESPACHOS;
 	        }else if (configuracionCatalogoPage.getCatalogo().getClave().equals(TipoCatalogoEnum.COLEGIOS.getClv())) {
@@ -105,7 +111,7 @@ public class ConfiguracionCatalogoBean extends BaseBean {
 
 	public void cambiarTipoConfiguracion() {
         //configuracionDocumentoPage.getTipoDocumento();
-        configuracionCatalogoPage.setInicioConfigurado(Boolean.FALSE);
+        configuracionCatalogoPage.setInicioConfigurado(Boolean.TRUE);
     }
 
     public String aceptar() {
@@ -154,6 +160,16 @@ public class ConfiguracionCatalogoBean extends BaseBean {
 	public void setConfiguracionCatalogoPage(
 			ConfiguracionCatalogoPage configuracionCatalogoPage) {
 		this.configuracionCatalogoPage = configuracionCatalogoPage;
+	}
+
+
+
+	/**
+	 * @param catalogoContadoresBean the catalogoContadoresBean to set
+	 */
+	public void setCatalogoContadoresBean(
+			CatalogoContadoresBean catalogoContadoresBean) {
+		this.catalogoContadoresBean = catalogoContadoresBean;
 	}
     
 

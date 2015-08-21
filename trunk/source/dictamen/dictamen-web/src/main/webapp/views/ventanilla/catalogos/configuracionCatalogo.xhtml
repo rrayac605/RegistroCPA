@@ -34,7 +34,7 @@
 				<p:panel id="detalleDocumentoConfiguracion">
 					<ui:include src="#{configuracionCatalogoBean.tipoCatalogoView}"></ui:include>
 				</p:panel>
-				<p:panel id="cerrarConfiguracion" rendered="#{empty configuracionDocumentoPage.catalogo}">
+				<p:panel id="cerrarConfiguracion" rendered="#{empty configuracionCatalogoPage.catalogo}">
 					<p:commandButton value="#{msg['message.button.cerrar']}" immediate="true" action="#{configuracionCatalogoBean.regresar}" />
 				</p:panel>
 			</p:panel>
