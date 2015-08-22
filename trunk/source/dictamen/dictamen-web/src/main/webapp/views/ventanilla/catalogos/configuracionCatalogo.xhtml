@@ -35,7 +35,7 @@
 					<ui:include src="#{configuracionCatalogoBean.tipoCatalogoView}"></ui:include>
 				</p:panel>
 				<p:panel id="cerrarConfiguracion" rendered="#{empty configuracionCatalogoPage.catalogo}">
-					<p:commandButton value="#{msg['message.button.cerrar']}" immediate="true" action="#{configuracionCatalogoBean.regresar}" />
+					<p:commandButton value="#{msg['message.button.cerrar']}" immediate="true" action="#{configuracionCatalogoBean.regresar}" styleClass="estiloFondoBlanco" />
 				</p:panel>
 			</p:panel>
 		</h:form>
