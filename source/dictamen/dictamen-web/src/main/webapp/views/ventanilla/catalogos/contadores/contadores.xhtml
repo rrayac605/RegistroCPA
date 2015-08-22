@@ -67,7 +67,7 @@ contadores
 				</p:column>	
 			</p:panelGrid>		
 		<p:panel>
-		    <p:commandButton value="#{msg['message.button.buscar']}" action="#{catalogoContadoresBean.buscarContadores}"  update=":configuracionDocumentoForm:panelContadores"/>
+		    <p:commandButton value="#{msg['message.button.buscar']}" action="#{catalogoContadoresBean.buscarContadores}"  update=":configuracionDocumentoForm:panelContadores" styleClass="estiloFondoBlanco"  />
 		</p:panel>
 		<p:panelGrid columns="1" id="panelContadores">
 			<p:dataTable id="tablaContadores" value="#{catalogoContadoresPage.contadores}" var="con" rowKey="#{con.id}" emptyMessage="#{msg['message.label.noRecorsFound']}" rendered="#{catalogoContadoresPage.muestraDataTable}"  >
@@ -108,7 +108,9 @@ contadores
   		<p:tabView id="tabDetalleContador" widgetVar="tabDetalleContador" >
   		
   			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales']}">
-  				<p:panel header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales']}">
+  			
+  				<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales']}">
+  				
 		  			<p:panelGrid columns="3">
 						<p:column>
 							<p:outputLabel for="dialogRFC" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.rfc']}" />
@@ -139,7 +141,7 @@ contadores
 				</p:panel>
 				
 				
- 				<p:panel header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.fiscales']}">
+ 				<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.fiscales']}">
 		  			<p:panelGrid columns="3">
 						<p:column>
 							<p:outputLabel for="dialogCalle" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.calle']}" />
@@ -216,7 +218,7 @@ contadores
   		
   			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho']}">
   			
-    			<p:panel header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho']}">
+    			<p:panel  styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho']}">
 		  			<p:panelGrid columns="3">
 						<p:column>
 							<p:outputLabel for="dialogRFC2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.rfc']}" />
@@ -233,7 +235,7 @@ contadores
 					</p:panelGrid>		
 				</p:panel>			
   			
-  			 		<p:panel header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.fiscales']}">
+  			 		<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.fiscales']}">
 		  			<p:panelGrid columns="3">
 						<p:column>
 							<p:outputLabel for="dialogCalle2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.calle']}" />
@@ -308,7 +310,7 @@ contadores
   			
   			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio']}">
  			
-    			<p:panel header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio']}">
+    			<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio']}">
 		  			<p:panelGrid columns="3">
 						<p:column>
 							<p:outputLabel for="dialogRFC3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.rfc']}" />
@@ -324,7 +326,7 @@ contadores
 					</p:panelGrid>		
 				</p:panel>			
   			
-  			 		<p:panel header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.fiscales']}">
+  			 		<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.fiscales']}">
 		  			<p:panelGrid columns="3">
 						<p:column>
 							<p:outputLabel for="dialogCalle3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.calle']}" />
