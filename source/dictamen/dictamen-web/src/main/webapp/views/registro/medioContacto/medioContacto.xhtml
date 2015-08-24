@@ -29,13 +29,13 @@
 			    
 			    <ui:include src="/views/registro/medioContacto/registroMedioContacto.xhtml"/>
 			    
-			    <p:dataTable id="radioDT" var="medio" value="#{medioContactoPage.medios1}" selection="#{medioContactoPage.selectedMedio}" rowKey="#{medio.descripcion}">
+			    <p:dataTable id="radioDT" var="medio" value="#{medioContactoBean.medioContactoPage.medios1}" selection="#{medioContactoBean.medioContactoPage.selectedMedio}" rowKey="#{medio.descripcion}">
 			        <p:column selectionMode="single" style="width:16px;text-align:center"/>
-			        <p:column headerText="#{msg['message.registro.medioContacto.tabla.column.medioContacto']}">
-			            <h:outputText value="#{medio.tipo}" />
+			        <p:column headerText="#{msg['message.registro.medioContacto.tabla.column.medioContacto']}" style="text-align:center" >
+			            <h:outputText value="#{medio.tipoMedioContacto}" />
 			        </p:column>
-			        <p:column headerText="#{msg['message.registro.medioContacto.tabla.column.descripcion']}">
-			            <h:outputText value="#{medio.valor}" />
+			        <p:column headerText="#{msg['message.registro.medioContacto.tabla.column.descripcion']}" style="text-align:center" >
+			            <h:outputText value="#{medio.descripcion}" />
 			        </p:column>
 			        <f:facet name="footer">
 			            <p:commandButton process="radioDT" icon="ui-icon-pencil" value="#{msg['message.button.modificar']}" styleClass="estiloFondoBlanco" />
