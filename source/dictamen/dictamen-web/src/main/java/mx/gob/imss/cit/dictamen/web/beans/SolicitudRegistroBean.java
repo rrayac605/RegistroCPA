@@ -23,6 +23,12 @@ public class SolicitudRegistroBean extends BaseBean{
 		
 		return NavigationConstants.PAG_SOLICITUD_REGISTRO;
 	}
+	
+    public String initActivacionSolicitudRegistro(){
+		
+		
+		return NavigationConstants.PAG_SOLICITUD_REGISTRO;
+	}
 
 	/**
 	 * @return the solicitudRegistroPage

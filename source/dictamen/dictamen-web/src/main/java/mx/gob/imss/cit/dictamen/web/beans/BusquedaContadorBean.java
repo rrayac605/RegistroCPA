@@ -17,9 +17,44 @@ public class BusquedaContadorBean extends BaseBean {
 	
 	@ManagedProperty(value = "#{busquedaContadorPage}")
 	private BusquedaContadorPage  busquedaContadorPage;
+	
+	@ManagedProperty(value = "#{solicitudRegistroBean}")
+	private SolicitudRegistroBean solicitudRegistroBean;
 
-	public void enviarRegistro(){
+	public void initBusquedaContador(){
 		
+	}
+	
+	public String nextActivacionRegistro(){
+		return solicitudRegistroBean.initActivacionSolicitudRegistro();
+	}
+
+	/**
+	 * @return the busquedaContadorPage
+	 */
+	public BusquedaContadorPage getBusquedaContadorPage() {
+		return busquedaContadorPage;
+	}
+
+	/**
+	 * @param busquedaContadorPage the busquedaContadorPage to set
+	 */
+	public void setBusquedaContadorPage(BusquedaContadorPage busquedaContadorPage) {
+		this.busquedaContadorPage = busquedaContadorPage;
+	}
+
+	/**
+	 * @return the solicitudRegistroBean
+	 */
+	public SolicitudRegistroBean getSolicitudRegistroBean() {
+		return solicitudRegistroBean;
+	}
+
+	/**
+	 * @param solicitudRegistroBean the solicitudRegistroBean to set
+	 */
+	public void setSolicitudRegistroBean(SolicitudRegistroBean solicitudRegistroBean) {
+		this.solicitudRegistroBean = solicitudRegistroBean;
 	}
 
 
