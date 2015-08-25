@@ -1,6 +1,5 @@
 package mx.gob.imss.cit.dictamen.web.pages;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -18,12 +17,6 @@ public class CapturaDespachoContadorPage extends BasePage{
 	private String rfcr;
 	private String razonSocial;
 	private String regPatronal;
-	
-	
-	@PostConstruct
-	public void init() {
-		
-	}
 	
 	
 	public String getPrgt3() {

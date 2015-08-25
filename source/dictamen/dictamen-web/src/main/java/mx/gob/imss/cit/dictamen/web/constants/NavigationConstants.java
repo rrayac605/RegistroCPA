@@ -17,6 +17,10 @@ public final class NavigationConstants {
     
     public static final String PAG_ACTIVACION_REGISTRO = "activacionRegistro";
     
+    public static final String PAG_REACTIVACION_REGISTRO = "reactivacionRegistro";
+    
+    public static final String PAG_ACREDITACION_MEMBRESIA = "acreditacionMembresia";
+    
     
     /**
      * Instantiates a new navigation constants.

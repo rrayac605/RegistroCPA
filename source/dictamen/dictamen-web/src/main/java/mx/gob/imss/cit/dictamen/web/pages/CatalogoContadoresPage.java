@@ -6,6 +6,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import mx.gob.imss.cit.dictamen.web.pages.base.BasePage;
+import mx.gob.imss.cit.dictamen.web.to.CatalogoTO;
+import mx.gob.imss.cit.dictamen.web.to.ContadorDataTableTO;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 
 
@@ -21,16 +23,16 @@ public class CatalogoContadoresPage extends BasePage {
 	private boolean inicioConfigurado;
 	
 	@Reset
-	boolean muestraDataTable;
+	private boolean muestraDataTable;
 	
 	@Reset
-	Long idStatus;
+	private Long idStatus;
 	
 	@Reset
-	Long idDelegacion;
+	private Long idDelegacion;
 	
 	@Reset
-	Long idSubDelegacion;
+	private Long idSubDelegacion;
 	
 	@Reset
 	private List<CatalogoTO> status;
@@ -42,7 +44,7 @@ public class CatalogoContadoresPage extends BasePage {
 	private List<CatalogoTO> subdelegaccion;
 
 	@Reset
-	private List<ContadorDataTable> contadores;
+	private List<ContadorDataTableTO> contadores;
 	
 	/**
 	 * @return the status
@@ -131,14 +133,14 @@ public class CatalogoContadoresPage extends BasePage {
 	/**
 	 * @return the contadores
 	 */
-	public List<ContadorDataTable> getContadores() {
+	public List<ContadorDataTableTO> getContadores() {
 		return contadores;
 	}
 
 	/**
 	 * @param contadores the contadores to set
 	 */
-	public void setContadores(List<ContadorDataTable> contadores) {
+	public void setContadores(List<ContadorDataTableTO> contadores) {
 		this.contadores = contadores;
 	}
 

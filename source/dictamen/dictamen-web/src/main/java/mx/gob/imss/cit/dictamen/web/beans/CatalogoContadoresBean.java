@@ -11,8 +11,8 @@ import javax.faces.event.ActionEvent;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.constants.WebConstants;
 import mx.gob.imss.cit.dictamen.web.pages.CatalogoContadoresPage;
-import mx.gob.imss.cit.dictamen.web.pages.CatalogoTO;
-import mx.gob.imss.cit.dictamen.web.pages.ContadorDataTable;
+import mx.gob.imss.cit.dictamen.web.to.CatalogoTO;
+import mx.gob.imss.cit.dictamen.web.to.ContadorDataTableTO;
 
 @ManagedBean(name = "catalogoContadoresBean")
 @ViewScoped
@@ -82,14 +82,14 @@ public class CatalogoContadoresBean extends BaseBean {
 		catalogoContadoresPage.setMuestraDataTable(Boolean.TRUE);
 		
 		
-		catalogoContadoresPage.setContadores(new ArrayList<ContadorDataTable>());
+		catalogoContadoresPage.setContadores(new ArrayList<ContadorDataTableTO>());
 		String [] names={"Pedro","Pablo","Luis","Jesus","Maria","Andres","Jesica","Reyna","Lea","Fabiola","Danae","Andrea","Laura"};
 		String [] apellidos={"Cordova","Morales","Jimenez","Marquez","Costa","Peña","Rodriguez","Vazquez","Hernandez","Sandoval","Fuentes","Juarez","Martinez","Gonzalez","Lopez","Perez","Ruiz"};
 	
 		int datos=(int)(Math.random()*10+1);
 		
 		for(int i=0;i<datos;i++){
-			ContadorDataTable cont=new ContadorDataTable();
+			ContadorDataTableTO cont=new ContadorDataTableTO();
 			cont.setNombre(names[(int)(Math.random()*names.length)]);
 			cont.setApPaterno(apellidos[(int)(Math.random()*names.length)]);
 			cont.setApMaterno(apellidos[(int)(Math.random()*names.length)]);
@@ -139,7 +139,7 @@ public class CatalogoContadoresBean extends BaseBean {
 		catalogoContadoresPage.setInicioConfigurado(inicioConfigurado);
 	}
 	
-	public void verDetalle( ContadorDataTable contadorDataTable )
+	public void verDetalle( ContadorDataTableTO contadorDataTable )
 	{
 		System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////\n"
 				+ "////////////////////////////////////////////////////////////////////////////////////////////////\n"
