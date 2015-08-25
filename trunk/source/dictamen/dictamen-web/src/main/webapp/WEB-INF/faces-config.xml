@@ -39,9 +39,16 @@
 		
 		<navigation-case>
 			<from-outcome>pruebaFirmaElectronica</from-outcome>
-			<to-view-id>/views/comun/llamadaFirmaElectronica.xhtml</to-view-id>
+			<to-view-id>/views/comun/firmaElectronica/llamadaFirmaElectronica.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>solicitudRegistroWizard</from-outcome>
+			<to-view-id>/views/registro/solicitudRegistro/solicitudRegistroWizard.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
 		
 	</navigation-rule>
 	

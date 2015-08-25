@@ -18,12 +18,9 @@
 				src="#{liferay.themeImagesURL}/banner/#{image}" />
 		</ui:repeat>
 	</p:imageSwitch>
-	<ui:include src="/views/registro/medioContacto/menuMedioContacto.xhtml"/>
 
 	<p:panel >
-		<h:form>
-		 	<p:commandButton  value="#{msg['message.button.aceptar']}" oncomplete="menuMedioContactoDialog.show()" styleClass="estiloBotonDerecha"/>
-		</h:form>
+
 		<h:form>
 		 	<p:commandButton  value="#{msg['message.button.aceptar']}" action="#{bienvenidaBean.enviarRegistro}"/>
 		 	<p:commandButton  value="#{msg['message.button.ventanilla']}" action="#{bienvenidaBean.enviarVentanilla}" styleClass="estiloFondoBlanco" />

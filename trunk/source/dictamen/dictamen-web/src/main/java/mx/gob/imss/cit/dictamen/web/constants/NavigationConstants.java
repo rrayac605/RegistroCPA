@@ -12,6 +12,8 @@ public final class NavigationConstants {
     public static final String VENTANILLA_CATALOGOS = "ventanillaConfiguracion";
     
     public static final String PAG_PRUEBA_FIRMA_ELECT = "pruebaFirmaElectronica";
+    
+    public static final String PAG_SOLICITUD_REGISTRO = "solicitudRegistroWizard";
 	
     
     /**
