@@ -9,75 +9,65 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<style>
-		h5 {
-			position: relative;
-			background: #1A79A7;
-			padding: 5px 15px;
-			color: white !important;
-			text-align:center;
-			margin: 0 !important;
-		}
-	</style>
+h5 {
+	position: relative;
+	background: #1A79A7;
+	padding: 5px 15px;
+	color: white !important;
+	text-align: center;
+	margin: 0 !important;
+}
+</style>
 </h:head>
+
 <h:body>
-	
-	<p:panelGrid>
-		<p:row>
-			<p:column>
-				<h4><h:outputText value="Contador Público"/></h4><hr/>
-			</p:column>
-			<p:column>
-				<h:outputText value="Es necesario que selecciones una opción de acuerdo al trámite que deseas realizar."/>
-			</p:column>
-		</p:row>	
-		<p:row>
-			<p:column>
-				<h5><h:outputText value="Iniciar Solicitud"/></h5>
-			</p:column>			
-			<p:column>
-				<p:button value="Solicitud de registro" style="width: 567px;">
-				</p:button>			
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column style="width: 300px; text-align:center;">
-				<p:button value="Cancelar" style="width: 300px;">
-				</p:button>	
-			</p:column>
-			<p:column>
-			   	<p:button value="Activación de registro" style="width: 567px;">
-				</p:button>	
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column></p:column>
-			<p:column>
-				<p:button value="Reactivación de registro" style="width: 567px;">
-				</p:button>
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column></p:column>
-			<p:column>
-				<p:button value="Acreditación y membresía" style="width: 567px;">
-				</p:button>
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column></p:column>
-			<p:column>
-	   			<p:button value="Modificación de datos" style="width: 567px;">
-				</p:button>	
-			</p:column>
-		</p:row>		
-		<p:row>
-			<p:column></p:column>
-			<p:column>
-				<p:button value="Baja" style="width: 567px;">
-				</p:button>			
-			</p:column>
-		</p:row>										 	
-	</p:panelGrid>
-	 			 			 			
+	<h:form>
+		<p:panelGrid>
+			<p:row>
+				<p:column>
+					<h:outputText
+						value="Es necesario que selecciones una opción de acuerdo al trámite que deseas realizar." />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:commandButton value="Solicitud de registro"
+						style="width: 567px;"
+						action="#{solicitudRegistroBean.initSolicitudRegistro}">
+					</p:commandButton>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:button value="Activación de registro" style="width: 567px;">
+					</p:button>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:button value="Reactivación de registro" style="width: 567px;">
+					</p:button>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:button value="Acreditación y membresía" style="width: 567px;">
+					</p:button>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:button value="Modificación de datos" style="width: 567px;">
+					</p:button>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:button value="Baja" style="width: 567px;">
+					</p:button>
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
 </h:body>
 </html>

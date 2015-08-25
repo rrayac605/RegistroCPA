@@ -5,9 +5,10 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.web.constants.NavigationConstants;
 import mx.gob.imss.cit.dictamen.web.pages.SolicitudRegistroPage;
 
-@ManagedBean(name = "menuContadorPublicoBean")
+@ManagedBean(name = "solicitudRegistroBean")
 @ViewScoped
 public class SolicitudRegistroBean extends BaseBean{
 
@@ -17,8 +18,24 @@ public class SolicitudRegistroBean extends BaseBean{
 	@ManagedProperty(value = "#{solicitudRegistroPage}")
 	private  SolicitudRegistroPage  solicitudRegistroPage;
 
-	public void enviarRegistro(){
+	public String initSolicitudRegistro(){
 		
+		
+		return NavigationConstants.PAG_SOLICITUD_REGISTRO;
+	}
+
+	/**
+	 * @return the solicitudRegistroPage
+	 */
+	public SolicitudRegistroPage getSolicitudRegistroPage() {
+		return solicitudRegistroPage;
+	}
+
+	/**
+	 * @param solicitudRegistroPage the solicitudRegistroPage to set
+	 */
+	public void setSolicitudRegistroPage(SolicitudRegistroPage solicitudRegistroPage) {
+		this.solicitudRegistroPage = solicitudRegistroPage;
 	}
 
 }

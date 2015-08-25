@@ -11,27 +11,27 @@
 </h:head>
 <h:body>
 
-	<ui:include src="/views/registro/medioContacto/menuMedioContacto.xhtml"/>
+	<ui:include src="/views/comun/medioContacto/menuMedioContacto.xhtml"/>
 
 	<h:form id="solicitudRegistro">
 		<p:wizard id="solicitudWizard" flowListener="#{wizardRegistroMedioContactoBean.onFlowProcess}" backLabel="#{msg['message.button.anterior']}" nextLabel="#{msg['message.button.siguiente']}">
 			<p:tab id="datosPersonalesTab" title="Datos Personales">
-				<ui:include src="solicitudRegistro/solicitudRegistro.xhtml"></ui:include>
+				<ui:include src="/views/comun/datosPersonales/datosPersonales.xhtml"></ui:include>
 			</p:tab>
 			<p:tab id="datosFiscalesTab" title="Datos Fiscales">
-				<ui:include src="solicitudRegistro/solicitudRegistro2.xhtml"></ui:include>
+				<ui:include src="/views/comun/datosFiscales/datosFiscales.xhtml"></ui:include>
 			</p:tab>
 			<p:tab id="mediosContactoTab" title="Medios de Contacto">
-				<ui:include src="medioContacto/medioContacto.xhtml"></ui:include>
+				<ui:include src="/views/comun/medioContacto/medioContacto.xhtml"></ui:include>
 			</p:tab>
 			<p:tab id="datosProfesionalesTab" title="Datos Profesionales">
-				<ui:include src="datosProfesionales/datosProfesionales.xhtml"></ui:include>
+				<ui:include src="/views/comun/datosProfesionales/datosProfesionales.xhtml"></ui:include>
 			</p:tab>
-			<p:tab id="informacionDespachoTab" title="Información del Despacho">
-				<ui:include src="/views/registro/despachoContador/capturaDespachoContador.xhtml"></ui:include>
+			<p:tab id="informacionDespachoTab" title="Informacion del Despacho">
+				<ui:include src="/views/comun/despachoContador/capturaDespachoContador.xhtml"></ui:include>
 			</p:tab>
 			<p:tab id="datosColegioTab" title="Datos del Colegio">
-				<ui:include src="/views/registro/colegioContador/busquedaColegio.xhtml"></ui:include>
+				<ui:include src="/views/comun/colegioContador/busquedaColegio.xhtml"></ui:include>
 			</p:tab>
 			<p:tab id="acuseTab" title="Acuse">
 			</p:tab>																																									
