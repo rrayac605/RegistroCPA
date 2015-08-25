@@ -13,22 +13,22 @@
 		<locale-config>
 			<default-locale>en</default-locale>
 		</locale-config>
-		
+
 		<resource-bundle>
 			<base-name>bundles.messages</base-name>
 			<var>msg</var>
 		</resource-bundle>
-		
+
 		<resource-bundle>
 			<base-name>bundles.messages_notificacion</base-name>
 			<var>msgNotificacion</var>
 		</resource-bundle>
-		
+
 		<message-bundle>bundles.customMessages</message-bundle>
-		
+
 	</application>
-	
-	
+
+
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
@@ -36,21 +36,27 @@
 			<to-view-id>/views/ventanilla/catalogos/configuracionCatalogo.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>pruebaFirmaElectronica</from-outcome>
 			<to-view-id>/views/comun/firmaElectronica/llamadaFirmaElectronica.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>solicitudRegistroWizard</from-outcome>
 			<to-view-id>/views/registro/solicitudRegistro/solicitudRegistroWizard.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
-		
+
+		<navigation-case>
+			<from-outcome>activacionRegistro</from-outcome>
+			<to-view-id>/views/registro/activacion/activacion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
 	</navigation-rule>
-	
-	
+
+
 </faces-config>

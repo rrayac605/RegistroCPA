@@ -84,8 +84,8 @@
 		</p:row>
 		<p:row>
 			<p:column colspan="3" style="text-align:right;">
-				<p:commandButton type="submit" value="#{msg['message.button.si']}" update="busquedaContador"></p:commandButton>	
-				<p:commandButton type="submit" value="#{msg['message.button.no']}" update="busquedaContador"></p:commandButton>	
+				<p:commandButton value="#{msg['message.button.si']}" update="busquedaContador" action="#{busquedaContadorBean.nextActivacionRegistro}"/>
+				<p:commandButton value="#{msg['message.button.no']}" update="busquedaContador"/>
 			</p:column>	
 		</p:row>			
 	</p:panelGrid>
