@@ -1,6 +1,5 @@
 package mx.gob.imss.cit.dictamen.web.pages;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -22,10 +21,6 @@ public class BusquedaContadorPage extends BasePage{
 	private String materno;
 	private String numRegistro;
 	
-	
-	@PostConstruct
-	public void init() {
-	}
 	
 	public String getCurp() {
 		return curp;

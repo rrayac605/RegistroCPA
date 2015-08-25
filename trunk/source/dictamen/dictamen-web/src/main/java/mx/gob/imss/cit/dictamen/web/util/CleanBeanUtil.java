@@ -3,7 +3,6 @@ package mx.gob.imss.cit.dictamen.web.util;
 
 import java.beans.Statement;
 import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Collection;
 

@@ -1,10 +1,18 @@
-package mx.gob.imss.cit.dictamen.web.pages;
+package mx.gob.imss.cit.dictamen.web.to;
 
-public class CatalogoTO {
+import java.io.Serializable;
+
+public class CatalogoTO implements Serializable{
 	
-	Long id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8763079697294819438L;
+
 	
-	String descripcion;
+	private Long id;
+	
+	private String descripcion;
 
 	/**
 	 * @return the id

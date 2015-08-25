@@ -1,16 +1,16 @@
-package mx.gob.imss.cit.dictamen.web.pages;
+package mx.gob.imss.cit.dictamen.web.to;
 
-public class ContadorDataTable {
+public class ContadorDataTableTO {
 
-	Long id;
-	String apPaterno;
-	String apMaterno;
-	String nombre;
-	String curp;
-	String registro;
-	String estatus;
-	String delegacion;
-	String subDelegacion;
+	private Long id;
+	private String apPaterno;
+	private String apMaterno;
+	private String nombre;
+	private String curp;
+	private String registro;
+	private String estatus;
+	private String delegacion;
+	private String subDelegacion;
 	/**
 	 * @return the id
 	 */
