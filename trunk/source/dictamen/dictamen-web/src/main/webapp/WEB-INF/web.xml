@@ -109,20 +109,7 @@
 		<url-pattern>/Bienvenida/*</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>MenuMedioContacto Servlet</servlet-name>
-		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-		<init-param>
-			<param-name>portlet-class</param-name>
-			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MenuMedioContacto Servlet</servlet-name>
-		<url-pattern>/MenuMedioContacto/*</url-pattern>
-	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>MenuContadorPublico Servlet</servlet-name>
 		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
@@ -137,105 +124,6 @@
 		<url-pattern>/MenuContadorPublico/*</url-pattern>
 	</servlet-mapping>	
 	
-	<servlet>
-		<servlet-name>CapturaDespachoContador Servlet</servlet-name>
-		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-		<init-param>
-			<param-name>portlet-class</param-name>
-			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>CapturaDespachoContador Servlet</servlet-name>
-		<url-pattern>/CapturaDespachoContador/*</url-pattern>
-	</servlet-mapping>
-	
-	
-	<servlet>
-		<servlet-name>BusquedaColegio Servlet</servlet-name>
-		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-		<init-param>
-			<param-name>portlet-class</param-name>
-			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>BusquedaColegio Servlet</servlet-name>
-		<url-pattern>/BusquedaColegio/*</url-pattern>
-	</servlet-mapping>
-	
-	
-	<servlet>
-		<servlet-name>BusquedaContador Servlet</servlet-name>
-		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-		<init-param>
-			<param-name>portlet-class</param-name>
-			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>BusquedaContador Servlet</servlet-name>
-		<url-pattern>/BusquedaContador/*</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>ModificarDatosPersonales Servlet</servlet-name>
-		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-		<init-param>
-			<param-name>portlet-class</param-name>
-			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ModificarDatosPersonales Servlet</servlet-name>
-		<url-pattern>/ModificarDatosPersonales/*</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>SolicitudRegistro Servlet</servlet-name>
-		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-		<init-param>
-			<param-name>portlet-class</param-name>
-			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SolicitudRegistro Servlet</servlet-name>
-		<url-pattern>/SolicitudRegistro/*</url-pattern>
-	</servlet-mapping>		
-	
-	<servlet>
-		<servlet-name>MedioContacto Servlet</servlet-name>
-		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-		<init-param>
-			<param-name>portlet-class</param-name>
-			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MedioContacto Servlet</servlet-name>
-		<url-pattern>/MedioContacto/*</url-pattern>
-	</servlet-mapping>		
-		
-	<servlet>
-		<servlet-name>CapturaBaja Servlet</servlet-name>
-		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
-		<init-param>
-			<param-name>portlet-class</param-name>
-			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>CapturaBaja Servlet</servlet-name>
-		<url-pattern>/CapturaBaja/*</url-pattern>
-	</servlet-mapping>
 	<jsp-config>
 		<taglib>
 			<taglib-uri>http://liferay.com/tld/aui</taglib-uri>

@@ -10,8 +10,8 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form id="busquedaContador">	
-	<p:panelGrid id="busquedaContadorGrid">
+<h:form id="acreditacionMembresiaForm" enctype="multipart/form-data">	
+	<p:panelGrid id="acreditacionMembresiaGrid">
 	
 		<p:row>
 			<p:column colspan="1">
@@ -27,7 +27,18 @@
 		<p:row>
 			<p:column colspan="1" style="text-align:left;">	
 			<h:outputText value="#{msg['message.label.views.registro.acreditacionMembresia.archivoLeyenda']}"/>
-				<p:fileUpload value="#{acreditacionMembresiaPage.file}">
+				<p:fileUpload  fileUploadListener="#{acreditacionMembresiaBean.adjuntarArchivo}" 
+				               mode="advanced" 
+				               update="messages,acreditacionMembresiaForm" 
+							   multiple="false"
+							   immediate="true"
+							   label="#{msg['message.label.views.registro.acreditacionMembresia.botonEscoger']}"
+				               cancelLabel="#{msg['message.label.views.registro.acreditacionMembresia.botonCancelar']}"
+				               uploadLabel="#{msg['message.label.views.registro.acreditacionMembresia.botonUpload']}"
+				               allowTypes="/(\.|\/)(pdf)$/"
+				               invalidFileMessage="#{msg['message.label.views.registro.acreditacionMembresia.formatoInvalido']}"
+				               
+				/>
 			</p:column>
 		</p:row>
 		
