@@ -3,7 +3,6 @@ package mx.gob.imss.cit.dictamen.services.util;
 import java.beans.Statement;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,9 +34,19 @@ public class UtilTransformerServiceHelper {
 		mapClass.put(mx.gob.imss.cit.dictamen.model.DgCatEstadoCpDO.class,mx.gob.imss.cit.dictamen.commons.to.CatEstadoCpTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.DgCatMunicipioDO.class,mx.gob.imss.cit.dictamen.commons.to.CatMunicipioTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.DitSocioDO.class,mx.gob.imss.cit.dictamen.commons.to.SocioTO.class);
-
 		
-	
+		mapClass.put(mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Document.class,mx.gob.imss.cit.dictamen.commons.to.DocumentoBovedaTO.class);
+		mapClass.put(mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Actor.class,mx.gob.imss.cit.dictamen.commons.to.ActorBovedaTO.class);
+		mapClass.put(mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Metadata.class,mx.gob.imss.cit.dictamen.commons.to.MetadataBovedaTO.class);
+		mapClass.put(mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Tramite.class,mx.gob.imss.cit.dictamen.commons.to.TramiteBovedaTO.class);
+		mapClass.put(mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.BaseObject.class,mx.gob.imss.cit.dictamen.commons.to.BaseObjectBovedaTO.class);
+		mapClass.put(mx.gob.imss.cit.ws.commonschema.SGBDE.class,mx.gob.imss.cit.dictamen.commons.to.HeaderBovedaTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.DocumentoBovedaTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Document.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.ActorBovedaTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Actor.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.MetadataBovedaTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Metadata.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.TramiteBovedaTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Tramite.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.BaseObjectBovedaTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.BaseObject.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.HeaderBovedaTO.class, mx.gob.imss.cit.ws.commonschema.SGBDE.class);		
 	}
 	
 
@@ -90,7 +99,7 @@ public class UtilTransformerServiceHelper {
 	                	//List
 	                	if(Collection.class.isAssignableFrom(field.getType())){
 
-//	            			                       
+//	            			Object[] values = new Object[ServicesConstants.UNO];                            
 //	                        ArrayList<?> myList = (ArrayList<?>) field.get(origenObject);
 //	                        if(myList!=null){
 //	                        	myList.clear();
