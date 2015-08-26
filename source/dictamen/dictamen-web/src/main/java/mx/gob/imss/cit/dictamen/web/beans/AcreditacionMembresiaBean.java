@@ -9,6 +9,7 @@ import mx.gob.imss.cit.dictamen.web.constants.NavigationConstants;
 import mx.gob.imss.cit.dictamen.web.pages.AcreditacionMembresiaPage;
 
 import org.apache.log4j.Logger;
+import org.primefaces.event.FileUploadEvent;
 
 @ManagedBean(name = "acreditacionMembresiaBean")
 @ViewScoped
@@ -29,6 +30,16 @@ public class AcreditacionMembresiaBean extends BaseBean {
 		return NavigationConstants.PAG_ACREDITACION_MEMBRESIA;
 	}
 
+	
+	public void adjuntarArchivo(FileUploadEvent event) {
+		
+		acreditacionMembresiaPage.setFile(event.getFile());
+//		String nombreArchivo = event.getFile().getFileName();
+//		asGenerarPlantillaPage.setNombreArchivoSeleccionado(nombreArchivo);
+//		asGenerarPlantillaPage.setFileContents(event.getFile().getContents());
+//		asGenerarPlantillaPage.setTipoArchivo(event.getFile().getContentType());
+//		asGenerarPlantillaPage.setExtensionArchivo(nombreArchivo.substring(nombreArchivo.lastIndexOf('.')+1));
+	}
 
 	/**
 	 * @return the acreditacionMembresiaPage
