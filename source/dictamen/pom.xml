@@ -28,7 +28,9 @@
 				<eclipselink.ddl-generation>create-tables</eclipselink.ddl-generation>
 				<eclipselink.logging.level>FINE</eclipselink.logging.level>
 				<db.embedida>true</db.embedida>
-			
+				<bovedaws.endpoint>http://11.254.20.207:8011/BovedaPersonalEscritorio/Proxies/ServiceProxyDocumentoWS?wsdl</bovedaws.endpoint>
+				<bovedaws.namespace>http://documentows.ws.bp.cit.imss.gob.mx/</bovedaws.namespace>
+				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>
 			</properties>
 		</profile>
 
@@ -43,7 +45,9 @@
 				<eclipselink.ddl-generation>none</eclipselink.ddl-generation>
 				<eclipselink.logging.level>FINE</eclipselink.logging.level>
 				<db.embedida>false</db.embedida>
-					
+				<bovedaws.endpoint>http://11.254.20.207:8011/BovedaPersonalEscritorio/Proxies/ServiceProxyDocumentoWS?wsdl</bovedaws.endpoint>
+				<bovedaws.namespace>http://documentows.ws.bp.cit.imss.gob.mx/</bovedaws.namespace>
+				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>
 			</properties>
 			
 		</profile>
@@ -53,7 +57,7 @@
 
 
 	<properties>
-		<certum.mvn.repo>192.168.0.211:8081</certum.mvn.repo> 				<!-- local -->
+ 		<certum.mvn.repo>192.168.0.211:8081</certum.mvn.repo> 				<!-- local -->
 		<java.version>1.6</java.version> 									<!-- local -->
 		<project.encoding>UTF-8</project.encoding> 							<!-- local, portal -->
 
@@ -61,7 +65,7 @@
 		<org.slf4j-version>1.5.2</org.slf4j-version>						<!-- local -->
 		<log4j.version>1.2.16</log4j.version> 								<!-- local, integration, persistence , portal, services -->
 		<!-- Certum Commons Lang -->
-		<certum.commons.lang.version>2.0.7</certum.commons.lang.version> 	<!--portal -->
+		<certum.commons.lang.version>2.0.7</certum.commons.lang.version> 	<!-- portal -->
 		<!-- Librerías de Apache -->
 		<commons-lang.version>2.6</commons-lang.version> 					<!-- local, model , portal -->
 		<commons-collections.version>3.2.1</commons-collections.version> 	<!-- local, portal -->
