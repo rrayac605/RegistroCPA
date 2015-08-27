@@ -10,68 +10,38 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form id="colegioContador">	
-	<p:panelGrid id="colegioContadorGrid">
-		<p:row>
+	<h:form id="colegioContador">
+
+		<h:panelGrid id="messageColegioContadorTab" columns="1"
+			cellpadding="10">
 			<p:column colspan="3">
-				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
 			</p:column>
-		</p:row>
-		<p:row>
-			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="#{msg['message.label.views.registro.colegioContador.busquedaColegio.immsDigital']}"/></h4><hr/>
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="#{msg['message.label.views.registro.colegioContador.busquedaColegio.titulo']}"/></h4><hr/>
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="rfcTxt" value="#{msg['message.label.views.registro.colegioContador.busquedaColegio.rfc']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="rfcTxt" value="#{busquedaColegioPage.rfc}" maxlength="13" validatorMessage="Por favor introduzca un RFC válido.">
-					<f:validateRegex pattern="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))([A-Z\d]{3})?$"/>
-					</h:inputText>
-			</p:column>	
-			<p:column colspan="3" style="text-align:right;">
-			<p:commandButton type="submit" value="#{msg['message.button.buscar']}" update="colegioContador"></p:commandButton>	
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="rfcrTxt" value="#{msg['message.label.views.registro.colegioContador.busquedaColegio.rfc']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="rfcrTxt" value="#{busquedaColegioPage.rfcr}" ></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="razonSocialTxt" value="#{msg['message.label.views.registro.colegioContador.busquedaColegio.razonSocial']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="razonSocialTxt" value="#{busquedaColegioPage.razonSocial}" ></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column colspan="3" style="text-align:right;">
-				<p:splitButton value="#{msg['message.button.acciones']}"  update="colegioContador" ></p:splitButton>
-				<p:commandButton type="submit" value="#{msg['message.button.anterior']}" update="colegioContador"></p:commandButton>	
-			</p:column>	
-		</p:row>			
-	</p:panelGrid>
-</h:form>		 			 			
+		</h:panelGrid>
+
+		<h:panelGrid id="colegioContadorGrid" columns="3" cellpadding="10" headerClass="TituloSeccion">
+			<f:facet name="header">
+				<p:row>
+					<p:column colspan="10">#{msg['message.label.views.registro.colegioContador.busquedaColegio.titulo']}</p:column>
+				</p:row>
+			</f:facet>
+			<h:outputLabel for="rfcTxt"
+				value="#{msg['message.label.views.registro.colegioContador.busquedaColegio.rfc']}: "></h:outputLabel>
+			<h:inputText id="rfcTxt" value="#{busquedaColegioPage.rfc}"
+				maxlength="13"
+				validatorMessage="Por favor introduzca un RFC válido.">
+				<f:validateRegex
+					pattern="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))([A-Z\d]{3})?$" />
+			</h:inputText>
+			<p:commandButton type="submit"
+				value="#{msg['message.button.buscar']}" update="colegioContador"></p:commandButton>
+			<h:outputLabel for="razonSocialTxt"
+				value="#{msg['message.label.views.registro.colegioContador.busquedaColegio.razonSocial']}: "></h:outputLabel>
+			<h:inputText id="razonSocialTxt"
+				value="#{busquedaColegioPage.razonSocial}"></h:inputText>
+		</h:panelGrid>
+
+	</h:form>
 </h:body>
 </html>

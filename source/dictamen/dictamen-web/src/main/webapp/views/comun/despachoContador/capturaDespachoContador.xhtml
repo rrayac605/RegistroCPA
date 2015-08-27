@@ -10,135 +10,79 @@
 <h:head>
 </h:head>
 <h:body>
-<h:form id="capturaDespachoContador">	
-	<p:panelGrid id="capturaDespachoContadorGrid">
-		<p:row>
+	<h:form id="capturaDespachoContador">
+
+		<h:panelGrid id="messageDespachoContadorTab" columns="1"
+			cellpadding="10">
 			<p:column colspan="3">
-				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
 			</p:column>
-		</p:row>
-		<p:row>
-			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.immsDigital']}"/></h4><hr/>
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column colspan="3" style="text-align:left;">	
-				<h4><h:outputText value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.titulo']}"/></h4><hr/>
-			</p:column>
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="prgt1Txt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.prgt1']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:selectManyListbox>
-				  	<f:selectItem itemValue="" itemLabel="#{msg['message.itemLabel.selecciona']}" />
-				</h:selectManyListbox>
-			</p:column>			
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="prgt2Txt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.prgt2']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:selectManyListbox>
-				  	<f:selectItem itemValue="" itemLabel="#{msg['message.itemLabel.selecciona']}" />
-				</h:selectManyListbox>
-			</p:column>	
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="prgt3Txt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.prgt3']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="prgt3Txt" value="#{capturaDespachoContadorPage.prgt3}" ></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="prgt4Txt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.prgt4']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:selectManyListbox>
-				  	<f:selectItem itemValue="" itemLabel="#{msg['message.itemLabel.selecciona']}" />
-				</h:selectManyListbox>
-			</p:column>	
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="telefonoTxt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.telefonoFijo']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="telefonoTxt" value="#{capturaDespachoContadorPage.telefono}" maxlength="10" validatorMessage="Por favor introduzca un número telefónico de diez dígitos.">
-					<f:validateRegex pattern="[0-9]+"/>
-				</h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="rfcTxt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.rfc']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="rfcTxt" value="#{capturaDespachoContadorPage.rfc}" maxlength="13" validatorMessage="Por favor introduzca un RFC válido.">
-				<f:validateRegex pattern="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))([A-Z\d]{3})?$"/>
-				</h:inputText>
-			</p:column>	
-			<p:column colspan="3" style="text-align:right;">
-			<p:commandButton type="submit" value="Buscar" update="capturaDespachoContador"></p:commandButton>	
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="rfcrTxt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.rfc']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="rfcrTxt" value="#{capturaDespachoContadorPage.rfcr}" ></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="razonSocialTxt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.razonSocial']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="razonSocialTxt" value="#{capturaDespachoContadorPage.razonSocial}" ></h:inputText>
-			</p:column>		
-		</p:row>
-		<p:row>
-			<p:column style="text-align:right; width:5px;">
-				<h:outputLabel style="color:red;"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">	
-				<h:outputLabel for="regPatronalTxt" value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.registroPatronal']}"></h:outputLabel>
-			</p:column>
-			<p:column style="text-align:left;">
-				<h:inputText id="regPatronalTxt" value="#{capturaDespachoContadorPage.regPatronal}" ></h:inputText>
-			</p:column>		
-		</p:row>
+		</h:panelGrid>
+
+		<h:panelGrid id="despachoContadorGrid" columns="2" cellpadding="10"
+			headerClass="TituloSeccion">
+			<f:facet name="header">
+				<p:row>
+					<p:column colspan="10">#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.titulo']}</p:column>
+				</p:row>
+			</f:facet>
+			<h:outputLabel for="prgt1Txt"
+				value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.prgt1']}"></h:outputLabel>
+			<h:selectManyListbox>
+				<f:selectItem itemValue=""
+					itemLabel="#{msg['message.itemLabel.selecciona']}" />
+			</h:selectManyListbox>
+			<h:outputLabel for="prgt2Txt"
+				value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.prgt2']}"></h:outputLabel>
+			<h:selectManyListbox>
+				<f:selectItem itemValue=""
+					itemLabel="#{msg['message.itemLabel.selecciona']}" />
+			</h:selectManyListbox>
+			<h:outputLabel for="prgt3Txt"
+				value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.prgt3']}: "></h:outputLabel>
+			<h:inputText id="prgt3Txt"
+				value="#{capturaDespachoContadorPage.prgt3}"></h:inputText>
+			<h:outputLabel for="prgt4Txt"
+				value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.prgt4']}"></h:outputLabel>
+			<h:selectManyListbox>
+				<f:selectItem itemValue=""
+					itemLabel="#{msg['message.itemLabel.selecciona']}" />
+			</h:selectManyListbox>
+			<h:outputLabel for="telefonoTxt"
+				value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.telefonoFijo']}: "></h:outputLabel>
+			<h:inputText id="telefonoTxt"
+				value="#{capturaDespachoContadorPage.telefono}" maxlength="10"
+				validatorMessage="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.validacion.telefonno']}">
+				<f:validateRegex pattern="[0-9]+" />
+			</h:inputText>
+		</h:panelGrid>
+
+		<h:panelGrid id="buscaDespachoGrid" columns="3" cellpadding="10">
+			<h:outputLabel for="rfcTxt"
+				value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.rfc']}: "></h:outputLabel>
+			<h:inputText id="rfcTxt" value="#{capturaDespachoContadorPage.rfc}"
+				maxlength="13"
+				validatorMessage="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.validacion.rfc']}">
+				<f:validateRegex
+					pattern="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))([A-Z\d]{3})?$" />
+			</h:inputText>
+			<p:commandButton type="submit"
+				value="#{msg['message.button.buscar']}"
+				update="capturaDespachoContador"></p:commandButton>
+			<h:outputLabel for="razonSocialTxt"
+				value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.razonSocial']}: "></h:outputLabel>
+			<h:inputText id="razonSocialTxt"
+				value="#{capturaDespachoContadorPage.razonSocial}"></h:inputText>
+			<h:outputLabel />
+			<h:outputLabel for="regPatronalTxt"
+				value="#{msg['message.label.views.registro.despachoContador.capturaDespachoContador.registroPatronal']}: "></h:outputLabel>
+			<h:inputText id="regPatronalTxt"
+				value="#{capturaDespachoContadorPage.regPatronal}"></h:inputText>
+			<h:outputLabel />
+		</h:panelGrid>
+
+		<!-- <p:panelGrid id="capturaDespachoContadorGrid">
 		<p:row>
 			<p:column colspan="3" style="text-align:right;">
 				<p:splitButton value="#{msg['message.button.acciones']}"  update="capturaDespachoContador" ></p:splitButton>	
@@ -146,7 +90,7 @@
 				<p:commandButton type="submit" value="#{msg['message.button.siguiente']}" update="capturaDespachoContador"></p:commandButton>	
 			</p:column>	
 		</p:row>			
-	</p:panelGrid>
-</h:form>		 			 			
+	</p:panelGrid> -->
+	</h:form>
 </h:body>
 </html>
