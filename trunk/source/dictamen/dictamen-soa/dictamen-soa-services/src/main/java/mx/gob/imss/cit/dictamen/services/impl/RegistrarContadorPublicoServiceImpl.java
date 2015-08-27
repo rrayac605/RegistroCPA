@@ -17,7 +17,7 @@ public class RegistrarContadorPublicoServiceImpl implements
 
 	@Override
 	public void executeRegistrarContador(ContadorPublicoTO contadorPublicoTO) {
-		LOGGER.info("###################### El EJB RegistrarContadorPublicoServiceImpl se ejecuto exitosamente ###########################################3");
+		LOGGER.info("###################### El EJB RegistrarContadorPublicoServiceImpl se ejecuto exitosamente ###########################################");
 
 	}
 

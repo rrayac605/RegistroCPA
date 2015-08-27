@@ -15,6 +15,19 @@
 
 	<dependencies>
 		<dependency>
+		   <groupId>mx.gob.imss.ctirss.clienteswebservices.sat.consulta.rfc</groupId>
+		   <artifactId>ClientesWebservices-sat-consulta-rfc</artifactId>
+		   <version>2.2</version>
+	    </dependency>
+		
+		<dependency>
+	      	<groupId>mx.gob.imss.ctirss.delta</groupId>
+	      	<artifactId>delta-modelo-negocio</artifactId>
+	      	<version>${delta.framework.version}</version>
+	      	<type>jar</type>
+	    </dependency>
+		
+		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen</groupId>
 			<artifactId>dictamen-soa-commons</artifactId>
 			<version>${project.parent.version}</version>
@@ -32,7 +45,6 @@
 			<artifactId>dictamen-soa-persistence</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen</groupId>
 			<artifactId>dictamen-soa-persistence</artifactId>
@@ -80,11 +92,7 @@
 			<version>1.10.17</version>
 			<scope>compile</scope>
 		</dependency>
-
 	</dependencies>
-
-
-
 	<build>
 		<resources>
 			<resource>
