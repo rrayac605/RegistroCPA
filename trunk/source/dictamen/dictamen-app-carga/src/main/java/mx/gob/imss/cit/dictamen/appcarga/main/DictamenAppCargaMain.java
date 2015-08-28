@@ -15,7 +15,8 @@ public class DictamenAppCargaMain {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		LOGGER.info("inicio de app carga");
+		
+
 
 	}
 
