@@ -7,6 +7,7 @@ import mx.gob.imss.cit.imssarquitectura.file.constants.ArchivoConstants;
 import mx.gob.imss.cit.imssarquitectura.file.exception.ArquitecturaFileException;
 import mx.gob.imss.cit.imssarquitectura.file.to.DividirArchivoTO;
 import mx.gob.imss.cit.imssarquitectura.file.to.DividirArchivosTO;
+import mx.gob.imss.cit.imssarquitectura.file.to.ExtraerArchivosTO;
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.ZipParameters;
@@ -53,6 +54,15 @@ public class ArchivoUtils {
 		} catch (ZipException e) {
 			throw new ArquitecturaFileException(e.getMessage(), e);		
 		}		
-	}	
+	}
+	
+	public static void extraerArchivos(ExtraerArchivosTO extraerArchivos){
+		try {
+			ZipFile zipFile = new ZipFile(extraerArchivos.getNombreArchivo());			
+			zipFile.extractAll(extraerArchivos.getRutaDestino());			
+		} catch (ZipException e) {
+			throw new ArquitecturaFileException(e.getMessage(), e);
+		}		
+	}
 }
 
