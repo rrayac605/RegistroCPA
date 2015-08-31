@@ -1,13 +1,7 @@
 package mx.gob.imss.cit.imssarquitectura.security;
 
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-
-import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
+import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
@@ -21,13 +15,31 @@ import mx.gob.imss.cit.imssarquitectura.security.to.CifrarArchivoTO;
  *
  */
 public class CifradoSimetricoUtils {
+	
+	
+	public static byte[] generarLlavePrivadaSimetrica(String algoritmo,int bytesSeguridad) {
+	    KeyGenerator keyGen;
+	    byte[] llave=null;
+		try {
+			keyGen = KeyGenerator.getInstance(algoritmo);			
+			//keyGen.init(bytesSeguridad);
+            SecretKey secKey=keyGen.generateKey();
+            llave=secKey.getEncoded();
+			
+		} catch (Exception e) {
+			throw new ArquitecturaSecurityException(e.getMessage(), e);
+		}
+		
+		return llave;
+     
+	}
 
 	public static CifrarArchivoTO cifrarArchivo(CifrarArchivoTO cifrarArchivoTO) {
+		
 		CifrarArchivoTO archivoCifradoTO = new CifrarArchivoTO();
-		byte[] rawkey = cifrarArchivoTO.getLlaveAsimetrica().getBytes();
 		DESedeKeySpec keyspec;
 		try {
-			keyspec = new DESedeKeySpec(rawkey);
+			keyspec = new DESedeKeySpec(cifrarArchivoTO.getLlaveSimetrica());
 
 			SecretKeyFactory keyfactory = SecretKeyFactory
 					.getInstance(cifrarArchivoTO.getAlgoritmo());
@@ -38,20 +50,14 @@ public class CifradoSimetricoUtils {
 
 			archivoCifradoTO.setArchivoCifrado(cipher.doFinal(cifrarArchivoTO
 					.getArchivoOriginal()));
-
-		} catch (InvalidKeyException e) {
+			archivoCifradoTO.setArchivoOriginal(cifrarArchivoTO.getArchivoOriginal());
+			archivoCifradoTO.setLlaveSimetrica(cifrarArchivoTO.getLlaveSimetrica());
+			archivoCifradoTO.setAlgoritmo(cifrarArchivoTO.getAlgoritmo());
+			
+		} catch (Exception e) {
 			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (NoSuchAlgorithmException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (InvalidKeySpecException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (NoSuchPaddingException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (IllegalBlockSizeException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (BadPaddingException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		}
+		} 
+		
 		return archivoCifradoTO;
 	}
 
@@ -59,10 +65,9 @@ public class CifradoSimetricoUtils {
 			CifrarArchivoTO cifrarArchivoTO) {
 
 		CifrarArchivoTO archivoDescifradoTO = new CifrarArchivoTO();
-		byte[] rawkey = cifrarArchivoTO.getLlaveAsimetrica().getBytes();
 		DESedeKeySpec keyspec;
 		try {
-			keyspec = new DESedeKeySpec(rawkey);
+			keyspec = new DESedeKeySpec(cifrarArchivoTO.getLlaveSimetrica());
 
 			SecretKeyFactory keyfactory = SecretKeyFactory
 					.getInstance(cifrarArchivoTO.getAlgoritmo());
@@ -74,17 +79,7 @@ public class CifradoSimetricoUtils {
 			archivoDescifradoTO.setArchivoOriginal(cipher
 					.doFinal(cifrarArchivoTO.getArchivoCifrado()));
 
-		} catch (InvalidKeyException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (NoSuchAlgorithmException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (InvalidKeySpecException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (NoSuchPaddingException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (IllegalBlockSizeException e) {
-			throw new ArquitecturaSecurityException(e.getMessage(), e);
-		} catch (BadPaddingException e) {
+		} catch (Exception e) {
 			throw new ArquitecturaSecurityException(e.getMessage(), e);
 		}
 		return archivoDescifradoTO;

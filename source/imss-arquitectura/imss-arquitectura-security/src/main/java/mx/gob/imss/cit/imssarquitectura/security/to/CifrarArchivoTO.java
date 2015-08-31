@@ -18,7 +18,7 @@ public class CifrarArchivoTO implements Serializable{
 	
 	private byte[] archivoOriginal;
 	
-	private String llaveAsimetrica;
+	private byte[] llaveSimetrica;
 	
 	private String algoritmo;
 	
@@ -41,14 +41,14 @@ public class CifrarArchivoTO implements Serializable{
 	/**
 	 * @return the llaveAsimetrica
 	 */
-	public String getLlaveAsimetrica() {
-		return llaveAsimetrica;
+	public byte[] getLlaveSimetrica() {
+		return llaveSimetrica;
 	}
 	/**
 	 * @param llaveAsimetrica the llaveAsimetrica to set
 	 */
-	public void setLlaveAsimetrica(String llaveAsimetrica) {
-		this.llaveAsimetrica = llaveAsimetrica;
+	public void setLlaveSimetrica(byte[] llaveSimetrica) {
+		this.llaveSimetrica = llaveSimetrica;
 	}
 	/**
 	 * @return the algoritmo
