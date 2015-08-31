@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="medioContacto">
+		<h:panelGrid columns="3" cellpadding="10" id="medioContactoGrid" >
+			<h:outputLabel style="color:red;">*</h:outputLabel>
+			<h:outputLabel for="institucionTxt"
+				value="Institución que Expidió su Título Profesional: "></h:outputLabel>
+			<h:inputText id="institucionTxt" required="true"
+				value="#{medioContactoPage.institucion}"
+				requiredMessage="El campo Institución es obligatorio."></h:inputText>
+			<h:outputLabel style="color:red;">*</h:outputLabel>
+			<h:outputLabel for="cedulaTxt" value="Número de Cédula Profesional: "></h:outputLabel>
+			<h:inputText id="cedulaTxt" required="true"
+				value="#{medioContactoPage.cedula}"
+				requiredMessage="El campo Número de Cédula es obligatorio."></h:inputText>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

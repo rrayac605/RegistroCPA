@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="solicitudRegistro">
+
+		<h:panelGrid id="messageDatosPersonalesTab" columns="1" cellpadding="10">
+			<p:row>
+				<p:column colspan="3">
+					<p:messages id="messages" showDetail="true" autoUpdate="true"
+						closable="true" />
+				</p:column>
+			</p:row>
+		</h:panelGrid>
+
+		<h:panelGrid id="curpGrid" columns="2" cellpadding="10">
+			<h:outputLabel for="curpTxt"
+				value="#{msg['message.registro.datosPersonales.curp']}: "></h:outputLabel>
+			<h:inputText id="curpTxt" value="#{solicitudRegistroPage.curp}"
+				validatorMessage="#{msg['message.registro.datosPersonales.validacion.curp']}">
+				<f:validateRegex
+					pattern="^([A-Z][A,E,I,O,U,X][A-Z]{2})(\d{2})((01|03|05|07|08|10|12)(0[1-9]|[12]\d|3[01])|02(0[1-9]|[12]\d)|(04|06|09|11)(0[1-9]|[12]\d|30))([M,H])(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)([B,C,D,F,G,H,J,K,L,M,N,Ñ,P,Q,R,S,T,V,W,X,Y,Z]{3})([0-9,A-Z][0-9])$" />
+			</h:inputText>
+		</h:panelGrid>
+
+		<h:panelGrid id="solicitudRegistroGrid" columns="2" cellpadding="10"
+			headerClass="TituloSeccion">
+			<f:facet name="header">
+				<p:row>
+					<p:column colspan="10">#{msg['message.registro.solicitud.wizard.datosPersonales.titulo']}</p:column>
+				</p:row>
+			</f:facet>
+			<h:outputLabel for="nombreTxt"
+				value="#{msg['message.registro.datosPersonales.nombre']}: "></h:outputLabel>
+			<h:inputText id="nombreTxt" value="#{solicitudRegistroPage.nombre}"
+				maxlength="255"
+				validatorMessage="#{msg['message.registro.datosPersonales.validacion.nombre']}">
+				<f:validateRegex pattern="[a-zA-ZñáéíóúÑÁÉÍÓÚ ]+" />
+			</h:inputText>
+			<h:outputLabel for="paternoTxt"
+				value="#{msg['message.registro.datosPersonales.apellidoPaterno']}: "></h:outputLabel>
+			<h:inputText id="paternoTxt" value="#{solicitudRegistroPage.paterno}"
+				maxlength="255"
+				validatorMessage="#{msg['message.registro.datosPersonales.validacion.apellidoPaterno']}">
+				<f:validateRegex pattern="[a-zA-ZñáéíóúÑÁÉÍÓÚ ]+" />
+			</h:inputText>
+			<h:outputLabel for="maternoTxt"
+				value="#{msg['message.registro.datosPersonales.apellidoMaterno']}: "></h:outputLabel>
+			<h:inputText id="maternoTxt" value="#{solicitudRegistroPage.materno}"
+				maxlength="255"
+				validatorMessage="#{msg['message.registro.datosPersonales.validacion.apellidoMaterno']}">
+				<f:validateRegex pattern="[a-zA-ZñáéíóúÑÁÉÍÓÚ ]+" />
+			</h:inputText>
+			<h:outputLabel for="correoTxt"
+				value="#{msg['message.registro.datosPersonales.email']}: "></h:outputLabel>
+			<h:inputText id="correoTxt" value="#{solicitudRegistroPage.correo}"
+				maxlength="255"
+				validatorMessage="#{msg['message.registro.datosPersonales.validacion.email']}">
+				<f:validateRegex
+					pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" />
+			</h:inputText>
+			<h:outputLabel for="telefonoTxt"
+				value="#{msg['message.registro.datosPersonales.telefono']}: "></h:outputLabel>
+			<h:inputText id="telefonoTxt"
+				value="#{solicitudRegistroPage.telefono}" maxlength="10"
+				validatorMessage="#{msg['message.registro.datosPersonales.validacion.telefono']}">
+				<f:validateRegex pattern="[0-9]+" />
+			</h:inputText>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+		<h:form>
+			<p:panel>
+				<h:panelGrid columns="3" cellpadding="10">
+					<h:outputLabel style="color:red;">*</h:outputLabel>
+					<h:outputText value="#{msg['message.registro.medioContacto.lblTipoMedioContacto']}" />
+					<p:selectOneMenu id="selectTipoMedio" binding="#{selectTipoMedio}">
+						<f:selectItem itemLabel="#{msg['message.registro.medioContacto.selecccioneOpcion']}" itemValue="0" />
+						<f:selectItem itemLabel="TELEFONO FIJO" itemValue="1" />
+						<f:selectItem itemLabel="TELEFONO MOVIL" itemValue="2" />
+						<f:selectItem itemLabel="CORREO ELECTRONICO" itemValue="3" />
+						<p:ajax update="pnlContainerForms" />
+					</p:selectOneMenu>
+				</h:panelGrid>
+				
+				<h:panelGroup id="pnlContainerForms" layout="block" >
+					<h:panelGrid  columns="3" cellpadding="10" rendered="#{selectTipoMedio.value eq '1'}" headerClass="TituloSeccion" >
+						 <f:facet name="header" >
+					        <p:row>
+					            <p:column colspan="10">#{msg['message.registro.medioContacto.instruccionPart']}</p:column>
+					        </p:row>
+					    </f:facet>
+						<h:outputLabel />
+						<h:outputText value="#{msg['message.registro.medioContacto.form.claveLada']}" />
+						<p:inputText/>
+						<h:outputLabel style="color:red;">*</h:outputLabel>
+						<h:outputText value="#{msg['message.registro.medioContacto.form.numTel']}" />
+						<p:inputText/>
+						<h:outputLabel />
+						<h:outputText value="#{msg['message.registro.medioContacto.form.extension']}" />
+						<p:inputText/>
+						<f:facet name="footer">
+					        <p:row>
+					          <p:column colspan="2" >
+	 							<p:commandButton value="#{msg['message.button.aceptar']}" styleClass="estiloFondoBlanco" />
+					          </p:column>
+					        </p:row>
+					    </f:facet>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="3" cellpadding="10" rendered="#{selectTipoMedio.value eq '2'}" headerClass="TituloSeccion" >
+						 <f:facet name="header" >
+					        <p:row>
+					            <p:column colspan="10">#{msg['message.registro.medioContacto.instruccionCel']}</p:column>
+					        </p:row>
+					    </f:facet>
+						<h:outputLabel />
+						<h:outputText value="#{msg['message.registro.medioContacto.form.claveLada']}" />
+						<p:inputText/>
+						<h:outputLabel style="color:red;">*</h:outputLabel>
+						<h:outputText value="#{msg['message.registro.medioContacto.form.numTel']}" />
+						<p:inputText/>
+						<f:facet name="footer">
+					        <p:row>
+					          <p:column colspan="2" >
+	 							<p:commandButton value="#{msg['message.button.aceptar']}" styleClass="estiloFondoBlanco" />
+					          </p:column>
+					        </p:row>
+					    </f:facet>
+					</h:panelGrid>
+					
+					<h:panelGrid columns="3" cellpadding="10" rendered="#{selectTipoMedio.value eq '3'}" headerClass="TituloSeccion" >
+						<f:facet name="header" >
+					        <p:row>
+					            <p:column colspan="10">#{msg['message.registro.medioContacto.instruccionEmail']}</p:column>
+					        </p:row>
+					    </f:facet>
+						<h:outputLabel style="color:red;">*</h:outputLabel>
+						<h:outputText value="#{msg['message.registro.medioContacto.form.email']}" />
+						<p:inputText/>
+						<f:facet name="footer">
+					        <p:row>
+					          <p:column colspan="2" >
+	 							<p:commandButton value="#{msg['message.button.aceptar']}" styleClass="estiloFondoBlanco" />
+					          </p:column>
+					        </p:row>
+					    </f:facet>
+					</h:panelGrid>
+				</h:panelGroup>	 
+			</p:panel>
+		</h:form>
+
+</ui:composition>

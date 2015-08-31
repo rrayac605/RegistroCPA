@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition 
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:f="http://java.sun.com/jsf/core" 
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" >
+contadores
+<!-- 	<h:form id="catalogoContadoresForm">			
+ -->		
+			<p:panelGrid columns="3">
+				<p:column>
+					<p:outputLabel for="apPaterno" value="#{msg['message.label.ventanilla.catalogo.contador.ap']}" />
+					<p:inputText 	id="apPaterno" />
+				</p:column>
+				<p:column>
+					<p:outputLabel for="apMaterno" value="#{msg['message.label.ventanilla.catalogo.contador.ap']}" />
+					<p:inputText 	id="apMaterno" />
+				</p:column>	
+				<p:column>
+					<p:outputLabel for="nombres" value="#{msg['message.label.ventanilla.catalogo.contador.nombre']}" />
+					<p:inputText 	id="nombres" />
+				</p:column>	
+			</p:panelGrid>
+			
+			<p:panelGrid columns="3">
+				<p:column>
+					<p:outputLabel for="curpCpa" value="#{msg['message.label.ventanilla.catalogo.contador.curpcpa']}" />
+					<p:inputText 	id="curpCpa" />
+				</p:column>
+				<p:column>
+					<p:outputLabel for="nreg" value="#{msg['message.label.ventanilla.catalogo.contador.nreg']}" />
+					<p:inputText 	id="nreg" />
+				</p:column>	
+				<p:column>
+					<p:outputLabel for="status" value="#{msg['message.label.ventanilla.catalogo.contador.status']}" />
+					<p:selectOneMenu id="status" value="#{catalogoContadoresPage.idStatus}" >
+						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" itemValue="" />
+						<f:selectItems value="#{catalogoContadoresPage.status}" var="origen" itemLabel="#{origen.descripcion}" itemValueAsString="#{origen.id}" itemValue="#{origen.id}" />
+					</p:selectOneMenu>					
+				</p:column>	
+			</p:panelGrid>			
+
+			<p:panelGrid columns="3" id="panelSub">
+				<p:column>
+					
+						<p:outputLabel for="delegacion" value="#{msg['message.label.ventanilla.catalogo.contador.delegacion']}" />
+						<p:selectOneMenu id="delegacion" value="#{catalogoContadoresPage.idDelegacion}" >
+							<f:selectItem itemLabel="#{msg['message.label.seleccione']}" itemValue="" />
+							<f:selectItems value="#{catalogoContadoresPage.delegacion}" var="origen" itemLabel="#{origen.descripcion}" itemValueAsString="#{origen.id}" itemValue="#{origen.id}" />
+							<p:ajax update=":configuracionDocumentoForm:panelSub" listener="#{catalogoContadoresBean.changeDelegacion}" />
+						</p:selectOneMenu>
+
+				</p:column>
+				<p:column>
+					
+						<p:outputLabel  value="#{msg['message.label.ventanilla.catalogo.contador.subdelegacion']}"  />
+						<p:selectOneMenu id="subdelegacion" value="#{catalogoContadoresPage.idSubDelegacion}" widgetVar="subdelegacion" styleClass="subdelegacion" >
+							<f:selectItem itemLabel="#{msg['message.label.seleccione']}" itemValue="" />
+							<f:selectItems value="#{catalogoContadoresPage.subdelegaccion}" var="origen" itemLabel="#{origen.descripcion}" itemValueAsString="#{origen.id}" itemValue="#{origen.id}" />
+						</p:selectOneMenu>
+						
+				</p:column>	
+				<p:column>
+					<p:spacer />
+				</p:column>	
+			</p:panelGrid>		
+		<p:panel>
+		    <p:commandButton value="#{msg['message.button.buscar']}" action="#{catalogoContadoresBean.buscarContadores}"  update=":configuracionDocumentoForm:panelContadores" styleClass="estiloFondoBlanco"  />
+		</p:panel>
+		<p:panelGrid columns="1" id="panelContadores">
+			<p:dataTable id="tablaContadores" value="#{catalogoContadoresPage.contadores}" var="con" rowKey="#{con.id}" emptyMessage="#{msg['message.label.noRecorsFound']}" rendered="#{catalogoContadoresPage.muestraDataTable}"  >
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.ap']}" >
+					<h:outputText value="#{con.apPaterno}" />
+				</p:column>
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.am']}">
+					<h:outputText value="#{con.apMaterno}" />
+				</p:column>				
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.nombre']}">
+					<h:outputText value="#{con.nombre}" />
+				</p:column>			
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.curp']}">
+					<h:outputText value="#{con.curp}" />
+				</p:column>			
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.nreg']}">
+					<h:outputText value="#{con.registro}" />
+				</p:column>			
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.status']}">
+					<h:outputText value="#{con.estatus}" />
+				</p:column>			
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.delegacion']}">
+					<h:outputText value="#{con.delegacion}" />
+				</p:column>			
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.subdelegacion']}">
+					<h:outputText value="#{con.subDelegacion}" />
+				</p:column>
+				<p:column headerText="#{msg['message.label.ventanilla.catalogo.contador.datatable.detalle']}"  >
+					<p:commandLink  value="#{msg['message.label.ventanilla.catalogo.contador.datatable.ver']}" action="#{catalogoContadoresBean.verDetalle(con)}" update=":configuracionDocumentoForm:dialogDetalle" oncomplete="dialogDetalle.show()"  /> 
+<!-- 									<p:commandLink  value="#{msg['message.label.ventanilla.catalogo.contador.datatable.ver']}" action="#{catalogoContadoresBean.verDetalle(con)}" update=":configuracionDocumentoForm:dialogDetalle" oncomplete=":configuracionDocumentoForm:panelDialog"  /> -->	
+				</p:column>
+			</p:dataTable>
+		</p:panelGrid>			
+		
+	<p:panelGrid columns="1" id="panelDialog">
+	  <p:dialog id="dialogDetalle" widgetVar="dialogDetalle"  modal="true"  >
+
+  		<p:tabView id="tabDetalleContador" widgetVar="tabDetalleContador" >
+  		
+  			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales']}">
+  			
+  				<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales']}">
+  				
+		  			<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogRFC" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.rfc']}" />
+							<p:inputText 	id="dialogRFC" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogCURP" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.curp']}" />
+							<p:inputText 	id="dialogCURP" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogAP" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.ap']}" />
+							<p:inputText 	id="dialogAP" />
+						</p:column>	
+					</p:panelGrid>
+		  			<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogAM" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.am']}" />
+							<p:inputText 	id="dialogAM" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogName" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.nombres']}" />
+							<p:inputText 	id="dialogName" />
+						</p:column>	
+						<p:column>
+							<p:spacer/>
+						</p:column>	
+					</p:panelGrid>				
+				</p:panel>
+				
+				
+ 				<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.fiscales']}">
+		  			<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogCalle" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.calle']}" />
+							<p:inputText 	id="dialogCalle" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogNumExt" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.numExt']}" />
+							<p:inputText 	id="dialogNumExt" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogLetraExt" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.letraExt']}" />
+							<p:inputText 	id="dialogLetraExt" />
+						</p:column>	
+					</p:panelGrid>
+			  		<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogNumInt" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.numInt']}" />
+							<p:inputText 	id="dialogNumInt" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogLetraInt" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.letraInt']}" />
+							<p:inputText 	id="dialogLetraInt" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogColonia" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.colonia']}" />
+							<p:inputText 	id="dialogColonia" />
+						</p:column>	
+					</p:panelGrid>	  	
+					<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogEntreCalle" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.entreCalle']}" />
+							<p:inputText 	id="dialogEntreCalle" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogYCalle" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.yCalle']}" />
+							<p:inputText 	id="dialogYCalle" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogLocalidad" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.localidad']}" />
+							<p:inputText 	id="dialogLocalidad" />
+						</p:column>	
+					</p:panelGrid>	
+					<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogMunicipio" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.municipio']}" />
+							<p:inputText 	id="dialogMunicipio" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogEntidad" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.entidad']}" />
+							<p:inputText 	id="dialogEntidad" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogCP" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.cp']}" />
+							<p:inputText 	id="dialogCP" />
+						</p:column>	
+					</p:panelGrid>	
+					<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogMail1" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.mail1']}" />
+							<p:inputText 	id="dialogMail1" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogMail2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.mail2']}" />
+							<p:inputText 	id="dialogMail2" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogMail3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosPersonales.mail3']}" />
+							<p:inputText 	id="dialogMail3" />
+						</p:column>	
+					</p:panelGrid>											
+				</p:panel>
+  			
+  			</p:tab>
+  		
+  			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho']}">
+  			
+    			<p:panel  styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho']}">
+		  			<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogRFC2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.rfc']}" />
+							<p:inputText 	id="dialogRFC2" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogRegPat2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.regPat']}" />
+							<p:inputText 	id="dialogRegPat2" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogRazon2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.razonSocial']}" />
+							<p:inputText 	id="dialogRazon2" />
+						</p:column>	
+					</p:panelGrid>		
+				</p:panel>			
+  			
+  			 		<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.fiscales']}">
+		  			<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogCalle2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.calle']}" />
+							<p:inputText 	id="dialogCalle2" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogNumExt2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.numExt']}" />
+							<p:inputText 	id="dialogNumExt2" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogLetraExt2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.letraExt']}" />
+							<p:inputText 	id="dialogLetraExt2" />
+						</p:column>	
+					</p:panelGrid>
+			  		<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogNumInt2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.numInt']}" />
+							<p:inputText 	id="dialogNumInt2" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogLetraInt2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.letraInt']}" />
+							<p:inputText 	id="dialogLetraInt2" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogColonia2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.colonia']}" />
+							<p:inputText 	id="dialogColonia2" />
+						</p:column>	
+					</p:panelGrid>	  	
+					<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogEntreCalle2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.entreCalle']}" />
+							<p:inputText 	id="dialogEntreCalle2" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogYCalle2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.yCalle']}" />
+							<p:inputText 	id="dialogYCalle2" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogLocalidad2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.localidad']}" />
+							<p:inputText 	id="dialogLocalidad2" />
+						</p:column>	
+					</p:panelGrid>	
+					<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogMunicipio2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.municipio']}" />
+							<p:inputText 	id="dialogMunicipio2" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogEntidad2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.entidad']}" />
+							<p:inputText 	id="dialogEntidad2" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogCP2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.cp']}" />
+							<p:inputText 	id="dialogCP2" />
+						</p:column>	
+					</p:panelGrid>	
+					<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogCargo2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.cargo']}" />
+							<p:inputText 	id="dialogCargo2" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogTel2" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.tel']}" />
+							<p:inputText 	id="dialogTel2" />
+						</p:column>	
+						<p:column>
+							<p:spacer />
+						</p:column>	
+					</p:panelGrid>											
+				</p:panel>  			
+  			</p:tab>
+  			
+  			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio']}">
+ 			
+    			<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio']}">
+		  			<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogRFC3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosDespacho.rfc']}" />
+							<p:inputText 	id="dialogRFC3" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogRazon3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.razon']}" />
+							<p:inputText 	id="dialogRazon3" />
+						</p:column>	
+						<p:column>
+							<p:spacer/>
+						</p:column>	
+					</p:panelGrid>		
+				</p:panel>			
+  			
+  			 		<p:panel styleClass="TituloSeccion" header="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.fiscales']}">
+		  			<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogCalle3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.calle']}" />
+							<p:inputText 	id="dialogCalle3" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogNumExt3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.numExt']}" />
+							<p:inputText 	id="dialogNumExt3" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogLetraExt3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.letraExt']}" />
+							<p:inputText 	id="dialogLetraExt3" />
+						</p:column>	
+					</p:panelGrid>
+			  		<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogNumInt3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.numInt']}" />
+							<p:inputText 	id="dialogNumInt3" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogLetraInt3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.letraInt']}" />
+							<p:inputText 	id="dialogLetraInt3" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogColonia3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.colonia']}" />
+							<p:inputText 	id="dialogColonia3" />
+						</p:column>	
+					</p:panelGrid>	  	
+					<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogEntreCalle3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.entreCalle']}" />
+							<p:inputText 	id="dialogEntreCalle3" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogYCalle3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.yCalle']}" />
+							<p:inputText 	id="dialogYCalle3" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogLocalidad3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.localidad']}" />
+							<p:inputText 	id="dialogLocalidad3" />
+						</p:column>	
+					</p:panelGrid>	
+					<p:panelGrid columns="3">
+						<p:column>
+							<p:outputLabel for="dialogMunicipio3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.municipio']}" />
+							<p:inputText 	id="dialogMunicipio3" />
+						</p:column>
+						<p:column>
+							<p:outputLabel for="dialogEntidad3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.entidad']}" />
+							<p:inputText 	id="dialogEntidad3" />
+						</p:column>	
+						<p:column>
+							<p:outputLabel for="dialogCP3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.cp']}" />
+							<p:inputText 	id="dialogCP3" />
+						</p:column>	
+					</p:panelGrid>	
+					<p:panelGrid columns="3">				
+						<p:column>
+							<p:outputLabel for="dialogTel3" value="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosColegio.tel']}" />
+							<p:inputText 	id="dialogTel3" />
+						</p:column>	
+						<p:column>
+							<p:spacer />
+						</p:column>	
+						<p:column>
+							<p:spacer/>
+						</p:column>						
+					</p:panelGrid>											
+				</p:panel>    			
+  			
+  			</p:tab>  			
+  			
+  			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.datosCPA']}">
+  			</p:tab>
+  		
+  			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.acreitacion']}">
+  			</p:tab>  		
+
+  			<p:tab title="#{msg['message.label.ventanilla.catalogo.contador.detalle.tab.dictamenes']}">
+  			</p:tab>  		  			
+
+  		</p:tabView>
+	  </p:dialog>
+	</p:panelGrid>
+		
+	<!-- </h:form>	 -->	
+</ui:composition>

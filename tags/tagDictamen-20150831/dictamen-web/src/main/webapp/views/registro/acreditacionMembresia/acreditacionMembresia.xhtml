@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+<h:form id="acreditacionMembresiaForm" enctype="multipart/form-data">	
+	<p:panelGrid id="acreditacionMembresiaGrid">
+	
+		<p:row>
+			<p:column colspan="1">
+				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column colspan="1" style="text-align:left;">	
+				<h4><h:outputText value="#{msg['message.label.views.registro.acreditacionMembresia.titulo']}"/></h4><hr/>
+			</p:column>
+		</p:row>
+		
+		<p:row>
+			<p:column colspan="1" style="text-align:left;">	
+			<h:outputText value="#{msg['message.label.views.registro.acreditacionMembresia.archivoLeyenda']}"/>
+				<p:fileUpload  fileUploadListener="#{acreditacionMembresiaBean.adjuntarArchivo}" 
+				               mode="advanced" 
+				               update="messages,acreditacionMembresiaForm" 
+							   multiple="false"
+							   immediate="true"
+							   label="#{msg['message.label.views.registro.acreditacionMembresia.botonEscoger']}"
+				               cancelLabel="#{msg['message.label.views.registro.acreditacionMembresia.botonCancelar']}"
+				               uploadLabel="#{msg['message.label.views.registro.acreditacionMembresia.botonUpload']}"
+				               allowTypes="/(\.|\/)(pdf)$/"
+				               invalidFileMessage="#{msg['message.label.views.registro.acreditacionMembresia.formatoInvalido']}"
+				               
+				/>
+			</p:column>
+		</p:row>
+		
+		
+	</p:panelGrid>
+</h:form>		 			 		
+</h:body>
+</html>
