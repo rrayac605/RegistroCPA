@@ -12,7 +12,7 @@ import org.bouncycastle.util.encoders.Base64;
  * @author gsegura
  *
  */
-public class EncodeArchivoUtils {
+public class EncodeUtils {
 
 	public static String encodeBytesBase64(byte[] bytes)throws ArquitecturaSecurityException {
 

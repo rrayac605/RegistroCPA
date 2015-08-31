@@ -7,17 +7,17 @@ package mx.gob.imss.cit.imssarquitectura.security.enums;
  * @author ajfuentes
  *
  */
-public enum AlgoritmosCifradoEnum {
+public enum AlgoritmoCifradoEnum {
 	
 
 	DES3("3DES","DESede"),
-	AES("AES","")
+	AES("AES","AES")
 	;
 	
 	private String nombre;
 	private String clave;
 
-	private AlgoritmosCifradoEnum(String nombre,String clave){
+	private AlgoritmoCifradoEnum(String nombre,String clave){
 		this.nombre=nombre;
 		this.clave=clave;
 	}
