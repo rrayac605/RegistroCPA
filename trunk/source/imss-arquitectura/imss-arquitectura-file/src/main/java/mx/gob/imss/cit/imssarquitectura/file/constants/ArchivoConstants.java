@@ -7,7 +7,8 @@ package mx.gob.imss.cit.imssarquitectura.file.constants;
  * 
  */
 public class ArchivoConstants {
-	public static final boolean SPLIT=true;	
+	public static final boolean DIVIDIR=true;	
+	public static final boolean CIFRAR=true;
 
 	private ArchivoConstants(){
 		
