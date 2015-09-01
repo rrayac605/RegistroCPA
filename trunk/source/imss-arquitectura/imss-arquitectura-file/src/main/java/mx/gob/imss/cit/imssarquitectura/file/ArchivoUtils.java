@@ -114,12 +114,12 @@ public class ArchivoUtils {
 	
 	public static void extraerArchivosAES(ExtraerArchivosAESTO extraerArchivosAES){
 		try {
-			ZipFile zipFile = new ZipFile(extraerArchivosAES.getNombreArchivo());			
+			ZipFile zipFile = new ZipFile(extraerArchivosAES.getNombreArchivo());
+			zipFile.setPassword(extraerArchivosAES.getContrasenia());		
 			zipFile.extractAll(extraerArchivosAES.getRutaDestino());	
-			zipFile.setPassword(extraerArchivosAES.getContrasenia());
 		} catch (ZipException e) {
 			throw new ArquitecturaFileException(e.getMessage(), e);
-		}		
+		}
 	}	
 }
 
