@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
 
@@ -29,17 +30,17 @@ public class TransferServlet implements Transfer {
 	@Override
 	public void subirArchivoUnico(String nombreArchivo) {
         File uploadFile = new File(nombreArchivo);
-        
+        ResourceBundle rb = ResourceBundle.getBundle("transfer-servlet");
         LOG.info("Archivo a subir: " + nombreArchivo);
         try {
         // creates a HTTP connection
-        URL url = new URL(TransferServletConstants.URL);
+        URL url = new URL(rb.getString("servlet.url"));
         HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
         httpConn.setUseCaches(TransferServletConstants.USE_CACHE);
         httpConn.setDoOutput(TransferServletConstants.DO_OUTPUT);
         httpConn.setRequestMethod(TransferServletConstants.REQUEST_METHOD);
         // sets REQUEST_PROPERTY as a HTTP header
-        httpConn.setRequestProperty(TransferServletConstants.REQUEST_PROPERTY, uploadFile.getName());
+        httpConn.setRequestProperty(rb.getString("servlet.requestproperty"), uploadFile.getName());
  
         OutputStream outputStream;
         outputStream = httpConn.getOutputStream();
@@ -47,7 +48,7 @@ public class TransferServlet implements Transfer {
         FileInputStream inputStream;
         inputStream = new FileInputStream(uploadFile);
  
-        byte[] buffer = new byte[TransferServletConstants.BUFFER_SIZE];
+        byte[] buffer = new byte[Integer.valueOf(rb.getString("servlet.buffersize"))];
         int bytesRead;
         bytesRead = -1;
  
@@ -57,7 +58,7 @@ public class TransferServlet implements Transfer {
             outputStream.write(buffer, 0, bytesRead);
         }
  
-        LOG.info("El archivo se termino de escribir.");
+        LOG.info("El archivo se terminó de escribir.");
         outputStream.close();
         inputStream.close();
  
