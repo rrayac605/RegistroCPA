@@ -37,16 +37,325 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:Actor xmi.id="EAID_56756957_5F7B_4afc_89D3_7AA51418A046" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35" isRoot="false" isLeaf="false" isAbstract="false">
+						<UML:ActivityModel xmi.id="EAID_CA577555_A81E_46de_92D0_3673EFE4BC35_ActivityModel" context="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35" name="ActivityModel" visibility="public">
+							<UML:StateMachine.transitions/>
+							<UML:StateMachine.top>
+								<UML:CompositeState xmi.id="EAID_CA577555_A81E_46de_92D0_3673EFE4BC35_Activity_Top" name="{top}">
+									<UML:CompositeState.substate>
+										<UML:PseudoState name="kimnmol" xmi.id="EAID_08DAF200_897D_465c_B200_108208C611B5" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35" kind="join">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Synchronization"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_80D5C5E4_3BB3_44d9_BA16_1C5B9A09E52D"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:30:38"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:30:42"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="369"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:PseudoState>
+										<UML:ActionState name="Validar estatus del CPA" xmi.id="EAID_11413FE9_B4AA_46a1_A504_9A79D1142C2E" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_E5FF7B3D_72B1_4ddc_8600_A69956E8B20A"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 16:01:10"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 16:01:35"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="377"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Ingresar a Dictamen Electrónico" xmi.id="EAID_7074B5DD_CCEF_4c62_A691_5370BB551287" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_E836C4AF_4758_42f7_AAF9_202C5DD9C2F4"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:38:20"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:59:06"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="375"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Ingresar a datos del patrón a dictaminar" xmi.id="EAID_794A663F_A435_4b12_83AF_30C643DBDCA1" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_E836C4AF_4758_42f7_AAF9_202C5DD9C2F4"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:59:06"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 16:01:02"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="376"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Activity2" xmi.id="EAID_79531D7D_95FB_4e3d_8BDA_3069B81CBBBA" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_E836C4AF_4758_42f7_AAF9_202C5DD9C2F4"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:31:33"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:31:37"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="370"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Ingresar a Dictamen Electrónico" xmi.id="EAID_7F02AAAF_4997_4f49_BE3D_B63F488E8820" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_E836C4AF_4758_42f7_AAF9_202C5DD9C2F4"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:33:32"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:37:15"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="374"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Activity" xmi.id="EAID_80D5C5E4_3BB3_44d9_BA16_1C5B9A09E52D" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_3FA54470_C23C_44ae_AFEE_6CF033D17FCE"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:25:53"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:25:53"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="366"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:PseudoState name="Estatus valido" xmi.id="EAID_998CB755_D4E2_4b6f_A823_D2CB5AE19615" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35" kind="branch">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Decision"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_E5FF7B3D_72B1_4ddc_8600_A69956E8B20A"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 16:01:55"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 16:02:07"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="378"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:PseudoState>
+										<UML:ActionState name="IMSS" xmi.id="EAID_CFC3427C_5BCC_4522_B471_06DC53C17986" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="ActivityPartition"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_80D5C5E4_3BB3_44d9_BA16_1C5B9A09E52D"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:32:47"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:32:54"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="373"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="IMSS" xmi.id="EAID_E5FF7B3D_72B1_4ddc_8600_A69956E8B20A" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="ActivityPartition"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_80D5C5E4_3BB3_44d9_BA16_1C5B9A09E52D"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:31:57"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:32:04"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="371"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="CPA" xmi.id="EAID_E836C4AF_4758_42f7_AAF9_202C5DD9C2F4" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="ActivityPartition"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_80D5C5E4_3BB3_44d9_BA16_1C5B9A09E52D"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:26:15"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:32:11"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="368"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="SAT" xmi.id="EAID_FC23C273_B7F3_4e2d_B3E6_81FAFE0C5982" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="ActivityPartition"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+												<UML:TaggedValue tag="owner" value="EAID_80D5C5E4_3BB3_44d9_BA16_1C5B9A09E52D"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-01 15:32:31"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-01 15:32:36"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="bhernandezj"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="372"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+									</UML:CompositeState.substate>
+								</UML:CompositeState>
+							</UML:StateMachine.top>
+						</UML:ActivityModel>
+						<UML:UseCase xmi.id="EAID_2E398DAB_9F91_4f59_A37E_B66782BC1D42" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="Actor"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
 								<UML:TaggedValue tag="version" value="1.0"/>
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
-								<UML:TaggedValue tag="date_created" value="2015-08-31 18:27:50"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-01 11:13:24"/>
+								<UML:TaggedValue tag="date_created" value="2015-09-01 15:22:41"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-01 15:22:53"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
@@ -55,11 +364,34 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="199"/>
+								<UML:TaggedValue tag="ea_localid" value="364"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
-						</UML:Actor>
+						</UML:UseCase>
+						<UML:UseCase name="Formular y presentar Dictamen" xmi.id="EAID_3FA54470_C23C_44ae_AFEE_6CF033D17FCE" visibility="public" namespace="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+								<UML:TaggedValue tag="date_created" value="2015-09-01 15:23:29"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-01 15:25:19"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="A.0 Registrar los Datos del Patrón"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="bhernandezj"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="365"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -69,17 +401,44 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="raguirre"/>
 				<UML:TaggedValue tag="created_date" value="2015-08-31 17:29:46"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-01 11:22:39"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-01 15:23:29"/>
 				<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="45"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=E90A7FEE;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=57BD9B50;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=54;Top=50;Right=99;Bottom=140;" subject="EAID_9F9F7FF9_E40B_4e0b_81D9_5B620AA93BA4" seqno="1" style="DUID=D183C856;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=297;Top=115;Right=387;Bottom=185;" subject="EAID_3FA54470_C23C_44ae_AFEE_6CF033D17FCE" seqno="2" style="DUID=BBCE858C;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
+		<UML:Diagram name="Activity" xmi.id="EAID_0B166CFD_07BA_4443_9023_BC75FE09FBE1" diagramType="ActivityDiagram" owner="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="bhernandezj"/>
+				<UML:TaggedValue tag="created_date" value="2015-09-01 15:25:53"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-01 16:01:55"/>
+				<UML:TaggedValue tag="package" value="EAPK_CA577555_A81E_46de_92D0_3673EFE4BC35"/>
+				<UML:TaggedValue tag="type" value="Activity"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="71"/>
+				<UML:TaggedValue tag="parent" value="EAID_80D5C5E4_3BB3_44d9_BA16_1C5B9A09E52D"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=803;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=DAF36816;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=193;Top=90;Right=563;Bottom=265;" subject="EAID_E836C4AF_4758_42f7_AAF9_202C5DD9C2F4" seqno="1" style="Dockable=on;DUID=215FD776;"/>
+				<UML:DiagramElement geometry="Left=152;Top=229;Right=522;Bottom=404;" subject="EAID_E5FF7B3D_72B1_4ddc_8600_A69956E8B20A" seqno="2" style="Dockable=on;DUID=7BD35CEC;"/>
+				<UML:DiagramElement geometry="Left=191;Top=414;Right=561;Bottom=589;" subject="EAID_FC23C273_B7F3_4e2d_B3E6_81FAFE0C5982" seqno="3" style="Dockable=on;DUID=6EE89C60;"/>
+				<UML:DiagramElement geometry="Left=172;Top=590;Right=542;Bottom=765;" subject="EAID_CFC3427C_5BCC_4522_B471_06DC53C17986" seqno="4" style="Dockable=on;DUID=BDC90E01;"/>
+				<UML:DiagramElement geometry="Left=257;Top=124;Right=392;Bottom=199;" subject="EAID_7074B5DD_CCEF_4c62_A691_5370BB551287" seqno="5" style="DUID=10A4121F;"/>
+				<UML:DiagramElement geometry="Left=418;Top=256;Right=553;Bottom=331;" subject="EAID_794A663F_A435_4b12_83AF_30C643DBDCA1" seqno="6" style="DUID=D6D49ECA;"/>
+				<UML:DiagramElement geometry="Left=272;Top=266;Right=407;Bottom=341;" subject="EAID_11413FE9_B4AA_46a1_A504_9A79D1142C2E" seqno="7" style="DUID=11A130BE;"/>
+				<UML:DiagramElement geometry="Left=375;Top=298;Right=426;Bottom=339;" subject="EAID_998CB755_D4E2_4b6f_A823_D2CB5AE19615" seqno="8" style="DUID=E83DC95C;LBL=CX=65:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:ALT=0:ROT=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
