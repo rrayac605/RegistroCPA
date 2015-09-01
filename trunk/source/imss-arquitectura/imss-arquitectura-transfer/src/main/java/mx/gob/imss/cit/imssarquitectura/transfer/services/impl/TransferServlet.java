@@ -71,7 +71,7 @@ public class TransferServlet implements Transfer {
             String response = reader.readLine();
             LOG.info("Respuesta del servidor: " + response);
         } else {
-        	LOG.info("Error en el servidor: " + responseCode);
+        	throw new TransferServletException("Error en el servidor: " + responseCode);
         }	
         }catch (MalformedURLException e) {
         	throw new TransferServletException(e.getMessage(), e);
