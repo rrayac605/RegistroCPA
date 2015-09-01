@@ -18,14 +18,5 @@
 				src="#{liferay.themeImagesURL}/banner/#{image}" />
 		</ui:repeat>
 	</p:imageSwitch>
-
-	<p:panel >
-
-		<h:form>
-		 	<p:commandButton  value="#{msg['message.button.aceptar']}" action="#{bienvenidaBean.enviarRegistro}"/>
-		 	<p:commandButton  value="#{msg['message.button.ventanilla']}" action="#{bienvenidaBean.enviarVentanilla}" styleClass="estiloFondoBlanco" />
-            <p:commandButton  value="Prueba Firma Electronica" action="#{bienvenidaBean.enviarFirmaElectronica}"/>
-		</h:form>
-	</p:panel>
 </h:body>
 </html>

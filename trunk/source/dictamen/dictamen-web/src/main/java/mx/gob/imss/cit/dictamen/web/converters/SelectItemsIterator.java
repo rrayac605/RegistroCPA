@@ -149,7 +149,6 @@ final class SelectItemsIterator implements Iterator<SelectItem> {
      *
      * @return the select item
      */
-    @SuppressWarnings({"unchecked"})
     public SelectItem next() {
 
         if (!hasNext()) {

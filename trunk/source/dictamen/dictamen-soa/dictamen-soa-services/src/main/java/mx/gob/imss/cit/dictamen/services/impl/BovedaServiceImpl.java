@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
 import javax.xml.namespace.QName;
 
 import mx.gob.imss.cit.bp.ws.AddDocumentActorRequest;
@@ -47,6 +48,7 @@ import mx.gob.imss.cit.ws.commonschema.GovernanceHeaderRequest;
  * @author cmarmolejo
  * 
  */
+@Stateless
 public class BovedaServiceImpl implements BovedaService {
 
 	private URL wsdl;
