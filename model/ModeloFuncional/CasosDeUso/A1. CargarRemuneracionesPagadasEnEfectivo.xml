@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-08-31 18:01:27"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\CasosDeUso\A1. CargarRemuneracionesPagadasEnEfectivo.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-08-31 18:54:31"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-01 17:50:55"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-08-31 18:03:45"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -37,6 +37,34 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
+						<UML:UseCase name="Use Case1" xmi.id="EAID_12CCDBB7_76F4_431a_9098_DDC8574CC8B4" visibility="public" namespace="EAPK_E765FE86_F6FA_481b_A523_0EAC68F4F9CB" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="business use case"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_E765FE86_F6FA_481b_A523_0EAC68F4F9CB"/>
+								<UML:TaggedValue tag="date_created" value="2015-09-01 18:12:55"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-01 18:12:55"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="A1. Cargar Remuneraciones Pagadas en Efectivo"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="bhernandezj"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="business use case"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="383"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={F7B9B4DE-F1DB-4bfd-8C5A-A498FE51541C}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=business use case;FQName=EAUML::business use case;@ENDSTEREO;$DES;$CLT={12CCDBB7-76F4-431a-9098-DDC8574CC8B4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
 						<UML:UseCase name="Cargar Remuneraciones Pagadas" xmi.id="EAID_246996ED_F5A0_48d0_B6C7_2F06AE284045" visibility="public" namespace="EAPK_E765FE86_F6FA_481b_A523_0EAC68F4F9CB" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="documentation" value="El Contador Público Autorizado utiliza esta funcionalidad para subir al sistema los datos de Remuneraciones pagadas en efectivo vía nómina a los trabajadores proporcionadas por el Patrón en cuestión."/>
@@ -47,7 +75,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_E765FE86_F6FA_481b_A523_0EAC68F4F9CB"/>
 								<UML:TaggedValue tag="date_created" value="2015-08-31 18:06:09"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-01 15:33:04"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-01 18:09:11"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="A1. Cargar Remuneraciones Pagadas en Efectivo"/>
@@ -56,10 +84,44 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="185"/>
+								<UML:TaggedValue tag="ea_localid" value="381"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="Acceso al Módulo de Contadores Públicos y Dictamen en caso de cambio de CURP">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El sistema deberá llevar a cabo la asociación de registros existentes de los módulos de contadores públicos y dictámenes cuando exista el supuesto del cambio de CURP."/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Contal con FIEL">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El usuario debe contar con su Firma Electrónica Avanzada (FIEL), con la cual podrá tener acceso al portal IMSS. "/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="DatosdeIPatrónadictaminar">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El usuario deberá previamente concluir con el llenado de los “Datos del patrón a dictaminar” ubicado en el WIDGET de “Dictamen electrónico” en el portal IMSS."/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Formulaciónypresentacióndedictamen">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El usuario deberá previamente seleccionar al patrón que va a dictaminar, en la opción “&lt;i&gt;Formulación y presentación de dictamen&lt;/i&gt;”, ubicado en el WIDGET de “&lt;i&gt;Dictamen electrónico&lt;/i&gt;” en el portal IMSS."/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="3.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
 						</UML:UseCase>
 						<UML:Actor name="Actor1" xmi.id="EAID_8FB17528_7FED_4e17_8E4B_F9611A1C92ED" visibility="public" namespace="EAPK_E765FE86_F6FA_481b_A523_0EAC68F4F9CB" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
@@ -79,7 +141,7 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="186"/>
+								<UML:TaggedValue tag="ea_localid" value="382"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
@@ -93,14 +155,14 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="raguirre"/>
 				<UML:TaggedValue tag="created_date" value="2015-08-31 18:01:30"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-01 17:50:03"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-01 18:12:55"/>
 				<UML:TaggedValue tag="package" value="EAPK_E765FE86_F6FA_481b_A523_0EAC68F4F9CB"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="43"/>
+				<UML:TaggedValue tag="ea_localid" value="72"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=B6661E48;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=0EBD1AF9;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=157;Top=127;Right=202;Bottom=217;" subject="EAID_9F9F7FF9_E40B_4e0b_81D9_5B620AA93BA4" seqno="1" style="DUID=01CC7FC8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
