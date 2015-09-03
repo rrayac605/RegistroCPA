@@ -37,6 +37,263 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
+						<UML:ActivityModel xmi.id="EAID_A46046AE_CBEB_4f15_A09C_A4A65C8B2737_ActivityModel" context="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737" name="ActivityModel" visibility="public">
+							<UML:StateMachine.transitions>
+								<UML:Transition xmi.id="EAID_661FCD3D_8D69_4198_B1EA_7B88EB7C0643" visibility="public" source="EAID_0DA69FCA_16C5_49da_8CA0_E48870268A3C" target="EAID_341212A8_1EE6_41fc_B8D0_49E1598211B1">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="style" value="3"/>
+										<UML:TaggedValue tag="ea_type" value="ControlFlow"/>
+										<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+										<UML:TaggedValue tag="linemode" value="3"/>
+										<UML:TaggedValue tag="linecolor" value="-1"/>
+										<UML:TaggedValue tag="linewidth" value="0"/>
+										<UML:TaggedValue tag="seqno" value="0"/>
+										<UML:TaggedValue tag="headStyle" value="0"/>
+										<UML:TaggedValue tag="lineStyle" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="215"/>
+										<UML:TaggedValue tag="ea_sourceName" value="Inicia el Registro del patrón a Dictaminar en el Sistema"/>
+										<UML:TaggedValue tag="ea_targetName" value="Accede al Módulo de Dictamen"/>
+										<UML:TaggedValue tag="ea_sourceType" value="StateNode"/>
+										<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+										<UML:TaggedValue tag="ea_sourceID" value="544"/>
+										<UML:TaggedValue tag="ea_targetID" value="543"/>
+										<UML:TaggedValue tag="src_visibility" value="Public"/>
+										<UML:TaggedValue tag="src_aggregation" value="0"/>
+										<UML:TaggedValue tag="src_isOrdered" value="false"/>
+										<UML:TaggedValue tag="src_targetScope" value="instance"/>
+										<UML:TaggedValue tag="src_changeable" value="none"/>
+										<UML:TaggedValue tag="src_isNavigable" value="false"/>
+										<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+										<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;"/>
+										<UML:TaggedValue tag="dst_visibility" value="Public"/>
+										<UML:TaggedValue tag="dst_aggregation" value="0"/>
+										<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+										<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+										<UML:TaggedValue tag="dst_changeable" value="none"/>
+										<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+										<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+										<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;"/>
+										<UML:TaggedValue tag="virtualInheritance" value="0"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Transition>
+								<UML:Transition xmi.id="EAID_6D6E9089_09B0_4ece_9ADC_7D29440A0C04" visibility="public" source="EAID_341212A8_1EE6_41fc_B8D0_49E1598211B1" target="EAID_86381537_E7EB_4c4f_A572_00E1C61BFEC8">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="style" value="3"/>
+										<UML:TaggedValue tag="ea_type" value="ControlFlow"/>
+										<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+										<UML:TaggedValue tag="linemode" value="3"/>
+										<UML:TaggedValue tag="linecolor" value="-1"/>
+										<UML:TaggedValue tag="linewidth" value="0"/>
+										<UML:TaggedValue tag="seqno" value="0"/>
+										<UML:TaggedValue tag="headStyle" value="0"/>
+										<UML:TaggedValue tag="lineStyle" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="216"/>
+										<UML:TaggedValue tag="ea_sourceName" value="Accede al Módulo de Dictamen"/>
+										<UML:TaggedValue tag="ea_targetName" value="Despliega los datos del patron a dictaminar"/>
+										<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+										<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+										<UML:TaggedValue tag="ea_sourceID" value="543"/>
+										<UML:TaggedValue tag="ea_targetID" value="545"/>
+										<UML:TaggedValue tag="src_visibility" value="Public"/>
+										<UML:TaggedValue tag="src_aggregation" value="0"/>
+										<UML:TaggedValue tag="src_isOrdered" value="false"/>
+										<UML:TaggedValue tag="src_targetScope" value="instance"/>
+										<UML:TaggedValue tag="src_changeable" value="none"/>
+										<UML:TaggedValue tag="src_isNavigable" value="false"/>
+										<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+										<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;"/>
+										<UML:TaggedValue tag="dst_visibility" value="Public"/>
+										<UML:TaggedValue tag="dst_aggregation" value="0"/>
+										<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+										<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+										<UML:TaggedValue tag="dst_changeable" value="none"/>
+										<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+										<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+										<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;"/>
+										<UML:TaggedValue tag="virtualInheritance" value="0"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Transition>
+							</UML:StateMachine.transitions>
+							<UML:StateMachine.top>
+								<UML:CompositeState xmi.id="EAID_A46046AE_CBEB_4f15_A09C_A4A65C8B2737_Activity_Top" name="{top}">
+									<UML:CompositeState.substate>
+										<UML:PseudoState name="Inicia el Registro del patrón a Dictaminar en el Sistema" xmi.id="EAID_0DA69FCA_16C5_49da_8CA0_E48870268A3C" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="StateNode"/>
+												<UML:TaggedValue tag="ea_ntype" value="100"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+												<UML:TaggedValue tag="owner" value="EAID_AAAB2882_F6A3_44db_97D0_554D798506FD"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-03 16:38:52"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-03 16:40:35"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="544"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:PseudoState>
+										<UML:ActionState name="SCR-Datos del Patrón a Dictaminar" xmi.id="EAID_1068FE33_413B_4e53_8EB4_6F6196B35791" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="documentation" value="Esta es la responsabilidad del Sistema en el módulo de dictamen cuando el CPA captura los datos del patrón a Dictaminar"/>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="ActivityPartition"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+												<UML:TaggedValue tag="owner" value="EAID_F2E2B9DC_8738_4d56_BE4E_3D938A5C6249"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-03 16:33:59"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-03 16:35:19"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="542"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Accede al Módulo de Dictamen" xmi.id="EAID_341212A8_1EE6_41fc_B8D0_49E1598211B1" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+												<UML:TaggedValue tag="owner" value="EAID_AAAB2882_F6A3_44db_97D0_554D798506FD"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-03 16:37:19"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-03 16:38:29"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="543"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Despliega los datos del patron a dictaminar" xmi.id="EAID_86381537_E7EB_4c4f_A572_00E1C61BFEC8" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+												<UML:TaggedValue tag="owner" value="EAID_1068FE33_413B_4e53_8EB4_6F6196B35791"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-03 16:40:35"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-03 16:42:25"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="545"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="CPA" xmi.id="EAID_AAAB2882_F6A3_44db_97D0_554D798506FD" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="ActivityPartition"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+												<UML:TaggedValue tag="owner" value="EAID_F2E2B9DC_8738_4d56_BE4E_3D938A5C6249"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-03 16:33:18"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-03 16:33:30"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="541"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Registrar Datos del Patrón a Dictaminar" xmi.id="EAID_F2E2B9DC_8738_4d56_BE4E_3D938A5C6249" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+												<UML:TaggedValue tag="owner" value="EAID_778C0582_4CF5_4a95_ACC4_E8071AC39E02"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-03 16:32:50"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-03 16:33:12"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="540"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+									</UML:CompositeState.substate>
+								</UML:CompositeState>
+							</UML:StateMachine.top>
+						</UML:ActivityModel>
+						<UML:Class name="Folio de Control de Dictamen" xmi.id="EAID_511D7B67_A5D3_4c25_A515_0AE3432C6B5D" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+								<UML:TaggedValue tag="date_created" value="2015-09-03 14:46:34"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-03 14:47:46"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="raguirre"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="495"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
 						<UML:UseCase name="Registrar datos del patron a dictaminar" xmi.id="EAID_778C0582_4CF5_4a95_ACC4_E8071AC39E02" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -46,7 +303,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-03 12:18:20"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-03 13:56:19"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-03 15:22:00"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
@@ -87,6 +344,37 @@
 										<UML:TaggedValue tag="description" value="El CPA debe contar con su Firma Electrónica Avanzada (FIEL), con la cual podrá tener acceso al portal IMSS."/>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
 										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El Patrón registrado se agregó a la lista de patrones a dictaminar">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El sistema agrega los datos del patrón registrado en el listado de patrones a dictaminar"/>
+										<UML:TaggedValue tag="type" value="Post-condition"/>
+										<UML:TaggedValue tag="weight" value="6.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El sistema permite al CPA continuar con su dictamen, cancelarlo o salir. ">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El sistema permite al CPA continuar con su dictamen, cancelarlo o sair del Módulo de Registro de Datos del Patrón(Dictamen?) checar eso "/>
+										<UML:TaggedValue tag="type" value="Post-condition"/>
+										<UML:TaggedValue tag="weight" value="7.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Los datos del Patrón a Dictaminar estan guardados en La BDTU correctamente">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Post-condition"/>
+										<UML:TaggedValue tag="weight" value="4.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Se envía notifica al Patrón via correo electrónico para solicitar confirmación del dictament">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El sistema debe enviar de manera automática correo electrónico a la(s) dirección(es) registrada(s), por el patrón o representante legal para solicitar la confirmación de formulación de dictamen electrónico.&#xA;&lt;b&gt;&#xA;&lt;/b&gt;Las características del correo serán las siguientes: &#xA;&lt;ul&gt;&#xA;	&lt;li&gt;Remitente: &lt;a href=&quot;mailto:dictamen.enlinea@imss.gob.mx&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;&lt;u&gt;dictamen.enlinea@imss.gob.mx&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;&lt;/li&gt;&#xA;	&lt;li&gt;Para: correo electrónico patrón o representante legal. &lt;/li&gt;&#xA;	&lt;li&gt;Asunto: Solicitud de confirmación para la formulación de dictamen por el ejercicio (año).&lt;/li&gt;&#xA;	&lt;li&gt;Cuerpo : &lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;Se informa que el contador (nombre de CPA) con registro IMSS (número), inicio el trámite para la formulación del dictamen correspondiente al patrón &amp;ldquo;Nombre, denominación o razón social&amp;rdquo;, por el ejercicio (año).&#xA;&#xA;Por lo anterior se solicita confirme a través del portal IMSS-Digital en la URL: &#xA;&#xA;&lt;a href=&quot;http://serviciosdigitales.imss.gob.mx/portal-web/portal/&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;&lt;u&gt;http://serviciosdigitales.imss.gob.mx/portal-web/portal/&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;, ubicándose en la &amp;ldquo;Zona Empresarial&amp;rdquo; y a través del WIDGET &amp;ldquo;&lt;i&gt;Dictamen Electrónico&amp;rdquo;&lt;/i&gt;, seleccionando la opción &amp;ldquo;Confirmación de dictamen&amp;rdquo;; para continuar con el trámite de su dictamen.     "/>
+										<UML:TaggedValue tag="type" value="Post-condition"/>
+										<UML:TaggedValue tag="weight" value="5.00"/>
 										<UML:TaggedValue tag="status" value="Approved"/>
 									</UML:ModelElement.taggedValue>
 								</UML:Constraint>
@@ -173,6 +461,30 @@
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Class>
+						<UML:Constraint xmi.id="EAID_C9741A47_8337_4d3b_AD9C_BDDB9507BA07" visibility="public" namespace="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Constraint"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+								<UML:TaggedValue tag="owner" value="EAID_86381537_E7EB_4c4f_A572_00E1C61BFEC8"/>
+								<UML:TaggedValue tag="date_created" value="2015-09-03 16:43:04"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-03 16:43:34"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="raguirre"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="546"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Constraint>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -197,17 +509,18 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="raguirre"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-03 13:04:00"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-03 14:02:16"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-03 17:02:35"/>
 				<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
 				<UML:TaggedValue tag="type" value="Logical"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="94"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=DEAD2D63;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=01270053;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=68;Top=41;Right=158;Bottom=111;" subject="EAID_C919710E_34B7_4eb4_AB41_67715915560D" seqno="1" style="DUID=093D1CFC;"/>
+				<UML:DiagramElement geometry="Left=208;Top=44;Right=298;Bottom=114;" subject="EAID_511D7B67_A5D3_4c25_A515_0AE3432C6B5D" seqno="1" style="DUID=522DEE30;"/>
+				<UML:DiagramElement geometry="Left=68;Top=41;Right=158;Bottom=111;" subject="EAID_C919710E_34B7_4eb4_AB41_67715915560D" seqno="2" style="DUID=093D1CFC;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 		<UML:Diagram name="Datos del Patron a Dictaminar" xmi.id="EAID_F48AB49F_C9A0_49d5_9BEB_1E989C57A347" diagramType="CustomDiagram" owner="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737" toolName="Enterprise Architect 2.5">
@@ -228,6 +541,33 @@
 				<UML:DiagramElement geometry="Left=145;Top=92;Right=335;Bottom=182;" subject="EAID_B486DEEF_BA76_4cd7_85C8_0B22C4BB8B56" seqno="1" style="DUID=9684DC99;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
+		<UML:Diagram name="Activity" xmi.id="EAID_03956AD3_BB84_48da_8C6A_2747F840E6E1" diagramType="ActivityDiagram" owner="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="raguirre"/>
+				<UML:TaggedValue tag="created_date" value="2015-09-03 16:32:50"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-03 17:02:35"/>
+				<UML:TaggedValue tag="package" value="EAPK_A46046AE_CBEB_4f15_A09C_A4A65C8B2737"/>
+				<UML:TaggedValue tag="type" value="Activity"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="99"/>
+				<UML:TaggedValue tag="parent" value="EAID_F2E2B9DC_8738_4d56_BE4E_3D938A5C6249"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=F0F8B685;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=556;Top=159;Right=671;Bottom=214;" subject="EAID_C9741A47_8337_4d3b_AD9C_BDDB9507BA07" seqno="1" style="DUID=9E451EFC;"/>
+				<UML:DiagramElement geometry="Left=391;Top=130;Right=526;Bottom=172;" subject="EAID_86381537_E7EB_4c4f_A572_00E1C61BFEC8" seqno="2" style="DUID=6C8A6E06;"/>
+				<UML:DiagramElement geometry="Left=133;Top=57;Right=153;Bottom=77;" subject="EAID_0DA69FCA_16C5_49da_8CA0_E48870268A3C" seqno="3" style="DUID=CF9C4FF4;LBL=CX=123:CY=39:OX=43:OY=-4:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:ALT=0:ROT=0;"/>
+				<UML:DiagramElement geometry="Left=78;Top=130;Right=213;Bottom=176;" subject="EAID_341212A8_1EE6_41fc_B8D0_49E1598211B1" seqno="4" style="DUID=780D06E0;"/>
+				<UML:DiagramElement geometry="Left=300;Top=0;Right=670;Bottom=175;" subject="EAID_1068FE33_413B_4e53_8EB4_6F6196B35791" seqno="5" style="Dockable=on;DUID=919D0C1C;VPartition=1;"/>
+				<UML:DiagramElement geometry="Left=0;Top=0;Right=300;Bottom=441;" subject="EAID_AAAB2882_F6A3_44db_97D0_554D798506FD" seqno="6" style="Dockable=on;DUID=1ED74B63;VPartition=1;"/>
+				<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_290B9AA0_CEF9_4c91_AFFB_AECD6A97338C" style="Mode=3;EOID=6C8A6E06;SOID=9E451EFC;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_661FCD3D_8D69_4198_B1EA_7B88EB7C0643" style="Mode=3;EOID=780D06E0;SOID=CF9C4FF4;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6D6E9089_09B0_4ece_9ADC_7D29440A0C04" style="Mode=3;EOID=6C8A6E06;SOID=780D06E0;Color=-1;LWidth=0;Hidden=0;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
 		<UML:DiagramElement geometry="Left=263;Top=109;Right=368;Bottom=179;" subject="EAID_778C0582_4CF5_4a95_ACC4_E8071AC39E02" seqno="2" style="DUID=AB7AC5AE;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_4CD0FCCF_79BF_477f_88C6_C62D840CA742"/>
@@ -246,6 +586,12 @@
 						<step name="Si se trata de un Patron de la Industria de la construcción, el sistema habilita las opciones de carga de archivos(Layouts): Obras de construcción Propietario, contratista principal o Sub-contratista &#xA;Listado de personal &#xA;Subcontratación de fases de construcción de la Obra&#xA;Listado de personal del Subcontratista de Obra al mismo tiempo deshabilita la pregunta: ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado? Queda inhabilitada." guid="{2AA2D957-BD8C-409f-B547-7078B170460B}" level="4" uses="Sistema" useslist="" result="Despliega solo los layouts correspondientes a Industria de la construcción y desahibilita una pregunta" state="" trigger="0" link="">
 							<extension level="4a" guid="{F4FA6BBC-DAA9-45d3-B5B5-4EC06C9C93B5}" join="End"/>
 						</step>
+						<step name="Elige la respuesta a la pregunta ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado?&#xA;&#xA;" guid="{181C541E-0921-49b9-8FB4-FC488F17CF5B}" level="5" uses="CPA" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Si el Patrón realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado, El sistema habilita para carga de información :&#xA;	Obras de construcción Propietario, contratista principal o Sub-contratista -	Listado de personal &#xA;	Subcontratación de fases de construcción de la Obra&#xA;-	Listado de personal del Subcontratista de Obra" guid="{6D877DBE-274A-449a-BDA1-30723C13F670}" level="6" uses="Sistema" useslist="" result="" state="" trigger="0" link="">
+							<extension level="6a" guid="{F4FA6BBC-DAA9-45d3-B5B5-4EC06C9C93B5}" join="End"/>
+						</step>
+						<step name="El sistema habilita para carga de información :&#xA;	Obras de construcción Propietario, contratista principal o Sub-contratista -	Listado de personal &#xA;	Subcontratación de fases de construcción de la Obra&#xA;-	Listado de personal del Subcontratista de Obra" guid="{655ED86C-FD2D-4409-95AA-9EBD3E769022}" level="7" uses="CPA" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Guarda la información de Datos del patrón a dictaminar y la fecha en la que se realiza el trámite en en la BDTU, muestrando el mensaje AG. “La información de Datos del patrón, ha sido guardada y solicita confirmación de dictamen" guid="{67258412-B216-4af5-94CF-9A3FCB437930}" level="8" uses="Sistema" useslist="" result="" state="" trigger="0" link=""/>
 						<context/>
 					</path>
 				</EAScenarioContent>
@@ -259,5 +605,11 @@
 				</EAScenarioContent>
 			</EAScenario>
 		</EAModel.scenario>
+		<EANoteLink xmi.id="EAID_290B9AA0_CEF9_4c91_AFFB_AECD6A97338C" source="EAID_C9741A47_8337_4d3b_AD9C_BDDB9507BA07" target="EAID_86381537_E7EB_4c4f_A572_00E1C61BFEC8">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="linecolor" value="-1"/>
+				<UML:TaggedValue tag="linewidth" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</EANoteLink>
 	</XMI.extensions>
 </XMI>
