@@ -65,7 +65,15 @@
 			<version>2.5</version>
 			<scope>compile</scope>
 		</dependency>
-
+		
+		<!-- Cliente de pensiones que contiene el acceso a la BDTU -->
+		<dependency>
+			<groupId>mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws</groupId>
+			<artifactId>imss-ws-clientes-pensiones</artifactId>
+			<version>1.0</version>
+			<scope>compile</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
