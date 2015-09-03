@@ -1,0 +1,3 @@
+call mvn install:install-file -Dfile="jfxrt.jar" -DgroupId="com.oracle" -DartifactId="javafx" -Dversion="2.2" -Dpackaging="jar"
+call mvn install:install-file -Dfile="imss-ws-clientes-pensiones-1.0.jar" -DgroupId="mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws" -DartifactId="imss-ws-clientes-pensiones" -Dversion="1.0" -Dpackaging="jar"
+call mvn install:install-file -Dfile="ojdbc6-11.2.0.2.0.jar" -DgroupId="com.oracle" -DartifactId="ojdbc6" -Dversion="11.2.0.2.0" -Dpackaging="jar"
