@@ -17,12 +17,14 @@
 						<UML:TaggedValue tag="modified" value="2015-09-03 07:18:47"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\01 Definicion\Modulo de Atestiguamiento.xml"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-03 12:43:39"/>
+						<UML:TaggedValue tag="lastsavedate" value="2015-09-03 12:43:39"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
 						<UML:TaggedValue tag="usedtd" value="FALSE"/>
-						<UML:TaggedValue tag="owner" value="raguirre"/>
 						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
 						<UML:TaggedValue tag="logxml" value="FALSE"/>
+						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;CRC=0;"/>
 						<UML:TaggedValue tag="batchsave" value="0"/>
 						<UML:TaggedValue tag="batchload" value="0"/>
@@ -34,11 +36,115 @@
 						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
-					<UML:Namespace.ownedElement/>
+					<UML:Namespace.ownedElement>
+						<UML:UseCase name="Realizar Atestiguamiento" xmi.id="EAID_30E38936_510F_4201_9454_F1BCF24E0385" visibility="public" namespace="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F"/>
+								<UML:TaggedValue tag="date_created" value="2015-09-03 12:47:43"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-03 12:47:43"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Modulo de Atestiguamiento"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="bhernandezj"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="501"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:UseCase name="Contestar examen de atestiguamiento" xmi.id="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" visibility="public" namespace="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="El Contador Público Autorizado responde el examen de atestiguamiento con base a la información entregada por el patrón a fin de verificar el correcto cumplimiento de las obligaciones en materia de seguridad social"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F"/>
+								<UML:TaggedValue tag="date_created" value="2015-09-03 12:49:58"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-03 14:01:26"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Modulo de Atestiguamiento"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="bhernandezj"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="502"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="Autenticarse en el portal IMSS">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El usuario primero debe autenticarse, mediante su firma electrónica avanzada (FIEL), en el portal IMSS"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Carga concluida de información patronal (aseveramientos)">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El usuario debió realizar la carga de los anexos en el Módulo de “Información patronal” en el portal de servicios digitales del Instituto Mexicano del Seguro Social (IMSS)."/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Registro concluido de datos del patrón">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El usuario debió concluir con el registro de “Datos del patrón a dictaminar”, ubicado en el portal IMSS."/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
+						</UML:UseCase>
+					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
+		<UML:Diagram name="Modulo de Atestiguamiento" xmi.id="EAID_981DDCD5_4DED_4db3_9437_1AA07B23C871" diagramType="UseCaseDiagram" owner="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="bhernandezj"/>
+				<UML:TaggedValue tag="created_date" value="2015-09-03 12:48:35"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-03 14:02:07"/>
+				<UML:TaggedValue tag="package" value="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F"/>
+				<UML:TaggedValue tag="type" value="Use Case"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="87"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=803;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=149C41E1;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=204;Top=86;Right=321;Bottom=164;" subject="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" seqno="1" style="DUID=AA941728;"/>
+				<UML:DiagramElement geometry="Left=67;Top=143;Right=112;Bottom=233;" subject="EAID_9F9F7FF9_E40B_4e0b_81D9_5B620AA93BA4" seqno="2" style="DUID=015B6ECE;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
-	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAModel.scenario>
+			<EAScenario name="Responder  Atestiguamiento B1. Remuneraciones pagadas en efectivo vía nómina a los trabajadores.”" type="Basic Path" weight="0.00" description="El presente caso de uso describe la funcionalidad para que el Contador Público Autorizado, realice el trabajo de atestiguamiento, con base en la información entregada por el patrón, a fin de verificar el correcto cumplimiento de las obligaciones en materia de seguridad social, particularmente sobre las “Remuneraciones pagadas en efectivo vía nómina a los trabajadores”." subject="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" xmi.id="EAID_91ADD9C4_3646_4617_B8A3_2C4497BE7F8E">
+				<EAScenarioContent>
+					<path>
+						<step name="El usuario da click en el hipervínculo de la opción &quot;" guid="{AB11D057-F94D-482f-A860-F2ECCFCB5302}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context/>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+		</EAModel.scenario>
+	</XMI.extensions>
 </XMI>
