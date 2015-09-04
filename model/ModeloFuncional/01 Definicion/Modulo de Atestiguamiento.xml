@@ -37,29 +37,6 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:UseCase name="Realizar Atestiguamiento" xmi.id="EAID_30E38936_510F_4201_9454_F1BCF24E0385" visibility="public" namespace="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F"/>
-								<UML:TaggedValue tag="date_created" value="2015-09-03 12:47:43"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-03 12:47:43"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Modulo de Atestiguamiento"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="bhernandezj"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="501"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-							</UML:ModelElement.taggedValue>
-						</UML:UseCase>
 						<UML:UseCase name="Contestar examen de atestiguamiento" xmi.id="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" visibility="public" namespace="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="documentation" value="El Contador Público Autorizado responde el examen de atestiguamiento con base a la información entregada por el patrón a fin de verificar el correcto cumplimiento de las obligaciones en materia de seguridad social"/>
@@ -70,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-03 12:49:58"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-03 14:01:26"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-03 16:34:23"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Atestiguamiento"/>
@@ -82,6 +59,7 @@
 								<UML:TaggedValue tag="ea_localid" value="502"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={2A0C8CB1-0306-4740-8B12-92DC2146919C}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={804ED735-8F28-4332-AC46-35D1CDCC9AEA}$CLT;$SUP={2FAC522E-31D2-46e4-B7E0-0C34C965A85B}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
 								<UML:Constraint name="Autenticarse en el portal IMSS">
@@ -140,7 +118,10 @@
 			<EAScenario name="Responder  Atestiguamiento B1. Remuneraciones pagadas en efectivo vía nómina a los trabajadores.”" type="Basic Path" weight="0.00" description="El presente caso de uso describe la funcionalidad para que el Contador Público Autorizado, realice el trabajo de atestiguamiento, con base en la información entregada por el patrón, a fin de verificar el correcto cumplimiento de las obligaciones en materia de seguridad social, particularmente sobre las “Remuneraciones pagadas en efectivo vía nómina a los trabajadores”." subject="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" xmi.id="EAID_91ADD9C4_3646_4617_B8A3_2C4497BE7F8E">
 				<EAScenarioContent>
 					<path>
-						<step name="El usuario da click en el hipervínculo de la opción &quot;" guid="{AB11D057-F94D-482f-A860-F2ECCFCB5302}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El usuario da click en el hipervínculo de la opción &quot;Remuneraciones pagadas en efectivo vía nómina a los trabajadores&quot;" guid="{AB11D057-F94D-482f-A860-F2ECCFCB5302}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema despliega una ventana con el cuestionario que el usuario debe responder" guid="{69B84023-3F90-4550-8E18-72AA854CFA20}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario selecciona la opción no aplica" guid="{37D011BD-AC91-4f54-B871-A5C92FF453D0}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema oculta e inhabilita las preguntas correspondientes al concepto elegido como “No aplica” y guarda en la BDTU el estatus." guid="{C81CA420-4535-422b-A7FC-E1AA5F5F4CF5}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context/>
 					</path>
 				</EAScenarioContent>
