@@ -31,7 +31,11 @@
 				<db.embedida>true</db.embedida>
 				<bovedaws.endpoint>http://11.254.20.207:8011/BovedaPersonalEscritorio/Proxies/ServiceProxyDocumentoWS?wsdl</bovedaws.endpoint>
 				<bovedaws.namespace>http://documentows.ws.bp.cit.imss.gob.mx/</bovedaws.namespace>
-				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>
+				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>				
+				<bdtu.endpoint>http://11.254.20.207:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl</bdtu.endpoint>
+				<bdtu.namespace>http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/</bdtu.namespace>
+				<bdtu.service>ServiciosBDTU</bdtu.service>
+				
 			</properties>
 		</profile>
 
@@ -48,7 +52,11 @@
 				<db.embedida>false</db.embedida>
 				<bovedaws.endpoint>http://11.254.20.207:8011/BovedaPersonalEscritorio/Proxies/ServiceProxyDocumentoWS?wsdl</bovedaws.endpoint>
 				<bovedaws.namespace>http://documentows.ws.bp.cit.imss.gob.mx/</bovedaws.namespace>
-				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>
+				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>				
+				<bdtu.endpoint>http://11.254.20.207:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl</bdtu.endpoint>
+				<bdtu.namespace>http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/</bdtu.namespace>
+				<bdtu.service>ServiciosBDTU</bdtu.service>
+				
 			</properties>
 			
 		</profile>

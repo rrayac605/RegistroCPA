@@ -1,4 +1,4 @@
-package mx.gob.imss.cit.dictamen.enums;
+package mx.gob.imss.cit.dictamen.commons.enums;
 
 
 public enum EstadoAdministracionEnum {

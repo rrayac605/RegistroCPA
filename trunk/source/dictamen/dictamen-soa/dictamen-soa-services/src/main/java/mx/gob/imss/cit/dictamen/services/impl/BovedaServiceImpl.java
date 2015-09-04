@@ -4,7 +4,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
@@ -39,7 +38,9 @@ import mx.gob.imss.cit.dictamen.commons.to.HeaderBovedaTO;
 import mx.gob.imss.cit.dictamen.commons.to.MetadataBovedaTO;
 import mx.gob.imss.cit.dictamen.commons.to.TramiteBovedaTO;
 import mx.gob.imss.cit.dictamen.services.BovedaService;
-import mx.gob.imss.cit.dictamen.services.util.UtilTransformerService;
+import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
+import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
+import mx.gob.imss.cit.dictamen.services.util.TransformerServiceUtils;
 import mx.gob.imss.cit.ws.commonschema.GovernanceHeaderRequest;
 
 /**
@@ -57,9 +58,8 @@ public class BovedaServiceImpl implements BovedaService {
 	
 	@PostConstruct
 	public void init() throws MalformedURLException{
-		ResourceBundle resourceBundle = ResourceBundle.getBundle("boveda-service");
-		wsdl= new URL(resourceBundle.getString("bovedaws.endpoint"));
-		name=new QName(resourceBundle.getString("bovedaws.namespace"),resourceBundle.getString("bovedaws.service"));
+		wsdl= new URL(PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BOVEDA_ENDPOINT));
+		name=new QName(PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BOVEDA_NAMESPACE),PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BOVEDA_SERVICE));
 		port = new DocumentoWSServiceImplService(wsdl, name).getDocumentoWSServiceImplPort();
 
 	}
@@ -73,11 +73,11 @@ public class BovedaServiceImpl implements BovedaService {
 	public boolean createDocument(DocumentoBovedaTO documento, TramiteBovedaTO tramite, ActorBovedaTO actor, HeaderBovedaTO header, String isEncripted) {
 		CreateDocumentRequest createRequest = new CreateDocumentRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		createRequest.setGovernanceHeaderRequest(governanceHeaderRequest);
-		createRequest.setActor(UtilTransformerService.transformer(actor));
-		createRequest.setDocument(UtilTransformerService.transformer(documento));
-		createRequest.setTramite(UtilTransformerService.transformer(tramite));
+		createRequest.setActor(TransformerServiceUtils.transformer(actor));
+		createRequest.setDocument(TransformerServiceUtils.transformer(documento));
+		createRequest.setTramite(TransformerServiceUtils.transformer(tramite));
 		createRequest.setIsEncripted(isEncripted);
 		CreateDocumentResponse createResponse = port.createDocument(createRequest);	
 		if (createResponse != null){
@@ -94,14 +94,14 @@ public class BovedaServiceImpl implements BovedaService {
 	public DocumentoBovedaTO getDocument(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject) throws Exception{
 		DocumentRequest documentRequest = new DocumentRequest();		
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		documentRequest.setGovernanceHeaderRequest(governanceHeaderRequest);
-		documentRequest.setActor(UtilTransformerService.transformer(actor));
-		documentRequest.setTramite(UtilTransformerService.transformer(tramite));
-		documentRequest.setObject(UtilTransformerService.transformer(baseObject));
+		documentRequest.setActor(TransformerServiceUtils.transformer(actor));
+		documentRequest.setTramite(TransformerServiceUtils.transformer(tramite));
+		documentRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		DocumentResponse documentResponse = port.getDocument(documentRequest);
 		if (documentResponse != null){			
-			return UtilTransformerService.transformer(documentResponse.getDocument());
+			return TransformerServiceUtils.transformer(documentResponse.getDocument());
 		}else{
 			throw new Exception("No se pudo recuperar el documento");
 		}			
@@ -111,11 +111,11 @@ public class BovedaServiceImpl implements BovedaService {
 	public boolean deleteDocument(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject) throws Exception{
 		DeleteDocumentRequest deleteRequest = new DeleteDocumentRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		deleteRequest.setGovernanceHeaderRequest(governanceHeaderRequest);
-		deleteRequest.setActor(UtilTransformerService.transformer(actor));
-		deleteRequest.setTramite(UtilTransformerService.transformer(tramite));
-		deleteRequest.setObject(UtilTransformerService.transformer(baseObject));
+		deleteRequest.setActor(TransformerServiceUtils.transformer(actor));
+		deleteRequest.setTramite(TransformerServiceUtils.transformer(tramite));
+		deleteRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		DeleteDocumentResponse deleteResponse = port.deleteDocument(deleteRequest);
 		if (deleteResponse != null){
 			if (deleteResponse.getGovernanceHeaderResponse().getSgbds().isSuccessful())
@@ -131,12 +131,12 @@ public class BovedaServiceImpl implements BovedaService {
 	public boolean addDocumentActor(ActorBovedaTO actor, TramiteBovedaTO tramite, ActorBovedaTO newActor, HeaderBovedaTO header, BaseObjectBovedaTO baseObject) throws Exception{
 		AddDocumentActorRequest addDocumentActorRequest = new AddDocumentActorRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		addDocumentActorRequest.setGovernanceHeaderRequest(governanceHeaderRequest);
-		addDocumentActorRequest.setActor(UtilTransformerService.transformer(actor));
-		addDocumentActorRequest.setNewActor(UtilTransformerService.transformer(newActor));
-		addDocumentActorRequest.setTramite(UtilTransformerService.transformer(tramite));
-		addDocumentActorRequest.setObject(UtilTransformerService.transformer(baseObject));
+		addDocumentActorRequest.setActor(TransformerServiceUtils.transformer(actor));
+		addDocumentActorRequest.setNewActor(TransformerServiceUtils.transformer(newActor));
+		addDocumentActorRequest.setTramite(TransformerServiceUtils.transformer(tramite));
+		addDocumentActorRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		AddDocumentActorResponse addDocumentActorResponse = port.addDocumentActor(addDocumentActorRequest);
 		if (addDocumentActorResponse != null){
 			if (addDocumentActorResponse.getGovernanceHeaderResponse().getSgbds().isSuccessful())
@@ -152,16 +152,16 @@ public class BovedaServiceImpl implements BovedaService {
 	public List<DocumentoBovedaTO> findDocumentsByMetadata(ActorBovedaTO actor, TramiteBovedaTO tramite, MetadataBovedaTO metadataValue, HeaderBovedaTO header, BaseObjectBovedaTO baseObject){
 		DocumentsByMetadataRequest documentsByMetadataRequest = new DocumentsByMetadataRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		documentsByMetadataRequest.setGovernanceHeaderRequest(governanceHeaderRequest);
-		documentsByMetadataRequest.setActor(UtilTransformerService.transformer(actor));
-		documentsByMetadataRequest.setMetadata(UtilTransformerService.transformer(metadataValue));
-		documentsByMetadataRequest.setTramite(UtilTransformerService.transformer(tramite));
-		documentsByMetadataRequest.setObject(UtilTransformerService.transformer(baseObject));
+		documentsByMetadataRequest.setActor(TransformerServiceUtils.transformer(actor));
+		documentsByMetadataRequest.setMetadata(TransformerServiceUtils.transformer(metadataValue));
+		documentsByMetadataRequest.setTramite(TransformerServiceUtils.transformer(tramite));
+		documentsByMetadataRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		DocumentsByMetadataResponse documentsByMetadataResponse= port.findDocumentsByMetadata(documentsByMetadataRequest);
 		List<DocumentoBovedaTO> documentos = new ArrayList<DocumentoBovedaTO>();
 		for (Document document: documentsByMetadataResponse.getDocument()){
-			documentos.add(UtilTransformerService.transformer(document));
+			documentos.add(TransformerServiceUtils.transformer(document));
 		}
 		return documentos;
 	}
@@ -170,15 +170,15 @@ public class BovedaServiceImpl implements BovedaService {
 	public List<DocumentoBovedaTO> getAllDocumentVersionsByDoc(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject){
 		AllDocumentVersionsByDocRequest allDocumentVersionsByDocRequest = new AllDocumentVersionsByDocRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		allDocumentVersionsByDocRequest.setGovernanceHeaderRequest(governanceHeaderRequest);		
-		allDocumentVersionsByDocRequest.setActor(UtilTransformerService.transformer(actor));
-		allDocumentVersionsByDocRequest.setTramite(UtilTransformerService.transformer(tramite));
-		allDocumentVersionsByDocRequest.setObject(UtilTransformerService.transformer(baseObject));
+		allDocumentVersionsByDocRequest.setActor(TransformerServiceUtils.transformer(actor));
+		allDocumentVersionsByDocRequest.setTramite(TransformerServiceUtils.transformer(tramite));
+		allDocumentVersionsByDocRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		AllDocumentVersionsByDocResponse allDocumentVersionsByDocResponse = port.getAllDocumentVersionsByDoc(allDocumentVersionsByDocRequest);
 		List<DocumentoBovedaTO> documentos = new ArrayList<DocumentoBovedaTO>();
 		for (Document document: allDocumentVersionsByDocResponse.getDocument()){
-			documentos.add(UtilTransformerService.transformer(document));
+			documentos.add(TransformerServiceUtils.transformer(document));
 		}
 		return documentos;
 	}		
@@ -187,15 +187,15 @@ public class BovedaServiceImpl implements BovedaService {
 	public List<DocumentoBovedaTO> getAllDocumentVersionsMetadataByDoc(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject){
 		AllDocumentVersionsMetadataByDocRequest allDocumentVersionsMetadataByDocRequest = new AllDocumentVersionsMetadataByDocRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		allDocumentVersionsMetadataByDocRequest.setGovernanceHeaderRequest(governanceHeaderRequest);
-		allDocumentVersionsMetadataByDocRequest.setActor(UtilTransformerService.transformer(actor));
-		allDocumentVersionsMetadataByDocRequest.setTramite(UtilTransformerService.transformer(tramite));
-		allDocumentVersionsMetadataByDocRequest.setObject(UtilTransformerService.transformer(baseObject));
+		allDocumentVersionsMetadataByDocRequest.setActor(TransformerServiceUtils.transformer(actor));
+		allDocumentVersionsMetadataByDocRequest.setTramite(TransformerServiceUtils.transformer(tramite));
+		allDocumentVersionsMetadataByDocRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		AllDocumentVersionsMetadataByDocResponse allDocumentVersionsMetadataByDocResponse = port.getAllDocumentVersionsMetadataByDoc(allDocumentVersionsMetadataByDocRequest);
 		List<DocumentoBovedaTO> documentos = new ArrayList<DocumentoBovedaTO>();
 		for (Document document: allDocumentVersionsMetadataByDocResponse.getDocument()){
-			documentos.add(UtilTransformerService.transformer(document));
+			documentos.add(TransformerServiceUtils.transformer(document));
 		}
 		return documentos;
 	}		
@@ -204,15 +204,15 @@ public class BovedaServiceImpl implements BovedaService {
 	public List<MetadataBovedaTO> getAllMetadataByMetadata(ActorBovedaTO actor, TramiteBovedaTO tramite, MetadataBovedaTO metadataValue, HeaderBovedaTO header, BaseObjectBovedaTO baseObject){
 		AllMetadataByMetadataRequest allMetadataByMetadataRequest = new AllMetadataByMetadataRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		allMetadataByMetadataRequest.setGovernanceHeaderRequest(governanceHeaderRequest);
-		allMetadataByMetadataRequest.setActor(UtilTransformerService.transformer(actor));
-		allMetadataByMetadataRequest.setTramite(UtilTransformerService.transformer(tramite));
-		allMetadataByMetadataRequest.setObject(UtilTransformerService.transformer(baseObject));
+		allMetadataByMetadataRequest.setActor(TransformerServiceUtils.transformer(actor));
+		allMetadataByMetadataRequest.setTramite(TransformerServiceUtils.transformer(tramite));
+		allMetadataByMetadataRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		AllMetadataByMetadataResponse allMetadataByMetadataResponse = port.getAllMetadataByMetadata(allMetadataByMetadataRequest);
 		List<MetadataBovedaTO> metadatos = new ArrayList<MetadataBovedaTO>();
 		for (Metadata metadata: allMetadataByMetadataResponse.getMetadata()){
-			metadatos.add(UtilTransformerService.transformer(metadata));
+			metadatos.add(TransformerServiceUtils.transformer(metadata));
 		}		
 		return metadatos;
 	}		
@@ -221,12 +221,12 @@ public class BovedaServiceImpl implements BovedaService {
 	public MetadataBovedaTO getMetadataByDoc(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject){
 		MetadataByDocRequest metadataByDocRequest = new MetadataByDocRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
-		governanceHeaderRequest.setSgbde(UtilTransformerService.transformer(header));
+		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
 		metadataByDocRequest.setGovernanceHeaderRequest(governanceHeaderRequest);
-		metadataByDocRequest.setActor(UtilTransformerService.transformer(actor));
-		metadataByDocRequest.setTramite(UtilTransformerService.transformer(tramite));
-		metadataByDocRequest.setObject(UtilTransformerService.transformer(baseObject));
+		metadataByDocRequest.setActor(TransformerServiceUtils.transformer(actor));
+		metadataByDocRequest.setTramite(TransformerServiceUtils.transformer(tramite));
+		metadataByDocRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		MetadataByDocResponse metadataByDocResponse = port.getMetadataByDoc(metadataByDocRequest);		
-		return UtilTransformerService.transformer(metadataByDocResponse.getMetadata());
+		return TransformerServiceUtils.transformer(metadataByDocResponse.getMetadata());
 	}		
 }
