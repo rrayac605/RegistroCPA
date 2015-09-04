@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-04 11:56:50"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-04 15:14:56"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-04 17:05:17"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Opinion"/>
@@ -137,11 +137,30 @@
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
 		<EAModel.scenario>
+			<EAScenario name="FA01 Forma de pago Parcialidades" type="Alternate" weight="1.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_A28460E1_FF02_450a_BE93_574F4443A30C"/>
 			<EAScenario name="Opinión sin salvedad con pago en una exhibición" type="Basic Path" weight="0.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_71B45CF8_0CA6_4aa1_B36D_27BC7496974E">
 				<EAScenarioContent>
 					<path>
 						<step name="El CPA ingresa a la opción Formulación y presentación del dictamen." guid="{A978F904-3BAD-4e86-988A-1366FD04FD05}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema muestra en pantalla la tabla del listado de los patronos a los cuales el CPA les está formulando el dictamen" guid="{746D5489-C1A0-4d26-9A4C-98522BC47908}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema muestra en pantalla la tabla del listado de los patrones a los cuales el CPA les está formulando el dictamen. RN1" guid="{746D5489-C1A0-4d26-9A4C-98522BC47908}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA selecciona el patrón del que desee retomar el dictamen." guid="{520A58C0-58CA-4fff-9AAE-20EEE2D2AEE6}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra la pantalla de instrucciones de acuerdo a la RN2" guid="{D4BBF094-9C07-47f0-BE5D-C26687501CE6}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA selecciona la opción Módulo de opinión" guid="{989F25F2-C9A5-414c-B7E3-8B05B1844C0E}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra en pantalla el campo para seleccionar el tipo de opinión:&#xA;&#xA;•	Sin Salvedad&#xA;•	Con Salvedad&#xA;•	Negativa,&#xA;•	Abstención &#xA;" guid="{3DF2E637-CA78-4991-9504-F53350B515B3}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA da clic en la opción Sin salvedad. RN3" guid="{F0C14717-D177-4511-B238-03BEE09EA6EE}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra en pantalla las opciones:&#xA;•	Sin Pagos&#xA;•	Con Pagos	" guid="{95CE48D2-C63F-4730-9ED3-EAA9EE10D11D}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Si el CPA selecciona la opción sin pago, se llama al paso del Flujo básico" guid="{D10D3F46-0423-4da9-AC63-F3863EA44975}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El CPA selecciona la opción con pagos, " guid="{4BFF767D-4969-49d5-B969-3138AC021CD4}" level="10" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema habilita el campo Forma de pago con las opciones desplegables de:&#xA;•	Una Exhibición&#xA;•	Parcialidades&#xA;" guid="{3059D5AF-DC01-4891-8749-DDEF803C2259}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario selecciona la opción Una exhibición" guid="{8C161AC6-C745-40df-BFDC-7F8DACB74B5A}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema habilita el campo Fecha de pago" guid="{84059557-80A3-4353-8750-53EA2F3845D7}" level="13" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario captura la fecha en que realizó el pago. RN4" guid="{8B856C3B-71D4-4f9b-8EF0-EE3514B549D8}" level="14" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="En caso que el CPA seleccione la opción de Forma de pago de Parcilaidades, se llama al FA01" guid="{5D757B3C-89F8-430a-B9AB-779D3EEA6D24}" level="15" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="15a" guid="{A28460E1-FF02-450a-BE93-574F4443A30C}" join="End"/>
+						</step>
+						<step name="El sistema habilita el cuadro de texto de Observaciones" guid="{E412C7EE-2287-42c0-B045-D91349A62046}" level="16" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA captura información en el campo de texto de observaciones RN5" guid="{439DD730-0809-4cb3-B637-F6116668F7F6}" level="17" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="En caso que el CPA no capture información en el campo observaciones, continua en el paso19 del flujo básico." guid="{E2F07429-66B8-450d-85CC-5D956FA66A14}" level="18" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context/>
 					</path>
 				</EAScenarioContent>
