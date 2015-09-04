@@ -10,12 +10,12 @@ import java.util.Map;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 
 
-public class TransformerServiceUtilsHelper {
+public class TransformerServiceHelperUtils {
 	
 	private static Map<Class<?>, Class<?>> mapClass;
     private static final String SETTER_PREFIX = "set";
 
-	private TransformerServiceUtilsHelper(){
+	private TransformerServiceHelperUtils(){
 		
 	}
 	

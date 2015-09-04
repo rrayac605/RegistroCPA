@@ -5,16 +5,6 @@ package mx.gob.imss.cit.dictamen.services;
 
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import mx.gob.imss.cit.bp.ws.AddDocumentActorRequest;
 import mx.gob.imss.cit.bp.ws.AddDocumentActorResponse;
 import mx.gob.imss.cit.bp.ws.AllDocumentVersionsByDocRequest;
@@ -46,43 +36,53 @@ import mx.gob.imss.cit.dictamen.services.impl.BovedaServiceImpl;
 import mx.gob.imss.cit.ws.commonschema.GovernanceHeaderResponse;
 import mx.gob.imss.cit.ws.commonschema.SGBDS;
 
+import org.apache.log4j.Logger;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
+
 /**
  * @author cmarmolejo
  *
  */
 public class BovedaServiceTest{
 	
-	private Logger LOG=LoggerFactory.getLogger(BovedaServiceTest.class);
+	private Logger LOG=Logger.getLogger(BovedaServiceTest.class);
 	/**
 	 * Setvicio BovedaService para pruebas unitarias
 	 */
 	@InjectMocks
-	private BovedaServiceImpl bovedaService = new BovedaServiceImpl();; 
+	private BovedaService bovedaService = new BovedaServiceImpl();; 
 	
 	
 	private ActorBovedaTO newActor;	
 	private DocumentoBovedaTO documento;
 	private ActorBovedaTO actor;
 	private TramiteBovedaTO tramite;
-	MetadataBovedaTO metadataValue;
-	BaseObjectBovedaTO baseObject;
+	private MetadataBovedaTO metadataValue;
+	private BaseObjectBovedaTO baseObject;
 	private String isEncripted="false";
 	private HeaderBovedaTO header;
 		
 	@Mock
-	IDocumentoWSService port;
+	private IDocumentoWSService port;
 	
-	CreateDocumentResponse createResponse;
-	DocumentResponse documentResponse;	
-	DeleteDocumentResponse deleteResponse;
-	AddDocumentActorResponse addDocumentActorResponse;	
-	DocumentsByMetadataResponse documentsByMetadataResponse;
-	AllDocumentVersionsByDocResponse allDocumentVersionsByDocResponse;
-	AllDocumentVersionsMetadataByDocResponse allDocumentVersionsMetadataByDocResponse;
-	AllMetadataByMetadataResponse allMetadataByMetadataResponse;
-	MetadataByDocResponse metadataByDocResponse;
-	GovernanceHeaderResponse gHheader;	
-	SGBDS sgbds;
+	private CreateDocumentResponse createResponse;
+	private DocumentResponse documentResponse;	
+	private DeleteDocumentResponse deleteResponse;
+	private AddDocumentActorResponse addDocumentActorResponse;	
+	private DocumentsByMetadataResponse documentsByMetadataResponse;
+	private AllDocumentVersionsByDocResponse allDocumentVersionsByDocResponse;
+	private AllDocumentVersionsMetadataByDocResponse allDocumentVersionsMetadataByDocResponse;
+	private AllMetadataByMetadataResponse allMetadataByMetadataResponse;
+	private MetadataByDocResponse metadataByDocResponse;
+	private GovernanceHeaderResponse gHheader;	
+	private SGBDS sgbds;
 	
 	/**
 	 * Método de configuración para pruebas unitarias
@@ -90,6 +90,10 @@ public class BovedaServiceTest{
 	 */
 	@Before
 	public void init() throws Exception {	
+		inicializarMocks();
+	}
+
+	private void inicializarMocks() {
 		MockitoAnnotations.initMocks(this);
 		
 		sgbds = new SGBDS();
@@ -124,6 +128,16 @@ public class BovedaServiceTest{
 		metadataByDocResponse = new MetadataByDocResponse();
 		metadataByDocResponse.setGovernanceHeaderResponse(gHheader);
 		metadataByDocResponse.setMetadata(new Metadata());
+		
+		Mockito.when(port.createDocument((CreateDocumentRequest) Mockito.anyObject())).thenReturn(createResponse);
+		Mockito.when(port.getDocument((DocumentRequest) Mockito.anyObject())).thenReturn(documentResponse);
+		Mockito.when(port.deleteDocument((DeleteDocumentRequest) Mockito.anyObject())).thenReturn(deleteResponse);
+		Mockito.when(port.findDocumentsByMetadata((DocumentsByMetadataRequest) Mockito.anyObject())).thenReturn(documentsByMetadataResponse);
+		Mockito.when(port.getAllDocumentVersionsMetadataByDoc( (AllDocumentVersionsMetadataByDocRequest) Mockito.anyObject())).thenReturn(allDocumentVersionsMetadataByDocResponse);
+		Mockito.when(port.getMetadataByDoc(  (MetadataByDocRequest) Mockito.anyObject())).thenReturn(metadataByDocResponse);
+		Mockito.when(port.getAllDocumentVersionsByDoc((AllDocumentVersionsByDocRequest) Mockito.anyObject())).thenReturn(allDocumentVersionsByDocResponse);
+		Mockito.when(port.addDocumentActor((AddDocumentActorRequest) Mockito.anyObject())).thenReturn(addDocumentActorResponse);
+		Mockito.when(port.getAllMetadataByMetadata(  (AllMetadataByMetadataRequest) Mockito.anyObject())).thenReturn(allMetadataByMetadataResponse);
 	}
     
 	/**
@@ -131,7 +145,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testCreateDocument(){
-		Mockito.when(port.createDocument((CreateDocumentRequest) Mockito.anyObject())).thenReturn(createResponse);
+		
 		boolean result = bovedaService.createDocument(documento, tramite, actor, header , isEncripted);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
@@ -143,7 +157,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testGetDocument() throws Exception{
-		Mockito.when(port.getDocument((DocumentRequest) Mockito.anyObject())).thenReturn(documentResponse);
+
 		DocumentoBovedaTO result = bovedaService.getDocument(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
@@ -155,7 +169,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testDeleteDocument() throws Exception{
-		Mockito.when(port.deleteDocument((DeleteDocumentRequest) Mockito.anyObject())).thenReturn(deleteResponse);
+		
 		boolean result = bovedaService.deleteDocument(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
@@ -167,7 +181,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testAddDocumentActor() throws Exception{
-		Mockito.when(port.addDocumentActor((AddDocumentActorRequest) Mockito.anyObject())).thenReturn(addDocumentActorResponse);
+		
 		boolean result = bovedaService.addDocumentActor(actor, tramite, newActor, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
@@ -179,7 +193,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testFindDocumentsByMetadata() throws Exception{
-		Mockito.when(port.findDocumentsByMetadata((DocumentsByMetadataRequest) Mockito.anyObject())).thenReturn(documentsByMetadataResponse);
+		
 		List<DocumentoBovedaTO> result = bovedaService.findDocumentsByMetadata(actor, tramite, metadataValue, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
@@ -191,7 +205,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testGetAllDocumentVersionsByDoc() throws Exception{
-		Mockito.when(port.getAllDocumentVersionsByDoc((AllDocumentVersionsByDocRequest) Mockito.anyObject())).thenReturn(allDocumentVersionsByDocResponse);
+	
 		List<DocumentoBovedaTO> result = bovedaService.getAllDocumentVersionsByDoc(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
@@ -203,7 +217,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testGetAllDocumentVersionsMetadataByDoc() throws Exception{
-		Mockito.when(port.getAllDocumentVersionsMetadataByDoc( (AllDocumentVersionsMetadataByDocRequest) Mockito.anyObject())).thenReturn(allDocumentVersionsMetadataByDocResponse);
+	
 		List<DocumentoBovedaTO> result = bovedaService.getAllDocumentVersionsMetadataByDoc(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
@@ -215,7 +229,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testGetAllMetadataByMetadata() throws Exception{
-		Mockito.when(port.getAllMetadataByMetadata(  (AllMetadataByMetadataRequest) Mockito.anyObject())).thenReturn(allMetadataByMetadataResponse);
+	
 		List<MetadataBovedaTO> result = bovedaService.getAllMetadataByMetadata(actor, tramite, metadataValue, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
@@ -227,7 +241,7 @@ public class BovedaServiceTest{
 	 */
 	@Test
 	public void testGetMetadataByDoc() throws Exception{
-		Mockito.when(port.getMetadataByDoc(  (MetadataByDocRequest) Mockito.anyObject())).thenReturn(metadataByDocResponse);
+
 		MetadataBovedaTO result = bovedaService.getMetadataByDoc(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
