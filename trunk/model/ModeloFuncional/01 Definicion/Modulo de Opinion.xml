@@ -39,7 +39,7 @@
 					<UML:Namespace.ownedElement>
 						<UML:UseCase name="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón" xmi.id="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" visibility="public" namespace="EAPK_39D2B282_554E_4730_B196_510572B0499C" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="&#xA;"/>
+								<UML:TaggedValue tag="documentation" value="Se describe la funcionalidad para que el Contador Público Asociado emita su opinión respecto a la carga de información patronal y  que conclusión de los exámenes de atestiguamiento."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-04 11:56:50"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-04 12:09:23"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-04 15:14:56"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Opinion"/>
@@ -60,6 +60,56 @@
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="Carga de información patronal y atesguamiento cerrado">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El CPA debe haber finalizado la carga de información patronal y respondido los exámenes de atestiguamiento correspondientes"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="4.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Contar con Firma Electrónica Avanzada (FIEL) vigente">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El Contador Público Autorizado debe tener vigente su FIEL para el acceso al portal y firma de trámites"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El Contador Publico Autorizado esta dentro de Dictamen Electrónico">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El Contador Publico Autorizado esta dentro de la opción de Dictamen Electrónico de la zona personal"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="5.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El usuario Contador Publico debe estar en catálogo">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El Contador Público Autorizado debe encontrarse en el catálogo de Contadores Públicos Autorizados "/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Estatus activo del CPA">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El estatus del Contador Público Autorizado debe ser &quot;Activo&quot;, si su estatus es de &amp;ldquo;No Localizado&amp;rdquo;, &amp;ldquo;Suspendido&amp;rdquo;, &amp;ldquo;Baja&amp;rdquo; o &amp;ldquo;Cancelado&amp;rdquo; no podrá realizar el dictamen."/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="3.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Inicio de sesión en portal IMSS">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El Contador Público Autorizado deberá iniciar sesión a través de su Firma Electrónica Avanzada (FIEL)"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
 						</UML:UseCase>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
@@ -85,5 +135,17 @@
 		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
-	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAModel.scenario>
+			<EAScenario name="Opinión sin salvedad con pago en una exhibición" type="Basic Path" weight="0.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_71B45CF8_0CA6_4aa1_B36D_27BC7496974E">
+				<EAScenarioContent>
+					<path>
+						<step name="El CPA ingresa a la opción Formulación y presentación del dictamen." guid="{A978F904-3BAD-4e86-988A-1366FD04FD05}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra en pantalla la tabla del listado de los patronos a los cuales el CPA les está formulando el dictamen" guid="{746D5489-C1A0-4d26-9A4C-98522BC47908}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context/>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+		</EAModel.scenario>
+	</XMI.extensions>
 </XMI>
