@@ -1,4 +1,4 @@
-package mx.gob.cit.dictamen.persistence.constants;
+package mx.gob.imss.cit.dictamen.persistence.constants;
 
 public class PersitenciaDictamenConstants {
 	

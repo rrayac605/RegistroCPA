@@ -1,23 +1,25 @@
 /**
  * 
  */
-package mx.gob.imss.cit.dictamen.commons.exception;
+package mx.gob.imss.cit.dictamen.services.util;
 
 import java.util.Date;
 
+import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
+import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
+
 /**
- * Clase que crea las excepciones de tipo EWalletException
+ * Clase que crea las excepciones de tipo DictamenException
  * 
- * @author gsegura
+ * @author ajfuentes
  */
 public final class DictamenExceptionBuilder
 {
 
-  private static final int ERROR_DESCONOCIDO = 0;
+  
+  private static final String PREFIJO_MENSAJE_EXCEPCION = "message.";
 
-  /* Se ofusca el constructor */
-  private DictamenExceptionBuilder()
-  {
+  private DictamenExceptionBuilder(){
   }
 
   /**
@@ -26,7 +28,7 @@ public final class DictamenExceptionBuilder
    * @param bookingExceptionCode CÃ³digo de Error
    * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
    */
-  public static DictamenException build( DictamenExceptionCode code )
+  public static DictamenException build( DictamenExceptionCodeEnum code )
   {
     return build( code.getId(), null, null );
   }
@@ -61,7 +63,7 @@ public final class DictamenExceptionBuilder
    * @param args ParÃ¡metros
    * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
    */
-  public static DictamenException build( DictamenExceptionCode code, Object[] args )
+  public static DictamenException build( DictamenExceptionCodeEnum code, Object[] args )
   {
     return build( code.getId(), null, args );
   }
@@ -85,7 +87,7 @@ public final class DictamenExceptionBuilder
    * @param cause Causa de error
    * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
    */
-  public static DictamenException build( DictamenExceptionCode code, Throwable cause )
+  public static DictamenException build( DictamenExceptionCodeEnum code, Throwable cause )
   {
     return build( code.getId(), cause, null );
   }
@@ -99,7 +101,7 @@ public final class DictamenExceptionBuilder
    * @param args ParÃ¡metros
    * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
    */
-  public static DictamenException build( DictamenExceptionCode code, Throwable cause, Object[] args )
+  public static DictamenException build( DictamenExceptionCodeEnum code, Throwable cause, Object[] args )
   {
     return build( code.getId(), cause, args );
   }
@@ -116,22 +118,22 @@ public final class DictamenExceptionBuilder
   public static DictamenException build( int code, Throwable cause, Object[] args )
   {
     Date date = new Date();
-    DictamenException SolicitudPensionServiciosNegocioException = null;
-    if( cause != null )
-    {
-      SolicitudPensionServiciosNegocioException = new DictamenException( cause.getMessage(), cause );
+    DictamenException dictamenException = null;
+    
+    if( cause != null ) {
+    	dictamenException = new DictamenException( cause.getMessage(), cause );
     }
-    else
-    {
-      SolicitudPensionServiciosNegocioException = new DictamenException();
+    else{
+    	String msg=PropertiesConfigUtils.getPropertyExceptionParams(PREFIJO_MENSAJE_EXCEPCION+code,args);   
+    	dictamenException = new DictamenException(msg);
     }
 
-    SolicitudPensionServiciosNegocioException.setCode( code );
-    SolicitudPensionServiciosNegocioException.setArgs( args );
-    SolicitudPensionServiciosNegocioException.setDate( date );
-    SolicitudPensionServiciosNegocioException.setId( date.getTime() );
+    dictamenException.setCode( code );
+    dictamenException.setArgs( args );
+    dictamenException.setDate( date );
+    dictamenException.setId( date.getTime() );
 
-    return SolicitudPensionServiciosNegocioException;
+    return dictamenException;
   }
 
   /**
@@ -141,18 +143,8 @@ public final class DictamenExceptionBuilder
    */
   public static DictamenException build()
   {
-    return build( ERROR_DESCONOCIDO );
+    return build( DictamenExceptionCodeEnum.ERROR_DESCONOCIDO );
   }
 
-  /**
-   * Genera una excepciÃ³n EWalletException con un cÃ³digo de error 0 (desconocido) y agrega la causa de error
-   * 
-   * @param cause Causa de error
-   * @return ExcepciÃ³n SolicitudPensionServiciosNegocioException
-   */
-  public static DictamenException build( Throwable cause )
-  {
-    return build( ERROR_DESCONOCIDO, cause );
-  }
 
 }

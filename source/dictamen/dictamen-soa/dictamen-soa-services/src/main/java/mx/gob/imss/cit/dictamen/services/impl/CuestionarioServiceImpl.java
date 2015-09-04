@@ -11,9 +11,11 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.xml.namespace.QName;
 
+import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.to.CuestionarioTO;
 import mx.gob.imss.cit.dictamen.services.CuestionarioService;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
+import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.commonschema.GovernanceHeaderRequest;
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.ConsultaCuestionarioInput;
@@ -37,8 +39,8 @@ public class CuestionarioServiceImpl implements CuestionarioService {
 
 	@PostConstruct
 	public void init() throws MalformedURLException {
-		wsdl= new URL(PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BDTU_ENDPOINT));
-		name=new QName(PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BDTU_NAMESPACE),PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BDTU_SERVICE));
+		wsdl= new URL(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BDTU_ENDPOINT));
+		name=new QName(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BDTU_NAMESPACE),PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BDTU_SERVICE));
 		port = new ServiciosBDTU_Service(wsdl, name).getServiciosBDTUSOAP();
 	}
 
@@ -78,6 +80,7 @@ public class CuestionarioServiceImpl implements CuestionarioService {
 				}
 			}
 		} catch (Exception e) {
+			throw  DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_BDTU_CUESTIONARIO_OBTENER);
 		}
 		return tiposSolicitud;
 	}

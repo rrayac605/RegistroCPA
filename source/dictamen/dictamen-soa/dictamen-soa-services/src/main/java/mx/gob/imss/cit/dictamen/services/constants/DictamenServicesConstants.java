@@ -15,6 +15,8 @@ public final class DictamenServicesConstants {
 	
 	public static final String CONFIG_FILE="dictamen-config";
 	
+	public static final String EXCEPTION_FILE="exception-service-config";
+	
 	public static final String CONFIG_KEY_BOVEDA_ENDPOINT="bovedaws.endpoint";
 	public static final String CONFIG_KEY_BOVEDA_NAMESPACE="bovedaws.namespace";
 	public static final String CONFIG_KEY_BOVEDA_SERVICE="bovedaws.service";

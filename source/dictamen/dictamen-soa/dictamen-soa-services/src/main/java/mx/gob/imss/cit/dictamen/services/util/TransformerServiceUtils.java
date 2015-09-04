@@ -26,72 +26,72 @@ public class TransformerServiceUtils {
 	}
 		
 	public static ContadorPublicoTO transformer( NdtContadorPublicoAutDO ContadorPublico ) {
-		ContadorPublicoTO cont=  (ContadorPublicoTO) TransformerServiceUtilsHelper.get (ContadorPublico, ContadorPublicoTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		ContadorPublicoTO cont=  (ContadorPublicoTO) TransformerServiceHelperUtils.get (ContadorPublico, ContadorPublicoTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}
 	
 	public static PersonaTO transformer( DitPersonaDO personaDO ) {
-		PersonaTO cont=  (PersonaTO) TransformerServiceUtilsHelper.get (personaDO, PersonaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		PersonaTO cont=  (PersonaTO) TransformerServiceHelperUtils.get (personaDO, PersonaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}
 	
 	public static DocumentoBovedaTO transformer( Document document ) {
-		DocumentoBovedaTO cont=  (DocumentoBovedaTO) TransformerServiceUtilsHelper.get (document, DocumentoBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		DocumentoBovedaTO cont=  (DocumentoBovedaTO) TransformerServiceHelperUtils.get (document, DocumentoBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
 	
 	public static MetadataBovedaTO transformer(Metadata metadata){
-		MetadataBovedaTO cont=  (MetadataBovedaTO) TransformerServiceUtilsHelper.get (metadata, MetadataBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		MetadataBovedaTO cont=  (MetadataBovedaTO) TransformerServiceHelperUtils.get (metadata, MetadataBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}
 	
 	public static TramiteBovedaTO transformer( Tramite tramite ) {
-		TramiteBovedaTO cont=  (TramiteBovedaTO) TransformerServiceUtilsHelper.get (tramite, TramiteBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		TramiteBovedaTO cont=  (TramiteBovedaTO) TransformerServiceHelperUtils.get (tramite, TramiteBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
 	
 	public static ActorBovedaTO transformer(Actor actor){
-		ActorBovedaTO cont=  (ActorBovedaTO) TransformerServiceUtilsHelper.get (actor, ActorBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		ActorBovedaTO cont=  (ActorBovedaTO) TransformerServiceHelperUtils.get (actor, ActorBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}
 	
 	public static BaseObjectBovedaTO transformer(BaseObject baseObject){
-		BaseObjectBovedaTO cont=  (BaseObjectBovedaTO) TransformerServiceUtilsHelper.get (baseObject, BaseObjectBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		BaseObjectBovedaTO cont=  (BaseObjectBovedaTO) TransformerServiceHelperUtils.get (baseObject, BaseObjectBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
 	
 	public static HeaderBovedaTO transformer(SGBDE sgbde){
-		HeaderBovedaTO cont=  (HeaderBovedaTO) TransformerServiceUtilsHelper.get (sgbde, HeaderBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		HeaderBovedaTO cont=  (HeaderBovedaTO) TransformerServiceHelperUtils.get (sgbde, HeaderBovedaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
 
 	public static Document transformer( DocumentoBovedaTO documentoTO ) {
-		Document cont=  (Document) TransformerServiceUtilsHelper.get (documentoTO, Document.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		Document cont=  (Document) TransformerServiceHelperUtils.get (documentoTO, Document.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
 	
 	public static Metadata transformer(MetadataBovedaTO metadataTO){
-		Metadata cont=  (Metadata) TransformerServiceUtilsHelper.get (metadataTO, Metadata.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		Metadata cont=  (Metadata) TransformerServiceHelperUtils.get (metadataTO, Metadata.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}
 	
 	public static Tramite transformer( TramiteBovedaTO tramiteTO ) {
-		Tramite cont=  (Tramite) TransformerServiceUtilsHelper.get (tramiteTO, Tramite.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		Tramite cont=  (Tramite) TransformerServiceHelperUtils.get (tramiteTO, Tramite.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
 	
 	public static Actor transformer(ActorBovedaTO actorTO){
-		Actor cont=  (Actor) TransformerServiceUtilsHelper.get (actorTO, Actor.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		Actor cont=  (Actor) TransformerServiceHelperUtils.get (actorTO, Actor.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}
 	
 	public static BaseObject transformer(BaseObjectBovedaTO baseObjectTO){
-		BaseObject cont=  (BaseObject) TransformerServiceUtilsHelper.get (baseObjectTO, BaseObject.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		BaseObject cont=  (BaseObject) TransformerServiceHelperUtils.get (baseObjectTO, BaseObject.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
 	
 	public static SGBDE transformer(HeaderBovedaTO headerTO){
-		SGBDE cont=  (SGBDE) TransformerServiceUtilsHelper.get (headerTO, SGBDE.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		SGBDE cont=  (SGBDE) TransformerServiceHelperUtils.get (headerTO, SGBDE.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}
 }

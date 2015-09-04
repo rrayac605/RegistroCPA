@@ -31,6 +31,7 @@ import mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Document;
 import mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Metadata;
 import mx.gob.imss.cit.bp.ws.documentows.DocumentoWSServiceImplService;
 import mx.gob.imss.cit.bp.ws.documentows.IDocumentoWSService;
+import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.to.ActorBovedaTO;
 import mx.gob.imss.cit.dictamen.commons.to.BaseObjectBovedaTO;
 import mx.gob.imss.cit.dictamen.commons.to.DocumentoBovedaTO;
@@ -39,6 +40,7 @@ import mx.gob.imss.cit.dictamen.commons.to.MetadataBovedaTO;
 import mx.gob.imss.cit.dictamen.commons.to.TramiteBovedaTO;
 import mx.gob.imss.cit.dictamen.services.BovedaService;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
+import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
 import mx.gob.imss.cit.dictamen.services.util.TransformerServiceUtils;
 import mx.gob.imss.cit.ws.commonschema.GovernanceHeaderRequest;
@@ -58,8 +60,8 @@ public class BovedaServiceImpl implements BovedaService {
 	
 	@PostConstruct
 	public void init() throws MalformedURLException{
-		wsdl= new URL(PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BOVEDA_ENDPOINT));
-		name=new QName(PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BOVEDA_NAMESPACE),PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BOVEDA_SERVICE));
+		wsdl= new URL(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BOVEDA_ENDPOINT));
+		name=new QName(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BOVEDA_NAMESPACE),PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BOVEDA_SERVICE));
 		port = new DocumentoWSServiceImplService(wsdl, name).getDocumentoWSServiceImplPort();
 
 	}
@@ -71,6 +73,7 @@ public class BovedaServiceImpl implements BovedaService {
 
 	@Override
 	public boolean createDocument(DocumentoBovedaTO documento, TramiteBovedaTO tramite, ActorBovedaTO actor, HeaderBovedaTO header, String isEncripted) {
+		boolean resultado=false;
 		CreateDocumentRequest createRequest = new CreateDocumentRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
 		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
@@ -80,18 +83,25 @@ public class BovedaServiceImpl implements BovedaService {
 		createRequest.setTramite(TransformerServiceUtils.transformer(tramite));
 		createRequest.setIsEncripted(isEncripted);
 		CreateDocumentResponse createResponse = port.createDocument(createRequest);	
+		
 		if (createResponse != null){
 			if (createResponse.getGovernanceHeaderResponse().getSgbds().isSuccessful())
-				return true;
-			else 
-				return false;
+				resultado=true;
+			else {
+				resultado=false;
+			}				
 		}else{
-			return false;
-		}			
+			resultado= false;
+		}		
+		
+		return resultado;
 	}	
 	
 	@Override
-	public DocumentoBovedaTO getDocument(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject) throws Exception{
+	public DocumentoBovedaTO getDocument(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject){
+		
+		DocumentoBovedaTO documentoBovedaTO=null;
+		
 		DocumentRequest documentRequest = new DocumentRequest();		
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
 		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
@@ -101,14 +111,18 @@ public class BovedaServiceImpl implements BovedaService {
 		documentRequest.setObject(TransformerServiceUtils.transformer(baseObject));
 		DocumentResponse documentResponse = port.getDocument(documentRequest);
 		if (documentResponse != null){			
-			return TransformerServiceUtils.transformer(documentResponse.getDocument());
+			documentoBovedaTO= TransformerServiceUtils.transformer(documentResponse.getDocument());
 		}else{
-			throw new Exception("No se pudo recuperar el documento");
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_BOVEDA_OBTENER_DOCUMENTO);
 		}			
+		
+		return documentoBovedaTO;
 	}
 	
 	@Override
-	public boolean deleteDocument(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject) throws Exception{
+	public boolean deleteDocument(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject){
+		
+		boolean result=false;
 		DeleteDocumentRequest deleteRequest = new DeleteDocumentRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
 		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
@@ -119,16 +133,18 @@ public class BovedaServiceImpl implements BovedaService {
 		DeleteDocumentResponse deleteResponse = port.deleteDocument(deleteRequest);
 		if (deleteResponse != null){
 			if (deleteResponse.getGovernanceHeaderResponse().getSgbds().isSuccessful())
-				return true;
+				result= true;
 			else 
-				return false;
+				result= false;
 		}else{
-			throw new Exception ("No se pudo borrar el documento");
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_BOVEDA_ELIMINAR_DOCUMENTO);
 		}
+		
+		return result;
 	}	
 	
 	@Override
-	public boolean addDocumentActor(ActorBovedaTO actor, TramiteBovedaTO tramite, ActorBovedaTO newActor, HeaderBovedaTO header, BaseObjectBovedaTO baseObject) throws Exception{
+	public boolean addDocumentActor(ActorBovedaTO actor, TramiteBovedaTO tramite, ActorBovedaTO newActor, HeaderBovedaTO header, BaseObjectBovedaTO baseObject) {
 		AddDocumentActorRequest addDocumentActorRequest = new AddDocumentActorRequest();
 		GovernanceHeaderRequest governanceHeaderRequest = new GovernanceHeaderRequest();
 		governanceHeaderRequest.setSgbde(TransformerServiceUtils.transformer(header));
@@ -144,7 +160,7 @@ public class BovedaServiceImpl implements BovedaService {
 			else 
 				return false;
 		}else{
-			throw new Exception ("No se pudo agregar el actor");
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_BOVEDA_AGREGAR_ACTOR);
 		}
 	}		
 	
