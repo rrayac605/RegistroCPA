@@ -5,12 +5,12 @@ import java.util.List;
 import javax.ejb.Local;
 
 import mx.gob.imss.cit.bp.ws.documentows.IDocumentoWSService;
-import mx.gob.imss.cit.dictamen.commons.to.ActorBovedaTO;
 import mx.gob.imss.cit.dictamen.commons.to.BaseObjectBovedaTO;
 import mx.gob.imss.cit.dictamen.commons.to.DocumentoBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.HeaderBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.MetadataBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.TramiteBovedaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.ActorBovedaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.HeaderBovedaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.MetadataBovedaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.TramiteBovedaTO;
 
 @Local
 /**

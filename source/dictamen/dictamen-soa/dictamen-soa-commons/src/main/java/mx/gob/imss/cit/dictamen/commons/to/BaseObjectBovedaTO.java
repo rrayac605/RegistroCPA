@@ -1,12 +1,20 @@
 package mx.gob.imss.cit.dictamen.commons.to;
 
+import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
+
 /**
  * 
  * 
  * @author cmarmolejo
  * 
  */
-public class BaseObjectBovedaTO {
+public class BaseObjectBovedaTO extends BaseTO{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
 	private String customId;
 	private String id;
 	private String isFolder;

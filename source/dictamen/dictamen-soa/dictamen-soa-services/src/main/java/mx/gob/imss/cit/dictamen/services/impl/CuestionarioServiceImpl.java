@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 import javax.xml.namespace.QName;
 
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
-import mx.gob.imss.cit.dictamen.commons.to.CuestionarioTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.CuestionarioTO;
 import mx.gob.imss.cit.dictamen.services.CuestionarioService;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;

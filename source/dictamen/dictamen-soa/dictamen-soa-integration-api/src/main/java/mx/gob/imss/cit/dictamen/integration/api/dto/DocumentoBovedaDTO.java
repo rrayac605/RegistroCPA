@@ -1,6 +1,6 @@
-package mx.gob.imss.cit.dictamen.commons.to;
+package mx.gob.imss.cit.dictamen.integration.api.dto;
 
-import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
 /**
  * 
@@ -8,7 +8,7 @@ import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
  * @author cmarmolejo
  * 
  */
-public class DocumentoBovedaTO extends BaseTO{
+public class DocumentoBovedaDTO extends BaseDTO{
 	/**
 	 * 
 	 */
