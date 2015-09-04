@@ -7,13 +7,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
 import javax.xml.namespace.QName;
 
 import mx.gob.imss.cit.dictamen.commons.to.CuestionarioTO;
 import mx.gob.imss.cit.dictamen.services.CuestionarioService;
+import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
+import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.commonschema.GovernanceHeaderRequest;
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.ConsultaCuestionarioInput;
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.ConsultaCuestionarioOutput;
@@ -36,11 +37,8 @@ public class CuestionarioServiceImpl implements CuestionarioService {
 
 	@PostConstruct
 	public void init() throws MalformedURLException {
-		ResourceBundle resourceBundle = ResourceBundle
-				.getBundle("bdtu-service");
-		wsdl = new URL(resourceBundle.getString("bdtu.endpoint"));
-		name = new QName(resourceBundle.getString("bdtu.namespace"),
-				resourceBundle.getString("bdtu.service"));
+		wsdl= new URL(PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BDTU_ENDPOINT));
+		name=new QName(PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BDTU_NAMESPACE),PropertiesConfigUtils.getProperty(DictamenServicesConstants.CONFIG_KEY_BDTU_SERVICE));
 		port = new ServiciosBDTU_Service(wsdl, name).getServiciosBDTUSOAP();
 	}
 

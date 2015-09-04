@@ -7,15 +7,15 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import mx.gob.imss.cit.dictamen.services.constants.ServicesConstants;
+import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 
 
-public class UtilTransformerServiceHelper {
+public class TransformerServiceUtilsHelper {
 	
 	private static Map<Class<?>, Class<?>> mapClass;
     private static final String SETTER_PREFIX = "set";
 
-	private UtilTransformerServiceHelper(){
+	private TransformerServiceUtilsHelper(){
 		
 	}
 	
@@ -94,7 +94,7 @@ public class UtilTransformerServiceHelper {
 	                Object valueFlied=field.get(origenObject);
 	                
 	                if(fieldNew!=null && valueFlied!=null){	
-	                	Object[] values = new Object[ServicesConstants.UNO];
+	                	Object[] values = new Object[DictamenServicesConstants.UNO];
 	                	
 	                	//List
 	                	if(Collection.class.isAssignableFrom(field.getType())){
@@ -111,21 +111,21 @@ public class UtilTransformerServiceHelper {
 	                            
 	                	} else if(field.getType().isPrimitive()) { 
 	                		
-	                        values[ServicesConstants.CERO] = valueFlied;
+	                        values[DictamenServicesConstants.CERO] = valueFlied;
 	                        Statement stmt = new Statement(objectNew, createSetter(fieldNew.getName()), values);
 	                        stmt.execute();
 	                        
 	                    } else if(mapClass.containsKey(field.getType()) ){
-	                    	if(profundidad.intValue()>ServicesConstants.CERO){
-		                    	Integer restaProfundidad= new Integer(profundidad.intValue() - ServicesConstants.UNO);
+	                    	if(profundidad.intValue()>DictamenServicesConstants.CERO){
+		                    	Integer restaProfundidad= new Integer(profundidad.intValue() - DictamenServicesConstants.UNO);
 		                    	
-		                    	values[ServicesConstants.CERO] = get (valueFlied, mapClass.get(field.getType()),restaProfundidad) ;
+		                    	values[DictamenServicesConstants.CERO] = get (valueFlied, mapClass.get(field.getType()),restaProfundidad) ;
 		                        Statement stmt = new Statement(objectNew, createSetter(fieldNew.getName()), values);
 		                        stmt.execute();
 	                    	}   
 	                    }else {
 	                        
-	                        values[ServicesConstants.CERO] = valueFlied;
+	                        values[DictamenServicesConstants.CERO] = valueFlied;
 	                        Statement stmt = new Statement(objectNew, createSetter(fieldNew.getName()), values);
 	                        stmt.execute();
 	                    }
@@ -152,7 +152,7 @@ public class UtilTransformerServiceHelper {
 	    }
 	    
         private static String createSetter(String fieldName) {
-            return SETTER_PREFIX + fieldName.substring(ServicesConstants.CERO, ServicesConstants.UNO).toUpperCase() + fieldName.substring(ServicesConstants.UNO);
+            return SETTER_PREFIX + fieldName.substring(DictamenServicesConstants.CERO, DictamenServicesConstants.UNO).toUpperCase() + fieldName.substring(DictamenServicesConstants.UNO);
         }
 
         
