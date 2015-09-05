@@ -1,8 +1,10 @@
-package mx.gob.imss.cit.dictamen.commons.to.domain;
+package mx.gob.imss.cit.dictamen.commons.to;
 
 import java.math.BigInteger;
 
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 /**
  * 
@@ -10,7 +12,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * @author cmarmolejo
  * 
  */
-public class HeaderBovedaTO {
+public class BovedaHeaderTO  extends BaseTO{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String contextoEntidad;
 	private XMLGregorianCalendar fechaPeticion;
 	private String folio;

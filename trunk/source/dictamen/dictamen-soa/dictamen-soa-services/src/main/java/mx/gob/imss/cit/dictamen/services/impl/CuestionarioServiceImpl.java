@@ -12,6 +12,7 @@ import javax.annotation.PostConstruct;
 import javax.xml.namespace.QName;
 
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
+import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.CuestionarioTO;
 import mx.gob.imss.cit.dictamen.services.CuestionarioService;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
@@ -44,17 +45,12 @@ public class CuestionarioServiceImpl implements CuestionarioService {
 		port = new ServiciosBDTU_Service(wsdl, name).getServiciosBDTUSOAP();
 	}
 
-	@Override
-	public void setPort(ServiciosBDTU port) {
-		this.port = (ServiciosBDTU) port;
-
-	}
 
 	/**
 	 * @see mx.gob.imss.cit.dictamen.services.CuestionarioService#findCuestionarioById(java.lang.Integer)
 	 */
 	@Override
-	public List<CuestionarioTO> findCuestionarioById(Integer idCuestionario) {
+	public List<CuestionarioTO> findCuestionarioById(Integer idCuestionario) throws DictamenException{
 
 		LOG.info("obteneropciones casos especiales");
 		List<CuestionarioTO> tiposSolicitud = new ArrayList<CuestionarioTO>();
