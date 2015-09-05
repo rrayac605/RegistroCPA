@@ -26,12 +26,13 @@ import mx.gob.imss.cit.bp.ws.MetadataByDocResponse;
 import mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Document;
 import mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Metadata;
 import mx.gob.imss.cit.bp.ws.documentows.IDocumentoWSService;
-import mx.gob.imss.cit.dictamen.commons.to.BaseObjectBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.DocumentoBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.ActorBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.HeaderBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.MetadataBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.TramiteBovedaTO;
+import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaActorTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaBaseObjectTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.services.impl.BovedaServiceImpl;
 import mx.gob.imss.cit.ws.commonschema.GovernanceHeaderResponse;
 import mx.gob.imss.cit.ws.commonschema.SGBDS;
@@ -60,14 +61,14 @@ public class BovedaServiceTest{
 	private BovedaService bovedaService = new BovedaServiceImpl();; 
 	
 	
-	private ActorBovedaTO newActor;	
-	private DocumentoBovedaTO documento;
-	private ActorBovedaTO actor;
-	private TramiteBovedaTO tramite;
-	private MetadataBovedaTO metadataValue;
-	private BaseObjectBovedaTO baseObject;
+	private BovedaActorTO newActor;	
+	private BovedaDocumentoTO documento;
+	private BovedaActorTO actor;
+	private BovedaTramiteTO tramite;
+	private BovedaMetadataTO metadataValue;
+	private BovedaBaseObjectTO baseObject;
 	private String isEncripted="false";
-	private HeaderBovedaTO header;
+	private BovedaHeaderTO header;
 		
 	@Mock
 	private IDocumentoWSService port;
@@ -146,7 +147,13 @@ public class BovedaServiceTest{
 	@Test
 	public void testCreateDocument(){
 		
-		boolean result = bovedaService.createDocument(documento, tramite, actor, header , isEncripted);
+		boolean result=false;
+		try {
+			result = bovedaService.createDocument(documento, tramite, actor, header , isEncripted);
+		} catch (DictamenException e) {
+			LOG.error(e.getMessage());
+		}
+		
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
 	}
@@ -158,7 +165,7 @@ public class BovedaServiceTest{
 	@Test
 	public void testGetDocument() throws Exception{
 
-		DocumentoBovedaTO result = bovedaService.getDocument(actor, tramite, header, baseObject);
+		BovedaDocumentoTO result = bovedaService.getDocument(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
 	}	
@@ -194,7 +201,7 @@ public class BovedaServiceTest{
 	@Test
 	public void testFindDocumentsByMetadata() throws Exception{
 		
-		List<DocumentoBovedaTO> result = bovedaService.findDocumentsByMetadata(actor, tramite, metadataValue, header, baseObject);
+		List<BovedaDocumentoTO> result = bovedaService.findDocumentsByMetadata(actor, tramite, metadataValue, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
 	}
@@ -206,7 +213,7 @@ public class BovedaServiceTest{
 	@Test
 	public void testGetAllDocumentVersionsByDoc() throws Exception{
 	
-		List<DocumentoBovedaTO> result = bovedaService.getAllDocumentVersionsByDoc(actor, tramite, header, baseObject);
+		List<BovedaDocumentoTO> result = bovedaService.getAllDocumentVersionsByDoc(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
 	}	
@@ -218,7 +225,7 @@ public class BovedaServiceTest{
 	@Test
 	public void testGetAllDocumentVersionsMetadataByDoc() throws Exception{
 	
-		List<DocumentoBovedaTO> result = bovedaService.getAllDocumentVersionsMetadataByDoc(actor, tramite, header, baseObject);
+		List<BovedaDocumentoTO> result = bovedaService.getAllDocumentVersionsMetadataByDoc(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
 	}
@@ -230,7 +237,7 @@ public class BovedaServiceTest{
 	@Test
 	public void testGetAllMetadataByMetadata() throws Exception{
 	
-		List<MetadataBovedaTO> result = bovedaService.getAllMetadataByMetadata(actor, tramite, metadataValue, header, baseObject);
+		List<BovedaMetadataTO> result = bovedaService.getAllMetadataByMetadata(actor, tramite, metadataValue, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
 	}
@@ -242,7 +249,7 @@ public class BovedaServiceTest{
 	@Test
 	public void testGetMetadataByDoc() throws Exception{
 
-		MetadataBovedaTO result = bovedaService.getMetadataByDoc(actor, tramite, header, baseObject);
+		BovedaMetadataTO result = bovedaService.getMetadataByDoc(actor, tramite, header, baseObject);
 		LOG.info(String.valueOf(result));
 		Assert.assertNotNull(result);
 	}		

@@ -7,7 +7,7 @@ import java.util.Date;
  * @author agustin.ramirez
  *
  */
-public class DictamenException extends RuntimeException
+public class DictamenException extends Exception
 {
   /**
    * 

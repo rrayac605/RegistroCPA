@@ -1,6 +1,8 @@
-package mx.gob.imss.cit.dictamen.commons.to.domain;
+package mx.gob.imss.cit.dictamen.integration.api.dto;
 
 import java.util.List;
+
+import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
 /**
  * 
@@ -8,18 +10,22 @@ import java.util.List;
  * @author cmarmolejo
  * 
  */
-public class TramiteBovedaTO {
-	private List<ActorBovedaTO> actores;
+public class BovedaTramiteDTO extends BaseDTO{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<BovedaActorDTO> actores;
 	private String fecha;
 	private String folioTramite;
 	private String org;
 	private String tramite;
 	private String zona;
 	
-	public List<ActorBovedaTO> getActores() {
+	public List<BovedaActorDTO> getActores() {
 		return actores;
 	}
-	public void setActores(List<ActorBovedaTO> actores) {
+	public void setActores(List<BovedaActorDTO> actores) {
 		this.actores = actores;
 	}
 	public String getFecha() {

@@ -1,6 +1,8 @@
-package mx.gob.imss.cit.dictamen.commons.to.domain;
+package mx.gob.imss.cit.dictamen.commons.to;
 
 import java.util.List;
+
+import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 /**
  * 
@@ -8,17 +10,21 @@ import java.util.List;
  * @author cmarmolejo
  * 
  */
-public class MetadataBovedaTO {
+public class BovedaMetadataTO  extends BaseTO{
 	
-	private List<ActorBovedaTO> actores;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<BovedaActorTO> actores;
 	private String fechaCreacion;
 	private String fechaModificacion;
 	private String size;
 	private String version;
-	public List<ActorBovedaTO> getActores() {
+	public List<BovedaActorTO> getActores() {
 		return actores;
 	}
-	public void setActores(List<ActorBovedaTO> actores) {
+	public void setActores(List<BovedaActorTO> actores) {
 		this.actores = actores;
 	}
 	public String getFechaCreacion() {

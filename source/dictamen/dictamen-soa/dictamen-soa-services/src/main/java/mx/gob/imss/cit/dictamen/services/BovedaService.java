@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.bp.ws.documentows.IDocumentoWSService;
-import mx.gob.imss.cit.dictamen.commons.to.BaseObjectBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.DocumentoBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.ActorBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.HeaderBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.MetadataBovedaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.TramiteBovedaTO;
+import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaActorTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaBaseObjectTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
+import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 
 @Local
 /**
@@ -20,16 +20,38 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.TramiteBovedaTO;
  * 
  */
 public interface BovedaService {
-	void setPort(IDocumentoWSService port);
-	boolean createDocument(DocumentoBovedaTO documento, TramiteBovedaTO tramite, ActorBovedaTO actor, HeaderBovedaTO header, String isEncripted);
-	DocumentoBovedaTO getDocument(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject);
-	boolean deleteDocument(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject);
-	boolean addDocumentActor(ActorBovedaTO actor, TramiteBovedaTO tramite, ActorBovedaTO newActor, HeaderBovedaTO header, BaseObjectBovedaTO baseObject);
-	List<DocumentoBovedaTO> findDocumentsByMetadata(ActorBovedaTO actor, TramiteBovedaTO tramite, MetadataBovedaTO metadataValue, HeaderBovedaTO header, BaseObjectBovedaTO baseObject);
-	List<DocumentoBovedaTO> getAllDocumentVersionsByDoc(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject);
-	List<DocumentoBovedaTO> getAllDocumentVersionsMetadataByDoc(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject);
-	List<MetadataBovedaTO> getAllMetadataByMetadata(ActorBovedaTO actor, TramiteBovedaTO tramite, MetadataBovedaTO metadataValue, HeaderBovedaTO header, BaseObjectBovedaTO baseObject);
-	MetadataBovedaTO getMetadataByDoc(ActorBovedaTO actor, TramiteBovedaTO tramite, HeaderBovedaTO header, BaseObjectBovedaTO baseObject);
-	
-}
+	boolean createDocument(BovedaDocumentoTO documento,
+			BovedaTramiteTO tramite, BovedaActorTO actor,
+			BovedaHeaderTO header, String isEncripted)throws DictamenException;
 
+	BovedaDocumentoTO getDocument(BovedaActorTO actor, BovedaTramiteTO tramite,
+			BovedaHeaderTO header, BovedaBaseObjectTO baseObject)throws DictamenException;
+
+	boolean deleteDocument(BovedaActorTO actor, BovedaTramiteTO tramite,
+			BovedaHeaderTO header, BovedaBaseObjectTO baseObject)throws DictamenException;
+
+	boolean addDocumentActor(BovedaActorTO actor, BovedaTramiteTO tramite,
+			BovedaActorTO newActor, BovedaHeaderTO header,
+			BovedaBaseObjectTO baseObject)throws DictamenException;
+
+	List<BovedaDocumentoTO> findDocumentsByMetadata(BovedaActorTO actor,
+			BovedaTramiteTO tramite, BovedaMetadataTO metadataValue,
+			BovedaHeaderTO header, BovedaBaseObjectTO baseObject)throws DictamenException;
+
+	List<BovedaDocumentoTO> getAllDocumentVersionsByDoc(BovedaActorTO actor,
+			BovedaTramiteTO tramite, BovedaHeaderTO header,
+			BovedaBaseObjectTO baseObject)throws DictamenException;
+
+	List<BovedaDocumentoTO> getAllDocumentVersionsMetadataByDoc(
+			BovedaActorTO actor, BovedaTramiteTO tramite,
+			BovedaHeaderTO header, BovedaBaseObjectTO baseObject)throws DictamenException;
+
+	List<BovedaMetadataTO> getAllMetadataByMetadata(BovedaActorTO actor,
+			BovedaTramiteTO tramite, BovedaMetadataTO metadataValue,
+			BovedaHeaderTO header, BovedaBaseObjectTO baseObject)throws DictamenException;
+
+	BovedaMetadataTO getMetadataByDoc(BovedaActorTO actor,
+			BovedaTramiteTO tramite, BovedaHeaderTO header,
+			BovedaBaseObjectTO baseObject)throws DictamenException;
+
+}

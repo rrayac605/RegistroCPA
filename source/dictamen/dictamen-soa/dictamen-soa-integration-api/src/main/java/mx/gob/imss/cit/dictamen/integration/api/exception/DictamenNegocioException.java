@@ -7,7 +7,7 @@ import java.util.Date;
  * @author agustin.ramirez
  *
  */
-public class DictamenNegocioException extends RuntimeException
+public class DictamenNegocioException extends Exception
 {
   /**
    * 

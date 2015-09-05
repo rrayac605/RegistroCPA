@@ -1,4 +1,6 @@
-package mx.gob.imss.cit.dictamen.commons.to.domain;
+package mx.gob.imss.cit.dictamen.commons.to;
+
+import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 /**
  * 
@@ -6,7 +8,11 @@ package mx.gob.imss.cit.dictamen.commons.to.domain;
  * @author cmarmolejo
  * 
  */
-public class ActorBovedaTO {
+public class BovedaActorTO  extends BaseTO{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private String isOwner;
 	private String org;
