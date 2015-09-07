@@ -17,14 +17,14 @@
 						<UML:TaggedValue tag="modified" value="2015-02-18 12:58:53"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="Requerimientos\RequerimientosFuncionales\ReglasDeNegocio\Reglas de negocio.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-04 19:24:33"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-07 10:23:16"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-04 19:24:33"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
 						<UML:TaggedValue tag="usedtd" value="FALSE"/>
-						<UML:TaggedValue tag="owner" value="rcarrera"/>
 						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
 						<UML:TaggedValue tag="logxml" value="FALSE"/>
+						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;CRC=0;"/>
 						<UML:TaggedValue tag="batchsave" value="0"/>
 						<UML:TaggedValue tag="batchload" value="0"/>
@@ -36,11 +36,86 @@
 						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
-					<UML:Namespace.ownedElement/>
+					<UML:Namespace.ownedElement>
+						<UML:Collaboration xmi.id="EAID_4FBF6BFA_6852_4aa7_9B61_3EDA34D53C59_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement>
+								<UML:ClassifierRole name="RF004 - Layouts Obligatorios" xmi.id="EAID_E2BEBE6B_572B_40df_8872_545CA0F650C0" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="De los 19 layoust solo se concideran como obligatorios 9, 6 son opcionales y 4 solo si es patrón de contrucción. Ver anexo."/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_4FBF6BFA_6852_4aa7_9B61_3EDA34D53C59"/>
+										<UML:TaggedValue tag="date_created" value="2015-09-07 12:27:07"/>
+										<UML:TaggedValue tag="date_modified" value="2015-09-07 12:36:25"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Reglas de negocio"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="JROJAS"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="object_style" value="MDoc=1;"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="659"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={49411C3D-E415-41fa-8F32-D05EB47D3D0D}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={E2BEBE6B-572B-40df-8872-545CA0F650C0}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+										<UML:TaggedValue tag="modeldocument" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAChlJ0efKixbPgEAADICAAAHABEAc3RyLmRhdFVUDQAH4IXtVeCF7VXghe1V
+bVGxTsQwDN2R+IfMTEnVipNuQkKMiIUti9s6aSGXFMelnE737zjXcjCwJM/PzrP9crLEzliI
+ebQ9ugDRV7rZWcexfbNzZwrr9O3NyboUmdsgQCvr8jLmrB5ohLA/n0u+SyGRFKi9JeyrprGe
+EGMBbZhR7jWjV15fWK32l8eZjwHzgMhFX+SrWj0nOhR1kc5GPaKDObB6AQJPMA3qSQbaet+J
+8GcZ7jW+x7TEC20nmJAWU1W1XvFgmp3gA5APZqdXRFfEpt6y7QUNCD3S8b6SgVLiDcbkKS0w
+c3IjF3sY2rWEDnmQF1LhEHgm5IESc0BjHXJtAWMfRSdbEH8jhc5OvqWeSqMNlkYyesaOC7Xk
+r7gt4IeCfxco0XWHvwGX4LrJT/D/Mrl9n8CjqMdO7Cx3j13xLsAYt3P7EPsRxNVvUEsBAhcL
+FAAAAAgAKGUnR58qLFs+AQAAMgIAAAcACQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB+CF
+7VVQSwUGAAAAAAEAAQA+AAAAdAEAAAAA</UML:TaggedValue>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+							</UML:Namespace.ownedElement>
+							<UML:Collaboration.interaction/>
+						</UML:Collaboration>
+					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
+		<UML:Diagram name="Reglas de negocio" xmi.id="EAID_F23FAAF4_0ECA_41dd_8B87_20E3268B92FC" diagramType="CustomDiagram" owner="EAPK_4FBF6BFA_6852_4aa7_9B61_3EDA34D53C59" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="JROJAS"/>
+				<UML:TaggedValue tag="created_date" value="2015-09-07 11:19:33"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-07 12:40:16"/>
+				<UML:TaggedValue tag="package" value="EAPK_4FBF6BFA_6852_4aa7_9B61_3EDA34D53C59"/>
+				<UML:TaggedValue tag="type" value="Custom"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="26"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=1369430B;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Requirements;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=81;Top=62;Right=191;Bottom=106;" subject="EAID_E2BEBE6B_572B_40df_8872_545CA0F650C0" seqno="1" style="DUID=9CE780BF;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
-	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAModel.file>
+			<EAFile name="C:\Users\JROJAS\Documents\IMSS\DictamenElectronico\LayoutsObligatorios.pdf" type="Local File" subject="EAID_E2BEBE6B_572B_40df_8872_545CA0F650C0">
+				<UML:ModelElement.taggedValue>
+					<UML:TaggedValue tag="filesize" value="96 k"/>
+					<UML:TaggedValue tag="timestamp" value="2015-09-07 12:31:06"/>
+				</UML:ModelElement.taggedValue>
+			</EAFile>
+		</EAModel.file>
+	</XMI.extensions>
 </XMI>
