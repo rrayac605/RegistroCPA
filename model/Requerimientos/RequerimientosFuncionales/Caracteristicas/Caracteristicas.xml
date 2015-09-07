@@ -17,14 +17,14 @@
 						<UML:TaggedValue tag="modified" value="2015-02-18 12:58:34"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="Requerimientos\RequerimientosFuncionales\Caracteristicas\Caracteristicas.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-04 19:24:33"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-07 10:23:15"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-04 19:24:33"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
 						<UML:TaggedValue tag="usedtd" value="FALSE"/>
-						<UML:TaggedValue tag="owner" value="rcarrera"/>
 						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
 						<UML:TaggedValue tag="logxml" value="FALSE"/>
+						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;CRC=0;"/>
 						<UML:TaggedValue tag="batchsave" value="0"/>
 						<UML:TaggedValue tag="batchload" value="0"/>
@@ -36,10 +36,99 @@
 						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
-					<UML:Namespace.ownedElement/>
+					<UML:Namespace.ownedElement>
+						<UML:Collaboration xmi.id="EAID_8F165F3E_DD93_4dbb_957B_055703761120_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement>
+								<UML:ClassifierRole name="Detalle sección información del patron a dictaminar&#xA;" xmi.id="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="El sistema mostrará como solo lectura los siguientes datos del patron a dictaminar&#xA;&lt;ul&gt;&#xA;	&lt;li&gt;Registro Federal de Contribuyentes (RFC) &lt;/li&gt;&#xA;	&lt;li&gt;Nombre, Denominación o Razón Social.&lt;/li&gt;&#xA;	&lt;li&gt;Tipo de Dictamen, &lt;/li&gt;&#xA;	&lt;li&gt;Ejecicio a dictaminar&lt;/li&gt;&#xA;	&lt;li&gt;Número de trabajadores promedio&lt;/li&gt;&#xA;	&lt;li&gt;Número de registros patronales&lt;/li&gt;&#xA;	&lt;li&gt;¿Es patrón de la industria de la construcción?&lt;/li&gt;&#xA;	&lt;li&gt;¿Realizó esporadicamente actividades de la contrucción o presentó algún registro de obra  en le ejercicio ditaminado?&lt;/li&gt;&#xA;	&lt;li&gt;¿Es un patron o empresa valuada?&lt;/li&gt;&#xA;&lt;/ul&gt;"/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_8F165F3E_DD93_4dbb_957B_055703761120"/>
+										<UML:TaggedValue tag="date_created" value="2015-09-07 10:46:54"/>
+										<UML:TaggedValue tag="date_modified" value="2015-09-07 11:04:19"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Caracteristicas"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="JROJAS"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="657"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={9DC176BC-79D5-449d-9033-D9D963ABE518}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;GUID={02BE5890-D49B-48d1-AD44-5AB5920C6A92};@ENDSTEREO;$DES;$CLT={053744D6-C8D3-4888-98E6-7B514AB79E3F}$CLT;$ENDXREF;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="RF001 - Detalle sección CPA" xmi.id="EAID_BE883D7A_8F1A_4197_8BC7_176693CC0923" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="La sección deberá contar los los siguientes datos:&#xA;*Datos del CPA -&amp;gt; como encabezado de la sección&#xA;*Nombre -&amp;gt; Deberá de mostrar el nombre completo del CPA&#xA;*Registor IMSS -&amp;gt; Mostrará el registro IMSS del CPA&#xA;*Delegación-&amp;gt; Mostrará la delegación a la que pertenece el CPA&#xA;*Subdelegación-&amp;gt; Mostrará la subdelegación a la que pertenece el CPA&#xA;*CURP -&amp;gt; Clave Unica de Registro de Población del CPA&#xA;*RFC -&amp;gt; Registro Federal de Contribuyentes del CPA&#xA;&#xA;Todos los datos se mostrarán de solo lectura&#xA;&#xA;&#xA;Estos datos deberán ser consultado de la BDTU de la tabla Contadores Público Autorizados.&#xA;Los datos deberán ser de solo lectura"/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Feature"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_8F165F3E_DD93_4dbb_957B_055703761120"/>
+										<UML:TaggedValue tag="date_created" value="2015-09-04 12:20:12"/>
+										<UML:TaggedValue tag="date_modified" value="2015-09-07 11:02:47"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Caracteristicas"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="JROJAS"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="653"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={B56C5671-B782-4013-9122-9D0ECD9CBFCB}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;GUID={5CDC81DF-2E45-4f8e-A11B-60EBEEEAED6B};@ENDSTEREO;$DES;$CLT={BE883D7A-8F1A-4197-8BC7-176693CC0923}$CLT;$ENDXREF;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+							</UML:Namespace.ownedElement>
+							<UML:Collaboration.interaction/>
+						</UML:Collaboration>
+					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
+		<UML:Diagram name="Caracteristicas" xmi.id="EAID_EF24E229_7F26_4b2f_AB4A_7C05F6DC1B73" diagramType="CustomDiagram" owner="EAPK_8F165F3E_DD93_4dbb_957B_055703761120" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="JROJAS"/>
+				<UML:TaggedValue tag="created_date" value="2015-09-07 11:01:30"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-07 11:18:11"/>
+				<UML:TaggedValue tag="package" value="EAPK_8F165F3E_DD93_4dbb_957B_055703761120"/>
+				<UML:TaggedValue tag="type" value="Custom"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="25"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=018E60B0;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Requirements;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=58;Top=112;Right=218;Bottom=145;" subject="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" seqno="1" style="DUID=D89C6E31;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=62;Top=52;Right=222;Bottom=85;" subject="EAID_BE883D7A_8F1A_4197_8BC7_176693CC0923" seqno="2" style="DUID=E6C90769;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
