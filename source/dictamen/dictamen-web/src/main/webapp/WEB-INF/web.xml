@@ -109,6 +109,34 @@
 		<url-pattern>/Bienvenida/*</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>Dictaminacion Servlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dictaminacion Servlet</servlet-name>
+		<url-pattern>/Dictaminacion/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Informacion Patronal Servlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Informacion Patronal Servlet</servlet-name>
+		<url-pattern>/Informacion Patronal/*</url-pattern>
+	</servlet-mapping>
+	
 	<jsp-config>
 		<taglib>
 			<taglib-uri>http://liferay.com/tld/aui</taglib-uri>
