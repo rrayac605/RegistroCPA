@@ -48,7 +48,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-03 17:06:10"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-07 15:55:37"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-07 19:48:03"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo Información Patronal"/>
@@ -151,10 +151,10 @@
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
 		<EAModel.scenario>
-			<EAScenario name="EX001. Error validación física" type="Exception" weight="2.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_742C2F42_E626_4e7a_8CD4_3841D66A6436">
+			<EAScenario name="EX001. Error validación física" type="Exception" weight="3.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_742C2F42_E626_4e7a_8CD4_3841D66A6436">
 				<EAScenarioContent>
 					<path>
-						<step name="El sistema valida que el  tipo de archivo adjunto sea .csv, en caso de que el archivo no sea de este tipo, el sistema mostrará el siquiente mensaje de error: &quot;Favor de verificar el formato del archivo seleccionado, El formato esperado es .csv&quot; " guid="{2FDD5D12-A183-4c8e-BF1D-6CD833EA49EA}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="EX001.1 El sistema valida que el  tipo de archivo adjunto sea .csv, en caso de que el archivo no sea de este tipo, el sistema mostrará el siquiente mensaje de error: &quot;Favor de verificar el formato del archivo seleccionado, El formato esperado es .csv&quot; " guid="{2FDD5D12-A183-4c8e-BF1D-6CD833EA49EA}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
@@ -166,7 +166,23 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
-			<EAScenario name="EX002. Error validación estructura" type="Exception" weight="3.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_A1B783B3_A684_4169_942E_08DAE2E484F1"/>
+			<EAScenario name="EX002. Error validación estructura" type="Exception" weight="1.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_A1B783B3_A684_4169_942E_08DAE2E484F1">
+				<EAScenarioContent>
+					<path>
+						<step name="EX002.1 En caso de presentarse algun error al validar la estructura del archivo  (Orden de encabezado, tipo de dato y longitud), el sistema escribira en la bitacora el error, de acuerdo a" guid="{90F94210-5B60-4bf7-83F3-B77C302CDFE9}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="EX002.2 El sistema mostrará en pantalla el siguiente mensaje al actor: &quot;El archivo contiene errores, Favor de corregir y volver a cargar&quot;." guid="{E57A281E-4E8E-400b-A125-3568CE5CB498}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="EX002.3 El sistema habilitará el icono de bitácora con los errores encontrados en el archivos." guid="{A024C318-85AC-4ef9-97D8-D36C3671177D}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RF005 - Caracteristicas físicas layouts" guid="{2FD2B0AD-1D19-4b88-9C6E-207497FB1F7B}"/>
+							<item oldname="RF003 - Estructura layouts aseveraciones" guid="{75E65A70-4B69-4214-92B6-A394C892FB03}"/>
+							<item oldname="RF001 - Detalle sección CPA" guid="{BE883D7A-8F1A-4197-8BC7-176693CC0923}"/>
+							<item oldname="RF004 - Layouts Obligatorios" guid="{E2BEBE6B-572B-40df-8872-545CA0F650C0}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
 			<EAScenario name="EX003. Error validaciones lógicas" type="Exception" weight="4.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_2BE44F50_353E_46c7_8C44_D4FC0C90DBEB">
 				<EAScenarioContent>
 					<path>
@@ -181,9 +197,11 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
-			<EAScenario name="EX004. Error en carga de BD" type="Exception" weight="1.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_31AAD483_F7BB_45ee_8EE8_69A9ABF02131">
+			<EAScenario name="EX004. Error en carga de BD" type="Exception" weight="2.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_31AAD483_F7BB_45ee_8EE8_69A9ABF02131">
 				<EAScenarioContent>
 					<path>
+						<step name="EX004.1 Si ocurre algún error al cargar el archivo en la BD, el sistema mostrará el siguiente mensaje &quot;Ha ocurrido un error. Intente mas tarde&quot;" guid="{A4DF4231-6F53-4003-BC81-506DBD402678}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="EX004.2 El sistema deberá de escribir en el log de la aplicación el detalle de la aplicación." guid="{181EA12C-9801-4a3b-ABF8-C9FFAB999DE3}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
@@ -198,8 +216,15 @@
 			<EAScenario name="FA001. Eliminar archivo" type="Alternate" weight="5.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_6F99C4B6_3649_47f3_AC24_EA7EAD759CCA">
 				<EAScenarioContent>
 					<path>
+						<step name="FA001.1 Al dar clic en el icono Eliminar el sistema mostrará el sig. mensaje de advertencia: &quot;Esta seguro que desea eleminar el archivo seleccionado&quot;" guid="{0D3B029A-998D-4c32-8D18-17E92B3DC22C}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA001.2 Si el actor presiona el botón Aceptar, el archivo será eliminado, y presiona Cancelar el sistema no realizará ninguna acción." guid="{160EC7EB-5A30-452c-84D6-0EC7B54C2FA9}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
-							<item oldname="Contador Público Autorizado" guid="{9F9F7FF9-E40B-4e0b-81D9-5B620AA93BA4}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RF005 - Caracteristicas físicas layouts" guid="{2FD2B0AD-1D19-4b88-9C6E-207497FB1F7B}"/>
+							<item oldname="RF003 - Estructura layouts aseveraciones" guid="{75E65A70-4B69-4214-92B6-A394C892FB03}"/>
+							<item oldname="RF001 - Detalle sección CPA" guid="{BE883D7A-8F1A-4197-8BC7-176693CC0923}"/>
+							<item oldname="RF004 - Layouts Obligatorios" guid="{E2BEBE6B-572B-40df-8872-545CA0F650C0}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -213,22 +238,23 @@
 						<step name="FB04. El usuario agrega los adjuntos obligatorios y/o deseados de acuerdo a RF004 - Layouts Obligatorios" guid="{AB62646D-F838-4fa7-B355-5546A4668C29}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="FB005. El sistema permite que usuario agregue los archivos a las categorias correspondientes." guid="{87A5F733-26D0-4a65-B500-979E9EB65F81}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB006. El sistema muestra el porcentaje de carga de los archivos adjuntos." guid="{61C8C921-63D8-4404-B390-0BB8337C68C7}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB006. El sistema realiza la validaciones fisicas del archivo de acuerdo al RF005 - Caracteristicas físicas layouts. En caso de presentarse algun error, el sistema llama a la EX01. Error validaciones físicas." guid="{B491AD69-18AB-40aa-8C39-70FBBEE8B700}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB007. El sistema realiza las validaciones de estructura del archivo de acuerdo a. En caso de presentarse algún error el sitema llama al EX.002. Error validación de estructura." guid="{B0887FA7-3A84-4bf7-8F40-541AC4ECEEF1}" level="8" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name="FB007. El sistema realiza la validaciones fisicas del archivo de acuerdo al RF005 - Caracteristicas físicas layouts. En caso de presentarse algun error, el sistema llama a la EX01. Error validaciones físicas." guid="{B491AD69-18AB-40aa-8C39-70FBBEE8B700}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB008. El sistema realiza las validaciones de estructura del archivo (Orden de encabezado, tipo de dato y longitud) de acuerdo a. En caso de presentarse algún error el sitema llama al EX.002. Error validación de estructura." guid="{B0887FA7-3A84-4bf7-8F40-541AC4ECEEF1}" level="8" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="8a" guid="{742C2F42-E626-4e7a-8CD4-3841D66A6436}" join="{87A5F733-26D0-4a65-B500-979E9EB65F81}"/>
-							<extension level="8b" guid="{A1B783B3-A684-4169-942E-08DAE2E484F1}" join="End"/>
+							<extension level="8b" guid="{A1B783B3-A684-4169-942E-08DAE2E484F1}" join="{E6623B72-FFA6-4b8c-B155-B70CA9A988E2}"/>
 						</step>
-						<step name="FB008. El sistema realiza las validaciones lógicas del  archivo de a cuerdo a . En caso de presentarse algun error el sistema  llama al EX003. Validaciones lógicas" guid="{FAF683E8-2B76-463b-85C9-8CE69FB34EB0}" level="9" uses="" useslist="" result="" state="" trigger="1" link="">
+						<step name="FB009. El sistema realiza las validaciones lógicas del  archivo de a cuerdo a . En caso de presentarse algun error el sistema  llama al EX003. Validaciones lógicas" guid="{FAF683E8-2B76-463b-85C9-8CE69FB34EB0}" level="9" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="9a" guid="{2BE44F50-353E-46c7-8C44-D4FC0C90DBEB}" join="End"/>
 						</step>
-						<step name="FB009, Si el archivo cumple con todas la validaciones, los datos son almacenado en la BDTU. En caso de presentarse algun error el sistema llama al EX 004. Error en carga de BD." guid="{FFD85EA3-F8CF-47cc-B415-595868AF1E7D}" level="10" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="10a" guid="{31AAD483-F7BB-45ee-8EE8-69A9ABF02131}" join="End"/>
+						<step name="FB0010, Si el archivo cumple con todas la validaciones, los datos son almacenado en la BDTU. En caso de presentarse algun error el sistema llama al EX 004. Error en carga de BD." guid="{FFD85EA3-F8CF-47cc-B415-595868AF1E7D}" level="10" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="10a" guid="{31AAD483-F7BB-45ee-8EE8-69A9ABF02131}" join="{FFD85EA3-F8CF-47cc-B415-595868AF1E7D}"/>
 						</step>
-						<step name="FB010. Y el sistema mostrará el mensaje &quot;La carga del archivo ha sido correctamente&quot;" guid="{CEE70AF6-D254-4537-BBDB-44B7F14D0722}" level="11" uses="" useslist="" result="El sistema habilitará el cuestionario de atestiguamiento correspondiente" state="" trigger="0" link=""/>
-						<step name="FB011. El sistema mostrará el archivo cargado, permitiedo al usuario realizar las acciones de eliminar el archivo." guid="{E6623B72-FFA6-4b8c-B155-B70CA9A988E2}" level="12" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name="FB011. Y el sistema mostrará el mensaje &quot;La carga del archivo ha sido correctamente&quot;" guid="{CEE70AF6-D254-4537-BBDB-44B7F14D0722}" level="11" uses="" useslist="" result="El sistema habilitará el cuestionario de atestiguamiento correspondiente" state="" trigger="0" link=""/>
+						<step name="FB012. El sistema mostrará el archivo cargado, permitiedo al usuario realizar las acciones de eliminar el archivo." guid="{E6623B72-FFA6-4b8c-B155-B70CA9A988E2}" level="12" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="12a" guid="{6F99C4B6-3649-47f3-AC24-EA7EAD759CCA}" join="End"/>
 						</step>
-						<step name="FB012. Si el usuario da clic en el icono &quot;Eliminar&quot;, el sistema llama al FA001. Eliminar archivo" guid="{50B94F5D-638A-44d5-BCE2-99DAC6486F08}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB013. Si el usuario da clic en el icono &quot;Eliminar&quot;, el sistema llama al FA001. Eliminar archivo" guid="{50B94F5D-638A-44d5-BCE2-99DAC6486F08}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB014. Fin de caso de uso" guid="{79421BF3-C679-403c-A69A-5214243E8514}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
