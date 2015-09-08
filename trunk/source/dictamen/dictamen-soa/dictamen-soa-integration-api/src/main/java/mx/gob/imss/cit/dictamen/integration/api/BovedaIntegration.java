@@ -1,4 +1,4 @@
-package mx.gob.imss.cit.dictamen.integration;
+package mx.gob.imss.cit.dictamen.integration.api;
 
 import javax.ejb.Remote;
 
