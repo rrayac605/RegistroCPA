@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-09-03 07:22:14"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\ModuloDeOpinion\Modulo de Opinion.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-08 13:39:05"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-08 16:03:33"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-04 11:50:52"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -37,29 +37,6 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:UseCase name="Use Case1" xmi.id="EAID_270F056D_D79B_4b46_9FC8_E8A457DE696A" visibility="public" namespace="EAPK_39D2B282_554E_4730_B196_510572B0499C" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
-								<UML:TaggedValue tag="date_created" value="2015-09-08 13:48:37"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-08 13:53:55"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Modulo de Opinion"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="nsoria"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="429"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-							</UML:ModelElement.taggedValue>
-						</UML:UseCase>
 						<UML:UseCase name="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón" xmi.id="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" visibility="public" namespace="EAPK_39D2B282_554E_4730_B196_510572B0499C" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="documentation" value="Se describe la funcionalidad para que el Contador Público Autorizado emita su opinión respecto a la carga de información patronal y  que conclusión de los exámenes de atestiguamiento."/>
@@ -520,30 +497,6 @@
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
 		<EAModel.scenario>
-			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_270F056D_D79B_4b46_9FC8_E8A457DE696A" xmi.id="EAID_21AE293A_232F_4510_A034_29E07BF34359">
-				<EAScenarioContent>
-					<path>
-						<step name="sc 1" guid="{E38B89E4-F5DA-4f00-B1F5-BAF17CB582E4}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="sc2" guid="{6E964111-0506-4714-8780-D588C0D6A241}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="Selecciona la opinión" guid="{C48F7E63-332B-4c0d-B686-425B29EEDC19}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="3a" guid="{0F6EBF92-2C6D-4b42-8B2B-0DFD11F05A96}" join="End"/>
-							<extension level="3b" guid="{78B7EB16-AD3C-4312-A8FF-FF2F2C8F0F47}" join="{6E964111-0506-4714-8780-D588C0D6A241}"/>
-						</step>
-						<context/>
-					</path>
-				</EAScenarioContent>
-			</EAScenario>
-			<EAScenario name="FA1 Con Salved" type="Alternate" weight="1.00" subject="EAID_270F056D_D79B_4b46_9FC8_E8A457DE696A" xmi.id="EAID_0F6EBF92_2C6D_4b42_8B2B_0DFD11F05A96">
-				<EAScenarioContent>
-					<path>
-						<step name="FA.Pas 1" guid="{76F7F8E4-4541-42f2-AA62-84910381148B}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FA pa2" guid="{077A3837-9229-428f-87F7-6693E7FD7197}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="Vuelve al paso basico" guid="{0FFEAD6C-B74F-498d-8F82-8CB69F19F5E4}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<context/>
-					</path>
-				</EAScenarioContent>
-			</EAScenario>
-			<EAScenario name="FA2 Abstencion" type="Alternate" weight="2.00" subject="EAID_270F056D_D79B_4b46_9FC8_E8A457DE696A" xmi.id="EAID_78B7EB16_AD3C_4312_A8FF_FF2F2C8F0F47"/>
 			<EAScenario name="FA01 Forma de pago Parcialidades" type="Alternate" weight="1.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_A28460E1_FF02_450a_BE93_574F4443A30C">
 				<EAScenarioContent>
 					<path>
