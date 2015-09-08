@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+<p:dataTable var="patronal" value="#{dtBasicView.cars}">
+    <p:column headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.categoria']}" >
+        <h:outputText value="#{patronal.tipoMedioContacto}" />
+    </p:column>
+ 
+    <p:column headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.archivo']}">
+        <h:outputText value="#{patronal.tipoMedioContacto}" />
+    </p:column>
+    
+    <p:column headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.cargado']}">
+        <h:outputText value="#{patronal.tipoMedioContacto}" />
+    </p:column>
+    
+    <p:column headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.validado']}">
+        <h:outputText value="#{patronal.tipoMedioContacto}" />
+    </p:column>
+    
+    <p:column headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.resultado']}">
+        <h:outputText value="#{patronal.tipoMedioContacto}" />
+    </p:column>
+    
+    <p:column headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.acciones']}">
+        <h:outputText value="#{patronal.tipoMedioContacto}" />
+    </p:column>
+ 
+</p:dataTable>
+</html>
