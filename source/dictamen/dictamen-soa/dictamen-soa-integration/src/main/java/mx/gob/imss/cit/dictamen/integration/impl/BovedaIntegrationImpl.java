@@ -5,7 +5,7 @@ import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO;
-import mx.gob.imss.cit.dictamen.integration.BovedaIntegration;
+import mx.gob.imss.cit.dictamen.integration.api.BovedaIntegration;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaActorDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaBaseObjectDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaDocumentoDTO;
