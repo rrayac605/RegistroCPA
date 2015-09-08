@@ -10,19 +10,18 @@
 		<UML:Model name="EA Model" xmi.id="MX_EAID_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B">
 			<UML:Namespace.ownedElement>
 				<UML:Class name="EARootClass" xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" isRoot="true" isLeaf="false" isAbstract="false"/>
-				<UML:Package name="Modulo Información Patronal" xmi.id="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+				<UML:Package name="CU01 Modulo Información Patronal" xmi.id="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 					<UML:ModelElement.taggedValue>
 						<UML:TaggedValue tag="parent" value="EAPK_D1AD955A_A79E_4153_B8A5_A165DCD7437D"/>
 						<UML:TaggedValue tag="created" value="2015-09-07 09:49:58"/>
 						<UML:TaggedValue tag="modified" value="2015-09-07 10:30:47"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\ModuloInformacionPatronal\Modulo Información Patronal.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-07 10:23:20"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-08 11:41:02"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-07 10:23:19"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
 						<UML:TaggedValue tag="usedtd" value="FALSE"/>
-						<UML:TaggedValue tag="owner" value="JROJAS"/>
 						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
 						<UML:TaggedValue tag="logxml" value="FALSE"/>
 						<UML:TaggedValue tag="tpos" value="0"/>
@@ -38,6 +37,31 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
+						<UML:UseCase name="Captura datos del patrón a dictaminar" xmi.id="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" visibility="public" namespace="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="El CU describe la captura de datos del patron a dictaminar"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B"/>
+								<UML:TaggedValue tag="date_created" value="2015-09-08 17:22:40"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-08 17:58:17"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="CU01 Modulo Información Patronal"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="JROJAS"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1487"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={A36CF139-2FF2-4c20-9B60-AD27AB4122D0}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={6D454965-05F0-4481-A9AF-FD87841DA78E}$CLT;$SUP={B48FC839-FD4F-4297-81F1-3C0254D8B6B3}$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
 						<UML:UseCase name="Carga y validación archivos aseveraciones" xmi.id="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" visibility="public" namespace="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="documentation" value="El CU describe el proceso que deberá de realizar el CPA para  las carga de archivos correspondientes a información patronal"/>
@@ -48,16 +72,16 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-03 17:06:10"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-07 19:48:03"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-08 17:27:50"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Modulo Información Patronal"/>
+								<UML:TaggedValue tag="package_name" value="CU01 Modulo Información Patronal"/>
 								<UML:TaggedValue tag="phase" value="1.0"/>
 								<UML:TaggedValue tag="author" value="JROJAS"/>
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="843"/>
+								<UML:TaggedValue tag="ea_localid" value="1424"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={DD786105-AF27-401c-8758-1898FC33CA03}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={0FAD5835-E3C9-4c40-9F37-1320E8252AD6}$SUP;$ENDXREF;$XREFPROP=$XID={DEE1DEE5-5551-443b-8B95-A43AEF189A37}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={2A446247-B5B9-4ba3-8551-2348E35AB425}$SUP;$ENDXREF;$XREFPROP=$XID={9ABC673F-BEB4-4560-AFC1-D993FE099329}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={9F9F7FF9-E40B-4e0b-81D9-5B620AA93BA4}$SUP;$ENDXREF;$XREFPROP=$XID={98E4524B-F5E1-42b9-8157-511840A06E2A}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={B48FC839-FD4F-4297-81F1-3C0254D8B6B3}$SUP;$ENDXREF;$XREFPROP=$XID={A7C06AC2-5D88-428b-8EC2-6E89548847C3}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={BE883D7A-8F1A-4197-8BC7-176693CC0923}$SUP;$ENDXREF;$XREFPROP=$XID={5988F20A-0CFF-415a-894E-A7A347BBB6D8}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={053744D6-C8D3-4888-98E6-7B514AB79E3F}$SUP;$ENDXREF;$XREFPROP=$XID={5E99ADCF-DF4D-4123-AC9C-CC5958E2878C}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={75E65A70-4B69-4214-92B6-A394C892FB03}$SUP;$ENDXREF;$XREFPROP=$XID={F89DBC3E-D9AB-4661-95FD-0319F04EA952}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={E2BEBE6B-572B-40df-8872-545CA0F650C0}$SUP;$ENDXREF;$XREFPROP=$XID={9CF5DA0F-9E16-4bac-A996-3C3F6ADAE2BE}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={E041F09B-720D-4718-94C3-E8907CC31B52}$CLT;$SUP={2FD2B0AD-1D19-4b88-9C6E-207497FB1F7B}$SUP;$ENDXREF;"/>
@@ -81,76 +105,66 @@
 								</UML:Constraint>
 							</UML:ModelElement.constraint>
 						</UML:UseCase>
-						<UML:Association xmi.id="EAID_1AE6A47C_EA94_4fc5_B7BC_E49E223DCFA3" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="UseCase"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="122"/>
-								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
-								<UML:TaggedValue tag="ea_targetName" value="Carga y validación archivos aseveraciones"/>
-								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
-								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="832"/>
-								<UML:TaggedValue tag="ea_targetID" value="843"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-							</UML:ModelElement.taggedValue>
-							<UML:Association.connection>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="source"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_E041F09B_720D_4718_94C3_E8907CC31B52">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="target"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-							</UML:Association.connection>
-						</UML:Association>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
-		<UML:Diagram name="Modulo de Informacion patronal" xmi.id="EAID_BFEDA7F1_56F6_450d_B0FD_D11FAF7B1D5F" diagramType="UseCaseDiagram" owner="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" toolName="Enterprise Architect 2.5">
+		<UML:Diagram name="CU01 Modulo de Informacion patronal" xmi.id="EAID_BFEDA7F1_56F6_450d_B0FD_D11FAF7B1D5F" diagramType="UseCaseDiagram" owner="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" toolName="Enterprise Architect 2.5">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="raguirre"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-07 09:50:22"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-07 14:27:43"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-08 18:15:09"/>
 				<UML:TaggedValue tag="package" value="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="38"/>
+				<UML:TaggedValue tag="ea_localid" value="66"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=235517A7;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=1403D340;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=673;Top=408;Right=833;Bottom=441;" subject="EAID_E2BEBE6B_572B_40df_8872_545CA0F650C0" seqno="1" style="DUID=5A5D0BFB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=669;Top=335;Right=829;Bottom=368;" subject="EAID_BE883D7A_8F1A_4197_8BC7_176693CC0923" seqno="2" style="DUID=9C5F5249;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=664;Top=268;Right=824;Bottom=301;" subject="EAID_2FD2B0AD_1D19_4b88_9C6E_207497FB1F7B" seqno="3" style="DUID=24F92241;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=663;Top=195;Right=823;Bottom=228;" subject="EAID_75E65A70_4B69_4214_92B6_A394C892FB03" seqno="4" style="DUID=245DE623;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=656;Top=97;Right=816;Bottom=156;" subject="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" seqno="5" style="DUID=948716D4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=185;Top=145;Right=230;Bottom=235;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="6" style="DUID=01E2D14B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=376;Top=154;Right=481;Bottom=224;" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" seqno="7" style="DUID=9E65EC41;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_1AE6A47C_EA94_4fc5_B7BC_E49E223DCFA3" style="Mode=3;EOID=9E65EC41;SOID=01E2D14B;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="Left=382;Top=276;Right=487;Bottom=346;" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" seqno="1" style="DUID=EC1F34D0;"/>
+				<UML:DiagramElement geometry="Left=673;Top=408;Right=833;Bottom=441;" subject="EAID_E2BEBE6B_572B_40df_8872_545CA0F650C0" seqno="2" style="DUID=5A5D0BFB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=185;Top=145;Right=230;Bottom=235;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="3" style="DUID=01E2D14B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=669;Top=335;Right=829;Bottom=368;" subject="EAID_BE883D7A_8F1A_4197_8BC7_176693CC0923" seqno="4" style="DUID=9C5F5249;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=664;Top=268;Right=824;Bottom=301;" subject="EAID_2FD2B0AD_1D19_4b88_9C6E_207497FB1F7B" seqno="5" style="DUID=24F92241;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=663;Top=195;Right=823;Bottom=228;" subject="EAID_75E65A70_4B69_4214_92B6_A394C892FB03" seqno="6" style="DUID=245DE623;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=656;Top=97;Right=816;Bottom=156;" subject="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" seqno="7" style="DUID=948716D4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=376;Top=153;Right=481;Bottom=223;" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" seqno="8" style="DUID=9E65EC41;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
 		<EAModel.scenario>
+			<EAScenario name="EX001. Error al validar RFC" type="Exception" weight="1.00" description="Describe la acción a tomar en caso de ocurrir un error al validar el RFC" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_227B9E5C_7F41_4409_A729_904F1E94EE87">
+				<EAScenarioContent>
+					<path>
+						<step name="EX001.1 En caso de ocurrir un error el sistema mostrará el siguiente mensaje &quot;El Registro Federal de Contribuyentes es incorrecto o no existe, favor de verificar&quot;" guid="{C13F26EF-2948-4c1c-9A1A-3DF09DB37F0F}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FB. Capturar datos del patrón a dictaminar" type="Basic Path" weight="0.00" description="Describe la captura de los datos de patrón a dictaminar" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_76CD1603_B5D2_4149_BF55_B8E79DC0B2C0">
+				<EAScenarioContent>
+					<path>
+						<step name="FB001. El caso de uso inicia cuando el actor (CPA) ingresa al modulo de Formulación y presentación de dictamen" guid="{0AE078E6-218A-4c6a-8653-1639A1A1FF9D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida que el estado del contador sea activo de acuerdo a " guid="{05DE62F4-F369-4628-AACE-5B3FB0482D45}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema mostrará la el fomulario de captura de datos del patrón a dictaminar de acuerdo a " guid="{F8E748D5-7815-416b-AD2D-6A23BADACE3A}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="En el campo RFC el actor (CPA) deberá de ingresar el RFC del patrón y presionar el botón validar." guid="{116A2B3A-341E-4477-98AB-AE28F038EC7F}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema validará el RFC de acuerdo a .   En caso de ocurrir algún error el sistema llama a la EX001. Error al validar RFC  " guid="{E436E1F7-4E1D-4b0c-89D6-EA95D36B4882}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="5a" guid="{227B9E5C-7F41-4409-A729-904F1E94EE87}" join="End"/>
+						</step>
+						<step name="El sistema mostrará la razón social del  patrón" guid="{A7C8E624-52D2-4ea1-B693-FA2AC20EE974}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
 			<EAScenario name="EX001. Error validación física" type="Exception" weight="3.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_742C2F42_E626_4e7a_8CD4_3841D66A6436">
 				<EAScenarioContent>
 					<path>
@@ -232,7 +246,7 @@
 			<EAScenario name="FB. Carga de archivos" type="Basic Path" weight="0.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_0134DEF3_C068_45b1_B9A9_E3484D33868F">
 				<EAScenarioContent>
 					<path>
-						<step name="FB01. El caso de uso inicia cuando el actor (CPA) ingresa al modulo de información patronal" guid="{AF1EADFA-8EE5-48a5-B2E9-75DD3A42BEF8}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB01. El caso de uso inicia cuando el actor (CPA) ingresa al modulo de formulacion y presentación de dictamen, sección: Información patronal" guid="{AF1EADFA-8EE5-48a5-B2E9-75DD3A42BEF8}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="FB02. El sistema mostrará la pantalla de Formulación y presentación de dictamen, Donde podrá visualizar la sección Datos del CPA de acuerdo al RF001 - Detalle sección CPA. Y también las sección Datos del patrón a dictaminar de acuerdo al RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{00465BD5-8289-4ce5-85E0-EA54BF54D7C1}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB003. El sistema mostrará la sección de Información patronal con el listado de los conceptos, de acuerdo a RF003 - Estructura layouts aseveraciones" guid="{FA3D299A-8101-4e06-B04A-D827CD4E4FFB}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB04. El usuario agrega los adjuntos obligatorios y/o deseados de acuerdo a RF004 - Layouts Obligatorios" guid="{AB62646D-F838-4fa7-B355-5546A4668C29}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
@@ -256,17 +270,16 @@
 						<step name="FB013. Si el usuario da clic en el icono &quot;Eliminar&quot;, el sistema llama al FA001. Eliminar archivo" guid="{50B94F5D-638A-44d5-BCE2-99DAC6486F08}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="FB014. Fin de caso de uso" guid="{79421BF3-C679-403c-A69A-5214243E8514}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
-							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
 							<item oldname="RF005 - Caracteristicas físicas layouts" guid="{2FD2B0AD-1D19-4b88-9C6E-207497FB1F7B}"/>
 							<item oldname="RF003 - Estructura layouts aseveraciones" guid="{75E65A70-4B69-4214-92B6-A394C892FB03}"/>
 							<item oldname="RF001 - Detalle sección CPA" guid="{BE883D7A-8F1A-4197-8BC7-176693CC0923}"/>
 							<item oldname="RF004 - Layouts Obligatorios" guid="{E2BEBE6B-572B-40df-8872-545CA0F650C0}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
 		</EAModel.scenario>
-		<EAStub xmi.id="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" name="CPA" UMLType="Actor"/>
 	</XMI.extensions>
 </XMI>
