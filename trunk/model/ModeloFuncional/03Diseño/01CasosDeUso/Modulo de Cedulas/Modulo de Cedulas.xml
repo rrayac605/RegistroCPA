@@ -108,7 +108,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-07 14:07:45"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-08 13:37:34"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-08 16:17:17"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Cedulas"/>
@@ -121,6 +121,34 @@
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="El CPA tiene acceso autorizado al portal del IMSS y ya se encuentra en el Módulo de dictamen en la pestaña de Cédulas">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El usuario debe primero autenticarse, mediante su Firma Electrónica Avanzada (FIEL) en el portal IMSS. "/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Los datos del Patrón ya estan registrados correctamente">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
+							<UML:ModelElement.requirement>
+								<UML:Dependency name="RFCCC1 - Carga de cédulas conforme a la pantalla del prototipo para cargar cédulas" description="El layout a cargar debe contener los siguientes campos:">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stability" value="Moderate"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="lastupdate" value="2015-09-08 15:37:49"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Dependency>
+							</UML:ModelElement.requirement>
 						</UML:UseCase>
 						<UML:Association xmi.id="EAID_001CD78C_9CDC_4534_9B37_9B4B157EDA97" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
@@ -195,10 +223,22 @@
 			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_857E5A2E_CABB_498b_9876_66F59B404A26" xmi.id="EAID_756A5211_1B2A_4e80_8847_8C045CEF121C">
 				<EAScenarioContent>
 					<path>
-						<step name="FB01-El CPA selecciona una Cédula a cargar" guid="{622F8A5A-1699-434f-9133-CEFFA8F26D90}" level="1" uses="CPA" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="FB02-Efectua la carga del template de la cédula seleccionada y muestra estatus de avance " guid="{85C12911-2037-4b96-8723-5609CA013EFA}" level="2" uses="Sistema" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB03-Continua con la carga de otra cédula hasta subir todas" guid="{EBB93CF5-7FD6-4157-9931-DEDBDA64A8A7}" level="3" uses="CPA" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="Habilita las cédulas correspondientes para ser llenadas por el CPA" guid="{632EED77-B1CA-4586-B887-6538BB9103DD}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB01-El CPA selecciona una Cédula a cargar conforme al RFCCC1" guid="{622F8A5A-1699-434f-9133-CEFFA8F26D90}" level="1" uses="CPA" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB02-Efectua la carga del template de la cédula seleccionada y muestra estatus de avance con forme a los siguientes RFA, RFC, RFN " guid="{85C12911-2037-4b96-8723-5609CA013EFA}" level="2" uses="Sistema" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB03-Continua con la carga de otra cédula hasta subir todas, confome al RFC" guid="{EBB93CF5-7FD6-4157-9931-DEDBDA64A8A7}" level="3" uses="CPA" useslist="" result="" state="" trigger="1" link="">
+							<extension level="3a" guid="{47199505-6137-4199-9A35-BF7282C6C888}" join="End"/>
+						</step>
+						<step name="FB04-Habilita las cédulas correspondientes para ser llenadas por el CPA" guid="{632EED77-B1CA-4586-B887-6538BB9103DD}" level="4" uses="Sistemas" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="Continúa llenando la Cédula recien cargada" type="Alternate" weight="4.00" subject="EAID_857E5A2E_CABB_498b_9876_66F59B404A26" xmi.id="EAID_47199505_6137_4199_9A35_BF7282C6C888">
+				<EAScenarioContent>
+					<path>
+						<step name="Captura los datos de la cédula en cuestion" guid="{017C1A71-60B6-40b4-BF06-692EE6FAC997}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 						</context>
