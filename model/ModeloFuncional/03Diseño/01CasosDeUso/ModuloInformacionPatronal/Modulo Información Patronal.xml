@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-08 17:22:40"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-08 17:58:17"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-08 20:33:39"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="CU01 Modulo Información Patronal"/>
@@ -72,7 +72,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-03 17:06:10"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-08 17:27:50"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-08 19:10:14"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="CU01 Modulo Información Patronal"/>
@@ -148,17 +148,77 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
+			<EAScenario name="EX003. Error al guardar" type="Exception" weight="5.00" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_EEACBA4C_5672_4cf5_AE42_78765445A1B9"/>
+			<EAScenario name="FA001. Respuesta afirmativa pregunta ¿Es Patrón de la Industria de la Construcción?" type="Alternate" weight="2.00" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_D4287220_ABC3_4a22_8D7D_2A70B797D908">
+				<EAScenarioContent>
+					<path>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA002. Respuesta afirmativa pregunta  ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado?" type="Alternate" weight="3.00" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_6EE2D5A6_686A_42fa_98D3_316985F5E656">
+				<EAScenarioContent>
+					<path>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA003. Boton Limpiar" type="Alternate" weight="4.00" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_0CEB7234_F3DA_44f4_B3FC_9FE14150754B">
+				<EAScenarioContent>
+					<path>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA004. Cancelar advertencia de botón Guardar" type="Alternate" weight="6.00" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_BB9F71FC_EDC7_4124_BFC0_E84C59680507">
+				<EAScenarioContent>
+					<path>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
 			<EAScenario name="FB. Capturar datos del patrón a dictaminar" type="Basic Path" weight="0.00" description="Describe la captura de los datos de patrón a dictaminar" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_76CD1603_B5D2_4149_BF55_B8E79DC0B2C0">
 				<EAScenarioContent>
 					<path>
 						<step name="FB001. El caso de uso inicia cuando el actor (CPA) ingresa al modulo de Formulación y presentación de dictamen" guid="{0AE078E6-218A-4c6a-8653-1639A1A1FF9D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema valida que el estado del contador sea activo de acuerdo a " guid="{05DE62F4-F369-4628-AACE-5B3FB0482D45}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El sistema mostrará la el fomulario de captura de datos del patrón a dictaminar de acuerdo a " guid="{F8E748D5-7815-416b-AD2D-6A23BADACE3A}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="En el campo RFC el actor (CPA) deberá de ingresar el RFC del patrón y presionar el botón validar." guid="{116A2B3A-341E-4477-98AB-AE28F038EC7F}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema validará el RFC de acuerdo a .   En caso de ocurrir algún error el sistema llama a la EX001. Error al validar RFC  " guid="{E436E1F7-4E1D-4b0c-89D6-EA95D36B4882}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="5a" guid="{227B9E5C-7F41-4409-A729-904F1E94EE87}" join="End"/>
+						<step name="FB002. El sistema valida que el estado del contador sea activo de acuerdo a " guid="{05DE62F4-F369-4628-AACE-5B3FB0482D45}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB003. El sistema mostrará el fomulario de captura de datos del patrón a dictaminar de acuerdo a las caracterisiticas mencionadas en" guid="{F8E748D5-7815-416b-AD2D-6A23BADACE3A}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB004. El actor (CPA) ingresa el RFC del patrón y presionar el botón validar." guid="{116A2B3A-341E-4477-98AB-AE28F038EC7F}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB005. El sistema valida el RFC de acuerdo a .   En caso de ocurrir algún error el sistema llama a la EX001. Error al validar RFC  " guid="{E436E1F7-4E1D-4b0c-89D6-EA95D36B4882}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="5a" guid="{227B9E5C-7F41-4409-A729-904F1E94EE87}" join="{E436E1F7-4E1D-4b0c-89D6-EA95D36B4882}"/>
 						</step>
-						<step name="El sistema mostrará la razón social del  patrón" guid="{A7C8E624-52D2-4ea1-B693-FA2AC20EE974}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB006. El sistema muestra el &quot;Nombre o denominación social&quot; del  patrón" guid="{A7C8E624-52D2-4ea1-B693-FA2AC20EE974}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB007. El actor (CPA) captura el &quot;Número de trabajadores promedio&quot;" guid="{62B1D251-6676-4de3-8806-E710C2E51405}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB008. El sistema elige y muestra  el &quot;Tipo de dictamen&quot; de  acuerdo al número de trabajadores promedio" guid="{FFC2E148-B7D6-45d5-8D03-6FF0E103800F}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB009. El actor (CPA) captura el &quot;Número de registro patronales&quot;" guid="{C874F118-E902-45ab-8A5B-87DA159FDACF}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB010. El sistema calcula el &quot;Ejercicio a dictaminar&quot; de acuerdo a " guid="{59E6DBBF-8B0F-4a07-B01E-3A523E8B98A3}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB011. El actor (CPA) responde la pregunta ¿Es Patrón de la industria de la construcción?. Si el actor (CPA) responde &quot;Sí&quot; el flujo continua en FA001. Respuesta afirmativa pregunta ¿Es Patrón de la Industria de la Construcción? Si el  actor responde &quot;No&quot;, continua en el siguiente paso. " guid="{EA750DE4-3E44-44cd-926D-13986C70C4CF}" level="11" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="11a" guid="{D4287220-ABC3-4a22-8D7D-2A70B797D908}" join="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}"/>
+						</step>
+						<step name="FB012. El actor (CPA)  responde la pregunta ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado? Si el actor (CPA) responde &quot;Sí&quot; el flujo continua en FA001. Respuesta afirmativa pregunta ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado? Si el  actor responde &quot;No&quot;, continua en el siguiente paso. " guid="{16A68BBF-1E0A-4053-ADA8-709C8A1A736D}" level="12" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="12a" guid="{6EE2D5A6-686A-42fa-98D3-316985F5E656}" join="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}"/>
+						</step>
+						<step name="FB013. El actor (CPA) responde &quot;Sí&quot; o &quot;No&quot; a  la pregunta ¿Es un patrón o empresa valuada?" guid="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB014. El actor presiona el botón Guardar. O si presiona el boton Limpiar el flujo continua en el FA003. Botón Limpiar" guid="{5F2F96BD-1D09-4809-B583-B2193D646560}" level="14" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="14a" guid="{0CEB7234-F3DA-44f4-B3FC-9FE14150754B}" join="{F8E748D5-7815-416b-AD2D-6A23BADACE3A}"/>
+						</step>
+						<step name="FB015. El sistema valida los campos capturados de acuerdo a . En caso de existir algún error el sistema llama a EX002. Error al validar campos" guid="{08491EF4-4C7C-467a-9B00-35F567853A2C}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB016. Si los datos capturado son correctos el sistema muesta el siguiente mensaje de advertencia &quot;La información capturada ya no podrá ser modificada, ¿Desea continuar?&quot;. Si el actor (CPA) presiona Aceptar, continua en el siguiente paso, en presiona Cancelar o cierra la ventana el flujo continua en  FA004. Cancelar advertencia de botón Guardar." guid="{73A12EB2-13F8-4ff0-A199-0DF882347C02}" level="16" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="16a" guid="{BB9F71FC-EDC7-4124-BFC0-E84C59680507}" join="{5F2F96BD-1D09-4809-B583-B2193D646560}"/>
+						</step>
+						<step name="FB017. Si los datos capturado son correctos, el sistema muestra el siguiente mensaje &quot;La información de Datos del patrón a dictaminar, ha sido guardada satisfactoriamente&quot;. En caso de ocurrir un error al guardar el sistema llama a EX003. Error al guardar" guid="{1FB7560B-C3FF-4573-9864-28B332E18090}" level="17" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="17a" guid="{EEACBA4C-5672-4cf5-AE42-78765445A1B9}" join="{5F2F96BD-1D09-4809-B583-B2193D646560}"/>
+						</step>
+						<step name="FB018.  El sistema inhabilitara los datos capturados, mostrandolos de solo lectura y habilitará las pestañas &quot;Adjuntar aseveraciones y cédulas&quot;, &quot;Información patronal&quot; y &quot;Atestiguamiento&quot;." guid="{739072E0-40B5-4b5c-9BD6-43CF1A7BFF23}" level="18" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB019. Fin de caso de uso" guid="{2975D7F5-169F-4157-A833-F46B3718563C}" level="19" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 						</context>
@@ -227,18 +287,34 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
-			<EAScenario name="FA001. Eliminar archivo" type="Alternate" weight="5.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_6F99C4B6_3649_47f3_AC24_EA7EAD759CCA">
+			<EAScenario name="FA001. Eliminar archivo" type="Alternate" weight="0.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_6F99C4B6_3649_47f3_AC24_EA7EAD759CCA">
 				<EAScenarioContent>
 					<path>
 						<step name="FA001.1 Al dar clic en el icono Eliminar el sistema mostrará el sig. mensaje de advertencia: &quot;Esta seguro que desea eleminar el archivo seleccionado&quot;" guid="{0D3B029A-998D-4c32-8D18-17E92B3DC22C}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FA001.2 Si el actor presiona el botón Aceptar, el archivo será eliminado, y presiona Cancelar el sistema no realizará ninguna acción." guid="{160EC7EB-5A30-452c-84D6-0EC7B54C2FA9}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
-							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
 							<item oldname="RF005 - Caracteristicas físicas layouts" guid="{2FD2B0AD-1D19-4b88-9C6E-207497FB1F7B}"/>
 							<item oldname="RF003 - Estructura layouts aseveraciones" guid="{75E65A70-4B69-4214-92B6-A394C892FB03}"/>
 							<item oldname="RF001 - Detalle sección CPA" guid="{BE883D7A-8F1A-4197-8BC7-176693CC0923}"/>
 							<item oldname="RF004 - Layouts Obligatorios" guid="{E2BEBE6B-572B-40df-8872-545CA0F650C0}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA001. Error eliminar archivo" type="Exception" weight="6.00" subject="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" xmi.id="EAID_C40D5559_661E_4233_805F_ECE21DDDF996">
+				<EAScenarioContent>
+					<path>
+						<step name="FA001.1 Al dar clic en el icono Eliminar el sistema mostrará el sig. mensaje de advertencia: &quot;Esta seguro que desea eleminar el archivo seleccionado&quot;" guid="{98D98225-9963-435b-AF3B-1EE7AD1ED095}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA001.2 Si el actor presiona el botón Aceptar, el archivo será eliminado, y presiona Cancelar el sistema no realizará ninguna acción." guid="{1B880B62-22DA-4ef9-8C0D-6A962A4D30B4}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context>
+							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RF005 - Caracteristicas físicas layouts" guid="{2FD2B0AD-1D19-4b88-9C6E-207497FB1F7B}"/>
+							<item oldname="RF003 - Estructura layouts aseveraciones" guid="{75E65A70-4B69-4214-92B6-A394C892FB03}"/>
+							<item oldname="RF001 - Detalle sección CPA" guid="{BE883D7A-8F1A-4197-8BC7-176693CC0923}"/>
+							<item oldname="RF004 - Layouts Obligatorios" guid="{E2BEBE6B-572B-40df-8872-545CA0F650C0}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -249,7 +325,7 @@
 						<step name="FB01. El caso de uso inicia cuando el actor (CPA) ingresa al modulo de formulacion y presentación de dictamen, sección: Información patronal" guid="{AF1EADFA-8EE5-48a5-B2E9-75DD3A42BEF8}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="FB02. El sistema mostrará la pantalla de Formulación y presentación de dictamen, Donde podrá visualizar la sección Datos del CPA de acuerdo al RF001 - Detalle sección CPA. Y también las sección Datos del patrón a dictaminar de acuerdo al RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{00465BD5-8289-4ce5-85E0-EA54BF54D7C1}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB003. El sistema mostrará la sección de Información patronal con el listado de los conceptos, de acuerdo a RF003 - Estructura layouts aseveraciones" guid="{FA3D299A-8101-4e06-B04A-D827CD4E4FFB}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB04. El usuario agrega los adjuntos obligatorios y/o deseados de acuerdo a RF004 - Layouts Obligatorios" guid="{AB62646D-F838-4fa7-B355-5546A4668C29}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB04. El actor (CPA) agrega los adjuntos obligatorios y/o deseados de acuerdo a RF004 - Layouts Obligatorios" guid="{AB62646D-F838-4fa7-B355-5546A4668C29}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="FB005. El sistema permite que usuario agregue los archivos a las categorias correspondientes." guid="{87A5F733-26D0-4a65-B500-979E9EB65F81}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB006. El sistema muestra el porcentaje de carga de los archivos adjuntos." guid="{61C8C921-63D8-4404-B390-0BB8337C68C7}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB007. El sistema realiza la validaciones fisicas del archivo de acuerdo al RF005 - Caracteristicas físicas layouts. En caso de presentarse algun error, el sistema llama a la EX01. Error validaciones físicas." guid="{B491AD69-18AB-40aa-8C39-70FBBEE8B700}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
@@ -264,10 +340,10 @@
 							<extension level="10a" guid="{31AAD483-F7BB-45ee-8EE8-69A9ABF02131}" join="{FFD85EA3-F8CF-47cc-B415-595868AF1E7D}"/>
 						</step>
 						<step name="FB011. Y el sistema mostrará el mensaje &quot;La carga del archivo ha sido correctamente&quot;" guid="{CEE70AF6-D254-4537-BBDB-44B7F14D0722}" level="11" uses="" useslist="" result="El sistema habilitará el cuestionario de atestiguamiento correspondiente" state="" trigger="0" link=""/>
-						<step name="FB012. El sistema mostrará el archivo cargado, permitiedo al usuario realizar las acciones de eliminar el archivo." guid="{E6623B72-FFA6-4b8c-B155-B70CA9A988E2}" level="12" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="12a" guid="{6F99C4B6-3649-47f3-AC24-EA7EAD759CCA}" join="End"/>
+						<step name="FB012. El sistema mostrará el archivo cargado, permitiedo al usuario realizar las acciones de eliminar el archivo." guid="{E6623B72-FFA6-4b8c-B155-B70CA9A988E2}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB013. Si el usuario da clic en el icono &quot;Eliminar&quot;, el sistema llama al FA001. Eliminar archivo" guid="{50B94F5D-638A-44d5-BCE2-99DAC6486F08}" level="13" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="13a" guid="{C40D5559-661E-4233-805F-ECE21DDDF996}" join="End"/>
 						</step>
-						<step name="FB013. Si el usuario da clic en el icono &quot;Eliminar&quot;, el sistema llama al FA001. Eliminar archivo" guid="{50B94F5D-638A-44d5-BCE2-99DAC6486F08}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="FB014. Fin de caso de uso" guid="{79421BF3-C679-403c-A69A-5214243E8514}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="RF002 - Detalle sección información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
