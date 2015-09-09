@@ -5,11 +5,11 @@ import java.util.List;
 import javax.ejb.Local;
 
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
-import mx.gob.imss.cit.dictamen.commons.to.domain.CuestionarioTO;
+import mx.gob.imss.cit.dictamen.commons.to.CuestionarioTO;
 
 @Local
 public interface CuestionarioService {
 
-
-	List<CuestionarioTO> findCuestionarioById(Integer idCuestionario)throws DictamenException;
+	public List<CuestionarioTO> getCuestionario()throws DictamenException;
+	
 }
