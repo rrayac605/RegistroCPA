@@ -15,7 +15,6 @@ import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioExcepti
 import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUtils;
 import mx.gob.imss.cit.dictamen.services.BovedaService;
 
-
 /**
  * 
  * 
