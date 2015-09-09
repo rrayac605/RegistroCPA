@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-09-03 07:22:14"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\ModuloDeOpinion\Modulo de Opinion.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-08 19:09:34"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-09 10:19:42"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-04 11:50:52"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-04 11:56:50"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-08 20:04:12"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-09 13:16:20"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Opinion"/>
@@ -56,7 +56,7 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="411"/>
+								<UML:TaggedValue tag="ea_localid" value="931"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
@@ -119,14 +119,43 @@
 								</UML:Constraint>
 							</UML:ModelElement.constraint>
 						</UML:UseCase>
-						<UML:Collaboration xmi.id="EAID_CEBB8DDC_1CA9_408f_B8B9_B1C768D9F145_Collaboration" name="Collaborations">
-							<UML:Namespace.ownedElement/>
-							<UML:Collaboration.interaction>
-								<UML:Interaction>
-									<UML:Interaction.message/>
-								</UML:Interaction>
-							</UML:Collaboration.interaction>
-						</UML:Collaboration>
+						<UML:Dependency client="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" supplier="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" xmi.id="EAID_0FA7A1C5_9B67_419c_B922_6E95DCED9648" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="347"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_targetName" value="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="931"/>
+								<UML:TaggedValue tag="ea_targetID" value="996"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
 						<UML:Dependency client="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" supplier="EAID_888CD70B_225C_4b46_89AE_EDD175FE10B1" xmi.id="EAID_2D3CE030_6990_412e_954C_00E0FB8A474A" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
@@ -138,13 +167,50 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="47"/>
+								<UML:TaggedValue tag="ea_localid" value="344"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
 								<UML:TaggedValue tag="ea_targetName" value="RFC006 - Fecha de pago"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="411"/>
-								<UML:TaggedValue tag="ea_targetID" value="423"/>
+								<UML:TaggedValue tag="ea_sourceID" value="931"/>
+								<UML:TaggedValue tag="ea_targetID" value="1004"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" supplier="EAID_3A2A0CAE_E8EC_4856_BF36_A5B7E23BAB0C" xmi.id="EAID_43C0DB98_34CA_4881_AFAE_4D60FE4983FB" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="346"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_targetName" value="RFC010 - DEtalle de captura de limitaciones al alcance de información"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="931"/>
+								<UML:TaggedValue tag="ea_targetID" value="1000"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -175,13 +241,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="48"/>
+								<UML:TaggedValue tag="ea_localid" value="343"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
 								<UML:TaggedValue tag="ea_targetName" value="RFC007 - Observaciones de Opinión y Atestiguamiento"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="411"/>
-								<UML:TaggedValue tag="ea_targetID" value="424"/>
+								<UML:TaggedValue tag="ea_sourceID" value="931"/>
+								<UML:TaggedValue tag="ea_targetID" value="1005"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -212,13 +278,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="50"/>
+								<UML:TaggedValue tag="ea_localid" value="342"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
 								<UML:TaggedValue tag="ea_targetName" value="RFC011 - Fecha de convenio de pago y primer pago"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="411"/>
-								<UML:TaggedValue tag="ea_targetID" value="427"/>
+								<UML:TaggedValue tag="ea_sourceID" value="931"/>
+								<UML:TaggedValue tag="ea_targetID" value="1009"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -238,7 +304,7 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Dependency client="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" supplier="EAID_9A748A89_0611_4068_8513_4194B20435D1" xmi.id="EAID_F38E35CB_4F9B_4fd9_A996_920A725D77D1" visibility="public">
+						<UML:Dependency client="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" supplier="EAID_4FB46B98_C3C6_4306_BA43_C9A1A0F464C3" xmi.id="EAID_CF8B3E44_2CBA_48e6_A385_5985C7B8BF7F" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
 								<UML:TaggedValue tag="ea_type" value="Dependency"/>
@@ -249,13 +315,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="49"/>
+								<UML:TaggedValue tag="ea_localid" value="345"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
-								<UML:TaggedValue tag="ea_targetName" value="RFN002 - Requisitos para tipos de Opinión"/>
+								<UML:TaggedValue tag="ea_targetName" value="RFC009 - Detalle de captura de Rubros y Conceptos"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="411"/>
-								<UML:TaggedValue tag="ea_targetID" value="379"/>
+								<UML:TaggedValue tag="ea_sourceID" value="931"/>
+								<UML:TaggedValue tag="ea_targetID" value="1001"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -284,31 +350,33 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="nsoria"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-04 11:55:18"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-08 14:37:50"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-09 13:16:26"/>
 				<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="18"/>
+				<UML:TaggedValue tag="ea_localid" value="73"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=103;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=23EF9D2D;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=6C05856F;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=729;Top=27;Right=889;Bottom=60;" subject="EAID_4FB46B98_C3C6_4306_BA43_C9A1A0F464C3" seqno="1" style="DUID=20A49250;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=731;Top=178;Right=891;Bottom=237;" subject="EAID_F9DF8799_D998_41a4_B4BF_0EEFD0DE6DC2" seqno="2" style="DUID=A15EECB9;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=422;Top=294;Right=582;Bottom=324;" subject="EAID_888CD70B_225C_4b46_89AE_EDD175FE10B1" seqno="3" style="DUID=ADE943C8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=425;Top=355;Right=585;Bottom=388;" subject="EAID_B704D115_8CF2_4d75_8A94_8F6761649A29" seqno="4" style="DUID=6A46CB75;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=420;Top=151;Right=580;Bottom=223;" subject="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" seqno="5" style="DUID=C565A033;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=420;Top=19;Right=580;Bottom=52;" subject="EAID_BC696B33_03DB_410d_A772_FD20E33241F4" seqno="6" style="DUID=9940AC27;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=737;Top=308;Right=897;Bottom=341;" subject="EAID_9A748A89_0611_4068_8513_4194B20435D1" seqno="7" style="DUID=9DC711BB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=428;Top=426;Right=588;Bottom=459;" subject="EAID_F8DBEFA3_978B_4070_850B_EF40EC17A79B" seqno="8" style="DUID=21E6BF20;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=730;Top=87;Right=890;Bottom=146;" subject="EAID_3A2A0CAE_E8EC_4856_BF36_A5B7E23BAB0C" seqno="9" style="DUID=06645903;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=420;Top=83;Right=580;Bottom=116;" subject="EAID_80FBFEA9_7FC0_4c81_8171_F7F03140235E" seqno="10" style="DUID=732B5B03;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=141;Top=172;Right=310;Bottom=285;" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" seqno="11" style="DUID=1D1A6E97;"/>
-				<UML:DiagramElement geometry="SX=84;SY=-32;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=687:-259$687:-324$;" subject="EAID_F38E35CB_4F9B_4fd9_A996_920A725D77D1" style="Mode=3;EOID=9DC711BB;SOID=1D1A6E97;Color=-1;LWidth=0;TREE=H;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=-17;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=681:-245$681:-207$;" subject="EAID_B8995D2C_C59C_49f9_B518_2DD0FD96C401" style="Mode=3;EOID=A15EECB9;SOID=1D1A6E97;Color=-1;LWidth=0;TREE=H;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=12;SY=-52;EX=-61;EY=-12;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=230:-371$;" subject="EAID_76167110_F4F4_4897_A830_CE2C04717699" style="Mode=2;EOID=6A46CB75;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="Left=420;Top=83;Right=580;Bottom=116;" subject="EAID_80FBFEA9_7FC0_4c81_8171_F7F03140235E" seqno="1" style="DUID=732B5B03;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=420;Top=19;Right=580;Bottom=52;" subject="EAID_BC696B33_03DB_410d_A772_FD20E33241F4" seqno="2" style="DUID=9940AC27;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=737;Top=308;Right=897;Bottom=341;" subject="EAID_9A748A89_0611_4068_8513_4194B20435D1" seqno="3" style="DUID=9DC711BB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=729;Top=27;Right=889;Bottom=60;" subject="EAID_4FB46B98_C3C6_4306_BA43_C9A1A0F464C3" seqno="4" style="DUID=20A49250;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=731;Top=178;Right=891;Bottom=237;" subject="EAID_F9DF8799_D998_41a4_B4BF_0EEFD0DE6DC2" seqno="5" style="DUID=A15EECB9;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=422;Top=294;Right=582;Bottom=324;" subject="EAID_888CD70B_225C_4b46_89AE_EDD175FE10B1" seqno="6" style="DUID=ADE943C8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=425;Top=355;Right=585;Bottom=388;" subject="EAID_B704D115_8CF2_4d75_8A94_8F6761649A29" seqno="7" style="DUID=6A46CB75;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=420;Top=151;Right=580;Bottom=223;" subject="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" seqno="8" style="DUID=C565A033;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=428;Top=426;Right=588;Bottom=459;" subject="EAID_F8DBEFA3_978B_4070_850B_EF40EC17A79B" seqno="9" style="DUID=21E6BF20;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=730;Top=87;Right=890;Bottom=146;" subject="EAID_3A2A0CAE_E8EC_4856_BF36_A5B7E23BAB0C" seqno="10" style="DUID=06645903;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=141;Top=173;Right=310;Bottom=286;" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" seqno="11" style="DUID=1D1A6E97;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0FA7A1C5_9B67_419c_B922_6E95DCED9648" style="Mode=3;EOID=C565A033;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_43C0DB98_34CA_4881_AFAE_4D60FE4983FB" style="Mode=3;EOID=06645903;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_CF8B3E44_2CBA_48e6_A385_5985C7B8BF7F" style="Mode=3;EOID=20A49250;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=24;SY=-56;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=249:-307$325:-309$;" subject="EAID_2D3CE030_6990_412e_954C_00E0FB8A474A" style="Mode=3;EOID=ADE943C8;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=12;SY=-52;EX=-61;EY=-12;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=230:-371$;" subject="EAID_76167110_F4F4_4897_A830_CE2C04717699" style="Mode=2;EOID=6A46CB75;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=-17;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=681:-245$681:-207$;" subject="EAID_B8995D2C_C59C_49f9_B518_2DD0FD96C401" style="Mode=3;EOID=A15EECB9;SOID=1D1A6E97;Color=-1;LWidth=0;TREE=H;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -347,13 +415,20 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
-			<EAScenario name="FA04 Limpiar observaciones" type="Alternate" weight="4.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_9009BACD_9F96_4001_BB4D_0FE46365AA54">
+			<EAScenario name="FA05 Limpiar observaciones" type="Alternate" weight="4.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_9009BACD_9F96_4001_BB4D_0FE46365AA54">
 				<EAScenarioContent>
 					<path>
 						<step name="El CPA da clic en el botón Limpiar" guid="{290DB3B4-C947-4ef5-B964-D8CF2A0AACD2}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema elimina el texto del cuadro de texto de Observaciones. Continua en el paso 14 del flujo básico." guid="{55CE87A4-C9B6-4c59-B9C9-D16FCA3736E1}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="Termina flujo alterno" guid="{648765A0-778C-4729-89EE-CAB4C0D61B6A}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<context/>
+						<context>
+							<item oldname="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RFC010 - DEtalle de captura de limitaciones al alcance de información" guid="{3A2A0CAE-E8EC-4856-BF36-A5B7E23BAB0C}"/>
+							<item oldname="RFC009 - Detalle de captura de Rubros y Conceptos" guid="{4FB46B98-C3C6-4306-BA43-C9A1A0F464C3}"/>
+							<item oldname="RFC006 - Fecha de pago" guid="{888CD70B-225C-4b46-89AE-EDD175FE10B1}"/>
+							<item oldname="RFC007 - Observaciones de Opinión y Atestiguamiento" guid="{B704D115-8CF2-4d75-8A94-8F6761649A29}"/>
+							<item oldname="RFC011 - Fecha de convenio de pago y primer pago" guid="{F9DF8799-D998-41a4-B4BF-0EEFD0DE6DC2}"/>
+						</context>
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
@@ -361,45 +436,56 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El CPA selecciona la opción de Opinión en la pantalla de Formulación de Dictamen." guid="{C4462B08-BC72-4a12-8E4E-C674BC55C772}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema muestra en pantalla RFC002 y el campo para seleccionar el tipo de opinión:&#xA;&#xA;•	Sin Salvedad&#xA;•	Con Salvedad&#xA;•	Negativa,&#xA;•	Abstención &#xA;" guid="{3DF2E637-CA78-4991-9504-F53350B515B3}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA selecciona la opción de Opinión que quiere emitir Con salvedad. Se llama FA02. RFN002." guid="{F0C14717-D177-4511-B238-03BEE09EA6EE}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
+						<step name="El sistema muestra en pantalla RFC002 y el campo para seleccionar el tipo de opinión. RFC001&#xA;" guid="{3DF2E637-CA78-4991-9504-F53350B515B3}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA selecciona la opción de Opinión que quiere emitir. Se llama FA02, FA03, FA04 o en caso de seleccionar Sin Salvedad  continua en el paso RFN002." guid="{F0C14717-D177-4511-B238-03BEE09EA6EE}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="3a" guid="{1EFA3F5E-A1F3-4d40-B41B-8DDF98B1339A}" join="End"/>
+							<extension level="3b" guid="{33FBAD2A-FD85-46a6-BF89-28E749F3D972}" join="End"/>
 						</step>
-						<step name="En caso que el CPA de clic en la opción Abstención, se llama FA03. RFN002." guid="{AB630823-70A6-45b5-82FD-0B1FE774D30D}" level="4" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="4a" guid="{33FBAD2A-FD85-46a6-BF89-28E749F3D972}" join="End"/>
+						<step name="En caso que el CPA de clic en la opción Negativa, continua en el paso 14 del flujo básico. RFN002." guid="{2D52B7A5-1E15-4496-8283-18B6C08F4AAD}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA da clic en la opción Sin salvedad. RFN002.	" guid="{95CE48D2-C63F-4730-9ED3-EAA9EE10D11D}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema despliega en pantalla las opciones Con pago y Sin pago. " guid="{A5A93602-3C7E-400b-8C6D-8A2C605DC7C5}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Si el CPA selecciona la opción Sin pago, se llama al paso 14 del Flujo básico." guid="{D10D3F46-0423-4da9-AC63-F3863EA44975}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El CPA selecciona la opción Con pagos, " guid="{4BFF767D-4969-49d5-B969-3138AC021CD4}" level="8" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema habilita el campo Forma de pago con las opciones desplegables de:&#xA;•	Una Exhibición&#xA;•	Parcialidades&#xA;" guid="{3059D5AF-DC01-4891-8749-DDEF803C2259}" level="9" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario selecciona la opción Una exhibición." guid="{8C161AC6-C745-40df-BFDC-7F8DACB74B5A}" level="10" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema habilita el campo Fecha de pago." guid="{84059557-80A3-4353-8750-53EA2F3845D7}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario captura la fecha en que realizó el pago. RFC006. Continua en el paso 14." guid="{8B856C3B-71D4-4f9b-8EF0-EE3514B549D8}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="En caso que el CPA seleccione la opción de Forma de pago de Parcilaidades, se llama al FA01." guid="{5D757B3C-89F8-430a-B9AB-779D3EEA6D24}" level="13" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="13a" guid="{A28460E1-FF02-450a-BE93-574F4443A30C}" join="End"/>
 						</step>
-						<step name="En caso que el CPA de clic en la opción Negativa, continua en el paso 14 del flujo básico. RFN002." guid="{2D52B7A5-1E15-4496-8283-18B6C08F4AAD}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA da clic en la opción Sin salvedad. RFN002.	" guid="{95CE48D2-C63F-4730-9ED3-EAA9EE10D11D}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema despliega en pantalla las opciones Con pago y Sin pago. " guid="{A5A93602-3C7E-400b-8C6D-8A2C605DC7C5}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="Si el CPA selecciona la opción Sin pago, se llama al paso 14 del Flujo básico." guid="{D10D3F46-0423-4da9-AC63-F3863EA44975}" level="8" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El CPA selecciona la opción Con pagos, " guid="{4BFF767D-4969-49d5-B969-3138AC021CD4}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema habilita el campo Forma de pago con las opciones desplegables de:&#xA;•	Una Exhibición&#xA;•	Parcialidades&#xA;" guid="{3059D5AF-DC01-4891-8749-DDEF803C2259}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El usuario selecciona la opción Una exhibición." guid="{8C161AC6-C745-40df-BFDC-7F8DACB74B5A}" level="11" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema habilita el campo Fecha de pago." guid="{84059557-80A3-4353-8750-53EA2F3845D7}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El usuario captura la fecha en que realizó el pago. RFC006. Continua en el paso 14." guid="{8B856C3B-71D4-4f9b-8EF0-EE3514B549D8}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="En caso que el CPA seleccione la opción de Forma de pago de Parcilaidades, se llama al FA01." guid="{5D757B3C-89F8-430a-B9AB-779D3EEA6D24}" level="14" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="14a" guid="{A28460E1-FF02-450a-BE93-574F4443A30C}" join="End"/>
+						<step name="El sistema habilita el cuadro de texto de Observaciones." guid="{E412C7EE-2287-42c0-B045-D91349A62046}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="En caso que el CPA no capture información en el campo observaciones, continua en el paso 19 del flujo básico." guid="{439DD730-0809-4cb3-B637-F6116668F7F6}" level="15" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El CPA captura información en el campo de texto de observaciones RFC007." guid="{E2F07429-66B8-450d-85CC-5D956FA66A14}" level="16" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="En caso que el CPA complete las observaciones da clic en el boton Guardar . Continua en el paso 19." guid="{1276C1C6-95F8-4734-9B68-A52D7A7C5CE3}" level="17" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="En caso que el CPA desee limpiar el campo llama a FA04." guid="{EE2DC8E5-3693-46de-B003-63A2CE884715}" level="18" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="18a" guid="{9009BACD-9F96-4001-BB4D-0FE46365AA54}" join="End"/>
 						</step>
-						<step name="El sistema habilita el cuadro de texto de Observaciones." guid="{E412C7EE-2287-42c0-B045-D91349A62046}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="En caso que el CPA no capture información en el campo observaciones, continua en el paso 19 del flujo básico." guid="{439DD730-0809-4cb3-B637-F6116668F7F6}" level="16" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El CPA captura información en el campo de texto de observaciones RFC007." guid="{E2F07429-66B8-450d-85CC-5D956FA66A14}" level="17" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="En caso que el CPA complete las observaciones da clic en el boton Guardar . Continua en el paso 19." guid="{1276C1C6-95F8-4734-9B68-A52D7A7C5CE3}" level="18" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="En caso que el CPA desee limpiar el campo llama a FA04." guid="{EE2DC8E5-3693-46de-B003-63A2CE884715}" level="19" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="19a" guid="{9009BACD-9F96-4001-BB4D-0FE46365AA54}" join="End"/>
-						</step>
-						<step name="El CPA da clic en el botón Acciones y selecciona la opción Vista previa para visualizar la Opinión RFC008. " guid="{6216EF13-1C85-4b56-AF3C-6D860DDEAE7C}" level="20" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema muestra en pantalla la vista previa de la opinión de acuerdo a la RFC008. Continua en el paso 22." guid="{ED3B1280-D9FD-4b63-8F0E-89EA3F8756AE}" level="21" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name=" En caso que el CPA quiera cambiar su Opinión da clic en el botón Acciones y selcciona la opción Cancelar. Regresa al paso 1." guid="{3E4E40F3-F715-4024-BADC-3C1C9029600B}" level="22" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El CPA da clic en el botón Acciones  y selecciona la opción Firmar Trámite" guid="{0D0E329B-8780-4419-BC3B-DB93327631EE}" level="23" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema despliega la ventana del componente de firma digital, con los siguientes campos: &#xA;•	Registro Federal de Contribuyentes (RFC) (captura)&#xA;•	Certificado (archivo *.cer) (selección) y botón Examinar&#xA;•	Clave privada (archivo *.key) (selección) y botón Examinar&#xA;•	Contraseña de clave privada (captura)&#xA;Botón Firmar " guid="{5CB6A1D9-5221-4a88-A79B-C55793927E49}" level="24" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El usuario captura y selecciona los archivos correspondientes a la firma electrónica y da clic en el botón Firmar." guid="{A4ECB361-1EC1-44ae-8429-01430418C65B}" level="25" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema realiza la firma del trámite y genera el acuse respectivo. RFC008.&#xA;El sistema almacena el acuse en la notaria electrónica." guid="{44B3C3F6-5D36-4f45-941C-FE1FA360F705}" level="26" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El sistema despliega en pantalla el documento del acuse  en PDF y lo envía por correo electrónico al CPA y al Patrón dictaminado." guid="{4F4B831D-581B-48e0-8C07-8B152AB7FB64}" level="27" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="Termina caso de uso" guid="{9BB8B2A1-ED95-44ac-9790-B212C238D437}" level="28" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<context/>
+						<step name="El CPA da clic en el botón Acciones y selecciona la opción Vista previa para visualizar la Opinión RFC008. " guid="{6216EF13-1C85-4b56-AF3C-6D860DDEAE7C}" level="19" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra en pantalla la vista previa de la opinión de acuerdo a la RFC008. Continua en el paso 22." guid="{ED3B1280-D9FD-4b63-8F0E-89EA3F8756AE}" level="20" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name=" En caso que el CPA quiera cambiar su Opinión da clic en el botón Acciones y selcciona la opción Cancelar. Regresa al paso 1." guid="{3E4E40F3-F715-4024-BADC-3C1C9029600B}" level="21" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El CPA da clic en el botón Acciones  y selecciona la opción Firmar Trámite" guid="{0D0E329B-8780-4419-BC3B-DB93327631EE}" level="22" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema despliega la ventana del componente de firma digital, con los siguientes campos: &#xA;•	Registro Federal de Contribuyentes (RFC) (captura)&#xA;•	Certificado (archivo *.cer) (selección) y botón Examinar&#xA;•	Clave privada (archivo *.key) (selección) y botón Examinar&#xA;•	Contraseña de clave privada (captura)&#xA;Botón Firmar " guid="{5CB6A1D9-5221-4a88-A79B-C55793927E49}" level="23" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario captura y selecciona los archivos correspondientes a la firma electrónica y da clic en el botón Firmar." guid="{A4ECB361-1EC1-44ae-8429-01430418C65B}" level="24" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema realiza la firma del trámite y genera el acuse respectivo. RFC008.&#xA;El sistema almacena el acuse en la notaria electrónica." guid="{44B3C3F6-5D36-4f45-941C-FE1FA360F705}" level="25" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema despliega en pantalla el documento del acuse  en PDF y lo envía por correo electrónico al CPA y al Patrón dictaminado." guid="{4F4B831D-581B-48e0-8C07-8B152AB7FB64}" level="26" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Termina caso de uso" guid="{9BB8B2A1-ED95-44ac-9790-B212C238D437}" level="27" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RFC010 - DEtalle de captura de limitaciones al alcance de información" guid="{3A2A0CAE-E8EC-4856-BF36-A5B7E23BAB0C}"/>
+							<item oldname="RFC009 - Detalle de captura de Rubros y Conceptos" guid="{4FB46B98-C3C6-4306-BA43-C9A1A0F464C3}"/>
+							<item oldname="RFC006 - Fecha de pago" guid="{888CD70B-225C-4b46-89AE-EDD175FE10B1}"/>
+							<item oldname="RFC007 - Observaciones de Opinión y Atestiguamiento" guid="{B704D115-8CF2-4d75-8A94-8F6761649A29}"/>
+							<item oldname="RFC011 - Fecha de convenio de pago y primer pago" guid="{F9DF8799-D998-41a4-B4BF-0EEFD0DE6DC2}"/>
+						</context>
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
 		</EAModel.scenario>
+		<EAStub xmi.id="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" name="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_888CD70B_225C_4b46_89AE_EDD175FE10B1" name="RFC006 - Fecha de pago" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_3A2A0CAE_E8EC_4856_BF36_A5B7E23BAB0C" name="RFC010 - DEtalle de captura de limitaciones al alcance de información" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_B704D115_8CF2_4d75_8A94_8F6761649A29" name="RFC007 - Observaciones de Opinión y Atestiguamiento" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_F9DF8799_D998_41a4_B4BF_0EEFD0DE6DC2" name="RFC011 - Fecha de convenio de pago y primer pago" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_4FB46B98_C3C6_4306_BA43_C9A1A0F464C3" name="RFC009 - Detalle de captura de Rubros y Conceptos" UMLType="Requirement"/>
 	</XMI.extensions>
 </XMI>
