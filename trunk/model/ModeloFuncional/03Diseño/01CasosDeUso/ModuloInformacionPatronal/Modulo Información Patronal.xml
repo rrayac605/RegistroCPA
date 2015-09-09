@@ -10,7 +10,7 @@
 		<UML:Model name="EA Model" xmi.id="MX_EAID_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B">
 			<UML:Namespace.ownedElement>
 				<UML:Class name="EARootClass" xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" isRoot="true" isLeaf="false" isAbstract="false"/>
-				<UML:Package name="CU01 Modulo Información Patronal" xmi.id="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+				<UML:Package name="Modulo Información Patronal" xmi.id="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 					<UML:ModelElement.taggedValue>
 						<UML:TaggedValue tag="parent" value="EAPK_D1AD955A_A79E_4153_B8A5_A165DCD7437D"/>
 						<UML:TaggedValue tag="created" value="2015-09-07 09:49:58"/>
@@ -37,9 +37,9 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:UseCase name="Captura datos del patrón a dictaminar" xmi.id="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" visibility="public" namespace="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false">
+						<UML:UseCase name="Capturar datos del patrón a dictaminar" xmi.id="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" visibility="public" namespace="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="El CU describe la captura de datos del patron a dictaminar"/>
+								<UML:TaggedValue tag="documentation" value="El CPA capturará los datos del patron a dictaminar."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -47,10 +47,10 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-08 17:22:40"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-08 23:20:23"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-09 09:47:12"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="CU01 Modulo Información Patronal"/>
+								<UML:TaggedValue tag="package_name" value="Modulo Información Patronal"/>
 								<UML:TaggedValue tag="phase" value="1.0"/>
 								<UML:TaggedValue tag="author" value="JROJAS"/>
 								<UML:TaggedValue tag="complexity" value="1"/>
@@ -61,6 +61,15 @@
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={A36CF139-2FF2-4c20-9B60-AD27AB4122D0}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={6D454965-05F0-4481-A9AF-FD87841DA78E}$CLT;$SUP={B48FC839-FD4F-4297-81F1-3C0254D8B6B3}$SUP;$ENDXREF;$XREFPROP=$XID={B3CD376E-126B-46b8-A298-DD49752C743A}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={6D454965-05F0-4481-A9AF-FD87841DA78E}$CLT;$SUP={18B9C033-886D-4b61-834E-5B2C8693067E}$SUP;$ENDXREF;$XREFPROP=$XID={254871D6-14BE-4c43-9F5C-FB57BED7F051}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={6D454965-05F0-4481-A9AF-FD87841DA78E}$CLT;$SUP={F5B26D3A-FCA9-4449-8BBB-210FC8C73DD1}$SUP;$ENDXREF;$XREFPROP=$XID={EE274FF4-7A03-4071-BC48-7F601C19ADB2}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={6D454965-05F0-4481-A9AF-FD87841DA78E}$CLT;$SUP={E2AC7350-DF80-4c0f-9F6D-787DEE7F4F53}$SUP;$ENDXREF;$XREFPROP=$XID={6B11E5A8-1F64-4111-9418-FF15FFA2E872}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={6D454965-05F0-4481-A9AF-FD87841DA78E}$CLT;$SUP={65BBC16A-2640-4ca6-AC6A-4A4BA4E21810}$SUP;$ENDXREF;$XREFPROP=$XID={15017D58-2118-436c-B351-61805AC94825}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={6D454965-05F0-4481-A9AF-FD87841DA78E}$CLT;$SUP={ED830093-0EF7-4fef-BEB3-77BD1477807A}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="El sistema valida que el estado del contador sea activo de acuerdo a RFA009 - Validar estatus de CPA">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
 						</UML:UseCase>
 						<UML:UseCase name="Carga y validación archivos aseveraciones" xmi.id="EAID_E041F09B_720D_4718_94C3_E8907CC31B52" visibility="public" namespace="EAPK_D7F330B2_E0F2_43d0_BBE1_EAB72F9CCE4B" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
@@ -75,7 +84,7 @@
 								<UML:TaggedValue tag="date_modified" value="2015-09-08 19:10:14"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="CU01 Modulo Información Patronal"/>
+								<UML:TaggedValue tag="package_name" value="Modulo Información Patronal"/>
 								<UML:TaggedValue tag="phase" value="1.0"/>
 								<UML:TaggedValue tag="author" value="JROJAS"/>
 								<UML:TaggedValue tag="complexity" value="1"/>
@@ -123,6 +132,7 @@
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_sourceID" value="484"/>
 								<UML:TaggedValue tag="ea_targetID" value="958"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 							<UML:Association.connection>
@@ -262,44 +272,43 @@
 			<EAScenario name="FB. Capturar datos del patrón a dictaminar" type="Basic Path" weight="0.00" description="Describe la captura de los datos de patrón a dictaminar" subject="EAID_6D454965_05F0_4481_A9AF_FD87841DA78E" xmi.id="EAID_76CD1603_B5D2_4149_BF55_B8E79DC0B2C0">
 				<EAScenarioContent>
 					<path>
-						<step name="FB001. El caso de uso inicia cuando el actor (CPA) ingresa al modulo de Formulación y presentación de dictamen" guid="{0AE078E6-218A-4c6a-8653-1639A1A1FF9D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="FB002. El sistema valida que el estado del contador sea activo de acuerdo a RFA009 - Validar estatus de contado" guid="{05DE62F4-F369-4628-AACE-5B3FB0482D45}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB003. El sistema mostrará el fomulario de captura de datos del patrón a dictaminar de acuerdo a las caracterisiticas mencionadas en FRC013 - Campos datos del patrón a dictaminar" guid="{F8E748D5-7815-416b-AD2D-6A23BADACE3A}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB004. El actor (CPA) ingresa el RFC del patrón y presionar el botón validar." guid="{116A2B3A-341E-4477-98AB-AE28F038EC7F}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="FB005. El sistema valida el RFC de acuerdo a RFA010 - Validar RFC del patrón.   En caso de ocurrir algún error el sistema llama a la EX001. Error al validar RFC  " guid="{E436E1F7-4E1D-4b0c-89D6-EA95D36B4882}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="5a" guid="{227B9E5C-7F41-4409-A729-904F1E94EE87}" join="{E436E1F7-4E1D-4b0c-89D6-EA95D36B4882}"/>
+						<step name="FB001. El CPA Ingresa al modulo de Formulación y presentación de dictamen" guid="{0AE078E6-218A-4c6a-8653-1639A1A1FF9D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB002. El sistema mostrará el fomulario de captura de datos del patrón a dictaminar de acuerdo a las caracterisiticas mencionadas en RFC013 - Campos datos del patrón a dictaminar" guid="{F8E748D5-7815-416b-AD2D-6A23BADACE3A}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB004. El actor (CPA) ingresa el RFC del patrón y presionar el botón validar." guid="{116A2B3A-341E-4477-98AB-AE28F038EC7F}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB005. El sistema valida el RFC de acuerdo a RFA010 - Validar RFC del patrón.   En caso de ocurrir algún error el sistema llama a la EX001. Error al validar RFC  " guid="{E436E1F7-4E1D-4b0c-89D6-EA95D36B4882}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="4a" guid="{227B9E5C-7F41-4409-A729-904F1E94EE87}" join="{E436E1F7-4E1D-4b0c-89D6-EA95D36B4882}"/>
 						</step>
-						<step name="FB006. El sistema muestra el &quot;Nombre o denominación social&quot; del  patrón" guid="{A7C8E624-52D2-4ea1-B693-FA2AC20EE974}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB007. El actor (CPA) captura el &quot;Número de trabajadores promedio&quot;" guid="{62B1D251-6676-4de3-8806-E710C2E51405}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="FB008. El sistema elige y muestra  el &quot;Tipo de dictamen&quot; de  acuerdo al número de trabajadores promedio capturado según la RFA011 - Obtener tipo de dictamen" guid="{FFC2E148-B7D6-45d5-8D03-6FF0E103800F}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB009. El actor (CPA) captura el &quot;Número de registro patronales&quot;" guid="{C874F118-E902-45ab-8A5B-87DA159FDACF}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="FB010. El sistema calcula el &quot;Ejercicio a dictaminar&quot; de acuerdo a RFA012 - Determinar ejercicio a dictaminar" guid="{59E6DBBF-8B0F-4a07-B01E-3A523E8B98A3}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB011. El actor (CPA) responde la pregunta ¿Es Patrón de la industria de la construcción?. Si el actor (CPA) responde &quot;Sí&quot; el flujo continua en FA001. Respuesta afirmativa pregunta ¿Es Patrón de la Industria de la Construcción? Si el  actor responde &quot;No&quot;, continua en el siguiente paso. " guid="{EA750DE4-3E44-44cd-926D-13986C70C4CF}" level="11" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="11a" guid="{D4287220-ABC3-4a22-8D7D-2A70B797D908}" join="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}"/>
+						<step name="FB006. El sistema muestra el &quot;Nombre o denominación social&quot; del  patrón" guid="{A7C8E624-52D2-4ea1-B693-FA2AC20EE974}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB007. El actor (CPA) captura el &quot;Número de trabajadores promedio&quot;" guid="{62B1D251-6676-4de3-8806-E710C2E51405}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB008. El sistema elige y muestra  el &quot;Tipo de dictamen&quot; de  acuerdo al número de trabajadores promedio capturado según la RFA011 - Obtener tipo de dictamen" guid="{FFC2E148-B7D6-45d5-8D03-6FF0E103800F}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB009. El actor (CPA) captura el &quot;Número de registro patronales&quot;" guid="{C874F118-E902-45ab-8A5B-87DA159FDACF}" level="8" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB010. El sistema calcula el &quot;Ejercicio a dictaminar&quot; de acuerdo a RFA012 - Determinar ejercicio a dictaminar" guid="{59E6DBBF-8B0F-4a07-B01E-3A523E8B98A3}" level="9" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB011. El actor (CPA) responde la pregunta ¿Es Patrón de la industria de la construcción?. Si el actor (CPA) responde &quot;Sí&quot; el flujo continua en FA001. Respuesta afirmativa pregunta ¿Es Patrón de la Industria de la Construcción? Si el  actor responde &quot;No&quot;, continua en el siguiente paso. " guid="{EA750DE4-3E44-44cd-926D-13986C70C4CF}" level="10" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="10a" guid="{D4287220-ABC3-4a22-8D7D-2A70B797D908}" join="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}"/>
 						</step>
-						<step name="FB012. El actor (CPA)  responde la pregunta ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado? Si el actor (CPA) responde &quot;Sí&quot; el flujo continua en FA001. Respuesta afirmativa pregunta ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado? Si el  actor responde &quot;No&quot;, continua en el siguiente paso. " guid="{16A68BBF-1E0A-4053-ADA8-709C8A1A736D}" level="12" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="12a" guid="{6EE2D5A6-686A-42fa-98D3-316985F5E656}" join="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}"/>
+						<step name="FB012. El actor (CPA)  responde la pregunta ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado? Si el actor (CPA) responde &quot;Sí&quot; el flujo continua en FA001. Respuesta afirmativa pregunta ¿Realizó esporádicamente actividades de la construcción o presentó algún registro de obra en el ejercicio dictaminado? Si el  actor responde &quot;No&quot;, continua en el siguiente paso. " guid="{16A68BBF-1E0A-4053-ADA8-709C8A1A736D}" level="11" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="11a" guid="{6EE2D5A6-686A-42fa-98D3-316985F5E656}" join="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}"/>
 						</step>
-						<step name="FB013. El actor (CPA) responde &quot;Sí&quot; o &quot;No&quot; a  la pregunta ¿Es un patrón o empresa valuada?" guid="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="FB014. El actor presiona el botón Guardar. O si presiona el boton Limpiar el flujo continua en el FA003. Botón Limpiar" guid="{5F2F96BD-1D09-4809-B583-B2193D646560}" level="14" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="14a" guid="{0CEB7234-F3DA-44f4-B3FC-9FE14150754B}" join="{F8E748D5-7815-416b-AD2D-6A23BADACE3A}"/>
+						<step name="FB013. El actor (CPA) responde &quot;Sí&quot; o &quot;No&quot; a  la pregunta ¿Es un patrón o empresa valuada?" guid="{9062E8CC-EE02-43ca-AF74-D1E708C4D99E}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB014. El actor presiona el botón Guardar. O si presiona el boton Limpiar el flujo continua en el FA003. Botón Limpiar" guid="{5F2F96BD-1D09-4809-B583-B2193D646560}" level="13" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="13a" guid="{0CEB7234-F3DA-44f4-B3FC-9FE14150754B}" join="{F8E748D5-7815-416b-AD2D-6A23BADACE3A}"/>
 						</step>
-						<step name="FB015. El sistema valida los campos capturados de acuerdo a . En caso de existir algún error el sistema llama a EX002. Error al validar campos" guid="{08491EF4-4C7C-467a-9B00-35F567853A2C}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB016. Si los datos capturado son correctos el sistema muesta el siguiente mensaje de advertencia &quot;La información capturada ya no podrá ser modificada, ¿Desea continuar?&quot;. Si el actor (CPA) presiona Aceptar, continua en el siguiente paso, en presiona Cancelar o cierra la ventana el flujo continua en  FA004. Cancelar advertencia de botón Guardar." guid="{73A12EB2-13F8-4ff0-A199-0DF882347C02}" level="16" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="16a" guid="{BB9F71FC-EDC7-4124-BFC0-E84C59680507}" join="{5F2F96BD-1D09-4809-B583-B2193D646560}"/>
+						<step name="FB015. El sistema valida los campos capturados de acuerdo a . En caso de existir algún error el sistema llama a EX002. Error al validar campos" guid="{08491EF4-4C7C-467a-9B00-35F567853A2C}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB016. Si los datos capturado son correctos el sistema muesta el siguiente mensaje de advertencia &quot;La información capturada ya no podrá ser modificada, ¿Desea continuar?&quot;. Si el actor (CPA) presiona Aceptar, continua en el siguiente paso, en presiona Cancelar o cierra la ventana el flujo continua en  FA004. Cancelar advertencia de botón Guardar." guid="{73A12EB2-13F8-4ff0-A199-0DF882347C02}" level="15" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="15a" guid="{BB9F71FC-EDC7-4124-BFC0-E84C59680507}" join="{5F2F96BD-1D09-4809-B583-B2193D646560}"/>
 						</step>
-						<step name="FB017. Si los datos capturado son correctos, el sistema muestra el siguiente mensaje &quot;La información de Datos del patrón a dictaminar, ha sido guardada satisfactoriamente&quot;. En caso de ocurrir un error al guardar el sistema llama a EX003. Error al guardar" guid="{1FB7560B-C3FF-4573-9864-28B332E18090}" level="17" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="17a" guid="{EEACBA4C-5672-4cf5-AE42-78765445A1B9}" join="{5F2F96BD-1D09-4809-B583-B2193D646560}"/>
+						<step name="FB017. Si los datos capturado son correctos, el sistema muestra el siguiente mensaje &quot;La información de Datos del patrón a dictaminar, ha sido guardada satisfactoriamente&quot;. En caso de ocurrir un error al guardar el sistema llama a EX003. Error al guardar" guid="{1FB7560B-C3FF-4573-9864-28B332E18090}" level="16" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="16a" guid="{EEACBA4C-5672-4cf5-AE42-78765445A1B9}" join="{5F2F96BD-1D09-4809-B583-B2193D646560}"/>
 						</step>
-						<step name="FB018.  El sistema inhabilitara los datos capturados, mostrandolos de solo lectura y habilitará las pestañas &quot;Adjuntar aseveraciones y cédulas&quot;, &quot;Información patronal&quot; y &quot;Atestiguamiento&quot;." guid="{739072E0-40B5-4b5c-9BD6-43CF1A7BFF23}" level="18" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB019. Fin de caso de uso" guid="{2975D7F5-169F-4157-A833-F46B3718563C}" level="19" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB018.  El sistema inhabilitara los datos capturados, mostrandolos de solo lectura y habilitará las pestañas &quot;Adjuntar aseveraciones y cédulas&quot;, &quot;Información patronal&quot; y &quot;Atestiguamiento&quot;." guid="{739072E0-40B5-4b5c-9BD6-43CF1A7BFF23}" level="17" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB019. Fin de caso de uso" guid="{2975D7F5-169F-4157-A833-F46B3718563C}" level="18" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
 							<item oldname="RFA009 - Validar estatus de contado" guid="{18B9C033-886D-4b61-834E-5B2C8693067E}"/>
-							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
-							<item oldname="RFA010 - Validar RFC del patrón" guid="{E2AC7350-DF80-4c0f-9F6D-787DEE7F4F53}"/>
 							<item oldname="RFA011 - Obtener tipo de dictamen" guid="{65BBC16A-2640-4ca6-AC6A-4A4BA4E21810}"/>
 							<item oldname="RFA012 - Determinar ejercicio a dictaminar" guid="{ED830093-0EF7-4fef-BEB3-77BD1477807A}"/>
-							<item oldname="FRC013 - Campos datos del patrón a dictaminar" guid="{F5B26D3A-FCA9-4449-8BBB-210FC8C73DD1}"/>
+							<item oldname="RFC013 - Campos datos del patrón a dictaminar" guid="{F5B26D3A-FCA9-4449-8BBB-210FC8C73DD1}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RFA010 - Validar RFC del patrón" guid="{E2AC7350-DF80-4c0f-9F6D-787DEE7F4F53}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
