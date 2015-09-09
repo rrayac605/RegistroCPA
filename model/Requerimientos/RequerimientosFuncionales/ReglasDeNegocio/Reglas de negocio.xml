@@ -294,20 +294,57 @@
 										<UML:TaggedValue tag="priority" value="Medium"/>
 										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={49411C3D-E415-41fa-8F32-D05EB47D3D0D}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={E2BEBE6B-572B-40df-8872-545CA0F650C0}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-										<UML:TaggedValue tag="modeldocument" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIACKYKEcHftJcRQEAAEYCAAAHABEAc3RyLmRhdFVUDQAHnTDvVZ0w71WdMO9V
+										<UML:TaggedValue tag="modeldocument" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAPCgKEcHftJcRQEAAEYCAAAHABEAc3RyLmRhdFVUDQAHDEDvVQxA71UMQO9V
 bVHBTsMwDL1P2j/kzCmtWjFpJyTEEXHhlovbOmlZlhTHpUzT/h1nLQMhLsnzs/Nsv5wNsS0M
 hDSYDq2H4Epd74zl0LyZqS0ya/V2czY2BubGC9DK2DQPKakHGsDvL5ecb6OPJAVqbwi7sq6N
 I8SQQeMnlHvJ6IXXV1ar/fVx4pPH1CNy1hf5slLPkY5ZXaRToR7RwuRZvQCBIxh79SQDrb3v
 RPgjD/caDiHO4UqbEUakuSjLSi+4L+qd4COQ88VOL4huiItqzTZX1CN0SKf7UgaKkVcYoqM4
 w8TRDpztYWiWEjqmXl5IhUXgiZB7isweC2ORKwMYuiA6yYD4G8i3ZnQNdZQbrTA3ktETtpyp
 OX2GdQHXZ/yzQI5uO/wOOAe3Tb6D/5dJzWEEh6IeWrEz3x222TsPQ1jP9UPMu/9DjEDbjTj9
-BVBLAQIXCxQAAAAIACKYKEcHftJcRQEAAEYCAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIuZGF0
-VVQFAAedMO9VUEsFBgAAAAABAAEAPgAAAHsBAAAAAA==</UML:TaggedValue>
+BVBLAQIXCxQAAAAIAPCgKEcHftJcRQEAAEYCAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIuZGF0
+VVQFAAcMQO9VUEsFBgAAAAABAAEAPgAAAHsBAAAAAA==</UML:TaggedValue>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
 							</UML:Namespace.ownedElement>
 							<UML:Collaboration.interaction/>
 						</UML:Collaboration>
+						<UML:Dependency client="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" supplier="EAID_0F1DD5A1_5567_45ab_BD1D_3371A1EC7A25" xmi.id="EAID_6AB13E58_8115_4b62_A9AC_D9BD2E0CE79E" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="454"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Contestar examen de atestiguamiento"/>
+								<UML:TaggedValue tag="ea_targetName" value="RFN004- Cantidad limite de respuestas"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2615"/>
+								<UML:TaggedValue tag="ea_targetID" value="2651"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
 						<UML:Dependency client="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" supplier="EAID_9A748A89_0611_4068_8513_4194B20435D1" xmi.id="EAID_F38E35CB_4F9B_4fd9_A996_920A725D77D1" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
@@ -346,6 +383,80 @@ VVQFAAedMO9VUEsFBgAAAAABAAEAPgAAAHsBAAAAAA==</UML:TaggedValue>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
+						<UML:Dependency client="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" supplier="EAID_D38931F8_5199_4dd0_8FE1_CC97991980FF" xmi.id="EAID_2A3146F9_7C99_43f0_82D9_AB139C289444" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="455"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Contestar examen de atestiguamiento"/>
+								<UML:TaggedValue tag="ea_targetName" value="RFN005 - Opción de respuesta"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2615"/>
+								<UML:TaggedValue tag="ea_targetID" value="2656"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" supplier="EAID_E22E695B_8456_4775_9A61_383D0497E568" xmi.id="EAID_CE5D7834_49C5_435e_9369_2D0E327C14D8" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="453"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Contestar examen de atestiguamiento"/>
+								<UML:TaggedValue tag="ea_targetName" value="RFN008 - Exámenes Obligatorios"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2615"/>
+								<UML:TaggedValue tag="ea_targetID" value="2658"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -375,9 +486,24 @@ VVQFAAedMO9VUEsFBgAAAAABAAEAPgAAAHsBAAAAAA==</UML:TaggedValue>
 				<UML:DiagramElement geometry="Left=48;Top=32;Right=158;Bottom=76;" subject="EAID_E2BEBE6B_572B_40df_8872_545CA0F650C0" seqno="8" style="DUID=9CE780BF;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
+		<UML:DiagramElement geometry="Left=398;Top=95;Right=558;Bottom=125;" subject="EAID_0F1DD5A1_5567_45ab_BD1D_3371A1EC7A25" seqno="999999" style="DUID=17FC4B2A;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_981DDCD5_4DED_4db3_9437_1AA07B23C871"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
 		<UML:DiagramElement geometry="Left=737;Top=308;Right=897;Bottom=341;" subject="EAID_9A748A89_0611_4068_8513_4194B20435D1" seqno="1" style="DUID=9DC711BB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_610884D6_6E07_4cc8_91A7_9A5A2051A1D8"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="Left=398;Top=95;Right=558;Bottom=125;" subject="EAID_D38931F8_5199_4dd0_8FE1_CC97991980FF" seqno="999999" style="DUID=CD825CEB;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_981DDCD5_4DED_4db3_9437_1AA07B23C871"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="Left=20;Top=20;Right=180;Bottom=50;" subject="EAID_E22E695B_8456_4775_9A61_383D0497E568" seqno="999999" style="DUID=0F48800F;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_981DDCD5_4DED_4db3_9437_1AA07B23C871"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
 		<UML:DiagramElement geometry="Left=673;Top=408;Right=833;Bottom=441;" subject="EAID_E2BEBE6B_572B_40df_8872_545CA0F650C0" seqno="1" style="DUID=5A5D0BFB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
@@ -402,7 +528,9 @@ VVQFAAedMO9VUEsFBgAAAAABAAEAPgAAAHsBAAAAAA==</UML:TaggedValue>
 	</XMI.content>
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAStub xmi.id="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" name="Contestar examen de atestiguamiento" UMLType="UseCase"/>
 		<EAStub xmi.id="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" name="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón" UMLType="UseCase"/>
+		<EAModel.paramSub/>
 		<EAModel.file>
 			<EAFile name="C:\Users\JROJAS\Documents\IMSS\DictamenElectronico\LayoutsObligatorios.pdf" type="Local File" subject="EAID_E2BEBE6B_572B_40df_8872_545CA0F650C0">
 				<UML:ModelElement.taggedValue>
