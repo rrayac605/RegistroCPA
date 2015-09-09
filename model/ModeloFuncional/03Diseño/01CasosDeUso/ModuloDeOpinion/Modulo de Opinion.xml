@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-09-03 07:22:14"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\ModuloDeOpinion\Modulo de Opinion.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-09 13:30:10"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-09 13:55:50"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-04 11:50:52"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-04 11:56:50"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-09 13:53:55"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-09 14:14:15"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Opinion"/>
@@ -153,6 +153,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -190,6 +191,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=24;SY=-56;EX=0;EY=0;EDGE=3;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -227,15 +229,16 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
 						<UML:Dependency client="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" supplier="EAID_B704D115_8CF2_4d75_8A94_8F6761649A29" xmi.id="EAID_76167110_F4F4_4897_A830_CE2C04717699" visibility="public">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="style" value="2"/>
 								<UML:TaggedValue tag="ea_type" value="Dependency"/>
 								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linemode" value="2"/>
 								<UML:TaggedValue tag="linecolor" value="-1"/>
 								<UML:TaggedValue tag="linewidth" value="0"/>
 								<UML:TaggedValue tag="seqno" value="0"/>
@@ -264,6 +267,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=12;SY=-52;EX=-61;EY=-12;EDGE=3;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -301,6 +305,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=-17;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -338,6 +343,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -453,13 +459,13 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El CPA selecciona la opción de Opinión en la pantalla de Formulación de Dictamen." guid="{C4462B08-BC72-4a12-8E4E-C674BC55C772}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema muestra en pantalla RFC002 y el campo para seleccionar el tipo de opinión. RFC001&#xA;" guid="{3DF2E637-CA78-4991-9504-F53350B515B3}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA selecciona la opción de Opinión que quiere emitir. Se llama FA02, FA03, FA04 o en caso de seleccionar Sin Salvedad  continua en el paso RFN002." guid="{F0C14717-D177-4511-B238-03BEE09EA6EE}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
+						<step name="El sistema muestra en pantalla RFC002 y el campo para seleccionar el tipo de opinión. RFC100&#xA;" guid="{3DF2E637-CA78-4991-9504-F53350B515B3}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA selecciona la opción de Opinión que quiere emitir. Se llama FA02, FA03, FA04 o en caso de seleccionar Sin Salvedad  continua en el paso 4.  RFN002." guid="{F0C14717-D177-4511-B238-03BEE09EA6EE}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="3a" guid="{1EFA3F5E-A1F3-4d40-B41B-8DDF98B1339A}" join="End"/>
 							<extension level="3b" guid="{33FBAD2A-FD85-46a6-BF89-28E749F3D972}" join="End"/>
 							<extension level="3c" guid="{D5BBF086-4102-40a1-845E-30D8A7B0928E}" join="End"/>
 						</step>
-						<step name="El sistema despliega en pantalla las opciones Con pago y Sin pago. " guid="{A5A93602-3C7E-400b-8C6D-8A2C605DC7C5}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema despliega en pantalla las opciones de pago RFC200" guid="{A5A93602-3C7E-400b-8C6D-8A2C605DC7C5}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="Si el CPA selecciona la opción Sin pago, se llama al paso 14 del Flujo básico." guid="{D10D3F46-0423-4da9-AC63-F3863EA44975}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El CPA selecciona la opción Con pagos, " guid="{4BFF767D-4969-49d5-B969-3138AC021CD4}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema habilita el campo Forma de pago con las opciones desplegables de:&#xA;•	Una Exhibición&#xA;•	Parcialidades&#xA;" guid="{3059D5AF-DC01-4891-8749-DDEF803C2259}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
