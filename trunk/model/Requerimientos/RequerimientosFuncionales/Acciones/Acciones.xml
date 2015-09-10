@@ -294,38 +294,6 @@
 										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={F43B1B92-C4DE-45fe-AD85-A2FA7FDAF669}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={8F68F6AC-5300-4b69-A32C-73054370AB10}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
-								<UML:ClassifierRole name="Accion-RF013-Valida RFC" xmi.id="EAID_B8756199_72A5_4509_A3E8_D494C28DD487" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
-									<UML:ModelElement.stereotype>
-										<UML:Stereotype name="Functional"/>
-									</UML:ModelElement.stereotype>
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="documentation" value="&lt;b&gt;Registro Federal de Contribuyentes&lt;/b&gt; &lt;b&gt;(RFC)&lt;/b&gt;&#xA;&#xA;Al capturar el RFC para dar de alta el patrón o para buscar al patrón se validará lo siguiente: &#xA;&#xA;&#xA;12 o 13 posiciones, &#xA;&lt;b&gt;NO&lt;/b&gt; cumple RN, el sistema muestra el mensaje &lt;b&gt;AG.&lt;/b&gt; &lt;i&gt;&amp;ldquo;El campo de Registro Federal de Contribuyentes (RFC) debe de estar a 12 o 13 posiciones, Favor de verificar&amp;rdquo;&lt;/i&gt;. Regresa a la actividad 6.&#xA;&#xA;&lt;b&gt;RN.&lt;/b&gt; Alfanumérico, con los caracteres especiales permitidos &amp;ldquo;Ñ&amp;rdquo; y &amp;ldquo;#&amp;rdquo;.&#xA;&lt;b&gt;NO&lt;/b&gt; cumple RN, el sistema muestra el mensaje &lt;b&gt;AG.&lt;/b&gt; &lt;i&gt;&amp;ldquo;El campo de Registro Federal de Contribuyentes (RFC) contiene caracteres no válidos&lt;/i&gt;&amp;rdquo;.&#xA;&#xA;&lt;b&gt;RN.&lt;/b&gt; El Registro Federal de Contribuyentes debe existir en la base de datos del SAT, que se consultara con el Web Service.&#xA;&#xA;&lt;b&gt;NO&lt;/b&gt; cumple RN, el sistema muestra el mensaje &lt;b&gt;AG.&lt;/b&gt; &lt;i&gt;&amp;ldquo;El &lt;/i&gt;Registro Federal de Contribuyentes&lt;i&gt; es incorrecto o no existe, favor de verificar&amp;rdquo;&lt;/i&gt; regresa a la actividad 6.&#xA;&#xA;"/>
-										<UML:TaggedValue tag="isAbstract" value="false"/>
-										<UML:TaggedValue tag="isSpecification" value="false"/>
-										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
-										<UML:TaggedValue tag="ea_ntype" value="0"/>
-										<UML:TaggedValue tag="version" value="1.0"/>
-										<UML:TaggedValue tag="isActive" value="false"/>
-										<UML:TaggedValue tag="package" value="EAPK_2198BD6A_1120_4c00_8233_EB3AE93D9F8C"/>
-										<UML:TaggedValue tag="date_created" value="2015-09-10 04:53:47"/>
-										<UML:TaggedValue tag="date_modified" value="2015-09-10 04:58:00"/>
-										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-										<UML:TaggedValue tag="tagged" value="0"/>
-										<UML:TaggedValue tag="package_name" value="Acciones"/>
-										<UML:TaggedValue tag="phase" value="1.0"/>
-										<UML:TaggedValue tag="author" value="raguirre"/>
-										<UML:TaggedValue tag="complexity" value="1"/>
-										<UML:TaggedValue tag="status" value="Proposed"/>
-										<UML:TaggedValue tag="stereotype" value="Functional"/>
-										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="1661"/>
-										<UML:TaggedValue tag="ea_eleType" value="element"/>
-										<UML:TaggedValue tag="difficulty" value="Medium"/>
-										<UML:TaggedValue tag="priority" value="Medium"/>
-										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={8202EF60-989D-45d2-860E-0BC52B5A3E20}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={B8756199-72A5-4509-A3E8-D494C28DD487}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-									</UML:ModelElement.taggedValue>
-								</UML:ClassifierRole>
 								<UML:ClassifierRole name="RFA006  Guardar Omisiones Encontradas" xmi.id="EAID_BC13A644_A179_423d_B895_3678514A4224" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
 									<UML:ModelElement.stereotype>
 										<UML:Stereotype name="Functional"/>
@@ -395,7 +363,7 @@
 										<UML:Stereotype name="Functional"/>
 									</UML:ModelElement.stereotype>
 									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="documentation" value="El Registro Federal de Contribuyentes (RFC) se consultará mediante un web service  en el SAT, en caso de que no existan coincidencias  el sistema mostrará el siguiente mensaje: &quot;&lt;i&gt;El RFC es incorrecto o no existe, favor de verificar&quot;&lt;/i&gt;"/>
+										<UML:TaggedValue tag="documentation" value="Al capturar el RFC  para consultar al patrón se validará lo siguiente: &#xA;&#xA;Que el campo sea de 12 o 13 posiciones, &#xA;&lt;ul&gt;&#xA;	&lt;li&gt;&lt;b&gt;Si No&lt;/b&gt; lo es, el sistema muestra un mensaje de error: &lt;i&gt;“El campo de Registro Federal de Contribuyentes (RFC) debe de estar a 12 o 13 posiciones, Favor de verificar”&lt;/i&gt;. &lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;Que sea  Alfanumérico, con los caracteres especiales permitidos “Ñ” y “#”.&#xA;&lt;ul&gt;&#xA;	&lt;li&gt;&lt;b&gt;Si No&lt;/b&gt; cumple  el sistema muestra el mensaje. &lt;i&gt;“El campo de Registro Federal de Contribuyentes (RFC) contiene caracteres no válidos&lt;/i&gt;”.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;Una vez que la captura es correcta&#xA;&#xA;El Registro Federal de Contribuyentes (RFC) se consultará &#xA;mediante un web service  en el SAT, en caso de que no existan coincidencias  el sistema mostrará el mensaje: &quot;&lt;i&gt;El RFC es incorrecto o no existe, favor de verificar&quot;&lt;/i&gt;"/>
 										<UML:TaggedValue tag="isAbstract" value="false"/>
 										<UML:TaggedValue tag="isSpecification" value="false"/>
 										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
@@ -404,7 +372,7 @@
 										<UML:TaggedValue tag="isActive" value="false"/>
 										<UML:TaggedValue tag="package" value="EAPK_2198BD6A_1120_4c00_8233_EB3AE93D9F8C"/>
 										<UML:TaggedValue tag="date_created" value="2015-09-08 20:42:19"/>
-										<UML:TaggedValue tag="date_modified" value="2015-09-08 20:45:50"/>
+										<UML:TaggedValue tag="date_modified" value="2015-09-10 17:14:35"/>
 										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 										<UML:TaggedValue tag="tagged" value="0"/>
 										<UML:TaggedValue tag="package_name" value="Acciones"/>
