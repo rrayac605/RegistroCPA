@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.integration.api.CuestionarioIntegration;
 import mx.gob.imss.cit.dictamen.integration.api.dto.CuestionarioDTO;
 import mx.gob.imss.cit.dictamen.services.CuestionarioService;
+
+
 @Stateless
+@Remote(mx.gob.imss.cit.dictamen.integration.api.CuestionarioIntegration.class)
 public class CuestionarioIntegrationImpl implements CuestionarioIntegration{
 
 	
