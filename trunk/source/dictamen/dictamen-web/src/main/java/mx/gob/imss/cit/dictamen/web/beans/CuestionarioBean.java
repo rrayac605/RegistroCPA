@@ -1,9 +1,6 @@
 package mx.gob.imss.cit.dictamen.web.beans;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -35,6 +32,12 @@ public class CuestionarioBean extends BaseBean {
 		cuestionarioPage.setCuestionarios(cuestionarioIntegration.findCuestionarios());
 		return "";
 	}
+	
+	
+	public void editar(CuestionarioDTO cuestionario){}
+	
+	
+	public void borrar(CuestionarioDTO cuestionario){}
 
 	
 	
@@ -53,6 +56,5 @@ public class CuestionarioBean extends BaseBean {
 		this.cuestionarioPage = cuestionarioPage;
 	}
 
-	
 	
 }
