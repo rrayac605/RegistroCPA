@@ -13,7 +13,7 @@ import javax.faces.component.UIViewRoot;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
-import mx.gob.imss.cit.dictamen.web.constants.WebConstants;
+import mx.gob.imss.cit.dictamen.web.constants.DictamenWebConstants;
 
 import org.primefaces.context.RequestContext;
 
@@ -30,20 +30,7 @@ public final class FacesUtils {
 	private FacesUtils(){
 	}
 		
-//	public static String getUsuarioSessionID() {
-//		return ((UsuarioFirmadoTO) getSessionMap().get(
-//				WConstants.USUARIO_WEBOBJECT)).getSessionID();
-//	}
-//
-	/**
- * Gets the web user.
- *
- * @return the web user
- */
-public static Object getWebUser() {
-		return getSessionMap().get(WebConstants.USUARIO_WEBOBJECT);
-	}
-
+	
 	/**
 	 * Regresa la Instancia de la actual Aplicacion JSF.
 	 *
@@ -155,7 +142,7 @@ public static Object getWebUser() {
 		FacesMessage facesMessage = getMessage(messageID, null);
 		facesMessage.setSeverity(severity);
 
-		getFacesContext().addMessage(WebConstants.FORM_NAME + componentID,
+		getFacesContext().addMessage(DictamenWebConstants.FORM_NAME + componentID,
 				facesMessage);
 
 	}
@@ -204,7 +191,7 @@ public static Object getWebUser() {
 	public static void messageByIDComponent(String componentID,
 			Severity severity, String summary) {
 
-		getFacesContext().addMessage(WebConstants.FORM_NAME + componentID,
+		getFacesContext().addMessage(DictamenWebConstants.FORM_NAME + componentID,
 				new FacesMessage(severity, summary, null));
 
 	}
@@ -215,78 +202,27 @@ public static Object getWebUser() {
 	 * @param severity the severity
 	 * @param summary the summary
 	 */
-	public static void messageGlobal(Severity severity, String summary) {
+	public static void messageGlobal(String ambito,Severity severity, String summary,String prefijo) {
 
 		getFacesContext().addMessage(null,
 				new FacesMessage(severity, summary, null));
 
 	}
 	
-	/**
-	 * Genera los mensajes de error de servicios por el codigo del mensaje
-	 * 
-	 * @param msgCode
-	 */
-	public static void messageServiceError(Integer msgCode) {
+	
+	
+	public static void messageError(Integer msgCode,Object...params) {
 
-        getFacesContext().addMessage(WebConstants.GENERAL,
-                new FacesMessage(FacesMessage.SEVERITY_ERROR, ResourceBundleUtils.getMessageServiceError(msgCode), WebConstants.EMPTY));
+        getFacesContext().addMessage(DictamenWebConstants.MESSAGE_GENERAL,
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, ResourceBundleUtils.getMessageNotificacionBundle(msgCode,params), DictamenWebConstants.MESSAGE_EMPTY));
         getRequestContext().execute("showMessagesTop();");
     }
 	
-	/**
-	 * Genera los mensajes de error de validacion por el codigo del mensaje
-	 * 
-	 * @param msgCode
-	 */
-	public static void messageValidationError(Integer msgCode) {
-
-        getFacesContext().addMessage(WebConstants.GENERAL,
-                new FacesMessage(FacesMessage.SEVERITY_ERROR, ResourceBundleUtils.getMessageValidationError(msgCode), WebConstants.EMPTY));
-        getRequestContext().execute("showMessagesTop();");
-    }
 	
-	/**
-     * Genera los mensajes de error de validacion por el codigo del mensaje
-     * para las ventanas modales, asignando false a la variable global 
-     * @param msgCode
-     */
-    public static void messageValidationErrorModal(Integer msgCode) {
+	public static void messageSuccess(Integer msgCode,Object...params) {
 
-        getFacesContext().addMessage(WebConstants.MODAL,
-                new FacesMessage(FacesMessage.SEVERITY_ERROR, ResourceBundleUtils.getMessageValidationError(msgCode), WebConstants.EMPTY));
-        FacesContext.getCurrentInstance().validationFailed();
-    }
-	
-	/**
-	 * Genera los mensajes de exito por el codigo del mensaje
-	 * 
-	 * @param msgCode
-	 */
-	public static void messageSuccess(Integer msgCode) {
-
-        getFacesContext().addMessage(WebConstants.GENERAL,
-                new FacesMessage(FacesMessage.SEVERITY_INFO, ResourceBundleUtils.getMessageSuccess(msgCode), WebConstants.EMPTY));
-        getRequestContext().execute("showMessagesTop();");
-    }
-	
-	public static void messageServiceErrorParam(Integer msgCode,Object...params) {
-
-        getFacesContext().addMessage(WebConstants.GENERAL,
-                new FacesMessage(FacesMessage.SEVERITY_ERROR, ResourceBundleUtils.getMessageServiceErrorParam(msgCode,params), WebConstants.EMPTY));
-        getRequestContext().execute("showMessagesTop();");
-    }
-	
-	public static void messageValidationErrorParam(Integer msgCode,Object...params) {
-
-        getFacesContext().addMessage(WebConstants.GENERAL,
-                new FacesMessage(FacesMessage.SEVERITY_ERROR, ResourceBundleUtils.getMessageValidationErrorParam(msgCode,params), WebConstants.EMPTY));
-        getRequestContext().execute("showMessagesTop();");
-    }
-	public static void messageSuccessParam(Integer msgCode,Object...params) {
-
-        getFacesContext().addMessage(WebConstants.GENERAL,
-                new FacesMessage(FacesMessage.SEVERITY_INFO, ResourceBundleUtils.getMessageSuccessParam(msgCode,params), WebConstants.EMPTY));
+        getFacesContext().addMessage(DictamenWebConstants.MESSAGE_GENERAL,
+                new FacesMessage(FacesMessage.SEVERITY_INFO, ResourceBundleUtils.getMessageNotificacionBundle(msgCode,params), DictamenWebConstants.MESSAGE_EMPTY));
         getRequestContext().execute("showMessagesTop();");
     }
 	
@@ -311,7 +247,7 @@ public static Object getWebUser() {
 		FacesMessage facesMessage = getMessage(messageID, params);
 		facesMessage.setSeverity(severity);
 
-		getFacesContext().addMessage(WebConstants.FORM_NAME + componentID,
+		getFacesContext().addMessage(DictamenWebConstants.FORM_NAME + componentID,
 				facesMessage);
 
 	}

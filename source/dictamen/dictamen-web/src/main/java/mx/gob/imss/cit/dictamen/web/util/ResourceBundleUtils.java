@@ -4,7 +4,7 @@ import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-import mx.gob.imss.cit.dictamen.web.constants.WebConstants;
+import mx.gob.imss.cit.dictamen.web.constants.DictamenWebConstants;
 
 import org.apache.log4j.Logger;
 
@@ -31,137 +31,34 @@ public final class ResourceBundleUtils {
 	 * @param message the message
 	 * @return the message form bundle
 	 */
-	public static String getMessageFormBundle(String message) {
+	public static String getMessageBundle(String message) {
 		
-		ResourceBundle msg = getResourceBundle(WebConstants.MESSAGE_BUNDLE);
+		ResourceBundle msg = getResourceBundle(DictamenWebConstants.MESSAGE_BUNDLE);
 		String description = msg.getString(message);
 		LOGGER.info( "Message  : " + description);
+		
 		return description;
 	}
 	
-	
-	/**
-	 * Gets the message error.
-	 *
-	 * @param idError the id error
-	 * @return the message error
-	 */
-	public static String getMessageError(Integer idError){
-		
-		ResourceBundle rb = getResourceBundle(WebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-		String message = rb.getString(WebConstants.MESSAGE_ERROR_SERVICE_PREFIX + idError);
-		
-		LOGGER.info("Message error : " + message);
-		return message;
-		
-	}
-	
-	/**
-     * Gets the service error message.
-     *
-     * @param idMsg the id success
-     * @return the success message
-     */
-    public static String getMessageServiceError(Integer idMessage){
-        
-        ResourceBundle rb = getResourceBundle(WebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-        String message = rb.getString(WebConstants.MESSAGE_ERROR_SERVICE_PREFIX + idMessage);
-        
-        LOGGER.info("Message success : " + message);
-        return message;
-        
-    }
-	
-    
-    
-    
-    
-    /**
-     * Gets the validation error message.
-     *
-     * @param idMsg the id success
-     * @return the success message
-     */
-    public static String getMessageValidationError(Integer idMessage){
-        
-        ResourceBundle rb = getResourceBundle(WebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-        String message = rb.getString(WebConstants.MESSAGE_ERROR_VALIDATION_PREFIX + idMessage);
-        
-        LOGGER.info("Message success : " + message);
-        return message;
-        
-    }
 
+  public static String getMessageNotificacionBundle(Integer idMessage,Object... params){
+        
+        ResourceBundle rb = getResourceBundle(DictamenWebConstants.MESSAGE_NOTIFICACION_BUNDLE);
+        String message = rb.getString(DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage);
+        
+        if(message==null){
+        	LOGGER.info("no se encontro el mensaje: " + DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage);
+        	message=DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage;
+        }else{
+        	message=getString(message,params);
+        }
+        
     
-    
-    
-	/**
-     * Gets the success message.
-     *
-     * @param idMsg the id success
-     * @return the success message
-     */
-    public static String getMessageSuccess(Integer idMessage){
-        
-        ResourceBundle rb = getResourceBundle(WebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-        String message = rb.getString(WebConstants.MESSAGE_SUCCESS_PREFIX + idMessage);
-        
-        LOGGER.info("Message success : " + message);
-        return message;
-        
-    }
-	
-
-   public static String getMessageValidationErrorParam(Integer idMessage,Object... params){
-        
-        ResourceBundle rb = getResourceBundle(WebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-        String message = rb.getString(WebConstants.MESSAGE_ERROR_VALIDATION_PREFIX + idMessage);
-        
-        message=getString(message,params);
 		LOGGER.info("Message error : " + message);
 		return message;
         
     }
 
-    
-	public static String getMessageServiceErrorParam(Integer idError,Object... params){
-		
-		ResourceBundle rb = getResourceBundle(WebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-		String message = rb.getString(WebConstants.MESSAGE_ERROR_SERVICE_PREFIX + idError);
-		
-		message=getString(message,params);
-		LOGGER.info("Message error : " + message);
-		return message;
-		
-	}
-	
-	  public static String getMessageSuccessParam(Integer idMessage,Object... params){
-	        
-	        ResourceBundle rb = getResourceBundle(WebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-	        String message = rb.getString(WebConstants.MESSAGE_SUCCESS_PREFIX + idMessage);
-	        
-	    	message=getString(message,params);
-			LOGGER.info("Message error : " + message);
-			return message;
-	        
-	    }
-		
-	  
-	/**
-	 * Gets the message error.
-	 *
-	 * @param idError the id error
-	 * @return the message error
-	 */
-	public static String getMessageError(Integer idError, String prefix){
-		
-		ResourceBundle rb = getResourceBundle(WebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-		String message = rb.getString(prefix + idError);		
-		LOGGER.info("Message error : " + message);
-		return message;
-		
-	}
-	
 	
 	/**
 	 * Gets the resource bundle.
@@ -171,21 +68,21 @@ public final class ResourceBundleUtils {
 	 */
 	private static ResourceBundle getResourceBundle(String messageType) {
 		
-		StringBuilder bundle = new StringBuilder();
-		bundle
-			.append(messageType)
-			.append(FacesUtils.getViewRoot().getLocale().toString());
-		
-		LOGGER.info(" messageBundle: " +bundle);		
-		return ResourceBundle.getBundle(bundle.toString());
+		LOGGER.info(" messageBundle: " +messageType);		
+		return ResourceBundle.getBundle(messageType);
 	}
+	
 	
 	
 	private static String getString(String msg, Object... params  ) {
 		String mensaje=null;
         try {
-        	mensaje= MessageFormat.format(msg, params);
-        	LOGGER.info(" mensaje excepcion " +mensaje);		
+        	if(params==null){
+        		mensaje=msg;
+        	}else{
+        		mensaje= MessageFormat.format(msg, params);
+        	}
+        	        	
         } catch (MissingResourceException e) {
         	LOGGER.error(e.getMessage(), e);
         }
