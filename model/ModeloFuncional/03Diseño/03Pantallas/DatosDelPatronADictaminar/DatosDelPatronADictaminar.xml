@@ -681,36 +681,46 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=214;EY=130;EDGE=4;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Comment xmi.id="EAID_713BD9A9_F371_4113_BD8C_BCC56C0D66BC" visibility="public" namespace="EAPK_C9458C84_018F_4a63_BF86_7F92C377DF9C">
+						<UML:Dependency client="EAID_F31B3E45_E1B5_4f68_B528_86EE60E1FA63" supplier="EAID_27610FCF_7687_4e7c_9CCA_C2A38A8D9086" xmi.id="EAID_1D8B1170_9835_4230_9AEA_0AA135D3BADB" visibility="public">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="&lt;b&gt;&lt;u&gt;Basic Path&lt;/u&gt;&lt;/b&gt;&#xA;Basic Path:&#xA;&lt;sup&gt;1&lt;/sup&gt; Captura RFC. &lt;sup&gt;2&lt;/sup&gt; Valida el RFC conforme a Accion-RF017. &lt;sup&gt;3&lt;/sup&gt; Si RFC correcto: Despliega la Razón Social del Patrón.&#xA;&#xA;&lt;b&gt;&lt;u&gt;Alternate Paths&lt;/u&gt;&lt;/b&gt;&#xA;Notifica el error al CPA:"/>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="Note"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_C9458C84_018F_4a63_BF86_7F92C377DF9C"/>
-								<UML:TaggedValue tag="owner" value="EAID_CD5F187F_9535_4951_9659_69E8ED6DB521"/>
-								<UML:TaggedValue tag="date_created" value="2015-09-10 04:48:16"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-10 04:48:16"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Datos del Patron a Dictaminar"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="raguirre"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="1660"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=EAID_CD5F187F_9535_4951_9659_69E8ED6DB521;&lt;P3&gt;=;"/>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="533"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Regla-RF-Tipo de Dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="Alta-Datos del Patron a Dictaminar"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_targetType" value="Screen"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1758"/>
+								<UML:TaggedValue tag="ea_targetID" value="1645"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
-						</UML:Comment>
+						</UML:Dependency>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -720,58 +730,42 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="raguirre"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-03 13:06:36"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-10 05:01:19"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-10 13:08:02"/>
 				<UML:TaggedValue tag="package" value="EAPK_C9458C84_018F_4a63_BF86_7F92C377DF9C"/>
 				<UML:TaggedValue tag="type" value="Custom"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="146"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=1;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=F006CECE;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::User Interface;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=D48CECC4;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::User Interface;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="$ea_hlinksclassified" value="{1673E82C-E917-47ce-8756-FA48A0F2E622}"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=598;Top=144;Right=758;Bottom=177;" subject="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" seqno="1" style="DUID=5F5976DD;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=129;Top=329;Right=522;Bottom=424;" subject="EAID_3A87BB0B_B06A_4e99_AF95_FA67F2F3527A" seqno="2" style="DUID=2708FCAA;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=358;Top=232;Right=448;Bottom=249;" subject="EAID_5454B747_22DF_4806_AB13_6694F46269FA" seqno="3" style="DUID=5E9BDDF2;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=352;Top=208;Right=442;Bottom=225;" subject="EAID_2186D564_68D7_4d06_B5FA_270A4CEEFD54" seqno="4" style="DUID=0E61FFB6;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=239;Top=150;Right=384;Bottom=167;" subject="EAID_AC4C200C_06DD_4a7b_B3E7_D4DB0B260F96" seqno="5" style="DUID=0C5FD88E;HideIcon=0;LCol=12632256;"/>
-				<UML:DiagramElement geometry="Left=121;Top=149;Right=300;Bottom=164;" subject="EAID_7C43C48C_1686_4034_AAD9_FC24F3116C45" seqno="6" style="DUID=0A883D15;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=158;Top=293;Right=329;Bottom=313;" subject="EAID_41C88C44_D2D5_4fc2_9E36_70087E9B46B0" seqno="7" style="DUID=4F55A480;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=159;Top=266;Right=324;Bottom=286;" subject="EAID_14FCD1E3_C1D8_4519_BA99_1FECDE659BA6" seqno="8" style="DUID=A5FA50AD;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=163;Top=207;Right=370;Bottom=234;" subject="EAID_A2039EE1_D603_4164_BDAA_026400E8FA55" seqno="9" style="DUID=A3912DF4;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=176;Top=228;Right=330;Bottom=248;" subject="EAID_883DDBF3_05DC_45e5_9228_A4E2335D4F69" seqno="10" style="DUID=DB3B4E89;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=275;Top=178;Right=504;Bottom=201;" subject="EAID_E6E02CB8_39A2_4403_AF6B_90247D9487A7" seqno="11" style="DUID=8EE0D87F;HideIcon=0;LCol=12632256;"/>
-				<UML:DiagramElement geometry="Left=152;Top=179;Right=186;Bottom=200;" subject="EAID_D941DD9C_00D9_4288_AAF1_9DB8E09D1ECE" seqno="12" style="DUID=A59E0571;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=190;Top=178;Right=265;Bottom=197;" subject="EAID_CD5F187F_9535_4951_9659_69E8ED6DB521" seqno="13" style="DUID=3FA3D93B;HideIcon=0;"/>
-				<UML:DiagramElement geometry="Left=107;Top=142;Right=536;Bottom=438;" subject="EAID_27610FCF_7687_4e7c_9CCA_C2A38A8D9086" seqno="14" style="DUID=9684DC99;"/>
+				<UML:DiagramElement geometry="Left=607;Top=305;Right=767;Bottom=335;" subject="EAID_B8756199_72A5_4509_A3E8_D494C28DD487" seqno="1" style="DUID=DFB29D0F;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=603;Top=221;Right=763;Bottom=251;" subject="EAID_F31B3E45_E1B5_4f68_B528_86EE60E1FA63" seqno="2" style="DUID=9CEBECBB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=598;Top=144;Right=758;Bottom=177;" subject="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" seqno="3" style="DUID=5F5976DD;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=130;Top=331;Right=523;Bottom=426;" subject="EAID_3A87BB0B_B06A_4e99_AF95_FA67F2F3527A" seqno="4" style="DUID=2708FCAA;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=359;Top=234;Right=449;Bottom=251;" subject="EAID_5454B747_22DF_4806_AB13_6694F46269FA" seqno="5" style="DUID=5E9BDDF2;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=353;Top=210;Right=443;Bottom=227;" subject="EAID_2186D564_68D7_4d06_B5FA_270A4CEEFD54" seqno="6" style="DUID=0E61FFB6;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=240;Top=152;Right=385;Bottom=169;" subject="EAID_AC4C200C_06DD_4a7b_B3E7_D4DB0B260F96" seqno="7" style="DUID=0C5FD88E;HideIcon=0;LCol=12632256;"/>
+				<UML:DiagramElement geometry="Left=122;Top=151;Right=301;Bottom=166;" subject="EAID_7C43C48C_1686_4034_AAD9_FC24F3116C45" seqno="8" style="DUID=0A883D15;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=159;Top=295;Right=330;Bottom=315;" subject="EAID_41C88C44_D2D5_4fc2_9E36_70087E9B46B0" seqno="9" style="DUID=4F55A480;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=160;Top=268;Right=325;Bottom=288;" subject="EAID_14FCD1E3_C1D8_4519_BA99_1FECDE659BA6" seqno="10" style="DUID=A5FA50AD;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=164;Top=209;Right=371;Bottom=236;" subject="EAID_A2039EE1_D603_4164_BDAA_026400E8FA55" seqno="11" style="DUID=A3912DF4;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=177;Top=230;Right=331;Bottom=250;" subject="EAID_883DDBF3_05DC_45e5_9228_A4E2335D4F69" seqno="12" style="DUID=DB3B4E89;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=276;Top=180;Right=505;Bottom=203;" subject="EAID_E6E02CB8_39A2_4403_AF6B_90247D9487A7" seqno="13" style="DUID=8EE0D87F;HideIcon=0;LCol=12632256;"/>
+				<UML:DiagramElement geometry="Left=153;Top=181;Right=187;Bottom=202;" subject="EAID_D941DD9C_00D9_4288_AAF1_9DB8E09D1ECE" seqno="14" style="DUID=A59E0571;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=191;Top=180;Right=266;Bottom=199;" subject="EAID_CD5F187F_9535_4951_9659_69E8ED6DB521" seqno="15" style="DUID=3FA3D93B;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=108;Top=144;Right=537;Bottom=440;" subject="EAID_27610FCF_7687_4e7c_9CCA_C2A38A8D9086" seqno="16" style="DUID=9684DC99;"/>
+				<UML:DiagramElement geometry="SX=1;SY=1;EX=214;EY=46;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_1D8B1170_9835_4230_9AEA_0AA135D3BADB" style="Mode=3;EOID=9684DC99;SOID=9CEBECBB;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=214;EY=130;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_1C745E4F_7922_40b6_9313_4F417FE2526D" style="Mode=3;EOID=9684DC99;SOID=5F5976DD;Color=-1;LWidth=0;Hidden=0;"/>
-			</UML:Diagram.element>
-		</UML:Diagram>
-		<UML:Diagram name="AAAANNNNN-_TestCase" xmi.id="EAID_EDDDA498_1C4C_476f_8D85_792D23985EB4" diagramType="CustomDiagram" owner="EAPK_C9458C84_018F_4a63_BF86_7F92C377DF9C" toolName="Enterprise Architect 2.5">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="version" value="1.0"/>
-				<UML:TaggedValue tag="author" value="raguirre"/>
-				<UML:TaggedValue tag="created_date" value="2015-09-10 04:48:16"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-10 04:48:16"/>
-				<UML:TaggedValue tag="package" value="EAPK_C9458C84_018F_4a63_BF86_7F92C377DF9C"/>
-				<UML:TaggedValue tag="type" value="Custom"/>
-				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
-				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="147"/>
-				<UML:TaggedValue tag="parent" value="EAID_CD5F187F_9535_4951_9659_69E8ED6DB521"/>
-				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=1;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=EB386328;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-			</UML:ModelElement.taggedValue>
-			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=300;Top=100;Right=375;Bottom=119;" subject="EAID_CD5F187F_9535_4951_9659_69E8ED6DB521" seqno="1" style="DUID=3FA3D93B;HideIcon=0;UCRect=1;"/>
-				<UML:DiagramElement geometry="Left=110;Top=10;Right=225;Bottom=65;" subject="EAID_713BD9A9_F371_4113_BD8C_BCC56C0D66BC" seqno="2" style="DUID=BF8E3E4E;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;Path=;" subject="EAID_54F5D6F2_D015_472e_A213_C0B0BF8C2638" style=";Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
 		<EAStub xmi.id="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" name="Carac-RF-Mensaje de Error de Captura" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_F31B3E45_E1B5_4f68_B528_86EE60E1FA63" name="Regla-RF-Tipo de Dictamen" UMLType="Requirement"/>
 		<EAModel.scenario>
 			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_41C88C44_D2D5_4fc2_9E36_70087E9B46B0" xmi.id="EAID_F37DE9DC_1FC2_4fb9_9780_44671A420F55">
 				<EAScenarioContent>
@@ -834,12 +828,6 @@
 			</EAScenario>
 			<EAScenario name="Notifica el error al CPA" type="Alternate" weight="1.00" subject="EAID_CD5F187F_9535_4951_9659_69E8ED6DB521" xmi.id="EAID_752F5660_949D_4167_8F08_2DD569B85758"/>
 		</EAModel.scenario>
-		<EANoteLink xmi.id="EAID_54F5D6F2_D015_472e_A213_C0B0BF8C2638" source="EAID_CD5F187F_9535_4951_9659_69E8ED6DB521" target="EAID_713BD9A9_F371_4113_BD8C_BCC56C0D66BC">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="linecolor" value="-1"/>
-				<UML:TaggedValue tag="linewidth" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</EANoteLink>
 		<EAModel.test>
 			<EATest name="Basic Path" description="&#xA;&lt;u&gt;Start:&lt;/u&gt;&#xA;1. Captura RFC&#xA;	&lt;u&gt;Uses:&lt;/u&gt;   CPA&#xA;2. Valida el RFC conforme a Accion-RF017&#xA;	&lt;u&gt;Uses:&lt;/u&gt;   Pantalla de Catura de Datos de Trabajadores&#xA;3. Si RFC correcto: Despliega la Razón Social del Patrón&#xA;	&lt;u&gt;Uses:&lt;/u&gt;   SCR-Datos del Patron a Dictaminar&#xA;&#xA;&#xA;&lt;u&gt;Result:&lt;/u&gt;&#xA;Basic Path complete.&#xA;Use case ends.&#xA;" type="Standard" subject="EAID_CD5F187F_9535_4951_9659_69E8ED6DB521">
 				<UML:ModelElement.taggedValue>
