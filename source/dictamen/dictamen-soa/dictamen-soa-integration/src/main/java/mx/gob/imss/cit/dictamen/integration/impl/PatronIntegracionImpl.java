@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.integration.api.PatronIntegracion;
@@ -11,6 +12,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.TipoDictamenDTO;
 
 @Stateless
+@Remote(mx.gob.imss.cit.dictamen.integration.api.PatronIntegracion.class)
 public class PatronIntegracionImpl implements PatronIntegracion {
 
 	@Override

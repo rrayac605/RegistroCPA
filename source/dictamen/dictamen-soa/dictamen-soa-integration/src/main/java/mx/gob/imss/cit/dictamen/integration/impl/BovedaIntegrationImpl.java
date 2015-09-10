@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.dictamen.integration.impl;
 
 import javax.ejb.EJB;
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
@@ -22,6 +23,7 @@ import mx.gob.imss.cit.dictamen.services.BovedaService;
  * 
  */
 @Stateless
+@Remote(mx.gob.imss.cit.dictamen.integration.api.BovedaIntegration.class)
 public class BovedaIntegrationImpl implements BovedaIntegration{
 	
 	@EJB

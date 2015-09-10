@@ -1,7 +1,5 @@
 package mx.gob.imss.cit.dictamen.integration.api;
 
-import javax.ejb.Remote;
-
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaActorDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaBaseObjectDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaDocumentoDTO;
@@ -15,7 +13,7 @@ import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioExcepti
  * @author ajfuentes
  * 
  */
-@Remote
+
 public interface BovedaIntegration {
 
 	boolean createDocument(BovedaDocumentoDTO documento,
