@@ -6,7 +6,7 @@ import javax.faces.context.ExceptionHandlerFactory;
 /**
  * Handler factory from custom exception handling
  * 
- * @author gsegura
+ * @author ajfuentes
  * @since 0.0.1
  */
 public class CustomExceptionHandlerFactory extends ExceptionHandlerFactory {

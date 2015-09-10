@@ -8,7 +8,11 @@
 	<lifecycle>
 		<phase-listener>com.liferay.faces.util.lifecycle.DebugPhaseListener</phase-listener>
 	</lifecycle>
-
+	
+     <factory>
+		<exception-handler-factory>mx.gob.imss.cit.dictamen.web.util.CustomExceptionHandlerFactory</exception-handler-factory>
+	</factory>
+	
 	<application>
 		<locale-config>
 			<default-locale>en</default-locale>
@@ -27,5 +31,16 @@
 		<message-bundle>bundles.customMessages</message-bundle>
 
 	</application>
-
+	
+	
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/views/comun/error.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+   </navigation-rule>
 </faces-config>

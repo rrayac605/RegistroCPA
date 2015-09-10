@@ -6,7 +6,6 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import mx.gob.imss.cit.dictamen.web.constants.WebConstants;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 
 import org.apache.log4j.Logger;
@@ -22,6 +21,11 @@ public final class CleanBeanUtil {
 
     /** The setter prefix. */
     private static final String SETTER_PREFIX = "set";
+    
+    /** The setter prefix. */
+    private static final int CERO = 0;
+    /** The setter prefix. */
+    private static final int UNO = 1;
 
     /**
      * Instantiates a new clean bean util.
@@ -61,12 +65,12 @@ public final class CleanBeanUtil {
                 	//List
                 	if(Collection.class.isAssignableFrom(field.getType())){
 
-            			Object[] values = new Object[WebConstants.UNO];                            
+            			Object[] values = new Object[UNO];                            
                         ArrayList<?> myList = (ArrayList<?>) field.get(beanObject);
                         if(myList!=null){
                         	myList.clear();
                         }
-                        values[WebConstants.CERO] = myList;
+                        values[CERO] = myList;
                         
             	        Statement stmt = new Statement(beanObject, createSetter(field.getName()),values );
                         stmt.execute();
@@ -76,11 +80,11 @@ public final class CleanBeanUtil {
                         if(field.getType().equals(boolean.class)) {
                             field.setBoolean(beanObject, false);
                         }else if(field.getType().equals( int.class)){
-                        	field.setInt(beanObject, WebConstants.CERO);
+                        	field.setInt(beanObject, CERO);
                         }
                     } else {
-                        Object[] values = new Object[WebConstants.UNO];
-                        values[WebConstants.CERO] = null;
+                        Object[] values = new Object[UNO];
+                        values[CERO] = null;
                         Statement stmt = new Statement(beanObject, createSetter(field.getName()), values);
                         stmt.execute();
                     }
@@ -100,7 +104,7 @@ public final class CleanBeanUtil {
      * @return the string
      */
     private static String createSetter(String fieldName) {
-        return SETTER_PREFIX + fieldName.substring(WebConstants.CERO, WebConstants.UNO).toUpperCase() + fieldName.substring(WebConstants.UNO);
+        return SETTER_PREFIX + fieldName.substring(CERO, UNO).toUpperCase() + fieldName.substring(UNO);
     }
 
     public static <T> T instanceOf (Class<T> clazz) throws Exception {
