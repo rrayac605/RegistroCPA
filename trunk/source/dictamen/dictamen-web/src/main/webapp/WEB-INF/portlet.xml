@@ -47,7 +47,7 @@
 		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
 		<init-param>
 			<name>javax.portlet.faces.defaultViewId.view</name>
-			<value>/views/datosDictaminacion.xhtml</value>
+			<value>/views/dictamen/datosDictaminacion.xhtml</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -57,40 +57,6 @@
 			<title>Dictaminacion</title>
 			<short-title>Dictaminacion</short-title>
 			<keywords>Dictaminacion</keywords>
-		</portlet-info>
-
-		<security-role-ref>
-			<role-name>administrator</role-name>
-		</security-role-ref>
-		<security-role-ref>
-			<role-name>guest</role-name>
-		</security-role-ref>
-		<security-role-ref>
-			<role-name>power-user</role-name>
-		</security-role-ref>
-		<security-role-ref>
-			<role-name>user</role-name>
-		</security-role-ref>
-	</portlet>
-	
-	<!-- Información Patronal -->
-	<portlet>
-
-		<portlet-name>Informacion Patronal</portlet-name>
-		<display-name>Informacion Patronal</display-name>
-		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
-		<init-param>
-			<name>javax.portlet.faces.defaultViewId.view</name>
-			<value>/views/dictamen/informacionPatronal/cargaArchivos.xhtml</value>
-		</init-param>
-		<expiration-cache>0</expiration-cache>
-		<supports>
-			<mime-type>text/html</mime-type>
-		</supports>
-		<portlet-info>
-			<title>Informacion Patronal</title>
-			<short-title>Informacion Patronal</short-title>
-			<keywords>Informacion Patronal</keywords>
 		</portlet-info>
 
 		<security-role-ref>

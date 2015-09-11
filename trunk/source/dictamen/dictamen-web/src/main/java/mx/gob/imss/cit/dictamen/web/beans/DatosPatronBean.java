@@ -3,10 +3,13 @@ package mx.gob.imss.cit.dictamen.web.beans;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import mx.gob.imss.cit.dictamen.integration.api.PatronIntegration;
+import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
@@ -21,15 +24,20 @@ public class DatosPatronBean extends BaseBean {
 	/**
 	 * 
 	 */
+	
+	@EJB
+	private PatronIntegration  patronIntegration;
+	
 	private static final long serialVersionUID = 2825687007915597308L;
 
 	@ManagedProperty(value = "#{datosPatronPage}")
 	private DatosPatronPage datosPatronPage;
-
+	
 	public String init(){
+		datosPatronPage.setDatosPatron(new DatosPatronDTO());
 		datosPatronPage.setListaParentLayout(createList());
-		
-		return null;
+		datosPatronPage.setListaTipoDictamen(patronIntegration.findAllTipoDictamen());
+		return "";
 	}
 	
 	public void init(String rfc){
@@ -42,7 +50,7 @@ public class DatosPatronBean extends BaseBean {
 		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_EJEMPLO3.getCode(),"uno");
 		FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_EJEMPLO4.getCode()," hola","hola2");
 	}
-
+	
 
 
 	public List<ParentLayoutDTO> createList(){
