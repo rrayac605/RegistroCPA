@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+  version="1.0">
+  <!-- Base de datos de la 10.11.6.238 -->
+  <persistence-unit name="DictamenPU" transaction-type="JTA">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/dictamenDS</jta-data-source>
+    <mapping-file>named-queries.xml</mapping-file>
+    <mapping-file>native-queries.xml</mapping-file>
+
+
+    <class>mx.gob.imss.cit.dictamen.model.DicPaisDO</class>
+    
+    <properties>
+      <property name="eclipselink.logging.level" value="${eclipselink.logging.level}" />
+      <property name="eclipselink.query-results-cache" value="false" />
+      <!-- <property name="eclipselink.cache.shared.default" value="false" /> -->
+      <!-- <property name="eclipselink.cache.size.default" value="0" /> -->
+      <!-- <property name="eclipselink.cache.type.default" value="None" /> -->
+    </properties>
+  </persistence-unit>
+</persistence>
