@@ -23,6 +23,7 @@ public class AWSPolicyTO extends BaseTO{
 	private String policy;
 	private String signature;
 	private String url;
+	private String contentType;
 	
 	
 	/**
@@ -180,6 +181,18 @@ public class AWSPolicyTO extends BaseTO{
 	 */
 	public void setUrl(String url) {
 		this.url = url;
+	}
+	/**
+	 * @return the contentType
+	 */
+	public String getContentType() {
+		return contentType;
+	}
+	/**
+	 * @param contentType the contentType to set
+	 */
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
 	}
 	
 	

@@ -124,7 +124,7 @@ public final class DictamenExceptionBuilder
     	dictamenException = new DictamenException( cause.getMessage(), cause );
     }
     else{
-    	String msg=PropertiesConfigUtils.getPropertyExceptionParams(PREFIJO_MENSAJE_EXCEPCION+code,args);   
+    	String msg=PropertiesConfigUtils.getPropertyException(PREFIJO_MENSAJE_EXCEPCION+code,args);   
     	dictamenException = new DictamenException(msg);
     }
 
