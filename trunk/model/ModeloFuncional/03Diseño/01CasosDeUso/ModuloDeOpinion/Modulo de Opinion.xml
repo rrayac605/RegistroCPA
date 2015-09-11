@@ -10,7 +10,7 @@
 		<UML:Model name="EA Model" xmi.id="MX_EAID_39D2B282_554E_4730_B196_510572B0499C">
 			<UML:Namespace.ownedElement>
 				<UML:Class name="EARootClass" xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" isRoot="true" isLeaf="false" isAbstract="false"/>
-				<UML:Package name="Modulo de Opinion" xmi.id="EAPK_39D2B282_554E_4730_B196_510572B0499C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+				<UML:Package name="Modulo de Opinion Compacto" xmi.id="EAPK_39D2B282_554E_4730_B196_510572B0499C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 					<UML:ModelElement.taggedValue>
 						<UML:TaggedValue tag="parent" value="EAPK_D1AD955A_A79E_4153_B8A5_A165DCD7437D"/>
 						<UML:TaggedValue tag="created" value="2015-09-03 07:22:14"/>
@@ -37,7 +37,7 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:UseCase name="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón" xmi.id="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" visibility="public" namespace="EAPK_39D2B282_554E_4730_B196_510572B0499C" isRoot="false" isLeaf="false" isAbstract="false">
+						<UML:UseCase name="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto" xmi.id="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" visibility="public" namespace="EAPK_39D2B282_554E_4730_B196_510572B0499C" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="documentation" value="Se describe la funcionalidad para que el Contador Público Autorizado emita su opinión respecto a la carga de información patronal y  que conclusión de los exámenes de atestiguamiento."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-04 11:56:50"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-11 13:40:48"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-11 17:08:23"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Opinion"/>
@@ -56,7 +56,7 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="280"/>
+								<UML:TaggedValue tag="ea_localid" value="348"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
@@ -130,12 +130,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="153"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="186"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C8 - Detalle de acuses de Opinión (Anexo1)"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="318"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -167,12 +167,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="124"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="185"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C2 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="303"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -204,12 +204,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="156"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="184"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C19 - Aplicación de pago "/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="321"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -241,12 +241,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="151"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="183"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A1 - Validación de número de convenio"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="338"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -278,12 +278,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="123"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="182"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C6 - Fecha de pago"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="314"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -315,12 +315,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="149"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="181"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C1 - Tipos de opinión"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="320"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -352,12 +352,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="122"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="180"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C10 - Detalle de captura de limitaciones al alcance de información"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="309"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -389,12 +389,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="155"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="179"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C24 - Captura de limitaciones"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="326"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -426,12 +426,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="150"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="178"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A13 - Habilitación de Vista previa"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="341"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -463,12 +463,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="160"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="177"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF002 - Requisitos para tipos de Opinión"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="223"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -500,12 +500,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="154"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="176"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C20 - Selección de tipo de pago"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="322"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -537,12 +537,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="121"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="175"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C7 - Observaciones de Opinión y Atestiguamiento"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="315"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -574,12 +574,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="158"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="174"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C22 - Registro de salvedades"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="324"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -611,12 +611,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="157"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="173"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C21 - Captura de detalle de tipo de pago"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="323"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -648,12 +648,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="159"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="172"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C23 - Captura de FIEL"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="325"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -685,12 +685,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="120"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="171"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C11 - Fecha de convenio de pago y primer pago"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="319"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -722,12 +722,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="119"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="170"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C9 - Detalle de captura de Rubros y Conceptos"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="310"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -759,12 +759,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="152"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón"/>
+								<UML:TaggedValue tag="ea_localid" value="169"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Emitir opinión respecto del cumpliminto de obligaciones de seguridad social del patrón Compacto"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A2 - Número de parcialidades"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="280"/>
+								<UML:TaggedValue tag="ea_sourceID" value="348"/>
 								<UML:TaggedValue tag="ea_targetID" value="334"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
@@ -789,19 +789,19 @@
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
-		<UML:Diagram name="Modulo de Opinion" xmi.id="EAID_610884D6_6E07_4cc8_91A7_9A5A2051A1D8" diagramType="UseCaseDiagram" owner="EAPK_39D2B282_554E_4730_B196_510572B0499C" toolName="Enterprise Architect 2.5">
+		<UML:Diagram name="Modulo de Opinion Compacto" xmi.id="EAID_610884D6_6E07_4cc8_91A7_9A5A2051A1D8" diagramType="UseCaseDiagram" owner="EAPK_39D2B282_554E_4730_B196_510572B0499C" toolName="Enterprise Architect 2.5">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="nsoria"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-04 11:55:18"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-11 13:47:32"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-11 17:08:45"/>
 				<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="36"/>
-				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=103;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=7A35CE67;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="ea_localid" value="42"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=84;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=DAF74AB8;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=422;Top=22;Right=582;Bottom=55;" subject="EAID_71C9CE9F_8614_441a_BB3F_8B4151C567F6" seqno="1" style="DUID=64E6CD05;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
@@ -823,24 +823,24 @@
 				<UML:DiagramElement geometry="Left=428;Top=497;Right=588;Bottom=530;" subject="EAID_F8DBEFA3_978B_4070_850B_EF40EC17A79B" seqno="17" style="DUID=21E6BF20;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="Left=730;Top=94;Right=890;Bottom=153;" subject="EAID_3A2A0CAE_E8EC_4856_BF36_A5B7E23BAB0C" seqno="18" style="DUID=06645903;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="Left=155;Top=235;Right=324;Bottom=348;" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" seqno="19" style="DUID=1D1A6E97;"/>
-				<UML:DiagramElement geometry="SX=24;SY=-56;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=262:-375$325:-377$;" subject="EAID_2D3CE030_6990_412e_954C_00E0FB8A474A" style="Mode=3;EOID=ADE943C8;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6E6C98EB_B28B_4a72_A2AF_01A88844C88A" style="Mode=3;EOID=64E6CD05;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0FA7A1C5_9B67_419c_B922_6E95DCED9648" style="Mode=3;EOID=C565A033;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_20DD1623_051C_499b_A1F7_2FC02F97BE72" style="Mode=3;EOID=9940AC27;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D1F50521_51DF_4b77_9F48_39A7EF217030" style="Mode=3;EOID=732B5B03;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_CF8B3E44_2CBA_48e6_A385_5985C7B8BF7F" style="Mode=3;EOID=20A49250;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=-17;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=683:-307$683:-207$;" subject="EAID_B8995D2C_C59C_49f9_B518_2DD0FD96C401" style="Mode=3;EOID=A15EECB9;SOID=1D1A6E97;Color=-1;LWidth=0;TREE=H;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=40;SY=-56;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_410CC415_7BCC_4727_90D8_580E4AF8AA6F" style="Mode=3;EOID=08ED4416;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_43C0DB98_34CA_4881_AFAE_4D60FE4983FB" style="Mode=3;EOID=06645903;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6FBE50B3_3BF4_433f_8DC0_F66EEEE71D74" style="Mode=3;EOID=9DC711BB;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0125424D_5348_4dc8_9FA9_0053A87BB93A" style="Mode=3;EOID=21E6BF20;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_70D50AD9_2B0C_423b_9650_693EDF60F170" style="Mode=3;EOID=6115C76F;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_5C447423_A1FD_4bcb_8FEF_83647296B6AF" style="Mode=3;EOID=310D84D3;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_162782D7_1A87_4b19_8000_36FFBB27980B" style="Mode=3;EOID=5BA826D9;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AD33104F_0D20_4d1c_97C0_4208732BBF8D" style="Mode=3;EOID=97724B59;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_91599DBF_5E61_4b64_9C23_F085E6A886B5" style="Mode=3;EOID=5EC99F26;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_8D2A77B3_17B3_4099_9DC7_332DA50F84C6" style="Mode=3;EOID=5A58A47B;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AD33104F_0D20_4d1c_97C0_4208732BBF8D" style="Mode=3;EOID=97724B59;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=12;SY=-52;EX=-61;EY=-12;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=230:-371$;" subject="EAID_76167110_F4F4_4897_A830_CE2C04717699" style="Mode=2;EOID=6A46CB75;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D1F50521_51DF_4b77_9F48_39A7EF217030" style="Mode=3;EOID=732B5B03;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6FBE50B3_3BF4_433f_8DC0_F66EEEE71D74" style="Mode=3;EOID=9DC711BB;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0125424D_5348_4dc8_9FA9_0053A87BB93A" style="Mode=3;EOID=21E6BF20;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_5C447423_A1FD_4bcb_8FEF_83647296B6AF" style="Mode=3;EOID=310D84D3;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_43C0DB98_34CA_4881_AFAE_4D60FE4983FB" style="Mode=3;EOID=06645903;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=40;SY=-56;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_410CC415_7BCC_4727_90D8_580E4AF8AA6F" style="Mode=3;EOID=08ED4416;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=24;SY=-56;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=262:-375$325:-377$;" subject="EAID_2D3CE030_6990_412e_954C_00E0FB8A474A" style="Mode=3;EOID=ADE943C8;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_20DD1623_051C_499b_A1F7_2FC02F97BE72" style="Mode=3;EOID=9940AC27;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_162782D7_1A87_4b19_8000_36FFBB27980B" style="Mode=3;EOID=5BA826D9;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0FA7A1C5_9B67_419c_B922_6E95DCED9648" style="Mode=3;EOID=C565A033;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_70D50AD9_2B0C_423b_9650_693EDF60F170" style="Mode=3;EOID=6115C76F;SOID=1D1A6E97;Color=-1;LWidth=0;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
