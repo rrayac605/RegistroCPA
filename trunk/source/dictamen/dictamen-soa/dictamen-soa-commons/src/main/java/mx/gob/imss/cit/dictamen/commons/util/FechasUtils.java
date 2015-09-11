@@ -18,9 +18,13 @@ public final class FechasUtils {
 	
 	private static final String FECHA_FORMATO_dd_MM_yyyy_HH_mm_ss_SSS = "dd/MM/yyyy HH:mm:ss.SSS";
 	
+	private static final String FECHA_FORMATO_yyyy_MM_dd_HH_mm_ss_SSS = "yyyy/MM/dd HH:mm:ss.SSS";
+	
 	private static final String FECHA_FORMATO_HH_mm_ss = "HH:mm:ss";
 	
-	private static final String FECHA_FORMATO_yyyy_MM_dd_T_HH_mm_ss_Z = "yyyy-MM-dd'T'HH:mm:ssZ";
+	private static final String FECHA_FORMATO_yyyy_MM_dd_T_HH_mm_ss_Z = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+	
+	private static final String FECHA_FORMATO_yyyyMMddTHHmmssZ = "yyyyMMdd'T'HHmmss'Z'";
 
 	/**
 	 * Constantes privadas para calculos
@@ -50,6 +54,11 @@ public final class FechasUtils {
 		return sdf.format(date);
 	}
 	
+	public static String dateToString_yyyyMMddTHHmmssZ(Date date){
+		SimpleDateFormat sdf = new SimpleDateFormat(FECHA_FORMATO_yyyyMMddTHHmmssZ);		
+		return sdf.format(date);
+	}
+	
 	
 	
 	public static Date stringToDate_dd_MM_yyyy(String dateS) throws ParseException{
@@ -68,11 +77,31 @@ public final class FechasUtils {
 		SimpleDateFormat sdf = new SimpleDateFormat(FECHA_FORMATO_dd_MM_yyyy_HH_mm_ss_SSS);		
 		return sdf.format(date);
 	}
+	
+	public static Date stringToDate_dd_MM_yyyy_HH_mm_ss_SSS(String dateS) throws ParseException{
+		SimpleDateFormat sdf = new SimpleDateFormat(FECHA_FORMATO_dd_MM_yyyy_HH_mm_ss_SSS);
+		return sdf.parse(dateS);
+	}	
+	
 
 
 
 	public static String dateToString_HH_mm_ss_SSS(Date date){
 		SimpleDateFormat sdf = new SimpleDateFormat(FECHA_FORMATO_HH_mm_ss);		
+		return sdf.format(date);
+	}
+
+	
+	public static Date stringToDate_yyyy_MM_dd_HH_mm_ss_SSS(String dateS) throws ParseException{
+		SimpleDateFormat sdf = new SimpleDateFormat(FECHA_FORMATO_yyyy_MM_dd_HH_mm_ss_SSS);
+		return sdf.parse(dateS);
+	}	
+	
+
+
+
+	public static String dateToString__yyyy_MM_dd_HH_mm_ss_SSS(Date date){
+		SimpleDateFormat sdf = new SimpleDateFormat(FECHA_FORMATO_yyyy_MM_dd_HH_mm_ss_SSS);		
 		return sdf.format(date);
 	}
 

@@ -33,7 +33,13 @@
 				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>				
 				<bdtu.endpoint>http://11.254.20.207:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl</bdtu.endpoint>
 				<bdtu.namespace>http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/</bdtu.namespace>
-				<bdtu.service>ServiciosBDTU</bdtu.service>
+				<bdtu.service>ServiciosBDTU</bdtu.service>				
+				<aws.bucket>intellegomx</aws.bucket>
+				<aws.x-amz-credential>AKIAI4H4UF5WBC7ZG45A/20150903/us-east-1/s3/aws4_request</aws.x-amz-credential>
+				<aws.url>http://intellegomx.s3.amazonaws.com/</aws.url>
+				<aws.aws_secret_key>hOl3xkQUgHxfr9WrIeeYmjq</aws.aws_secret_key>
+				<aws.ruta_base>Dictamen/</aws.ruta_base>
+				<aws.awsAccessKeyId>AKIAI4H4UF5WBC7ZG45A</aws.awsAccessKeyId>
 				
 			</properties>
 		</profile>
@@ -55,6 +61,13 @@
 				<bdtu.endpoint>http://11.254.20.207:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl</bdtu.endpoint>
 				<bdtu.namespace>http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/</bdtu.namespace>
 				<bdtu.service>ServiciosBDTU</bdtu.service>
+				<aws.bucket>intellegomx</aws.bucket>
+				<aws.x-amz-credential>AKIAI4H4UF5WBC7ZG45A/20150903/us-east-1/s3/aws4_request</aws.x-amz-credential>
+				<aws.url>http://intellegomx.s3.amazonaws.com/</aws.url>
+				<aws.aws_secret_key>hOl3xkQUgHxfr9WrIeeYmjq</aws.aws_secret_key>
+				<aws.ruta_base>Dictamen/</aws.ruta_base>
+				<aws.awsAccessKeyId>AKIAI4H4UF5WBC7ZG45A</aws.awsAccessKeyId>
+				
 				
 			</properties>
 			

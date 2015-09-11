@@ -3,6 +3,8 @@
  */
 package mx.gob.imss.cit.dictamen.services;
 
+import java.util.Date;
+
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO;
 
@@ -13,6 +15,6 @@ import mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO;
 
 public interface AWSService {
 	
-	AWSPolicyTO getAwsPoliciyEncrypted(String rfcContador,String rfcPatron) throws DictamenException;
+	AWSPolicyTO getAwsPoliciyEncrypted(Date fechaFirma,String rutaDestino) throws DictamenException;
 	
 }

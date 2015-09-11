@@ -33,6 +33,8 @@ public final class DictamenServicesConstants {
 	public static final String CONFIG_KEY_AWS_URL="aws.url";
 	public static final String CONFIG_KEY_AWS_SECRET_KEY="aws.aws_secret_key";	
 	public static final String CONFIG_KEY_AWS_RUTA_BASE="aws.ruta_base";	
+	public static final String CONFIG_KEY_AWS_ACL="aws.acl";	
+	public static final String CONFIG_KEY_AWS_ACCESS_KEY_ID="aws.awsAccessKeyId";	
 
 
 	
