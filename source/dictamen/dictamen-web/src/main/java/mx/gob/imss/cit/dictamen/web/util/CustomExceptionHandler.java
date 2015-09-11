@@ -60,7 +60,7 @@ public class CustomExceptionHandler extends ExceptionHandlerWrapper{
 	      throwable.printStackTrace();
 	      FacesContext ctx = FacesContext.getCurrentInstance();
 	      ConfigurableNavigationHandler nav = (ConfigurableNavigationHandler) ctx.getApplication().getNavigationHandler();
-	      nav.performNavigation(NavigationConstants.ERROR_PAGE );
+	      nav.performNavigation(NavigationConstants.PAGE_ERROR );
         
 
       }finally {

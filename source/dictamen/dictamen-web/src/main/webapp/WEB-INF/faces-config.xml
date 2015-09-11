@@ -42,5 +42,11 @@
 			<redirect />
 		</navigation-case>
 		
+		<navigation-case>
+			<from-outcome>pruebaFirmaElectronica</from-outcome>
+			<to-view-id>/views/comun/firma/llamadaFirmaElectronica.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
    </navigation-rule>
 </faces-config>
