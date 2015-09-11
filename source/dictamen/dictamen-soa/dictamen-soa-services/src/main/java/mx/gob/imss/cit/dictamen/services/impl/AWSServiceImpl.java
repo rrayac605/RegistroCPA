@@ -34,54 +34,53 @@ public class AWSServiceImpl implements AWSService {
 	
 	private static final Logger LOG=Logger.getLogger(AWSServiceImpl.class);
 
-	private static final String POLICY_TEMPLATE = "{"
-			+ " \"expiration\": \"#EXPIRATION#\","
-			+ "  \"conditions\": [{\"bucket\": \"#BUCKET#\"}, [\"starts-with\", \"$key\", \"#KEY#\"],"
-			+ "    {\"acl\": \"#ACL#\"},"
-			+ "    {\"success_action_status\": \"#SUCCESS_ACTION_ESTATUS#\"},"
-			+ "    [\"starts-with\", \"$Content-Type\", \"#CONTENT_TYPE#\"],"
-			+ "    {\"x-amz-meta-uuid\": \"#X_AMZ_META_UUID#\"},"
-			+ "    [\"starts-with\", \"$x-amz-meta-tag\", \"#X_AMZ_META_TAG#\"],"
-			+ "    {\"x-amz-credential\": \"#X_AMZ_CREDENTIAL#\"},"
-			+ "    {\"x-amz-algorithm\": \"#X_AMZ_ALGORITHM#\"},"
-			+ "    {\"x-amz-date\": \"#X_AMZ_DATE#\" }" + "  ]" + "}";
-	
-	
+	private static String POLICY_TEMPLATE="{ \"expiration\": \"#EXPIRATION#\",\n" +
+											"  \"conditions\": [\n" +
+											"    {\"bucket\": \"#BUCKET#\"},\n" +
+											"    [\"starts-with\", \"$key\", \"#KEY#\"],\n" +
+											"    {\"acl\": \"#ACL#\"},\n" +
+											"    {\"success_action_status\": \"#SUCCESS_ACTION_ESTATUS#\"},\n" +
+											"    [\"starts-with\", \"$Content-Type\", \"#CONTENT_TYPE#\"],\n" +
+											"    {\"x-amz-meta-uuid\": \"#X_AMZ_META_UUID#\"},\n" +
+											"    [\"starts-with\", \"$x-amz-meta-tag\", \"#X_AMZ_META_TAG#\"],\n" +
+											"\n" +
+											"    {\"x-amz-credential\": \"#X_AMZ_CREDENTIAL#\"},\n" +
+											"    {\"x-amz-algorithm\": \"#X_AMZ_ALGORITHM#\"},\n" +
+											"    {\"x-amz-date\": \"#X_AMZ_DATE#\" }\n" +
+											"  ]\n" +
+											"}";	
 
 	@Override
-	public AWSPolicyTO getAwsPoliciyEncrypted(String rfcContador,String rfcPatron) throws DictamenException{
+	public AWSPolicyTO getAwsPoliciyEncrypted(Date fechaFirma,String rutaDestino) throws DictamenException{
 		AWSPolicyTO awsPolicyTO = new AWSPolicyTO();
-		Date fechaFirma=new Date();
+		
 		String awsSecretKey=null;
-		StringBuilder rutaDestino=null;
+
 		 try {
 			 
 			awsSecretKey = PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SECRET_KEY);
 			
-			rutaDestino = new StringBuilder(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_RUTA_BASE));
-			rutaDestino.append(DictamenServicesConstants.CARACTER_SLASH);
-			rutaDestino.append(rfcContador);
-			rutaDestino.append(DictamenServicesConstants.CARACTER_SLASH);
-			rutaDestino.append(rfcPatron);
-			rutaDestino.append(DictamenServicesConstants.CARACTER_SLASH);
-			
-			
-			awsPolicyTO.setExpiration(FechasUtils.dateToString_yyyy_MM_dd_T_HH_mm_ss_Z(FechasUtils.agregaDias(fechaFirma, 1)));	
+
+			awsPolicyTO.setExpiration(FechasUtils.dateToString_yyyy_MM_dd_T_HH_mm_ss_Z(fechaFirma));	
 			awsPolicyTO.setBucket(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_BUCKET));
+			awsPolicyTO.setAwsAccessKeyId(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACCESS_KEY_ID));
+			awsPolicyTO.setAcl(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACL));
 			awsPolicyTO.setSuccessActionStatus(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SUCCESS_ACTION_ESTATUS));
 			awsPolicyTO.setContentType(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_CONTENT_TYPE));
 			awsPolicyTO.setxAmzMetaUuid(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_UUID));
 			awsPolicyTO.setxAmzMetaTag(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_TAG));
 			awsPolicyTO.setxAmzCredential(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_CREDENTIAL));
 			awsPolicyTO.setxAmzAlgorithm(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_ALGORITHM));
-			awsPolicyTO.setxAmzDate(FechasUtils.dateToString_yyyy_MM_dd_T_HH_mm_ss_Z(fechaFirma));
+			awsPolicyTO.setxAmzDate(FechasUtils.dateToString_yyyyMMddTHHmmssZ(fechaFirma));
 			awsPolicyTO.setUrl(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_URL));
-			awsPolicyTO.setKey(rutaDestino.toString());			
+		
+			awsPolicyTO.setKey(rutaDestino);			
 			
-			String policy=POLICY_TEMPLATE;
-			policy.replaceAll("#EXPIRATION#", awsPolicyTO.getExpiration())
+			String policy=POLICY_TEMPLATE.replaceAll("/n", "");
+			policy=policy.replaceAll("#EXPIRATION#", awsPolicyTO.getExpiration())
 			.replaceAll("#BUCKET#", awsPolicyTO.getBucket())
 			.replaceAll("#KEY#", awsPolicyTO.getKey())
+			.replaceAll("#ACL#", awsPolicyTO.getAcl())
 			.replaceAll("#SUCCESS_ACTION_ESTATUS#", awsPolicyTO.getSuccessActionStatus())
 			.replaceAll("#CONTENT_TYPE#", awsPolicyTO.getContentType())
 			.replaceAll("#X_AMZ_META_UUID#", awsPolicyTO.getxAmzMetaUuid())
@@ -89,7 +88,7 @@ public class AWSServiceImpl implements AWSService {
 			.replaceAll("#X_AMZ_CREDENTIAL#", awsPolicyTO.getxAmzCredential())
 			.replaceAll("#X_AMZ_ALGORITHM#", awsPolicyTO.getxAmzAlgorithm())
 			.replaceAll("#X_AMZ_DATE#", awsPolicyTO.getxAmzDate());
-			
+			LOG.debug(policy);
 			
 			Mac hmac = Mac.getInstance(DictamenServicesConstants.ALGORITHM_HMACSHA1);
 			hmac.init(new SecretKeySpec(awsSecretKey.getBytes(DictamenServicesConstants.ENCODING_UTF8), DictamenServicesConstants.ALGORITHM_HMACSHA1));			

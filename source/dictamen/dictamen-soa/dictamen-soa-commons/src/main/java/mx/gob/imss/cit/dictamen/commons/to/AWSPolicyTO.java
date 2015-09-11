@@ -11,6 +11,7 @@ public class AWSPolicyTO extends BaseTO{
 		
 	
 	private String expiration;
+	private String awsAccessKeyId;
 	private String bucket;
 	private String key;
 	private String acl;
@@ -193,6 +194,18 @@ public class AWSPolicyTO extends BaseTO{
 	 */
 	public void setContentType(String contentType) {
 		this.contentType = contentType;
+	}
+	/**
+	 * @return the awsAccessKeyId
+	 */
+	public String getAwsAccessKeyId() {
+		return awsAccessKeyId;
+	}
+	/**
+	 * @param awsAccessKeyId the awsAccessKeyId to set
+	 */
+	public void setAwsAccessKeyId(String awsAccessKeyId) {
+		this.awsAccessKeyId = awsAccessKeyId;
 	}
 	
 	
