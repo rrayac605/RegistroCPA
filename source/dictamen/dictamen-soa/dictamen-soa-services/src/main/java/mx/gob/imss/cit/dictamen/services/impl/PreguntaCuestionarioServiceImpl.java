@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
 import javax.xml.namespace.QName;
 
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
@@ -29,6 +30,7 @@ import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.consul
 
 import org.apache.log4j.Logger;
 
+@Stateless
 public class PreguntaCuestionarioServiceImpl implements PreguntaCuestionarioService {
 
 	private static final Logger LOG = Logger
