@@ -12,11 +12,11 @@
 	<script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/dropzone.js"  />
 	<script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/loadFile.js" />
 	
-<p:outputLabel value="#{datosPatronBean.init()}"/>
-	 												<form  action="http://XXXXXx.XXXXXX.com/" method="post" class="dropzone dz-clickable" enctype="multipart/form-data" style="width:100%;height:100% " >																	
-												</form>					   
-	 <p:accordionPanel value="#{datosPatronPage.listaParentLayout}" var="parentLayout" multiple="true" activeIndex="0,1,2">
-					        <p:tab title="Documento - #{parentLayout.name}">
+
+	 <form  action="http://XXXXXx.XXXXXX.com/" method="post" class="dropzone dz-clickable" enctype="multipart/form-data" style="width:100%;height:100% " >																	
+	</form>					   
+	 <p:accordionPanel value="#{cargaArchivosPage.listaParentLayout}" var="parentLayout" multiple="true" activeIndex="0,1,2">
+					        <p:tab title="#{parentLayout.name}">
 					            <p:panel>         		
 									   <p:carousel  value="#{parentLayout.listaLayout}" var="layout" itemStyle="text-align:center" 
 									   style="width:100%" numVisible="4" > 

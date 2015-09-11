@@ -8,59 +8,58 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 		<h:form id="dictamen">
-			<h:outputLabel value="#{datosPatronBean.init()}" />
 
 					<p:panel id="panelPatron" header="#{msg['message.dictamen.dictaminar.datos.seccion']}" style="margin-bottom:20px">
 
 						<h:panelGrid columns="5" cellpadding="5">
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}" />
-							<p:inputText id="rfcPatron" required="true" value="#{datosPatronPage.datosPatron.rfc}" />
-							<p:commandButton value="#{msg['message.button.buscar']}" id="ajax" action="#{datosPatronPage.datosPatronBean.buscar}" styleClass="ui-priority-primary" />
+							<p:inputText id="rfcPatron" required="true" value="#{datosPatronalesPage.datosPatron.rfc}" />
+							<p:commandButton value="#{msg['message.button.buscar']}" id="ajax" action="#{datosPatronBean.buscar}" styleClass="ui-priority-primary" />
 
 							<h:outputLabel value="#{msg['message.dictamen.dictaminar.datos.tipo']}">:</h:outputLabel>
-							<p:selectOneMenu value="#{datosPatronPage.opcion}">
+							<p:selectOneMenu value="#{datosPatronalesPage.opcion}">
 								<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
-								<f:selectItems value="#{datosPatronPage.listaTipoDictamen}" var="tipo" itemLabel="#{tipo.descTipoDictamen}" itemValue="#{tipo.idDictamen}" />
+								<f:selectItems value="#{datosPatronalesPage.listaTipoDictamen}" var="tipo" itemLabel="#{tipo.descTipoDictamen}" itemValue="#{tipo.idDictamen}" />
 							</p:selectOneMenu>
 						</h:panelGrid>
 
 						<h:panelGrid columns="4" cellpadding="5">
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}" />
-							<p:inputText id="trabajadores" required="true" value="#{datosPatronPage.datosPatron.numTrabajadoresPromedio}" />
+							<p:inputText id="trabajadores" required="true" value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" />
 
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.construccion']}" />
-							<p:selectOneRadio id="construccion" value="#{datosPatronPage.datosPatron.industriaConstruccion}" converter="#{BooleanConverter}">
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemvalue="#{datosPatronPage.radioTrue}"  />
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronPage.radioFalse}" itemValueAsString="#{datosPatronPage.radioFalse}"/>
+							<p:selectOneRadio id="construccion" value="#{datosPatronalesPage.datosPatron.industriaConstruccion}" converter="#{BooleanConverter}">
+								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemvalue="#{datosPatronalesPage.radioTrue}"  />
+								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronalesPage.radioFalse}" itemValueAsString="#{datosPatronalesPage.radioFalse}"/>
 
 							</p:selectOneRadio>
 
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" />
-							<p:selectOneRadio id="dictaminado" value="#{datosPatronPage.datosPatron.empresaValuada}" converter="#{BooleanConverter}" >
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemValue="#{datosPatronPage.radioTrue}" />
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronPage.radioFalse}" itemValueAsString="#{datosPatronPage.radioFalse}" />
+							<p:selectOneRadio id="dictaminado" value="#{datosPatronalesPage.datosPatron.empresaValuada}" converter="#{BooleanConverter}" >
+								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemValue="#{datosPatronalesPage.radioTrue}" />
+								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronalesPage.radioFalse}" itemValueAsString="#{datosPatronalesPage.radioFalse}" />
 								
 							</p:selectOneRadio>
 
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.valuada']}" />
-							<p:selectOneRadio id="valuada" value="#{datosPatronPage.datosPatron.actConstruccionOregObra}" converter="#{BooleanConverter}">
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemValue="#{datosPatronPage.radioTrue}" />
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronPage.radioFalse}" itemValueAsString="#{datosPatronPage.radioFalse}" />
+							<p:selectOneRadio id="valuada" value="#{datosPatronalesPage.datosPatron.actConstruccionOregObra}" converter="#{BooleanConverter}">
+								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemValue="#{datosPatronalesPage.radioTrue}" />
+								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronalesPage.radioFalse}" itemValueAsString="#{datosPatronalesPage.radioFalse}" />
 							</p:selectOneRadio>
 						</h:panelGrid>
 
 						<h:panelGrid columns="4" cellpadding="5">
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.denominacion']}" />
-							<p:inputText id="denominacion" required="true" value="#{datosPatronPage.datosPatron.razonSocialNombre}" />
+							<p:inputText id="denominacion" required="true" value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
 
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}" />
-							<p:inputText id="ejercicio" required="true" value="#{datosPatronPage.datosPatron.ejercicioDictaminar}" />
+							<p:inputText id="ejercicio" required="true" value="#{datosPatronalesPage.datosPatron.ejercicioDictaminar}" />
 
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.patronales']}" />
-							<p:inputText id="patronales" required="true" value="#{datosPatronPage.datosPatron.numRegistroPatronales}" />
+							<p:inputText id="patronales" required="true" value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
 
 							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.fecha']}" />
-							<p:calendar id="button" value="#{datosPatronPage.datosPatron.fechaPresentacionDictamen}" showOn="button" />
+							<p:calendar id="button" value="#{datosPatronalesPage.datosPatron.fechaPresentacionDictamen}" showOn="button" />
 						</h:panelGrid>
 						
 					</p:panel>

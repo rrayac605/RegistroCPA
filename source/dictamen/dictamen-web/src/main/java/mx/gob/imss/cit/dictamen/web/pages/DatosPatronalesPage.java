@@ -6,12 +6,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
-@ManagedBean(name = "datosPatronPage")
+@ManagedBean(name = "datosPatronalesPage")
 @ViewScoped
-public class DatosPatronPage extends BaseBean {
+public class DatosPatronalesPage extends BaseBean {
 
 	/**
 	 * 
@@ -23,7 +22,6 @@ public class DatosPatronPage extends BaseBean {
 	private Integer opcion;
 	private Boolean radioTrue= Boolean.TRUE;
 	private Boolean radioFalse= Boolean.FALSE;
-	private List<ParentLayoutDTO> listaParentLayout;
 	private List<TipoDictamenDTO> listaTipoDictamen;
 
 	/**
@@ -89,19 +87,6 @@ public class DatosPatronPage extends BaseBean {
 		this.radioFalse = radioFalse;
 	}
 
-	/**
-	 * @return the listaParentLayout
-	 */
-	public List<ParentLayoutDTO> getListaParentLayout() {
-		return listaParentLayout;
-	}
-
-	/**
-	 * @param listaParentLayout the listaParentLayout to set
-	 */
-	public void setListaParentLayout(List<ParentLayoutDTO> listaParentLayout) {
-		this.listaParentLayout = listaParentLayout;
-	}
 
 	/**
 	 * @param datosPatron the datosPatron to set
