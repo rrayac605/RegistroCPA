@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-09-03 07:22:14"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\ModuloDeOpinion\Modulo de Opinion.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-09 17:24:53"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-10 11:25:27"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-04 11:50:52"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-04 11:56:50"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-09 18:43:45"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-10 19:01:02"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Opinion"/>
@@ -61,7 +61,7 @@
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
-								<UML:Constraint name="Carga de información patronal y atesguamiento cerrado">
+								<UML:Constraint name="Carga de información patronal y atesguamiento terminado">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="description" value="El CPA debe haber finalizado la carga de información patronal y respondido los exámenes de atestiguamiento correspondientes"/>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
@@ -79,7 +79,7 @@
 								</UML:Constraint>
 								<UML:Constraint name="El Contador Publico Autorizado esta dentro de Dictamen Electrónico">
 									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="description" value="El Contador Publico Autorizado esta dentro de la opción de Dictamen Electrónico de la zona personal"/>
+										<UML:TaggedValue tag="description" value="El Contador Publico Autorizado está dentro de la opción de Dictamen Electrónico de la zona personal"/>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
 										<UML:TaggedValue tag="weight" value="5.00"/>
 										<UML:TaggedValue tag="status" value="Approved"/>
@@ -397,19 +397,25 @@
 			<EAScenario name="FA02 Opinión Con salvedad" type="Alternate" weight="2.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_1EFA3F5E_A1F3_4d40_B41B_8DDF98B1339A">
 				<EAScenarioContent>
 					<path>
-						<step name="El sistema despliega los campos de rubro y concepto en los que se señala la salvedad y las tablas donde se puede visualizar." guid="{BF4E5D79-358B-41f9-8509-B0C22E7488A0}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA captura la salvedad y concepto y da clic en agregar. RFC009." guid="{1CE5DC02-A36E-48a4-B115-647C4ECFE2EB}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema muestra la información capturada de rubro o concepto y permite la edición o borrado de dicha captura. Continuan en el paso 6 del Flujo básico." guid="{A362867C-4FF7-4e6c-B4D9-ACBC2B8901C6}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="Termina Flujo alterno" guid="{945BF3EE-F8C8-46d8-A96B-FB85F55D314E}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<context/>
+						<step name="El sistema despliega los campos a registrar las salvedades RFC500" guid="{BF4E5D79-358B-41f9-8509-B0C22E7488A0}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA captura la información requerida. RFC009.  Continuan en el paso 4 del Flujo básico." guid="{1CE5DC02-A36E-48a4-B115-647C4ECFE2EB}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Termina Flujo alterno" guid="{945BF3EE-F8C8-46d8-A96B-FB85F55D314E}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context>
+							<item oldname="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RFC010 - DEtalle de captura de limitaciones al alcance de información" guid="{3A2A0CAE-E8EC-4856-BF36-A5B7E23BAB0C}"/>
+							<item oldname="RFC009 - Detalle de captura de Rubros y Conceptos" guid="{4FB46B98-C3C6-4306-BA43-C9A1A0F464C3}"/>
+							<item oldname="RFC006 - Fecha de pago" guid="{888CD70B-225C-4b46-89AE-EDD175FE10B1}"/>
+							<item oldname="RFC007 - Observaciones de Opinión y Atestiguamiento" guid="{B704D115-8CF2-4d75-8A94-8F6761649A29}"/>
+							<item oldname="RFC011 - Fecha de convenio de pago y primer pago" guid="{F9DF8799-D998-41a4-B4BF-0EEFD0DE6DC2}"/>
+						</context>
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
 			<EAScenario name="FA03 Opinión Abstención" type="Alternate" weight="3.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_33FBAD2A_FD85_46a6_BF89_28E749F3D972">
 				<EAScenarioContent>
 					<path>
-						<step name="El sistema despliegla el cuadro de texto Limitaciones al alcance de información" guid="{9E4EBDF1-299D-4b73-B837-55363A8234C3}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA captura la información en el cuadro de texto  Limitaciones al alcance de información RFC010. Continua en el paso 12 del flujo básico." guid="{90F05996-9B68-4a3e-8866-5F19CBEA2513}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema despliegla en pantalla el cuadro de texto RFC700" guid="{9E4EBDF1-299D-4b73-B837-55363A8234C3}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA captura la información en el cuadro de texto  Limitaciones al alcance de información RFC010. Continua en el paso 7 del flujo básico." guid="{90F05996-9B68-4a3e-8866-5F19CBEA2513}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="Termina Flujo alterno" guid="{78A9746A-4D24-4836-9744-04C1AF0F5F71}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
@@ -426,7 +432,7 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El CPA selecciona la opción del campo de opinión Negativa FAC001" guid="{79186615-13C7-497d-BCF5-F27BCB8BC694}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="Continua en el paso del flujo básico" guid="{8FAF2907-1E5C-4452-B336-141BDB35CD1C}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Continua en el paso 7  del flujo básico" guid="{8FAF2907-1E5C-4452-B336-141BDB35CD1C}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="Termina flujo aterno" guid="{3E76F0B3-5228-4a0e-8053-E8A8E2A68BAC}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
 							<item oldname="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
@@ -456,6 +462,23 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
+			<EAScenario name="FA05 Vista previa" type="Alternate" weight="6.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_36B4354A_6459_4de8_A2DA_5B3D516107D8">
+				<EAScenarioContent>
+					<path>
+						<step name="El sistema habilita el botón Vista previa de acuerdo a RFC008." guid="{5E27CCF7-A7D2-4061-860A-E8FB2CD49D7F}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA selecciona Vista previa" guid="{572F1E75-0772-4546-96B6-07D90F2266D1}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Fin de caso de uso" guid="{8FB917AD-C30F-45a3-B582-CE3881392C79}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RFC010 - DEtalle de captura de limitaciones al alcance de información" guid="{3A2A0CAE-E8EC-4856-BF36-A5B7E23BAB0C}"/>
+							<item oldname="RFC009 - Detalle de captura de Rubros y Conceptos" guid="{4FB46B98-C3C6-4306-BA43-C9A1A0F464C3}"/>
+							<item oldname="RFC006 - Fecha de pago" guid="{888CD70B-225C-4b46-89AE-EDD175FE10B1}"/>
+							<item oldname="RFC007 - Observaciones de Opinión y Atestiguamiento" guid="{B704D115-8CF2-4d75-8A94-8F6761649A29}"/>
+							<item oldname="RFC011 - Fecha de convenio de pago y primer pago" guid="{F9DF8799-D998-41a4-B4BF-0EEFD0DE6DC2}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
 			<EAScenario name="FB Opinión sin salvedad con pago en una exhibición" type="Basic Path" weight="0.00" subject="EAID_28CD7220_F08B_45ed_8B2F_C354F8B9BF0A" xmi.id="EAID_71B45CF8_0CA6_4aa1_B36D_27BC7496974E">
 				<EAScenarioContent>
 					<path>
@@ -467,28 +490,17 @@
 							<extension level="3c" guid="{D5BBF086-4102-40a1-845E-30D8A7B0928E}" join="End"/>
 						</step>
 						<step name="El sistema despliega en pantalla las opciones de pago RFC200" guid="{A5A93602-3C7E-400b-8C6D-8A2C605DC7C5}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="Si el CPA selecciona la opción Sin pago, se llama al paso 12 del Flujo básico." guid="{D10D3F46-0423-4da9-AC63-F3863EA44975}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El CPA selecciona la opción Con pagos, " guid="{4BFF767D-4969-49d5-B969-3138AC021CD4}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema habilita el campo Forma de pago con las opciones desplegables de:&#xA;•	Una Exhibición&#xA;•	Parcialidades&#xA;" guid="{3059D5AF-DC01-4891-8749-DDEF803C2259}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El usuario selecciona la opción Una exhibición." guid="{8C161AC6-C745-40df-BFDC-7F8DACB74B5A}" level="8" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema habilita el campo Fecha de pago." guid="{84059557-80A3-4353-8750-53EA2F3845D7}" level="9" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El usuario captura la fecha en que realizó el pago. RFC006. Continua en el paso 12." guid="{8B856C3B-71D4-4f9b-8EF0-EE3514B549D8}" level="10" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="En caso que el CPA seleccione la opción de Forma de pago de Parcilaidades, se llama al FA01." guid="{5D757B3C-89F8-430a-B9AB-779D3EEA6D24}" level="11" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="11a" guid="{A28460E1-FF02-450a-BE93-574F4443A30C}" join="End"/>
+						<step name="El CPA elige la opción referente a la aplicación o no de pago." guid="{D10D3F46-0423-4da9-AC63-F3863EA44975}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="En caso de aplicar pago el sistema habilita el campo Forma de pago y la información correspondiente a cada forma. RFC300 y RFC400, RFC006" guid="{3059D5AF-DC01-4891-8749-DDEF803C2259}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA registra en el cuadro de observaciones información adicional. RFC007" guid="{8C161AC6-C745-40df-BFDC-7F8DACB74B5A}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El caso que el  CPA requiera ver la vista previa de su opinión ver FA05." guid="{6216EF13-1C85-4b56-AF3C-6D860DDEAE7C}" level="8" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="8a" guid="{36B4354A-6459-4de8-A2DA-5B3D516107D8}" join="End"/>
 						</step>
-						<step name="El sistema habilita el cuadro de texto de Observaciones." guid="{E412C7EE-2287-42c0-B045-D91349A62046}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="En caso que el CPA no capture información en el campo observaciones, continua en el paso 17 del flujo básico." guid="{439DD730-0809-4cb3-B637-F6116668F7F6}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El CPA captura información en el campo de texto de observaciones RFC007." guid="{E2F07429-66B8-450d-85CC-5D956FA66A14}" level="14" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="En caso que el CPA complete las observaciones da clic en el boton Guardar ." guid="{1276C1C6-95F8-4734-9B68-A52D7A7C5CE3}" level="15" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El CPA da clic en el botón Vista previa para visualizar la Opinión RFC008. " guid="{6216EF13-1C85-4b56-AF3C-6D860DDEAE7C}" level="16" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema muestra en pantalla la vista previa de la opinión de acuerdo a la RFC008. Continua en el paso 19." guid="{ED3B1280-D9FD-4b63-8F0E-89EA3F8756AE}" level="17" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name=" En caso que el CPA quiera cambiar su Opinión se llama al FA05" guid="{3E4E40F3-F715-4024-BADC-3C1C9029600B}" level="18" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El CPA da clic en el botón Acciones  y selecciona la opción Firmar Trámite" guid="{0D0E329B-8780-4419-BC3B-DB93327631EE}" level="19" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema despliega la ventana del componente de firma digital, con los siguientes campos: &#xA;&#xA;•	Certificado (archivo *.cer) (selección) y botón Examinar&#xA;•	Clave privada (archivo *.key) (selección) y botón Examinar&#xA;•	Contraseña de clave privada (captura)&#xA;Botón Firmar " guid="{5CB6A1D9-5221-4a88-A79B-C55793927E49}" level="20" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El usuario captura y selecciona los archivos correspondientes a la firma electrónica y da clic en el botón Firmar." guid="{A4ECB361-1EC1-44ae-8429-01430418C65B}" level="21" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema realiza la firma del trámite y genera el acuse respectivo. RFC008.&#xA;El sistema almacena el acuse en la notaria electrónica." guid="{44B3C3F6-5D36-4f45-941C-FE1FA360F705}" level="22" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El sistema despliega en pantalla el documento del acuse  en PDF y lo envía por correo electrónico al CPA y al Patrón dictaminado." guid="{4F4B831D-581B-48e0-8C07-8B152AB7FB64}" level="23" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="Termina caso de uso" guid="{9BB8B2A1-ED95-44ac-9790-B212C238D437}" level="24" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA da clic en el botón Firmar Trámite." guid="{0D0E329B-8780-4419-BC3B-DB93327631EE}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema después de validar se cumpla despliega la ventana del componente de firma digital,  FAC600" guid="{5CB6A1D9-5221-4a88-A79B-C55793927E49}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario captura y selecciona los archivos correspondientes a la firma electrónica y da clic en el botón Firmar." guid="{A4ECB361-1EC1-44ae-8429-01430418C65B}" level="11" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema realiza la firma del trámite y genera el acuse respectivo. RFC008.&#xA;El sistema despliega en PDF el acuse, lo almacena en la notaria electrónica y lo envía por correo electrónico al CPA y al Patrón." guid="{44B3C3F6-5D36-4f45-941C-FE1FA360F705}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Termina caso de uso" guid="{9BB8B2A1-ED95-44ac-9790-B212C238D437}" level="13" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="RFC002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
 							<item oldname="RFC010 - DEtalle de captura de limitaciones al alcance de información" guid="{3A2A0CAE-E8EC-4856-BF36-A5B7E23BAB0C}"/>
