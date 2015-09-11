@@ -11,8 +11,7 @@ import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 public class PropertiesConfigUtils {
 	
 	private static final  ResourceBundle resourceBundleConfig = ResourceBundle.getBundle(DictamenServicesConstants.CONFIG_FILE);
-	
-	
+		
 	private static final  ResourceBundle resourceBundleException = ResourceBundle.getBundle(DictamenServicesConstants.EXCEPTION_FILE);
 	
 	
@@ -20,33 +19,26 @@ public class PropertiesConfigUtils {
 		
 	}
 	
-	public static String getPropertyConfig(String key){
-		return resourceBundleConfig.getString(key);
-	}
-	
-	public static String getPropertyConfigParams(String key, Object... params  ){
+
+	public static String getPropertyConfig(String key, Object... params  ){
 		String msg="";
 		
 		if(params==null){
-			msg=getPropertyConfig(key);
+			msg=resourceBundleConfig.getString(key);
 		}else{
-			msg= getString(getPropertyConfig(key),params);
+			msg= getString(resourceBundleConfig.getString(key),params);
 		}
 		return msg;
 	}
 	
-	public static String getPropertyException(String key){
-		return resourceBundleException.getString(key);
-	}
 	
-	
-	public static String getPropertyExceptionParams(String key, Object... params  ){
+	public static String getPropertyException(String key, Object... params  ){
 		String msg="";
 		
 		if(params==null){
-			msg=getPropertyException(key);
+			msg=resourceBundleException.getString(key);
 		}else{
-			msg= getString(getPropertyException(key),params);
+			msg= getString(resourceBundleException.getString(key),params);
 		}
 		return msg;
 	}

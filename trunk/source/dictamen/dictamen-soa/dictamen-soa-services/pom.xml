@@ -46,14 +46,14 @@
 			<artifactId>dictamen-soa-integration-api</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mx.gob.imss</groupId>
-   			<artifactId>imss-ws-clients</artifactId>
+			<artifactId>imss-ws-clients</artifactId>
 			<version>2.5</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<!-- Cliente de pensiones que contiene el acceso a la BDTU -->
 		<dependency>
 			<groupId>mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws</groupId>
@@ -61,18 +61,24 @@
 			<version>1.0</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>${java-ee.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
 		</dependency>
 
 		<dependency>

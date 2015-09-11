@@ -13,6 +13,6 @@ import mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO;
 
 public interface AWSService {
 	
-	AWSPolicyTO getAwsPoliciyEncrypted() throws DictamenException;
+	AWSPolicyTO getAwsPoliciyEncrypted(String rfcContador,String rfcPatron) throws DictamenException;
 	
 }

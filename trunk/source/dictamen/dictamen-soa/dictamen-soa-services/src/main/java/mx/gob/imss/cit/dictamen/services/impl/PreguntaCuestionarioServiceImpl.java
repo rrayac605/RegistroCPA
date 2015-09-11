@@ -14,7 +14,6 @@ import javax.xml.namespace.QName;
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaCuestionarioTO;
-import mx.gob.imss.cit.dictamen.services.CuestionarioService;
 import mx.gob.imss.cit.dictamen.services.PreguntaCuestionarioService;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
@@ -77,7 +76,7 @@ public class PreguntaCuestionarioServiceImpl implements PreguntaCuestionarioServ
 				}
 			}
 		} catch (Exception e) {
-			throw  DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_BDTU_CUESTIONARIO_OBTENER);
+			throw  DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_CUESTIONARIO_OBTENER);
 		}
 		return tiposSolicitud;
 	}
