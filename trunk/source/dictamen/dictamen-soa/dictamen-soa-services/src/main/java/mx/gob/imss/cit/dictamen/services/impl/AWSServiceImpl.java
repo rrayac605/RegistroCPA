@@ -81,16 +81,16 @@ public class AWSServiceImpl implements AWSService {
 			
 			String policy=POLICY_TEMPLATE.replaceAll("/n", "");
 			policy=policy.replaceAll("#EXPIRATION#", awsPolicyTO.getExpiration())
-			.replaceAll("#BUCKET#", awsPolicyTO.getBucket())
-			.replaceAll("#KEY#", awsPolicyTO.getKey())
-			.replaceAll("#ACL#", awsPolicyTO.getAcl())
-			.replaceAll("#SUCCESS_ACTION_ESTATUS#", awsPolicyTO.getSuccessActionStatus())
-			.replaceAll("#CONTENT_TYPE#", awsPolicyTO.getContentType())
-			.replaceAll("#X_AMZ_META_UUID#", awsPolicyTO.getxAmzMetaUuid())
-			.replaceAll("#X_AMZ_META_TAG#", awsPolicyTO.getxAmzMetaTag())
-			.replaceAll("#X_AMZ_CREDENTIAL#", awsPolicyTO.getxAmzCredential())
-			.replaceAll("#X_AMZ_ALGORITHM#", awsPolicyTO.getxAmzAlgorithm())
-			.replaceAll("#X_AMZ_DATE#", awsPolicyTO.getxAmzDate());
+						.replaceAll("#BUCKET#", awsPolicyTO.getBucket())
+						.replaceAll("#KEY#", awsPolicyTO.getKey())
+						.replaceAll("#ACL#", awsPolicyTO.getAcl())
+						.replaceAll("#SUCCESS_ACTION_ESTATUS#", awsPolicyTO.getSuccessActionStatus())
+						.replaceAll("#CONTENT_TYPE#", awsPolicyTO.getContentType())
+						.replaceAll("#X_AMZ_META_UUID#", awsPolicyTO.getxAmzMetaUuid())
+						.replaceAll("#X_AMZ_META_TAG#", awsPolicyTO.getxAmzMetaTag())
+						.replaceAll("#X_AMZ_CREDENTIAL#", awsPolicyTO.getxAmzCredential())
+						.replaceAll("#X_AMZ_ALGORITHM#", awsPolicyTO.getxAmzAlgorithm())
+						.replaceAll("#X_AMZ_DATE#", awsPolicyTO.getxAmzDate());
 			LOG.debug(policy);
 			
 			Mac hmac = Mac.getInstance(DictamenServicesConstants.ALGORITHM_HMACSHA1);
