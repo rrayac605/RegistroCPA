@@ -10,6 +10,7 @@ import java.util.Date;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
@@ -29,6 +30,8 @@ import org.apache.log4j.Logger;
  * http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-HTTPPOSTForms.html
  * 
  */
+
+@Stateless
 public class AWSServiceImpl implements AWSService {
 	
 	
