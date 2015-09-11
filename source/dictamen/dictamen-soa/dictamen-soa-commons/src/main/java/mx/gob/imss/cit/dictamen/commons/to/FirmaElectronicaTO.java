@@ -1,4 +1,4 @@
-package mx.gob.imss.cit.dictamen.commons.to.domain;
+package mx.gob.imss.cit.dictamen.commons.to;
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 

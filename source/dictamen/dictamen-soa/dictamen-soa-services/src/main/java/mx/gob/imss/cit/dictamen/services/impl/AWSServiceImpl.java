@@ -34,8 +34,29 @@ import org.apache.log4j.Logger;
 @Stateless
 public class AWSServiceImpl implements AWSService {
 	
-	
 	private static final Logger LOG=Logger.getLogger(AWSServiceImpl.class);
+	
+	private static final String X_AMZ_DATE = "#X_AMZ_DATE#";
+
+	private static final String X_AMZ_ALGORITHM = "#X_AMZ_ALGORITHM#";
+
+	private static final String X_AMZ_CREDENTIAL = "#X_AMZ_CREDENTIAL#";
+
+	private static final String X_AMZ_META_TAG = "#X_AMZ_META_TAG#";
+
+	private static final String X_AMZ_META_UUID = "#X_AMZ_META_UUID#";
+
+	private static final String CONTENT_TYPE = "#CONTENT_TYPE#";
+
+	private static final String SUCCESS_ACTION_ESTATUS = "#SUCCESS_ACTION_ESTATUS#";
+
+	private static final String ACL = "#ACL#";
+
+	private static final String KEY = "#KEY#";
+
+	private static final String BUCKET = "#BUCKET#";
+
+	private static final String EXPIRATION = "#EXPIRATION#";
 
 	private static String POLICY_TEMPLATE="{ \"expiration\": \"#EXPIRATION#\",\n" +
 											"  \"conditions\": [\n" +
@@ -63,11 +84,9 @@ public class AWSServiceImpl implements AWSService {
 			 
 			awsSecretKey = PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SECRET_KEY);
 			
-
 			awsPolicyTO.setExpiration(FechasUtils.dateToString_yyyy_MM_dd_T_HH_mm_ss_Z(fechaFirma));	
 			awsPolicyTO.setBucket(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_BUCKET));
 			awsPolicyTO.setAwsAccessKeyId(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACCESS_KEY_ID));
-			awsPolicyTO.setAcl(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACL));
 			awsPolicyTO.setSuccessActionStatus(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SUCCESS_ACTION_ESTATUS));
 			awsPolicyTO.setContentType(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_CONTENT_TYPE));
 			awsPolicyTO.setxAmzMetaUuid(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_UUID));
@@ -79,18 +98,18 @@ public class AWSServiceImpl implements AWSService {
 		
 			awsPolicyTO.setKey(rutaDestino);			
 			
-			String policy=POLICY_TEMPLATE.replaceAll("/n", "");
-			policy=policy.replaceAll("#EXPIRATION#", awsPolicyTO.getExpiration())
-						.replaceAll("#BUCKET#", awsPolicyTO.getBucket())
-						.replaceAll("#KEY#", awsPolicyTO.getKey())
-						.replaceAll("#ACL#", awsPolicyTO.getAcl())
-						.replaceAll("#SUCCESS_ACTION_ESTATUS#", awsPolicyTO.getSuccessActionStatus())
-						.replaceAll("#CONTENT_TYPE#", awsPolicyTO.getContentType())
-						.replaceAll("#X_AMZ_META_UUID#", awsPolicyTO.getxAmzMetaUuid())
-						.replaceAll("#X_AMZ_META_TAG#", awsPolicyTO.getxAmzMetaTag())
-						.replaceAll("#X_AMZ_CREDENTIAL#", awsPolicyTO.getxAmzCredential())
-						.replaceAll("#X_AMZ_ALGORITHM#", awsPolicyTO.getxAmzAlgorithm())
-						.replaceAll("#X_AMZ_DATE#", awsPolicyTO.getxAmzDate());
+			String policy=POLICY_TEMPLATE.replaceAll(DictamenServicesConstants.CARACTER_SPACE, DictamenServicesConstants.CARACTER_VACIO);
+			policy=policy.replaceAll(EXPIRATION, awsPolicyTO.getExpiration())
+						.replaceAll(BUCKET, awsPolicyTO.getBucket())
+						.replaceAll(KEY, awsPolicyTO.getKey())
+						.replaceAll(ACL, awsPolicyTO.getAcl())
+						.replaceAll(SUCCESS_ACTION_ESTATUS, awsPolicyTO.getSuccessActionStatus())
+						.replaceAll(CONTENT_TYPE, awsPolicyTO.getContentType())
+						.replaceAll(X_AMZ_META_UUID, awsPolicyTO.getxAmzMetaUuid())
+						.replaceAll(X_AMZ_META_TAG, awsPolicyTO.getxAmzMetaTag())
+						.replaceAll(X_AMZ_CREDENTIAL, awsPolicyTO.getxAmzCredential())
+						.replaceAll(X_AMZ_ALGORITHM, awsPolicyTO.getxAmzAlgorithm())
+						.replaceAll(X_AMZ_DATE, awsPolicyTO.getxAmzDate());
 			LOG.debug(policy);
 			
 			Mac hmac = Mac.getInstance(DictamenServicesConstants.ALGORITHM_HMACSHA1);
@@ -103,13 +122,13 @@ public class AWSServiceImpl implements AWSService {
 			
 		} catch (UnsupportedEncodingException e) {
 			LOG.error(e.getMessage(), e);
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_AWS_OBTENER_POLITICA);
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_AWS_OBTENER_POLITICA,e);
 		} catch (NoSuchAlgorithmException e) {
 			LOG.error(e.getMessage(), e);
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_AWS_OBTENER_POLITICA);
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_AWS_OBTENER_POLITICA,e);
 		} catch (InvalidKeyException e) {
 			LOG.error(e.getMessage(), e);
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_AWS_OBTENER_POLITICA);
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_AWS_OBTENER_POLITICA,e);
 		}
 
 		return awsPolicyTO;
