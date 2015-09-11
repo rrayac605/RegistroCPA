@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.integration.api.PatronIntegration;
 import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.TipoDictamenDTO;
 
+@Remote({mx.gob.imss.cit.dictamen.integration.api.PatronIntegration.class})
 @Stateless
 public class PatronIntegrationImpl implements PatronIntegration {
 

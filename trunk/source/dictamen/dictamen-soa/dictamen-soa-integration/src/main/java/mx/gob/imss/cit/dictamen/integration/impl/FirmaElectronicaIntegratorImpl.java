@@ -12,13 +12,14 @@ import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUt
 import mx.gob.imss.cit.dictamen.services.FirmaElectronicaService;
 
 
-@Remote({mx.gob.imss.cit.dictamen.integration.api.FirmaElectronicaIntegrator.class})
-@Stateless
+
 /**
  * Clase de integracion para la firma electronica
  * @author ajfuentes
  *
  */
+@Remote({mx.gob.imss.cit.dictamen.integration.api.FirmaElectronicaIntegrator.class})
+@Stateless
 public class FirmaElectronicaIntegratorImpl implements FirmaElectronicaIntegrator {
 
 	@EJB
