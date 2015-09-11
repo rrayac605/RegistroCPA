@@ -44,7 +44,7 @@ public class CuestionarioBean extends BaseBean {
 	/**
 	 * @return the cuestionarioPage
 	 */
-	public CuestionarioPage getcuestionarioPage() {
+	public CuestionarioPage getCuestionarioPage() {
 		return cuestionarioPage;
 	}
 
@@ -52,7 +52,7 @@ public class CuestionarioBean extends BaseBean {
 	/**
 	 * @param cuestionarioPage the cuestionarioPage to set
 	 */
-	public void setcuestionarioPage(CuestionarioPage cuestionarioPage) {
+	public void setCuestionarioPage(CuestionarioPage cuestionarioPage) {
 		this.cuestionarioPage = cuestionarioPage;
 	}
 
