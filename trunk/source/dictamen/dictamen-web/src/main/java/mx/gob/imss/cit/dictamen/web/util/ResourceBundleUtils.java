@@ -77,7 +77,7 @@ public final class ResourceBundleUtils {
 	private static String getString(String msg, Object... params  ) {
 		String mensaje=null;
         try {
-        	if(params==null){
+        	if(params==null|| params.length==0){
         		mensaje=msg;
         	}else{
         		mensaje= MessageFormat.format(msg, params);

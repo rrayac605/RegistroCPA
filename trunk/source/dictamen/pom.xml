@@ -40,6 +40,10 @@
 				<aws.aws_secret_key>hOl3xkQUgHxfr9WrIeeYmjq</aws.aws_secret_key>
 				<aws.ruta_base>Dictamen/</aws.ruta_base>
 				<aws.awsAccessKeyId>AKIAI4H4UF5WBC7ZG45A</aws.awsAccessKeyId>
+				<firma.URL_APPLET_FIEL>URLAPPLETFIEL_PRUEBA</firma.URL_APPLET_FIEL>
+				<firma.FIEL_CODEBASE>http://172.16.5.151:8083/firmaElectronicaWeb/applets/</firma.FIEL_CODEBASE>
+				<firma.FIEL_PARAM_URL_WS_FE>http://172.16.5.151:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService</firma.FIEL_PARAM_URL_WS_FE>
+				<firma.FIEL_PARAM_URL_WS_AUTH>http://172.16.5.151:8083/WsAutenticacion/WsAutenticacionService</firma.FIEL_PARAM_URL_WS_AUTH>
 				
 			</properties>
 		</profile>
@@ -67,7 +71,10 @@
 				<aws.aws_secret_key>hOl3xkQUgHxfr9WrIeeYmjq</aws.aws_secret_key>
 				<aws.ruta_base>Dictamen/</aws.ruta_base>
 				<aws.awsAccessKeyId>AKIAI4H4UF5WBC7ZG45A</aws.awsAccessKeyId>
-				
+			    <firma.URL_APPLET_FIEL>URLAPPLETFIEL_PRUEBA</firma.URL_APPLET_FIEL>
+				<firma.FIEL_CODEBASE>http://172.16.5.151:8083/firmaElectronicaWeb/applets/</firma.FIEL_CODEBASE>
+				<firma.FIEL_PARAM_URL_WS_FE>http://172.16.5.151:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService</firma.FIEL_PARAM_URL_WS_FE>
+				<firma.FIEL_PARAM_URL_WS_AUTH>http://172.16.5.151:8083/WsAutenticacion/WsAutenticacionService</firma.FIEL_PARAM_URL_WS_AUTH>
 				
 			</properties>
 			
@@ -78,15 +85,14 @@
 
 
 	<properties>
- 		<certum.mvn.repo>192.168.0.211:8081</certum.mvn.repo> 				<!-- local -->
+
 		<java.version>1.6</java.version> 									<!-- local -->
 		<project.encoding>UTF-8</project.encoding> 							<!-- local, portal -->
 
 		<!-- Logging -->
 		<org.slf4j-version>1.5.2</org.slf4j-version>						<!-- local -->
 		<log4j.version>1.2.16</log4j.version> 								<!-- local, integration, persistence , portal, services -->
-		<!-- Certum Commons Lang -->
-		<certum.commons.lang.version>2.0.7</certum.commons.lang.version> 	<!-- portal -->
+
 		<!-- Librerías de Apache -->
 		<commons-lang.version>2.6</commons-lang.version> 					<!-- local, model , portal -->
 		<commons-collections.version>3.2.1</commons-collections.version> 	<!-- local, portal -->
@@ -197,16 +203,7 @@
 			<name>Repository hosting the jee6 artifacts</name>
 			<url>http://download.java.net/maven/glassfish</url>
 		</repository>
-<!--		<repository>
-			<id>certum-mvn</id>
-			<name>Repositorio central / certum</name>
-			<url>http://${certum.mvn.repo}/nexus/content/repositories/certum-mvn</url>
-		</repository>
-		<repository>
-			<id>certum-mvn-snapshot</id>
-			<name>Repositorio central snapshot / certum</name>
-			<url>http://${certum.mvn.repo}/nexus/content/repositories/certum-mvn-snapshot</url>
-		</repository> -->
+
 		<repository>
 			<id>jboss-public-repository-group</id>
 			<name>JBoss Public Maven Repository Group</name>

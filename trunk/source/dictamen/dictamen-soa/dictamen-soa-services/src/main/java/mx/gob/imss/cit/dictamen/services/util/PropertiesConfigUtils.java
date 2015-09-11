@@ -21,26 +21,14 @@ public class PropertiesConfigUtils {
 	
 
 	public static String getPropertyConfig(String key, Object... params  ){
-		String msg="";
-		
-		if(params==null){
-			msg=resourceBundleConfig.getString(key);
-		}else{
-			msg= getString(resourceBundleConfig.getString(key),params);
-		}
-		return msg;
+
+		return getString(resourceBundleConfig.getString(key),params);
 	}
 	
 	
 	public static String getPropertyException(String key, Object... params  ){
-		String msg="";
-		
-		if(params==null){
-			msg=resourceBundleException.getString(key);
-		}else{
-			msg= getString(resourceBundleException.getString(key),params);
-		}
-		return msg;
+
+		return getString(resourceBundleException.getString(key),params);
 	}
 	
 	
@@ -48,7 +36,12 @@ public class PropertiesConfigUtils {
 	private static String getString(String msg, Object... params  ) {
 		String mensaje=null;
         try {
-        	mensaje= MessageFormat.format(msg, params);	
+        	if(params==null|| params.length==0){
+        		mensaje=msg;
+        	}else{
+        		mensaje= MessageFormat.format(msg, params);	
+        	}
+        	
         } catch (MissingResourceException e) {
         	mensaje="";
         }
