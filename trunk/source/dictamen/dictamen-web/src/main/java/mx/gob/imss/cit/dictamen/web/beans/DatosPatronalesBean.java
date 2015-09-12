@@ -5,7 +5,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import mx.gob.imss.cit.dictamen.integration.api.PatronIntegration;
+import mx.gob.imss.cit.dictamen.integration.api.PatronIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
@@ -21,7 +21,7 @@ public class DatosPatronalesBean extends BaseBean {
 	 */
 	
 	@EJB
-	private PatronIntegration  patronIntegration;
+	private PatronIntegrator  patronIntegration;
 	
 	private static final long serialVersionUID = 2825687007915597308L;
 
