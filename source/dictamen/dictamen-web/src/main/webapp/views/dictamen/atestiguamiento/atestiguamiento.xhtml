@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<ui:composition template="/views/comun/template/template.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	
-	
-	<ui:define name="bodyContainer">
 
-		<h:outputLabel value="#{cuestionarioBean.init()}"/>
-	 <p:dataTable var="cuestionario"  value="#{cuestionarioPage.cuestionarios}">
-	    <p:column headerText="#{msg['message.label.views.dictamen.atestiguamiento.concepto']}">
-	        <h:outputText value="#{cuestionario.concepto}" />
-	    </p:column>
-	 
-	    <p:column headerText="#{msg['message.label.views.dictamen.atestiguamiento.estado']}">
-	        <h:outputText value="#{cuestionario.estado}" />
-	    </p:column>
-	 
-	    <p:column headerText="#{msg['message.label.views.dictamen.atestiguamiento.accion']}">
-	        <h:commandButton action="#{cuestionarioBean.editar(custionario)}" value="#{msg['message.button.views.dictamen.atestiguamiento.editar']}"></h:commandButton>        
-	        <h:commandButton action="#{cuestionarioBean.borrar(custionario)}" value="#{msg['message.button.views.dictamen.atestiguamiento.borrar']}"></h:commandButton>  
-	    </p:column>
-	</p:dataTable>
-	 		
-	 <div align="center">
-          <h:commandButton action="#{cuestionarioBean.terminar}" value="#{msg['message.button.views.dictamen.atestiguamiento.terminar']}"></h:commandButton> 
-     </div>
-	 		 
-</ui:define>
-	
-	
+
+	<p:panel>
+
+		<h:outputLabel value="#{cuestionarioBean.init()}" />
+		<p:dataTable var="cuestionario"
+			value="#{cuestionarioPage.cuestionarios}">
+			<p:column
+				headerText="#{msg['message.label.views.dictamen.atestiguamiento.concepto']}">
+				<h:outputText value="#{cuestionario.concepto}" />
+			</p:column>
+
+			<p:column
+				headerText="#{msg['message.label.views.dictamen.atestiguamiento.estado']}">
+				<h:outputText value="#{cuestionario.estado}" />
+			</p:column>
+
+			<p:column
+				headerText="#{msg['message.label.views.dictamen.atestiguamiento.accion']}">
+				<h:commandButton action="#{cuestionarioBean.editar(custionario)}"
+					value="#{msg['message.button.views.dictamen.atestiguamiento.editar']}"/>
+				<h:commandButton action="#{cuestionarioBean.borrar(custionario)}"
+					value="#{msg['message.button.views.dictamen.atestiguamiento.borrar']}"/>
+			</p:column>
+		</p:dataTable>
+
+		<div align="center">
+			<h:commandButton action="#{cuestionarioBean.terminar}"
+				value="#{msg['message.button.views.dictamen.atestiguamiento.terminar']}"></h:commandButton>
+		</div>
+
+	</p:panel>
+
+
 </ui:composition>

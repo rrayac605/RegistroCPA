@@ -7,14 +7,14 @@ import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import mx.gob.imss.cit.dictamen.integration.api.CuestionarioIntegration;
+import mx.gob.imss.cit.dictamen.integration.api.CuestionarioIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.CuestionarioDTO;
 import mx.gob.imss.cit.dictamen.services.CuestionarioService;
 
 
 @Stateless
-@Remote(mx.gob.imss.cit.dictamen.integration.api.CuestionarioIntegration.class)
-public class CuestionarioIntegrationImpl implements CuestionarioIntegration{
+@Remote(mx.gob.imss.cit.dictamen.integration.api.CuestionarioIntegrator.class)
+public class CuestionarioIntegratorImpl implements CuestionarioIntegrator{
 
 	
 	@EJB

@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import mx.gob.imss.cit.dictamen.integration.api.CuestionarioIntegration;
+import mx.gob.imss.cit.dictamen.integration.api.CuestionarioIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.CuestionarioDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.pages.CuestionarioPage;
@@ -21,7 +21,7 @@ public class CuestionarioBean extends BaseBean {
 	 */
 	private static final long serialVersionUID = -4837421797087101L;
 	@EJB
-	private CuestionarioIntegration cuestionarioIntegration;
+	private CuestionarioIntegrator cuestionarioIntegration;
 	
 	@ManagedProperty(value = "#{cuestionarioPage}")
 	private CuestionarioPage  cuestionarioPage;

@@ -14,7 +14,7 @@ import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioExcepti
  * 
  */
 
-public interface BovedaIntegration {
+public interface BovedaIntegrator {
 
 	boolean createDocument(BovedaDocumentoDTO documento,
 			BovedaTramiteDTO tramite, BovedaActorDTO actor,

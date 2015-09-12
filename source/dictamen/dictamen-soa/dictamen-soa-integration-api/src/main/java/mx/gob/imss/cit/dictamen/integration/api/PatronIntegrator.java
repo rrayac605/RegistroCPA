@@ -6,7 +6,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.TipoDictamenDTO;
 
 
-public interface PatronIntegration {
+public interface PatronIntegrator {
 
 	DatosPatronDTO getDatosPatron(String rfc);
 	
