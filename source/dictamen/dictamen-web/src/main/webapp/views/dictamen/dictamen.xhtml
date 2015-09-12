@@ -33,30 +33,30 @@
 					<p:panel id="dictaminacionWizard">
 						<p:wizard id="solicitudWizard"
 							backLabel="#{msg['message.button.anterior']}"
-							nextLabel="#{msg['message.button.siguiente']}">
+							nextLabel="#{msg['message.button.siguiente']}" showStepStatus="true" showNavBar="true">
+							
 							<p:tab id="loadData" title="#{msg['message.dictamen.dictaminar.wizard.titulo.adjuntar']}">
-					 				<ui:include
-									src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml"></ui:include>			 
+					 				<ui:include src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml"/>			 
 							</p:tab>
+							
 							<p:tab id="infoTab"
 								title="#{msg['message.dictamen.dictaminar.wizard.titulo.infoPatronal']}">
-								<ui:include
-									src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml"></ui:include>
+								
 							</p:tab>
+							
 							<p:tab id="atestiguamientoTab"
 								title="#{msg['message.dictamen.dictaminar.wizard.titulo.atestiguamiento']}">
-								<ui:include
-									src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml"></ui:include>
+									<ui:include src="/views/dictamen/atestiguamiento/atestiguamiento.xhtml"/>			
 							</p:tab>
+							
 							<p:tab id="cedulaTab"
 								title="#{msg['message.dictamen.dictaminar.wizard.titulo.cedulas']}">
-								<ui:include
-									src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml"></ui:include>
+							
 							</p:tab>
+							
 							<p:tab id="opinionTab"
 								title="#{msg['message.dictamen.dictaminar.wizard.titulo.opinion']}">
-								<ui:include
-									src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml"></ui:include>
+						
 							</p:tab>
 						</p:wizard>
 	
