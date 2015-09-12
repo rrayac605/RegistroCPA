@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO;
-import mx.gob.imss.cit.dictamen.integration.api.BovedaIntegration;
+import mx.gob.imss.cit.dictamen.integration.api.BovedaIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaActorDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaBaseObjectDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaDocumentoDTO;
@@ -23,8 +23,8 @@ import mx.gob.imss.cit.dictamen.services.BovedaService;
  * 
  */
 @Stateless
-@Remote(mx.gob.imss.cit.dictamen.integration.api.BovedaIntegration.class)
-public class BovedaIntegrationImpl implements BovedaIntegration{
+@Remote(mx.gob.imss.cit.dictamen.integration.api.BovedaIntegrator.class)
+public class BovedaIntegratorImpl implements BovedaIntegrator{
 	
 	@EJB
 	private BovedaService bovedaService;

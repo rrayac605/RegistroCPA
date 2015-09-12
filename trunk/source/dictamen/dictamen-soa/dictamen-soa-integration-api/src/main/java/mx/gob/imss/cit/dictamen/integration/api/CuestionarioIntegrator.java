@@ -4,7 +4,7 @@ import java.util.List;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.CuestionarioDTO;
 
-public interface CuestionarioIntegration {
+public interface CuestionarioIntegrator {
 	
 	public List<CuestionarioDTO> findCuestionarios();
 }

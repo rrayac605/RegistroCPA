@@ -7,13 +7,13 @@ import java.util.List;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import mx.gob.imss.cit.dictamen.integration.api.PatronIntegration;
+import mx.gob.imss.cit.dictamen.integration.api.PatronIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.TipoDictamenDTO;
 
-@Remote({mx.gob.imss.cit.dictamen.integration.api.PatronIntegration.class})
+@Remote({mx.gob.imss.cit.dictamen.integration.api.PatronIntegrator.class})
 @Stateless
-public class PatronIntegrationImpl implements PatronIntegration {
+public class PatronIntegratorImpl implements PatronIntegrator {
 
 	@Override
 	public DatosPatronDTO getDatosPatron(String rfc) {
