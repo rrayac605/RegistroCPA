@@ -1,149 +1,142 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.List;
-
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
- * The persistent class for the NDC_TIPO_AFILIACION database table.
- * 
+ *
+ * @author ajfuentes
  */
 @Entity
-@Table(name="NDC_TIPO_AFILIACION")
-@NamedQuery(name="NdcTipoAfiliacionDO.findAll", query="SELECT n FROM NdcTipoAfiliacionDO n")
+@Table(name = "NDC_TIPO_AFILIACION")
+@NamedQueries({
+    @NamedQuery(name = "NdcTipoAfiliacion.findAll", query = "SELECT n FROM NdcTipoAfiliacionDO n"),
+    @NamedQuery(name = "NdcTipoAfiliacion.findByCveIdTipoAfiliacion", query = "SELECT n FROM NdcTipoAfiliacionDO n WHERE n.cveIdTipoAfiliacion = :cveIdTipoAfiliacion"),
+    @NamedQuery(name = "NdcTipoAfiliacion.findByDesTipoAfiliacion", query = "SELECT n FROM NdcTipoAfiliacionDO n WHERE n.desTipoAfiliacion = :desTipoAfiliacion"),
+    @NamedQuery(name = "NdcTipoAfiliacion.findByFecRegistroAlta", query = "SELECT n FROM NdcTipoAfiliacionDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdcTipoAfiliacion.findByFecRegistroBaja", query = "SELECT n FROM NdcTipoAfiliacionDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdcTipoAfiliacion.findByFecRegistroActualizado", query = "SELECT n FROM NdcTipoAfiliacionDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdcTipoAfiliacionDO implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "CVE_ID_TIPO_AFILIACION", nullable = false, precision = 22, scale = 0)
+    private Long cveIdTipoAfiliacion;
+    @Size(max = 50)
+    @Column(name = "DES_TIPO_AFILIACION", length = 50)
+    private String desTipoAfiliacion;
+    @Column(name = "FEC_REGISTRO_ALTA")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroAlta;
+    @Column(name = "FEC_REGISTRO_BAJA")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroBaja;
+    @Column(name = "FEC_REGISTRO_ACTUALIZADO")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroActualizado;
+    @OneToMany(mappedBy = "cveIdTipoAfiliacion", fetch = FetchType.LAZY)
+    private List<NdtPatronDictamenDO> ndtPatronDictamenList;
 
-	@Id
-    @Column(name = "CVE_ID_TIPO_AFILIACION", nullable = false)
-    @SequenceGenerator(name = "NdcTipoAfiliacion_Id_Seq_Gen", sequenceName = "SEQ_NDCTIPOAFILIACION")
-    @GeneratedValue(generator = "NdcTipoAfiliacion_Id_Seq_Gen")
-	private long cveIdTipoAfiliacion;
+    public NdcTipoAfiliacionDO() {
+    }
 
-	@Column(name="DES_TIPO_AFILIACION")
-	private String desTipoAfiliacion;
+    public NdcTipoAfiliacionDO(Long cveIdTipoAfiliacion) {
+        this.cveIdTipoAfiliacion = cveIdTipoAfiliacion;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_ACTUALIZADO")
-	private Date fecRegistroActualizado;
+    public Long getCveIdTipoAfiliacion() {
+        return cveIdTipoAfiliacion;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_ALTA")
-	private Date fecRegistroAlta;
+    public void setCveIdTipoAfiliacion(Long cveIdTipoAfiliacion) {
+        this.cveIdTipoAfiliacion = cveIdTipoAfiliacion;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_BAJA")
-	private Date fecRegistroBaja;
+    public String getDesTipoAfiliacion() {
+        return desTipoAfiliacion;
+    }
 
-	//bi-directional many-to-one association to NdtPatronDictamenDO
-	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcTipoAfiliacion")
-	private List<NdtPatronDictamenDO> ndtPatronDictamens;
+    public void setDesTipoAfiliacion(String desTipoAfiliacion) {
+        this.desTipoAfiliacion = desTipoAfiliacion;
+    }
 
-	public NdcTipoAfiliacionDO() {
-	}
+    public Date getFecRegistroAlta() {
+        return fecRegistroAlta;
+    }
 
-	public long getCveIdTipoAfiliacion() {
-		return this.cveIdTipoAfiliacion;
-	}
+    public void setFecRegistroAlta(Date fecRegistroAlta) {
+        this.fecRegistroAlta = fecRegistroAlta;
+    }
 
-	public void setCveIdTipoAfiliacion(long cveIdTipoAfiliacion) {
-		this.cveIdTipoAfiliacion = cveIdTipoAfiliacion;
-	}
+    public Date getFecRegistroBaja() {
+        return fecRegistroBaja;
+    }
 
-	public String getDesTipoAfiliacion() {
-		return this.desTipoAfiliacion;
-	}
+    public void setFecRegistroBaja(Date fecRegistroBaja) {
+        this.fecRegistroBaja = fecRegistroBaja;
+    }
 
-	public void setDesTipoAfiliacion(String desTipoAfiliacion) {
-		this.desTipoAfiliacion = desTipoAfiliacion;
-	}
+    public Date getFecRegistroActualizado() {
+        return fecRegistroActualizado;
+    }
 
-	public Date getFecRegistroActualizado() {
-		return this.fecRegistroActualizado;
-	}
+    public void setFecRegistroActualizado(Date fecRegistroActualizado) {
+        this.fecRegistroActualizado = fecRegistroActualizado;
+    }
 
-	public void setFecRegistroActualizado(Date fecRegistroActualizado) {
-		this.fecRegistroActualizado = fecRegistroActualizado;
-	}
+    public List<NdtPatronDictamenDO> getNdtPatronDictamenList() {
+        return ndtPatronDictamenList;
+    }
 
-	public Date getFecRegistroAlta() {
-		return this.fecRegistroAlta;
-	}
+    public void setNdtPatronDictamenList(List<NdtPatronDictamenDO> ndtPatronDictamenList) {
+        this.ndtPatronDictamenList = ndtPatronDictamenList;
+    }
 
-	public void setFecRegistroAlta(Date fecRegistroAlta) {
-		this.fecRegistroAlta = fecRegistroAlta;
-	}
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (cveIdTipoAfiliacion != null ? cveIdTipoAfiliacion.hashCode() : 0);
+        return hash;
+    }
 
-	public Date getFecRegistroBaja() {
-		return this.fecRegistroBaja;
-	}
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof NdcTipoAfiliacionDO)) {
+            return false;
+        }
+        NdcTipoAfiliacionDO other = (NdcTipoAfiliacionDO) object;
+        if ((this.cveIdTipoAfiliacion == null && other.cveIdTipoAfiliacion != null) || (this.cveIdTipoAfiliacion != null && !this.cveIdTipoAfiliacion.equals(other.cveIdTipoAfiliacion))) {
+            return false;
+        }
+        return true;
+    }
 
-	public void setFecRegistroBaja(Date fecRegistroBaja) {
-		this.fecRegistroBaja = fecRegistroBaja;
-	}
-
-	public List<NdtPatronDictamenDO> getNdtPatronDictamens() {
-		return this.ndtPatronDictamens;
-	}
-
-	public void setNdtPatronDictamens(List<NdtPatronDictamenDO> ndtPatronDictamens) {
-		this.ndtPatronDictamens = ndtPatronDictamens;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (cveIdTipoAfiliacion ^ (cveIdTipoAfiliacion >>> 32));
-		result = prime * result + ((desTipoAfiliacion == null) ? 0 : desTipoAfiliacion.hashCode());
-		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
-		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
-		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
-		result = prime * result + ((ndtPatronDictamens == null) ? 0 : ndtPatronDictamens.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		NdcTipoAfiliacionDO other = (NdcTipoAfiliacionDO) obj;
-		if (cveIdTipoAfiliacion != other.cveIdTipoAfiliacion)
-			return false;
-		if (desTipoAfiliacion == null) {
-			if (other.desTipoAfiliacion != null)
-				return false;
-		} else if (!desTipoAfiliacion.equals(other.desTipoAfiliacion))
-			return false;
-		if (fecRegistroActualizado == null) {
-			if (other.fecRegistroActualizado != null)
-				return false;
-		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
-			return false;
-		if (fecRegistroAlta == null) {
-			if (other.fecRegistroAlta != null)
-				return false;
-		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
-			return false;
-		if (fecRegistroBaja == null) {
-			if (other.fecRegistroBaja != null)
-				return false;
-		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
-			return false;
-		if (ndtPatronDictamens == null) {
-			if (other.ndtPatronDictamens != null)
-				return false;
-		} else if (!ndtPatronDictamens.equals(other.ndtPatronDictamens))
-			return false;
-		return true;
-	}
-
-	
-
+    @Override
+    public String toString() {
+        return "mx.gob.imss.cit.dictamen.model.NdcTipoAfiliacion[ cveIdTipoAfiliacion=" + cveIdTipoAfiliacion + " ]";
+    }
+    
 }

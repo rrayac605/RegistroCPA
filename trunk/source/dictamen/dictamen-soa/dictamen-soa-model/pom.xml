@@ -2,20 +2,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	 <parent>
-	    <groupId>mx.gob.imss.cit.dictamen</groupId>
-	    <artifactId>dictamen-soa</artifactId>
-	    <version>1.0</version>
-	  </parent>
+	<parent>
+		<groupId>mx.gob.imss.cit.dictamen</groupId>
+		<artifactId>dictamen-soa</artifactId>
+		<version>1.0</version>
+	</parent>
 
 	<artifactId>dictamen-soa-model</artifactId>
 	<version>${project.parent.version}</version>
 	<name>dictamen - soa - model</name>
 	<packaging>jar</packaging>
 
-	
+
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>javax.persistence</artifactId>
@@ -24,10 +24,12 @@
 		</dependency>
 
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>${commons-lang.version}</version>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${javax-validation}</version>
+			<scope>provided</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
