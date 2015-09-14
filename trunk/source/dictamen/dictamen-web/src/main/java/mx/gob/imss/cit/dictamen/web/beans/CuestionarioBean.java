@@ -19,7 +19,8 @@ public class CuestionarioBean extends BaseBean {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4837421797087101L;
+	private static final long serialVersionUID = 4837421797087101L;
+	
 	@EJB
 	private CuestionarioIntegrator cuestionarioIntegration;
 	

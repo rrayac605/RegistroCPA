@@ -124,6 +124,20 @@
 	</servlet-mapping>
 	
 
+	<servlet>
+		<servlet-name>Examen Servlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Examen Servlet</servlet-name>
+		<url-pattern>/Examen/*</url-pattern>
+	</servlet-mapping>
+	
 	<jsp-config>
 		<taglib>
 			<taglib-uri>http://liferay.com/tld/aui</taglib-uri>
