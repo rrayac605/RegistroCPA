@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/views/comun/template/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core" >
+
+
+	<ui:define name="bodyContainer">
+		<h:outputLabel value="#{examenBean.init()}" />
+
+		<ui:repeat var="e" value="#{examenPage.examenes}" varStatus="status">
+				#{e.examen}<br/>
+				<br/>
+				<ui:repeat var="s" value="#{e.secciones}" varStatus="status">
+					#{s.seccion}<br/>
+					<br/>
+					<ui:repeat var="p" value="#{s.preguntas}" varStatus="status">
+						#{p.pregunta}<br />
+						<br />
+						<p:selectOneRadio id="edo" value="#{examenPage.estado}">
+								<f:selectItems var="r"  value="#{p.respuestas}" itemLabel="#{r.respuesta}" itemValue="#{r.clave}" />
+						</p:selectOneRadio>
+						<br /><br />
+				</ui:repeat>
+			</ui:repeat>
+		</ui:repeat>
+	</ui:define>
+</ui:composition>
+
