@@ -1,149 +1,142 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.List;
-
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
- * The persistent class for the NDC_TIPO_CONVENIO_COTIZACION database table.
- * 
+ *
+ * @author ajfuentes
  */
 @Entity
-@Table(name="NDC_TIPO_CONVENIO_COTIZACION")
-@NamedQuery(name="NdcTipoConvenioCotizacionDO.findAll", query="SELECT n FROM NdcTipoConvenioCotizacionDO n")
+@Table(name = "NDC_TIPO_CONVENIO_COTIZACION")
+@NamedQueries({
+    @NamedQuery(name = "NdcTipoConvenioCotizacion.findAll", query = "SELECT n FROM NdcTipoConvenioCotizacionDO n"),
+    @NamedQuery(name = "NdcTipoConvenioCotizacion.findByCveIdTipoConvenioCot", query = "SELECT n FROM NdcTipoConvenioCotizacionDO n WHERE n.cveIdTipoConvenioCot = :cveIdTipoConvenioCot"),
+    @NamedQuery(name = "NdcTipoConvenioCotizacion.findByDesTipoConvenioCot", query = "SELECT n FROM NdcTipoConvenioCotizacionDO n WHERE n.desTipoConvenioCot = :desTipoConvenioCot"),
+    @NamedQuery(name = "NdcTipoConvenioCotizacion.findByFecRegistroAlta", query = "SELECT n FROM NdcTipoConvenioCotizacionDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdcTipoConvenioCotizacion.findByFecRegistroBaja", query = "SELECT n FROM NdcTipoConvenioCotizacionDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdcTipoConvenioCotizacion.findByFecRegistroActualizado", query = "SELECT n FROM NdcTipoConvenioCotizacionDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdcTipoConvenioCotizacionDO implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "CVE_ID_TIPO_CONVENIO_COT", nullable = false, precision = 22, scale = 0)
+    private Long cveIdTipoConvenioCot;
+    @Size(max = 50)
+    @Column(name = "DES_TIPO_CONVENIO_COT", length = 50)
+    private String desTipoConvenioCot;
+    @Column(name = "FEC_REGISTRO_ALTA")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroAlta;
+    @Column(name = "FEC_REGISTRO_BAJA")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroBaja;
+    @Column(name = "FEC_REGISTRO_ACTUALIZADO")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroActualizado;
+    @OneToMany(mappedBy = "cveIdTipoConvenioCot", fetch = FetchType.LAZY)
+    private List<NdtPatronDictamenDO> ndtPatronDictamenList;
 
-	@Id
-    @Column(name = "CVE_ID_TIPO_CONVENIO_COT", nullable = false)
-	@SequenceGenerator(name = "NdcTipoConvenioCotizacion_Id_Seq_Gen", sequenceName = "SEQ_NDCTIPOCONVENIOCOTIZACION")
-    @GeneratedValue(generator = "NdcTipoConvenioCotizacion_Id_Seq_Gen")
-	private long cveIdTipoConvenioCot;
+    public NdcTipoConvenioCotizacionDO() {
+    }
 
-	@Column(name="DES_TIPO_CONVENIO_COT")
-	private String desTipoConvenioCot;
+    public NdcTipoConvenioCotizacionDO(Long cveIdTipoConvenioCot) {
+        this.cveIdTipoConvenioCot = cveIdTipoConvenioCot;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_ACTUALIZADO")
-	private Date fecRegistroActualizado;
+    public Long getCveIdTipoConvenioCot() {
+        return cveIdTipoConvenioCot;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_ALTA")
-	private Date fecRegistroAlta;
+    public void setCveIdTipoConvenioCot(Long cveIdTipoConvenioCot) {
+        this.cveIdTipoConvenioCot = cveIdTipoConvenioCot;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_BAJA")
-	private Date fecRegistroBaja;
+    public String getDesTipoConvenioCot() {
+        return desTipoConvenioCot;
+    }
 
-	//bi-directional many-to-one association to NdtPatronDictamenDO
-	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcTipoConvenioCotizacion")
-	private List<NdtPatronDictamenDO> ndtPatronDictamens;
+    public void setDesTipoConvenioCot(String desTipoConvenioCot) {
+        this.desTipoConvenioCot = desTipoConvenioCot;
+    }
 
-	public NdcTipoConvenioCotizacionDO() {
-	}
+    public Date getFecRegistroAlta() {
+        return fecRegistroAlta;
+    }
 
-	public long getCveIdTipoConvenioCot() {
-		return this.cveIdTipoConvenioCot;
-	}
+    public void setFecRegistroAlta(Date fecRegistroAlta) {
+        this.fecRegistroAlta = fecRegistroAlta;
+    }
 
-	public void setCveIdTipoConvenioCot(long cveIdTipoConvenioCot) {
-		this.cveIdTipoConvenioCot = cveIdTipoConvenioCot;
-	}
+    public Date getFecRegistroBaja() {
+        return fecRegistroBaja;
+    }
 
-	public String getDesTipoConvenioCot() {
-		return this.desTipoConvenioCot;
-	}
+    public void setFecRegistroBaja(Date fecRegistroBaja) {
+        this.fecRegistroBaja = fecRegistroBaja;
+    }
 
-	public void setDesTipoConvenioCot(String desTipoConvenioCot) {
-		this.desTipoConvenioCot = desTipoConvenioCot;
-	}
+    public Date getFecRegistroActualizado() {
+        return fecRegistroActualizado;
+    }
 
-	public Date getFecRegistroActualizado() {
-		return this.fecRegistroActualizado;
-	}
+    public void setFecRegistroActualizado(Date fecRegistroActualizado) {
+        this.fecRegistroActualizado = fecRegistroActualizado;
+    }
 
-	public void setFecRegistroActualizado(Date fecRegistroActualizado) {
-		this.fecRegistroActualizado = fecRegistroActualizado;
-	}
+    public List<NdtPatronDictamenDO> getNdtPatronDictamenList() {
+        return ndtPatronDictamenList;
+    }
 
-	public Date getFecRegistroAlta() {
-		return this.fecRegistroAlta;
-	}
+    public void setNdtPatronDictamenList(List<NdtPatronDictamenDO> ndtPatronDictamenList) {
+        this.ndtPatronDictamenList = ndtPatronDictamenList;
+    }
 
-	public void setFecRegistroAlta(Date fecRegistroAlta) {
-		this.fecRegistroAlta = fecRegistroAlta;
-	}
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (cveIdTipoConvenioCot != null ? cveIdTipoConvenioCot.hashCode() : 0);
+        return hash;
+    }
 
-	public Date getFecRegistroBaja() {
-		return this.fecRegistroBaja;
-	}
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof NdcTipoConvenioCotizacionDO)) {
+            return false;
+        }
+        NdcTipoConvenioCotizacionDO other = (NdcTipoConvenioCotizacionDO) object;
+        if ((this.cveIdTipoConvenioCot == null && other.cveIdTipoConvenioCot != null) || (this.cveIdTipoConvenioCot != null && !this.cveIdTipoConvenioCot.equals(other.cveIdTipoConvenioCot))) {
+            return false;
+        }
+        return true;
+    }
 
-	public void setFecRegistroBaja(Date fecRegistroBaja) {
-		this.fecRegistroBaja = fecRegistroBaja;
-	}
-
-	public List<NdtPatronDictamenDO> getNdtPatronDictamens() {
-		return this.ndtPatronDictamens;
-	}
-
-	public void setNdtPatronDictamens(List<NdtPatronDictamenDO> ndtPatronDictamens) {
-		this.ndtPatronDictamens = ndtPatronDictamens;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (cveIdTipoConvenioCot ^ (cveIdTipoConvenioCot >>> 32));
-		result = prime * result + ((desTipoConvenioCot == null) ? 0 : desTipoConvenioCot.hashCode());
-		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
-		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
-		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
-		result = prime * result + ((ndtPatronDictamens == null) ? 0 : ndtPatronDictamens.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		NdcTipoConvenioCotizacionDO other = (NdcTipoConvenioCotizacionDO) obj;
-		if (cveIdTipoConvenioCot != other.cveIdTipoConvenioCot)
-			return false;
-		if (desTipoConvenioCot == null) {
-			if (other.desTipoConvenioCot != null)
-				return false;
-		} else if (!desTipoConvenioCot.equals(other.desTipoConvenioCot))
-			return false;
-		if (fecRegistroActualizado == null) {
-			if (other.fecRegistroActualizado != null)
-				return false;
-		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
-			return false;
-		if (fecRegistroAlta == null) {
-			if (other.fecRegistroAlta != null)
-				return false;
-		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
-			return false;
-		if (fecRegistroBaja == null) {
-			if (other.fecRegistroBaja != null)
-				return false;
-		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
-			return false;
-		if (ndtPatronDictamens == null) {
-			if (other.ndtPatronDictamens != null)
-				return false;
-		} else if (!ndtPatronDictamens.equals(other.ndtPatronDictamens))
-			return false;
-		return true;
-	}
-	
-	
-
+    @Override
+    public String toString() {
+        return "mx.gob.imss.cit.dictamen.model.NdcTipoConvenioCotizacion[ cveIdTipoConvenioCot=" + cveIdTipoConvenioCot + " ]";
+    }
+    
 }

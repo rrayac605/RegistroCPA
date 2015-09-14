@@ -1,292 +1,235 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.math.BigDecimal;
-import java.util.Date;
 
+import java.math.BigInteger;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
- * The persistent class for the NDT_R2_DESPACHO database table.
- * 
+ *
+ * @author ajfuentes
  */
 @Entity
-@Table(name="NDT_R2_DESPACHO")
-@NamedQuery(name="NdtR2DespachoDO.findAll", query="SELECT n FROM NdtR2DespachoDO n")
+@Table(name = "NDT_R2_DESPACHO")
+@NamedQueries({
+    @NamedQuery(name = "NdtR2Despacho.findAll", query = "SELECT n FROM NdtR2DespachoDO n"),
+    @NamedQuery(name = "NdtR2Despacho.findByCveIdR2Despacho", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cveIdR2Despacho = :cveIdR2Despacho"),
+    @NamedQuery(name = "NdtR2Despacho.findByFecActivacion", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecActivacion = :fecActivacion"),
+    @NamedQuery(name = "NdtR2Despacho.findByIndActivo", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.indActivo = :indActivo"),
+    @NamedQuery(name = "NdtR2Despacho.findByIndTipoCpa", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.indTipoCpa = :indTipoCpa"),
+    @NamedQuery(name = "NdtR2Despacho.findByNumTrabajadoresContratados", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.numTrabajadoresContratados = :numTrabajadoresContratados"),
+    @NamedQuery(name = "NdtR2Despacho.findByCargoQueDesempena", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cargoQueDesempena = :cargoQueDesempena"),
+    @NamedQuery(name = "NdtR2Despacho.findByFecRegistroAlta", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtR2Despacho.findByFecRegistroBaja", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtR2Despacho.findByFecRegistroActualizado", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtR2Despacho.findByCveIdUsuario", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtR2DespachoDO implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "CVE_ID_R2_DESPACHO", nullable = false, precision = 22, scale = 0)
+    private Long cveIdR2Despacho;
+    @Column(name = "FEC_ACTIVACION")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecActivacion;
+    @Column(name = "IND_ACTIVO")
+    private Short indActivo;
+    @Column(name = "IND_TIPO_CPA")
+    private BigInteger indTipoCpa;
+    @Column(name = "NUM_TRABAJADORES_CONTRATADOS")
+    private BigInteger numTrabajadoresContratados;
+    @Size(max = 50)
+    @Column(name = "CARGO_QUE_DESEMPENA", length = 50)
+    private String cargoQueDesempena;
+    @Column(name = "FEC_REGISTRO_ALTA")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroAlta;
+    @Column(name = "FEC_REGISTRO_BAJA")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroBaja;
+    @Column(name = "FEC_REGISTRO_ACTUALIZADO")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroActualizado;
+    @Size(max = 18)
+    @Column(name = "CVE_ID_USUARIO", length = 18)
+    private String cveIdUsuario;
+    @JoinColumn(name = "CVE_ID_DESPACHO", referencedColumnName = "CVE_ID_DESPACHO")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdtDespachosDO cveIdDespacho;
+    @JoinColumn(name = "CVE_ID_CPA_TRAMITE", referencedColumnName = "CVE_ID_CPA_TRAMITE")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdtCpaTramiteDO cveIdCpaTramite;
+    @JoinColumn(name = "CVE_ID_CPA", referencedColumnName = "CVE_ID_CPA", nullable = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private NdtContadorPublicoAutDO cveIdCpa;
+    @OneToMany(mappedBy = "cveIdR2Despacho", fetch = FetchType.LAZY)
+    private List<NdtR2FormacontactoDO> ndtR2FormacontactoList;
 
-	@Id
-    @Column(name = "CVE_ID_CPA_DESPACHO", nullable = false)
-    @SequenceGenerator(name = "NdtR2Despacho_Id_Seq_Gen", sequenceName = "SEQ_NDTR2DESPACHO")
-    @GeneratedValue(generator = "NdtR2Despacho_Id_Seq_Gen")
-	private long cveIdCpaDespacho;
+    public NdtR2DespachoDO() {
+    }
 
-	@Column(name="CARGO_QUE_DESEMPENA")
-	private String cargoQueDesempena;
+    public NdtR2DespachoDO(Long cveIdR2Despacho) {
+        this.cveIdR2Despacho = cveIdR2Despacho;
+    }
 
-	@Column(name="CVE_ID_USUARIO")
-	private String cveIdUsuario;
+    public Long getCveIdR2Despacho() {
+        return cveIdR2Despacho;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_ALTA")
-	private Date fecRegistroAlta;
+    public void setCveIdR2Despacho(Long cveIdR2Despacho) {
+        this.cveIdR2Despacho = cveIdR2Despacho;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_BAJA")
-	private Date fecRegistroBaja;
+    public Date getFecActivacion() {
+        return fecActivacion;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FECHA_SOLICITUD_R2")
-	private Date fechaSolicitudR2;
+    public void setFecActivacion(Date fecActivacion) {
+        this.fecActivacion = fecActivacion;
+    }
 
-	@Column(name="IND_TIPO_CPA")
-	private BigDecimal indTipoCpa;
+    public Short getIndActivo() {
+        return indActivo;
+    }
 
-	@Column(name="NUM_TRABAJADORES_CONTRATADOS")
-	private BigDecimal numTrabajadoresContratados;
+    public void setIndActivo(Short indActivo) {
+        this.indActivo = indActivo;
+    }
 
-	@Column(name="NUM_TRAMITE_NOTARIA")
-	private String numTramiteNotaria;
+    public BigInteger getIndTipoCpa() {
+        return indTipoCpa;
+    }
 
-	@Column(name="URL_ACUSE_NOTARIA")
-	private String urlAcuseNotaria;
+    public void setIndTipoCpa(BigInteger indTipoCpa) {
+        this.indTipoCpa = indTipoCpa;
+    }
 
-	//bi-directional many-to-one association to DitPatronSujetoObligadoDO
-	@ManyToOne
-	@JoinColumn(name="CVE_ID_PATRON_SUJETO_OBLIGADO")
-	private DitPatronSujetoObligadoDO ditPatronSujetoObligado;
+    public BigInteger getNumTrabajadoresContratados() {
+        return numTrabajadoresContratados;
+    }
 
-	//bi-directional many-to-one association to DitTramiteDO
-	@ManyToOne
-	@JoinColumn(name="CVE_ID_TRAMITE")
-	private DitTramiteDO ditTramite;
+    public void setNumTrabajadoresContratados(BigInteger numTrabajadoresContratados) {
+        this.numTrabajadoresContratados = numTrabajadoresContratados;
+    }
 
-	//bi-directional many-to-one association to NdcDespachoDO
-	@ManyToOne
-	@JoinColumn(name="CVE_ID_DESPACHO")
-	private NdcDespachoDO ndcDespacho;
+    public String getCargoQueDesempena() {
+        return cargoQueDesempena;
+    }
 
-	//bi-directional many-to-one association to NdtContadorPublicoAutDO
-	@ManyToOne
-	@JoinColumn(name="CVE_ID_CPA")
-	private NdtContadorPublicoAutDO ndtContadorPublicoAut;
+    public void setCargoQueDesempena(String cargoQueDesempena) {
+        this.cargoQueDesempena = cargoQueDesempena;
+    }
 
-	public NdtR2DespachoDO() {
-	}
+    public Date getFecRegistroAlta() {
+        return fecRegistroAlta;
+    }
 
-	public long getCveIdCpaDespacho() {
-		return this.cveIdCpaDespacho;
-	}
+    public void setFecRegistroAlta(Date fecRegistroAlta) {
+        this.fecRegistroAlta = fecRegistroAlta;
+    }
 
-	public void setCveIdCpaDespacho(long cveIdCpaDespacho) {
-		this.cveIdCpaDespacho = cveIdCpaDespacho;
-	}
+    public Date getFecRegistroBaja() {
+        return fecRegistroBaja;
+    }
 
-	public String getCargoQueDesempena() {
-		return this.cargoQueDesempena;
-	}
+    public void setFecRegistroBaja(Date fecRegistroBaja) {
+        this.fecRegistroBaja = fecRegistroBaja;
+    }
 
-	public void setCargoQueDesempena(String cargoQueDesempena) {
-		this.cargoQueDesempena = cargoQueDesempena;
-	}
+    public Date getFecRegistroActualizado() {
+        return fecRegistroActualizado;
+    }
 
-	public String getCveIdUsuario() {
-		return this.cveIdUsuario;
-	}
+    public void setFecRegistroActualizado(Date fecRegistroActualizado) {
+        this.fecRegistroActualizado = fecRegistroActualizado;
+    }
 
-	public void setCveIdUsuario(String cveIdUsuario) {
-		this.cveIdUsuario = cveIdUsuario;
-	}
+    public String getCveIdUsuario() {
+        return cveIdUsuario;
+    }
 
-	public Date getFecRegistroAlta() {
-		return this.fecRegistroAlta;
-	}
+    public void setCveIdUsuario(String cveIdUsuario) {
+        this.cveIdUsuario = cveIdUsuario;
+    }
 
-	public void setFecRegistroAlta(Date fecRegistroAlta) {
-		this.fecRegistroAlta = fecRegistroAlta;
-	}
+    public NdtDespachosDO getCveIdDespacho() {
+        return cveIdDespacho;
+    }
 
-	public Date getFecRegistroBaja() {
-		return this.fecRegistroBaja;
-	}
+    public void setCveIdDespacho(NdtDespachosDO cveIdDespacho) {
+        this.cveIdDespacho = cveIdDespacho;
+    }
 
-	public void setFecRegistroBaja(Date fecRegistroBaja) {
-		this.fecRegistroBaja = fecRegistroBaja;
-	}
+    public NdtCpaTramiteDO getCveIdCpaTramite() {
+        return cveIdCpaTramite;
+    }
 
-	public Date getFechaSolicitudR2() {
-		return this.fechaSolicitudR2;
-	}
+    public void setCveIdCpaTramite(NdtCpaTramiteDO cveIdCpaTramite) {
+        this.cveIdCpaTramite = cveIdCpaTramite;
+    }
 
-	public void setFechaSolicitudR2(Date fechaSolicitudR2) {
-		this.fechaSolicitudR2 = fechaSolicitudR2;
-	}
+    public NdtContadorPublicoAutDO getCveIdCpa() {
+        return cveIdCpa;
+    }
 
-	public BigDecimal getIndTipoCpa() {
-		return this.indTipoCpa;
-	}
+    public void setCveIdCpa(NdtContadorPublicoAutDO cveIdCpa) {
+        this.cveIdCpa = cveIdCpa;
+    }
 
-	public void setIndTipoCpa(BigDecimal indTipoCpa) {
-		this.indTipoCpa = indTipoCpa;
-	}
+    public List<NdtR2FormacontactoDO> getNdtR2FormacontactoList() {
+        return ndtR2FormacontactoList;
+    }
 
-	public BigDecimal getNumTrabajadoresContratados() {
-		return this.numTrabajadoresContratados;
-	}
+    public void setNdtR2FormacontactoList(List<NdtR2FormacontactoDO> ndtR2FormacontactoList) {
+        this.ndtR2FormacontactoList = ndtR2FormacontactoList;
+    }
 
-	public void setNumTrabajadoresContratados(BigDecimal numTrabajadoresContratados) {
-		this.numTrabajadoresContratados = numTrabajadoresContratados;
-	}
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (cveIdR2Despacho != null ? cveIdR2Despacho.hashCode() : 0);
+        return hash;
+    }
 
-	public String getNumTramiteNotaria() {
-		return this.numTramiteNotaria;
-	}
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof NdtR2DespachoDO)) {
+            return false;
+        }
+        NdtR2DespachoDO other = (NdtR2DespachoDO) object;
+        if ((this.cveIdR2Despacho == null && other.cveIdR2Despacho != null) || (this.cveIdR2Despacho != null && !this.cveIdR2Despacho.equals(other.cveIdR2Despacho))) {
+            return false;
+        }
+        return true;
+    }
 
-	public void setNumTramiteNotaria(String numTramiteNotaria) {
-		this.numTramiteNotaria = numTramiteNotaria;
-	}
-
-	public String getUrlAcuseNotaria() {
-		return this.urlAcuseNotaria;
-	}
-
-	public void setUrlAcuseNotaria(String urlAcuseNotaria) {
-		this.urlAcuseNotaria = urlAcuseNotaria;
-	}
-
-	public DitPatronSujetoObligadoDO getDitPatronSujetoObligado() {
-		return this.ditPatronSujetoObligado;
-	}
-
-	public void setDitPatronSujetoObligado(DitPatronSujetoObligadoDO ditPatronSujetoObligado) {
-		this.ditPatronSujetoObligado = ditPatronSujetoObligado;
-	}
-
-	public DitTramiteDO getDitTramite() {
-		return this.ditTramite;
-	}
-
-	public void setDitTramite(DitTramiteDO ditTramite) {
-		this.ditTramite = ditTramite;
-	}
-
-	public NdcDespachoDO getNdcDespacho() {
-		return this.ndcDespacho;
-	}
-
-	public void setNdcDespacho(NdcDespachoDO ndcDespacho) {
-		this.ndcDespacho = ndcDespacho;
-	}
-
-	public NdtContadorPublicoAutDO getNdtContadorPublicoAut() {
-		return this.ndtContadorPublicoAut;
-	}
-
-	public void setNdtContadorPublicoAut(NdtContadorPublicoAutDO ndtContadorPublicoAut) {
-		this.ndtContadorPublicoAut = ndtContadorPublicoAut;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((cargoQueDesempena == null) ? 0 : cargoQueDesempena.hashCode());
-		result = prime * result + (int) (cveIdCpaDespacho ^ (cveIdCpaDespacho >>> 32));
-		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
-		result = prime * result + ((ditPatronSujetoObligado == null) ? 0 : ditPatronSujetoObligado.hashCode());
-		result = prime * result + ((ditTramite == null) ? 0 : ditTramite.hashCode());
-		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
-		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
-		result = prime * result + ((fechaSolicitudR2 == null) ? 0 : fechaSolicitudR2.hashCode());
-		result = prime * result + ((indTipoCpa == null) ? 0 : indTipoCpa.hashCode());
-		result = prime * result + ((ndcDespacho == null) ? 0 : ndcDespacho.hashCode());
-		result = prime * result + ((ndtContadorPublicoAut == null) ? 0 : ndtContadorPublicoAut.hashCode());
-		result = prime * result + ((numTrabajadoresContratados == null) ? 0 : numTrabajadoresContratados.hashCode());
-		result = prime * result + ((numTramiteNotaria == null) ? 0 : numTramiteNotaria.hashCode());
-		result = prime * result + ((urlAcuseNotaria == null) ? 0 : urlAcuseNotaria.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		NdtR2DespachoDO other = (NdtR2DespachoDO) obj;
-		if (cargoQueDesempena == null) {
-			if (other.cargoQueDesempena != null)
-				return false;
-		} else if (!cargoQueDesempena.equals(other.cargoQueDesempena))
-			return false;
-		if (cveIdCpaDespacho != other.cveIdCpaDespacho)
-			return false;
-		if (cveIdUsuario == null) {
-			if (other.cveIdUsuario != null)
-				return false;
-		} else if (!cveIdUsuario.equals(other.cveIdUsuario))
-			return false;
-		if (ditPatronSujetoObligado == null) {
-			if (other.ditPatronSujetoObligado != null)
-				return false;
-		} else if (!ditPatronSujetoObligado.equals(other.ditPatronSujetoObligado))
-			return false;
-		if (ditTramite == null) {
-			if (other.ditTramite != null)
-				return false;
-		} else if (!ditTramite.equals(other.ditTramite))
-			return false;
-		if (fecRegistroAlta == null) {
-			if (other.fecRegistroAlta != null)
-				return false;
-		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
-			return false;
-		if (fecRegistroBaja == null) {
-			if (other.fecRegistroBaja != null)
-				return false;
-		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
-			return false;
-		if (fechaSolicitudR2 == null) {
-			if (other.fechaSolicitudR2 != null)
-				return false;
-		} else if (!fechaSolicitudR2.equals(other.fechaSolicitudR2))
-			return false;
-		if (indTipoCpa == null) {
-			if (other.indTipoCpa != null)
-				return false;
-		} else if (!indTipoCpa.equals(other.indTipoCpa))
-			return false;
-		if (ndcDespacho == null) {
-			if (other.ndcDespacho != null)
-				return false;
-		} else if (!ndcDespacho.equals(other.ndcDespacho))
-			return false;
-		if (ndtContadorPublicoAut == null) {
-			if (other.ndtContadorPublicoAut != null)
-				return false;
-		} else if (!ndtContadorPublicoAut.equals(other.ndtContadorPublicoAut))
-			return false;
-		if (numTrabajadoresContratados == null) {
-			if (other.numTrabajadoresContratados != null)
-				return false;
-		} else if (!numTrabajadoresContratados.equals(other.numTrabajadoresContratados))
-			return false;
-		if (numTramiteNotaria == null) {
-			if (other.numTramiteNotaria != null)
-				return false;
-		} else if (!numTramiteNotaria.equals(other.numTramiteNotaria))
-			return false;
-		if (urlAcuseNotaria == null) {
-			if (other.urlAcuseNotaria != null)
-				return false;
-		} else if (!urlAcuseNotaria.equals(other.urlAcuseNotaria))
-			return false;
-		return true;
-	}
-
-	
-	
+    @Override
+    public String toString() {
+        return "mx.gob.imss.cit.dictamen.model.NdtR2Despacho[ cveIdR2Despacho=" + cveIdR2Despacho + " ]";
+    }
+    
 }

@@ -1,168 +1,140 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.List;
-
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
- * The persistent class for the NDC_ESTADO_CPA database table.
- * 
+ *
+ * @author ajfuentes
  */
 @Entity
-@Table(name="NDC_ESTADO_CPA")
-@NamedQuery(name="NdcEstadoCpaDO.findAll", query="SELECT n FROM NdcEstadoCpaDO n")
+@Table(name = "NDC_ESTADO_CPA")
+@NamedQueries({
+    @NamedQuery(name = "NdcEstadoCpa.findAll", query = "SELECT n FROM NdcEstadoCpaDO n"),
+    @NamedQuery(name = "NdcEstadoCpa.findByCveIdEstadoCpa", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.cveIdEstadoCpa = :cveIdEstadoCpa"),
+    @NamedQuery(name = "NdcEstadoCpa.findByDesEstadoCpa", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.desEstadoCpa = :desEstadoCpa"),
+    @NamedQuery(name = "NdcEstadoCpa.findByFecRegistroAlta", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdcEstadoCpa.findByFecRegistroBaja", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
 public class NdcEstadoCpaDO implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "CVE_ID_ESTADO_CPA", nullable = false, precision = 22, scale = 0)
+    private Long cveIdEstadoCpa;
+    @Size(max = 50)
+    @Column(name = "DES_ESTADO_CPA", length = 50)
+    private String desEstadoCpa;
+    @Column(name = "FEC_REGISTRO_ALTA")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroAlta;
+    @Column(name = "FEC_REGISTRO_BAJA")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecRegistroBaja;
+    @OneToMany(mappedBy = "cveIdEstadoCpa", fetch = FetchType.LAZY)
+    private List<NdtContadorPublicoAutDO> ndtContadorPublicoAutList;
+    @OneToMany(mappedBy = "cveIdEstadoCpa", fetch = FetchType.LAZY)
+    private List<NdtCpaEstatusDO> ndtCpaEstatusList;
 
-	@Id
-    @Column(name = "CVE_ID_ESTADO_CPA", nullable = false)
-    @SequenceGenerator(name = "NdcEstadoCpa_Id_Seq_Gen", sequenceName = "SEQ_NDCESTADOCPA")
-    @GeneratedValue(generator = "NdcEstadoCpa_Id_Seq_Gen")
-	private long cveIdEstadoCpa;
+    public NdcEstadoCpaDO() {
+    }
 
-	@Column(name="DES_ESTADO_CPA")
-	private String desEstadoCpa;
+    public NdcEstadoCpaDO(Long cveIdEstadoCpa) {
+        this.cveIdEstadoCpa = cveIdEstadoCpa;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_ACTUALIZADO")
-	private Date fecRegistroActualizado;
+    public Long getCveIdEstadoCpa() {
+        return cveIdEstadoCpa;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_ALTA")
-	private Date fecRegistroAlta;
+    public void setCveIdEstadoCpa(Long cveIdEstadoCpa) {
+        this.cveIdEstadoCpa = cveIdEstadoCpa;
+    }
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="FEC_REGISTRO_BAJA")
-	private Date fecRegistroBaja;
+    public String getDesEstadoCpa() {
+        return desEstadoCpa;
+    }
 
-	//bi-directional many-to-one association to NdtContadorPublicoAutDO
-	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcEstadoCpa")
-	private List<NdtContadorPublicoAutDO> ndtContadorPublicoAuts;
+    public void setDesEstadoCpa(String desEstadoCpa) {
+        this.desEstadoCpa = desEstadoCpa;
+    }
 
-	//bi-directional many-to-one association to NdtRegBajaReactivDO
-	@OneToMany(fetch = FetchType.LAZY,   mappedBy="ndcEstadoCpa")
-	private List<NdtRegBajaReactivDO> ndtRegBajaReactivs;
+    public Date getFecRegistroAlta() {
+        return fecRegistroAlta;
+    }
 
-	public NdcEstadoCpaDO() {
-	}
+    public void setFecRegistroAlta(Date fecRegistroAlta) {
+        this.fecRegistroAlta = fecRegistroAlta;
+    }
 
-	public long getCveIdEstadoCpa() {
-		return this.cveIdEstadoCpa;
-	}
+    public Date getFecRegistroBaja() {
+        return fecRegistroBaja;
+    }
 
-	public void setCveIdEstadoCpa(long cveIdEstadoCpa) {
-		this.cveIdEstadoCpa = cveIdEstadoCpa;
-	}
+    public void setFecRegistroBaja(Date fecRegistroBaja) {
+        this.fecRegistroBaja = fecRegistroBaja;
+    }
 
-	public String getDesEstadoCpa() {
-		return this.desEstadoCpa;
-	}
+    public List<NdtContadorPublicoAutDO> getNdtContadorPublicoAutList() {
+        return ndtContadorPublicoAutList;
+    }
 
-	public void setDesEstadoCpa(String desEstadoCpa) {
-		this.desEstadoCpa = desEstadoCpa;
-	}
+    public void setNdtContadorPublicoAutList(List<NdtContadorPublicoAutDO> ndtContadorPublicoAutList) {
+        this.ndtContadorPublicoAutList = ndtContadorPublicoAutList;
+    }
 
-	public Date getFecRegistroActualizado() {
-		return this.fecRegistroActualizado;
-	}
+    public List<NdtCpaEstatusDO> getNdtCpaEstatusList() {
+        return ndtCpaEstatusList;
+    }
 
-	public void setFecRegistroActualizado(Date fecRegistroActualizado) {
-		this.fecRegistroActualizado = fecRegistroActualizado;
-	}
+    public void setNdtCpaEstatusList(List<NdtCpaEstatusDO> ndtCpaEstatusList) {
+        this.ndtCpaEstatusList = ndtCpaEstatusList;
+    }
 
-	public Date getFecRegistroAlta() {
-		return this.fecRegistroAlta;
-	}
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (cveIdEstadoCpa != null ? cveIdEstadoCpa.hashCode() : 0);
+        return hash;
+    }
 
-	public void setFecRegistroAlta(Date fecRegistroAlta) {
-		this.fecRegistroAlta = fecRegistroAlta;
-	}
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof NdcEstadoCpaDO)) {
+            return false;
+        }
+        NdcEstadoCpaDO other = (NdcEstadoCpaDO) object;
+        if ((this.cveIdEstadoCpa == null && other.cveIdEstadoCpa != null) || (this.cveIdEstadoCpa != null && !this.cveIdEstadoCpa.equals(other.cveIdEstadoCpa))) {
+            return false;
+        }
+        return true;
+    }
 
-	public Date getFecRegistroBaja() {
-		return this.fecRegistroBaja;
-	}
-
-	public void setFecRegistroBaja(Date fecRegistroBaja) {
-		this.fecRegistroBaja = fecRegistroBaja;
-	}
-
-	public List<NdtContadorPublicoAutDO> getNdtContadorPublicoAuts() {
-		return this.ndtContadorPublicoAuts;
-	}
-
-	public void setNdtContadorPublicoAuts(List<NdtContadorPublicoAutDO> ndtContadorPublicoAuts) {
-		this.ndtContadorPublicoAuts = ndtContadorPublicoAuts;
-	}
-
-
-	public List<NdtRegBajaReactivDO> getNdtRegBajaReactivs() {
-		return this.ndtRegBajaReactivs;
-	}
-
-	public void setNdtRegBajaReactivs(List<NdtRegBajaReactivDO> ndtRegBajaReactivs) {
-		this.ndtRegBajaReactivs = ndtRegBajaReactivs;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (cveIdEstadoCpa ^ (cveIdEstadoCpa >>> 32));
-		result = prime * result + ((desEstadoCpa == null) ? 0 : desEstadoCpa.hashCode());
-		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
-		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
-		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
-		result = prime * result + ((ndtContadorPublicoAuts == null) ? 0 : ndtContadorPublicoAuts.hashCode());
-		result = prime * result + ((ndtRegBajaReactivs == null) ? 0 : ndtRegBajaReactivs.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		NdcEstadoCpaDO other = (NdcEstadoCpaDO) obj;
-		if (cveIdEstadoCpa != other.cveIdEstadoCpa)
-			return false;
-		if (desEstadoCpa == null) {
-			if (other.desEstadoCpa != null)
-				return false;
-		} else if (!desEstadoCpa.equals(other.desEstadoCpa))
-			return false;
-		if (fecRegistroActualizado == null) {
-			if (other.fecRegistroActualizado != null)
-				return false;
-		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
-			return false;
-		if (fecRegistroAlta == null) {
-			if (other.fecRegistroAlta != null)
-				return false;
-		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
-			return false;
-		if (fecRegistroBaja == null) {
-			if (other.fecRegistroBaja != null)
-				return false;
-		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
-			return false;
-		if (ndtContadorPublicoAuts == null) {
-			if (other.ndtContadorPublicoAuts != null)
-				return false;
-		} else if (!ndtContadorPublicoAuts.equals(other.ndtContadorPublicoAuts))
-			return false;
-		if (ndtRegBajaReactivs == null) {
-			if (other.ndtRegBajaReactivs != null)
-				return false;
-		} else if (!ndtRegBajaReactivs.equals(other.ndtRegBajaReactivs))
-			return false;
-		return true;
-	}
-	
-	
-
+    @Override
+    public String toString() {
+        return "mx.gob.imss.cit.dictamen.model.NdcEstadoCpa[ cveIdEstadoCpa=" + cveIdEstadoCpa + " ]";
+    }
+    
 }
