@@ -14,9 +14,7 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
-import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 import mx.gob.imss.cit.ws.commonschema.SGBDE;
 
@@ -27,7 +25,6 @@ public class TransformerServiceUtils {
 	
 	static{
 		mapClass = new HashMap<Class<?>, Class<?>>();		
-		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO.class,mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoTO.class);
 		
 		mapClass.put(mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Document.class,mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO.class);
 		mapClass.put(mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Actor.class,mx.gob.imss.cit.dictamen.commons.to.BovedaActorTO.class);
@@ -47,18 +44,8 @@ public class TransformerServiceUtils {
 	private TransformerServiceUtils(){
 		
 	}
-		
-	public static ContadorPublicoTO transformer( NdtContadorPublicoAutDO ContadorPublico ) {
-		ContadorPublicoTO cont=  (ContadorPublicoTO) TransformerHelper.get(mapClass,ContadorPublico, ContadorPublicoTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
-		return cont;
-	}
-	
-	public static NdtContadorPublicoAutDO transformer( ContadorPublicoTO ContadorPublico ) {
-		NdtContadorPublicoAutDO cont=  (NdtContadorPublicoAutDO) TransformerHelper.get(mapClass,ContadorPublico, NdtContadorPublicoAutDO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
-		return cont;
-	}
-	
-	
+
+
 
 	public static BovedaDocumentoTO transformer( Document document ) {
 		BovedaDocumentoTO cont=  (BovedaDocumentoTO) TransformerHelper.get(mapClass,document, BovedaDocumentoTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
