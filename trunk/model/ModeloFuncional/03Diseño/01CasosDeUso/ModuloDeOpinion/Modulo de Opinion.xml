@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_39D2B282_554E_4730_B196_510572B0499C"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-04 11:56:50"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-14 13:36:30"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-14 14:15:59"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Opinion"/>
@@ -1079,7 +1079,7 @@
 							<extension level="13a" guid="{36B4354A-6459-4de8-A2DA-5B3D516107D8}" join="End"/>
 						</step>
 						<step name="El CPA da clic en el botón Firmar Trámite." guid="{0D0E329B-8780-4419-BC3B-DB93327631EE}" level="14" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema después de validar que se cumpla con la complitud de aseveraciones, atestiguamientos y campos de opinión de acuerdo a , despliega la ventana del componente de firma digital,  RF-C023 - Captura de FIEL" guid="{5CB6A1D9-5221-4a88-A79B-C55793927E49}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema valida que se cumpla con la complitud de aseveraciones, atestiguamientos y campos de opinión de acuerdo a RF-N2 - Requisitos para tipos de Opinión, el sistema despliega la ventana del componente de firma digital,  RF-C023 - Captura de FIEL.&#xA;En caso de encontrarse atestiguamientos " guid="{5CB6A1D9-5221-4a88-A79B-C55793927E49}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El usuario captura y selecciona los archivos correspondientes a la firma electrónica y da clic en el botón Firmar." guid="{A4ECB361-1EC1-44ae-8429-01430418C65B}" level="16" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema realiza la firma del trámite y genera el acuse respectivo. RF-C008 - Detalle de acuses de Opinión (Anexo1)&#xA;El sistema despliega en PDF el acuse, lo almacena en la notaria electrónica y lo envía por correo electrónico al CPA y al Patrón." guid="{44B3C3F6-5D36-4f45-941C-FE1FA360F705}" level="17" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="Termina caso de uso" guid="{9BB8B2A1-ED95-44ac-9790-B212C238D437}" level="18" uses="" useslist="" result="" state="" trigger="0" link=""/>
