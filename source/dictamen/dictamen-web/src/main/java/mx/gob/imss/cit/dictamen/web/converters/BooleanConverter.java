@@ -5,7 +5,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-@FacesConverter(value = "BooleanConverter")
+@FacesConverter(value = "booleanConverter")
 public class BooleanConverter implements Converter {
 
     /*

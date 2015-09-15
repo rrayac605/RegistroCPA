@@ -19,9 +19,6 @@ public class DatosPatronalesPage extends BaseBean {
 	
 	private DatosPatronDTO datosPatron;
 	
-	private Integer opcion;
-	private Boolean radioTrue= Boolean.TRUE;
-	private Boolean radioFalse= Boolean.FALSE;
 	private List<TipoDictamenDTO> listaTipoDictamen;
 
 	/**
@@ -44,49 +41,6 @@ public class DatosPatronalesPage extends BaseBean {
 	public DatosPatronDTO getDatosPatron() {
 		return datosPatron;
 	}
-
-	/**
-	 * @return the opcion
-	 */
-	public Integer getOpcion() {
-		return opcion;
-	}
-
-	/**
-	 * @param opcion the opcion to set
-	 */
-	public void setOpcion(Integer opcion) {
-		this.opcion = opcion;
-	}
-
-	/**
-	 * @return the radioTrue
-	 */
-	public Boolean getRadioTrue() {
-		return radioTrue;
-	}
-
-	/**
-	 * @param radioTrue the radioTrue to set
-	 */
-	public void setRadioTrue(Boolean radioTrue) {
-		this.radioTrue = radioTrue;
-	}
-
-	/**
-	 * @return the radioFalse
-	 */
-	public Boolean getRadioFalse() {
-		return radioFalse;
-	}
-
-	/**
-	 * @param radioFalse the radioFalse to set
-	 */
-	public void setRadioFalse(Boolean radioFalse) {
-		this.radioFalse = radioFalse;
-	}
-
 
 	/**
 	 * @param datosPatron the datosPatron to set
