@@ -12,13 +12,13 @@ import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
 import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
 
+import org.apache.log4j.Logger;
+
 @ManagedBean(name = "datosPatronalesBean")
 @ViewScoped
 public class DatosPatronalesBean extends BaseBean {
 
-	/**
-	 * 
-	 */
+	private Logger LOG=Logger.getLogger(DatosPatronalesBean.class) ;
 	
 	@EJB
 	private PatronIntegrator  patronIntegration;
@@ -36,10 +36,26 @@ public class DatosPatronalesBean extends BaseBean {
 	
 
 	public void buscar(){
+		FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_EJEMPLO2.getCode());
+
+
+	}
+	
+	public void limpiar(){
 		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_EJEMPLO.getCode());
 		FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_EJEMPLO2.getCode());
 		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_EJEMPLO3.getCode(),"uno");
 		FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_EJEMPLO4.getCode()," hola","hola2");
+		
+	}
+	
+	public void guardar(){
+		
+		LOG.info("los datos a guardar son: ");
+		LOG.info(datosPatronalesPage.getDatosPatron().getRazonSocialNombre());
+		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_DATOS_PATRONALES.getCode());
+
+		
 	}
 		
 	/**

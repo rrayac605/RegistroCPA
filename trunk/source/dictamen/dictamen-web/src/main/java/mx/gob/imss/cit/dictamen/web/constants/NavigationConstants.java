@@ -20,5 +20,9 @@ public final class NavigationConstants {
    
     public static final String PAGE_EXAMEN= "examen";
     
+    public static final String PAGE_DATOS_PATRONALES= "datosPatronales";
+    
+    public static final String PAGE_DICTAMINACION= "dictaminacion";
+    
 
 }

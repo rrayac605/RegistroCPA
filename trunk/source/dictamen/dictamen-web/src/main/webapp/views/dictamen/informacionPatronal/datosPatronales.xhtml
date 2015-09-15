@@ -1,67 +1,113 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<ui:composition 
+<ui:composition
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-		<h:form id="dictamen">
 
-					<p:panel id="panelPatron" header="#{msg['message.dictamen.dictaminar.datos.seccion']}" style="margin-bottom:20px">
 
-						<h:panelGrid columns="5" cellpadding="5">
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}" />
-							<p:inputText id="rfcPatron" required="true" value="#{datosPatronalesPage.datosPatron.rfc}" />
-							<p:commandButton value="#{msg['message.button.buscar']}" id="ajax" action="#{datosPatronBean.buscar}" styleClass="ui-priority-primary" />
+		<p:panel id="panelPatron"
+			header="#{msg['message.dictamen.dictaminar.datos.seccion']}"
+			style="margin-bottom:20px">
+			<h:form id="formDatosPatronales">
 
-							<h:outputLabel value="#{msg['message.dictamen.dictaminar.datos.tipo']}">:</h:outputLabel>
-							<p:selectOneMenu value="#{datosPatronalesPage.opcion}">
-								<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
-								<f:selectItems value="#{datosPatronalesPage.listaTipoDictamen}" var="tipo" itemLabel="#{tipo.descTipoDictamen}" itemValue="#{tipo.idDictamen}" />
-							</p:selectOneMenu>
-						</h:panelGrid>
 
-						<h:panelGrid columns="4" cellpadding="5">
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}" />
-							<p:inputText id="trabajadores" required="true" value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" />
 
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.construccion']}" />
-							<p:selectOneRadio id="construccion" value="#{datosPatronalesPage.datosPatron.industriaConstruccion}" converter="#{BooleanConverter}">
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemvalue="#{datosPatronalesPage.radioTrue}"  />
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronalesPage.radioFalse}" itemValueAsString="#{datosPatronalesPage.radioFalse}"/>
+				<h:panelGrid columns="5" cellpadding="5">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}" />
+					<p:inputText id="rfcPatron" required="true"
+						value="#{datosPatronalesPage.datosPatron.rfc}" />
+					<p:commandButton value="#{msg['message.button.buscar']}"
+						action="#{datosPatronalesBean.buscar}" immediate="true" ajax="false" />
 
-							</p:selectOneRadio>
+					<h:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.tipo']}">:</h:outputLabel>
+					<p:selectOneMenu
+						value="#{datosPatronalesPage.datosPatron.idTipoDictamen}">
+						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
+						<f:selectItems value="#{datosPatronalesPage.listaTipoDictamen}"
+							var="tipo" itemLabel="#{tipo.descTipoDictamen}"
+							itemValue="#{tipo.idDictamen}" />
+					</p:selectOneMenu>
+				</h:panelGrid>
 
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" />
-							<p:selectOneRadio id="dictaminado" value="#{datosPatronalesPage.datosPatron.empresaValuada}" converter="#{BooleanConverter}" >
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemValue="#{datosPatronalesPage.radioTrue}" />
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronalesPage.radioFalse}" itemValueAsString="#{datosPatronalesPage.radioFalse}" />
-								
-							</p:selectOneRadio>
+				<h:panelGrid columns="4" cellpadding="5">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}" />
+					<p:inputText id="trabajadores" required="true"
+						value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" />
 
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.valuada']}" />
-							<p:selectOneRadio id="valuada" value="#{datosPatronalesPage.datosPatron.actConstruccionOregObra}" converter="#{BooleanConverter}">
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}" itemValue="#{datosPatronalesPage.radioTrue}" />
-								<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}" itemValue="#{datosPatronalesPage.radioFalse}" itemValueAsString="#{datosPatronalesPage.radioFalse}" />
-							</p:selectOneRadio>
-						</h:panelGrid>
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.construccion']}" />
+					<p:selectOneRadio id="construccion"
+						value="#{datosPatronalesPage.datosPatron.industriaConstruccion}"
+						converter="#{booleanConverter}">
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
+							itemvalue="true" />
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
+							itemValue="false" />
 
-						<h:panelGrid columns="4" cellpadding="5">
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.denominacion']}" />
-							<p:inputText id="denominacion" required="true" value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
+					</p:selectOneRadio>
 
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}" />
-							<p:inputText id="ejercicio" required="true" value="#{datosPatronalesPage.datosPatron.ejercicioDictaminar}" />
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" />
+					<p:selectOneRadio id="dictaminado"
+						value="#{datosPatronalesPage.datosPatron.empresaValuada}"
+						converter="#{booleanConverter}">
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
+							itemvalue="true" />
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
+							itemValue="false" />
 
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.patronales']}" />
-							<p:inputText id="patronales" required="true" value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
+					</p:selectOneRadio>
 
-							<p:outputLabel value="#{msg['message.dictamen.dictaminar.datos.fecha']}" />
-							<p:calendar id="button" value="#{datosPatronalesPage.datosPatron.fechaPresentacionDictamen}" showOn="button" />
-						</h:panelGrid>
-						
-					</p:panel>
-</h:form>
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.valuada']}" />
+					<p:selectOneRadio id="valuada"
+						value="#{datosPatronalesPage.datosPatron.actConstruccionOregObra}"
+						converter="#{booleanConverter}">
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
+							itemvalue="true" />
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
+							itemValue="false" />
+					</p:selectOneRadio>
+				</h:panelGrid>
+
+				<h:panelGrid columns="4" cellpadding="5">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.denominacion']}" />
+					<p:inputText id="denominacion" required="true"
+						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
+
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}" />
+					<p:inputText id="ejercicio" required="true"
+						value="#{datosPatronalesPage.datosPatron.ejercicioDictaminar}" />
+
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.patronales']}" />
+					<p:inputText id="patronales" required="true"
+						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
+
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.fecha']}" />
+					<p:calendar id="button"
+						value="#{datosPatronalesPage.datosPatron.fechaPresentacionDictamen}"
+						showOn="button" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="2">
+					<p:commandButton value="#{msg['message.button.guardar']}"
+						action="#{datosPatronalesBean.guardar}" immediate="true" ajax="false" />
+					<p:commandButton value="#{msg['message.button.limpiar']}"
+						action="#{datosPatronalesBean.limpiar}" immediate="true" ajax="false"/>
+				</h:panelGrid>
+
+			</h:form>
+		</p:panel>
+
 </ui:composition>
