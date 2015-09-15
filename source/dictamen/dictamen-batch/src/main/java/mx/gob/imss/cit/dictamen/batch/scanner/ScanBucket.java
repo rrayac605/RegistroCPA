@@ -30,6 +30,7 @@ public class ScanBucket {
     private AmazonS3 s3;
     private String rutaOrigen;
     private String rutaDestino;
+    private String rutaProcesamiento;
     private String bucketName;
         
     @Autowired
@@ -42,8 +43,10 @@ public class ScanBucket {
 		AWSCredentialsProvider credentials = null;
 		ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
 		rutaOrigen = labels.getString("aws.ruta.origen");
+		rutaProcesamiento = labels.getString("aws.ruta.procesamiento");
 		rutaDestino = labels.getString("configuracion.ruta.destino");
 		bucketName = labels.getString("aws.bucket");
+		
 		LOG.info("Origen: "+rutaOrigen);
 		LOG.info("Destino: "+rutaDestino);
 		credentials = new ClasspathPropertiesFileCredentialsProvider();		
@@ -57,11 +60,12 @@ public class ScanBucket {
 		  if (object1.getKey().startsWith(rutaOrigen) && object1.getKey().endsWith(".txt")){
 			  try {
 				  LOG.info("Objeto a procesar: "+object1.getKey());
-				  keyDestination=rutaDestino+object1.getKey().replaceFirst("Dictamen", "Proceso");
+				  keyDestination=object1.getKey().replaceFirst(rutaOrigen, rutaProcesamiento);
 				  moveObject(object1.getKey(), keyDestination);
 				  LOG.info("Destino: "+keyDestination);    				
 				  JobParametersBuilder parametersBuilder = new JobParametersBuilder();
 				  parametersBuilder.addString("key", keyDestination).toJobParameters();
+				  parametersBuilder.addString("destino", rutaDestino+keyDestination).toJobParameters();
 				  parametersBuilder.addString("date", new Date().toString());
 				  parameters = parametersBuilder.toJobParameters();
 				  JobExecution execution = jobLauncher.run(job, parameters);

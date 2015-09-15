@@ -38,10 +38,11 @@
 	
 	<bean id="awsReader" class="mx.gob.imss.cit.dictamen.batch.readers.AWSReader" scope="job">
 		<property name="key" value="#{jobParameters[key]}"/>
+		<property name="destino" value="#{jobParameters[destino]}"></property>
 	</bean>
 
 	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
-	    <property name="resource" value="file:#{jobParameters[key]}" />
+	    <property name="resource" value="file:#{jobParameters[destino]}" />
 	    <property name="lineAggregator">
 			<bean class="org.springframework.batch.item.file.transform.PassThroughLineAggregator"/>
 		</property>
