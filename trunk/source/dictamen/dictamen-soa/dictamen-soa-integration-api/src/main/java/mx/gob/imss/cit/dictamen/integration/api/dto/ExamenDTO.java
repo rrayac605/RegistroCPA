@@ -11,19 +11,21 @@ public class ExamenDTO extends BaseDTO{
 	 */
 	private static final long serialVersionUID = -3901424321125859112L;
 	private Integer clave;
-	private String examen;
+	private String nombre;
 	private List<SeccionDTO> secciones;
+	private String estado;
+	
 	public Integer getClave() {
 		return clave;
 	}
 	public void setClave(Integer clave) {
 		this.clave = clave;
 	}
-	public String getExamen() {
-		return examen;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setExamen(String examen) {
-		this.examen = examen;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	public List<SeccionDTO> getSecciones() {
 		return secciones;
@@ -36,7 +38,7 @@ public class ExamenDTO extends BaseDTO{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((clave == null) ? 0 : clave.hashCode());
-		result = prime * result + ((examen == null) ? 0 : examen.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((secciones == null) ? 0 : secciones.hashCode());
 		return result;
 	}
@@ -54,10 +56,10 @@ public class ExamenDTO extends BaseDTO{
 				return false;
 		} else if (!clave.equals(other.clave))
 			return false;
-		if (examen == null) {
-			if (other.examen != null)
+		if (nombre == null) {
+			if (other.nombre != null)
 				return false;
-		} else if (!examen.equals(other.examen))
+		} else if (!nombre.equals(other.nombre))
 			return false;
 		if (secciones == null) {
 			if (other.secciones != null)
@@ -65,6 +67,18 @@ public class ExamenDTO extends BaseDTO{
 		} else if (!secciones.equals(other.secciones))
 			return false;
 		return true;
+	}
+	/**
+	 * @return the estado
+	 */
+	public String getEstado() {
+		return estado;
+	}
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 	
 	

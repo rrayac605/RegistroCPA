@@ -11,23 +11,23 @@
 	<p:panel>
 
 		<h:outputLabel value="#{cuestionarioBean.init()}" />
-		<p:dataTable var="cuestionario"
-			value="#{cuestionarioPage.cuestionarios}">
+		<p:dataTable var="examen"
+			value="#{cuestionarioPage.examenes}">
 			<p:column
 				headerText="#{msg['message.label.views.dictamen.atestiguamiento.concepto']}">
-				<h:outputText value="#{cuestionario.concepto}" />
+				<h:outputText value="#{examen.nombre}" />
 			</p:column>
 
 			<p:column
 				headerText="#{msg['message.label.views.dictamen.atestiguamiento.estado']}">
-				<h:outputText value="#{cuestionario.estado}" />
+				<h:outputText value="#{examen.estado}" />
 			</p:column>
 
 			<p:column
 				headerText="#{msg['message.label.views.dictamen.atestiguamiento.accion']}">
-				<h:commandButton action="#{cuestionarioBean.editar(custionario)}"
+				<h:commandButton action="#{cuestionarioBean.editar(examen)}"
 					value="#{msg['message.button.views.dictamen.atestiguamiento.editar']}"/>
-				<h:commandButton action="#{cuestionarioBean.borrar(custionario)}"
+				<h:commandButton action="#{cuestionarioBean.borrar(examen)}"
 					value="#{msg['message.button.views.dictamen.atestiguamiento.borrar']}"/>
 			</p:column>
 		</p:dataTable>

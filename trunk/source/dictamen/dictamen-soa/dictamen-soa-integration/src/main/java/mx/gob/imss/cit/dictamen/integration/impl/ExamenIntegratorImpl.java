@@ -3,30 +3,27 @@ package mx.gob.imss.cit.dictamen.integration.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegration;
+import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ExamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.PreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.RespuestaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.SeccionDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.TipoPreguntaDTO;
-import mx.gob.imss.cit.dictamen.services.ExamenService;
 
 @Stateless
-@Remote(mx.gob.imss.cit.dictamen.integration.api.ExamenIntegration.class)
-public class ExamenIntegrationImpl implements ExamenIntegration{
+@Remote(mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator.class)
+public class ExamenIntegratorImpl implements ExamenIntegrator{
 
 	//@EJB
 	//private ExamenService examenService;
 	
 	@Override
-	public List<ExamenDTO> findExamen() {
-		List<ExamenDTO> examenes = new ArrayList<ExamenDTO>();
-		
-		ExamenDTO   examen     = new ExamenDTO();
+	public ExamenDTO getDetalleExamen(ExamenDTO examen) {
+
+		ExamenDTO   examenDetalle     = new ExamenDTO();
 		SeccionDTO  seccion0   = new SeccionDTO();
 		SeccionDTO  seccion1   = new SeccionDTO();
 		SeccionDTO  seccion2   = new SeccionDTO();
@@ -104,18 +101,68 @@ public class ExamenIntegrationImpl implements ExamenIntegration{
 		preguntasseccion2.add(pregunta22);
 		seccion2.setPreguntas(preguntasseccion2);
 		
-		examen.setClave(1);
-		examen.setExamen("Remuneraciones pagadas en efectivo via nomina a los trabajadores");
+		examenDetalle.setClave(1);
+		examenDetalle.setNombre("Remuneraciones pagadas en efectivo via nomina a los trabajadores");
 		List<SeccionDTO> seccionesExamen1 = new ArrayList<SeccionDTO>();
 		seccionesExamen1.add(seccion0);
 		seccionesExamen1.add(seccion1);
 		seccionesExamen1.add(seccion2);
 		
-		examen.setSecciones(seccionesExamen1);
+		examenDetalle.setSecciones(seccionesExamen1);
+			
 		
-		examenes.add(examen);
-		
-		return examenes;
+		return examenDetalle;
 	}
+	
+public List<ExamenDTO> findExamenes() {
+		
+		List<ExamenDTO> cuestionarios = new ArrayList<ExamenDTO>();
+		
+		ExamenDTO a = new ExamenDTO();
+		ExamenDTO b = new ExamenDTO();
+		ExamenDTO c = new ExamenDTO();
+		ExamenDTO d = new ExamenDTO();
+		ExamenDTO e = new ExamenDTO();
+		ExamenDTO f = new ExamenDTO();
+		ExamenDTO g = new ExamenDTO();
+		ExamenDTO h = new ExamenDTO();
+		ExamenDTO i = new ExamenDTO();
+		ExamenDTO j = new ExamenDTO();
+		
+		a.setNombre("Remuneraciones pagadas en efectivo via nomina a los trabajadores");
+		a.setEstado("Completo");
+		b.setNombre("Otras Prestaciones Otorgadas a los trabajadores");
+		b.setEstado("Incompleto");
+		c.setNombre("Cuotas obrero patronales enteradas al instituto");
+		c.setEstado("Incompleto");
+		d.setNombre("Pago efectuado a personas fisicas");
+		d.setEstado("Incompleto");
+		e.setNombre("Prestaciones de Servicio de Personal");
+		e.setEstado("Incompleto");
+		f.setNombre("Subcontratacion de servicios de personal");
+		f.setEstado("Incompleto");
+		g.setNombre("Clasificacion de empresas");
+		g.setEstado("Incompleto");
+		h.setNombre("Balanza de comprobación");
+		h.setEstado("Incompleto");
+		i.setNombre("Obras de Construcción");
+		i.setEstado("Incompleto");
+		j.setNombre("Otros aspectos a atestiguar");
+		j.setEstado("Incompleto");
+		
+		cuestionarios.add(a);
+		cuestionarios.add(b);
+		cuestionarios.add(c);
+		cuestionarios.add(d);
+		cuestionarios.add(e);
+		cuestionarios.add(f);
+		cuestionarios.add(g);
+		cuestionarios.add(h);
+		cuestionarios.add(i);
+		cuestionarios.add(j);
+		
+		return cuestionarios;
+	}
+
 
 }

@@ -54,10 +54,13 @@ public class CustomExceptionHandler extends ExceptionHandlerWrapper{
       try{
      //   RequestContext.getCurrentInstance().addCallbackParam( "notValid", true );
 
-	      LOG.error( throwable.getMessage(), throwable );
-	      LOG.info( "CustomExceptionHandler.handle  EXCEPTION NO CONTROLADA!!!!!!" );
+    	  if(throwable!=null){
+    	      LOG.error( throwable.getMessage(), throwable );
+    	      LOG.info( "CustomExceptionHandler.handle  EXCEPTION NO CONTROLADA!!!!!!" );
+    	
+    	      throwable.printStackTrace();
+    	  }
 	
-	      throwable.printStackTrace();
 	      FacesContext ctx = FacesContext.getCurrentInstance();
 	      ConfigurableNavigationHandler nav = (ConfigurableNavigationHandler) ctx.getApplication().getNavigationHandler();
 	      nav.performNavigation(NavigationConstants.PAGE_ERROR );
