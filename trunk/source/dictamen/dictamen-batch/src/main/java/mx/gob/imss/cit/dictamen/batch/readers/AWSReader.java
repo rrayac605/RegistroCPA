@@ -34,6 +34,7 @@ public class AWSReader implements ItemReader<String> {
 	private int index;
 	private String key;
 	private String bucketName;
+	private String destino;
 
 	@PostConstruct
 	public void init() throws IOException{
@@ -79,6 +80,14 @@ public class AWSReader implements ItemReader<String> {
 
 	public void setKey(String key) {
 		this.key = key;
+	}
+
+	public String getDestino() {
+		return destino;
+	}
+
+	public void setDestino(String destino) {
+		this.destino = destino;
 	}
 	
 }
