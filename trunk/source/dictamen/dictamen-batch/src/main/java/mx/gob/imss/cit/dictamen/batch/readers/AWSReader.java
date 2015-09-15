@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
 
@@ -21,8 +22,6 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 
-import mx.gob.imss.cit.dictamen.batch.constants.BatchAWSConstants;
-
 /**
  * 
  * 
@@ -31,31 +30,34 @@ import mx.gob.imss.cit.dictamen.batch.constants.BatchAWSConstants;
  */
 public class AWSReader implements ItemReader<String> {
 	private Logger LOG=Logger.getLogger(AWSReader.class);
-	private List<String> aseveraciones;
+	private List<String> lineas;
 	private int index;
 	private String key;
+	private String bucketName;
 
 	@PostConstruct
 	public void init() throws IOException{
 		AWSCredentialsProvider credentials = null;
-		aseveraciones = new ArrayList<String>();
+		lineas = new ArrayList<String>();
 	    credentials = new ClasspathPropertiesFileCredentialsProvider();
 		AmazonS3 s3 = new AmazonS3Client(credentials);
+		ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
+		bucketName = labels.getString("aws.bucket");
 		LOG.info("Request object: "+key);
-		S3Object object = s3.getObject(new GetObjectRequest(BatchAWSConstants.BUCKET_NAME, key));
+		S3Object object = s3.getObject(new GetObjectRequest(bucketName, key));
         BufferedReader reader = new BufferedReader(new InputStreamReader(object.getObjectContent()));
         while (true) {
         	String line = reader.readLine();                
         	if (line == null) break;        	
-        	aseveraciones.add(line);        	
+        	lineas.add(line);        	
         }
 	}
 
 	@Override
 	public String read()
 			throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
-        if (index < aseveraciones.size()) {
-            String str = aseveraciones.get(index++);
+        if (index < lineas.size()) {
+            String str = lineas.get(index++);
             LOG.info(str);
             return str;
         } else {
@@ -63,12 +65,12 @@ public class AWSReader implements ItemReader<String> {
         }
 	}
 
-	public List<String> getAseveraciones() {
-		return aseveraciones;
+	public List<String> getLineas() {
+		return lineas;
 	}
 
-	public void setAseveraciones(List<String> aseveraciones) {
-		this.aseveraciones = aseveraciones;
+	public void setLineas(List<String> lineas) {
+		this.lineas = lineas;
 	}
 	
 	public String getKey() {
