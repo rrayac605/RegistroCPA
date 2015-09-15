@@ -42,8 +42,8 @@
 		<property name="key" value="#{jobParameters[key]}"/>
 	</bean>
 
-	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
-	    <property name="resource" value="file:cvs/output.txt" />
+	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+	    <property name="resource" value="file:#{jobParameters[key]}" />
 	    <property name="lineAggregator">
 			<bean class="org.springframework.batch.item.file.transform.PassThroughLineAggregator"/>
 		</property>

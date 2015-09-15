@@ -9,7 +9,7 @@ package mx.gob.imss.cit.dictamen.batch.scheduler;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class TestScheduler {
+public class RunScheduler {
 	
   public static void main(String[] args) {
 
