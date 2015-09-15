@@ -18,7 +18,7 @@ public final class NavigationConstants {
     
     public static final String PAGE_PRUEBA_FIRMA_ELECT="pruebaFirmaElectronica";
    
-    
+    public static final String PAGE_EXAMEN= "examen";
     
 
 }

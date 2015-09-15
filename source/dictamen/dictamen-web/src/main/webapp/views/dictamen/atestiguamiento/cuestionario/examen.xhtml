@@ -7,28 +7,29 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:c="http://java.sun.com/jstl/core" >
+	xmlns:c="http://java.sun.com/jstl/core">
 
 
 	<ui:define name="bodyContainer">
-		<h:outputLabel value="#{examenBean.init()}" />
 
-		<ui:repeat var="e" value="#{examenPage.examenes}" varStatus="status">
-				#{e.examen}<br/>
-				<br/>
-				<ui:repeat var="s" value="#{e.secciones}" varStatus="status">
-					#{s.seccion}<br/>
-					<br/>
-					<ui:repeat var="p" value="#{s.preguntas}" varStatus="status">
+				#{examenPage.examen.nombre}<br />
+		<br />
+		<ui:repeat var="s" value="#{examenPage.examen.secciones}"
+			varStatus="status">
+					#{s.seccion}<br />
+			<br />
+			<ui:repeat var="p" value="#{s.preguntas}" varStatus="status">
 						#{p.pregunta}<br />
-						<br />
-						<p:selectOneRadio id="edo" value="#{examenPage.estado}">
-								<f:selectItems var="r"  value="#{p.respuestas}" itemLabel="#{r.respuesta}" itemValue="#{r.clave}" />
-						</p:selectOneRadio>
-						<br /><br />
-				</ui:repeat>
+				<br />
+				<p:selectOneRadio id="edo" value="#{examenPage.estado}">
+					<f:selectItems var="r" value="#{p.respuestas}"
+						itemLabel="#{r.respuesta}" itemValue="#{r.clave}" />
+				</p:selectOneRadio>
+				<br />
+				<br />
 			</ui:repeat>
 		</ui:repeat>
+
 	</ui:define>
 </ui:composition>
 
