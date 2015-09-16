@@ -88,7 +88,7 @@
 										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
-								<UML:ClassifierRole name="Dictamen" xmi.id="EAID_7238BA1C_EAD9_42e6_AC5C_F6988BD2A8E9" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+								<UML:ClassifierRole name="ModeloDictamen" xmi.id="EAID_7238BA1C_EAD9_42e6_AC5C_F6988BD2A8E9" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="isAbstract" value="false"/>
 										<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -98,7 +98,7 @@
 										<UML:TaggedValue tag="isActive" value="false"/>
 										<UML:TaggedValue tag="package" value="EAPK_3F18E87A_F26E_4de6_8A48_66821D264CAD"/>
 										<UML:TaggedValue tag="date_created" value="2015-09-14 16:05:36"/>
-										<UML:TaggedValue tag="date_modified" value="2015-09-14 16:05:36"/>
+										<UML:TaggedValue tag="date_modified" value="2015-09-16 13:44:58"/>
 										<UML:TaggedValue tag="gentype" value="Java"/>
 										<UML:TaggedValue tag="tagged" value="0"/>
 										<UML:TaggedValue tag="package2" value="EAID_7238BA1C_EAD9_42e6_AC5C_F6988BD2A8E9"/>
@@ -167,32 +167,6 @@
 								<UML:TaggedValue tag="ea_stype" value="Public"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Package>
-						<UML:Package name="Dictamen" xmi.id="EAPK_7238BA1C_EAD9_42e6_AC5C_F6988BD2A8E9" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="parent" value="EAPK_3F18E87A_F26E_4de6_8A48_66821D264CAD"/>
-								<UML:TaggedValue tag="created" value="2015-09-14 14:44:23"/>
-								<UML:TaggedValue tag="modified" value="2015-09-14 14:44:23"/>
-								<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
-								<UML:TaggedValue tag="xmlpath" value="ModeloDominio\01ModeloDatos\Dictamen\Dictamen.xml"/>
-								<UML:TaggedValue tag="lastloaddate" value="2015-09-14 16:05:50"/>
-								<UML:TaggedValue tag="lastsavedate" value="2015-09-14 14:47:13"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isprotected" value="FALSE"/>
-								<UML:TaggedValue tag="usedtd" value="FALSE"/>
-								<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
-								<UML:TaggedValue tag="logxml" value="FALSE"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="batchsave" value="0"/>
-								<UML:TaggedValue tag="batchload" value="0"/>
-								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;"/>
-								<UML:TaggedValue tag="savedasstub" value="true"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="author" value="ajfuentes"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="ea_stype" value="Public"/>
-							</UML:ModelElement.taggedValue>
-						</UML:Package>
 						<UML:Package name="Modelo de Construcción" xmi.id="EAPK_027B0C73_1396_48b5_8671_80D9C85760E4" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="parent" value="EAPK_3F18E87A_F26E_4de6_8A48_66821D264CAD"/>
@@ -219,6 +193,32 @@
 								<UML:TaggedValue tag="ea_stype" value="Public"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Package>
+						<UML:Package name="ModeloDictamen" xmi.id="EAPK_7238BA1C_EAD9_42e6_AC5C_F6988BD2A8E9" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_3F18E87A_F26E_4de6_8A48_66821D264CAD"/>
+								<UML:TaggedValue tag="created" value="2015-09-14 14:44:23"/>
+								<UML:TaggedValue tag="modified" value="2015-09-14 14:44:23"/>
+								<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
+								<UML:TaggedValue tag="xmlpath" value="ModeloDominio\01ModeloDatos\Dictamen\Dictamen.xml"/>
+								<UML:TaggedValue tag="lastloaddate" value="2015-09-14 16:05:50"/>
+								<UML:TaggedValue tag="lastsavedate" value="2015-09-14 14:47:13"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="batchsave" value="0"/>
+								<UML:TaggedValue tag="batchload" value="0"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;"/>
+								<UML:TaggedValue tag="savedasstub" value="true"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="ajfuentes"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Package>
 						<UML:Package name="Modulo de Cedulas" xmi.id="EAPK_FF40B9BA_962B_4dbf_ACF1_46D9F7170152" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="parent" value="EAPK_3F18E87A_F26E_4de6_8A48_66821D264CAD"/>
@@ -236,7 +236,7 @@
 								<UML:TaggedValue tag="tpos" value="0"/>
 								<UML:TaggedValue tag="batchsave" value="0"/>
 								<UML:TaggedValue tag="batchload" value="0"/>
-								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;CheckedOutTo=raguirre;"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;"/>
 								<UML:TaggedValue tag="savedasstub" value="true"/>
 								<UML:TaggedValue tag="phase" value="1.0"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
