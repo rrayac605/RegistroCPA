@@ -90,11 +90,11 @@ public class AWSServiceImpl implements AWSService {
 			awsPolicyTO.setAwsAccessKeyId(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACCESS_KEY_ID));
 			awsPolicyTO.setSuccessActionStatus(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SUCCESS_ACTION_ESTATUS));
 			awsPolicyTO.setContentType(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_CONTENT_TYPE));
-			awsPolicyTO.setxAmzMetaUuid(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_UUID));
-			awsPolicyTO.setxAmzMetaTag(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_TAG));
-			awsPolicyTO.setxAmzCredential(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_CREDENTIAL));
-			awsPolicyTO.setxAmzAlgorithm(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_ALGORITHM));
-			awsPolicyTO.setxAmzDate(FechasUtils.dateToString_yyyyMMddTHHmmssZ(fechaFirma));
+			awsPolicyTO.setXamzMetaUuid(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_UUID));
+			awsPolicyTO.setXamzMetaTag(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_TAG));
+			awsPolicyTO.setXamzCredential(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_CREDENTIAL));
+			awsPolicyTO.setXamzAlgorithm(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_ALGORITHM));
+			awsPolicyTO.setXamzDate(FechasUtils.dateToString_yyyyMMddTHHmmssZ(fechaFirma));
 			awsPolicyTO.setUrl(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_URL));
 		
 			awsPolicyTO.setKey(rutaDestino);			
@@ -106,11 +106,11 @@ public class AWSServiceImpl implements AWSService {
 						.replaceAll(ACL, awsPolicyTO.getAcl())
 						.replaceAll(SUCCESS_ACTION_ESTATUS, awsPolicyTO.getSuccessActionStatus())
 						.replaceAll(CONTENT_TYPE, awsPolicyTO.getContentType())
-						.replaceAll(X_AMZ_META_UUID, awsPolicyTO.getxAmzMetaUuid())
-						.replaceAll(X_AMZ_META_TAG, awsPolicyTO.getxAmzMetaTag())
-						.replaceAll(X_AMZ_CREDENTIAL, awsPolicyTO.getxAmzCredential())
-						.replaceAll(X_AMZ_ALGORITHM, awsPolicyTO.getxAmzAlgorithm())
-						.replaceAll(X_AMZ_DATE, awsPolicyTO.getxAmzDate());
+						.replaceAll(X_AMZ_META_UUID, awsPolicyTO.getXamzMetaUuid())
+						.replaceAll(X_AMZ_META_TAG, awsPolicyTO.getXamzMetaTag())
+						.replaceAll(X_AMZ_CREDENTIAL, awsPolicyTO.getXamzCredential())
+						.replaceAll(X_AMZ_ALGORITHM, awsPolicyTO.getXamzAlgorithm())
+						.replaceAll(X_AMZ_DATE, awsPolicyTO.getXamzDate());
 			LOG.debug(policy);
 			
 			Mac hmac = Mac.getInstance(DictamenServicesConstants.ALGORITHM_HMACSHA1);
