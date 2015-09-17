@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -48,7 +48,7 @@ public class NdtA911PersonalObraDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A9_1_1_PERSONAL_OBRA", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA911PersonalObra;
+    private Long cveIdA911PersonalObra;
     @Column(name = "NUM_REG_OBRA_IMSS")
     private Long numRegObraImss;
     @Size(max = 100)
@@ -82,15 +82,15 @@ public class NdtA911PersonalObraDO implements Serializable {
     public NdtA911PersonalObraDO() {
     }
 
-    public NdtA911PersonalObraDO(BigDecimal cveIdA911PersonalObra) {
+    public NdtA911PersonalObraDO(Long cveIdA911PersonalObra) {
         this.cveIdA911PersonalObra = cveIdA911PersonalObra;
     }
 
-    public BigDecimal getCveIdA911PersonalObra() {
+    public Long getCveIdA911PersonalObra() {
         return cveIdA911PersonalObra;
     }
 
-    public void setCveIdA911PersonalObra(BigDecimal cveIdA911PersonalObra) {
+    public void setCveIdA911PersonalObra(Long cveIdA911PersonalObra) {
         this.cveIdA911PersonalObra = cveIdA911PersonalObra;
     }
 

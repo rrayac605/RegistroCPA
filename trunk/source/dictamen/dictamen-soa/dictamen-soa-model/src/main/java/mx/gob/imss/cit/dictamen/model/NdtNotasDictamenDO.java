@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,7 +46,7 @@ public class NdtNotasDictamenDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_NOTAS_ASEVERACIONES", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdNotasAseveraciones;
+    private Long cveIdNotasAseveraciones;
     @Size(max = 1000)
     @Column(name = "DES_NOTAS_ASEV_A1", length = 1000)
     private String desNotasAsevA1;
@@ -84,15 +84,15 @@ public class NdtNotasDictamenDO implements Serializable {
     public NdtNotasDictamenDO() {
     }
 
-    public NdtNotasDictamenDO(BigDecimal cveIdNotasAseveraciones) {
+    public NdtNotasDictamenDO(Long cveIdNotasAseveraciones) {
         this.cveIdNotasAseveraciones = cveIdNotasAseveraciones;
     }
 
-    public BigDecimal getCveIdNotasAseveraciones() {
+    public Long getCveIdNotasAseveraciones() {
         return cveIdNotasAseveraciones;
     }
 
-    public void setCveIdNotasAseveraciones(BigDecimal cveIdNotasAseveraciones) {
+    public void setCveIdNotasAseveraciones(Long cveIdNotasAseveraciones) {
         this.cveIdNotasAseveraciones = cveIdNotasAseveraciones;
     }
 

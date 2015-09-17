@@ -7,7 +7,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -53,7 +53,7 @@ public class NdtR2DespachoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R2_DESPACHO", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdR2Despacho;
+    private Long cveIdR2Despacho;
     @Column(name = "FEC_ACTIVACION")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecActivacion;
@@ -96,15 +96,15 @@ public class NdtR2DespachoDO implements Serializable {
     public NdtR2DespachoDO() {
     }
 
-    public NdtR2DespachoDO(BigDecimal cveIdR2Despacho) {
+    public NdtR2DespachoDO(Long cveIdR2Despacho) {
         this.cveIdR2Despacho = cveIdR2Despacho;
     }
 
-    public BigDecimal getCveIdR2Despacho() {
+    public Long getCveIdR2Despacho() {
         return cveIdR2Despacho;
     }
 
-    public void setCveIdR2Despacho(BigDecimal cveIdR2Despacho) {
+    public void setCveIdR2Despacho(Long cveIdR2Despacho) {
         this.cveIdR2Despacho = cveIdR2Despacho;
     }
 

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -49,7 +49,7 @@ public class NdtA76CeActCompDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A7_6_CE_ACT_COMP", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA76CeActComp;
+    private Long cveIdA76CeActComp;
     @Size(max = 13)
     @Column(name = "REG_PATRONAL", length = 13)
     private String regPatronal;
@@ -87,15 +87,15 @@ public class NdtA76CeActCompDO implements Serializable {
     public NdtA76CeActCompDO() {
     }
 
-    public NdtA76CeActCompDO(BigDecimal cveIdA76CeActComp) {
+    public NdtA76CeActCompDO(Long cveIdA76CeActComp) {
         this.cveIdA76CeActComp = cveIdA76CeActComp;
     }
 
-    public BigDecimal getCveIdA76CeActComp() {
+    public Long getCveIdA76CeActComp() {
         return cveIdA76CeActComp;
     }
 
-    public void setCveIdA76CeActComp(BigDecimal cveIdA76CeActComp) {
+    public void setCveIdA76CeActComp(Long cveIdA76CeActComp) {
         this.cveIdA76CeActComp = cveIdA76CeActComp;
     }
 

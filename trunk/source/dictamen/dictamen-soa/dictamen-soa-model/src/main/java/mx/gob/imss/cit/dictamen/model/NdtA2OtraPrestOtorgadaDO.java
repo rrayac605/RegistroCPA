@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -53,27 +53,27 @@ public class NdtA2OtraPrestOtorgadaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A2_OTRASPRESOTORGADAS", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA2Otraspresotorgadas;
+    private Long cveIdA2Otraspresotorgadas;
     @Column(name = "IMP_INSTRUMENTOS_TRABAJO", precision = 14, scale = 2)
-    private BigDecimal impInstrumentosTrabajo;
+    private Long impInstrumentosTrabajo;
     @Column(name = "IMP_GASTOS_PREVISION_SOCIAL", precision = 14, scale = 2)
-    private BigDecimal impGastosPrevisionSocial;
+    private Long impGastosPrevisionSocial;
     @Column(name = "IMP_ALIMENTACION", precision = 14, scale = 2)
-    private BigDecimal impAlimentacion;
+    private Long impAlimentacion;
     @Column(name = "IMP_HABITACION", precision = 14, scale = 2)
-    private BigDecimal impHabitacion;
+    private Long impHabitacion;
     @Column(name = "IMP_APORTACION_ADICIONAL_RCV", precision = 14, scale = 2)
-    private BigDecimal impAportacionAdicionalRcv;
+    private Long impAportacionAdicionalRcv;
     @Column(name = "IMP_CUOTA_OBRERA", precision = 14, scale = 2)
-    private BigDecimal impCuotaObrera;
+    private Long impCuotaObrera;
     @Column(name = "IMP_CUOTA_PATRONAL_INFONAVIT", precision = 14, scale = 2)
-    private BigDecimal impCuotaPatronalInfonavit;
+    private Long impCuotaPatronalInfonavit;
     @Column(name = "IMP_FONDO_PENSIONES", precision = 14, scale = 2)
-    private BigDecimal impFondoPensiones;
+    private Long impFondoPensiones;
     @Column(name = "IMP_OTRAS_PRESTACIONES", precision = 14, scale = 2)
-    private BigDecimal impOtrasPrestaciones;
+    private Long impOtrasPrestaciones;
     @Column(name = "IMP_TOTAL", precision = 14, scale = 2)
-    private BigDecimal impTotal;
+    private Long impTotal;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
@@ -93,95 +93,95 @@ public class NdtA2OtraPrestOtorgadaDO implements Serializable {
     public NdtA2OtraPrestOtorgadaDO() {
     }
 
-    public NdtA2OtraPrestOtorgadaDO(BigDecimal cveIdA2Otraspresotorgadas) {
+    public NdtA2OtraPrestOtorgadaDO(Long cveIdA2Otraspresotorgadas) {
         this.cveIdA2Otraspresotorgadas = cveIdA2Otraspresotorgadas;
     }
 
-    public BigDecimal getCveIdA2Otraspresotorgadas() {
+    public Long getCveIdA2Otraspresotorgadas() {
         return cveIdA2Otraspresotorgadas;
     }
 
-    public void setCveIdA2Otraspresotorgadas(BigDecimal cveIdA2Otraspresotorgadas) {
+    public void setCveIdA2Otraspresotorgadas(Long cveIdA2Otraspresotorgadas) {
         this.cveIdA2Otraspresotorgadas = cveIdA2Otraspresotorgadas;
     }
 
-    public BigDecimal getImpInstrumentosTrabajo() {
+    public Long getImpInstrumentosTrabajo() {
         return impInstrumentosTrabajo;
     }
 
-    public void setImpInstrumentosTrabajo(BigDecimal impInstrumentosTrabajo) {
+    public void setImpInstrumentosTrabajo(Long impInstrumentosTrabajo) {
         this.impInstrumentosTrabajo = impInstrumentosTrabajo;
     }
 
-    public BigDecimal getImpGastosPrevisionSocial() {
+    public Long getImpGastosPrevisionSocial() {
         return impGastosPrevisionSocial;
     }
 
-    public void setImpGastosPrevisionSocial(BigDecimal impGastosPrevisionSocial) {
+    public void setImpGastosPrevisionSocial(Long impGastosPrevisionSocial) {
         this.impGastosPrevisionSocial = impGastosPrevisionSocial;
     }
 
-    public BigDecimal getImpAlimentacion() {
+    public Long getImpAlimentacion() {
         return impAlimentacion;
     }
 
-    public void setImpAlimentacion(BigDecimal impAlimentacion) {
+    public void setImpAlimentacion(Long impAlimentacion) {
         this.impAlimentacion = impAlimentacion;
     }
 
-    public BigDecimal getImpHabitacion() {
+    public Long getImpHabitacion() {
         return impHabitacion;
     }
 
-    public void setImpHabitacion(BigDecimal impHabitacion) {
+    public void setImpHabitacion(Long impHabitacion) {
         this.impHabitacion = impHabitacion;
     }
 
-    public BigDecimal getImpAportacionAdicionalRcv() {
+    public Long getImpAportacionAdicionalRcv() {
         return impAportacionAdicionalRcv;
     }
 
-    public void setImpAportacionAdicionalRcv(BigDecimal impAportacionAdicionalRcv) {
+    public void setImpAportacionAdicionalRcv(Long impAportacionAdicionalRcv) {
         this.impAportacionAdicionalRcv = impAportacionAdicionalRcv;
     }
 
-    public BigDecimal getImpCuotaObrera() {
+    public Long getImpCuotaObrera() {
         return impCuotaObrera;
     }
 
-    public void setImpCuotaObrera(BigDecimal impCuotaObrera) {
+    public void setImpCuotaObrera(Long impCuotaObrera) {
         this.impCuotaObrera = impCuotaObrera;
     }
 
-    public BigDecimal getImpCuotaPatronalInfonavit() {
+    public Long getImpCuotaPatronalInfonavit() {
         return impCuotaPatronalInfonavit;
     }
 
-    public void setImpCuotaPatronalInfonavit(BigDecimal impCuotaPatronalInfonavit) {
+    public void setImpCuotaPatronalInfonavit(Long impCuotaPatronalInfonavit) {
         this.impCuotaPatronalInfonavit = impCuotaPatronalInfonavit;
     }
 
-    public BigDecimal getImpFondoPensiones() {
+    public Long getImpFondoPensiones() {
         return impFondoPensiones;
     }
 
-    public void setImpFondoPensiones(BigDecimal impFondoPensiones) {
+    public void setImpFondoPensiones(Long impFondoPensiones) {
         this.impFondoPensiones = impFondoPensiones;
     }
 
-    public BigDecimal getImpOtrasPrestaciones() {
+    public Long getImpOtrasPrestaciones() {
         return impOtrasPrestaciones;
     }
 
-    public void setImpOtrasPrestaciones(BigDecimal impOtrasPrestaciones) {
+    public void setImpOtrasPrestaciones(Long impOtrasPrestaciones) {
         this.impOtrasPrestaciones = impOtrasPrestaciones;
     }
 
-    public BigDecimal getImpTotal() {
+    public Long getImpTotal() {
         return impTotal;
     }
 
-    public void setImpTotal(BigDecimal impTotal) {
+    public void setImpTotal(Long impTotal) {
         this.impTotal = impTotal;
     }
 

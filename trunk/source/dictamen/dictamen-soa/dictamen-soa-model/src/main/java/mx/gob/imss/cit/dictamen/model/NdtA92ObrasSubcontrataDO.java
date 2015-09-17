@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -54,7 +54,7 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A9_2_OBRAS_SUBCONTRATA", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA92ObrasSubcontrata;
+    private Long cveIdA92ObrasSubcontrata;
     @Size(max = 255)
     @Column(name = "NOM_NOMBRE_RAZONSOCIAL", length = 255)
     private String nomNombreRazonsocial;
@@ -76,7 +76,7 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
     @Column(name = "NUM_SUPERFICIE_M2")
     private Long numSuperficieM2;
     @Column(name = "IMP_CONTRATADO", precision = 15, scale = 2)
-    private BigDecimal impContratado;
+    private Long impContratado;
     @Column(name = "FEC_DEL_EJECUCION")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecDelEjecucion;
@@ -104,15 +104,15 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
     public NdtA92ObrasSubcontrataDO() {
     }
 
-    public NdtA92ObrasSubcontrataDO(BigDecimal cveIdA92ObrasSubcontrata) {
+    public NdtA92ObrasSubcontrataDO(Long cveIdA92ObrasSubcontrata) {
         this.cveIdA92ObrasSubcontrata = cveIdA92ObrasSubcontrata;
     }
 
-    public BigDecimal getCveIdA92ObrasSubcontrata() {
+    public Long getCveIdA92ObrasSubcontrata() {
         return cveIdA92ObrasSubcontrata;
     }
 
-    public void setCveIdA92ObrasSubcontrata(BigDecimal cveIdA92ObrasSubcontrata) {
+    public void setCveIdA92ObrasSubcontrata(Long cveIdA92ObrasSubcontrata) {
         this.cveIdA92ObrasSubcontrata = cveIdA92ObrasSubcontrata;
     }
 
@@ -172,11 +172,11 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
         this.numSuperficieM2 = numSuperficieM2;
     }
 
-    public BigDecimal getImpContratado() {
+    public Long getImpContratado() {
         return impContratado;
     }
 
-    public void setImpContratado(BigDecimal impContratado) {
+    public void setImpContratado(Long impContratado) {
         this.impContratado = impContratado;
     }
 

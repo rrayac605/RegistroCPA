@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -49,7 +49,7 @@ public class NdtA73CeMaquinariaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A7_3_CE_MAQUINARIA", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA73CeMaquinaria;
+    private Long cveIdA73CeMaquinaria;
     @Size(max = 11)
     @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
@@ -86,15 +86,15 @@ public class NdtA73CeMaquinariaDO implements Serializable {
     public NdtA73CeMaquinariaDO() {
     }
 
-    public NdtA73CeMaquinariaDO(BigDecimal cveIdA73CeMaquinaria) {
+    public NdtA73CeMaquinariaDO(Long cveIdA73CeMaquinaria) {
         this.cveIdA73CeMaquinaria = cveIdA73CeMaquinaria;
     }
 
-    public BigDecimal getCveIdA73CeMaquinaria() {
+    public Long getCveIdA73CeMaquinaria() {
         return cveIdA73CeMaquinaria;
     }
 
-    public void setCveIdA73CeMaquinaria(BigDecimal cveIdA73CeMaquinaria) {
+    public void setCveIdA73CeMaquinaria(Long cveIdA73CeMaquinaria) {
         this.cveIdA73CeMaquinaria = cveIdA73CeMaquinaria;
     }
 

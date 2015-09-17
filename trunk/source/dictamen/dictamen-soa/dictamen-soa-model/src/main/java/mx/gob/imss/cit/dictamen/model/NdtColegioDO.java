@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -43,7 +43,7 @@ public class NdtColegioDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_COLEGIO", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdColegio;
+    private Long cveIdColegio;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
@@ -64,15 +64,15 @@ public class NdtColegioDO implements Serializable {
     public NdtColegioDO() {
     }
 
-    public NdtColegioDO(BigDecimal cveIdColegio) {
+    public NdtColegioDO(Long cveIdColegio) {
         this.cveIdColegio = cveIdColegio;
     }
 
-    public BigDecimal getCveIdColegio() {
+    public Long getCveIdColegio() {
         return cveIdColegio;
     }
 
-    public void setCveIdColegio(BigDecimal cveIdColegio) {
+    public void setCveIdColegio(Long cveIdColegio) {
         this.cveIdColegio = cveIdColegio;
     }
 

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -43,7 +43,7 @@ public class NdcTipoModeloOpinionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_TIPO_OPINION", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdTipoOpinion;
+    private Long cveIdTipoOpinion;
     @Size(max = 50)
     @Column(name = "DES_MODELO_OPINION", length = 50)
     private String desModeloOpinion;
@@ -62,15 +62,15 @@ public class NdcTipoModeloOpinionDO implements Serializable {
     public NdcTipoModeloOpinionDO() {
     }
 
-    public NdcTipoModeloOpinionDO(BigDecimal cveIdTipoOpinion) {
+    public NdcTipoModeloOpinionDO(Long cveIdTipoOpinion) {
         this.cveIdTipoOpinion = cveIdTipoOpinion;
     }
 
-    public BigDecimal getCveIdTipoOpinion() {
+    public Long getCveIdTipoOpinion() {
         return cveIdTipoOpinion;
     }
 
-    public void setCveIdTipoOpinion(BigDecimal cveIdTipoOpinion) {
+    public void setCveIdTipoOpinion(Long cveIdTipoOpinion) {
         this.cveIdTipoOpinion = cveIdTipoOpinion;
     }
 

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -43,7 +43,7 @@ public class NdtR1FormacontactoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R1_FORMACONTACTO", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdR1Formacontacto;
+    private Long cveIdR1Formacontacto;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -63,15 +63,15 @@ public class NdtR1FormacontactoDO implements Serializable {
     public NdtR1FormacontactoDO() {
     }
 
-    public NdtR1FormacontactoDO(BigDecimal cveIdR1Formacontacto) {
+    public NdtR1FormacontactoDO(Long cveIdR1Formacontacto) {
         this.cveIdR1Formacontacto = cveIdR1Formacontacto;
     }
 
-    public BigDecimal getCveIdR1Formacontacto() {
+    public Long getCveIdR1Formacontacto() {
         return cveIdR1Formacontacto;
     }
 
-    public void setCveIdR1Formacontacto(BigDecimal cveIdR1Formacontacto) {
+    public void setCveIdR1Formacontacto(Long cveIdR1Formacontacto) {
         this.cveIdR1Formacontacto = cveIdR1Formacontacto;
     }
 

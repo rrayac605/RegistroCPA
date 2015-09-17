@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -49,7 +49,7 @@ public class NdtCpaTramiteDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_CPA_TRAMITE", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdCpaTramite;
+    private Long cveIdCpaTramite;
     @Column(name = "FEC_SOLICITUD_MOVIMIENTO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecSolicitudMovimiento;
@@ -93,15 +93,15 @@ public class NdtCpaTramiteDO implements Serializable {
     public NdtCpaTramiteDO() {
     }
 
-    public NdtCpaTramiteDO(BigDecimal cveIdCpaTramite) {
+    public NdtCpaTramiteDO(Long cveIdCpaTramite) {
         this.cveIdCpaTramite = cveIdCpaTramite;
     }
 
-    public BigDecimal getCveIdCpaTramite() {
+    public Long getCveIdCpaTramite() {
         return cveIdCpaTramite;
     }
 
-    public void setCveIdCpaTramite(BigDecimal cveIdCpaTramite) {
+    public void setCveIdCpaTramite(Long cveIdCpaTramite) {
         this.cveIdCpaTramite = cveIdCpaTramite;
     }
 

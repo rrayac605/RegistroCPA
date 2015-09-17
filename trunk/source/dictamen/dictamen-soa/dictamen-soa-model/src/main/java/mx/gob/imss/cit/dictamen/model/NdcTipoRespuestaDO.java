@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -43,7 +43,7 @@ public class NdcTipoRespuestaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_RESPUESTA", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdRespuesta;
+    private Long cveIdRespuesta;
     @Size(max = 50)
     @Column(name = "DES_TIPO_RESPUESTA", length = 50)
     private String desTipoRespuesta;
@@ -62,15 +62,15 @@ public class NdcTipoRespuestaDO implements Serializable {
     public NdcTipoRespuestaDO() {
     }
 
-    public NdcTipoRespuestaDO(BigDecimal cveIdRespuesta) {
+    public NdcTipoRespuestaDO(Long cveIdRespuesta) {
         this.cveIdRespuesta = cveIdRespuesta;
     }
 
-    public BigDecimal getCveIdRespuesta() {
+    public Long getCveIdRespuesta() {
         return cveIdRespuesta;
     }
 
-    public void setCveIdRespuesta(BigDecimal cveIdRespuesta) {
+    public void setCveIdRespuesta(Long cveIdRespuesta) {
         this.cveIdRespuesta = cveIdRespuesta;
     }
 

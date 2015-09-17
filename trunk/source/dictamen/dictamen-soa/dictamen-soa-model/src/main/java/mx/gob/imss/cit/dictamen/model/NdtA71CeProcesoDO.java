@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -47,7 +47,7 @@ public class NdtA71CeProcesoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A7_1_CE_PROCESO", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA71CeProceso;
+    private Long cveIdA71CeProceso;
     @Size(max = 11)
     @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
@@ -79,15 +79,15 @@ public class NdtA71CeProcesoDO implements Serializable {
     public NdtA71CeProcesoDO() {
     }
 
-    public NdtA71CeProcesoDO(BigDecimal cveIdA71CeProceso) {
+    public NdtA71CeProcesoDO(Long cveIdA71CeProceso) {
         this.cveIdA71CeProceso = cveIdA71CeProceso;
     }
 
-    public BigDecimal getCveIdA71CeProceso() {
+    public Long getCveIdA71CeProceso() {
         return cveIdA71CeProceso;
     }
 
-    public void setCveIdA71CeProceso(BigDecimal cveIdA71CeProceso) {
+    public void setCveIdA71CeProceso(Long cveIdA71CeProceso) {
         this.cveIdA71CeProceso = cveIdA71CeProceso;
     }
 

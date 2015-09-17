@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.math.BigInteger;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -70,60 +70,60 @@ public class NdtCedulaPagosDiferenciasDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_CEDULA_PAGOS", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdCedulaPagos;
+    private Long cveIdCedulaPagos;
     @Size(max = 11)
     @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
     @Column(name = "NUM_COTIZANTES_REPORTADOS")
     private BigInteger numCotizantesReportados;
     @Column(name = "IMP_EM_CF", precision = 15, scale = 2)
-    private BigDecimal impEmCf;
+    private Long impEmCf;
     @Column(name = "IMP_EM_EXCEDENTE_PAT", precision = 15, scale = 2)
-    private BigDecimal impEmExcedentePat;
+    private Long impEmExcedentePat;
     @Column(name = "IMP_EM_EXCEDENTE_OBR", precision = 15, scale = 2)
-    private BigDecimal impEmExcedenteObr;
+    private Long impEmExcedenteObr;
     @Column(name = "IMP_EM_PD_PAT", precision = 15, scale = 2)
-    private BigDecimal impEmPdPat;
+    private Long impEmPdPat;
     @Column(name = "IMP_EM_PD_OBR", precision = 15, scale = 2)
-    private BigDecimal impEmPdObr;
+    private Long impEmPdObr;
     @Column(name = "IMP_EM_GMP_PAT", precision = 15, scale = 2)
-    private BigDecimal impEmGmpPat;
+    private Long impEmGmpPat;
     @Column(name = "IMP_EM_GMP_OBR", precision = 15, scale = 2)
-    private BigDecimal impEmGmpObr;
+    private Long impEmGmpObr;
     @Column(name = "IMP_RIESGO_TRABAJO", precision = 15, scale = 2)
-    private BigDecimal impRiesgoTrabajo;
+    private Long impRiesgoTrabajo;
     @Column(name = "IMP_GUARDERIAS_PS", precision = 15, scale = 2)
-    private BigDecimal impGuarderiasPs;
+    private Long impGuarderiasPs;
     @Column(name = "IMP_IV_PAT", precision = 15, scale = 2)
-    private BigDecimal impIvPat;
+    private Long impIvPat;
     @Column(name = "IMP_IV_OBR", precision = 15, scale = 2)
-    private BigDecimal impIvObr;
+    private Long impIvObr;
     @Column(name = "IMP_SUBTOTAL_COP", precision = 15, scale = 2)
-    private BigDecimal impSubtotalCop;
+    private Long impSubtotalCop;
     @Column(name = "IMP_SUERTE_PRINCIPAL_COP", precision = 15, scale = 2)
-    private BigDecimal impSuertePrincipalCop;
+    private Long impSuertePrincipalCop;
     @Column(name = "IMP_ACTUALIZACION_COP", precision = 15, scale = 2)
-    private BigDecimal impActualizacionCop;
+    private Long impActualizacionCop;
     @Column(name = "IMP_RECARGOS_COP", precision = 15, scale = 2)
-    private BigDecimal impRecargosCop;
+    private Long impRecargosCop;
     @Column(name = "IMP_TOTAL_COP", precision = 15, scale = 2)
-    private BigDecimal impTotalCop;
+    private Long impTotalCop;
     @Column(name = "IMP_RETIRO", precision = 15, scale = 2)
-    private BigDecimal impRetiro;
+    private Long impRetiro;
     @Column(name = "IMP_CV_PAT", precision = 15, scale = 2)
-    private BigDecimal impCvPat;
+    private Long impCvPat;
     @Column(name = "IMP_CV_OBR", precision = 15, scale = 2)
-    private BigDecimal impCvObr;
+    private Long impCvObr;
     @Column(name = "IMP_SUBTOTAL_RCV", precision = 15, scale = 2)
-    private BigDecimal impSubtotalRcv;
+    private Long impSubtotalRcv;
     @Column(name = "IMP_SUERTE_PRINCIPAL_RCV", precision = 15, scale = 2)
-    private BigDecimal impSuertePrincipalRcv;
+    private Long impSuertePrincipalRcv;
     @Column(name = "IMP_ACTUALIZACION_RCV", precision = 15, scale = 2)
-    private BigDecimal impActualizacionRcv;
+    private Long impActualizacionRcv;
     @Column(name = "IMP_RECARGOS_RCV", precision = 15, scale = 2)
-    private BigDecimal impRecargosRcv;
+    private Long impRecargosRcv;
     @Column(name = "IMP_TOTAL_RCV", precision = 15, scale = 2)
-    private BigDecimal impTotalRcv;
+    private Long impTotalRcv;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -143,15 +143,15 @@ public class NdtCedulaPagosDiferenciasDO implements Serializable {
     public NdtCedulaPagosDiferenciasDO() {
     }
 
-    public NdtCedulaPagosDiferenciasDO(BigDecimal cveIdCedulaPagos) {
+    public NdtCedulaPagosDiferenciasDO(Long cveIdCedulaPagos) {
         this.cveIdCedulaPagos = cveIdCedulaPagos;
     }
 
-    public BigDecimal getCveIdCedulaPagos() {
+    public Long getCveIdCedulaPagos() {
         return cveIdCedulaPagos;
     }
 
-    public void setCveIdCedulaPagos(BigDecimal cveIdCedulaPagos) {
+    public void setCveIdCedulaPagos(Long cveIdCedulaPagos) {
         this.cveIdCedulaPagos = cveIdCedulaPagos;
     }
 
@@ -171,195 +171,195 @@ public class NdtCedulaPagosDiferenciasDO implements Serializable {
         this.numCotizantesReportados = numCotizantesReportados;
     }
 
-    public BigDecimal getImpEmCf() {
+    public Long getImpEmCf() {
         return impEmCf;
     }
 
-    public void setImpEmCf(BigDecimal impEmCf) {
+    public void setImpEmCf(Long impEmCf) {
         this.impEmCf = impEmCf;
     }
 
-    public BigDecimal getImpEmExcedentePat() {
+    public Long getImpEmExcedentePat() {
         return impEmExcedentePat;
     }
 
-    public void setImpEmExcedentePat(BigDecimal impEmExcedentePat) {
+    public void setImpEmExcedentePat(Long impEmExcedentePat) {
         this.impEmExcedentePat = impEmExcedentePat;
     }
 
-    public BigDecimal getImpEmExcedenteObr() {
+    public Long getImpEmExcedenteObr() {
         return impEmExcedenteObr;
     }
 
-    public void setImpEmExcedenteObr(BigDecimal impEmExcedenteObr) {
+    public void setImpEmExcedenteObr(Long impEmExcedenteObr) {
         this.impEmExcedenteObr = impEmExcedenteObr;
     }
 
-    public BigDecimal getImpEmPdPat() {
+    public Long getImpEmPdPat() {
         return impEmPdPat;
     }
 
-    public void setImpEmPdPat(BigDecimal impEmPdPat) {
+    public void setImpEmPdPat(Long impEmPdPat) {
         this.impEmPdPat = impEmPdPat;
     }
 
-    public BigDecimal getImpEmPdObr() {
+    public Long getImpEmPdObr() {
         return impEmPdObr;
     }
 
-    public void setImpEmPdObr(BigDecimal impEmPdObr) {
+    public void setImpEmPdObr(Long impEmPdObr) {
         this.impEmPdObr = impEmPdObr;
     }
 
-    public BigDecimal getImpEmGmpPat() {
+    public Long getImpEmGmpPat() {
         return impEmGmpPat;
     }
 
-    public void setImpEmGmpPat(BigDecimal impEmGmpPat) {
+    public void setImpEmGmpPat(Long impEmGmpPat) {
         this.impEmGmpPat = impEmGmpPat;
     }
 
-    public BigDecimal getImpEmGmpObr() {
+    public Long getImpEmGmpObr() {
         return impEmGmpObr;
     }
 
-    public void setImpEmGmpObr(BigDecimal impEmGmpObr) {
+    public void setImpEmGmpObr(Long impEmGmpObr) {
         this.impEmGmpObr = impEmGmpObr;
     }
 
-    public BigDecimal getImpRiesgoTrabajo() {
+    public Long getImpRiesgoTrabajo() {
         return impRiesgoTrabajo;
     }
 
-    public void setImpRiesgoTrabajo(BigDecimal impRiesgoTrabajo) {
+    public void setImpRiesgoTrabajo(Long impRiesgoTrabajo) {
         this.impRiesgoTrabajo = impRiesgoTrabajo;
     }
 
-    public BigDecimal getImpGuarderiasPs() {
+    public Long getImpGuarderiasPs() {
         return impGuarderiasPs;
     }
 
-    public void setImpGuarderiasPs(BigDecimal impGuarderiasPs) {
+    public void setImpGuarderiasPs(Long impGuarderiasPs) {
         this.impGuarderiasPs = impGuarderiasPs;
     }
 
-    public BigDecimal getImpIvPat() {
+    public Long getImpIvPat() {
         return impIvPat;
     }
 
-    public void setImpIvPat(BigDecimal impIvPat) {
+    public void setImpIvPat(Long impIvPat) {
         this.impIvPat = impIvPat;
     }
 
-    public BigDecimal getImpIvObr() {
+    public Long getImpIvObr() {
         return impIvObr;
     }
 
-    public void setImpIvObr(BigDecimal impIvObr) {
+    public void setImpIvObr(Long impIvObr) {
         this.impIvObr = impIvObr;
     }
 
-    public BigDecimal getImpSubtotalCop() {
+    public Long getImpSubtotalCop() {
         return impSubtotalCop;
     }
 
-    public void setImpSubtotalCop(BigDecimal impSubtotalCop) {
+    public void setImpSubtotalCop(Long impSubtotalCop) {
         this.impSubtotalCop = impSubtotalCop;
     }
 
-    public BigDecimal getImpSuertePrincipalCop() {
+    public Long getImpSuertePrincipalCop() {
         return impSuertePrincipalCop;
     }
 
-    public void setImpSuertePrincipalCop(BigDecimal impSuertePrincipalCop) {
+    public void setImpSuertePrincipalCop(Long impSuertePrincipalCop) {
         this.impSuertePrincipalCop = impSuertePrincipalCop;
     }
 
-    public BigDecimal getImpActualizacionCop() {
+    public Long getImpActualizacionCop() {
         return impActualizacionCop;
     }
 
-    public void setImpActualizacionCop(BigDecimal impActualizacionCop) {
+    public void setImpActualizacionCop(Long impActualizacionCop) {
         this.impActualizacionCop = impActualizacionCop;
     }
 
-    public BigDecimal getImpRecargosCop() {
+    public Long getImpRecargosCop() {
         return impRecargosCop;
     }
 
-    public void setImpRecargosCop(BigDecimal impRecargosCop) {
+    public void setImpRecargosCop(Long impRecargosCop) {
         this.impRecargosCop = impRecargosCop;
     }
 
-    public BigDecimal getImpTotalCop() {
+    public Long getImpTotalCop() {
         return impTotalCop;
     }
 
-    public void setImpTotalCop(BigDecimal impTotalCop) {
+    public void setImpTotalCop(Long impTotalCop) {
         this.impTotalCop = impTotalCop;
     }
 
-    public BigDecimal getImpRetiro() {
+    public Long getImpRetiro() {
         return impRetiro;
     }
 
-    public void setImpRetiro(BigDecimal impRetiro) {
+    public void setImpRetiro(Long impRetiro) {
         this.impRetiro = impRetiro;
     }
 
-    public BigDecimal getImpCvPat() {
+    public Long getImpCvPat() {
         return impCvPat;
     }
 
-    public void setImpCvPat(BigDecimal impCvPat) {
+    public void setImpCvPat(Long impCvPat) {
         this.impCvPat = impCvPat;
     }
 
-    public BigDecimal getImpCvObr() {
+    public Long getImpCvObr() {
         return impCvObr;
     }
 
-    public void setImpCvObr(BigDecimal impCvObr) {
+    public void setImpCvObr(Long impCvObr) {
         this.impCvObr = impCvObr;
     }
 
-    public BigDecimal getImpSubtotalRcv() {
+    public Long getImpSubtotalRcv() {
         return impSubtotalRcv;
     }
 
-    public void setImpSubtotalRcv(BigDecimal impSubtotalRcv) {
+    public void setImpSubtotalRcv(Long impSubtotalRcv) {
         this.impSubtotalRcv = impSubtotalRcv;
     }
 
-    public BigDecimal getImpSuertePrincipalRcv() {
+    public Long getImpSuertePrincipalRcv() {
         return impSuertePrincipalRcv;
     }
 
-    public void setImpSuertePrincipalRcv(BigDecimal impSuertePrincipalRcv) {
+    public void setImpSuertePrincipalRcv(Long impSuertePrincipalRcv) {
         this.impSuertePrincipalRcv = impSuertePrincipalRcv;
     }
 
-    public BigDecimal getImpActualizacionRcv() {
+    public Long getImpActualizacionRcv() {
         return impActualizacionRcv;
     }
 
-    public void setImpActualizacionRcv(BigDecimal impActualizacionRcv) {
+    public void setImpActualizacionRcv(Long impActualizacionRcv) {
         this.impActualizacionRcv = impActualizacionRcv;
     }
 
-    public BigDecimal getImpRecargosRcv() {
+    public Long getImpRecargosRcv() {
         return impRecargosRcv;
     }
 
-    public void setImpRecargosRcv(BigDecimal impRecargosRcv) {
+    public void setImpRecargosRcv(Long impRecargosRcv) {
         this.impRecargosRcv = impRecargosRcv;
     }
 
-    public BigDecimal getImpTotalRcv() {
+    public Long getImpTotalRcv() {
         return impTotalRcv;
     }
 
-    public void setImpTotalRcv(BigDecimal impTotalRcv) {
+    public void setImpTotalRcv(Long impTotalRcv) {
         this.impTotalRcv = impTotalRcv;
     }
 

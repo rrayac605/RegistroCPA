@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -48,7 +48,7 @@ public class NdtA921PersSubcontratadoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A9_2_1_PERS_SUBCONTRATA", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA921PersSubcontrata;
+    private Long cveIdA921PersSubcontrata;
     @Column(name = "NUM_REG_OBRA_IMSS")
     private Long numRegObraImss;
     @Size(max = 100)
@@ -82,15 +82,15 @@ public class NdtA921PersSubcontratadoDO implements Serializable {
     public NdtA921PersSubcontratadoDO() {
     }
 
-    public NdtA921PersSubcontratadoDO(BigDecimal cveIdA921PersSubcontrata) {
+    public NdtA921PersSubcontratadoDO(Long cveIdA921PersSubcontrata) {
         this.cveIdA921PersSubcontrata = cveIdA921PersSubcontrata;
     }
 
-    public BigDecimal getCveIdA921PersSubcontrata() {
+    public Long getCveIdA921PersSubcontrata() {
         return cveIdA921PersSubcontrata;
     }
 
-    public void setCveIdA921PersSubcontrata(BigDecimal cveIdA921PersSubcontrata) {
+    public void setCveIdA921PersSubcontrata(Long cveIdA921PersSubcontrata) {
         this.cveIdA921PersSubcontrata = cveIdA921PersSubcontrata;
     }
 

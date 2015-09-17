@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -50,7 +50,7 @@ public class NdtA61PersonalProporcionadDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A61_LISTADOPERSONAL", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA61Listadopersonal;
+    private Long cveIdA61Listadopersonal;
     @Size(max = 30)
     @Column(name = "DES_FOLIO_SIPRESS", length = 30)
     private String desFolioSipress;
@@ -91,15 +91,15 @@ public class NdtA61PersonalProporcionadDO implements Serializable {
     public NdtA61PersonalProporcionadDO() {
     }
 
-    public NdtA61PersonalProporcionadDO(BigDecimal cveIdA61Listadopersonal) {
+    public NdtA61PersonalProporcionadDO(Long cveIdA61Listadopersonal) {
         this.cveIdA61Listadopersonal = cveIdA61Listadopersonal;
     }
 
-    public BigDecimal getCveIdA61Listadopersonal() {
+    public Long getCveIdA61Listadopersonal() {
         return cveIdA61Listadopersonal;
     }
 
-    public void setCveIdA61Listadopersonal(BigDecimal cveIdA61Listadopersonal) {
+    public void setCveIdA61Listadopersonal(Long cveIdA61Listadopersonal) {
         this.cveIdA61Listadopersonal = cveIdA61Listadopersonal;
     }
 

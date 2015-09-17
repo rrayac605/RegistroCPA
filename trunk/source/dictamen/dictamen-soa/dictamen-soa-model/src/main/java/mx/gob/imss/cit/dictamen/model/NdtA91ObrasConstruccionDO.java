@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -62,7 +62,7 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A9_1_OBRAS_CONSTRUCCION", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA91ObrasConstruccion;
+    private Long cveIdA91ObrasConstruccion;
     @Size(max = 13)
     @Column(name = "RFC", length = 13)
     private String rfc;
@@ -108,13 +108,13 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
     @Column(name = "NUM_CONTRATO", length = 20)
     private String numContrato;
     @Column(name = "IMP_CONTRATADO", precision = 14, scale = 2)
-    private BigDecimal impContratado;
+    private Long impContratado;
     @Column(name = "NUM_SUPERFICIE_M2")
     private Integer numSuperficieM2;
     @Column(name = "NUM_TRABAJADORES")
     private Integer numTrabajadores;
     @Column(name = "IMP_TOTAL_REMUNERACION_PAGADA", precision = 14, scale = 2)
-    private BigDecimal impTotalRemuneracionPagada;
+    private Long impTotalRemuneracionPagada;
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
@@ -134,15 +134,15 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
     public NdtA91ObrasConstruccionDO() {
     }
 
-    public NdtA91ObrasConstruccionDO(BigDecimal cveIdA91ObrasConstruccion) {
+    public NdtA91ObrasConstruccionDO(Long cveIdA91ObrasConstruccion) {
         this.cveIdA91ObrasConstruccion = cveIdA91ObrasConstruccion;
     }
 
-    public BigDecimal getCveIdA91ObrasConstruccion() {
+    public Long getCveIdA91ObrasConstruccion() {
         return cveIdA91ObrasConstruccion;
     }
 
-    public void setCveIdA91ObrasConstruccion(BigDecimal cveIdA91ObrasConstruccion) {
+    public void setCveIdA91ObrasConstruccion(Long cveIdA91ObrasConstruccion) {
         this.cveIdA91ObrasConstruccion = cveIdA91ObrasConstruccion;
     }
 
@@ -266,11 +266,11 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
         this.numContrato = numContrato;
     }
 
-    public BigDecimal getImpContratado() {
+    public Long getImpContratado() {
         return impContratado;
     }
 
-    public void setImpContratado(BigDecimal impContratado) {
+    public void setImpContratado(Long impContratado) {
         this.impContratado = impContratado;
     }
 
@@ -290,11 +290,11 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
         this.numTrabajadores = numTrabajadores;
     }
 
-    public BigDecimal getImpTotalRemuneracionPagada() {
+    public Long getImpTotalRemuneracionPagada() {
         return impTotalRemuneracionPagada;
     }
 
-    public void setImpTotalRemuneracionPagada(BigDecimal impTotalRemuneracionPagada) {
+    public void setImpTotalRemuneracionPagada(Long impTotalRemuneracionPagada) {
         this.impTotalRemuneracionPagada = impTotalRemuneracionPagada;
     }
 

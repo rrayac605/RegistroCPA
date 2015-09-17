@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -50,7 +50,7 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A4_PAGOSPERSONASFISICAS", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA4Pagospersonasfisicas;
+    private Long cveIdA4Pagospersonasfisicas;
     @Size(max = 13)
     @Column(name = "RFC_PF", length = 13)
     private String rfcPf;
@@ -69,7 +69,7 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
     @Column(name = "NUM_MESES_OPERO")
     private Integer numMesesOpero;
     @Column(name = "IMP_MONTO_OPERACIONES", precision = 14, scale = 2)
-    private BigDecimal impMontoOperaciones;
+    private Long impMontoOperaciones;
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
@@ -89,15 +89,15 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
     public NdtA4PagoPersonaFisicaDO() {
     }
 
-    public NdtA4PagoPersonaFisicaDO(BigDecimal cveIdA4Pagospersonasfisicas) {
+    public NdtA4PagoPersonaFisicaDO(Long cveIdA4Pagospersonasfisicas) {
         this.cveIdA4Pagospersonasfisicas = cveIdA4Pagospersonasfisicas;
     }
 
-    public BigDecimal getCveIdA4Pagospersonasfisicas() {
+    public Long getCveIdA4Pagospersonasfisicas() {
         return cveIdA4Pagospersonasfisicas;
     }
 
-    public void setCveIdA4Pagospersonasfisicas(BigDecimal cveIdA4Pagospersonasfisicas) {
+    public void setCveIdA4Pagospersonasfisicas(Long cveIdA4Pagospersonasfisicas) {
         this.cveIdA4Pagospersonasfisicas = cveIdA4Pagospersonasfisicas;
     }
 
@@ -149,11 +149,11 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
         this.numMesesOpero = numMesesOpero;
     }
 
-    public BigDecimal getImpMontoOperaciones() {
+    public Long getImpMontoOperaciones() {
         return impMontoOperaciones;
     }
 
-    public void setImpMontoOperaciones(BigDecimal impMontoOperaciones) {
+    public void setImpMontoOperaciones(Long impMontoOperaciones) {
         this.impMontoOperaciones = impMontoOperaciones;
     }
 

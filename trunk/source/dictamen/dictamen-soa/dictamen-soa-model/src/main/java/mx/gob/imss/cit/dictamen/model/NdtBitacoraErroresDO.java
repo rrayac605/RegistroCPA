@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -43,7 +43,7 @@ public class NdtBitacoraErroresDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_BIT_ERRORES", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdBitErrores;
+    private Long cveIdBitErrores;
     @Size(max = 3000)
     @Column(name = "DES_ERRORES", length = 3000)
     private String desErrores;
@@ -63,15 +63,15 @@ public class NdtBitacoraErroresDO implements Serializable {
     public NdtBitacoraErroresDO() {
     }
 
-    public NdtBitacoraErroresDO(BigDecimal cveIdBitErrores) {
+    public NdtBitacoraErroresDO(Long cveIdBitErrores) {
         this.cveIdBitErrores = cveIdBitErrores;
     }
 
-    public BigDecimal getCveIdBitErrores() {
+    public Long getCveIdBitErrores() {
         return cveIdBitErrores;
     }
 
-    public void setCveIdBitErrores(BigDecimal cveIdBitErrores) {
+    public void setCveIdBitErrores(Long cveIdBitErrores) {
         this.cveIdBitErrores = cveIdBitErrores;
     }
 

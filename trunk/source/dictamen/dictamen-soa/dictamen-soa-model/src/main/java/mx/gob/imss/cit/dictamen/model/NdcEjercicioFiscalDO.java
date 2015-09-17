@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -43,7 +43,7 @@ public class NdcEjercicioFiscalDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_EJER_FISCAL", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdEjerFiscal;
+    private Long cveIdEjerFiscal;
     @Size(max = 20)
     @Column(name = "DES_EJER_FISCAL", length = 20)
     private String desEjerFiscal;
@@ -62,15 +62,15 @@ public class NdcEjercicioFiscalDO implements Serializable {
     public NdcEjercicioFiscalDO() {
     }
 
-    public NdcEjercicioFiscalDO(BigDecimal cveIdEjerFiscal) {
+    public NdcEjercicioFiscalDO(Long cveIdEjerFiscal) {
         this.cveIdEjerFiscal = cveIdEjerFiscal;
     }
 
-    public BigDecimal getCveIdEjerFiscal() {
+    public Long getCveIdEjerFiscal() {
         return cveIdEjerFiscal;
     }
 
-    public void setCveIdEjerFiscal(BigDecimal cveIdEjerFiscal) {
+    public void setCveIdEjerFiscal(Long cveIdEjerFiscal) {
         this.cveIdEjerFiscal = cveIdEjerFiscal;
     }
 

@@ -6,9 +6,9 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,11 +39,11 @@ import javax.validation.constraints.Size;
 public class NdcAtestiguamientoDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
-    @Id
+    @Id    
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ATESTIGUAMIENTO", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdAtestiguamiento;
+    private Long cveIdAtestiguamiento;
     @Size(max = 100)
     @Column(name = "DES_ATESTIGUAMIENTO", length = 100)
     private String desAtestiguamiento;
@@ -68,15 +68,15 @@ public class NdcAtestiguamientoDO implements Serializable {
     public NdcAtestiguamientoDO() {
     }
 
-    public NdcAtestiguamientoDO(BigDecimal cveIdAtestiguamiento) {
+    public NdcAtestiguamientoDO(Long cveIdAtestiguamiento) {
         this.cveIdAtestiguamiento = cveIdAtestiguamiento;
     }
 
-    public BigDecimal getCveIdAtestiguamiento() {
+    public Long getCveIdAtestiguamiento() {
         return cveIdAtestiguamiento;
     }
 
-    public void setCveIdAtestiguamiento(BigDecimal cveIdAtestiguamiento) {
+    public void setCveIdAtestiguamiento(Long cveIdAtestiguamiento) {
         this.cveIdAtestiguamiento = cveIdAtestiguamiento;
     }
 

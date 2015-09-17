@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.math.BigInteger;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -49,7 +49,7 @@ public class NdtCpaAcreditacionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ACREDITACION", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdAcreditacion;
+    private Long cveIdAcreditacion;
     @Column(name = "IND_ACRED_MEMBRESIA")
     private BigInteger indAcredMembresia;
     @Column(name = "FEC_ACREDITACION_CP")
@@ -89,15 +89,15 @@ public class NdtCpaAcreditacionDO implements Serializable {
     public NdtCpaAcreditacionDO() {
     }
 
-    public NdtCpaAcreditacionDO(BigDecimal cveIdAcreditacion) {
+    public NdtCpaAcreditacionDO(Long cveIdAcreditacion) {
         this.cveIdAcreditacion = cveIdAcreditacion;
     }
 
-    public BigDecimal getCveIdAcreditacion() {
+    public Long getCveIdAcreditacion() {
         return cveIdAcreditacion;
     }
 
-    public void setCveIdAcreditacion(BigDecimal cveIdAcreditacion) {
+    public void setCveIdAcreditacion(Long cveIdAcreditacion) {
         this.cveIdAcreditacion = cveIdAcreditacion;
     }
 

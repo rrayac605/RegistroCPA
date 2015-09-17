@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -51,13 +51,13 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_B1_CED_REMUNERA", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdB1CedRemunera;
+    private Long cveIdB1CedRemunera;
     @Column(name = "IND_FIJO_VARIABLE")
     private Short indFijoVariable;
     @Column(name = "IND_INTEGRA_SBC")
     private Short indIntegraSbc;
     @Column(name = "IMP_IMPORTE_PAGADO", precision = 15, scale = 2)
-    private BigDecimal impImportePagado;
+    private Long impImportePagado;
     @Column(name = "POR_FAHORRO_APOPAT")
     private BigInteger porFahorroApopat;
     @Column(name = "POR_FAHORRO_APOOBR")
@@ -93,15 +93,15 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
     public NdtB1CedulaRemuneracionesDO() {
     }
 
-    public NdtB1CedulaRemuneracionesDO(BigDecimal cveIdB1CedRemunera) {
+    public NdtB1CedulaRemuneracionesDO(Long cveIdB1CedRemunera) {
         this.cveIdB1CedRemunera = cveIdB1CedRemunera;
     }
 
-    public BigDecimal getCveIdB1CedRemunera() {
+    public Long getCveIdB1CedRemunera() {
         return cveIdB1CedRemunera;
     }
 
-    public void setCveIdB1CedRemunera(BigDecimal cveIdB1CedRemunera) {
+    public void setCveIdB1CedRemunera(Long cveIdB1CedRemunera) {
         this.cveIdB1CedRemunera = cveIdB1CedRemunera;
     }
 
@@ -121,11 +121,11 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
         this.indIntegraSbc = indIntegraSbc;
     }
 
-    public BigDecimal getImpImportePagado() {
+    public Long getImpImportePagado() {
         return impImportePagado;
     }
 
-    public void setImpImportePagado(BigDecimal impImportePagado) {
+    public void setImpImportePagado(Long impImportePagado) {
         this.impImportePagado = impImportePagado;
     }
 

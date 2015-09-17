@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -54,7 +54,7 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A5_PRESTADORA_SERVICIOS", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA5PrestadoraServicios;
+    private Long cveIdA5PrestadoraServicios;
     @Size(max = 300)
     @Column(name = "NOM_NOMBRE_RAZONSOCIAL_BEN", length = 300)
     private String nomNombreRazonsocialBen;
@@ -82,7 +82,7 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
     @Column(name = "IND_RESPONSABLE_DIRECCION", length = 2)
     private String indResponsableDireccion;
     @Column(name = "IMP_COSTO_ANUAL_NOMINA", precision = 14, scale = 2)
-    private BigDecimal impCostoAnualNomina;
+    private Long impCostoAnualNomina;
     @Size(max = 30)
     @Column(name = "DES_FOLIO_SIPRESS", length = 30)
     private String desFolioSipress;
@@ -105,15 +105,15 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
     public NdtA5PrestadoraServiciosDO() {
     }
 
-    public NdtA5PrestadoraServiciosDO(BigDecimal cveIdA5PrestadoraServicios) {
+    public NdtA5PrestadoraServiciosDO(Long cveIdA5PrestadoraServicios) {
         this.cveIdA5PrestadoraServicios = cveIdA5PrestadoraServicios;
     }
 
-    public BigDecimal getCveIdA5PrestadoraServicios() {
+    public Long getCveIdA5PrestadoraServicios() {
         return cveIdA5PrestadoraServicios;
     }
 
-    public void setCveIdA5PrestadoraServicios(BigDecimal cveIdA5PrestadoraServicios) {
+    public void setCveIdA5PrestadoraServicios(Long cveIdA5PrestadoraServicios) {
         this.cveIdA5PrestadoraServicios = cveIdA5PrestadoraServicios;
     }
 
@@ -189,11 +189,11 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
         this.indResponsableDireccion = indResponsableDireccion;
     }
 
-    public BigDecimal getImpCostoAnualNomina() {
+    public Long getImpCostoAnualNomina() {
         return impCostoAnualNomina;
     }
 
-    public void setImpCostoAnualNomina(BigDecimal impCostoAnualNomina) {
+    public void setImpCostoAnualNomina(Long impCostoAnualNomina) {
         this.impCostoAnualNomina = impCostoAnualNomina;
     }
 
