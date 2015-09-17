@@ -16,11 +16,11 @@ public class AWSPolicyTO extends BaseTO{
 	private String key;
 	private String acl;
 	private String successActionStatus;
-	private String xAmzMetaTag;
-	private String xAmzMetaUuid;
-	private String xAmzCredential;
-	private String xAmzAlgorithm;
-	private String xAmzDate;
+	private String xamzMetaTag;
+	private String xamzMetaUuid;
+	private String xamzCredential;
+	private String xamzAlgorithm;
+	private String xamzDate;
 	private String policy;
 	private String signature;
 	private String url;
@@ -75,66 +75,7 @@ public class AWSPolicyTO extends BaseTO{
 	public void setSuccessActionStatus(String successActionStatus) {
 		this.successActionStatus = successActionStatus;
 	}
-	/**
-	 * @return the xAmzMetaUuid
-	 */
-	public String getxAmzMetaUuid() {
-		return xAmzMetaUuid;
-	}
-	/**
-	 * @param xAmzMetaUuid the xAmzMetaUuid to set
-	 */
-	public void setxAmzMetaUuid(String xAmzMetaUuid) {
-		this.xAmzMetaUuid = xAmzMetaUuid;
-	}
-	/**
-	 * @return the xAmzCredential
-	 */
-	public String getxAmzCredential() {
-		return xAmzCredential;
-	}
-	/**
-	 * @param xAmzCredential the xAmzCredential to set
-	 */
-	public void setxAmzCredential(String xAmzCredential) {
-		this.xAmzCredential = xAmzCredential;
-	}
-	/**
-	 * @return the xAmzAlgorithm
-	 */
-	public String getxAmzAlgorithm() {
-		return xAmzAlgorithm;
-	}
-	/**
-	 * @param xAmzAlgorithm the xAmzAlgorithm to set
-	 */
-	public void setxAmzAlgorithm(String xAmzAlgorithm) {
-		this.xAmzAlgorithm = xAmzAlgorithm;
-	}
-	/**
-	 * @return the xAmzDate
-	 */
-	public String getxAmzDate() {
-		return xAmzDate;
-	}
-	/**
-	 * @param xAmzDate the xAmzDate to set
-	 */
-	public void setxAmzDate(String xAmzDate) {
-		this.xAmzDate = xAmzDate;
-	}
-	/**
-	 * @return the xAmzMetaTag
-	 */
-	public String getxAmzMetaTag() {
-		return xAmzMetaTag;
-	}
-	/**
-	 * @param xAmzMetaTag the xAmzMetaTag to set
-	 */
-	public void setxAmzMetaTag(String xAmzMetaTag) {
-		this.xAmzMetaTag = xAmzMetaTag;
-	}
+
 	/**
 	 * @return the key
 	 */
@@ -206,6 +147,66 @@ public class AWSPolicyTO extends BaseTO{
 	 */
 	public void setAwsAccessKeyId(String awsAccessKeyId) {
 		this.awsAccessKeyId = awsAccessKeyId;
+	}
+	/**
+	 * @return the xamzMetaTag
+	 */
+	public String getXamzMetaTag() {
+		return xamzMetaTag;
+	}
+	/**
+	 * @param xamzMetaTag the xamzMetaTag to set
+	 */
+	public void setXamzMetaTag(String xamzMetaTag) {
+		this.xamzMetaTag = xamzMetaTag;
+	}
+	/**
+	 * @return the xamzMetaUuid
+	 */
+	public String getXamzMetaUuid() {
+		return xamzMetaUuid;
+	}
+	/**
+	 * @param xamzMetaUuid the xamzMetaUuid to set
+	 */
+	public void setXamzMetaUuid(String xamzMetaUuid) {
+		this.xamzMetaUuid = xamzMetaUuid;
+	}
+	/**
+	 * @return the xamzCredential
+	 */
+	public String getXamzCredential() {
+		return xamzCredential;
+	}
+	/**
+	 * @param xamzCredential the xamzCredential to set
+	 */
+	public void setXamzCredential(String xamzCredential) {
+		this.xamzCredential = xamzCredential;
+	}
+	/**
+	 * @return the xamzAlgorithm
+	 */
+	public String getXamzAlgorithm() {
+		return xamzAlgorithm;
+	}
+	/**
+	 * @param xamzAlgorithm the xamzAlgorithm to set
+	 */
+	public void setXamzAlgorithm(String xamzAlgorithm) {
+		this.xamzAlgorithm = xamzAlgorithm;
+	}
+	/**
+	 * @return the xamzDate
+	 */
+	public String getXamzDate() {
+		return xamzDate;
+	}
+	/**
+	 * @param xamzDate the xamzDate to set
+	 */
+	public void setXamzDate(String xamzDate) {
+		this.xamzDate = xamzDate;
 	}
 	
 	
