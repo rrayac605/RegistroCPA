@@ -23,13 +23,8 @@ public final class DictamenWebConstants {
 	
 	/** The Constant MESSAGE_ERROR_SERVICE_PREFIX. */
     public static final String MESSAGE_EMPTY = "";
-    
-    /** The Constant GENERAL. */
-    public static final String MESSAGE_GENERAL = "general";
 
-	/** The Constant FORM_NAME. */
-	public static final String FORM_NAME = "form:";
-	
+
 
 	
 }
