@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -48,7 +48,7 @@ public class NdcRubroDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_RUBRO", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdRubro;
+    private Long cveIdRubro;
     @Size(max = 100)
     @Column(name = "DES_RUBRO", length = 100)
     private String desRubro;
@@ -72,15 +72,15 @@ public class NdcRubroDO implements Serializable {
     public NdcRubroDO() {
     }
 
-    public NdcRubroDO(BigDecimal cveIdRubro) {
+    public NdcRubroDO(Long cveIdRubro) {
         this.cveIdRubro = cveIdRubro;
     }
 
-    public BigDecimal getCveIdRubro() {
+    public Long getCveIdRubro() {
         return cveIdRubro;
     }
 
-    public void setCveIdRubro(BigDecimal cveIdRubro) {
+    public void setCveIdRubro(Long cveIdRubro) {
         this.cveIdRubro = cveIdRubro;
     }
 

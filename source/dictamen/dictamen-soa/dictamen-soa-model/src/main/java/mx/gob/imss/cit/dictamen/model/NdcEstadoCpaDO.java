@@ -6,13 +6,15 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -39,10 +41,11 @@ public class NdcEstadoCpaDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="SEQ_NDCESTADOCPA")
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ESTADO_CPA", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdEstadoCpa;
+    private Long cveIdEstadoCpa;
     @Size(max = 50)
     @Column(name = "DES_ESTADO_CPA", length = 50)
     private String desEstadoCpa;
@@ -60,15 +63,15 @@ public class NdcEstadoCpaDO implements Serializable {
     public NdcEstadoCpaDO() {
     }
 
-    public NdcEstadoCpaDO(BigDecimal cveIdEstadoCpa) {
+    public NdcEstadoCpaDO(Long cveIdEstadoCpa) {
         this.cveIdEstadoCpa = cveIdEstadoCpa;
     }
 
-    public BigDecimal getCveIdEstadoCpa() {
+    public Long getCveIdEstadoCpa() {
         return cveIdEstadoCpa;
     }
 
-    public void setCveIdEstadoCpa(BigDecimal cveIdEstadoCpa) {
+    public void setCveIdEstadoCpa(Long cveIdEstadoCpa) {
         this.cveIdEstadoCpa = cveIdEstadoCpa;
     }
 

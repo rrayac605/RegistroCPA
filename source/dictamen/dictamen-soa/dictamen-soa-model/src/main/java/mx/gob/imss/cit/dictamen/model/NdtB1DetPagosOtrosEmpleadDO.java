@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -46,7 +46,7 @@ public class NdtB1DetPagosOtrosEmpleadDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A1_DET_PAGOS_OTROS_EMPL", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA1DetPagosOtrosEmpl;
+    private Long cveIdA1DetPagosOtrosEmpl;
     @Size(max = 50)
     @Column(name = "DES_CONCEPTO", length = 50)
     private String desConcepto;
@@ -55,7 +55,7 @@ public class NdtB1DetPagosOtrosEmpleadDO implements Serializable {
     @Column(name = "IND_INTEGRA_SBC")
     private Short indIntegraSbc;
     @Column(name = "IMP_IMPORTE_PAGADO", precision = 13, scale = 2)
-    private BigDecimal impImportePagado;
+    private Long impImportePagado;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -72,15 +72,15 @@ public class NdtB1DetPagosOtrosEmpleadDO implements Serializable {
     public NdtB1DetPagosOtrosEmpleadDO() {
     }
 
-    public NdtB1DetPagosOtrosEmpleadDO(BigDecimal cveIdA1DetPagosOtrosEmpl) {
+    public NdtB1DetPagosOtrosEmpleadDO(Long cveIdA1DetPagosOtrosEmpl) {
         this.cveIdA1DetPagosOtrosEmpl = cveIdA1DetPagosOtrosEmpl;
     }
 
-    public BigDecimal getCveIdA1DetPagosOtrosEmpl() {
+    public Long getCveIdA1DetPagosOtrosEmpl() {
         return cveIdA1DetPagosOtrosEmpl;
     }
 
-    public void setCveIdA1DetPagosOtrosEmpl(BigDecimal cveIdA1DetPagosOtrosEmpl) {
+    public void setCveIdA1DetPagosOtrosEmpl(Long cveIdA1DetPagosOtrosEmpl) {
         this.cveIdA1DetPagosOtrosEmpl = cveIdA1DetPagosOtrosEmpl;
     }
 
@@ -108,11 +108,11 @@ public class NdtB1DetPagosOtrosEmpleadDO implements Serializable {
         this.indIntegraSbc = indIntegraSbc;
     }
 
-    public BigDecimal getImpImportePagado() {
+    public Long getImpImportePagado() {
         return impImportePagado;
     }
 
-    public void setImpImportePagado(BigDecimal impImportePagado) {
+    public void setImpImportePagado(Long impImportePagado) {
         this.impImportePagado = impImportePagado;
     }
 

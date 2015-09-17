@@ -6,13 +6,15 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -41,9 +43,10 @@ public class NdcAseveracionesDO implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="SEQ_NDCTIPOASEVERACIONES")
     @NotNull
     @Column(name = "CVE_ID_ASEVERACION", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdAseveracion;
+    private Long cveIdAseveracion;
     @Size(max = 50)
     @Column(name = "DES_TIPO_ASEVERACION", length = 50)
     private String desTipoAseveracion;
@@ -62,15 +65,15 @@ public class NdcAseveracionesDO implements Serializable {
     public NdcAseveracionesDO() {
     }
 
-    public NdcAseveracionesDO(BigDecimal cveIdAseveracion) {
+    public NdcAseveracionesDO(Long cveIdAseveracion) {
         this.cveIdAseveracion = cveIdAseveracion;
     }
 
-    public BigDecimal getCveIdAseveracion() {
+    public Long getCveIdAseveracion() {
         return cveIdAseveracion;
     }
 
-    public void setCveIdAseveracion(BigDecimal cveIdAseveracion) {
+    public void setCveIdAseveracion(Long cveIdAseveracion) {
         this.cveIdAseveracion = cveIdAseveracion;
     }
 

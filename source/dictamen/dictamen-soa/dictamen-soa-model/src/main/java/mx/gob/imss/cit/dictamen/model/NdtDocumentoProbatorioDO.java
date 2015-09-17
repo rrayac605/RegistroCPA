@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -44,7 +44,7 @@ public class NdtDocumentoProbatorioDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_DOCTO_PROBATORIO", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdDoctoProbatorio;
+    private Long cveIdDoctoProbatorio;
     @Size(max = 250)
     @Column(name = "URL_DOCUMENTO_PROB", length = 250)
     private String urlDocumentoProb;
@@ -70,15 +70,15 @@ public class NdtDocumentoProbatorioDO implements Serializable {
     public NdtDocumentoProbatorioDO() {
     }
 
-    public NdtDocumentoProbatorioDO(BigDecimal cveIdDoctoProbatorio) {
+    public NdtDocumentoProbatorioDO(Long cveIdDoctoProbatorio) {
         this.cveIdDoctoProbatorio = cveIdDoctoProbatorio;
     }
 
-    public BigDecimal getCveIdDoctoProbatorio() {
+    public Long getCveIdDoctoProbatorio() {
         return cveIdDoctoProbatorio;
     }
 
-    public void setCveIdDoctoProbatorio(BigDecimal cveIdDoctoProbatorio) {
+    public void setCveIdDoctoProbatorio(Long cveIdDoctoProbatorio) {
         this.cveIdDoctoProbatorio = cveIdDoctoProbatorio;
     }
 

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -55,7 +55,7 @@ public class NdtPatronDictamenDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PATRON_DICTAMEN", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdPatronDictamen;
+    private Long cveIdPatronDictamen;
     @Size(max = 50)
     @Column(name = "DES_RFC", length = 50)
     private String desRfc;
@@ -153,15 +153,15 @@ public class NdtPatronDictamenDO implements Serializable {
     public NdtPatronDictamenDO() {
     }
 
-    public NdtPatronDictamenDO(BigDecimal cveIdPatronDictamen) {
+    public NdtPatronDictamenDO(Long cveIdPatronDictamen) {
         this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
-    public BigDecimal getCveIdPatronDictamen() {
+    public Long getCveIdPatronDictamen() {
         return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronDictamen(BigDecimal cveIdPatronDictamen) {
+    public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
         this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 

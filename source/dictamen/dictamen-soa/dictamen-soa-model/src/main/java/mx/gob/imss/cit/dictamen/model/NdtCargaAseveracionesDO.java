@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -46,7 +46,7 @@ public class NdtCargaAseveracionesDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_BITACORA_CARGA_ASEV", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdBitacoraCargaAsev;
+    private Long cveIdBitacoraCargaAsev;
     @Column(name = "FEC_FECHA_CARGA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecFechaCarga;
@@ -77,15 +77,15 @@ public class NdtCargaAseveracionesDO implements Serializable {
     public NdtCargaAseveracionesDO() {
     }
 
-    public NdtCargaAseveracionesDO(BigDecimal cveIdBitacoraCargaAsev) {
+    public NdtCargaAseveracionesDO(Long cveIdBitacoraCargaAsev) {
         this.cveIdBitacoraCargaAsev = cveIdBitacoraCargaAsev;
     }
 
-    public BigDecimal getCveIdBitacoraCargaAsev() {
+    public Long getCveIdBitacoraCargaAsev() {
         return cveIdBitacoraCargaAsev;
     }
 
-    public void setCveIdBitacoraCargaAsev(BigDecimal cveIdBitacoraCargaAsev) {
+    public void setCveIdBitacoraCargaAsev(Long cveIdBitacoraCargaAsev) {
         this.cveIdBitacoraCargaAsev = cveIdBitacoraCargaAsev;
     }
 

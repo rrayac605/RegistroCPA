@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -46,7 +46,7 @@ public class NdcRemuneracionesDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_REMUNERACIONES", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdRemuneraciones;
+    private Long cveIdRemuneraciones;
     @Size(max = 200)
     @Column(name = "DES_REMUNERACIONES", length = 200)
     private String desRemuneraciones;
@@ -70,15 +70,15 @@ public class NdcRemuneracionesDO implements Serializable {
     public NdcRemuneracionesDO() {
     }
 
-    public NdcRemuneracionesDO(BigDecimal cveIdRemuneraciones) {
+    public NdcRemuneracionesDO(Long cveIdRemuneraciones) {
         this.cveIdRemuneraciones = cveIdRemuneraciones;
     }
 
-    public BigDecimal getCveIdRemuneraciones() {
+    public Long getCveIdRemuneraciones() {
         return cveIdRemuneraciones;
     }
 
-    public void setCveIdRemuneraciones(BigDecimal cveIdRemuneraciones) {
+    public void setCveIdRemuneraciones(Long cveIdRemuneraciones) {
         this.cveIdRemuneraciones = cveIdRemuneraciones;
     }
 

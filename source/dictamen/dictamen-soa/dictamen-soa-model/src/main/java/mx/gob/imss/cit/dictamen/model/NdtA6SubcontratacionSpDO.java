@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -53,7 +53,7 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A6_SUBCONTRATACION_SP", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA6SubcontratacionSp;
+    private Long cveIdA6SubcontratacionSp;
     @Size(max = 100)
     @Column(name = "NOM_NOMBRE_RAZONSOCIAL_PSP", length = 100)
     private String nomNombreRazonsocialPsp;
@@ -102,15 +102,15 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
     public NdtA6SubcontratacionSpDO() {
     }
 
-    public NdtA6SubcontratacionSpDO(BigDecimal cveIdA6SubcontratacionSp) {
+    public NdtA6SubcontratacionSpDO(Long cveIdA6SubcontratacionSp) {
         this.cveIdA6SubcontratacionSp = cveIdA6SubcontratacionSp;
     }
 
-    public BigDecimal getCveIdA6SubcontratacionSp() {
+    public Long getCveIdA6SubcontratacionSp() {
         return cveIdA6SubcontratacionSp;
     }
 
-    public void setCveIdA6SubcontratacionSp(BigDecimal cveIdA6SubcontratacionSp) {
+    public void setCveIdA6SubcontratacionSp(Long cveIdA6SubcontratacionSp) {
         this.cveIdA6SubcontratacionSp = cveIdA6SubcontratacionSp;
     }
 

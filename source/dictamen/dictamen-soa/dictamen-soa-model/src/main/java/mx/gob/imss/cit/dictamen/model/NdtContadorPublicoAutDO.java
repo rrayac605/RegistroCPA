@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -47,7 +47,7 @@ public class NdtContadorPublicoAutDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_CPA", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdCpa;
+    private Long cveIdCpa;
     @Column(name = "NUM_REGISTRO_CPA")
     private Integer numRegistroCpa;
     @Column(name = "FEC_REGISTRO_ALTA")
@@ -85,15 +85,15 @@ public class NdtContadorPublicoAutDO implements Serializable {
     public NdtContadorPublicoAutDO() {
     }
 
-    public NdtContadorPublicoAutDO(BigDecimal cveIdCpa) {
+    public NdtContadorPublicoAutDO(Long cveIdCpa) {
         this.cveIdCpa = cveIdCpa;
     }
 
-    public BigDecimal getCveIdCpa() {
+    public Long getCveIdCpa() {
         return cveIdCpa;
     }
 
-    public void setCveIdCpa(BigDecimal cveIdCpa) {
+    public void setCveIdCpa(Long cveIdCpa) {
         this.cveIdCpa = cveIdCpa;
     }
 

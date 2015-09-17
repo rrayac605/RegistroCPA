@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -50,7 +50,7 @@ public class NdtA8BalanzaComprobacionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A8_BALANZA_COMPROBACION", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdA8BalanzaComprobacion;
+    private Long cveIdA8BalanzaComprobacion;
     @Column(name = "NUM_NIVEL")
     private Short numNivel;
     @Size(max = 15)
@@ -60,13 +60,13 @@ public class NdtA8BalanzaComprobacionDO implements Serializable {
     @Column(name = "DES_NOMBRE_CUENTA_SUBCUENTA", length = 100)
     private String desNombreCuentaSubcuenta;
     @Column(name = "IMP_SALDO_INICIAL", precision = 14, scale = 2)
-    private BigDecimal impSaldoInicial;
+    private Long impSaldoInicial;
     @Column(name = "IMP_DEBE", precision = 14, scale = 2)
-    private BigDecimal impDebe;
+    private Long impDebe;
     @Column(name = "IMP_HABER", precision = 14, scale = 2)
-    private BigDecimal impHaber;
+    private Long impHaber;
     @Column(name = "IMP_SALDO_FINAL", precision = 14, scale = 2)
-    private BigDecimal impSaldoFinal;
+    private Long impSaldoFinal;
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
@@ -86,15 +86,15 @@ public class NdtA8BalanzaComprobacionDO implements Serializable {
     public NdtA8BalanzaComprobacionDO() {
     }
 
-    public NdtA8BalanzaComprobacionDO(BigDecimal cveIdA8BalanzaComprobacion) {
+    public NdtA8BalanzaComprobacionDO(Long cveIdA8BalanzaComprobacion) {
         this.cveIdA8BalanzaComprobacion = cveIdA8BalanzaComprobacion;
     }
 
-    public BigDecimal getCveIdA8BalanzaComprobacion() {
+    public Long getCveIdA8BalanzaComprobacion() {
         return cveIdA8BalanzaComprobacion;
     }
 
-    public void setCveIdA8BalanzaComprobacion(BigDecimal cveIdA8BalanzaComprobacion) {
+    public void setCveIdA8BalanzaComprobacion(Long cveIdA8BalanzaComprobacion) {
         this.cveIdA8BalanzaComprobacion = cveIdA8BalanzaComprobacion;
     }
 
@@ -122,35 +122,35 @@ public class NdtA8BalanzaComprobacionDO implements Serializable {
         this.desNombreCuentaSubcuenta = desNombreCuentaSubcuenta;
     }
 
-    public BigDecimal getImpSaldoInicial() {
+    public Long getImpSaldoInicial() {
         return impSaldoInicial;
     }
 
-    public void setImpSaldoInicial(BigDecimal impSaldoInicial) {
+    public void setImpSaldoInicial(Long impSaldoInicial) {
         this.impSaldoInicial = impSaldoInicial;
     }
 
-    public BigDecimal getImpDebe() {
+    public Long getImpDebe() {
         return impDebe;
     }
 
-    public void setImpDebe(BigDecimal impDebe) {
+    public void setImpDebe(Long impDebe) {
         this.impDebe = impDebe;
     }
 
-    public BigDecimal getImpHaber() {
+    public Long getImpHaber() {
         return impHaber;
     }
 
-    public void setImpHaber(BigDecimal impHaber) {
+    public void setImpHaber(Long impHaber) {
         this.impHaber = impHaber;
     }
 
-    public BigDecimal getImpSaldoFinal() {
+    public Long getImpSaldoFinal() {
         return impSaldoFinal;
     }
 
-    public void setImpSaldoFinal(BigDecimal impSaldoFinal) {
+    public void setImpSaldoFinal(Long impSaldoFinal) {
         this.impSaldoFinal = impSaldoFinal;
     }
 
