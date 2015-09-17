@@ -18,7 +18,7 @@
 
 				<p:panelGrid columns="3">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}" />
+						value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}" for="rfcPatron"/>
 					<p:inputText id="rfcPatron" 
 						value="#{datosPatronalesPage.datosPatron.rfc}"
 						required="true"
@@ -44,7 +44,7 @@
 
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}" />
+						value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}" for="trabajadores"/>
 					<p:inputText id="trabajadores" required="true"
 						requiredMessage="falta numero trabajadores"
 						value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" />
@@ -91,7 +91,7 @@
 
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.denominacion']}" />
+						value="#{msg['message.dictamen.dictaminar.datos.denominacion']}" for="denominacion"/>
 					<p:inputText id="denominacion" required="true"
 						requiredMessage="falta razon social"
 						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
@@ -99,7 +99,7 @@
 				
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}" />
+						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}" for="ejercicio"/>
 					<p:inputText id="ejercicio" required="true"
 						requiredMessage="falta ejercicio"
 						value="#{datosPatronalesPage.datosPatron.ejercicioDictaminar}" />
@@ -107,7 +107,7 @@
 				
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.patronales']}" />
+						value="#{msg['message.dictamen.dictaminar.datos.patronales']}" for="patronales"/>
 					<p:inputText id="patronales" required="true"
 						requiredMessage="falta numero de registros"
 						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
