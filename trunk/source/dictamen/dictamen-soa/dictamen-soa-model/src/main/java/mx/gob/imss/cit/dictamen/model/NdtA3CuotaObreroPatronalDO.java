@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,40 +30,40 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A3_CUOTA_OBRERO_PATRONAL")
 @NamedQueries({
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findAll", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByCveIdA3CuotaOp", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.cveIdA3CuotaOp = :cveIdA3CuotaOp"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByRegPatronal", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByNumCotizantes", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.numCotizantes = :numCotizantes"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByNumDiasCotizados", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.numDiasCotizados = :numDiasCotizados"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByNumDiasAusentismo", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.numDiasAusentismo = :numDiasAusentismo"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByNumDiasIncapacidad", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.numDiasIncapacidad = :numDiasIncapacidad"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpCuotaFija", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impCuotaFija = :impCuotaFija"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpExcedenteObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impExcedenteObrero = :impExcedenteObrero"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpExcedentePatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impExcedentePatron = :impExcedentePatron"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpPrestacionObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impPrestacionObrero = :impPrestacionObrero"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpPrestacionPatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impPrestacionPatron = :impPrestacionPatron"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpGmpObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impGmpObrero = :impGmpObrero"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpGmpPatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impGmpPatron = :impGmpPatron"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpRiesgoTrabajo", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impRiesgoTrabajo = :impRiesgoTrabajo"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpGuarderias", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impGuarderias = :impGuarderias"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpIvObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impIvObrero = :impIvObrero"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpIvPatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impIvPatron = :impIvPatron"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpSuerteCop", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impSuerteCop = :impSuerteCop"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpActualizacionCop", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impActualizacionCop = :impActualizacionCop"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpRecargosCop", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impRecargosCop = :impRecargosCop"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpTotalCop", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impTotalCop = :impTotalCop"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpRetiro", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impRetiro = :impRetiro"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpCvObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impCvObrero = :impCvObrero"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpCvPatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impCvPatron = :impCvPatron"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpSuerteRcv", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impSuerteRcv = :impSuerteRcv"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpActualizacionRcv", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impActualizacionRcv = :impActualizacionRcv"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpRecargosRcv", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impRecargosRcv = :impRecargosRcv"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpTotalRcv", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impTotalRcv = :impTotalRcv"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByImpInfonavit", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impInfonavit = :impInfonavit"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByCveIdUsuario", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByFecRegistroAlta", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByFecRegistroBaja", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA3CuotaObreroPatronal.findByFecRegistroActualizado", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findAll", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByCveIdA3CuotaOp", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.cveIdA3CuotaOp = :cveIdA3CuotaOp"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByRegPatronal", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByNumCotizantes", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.numCotizantes = :numCotizantes"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByNumDiasCotizados", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.numDiasCotizados = :numDiasCotizados"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByNumDiasAusentismo", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.numDiasAusentismo = :numDiasAusentismo"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByNumDiasIncapacidad", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.numDiasIncapacidad = :numDiasIncapacidad"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpEmCuotaFija", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impEmCuotaFija = :impEmCuotaFija"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpEmExcedenteObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impEmExcedenteObrero = :impEmExcedenteObrero"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpEmExcedentePatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impEmExcedentePatron = :impEmExcedentePatron"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpEmPrestacionObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impEmPrestacionObrero = :impEmPrestacionObrero"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpEmPrestacionPatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impEmPrestacionPatron = :impEmPrestacionPatron"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpEmGmpObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impEmGmpObrero = :impEmGmpObrero"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpEmGmpPatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impEmGmpPatron = :impEmGmpPatron"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpRiesgoTrabajo", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impRiesgoTrabajo = :impRiesgoTrabajo"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpGuarderias", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impGuarderias = :impGuarderias"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpIvObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impIvObrero = :impIvObrero"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpIvPatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impIvPatron = :impIvPatron"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpSuerteCop", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impSuerteCop = :impSuerteCop"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpActualizacionCop", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impActualizacionCop = :impActualizacionCop"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpRecargosCop", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impRecargosCop = :impRecargosCop"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpTotalCop", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impTotalCop = :impTotalCop"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpRetiro", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impRetiro = :impRetiro"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpCvObrero", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impCvObrero = :impCvObrero"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpCvPatron", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impCvPatron = :impCvPatron"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpSuerteRcv", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impSuerteRcv = :impSuerteRcv"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpActualizacionRcv", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impActualizacionRcv = :impActualizacionRcv"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpRecargosRcv", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impRecargosRcv = :impRecargosRcv"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpTotalRcv", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impTotalRcv = :impTotalRcv"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByImpInfonavit", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.impInfonavit = :impInfonavit"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByCveIdUsuario", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA3CuotaObreroPatronalDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA3CuotaObreroPatronalDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA3CuotaObreroPatronalDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -71,7 +71,7 @@ public class NdtA3CuotaObreroPatronalDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A3_CUOTA_OP", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA3CuotaOp;
+    private BigDecimal cveIdA3CuotaOp;
     @Size(max = 13)
     @Column(name = "REG_PATRONAL", length = 13)
     private String regPatronal;
@@ -83,52 +83,52 @@ public class NdtA3CuotaObreroPatronalDO implements Serializable {
     private Integer numDiasAusentismo;
     @Column(name = "NUM_DIAS_INCAPACIDAD")
     private Integer numDiasIncapacidad;
-    @Column(name = "IMP_CUOTA_FIJA", precision = 14, scale = 2)
-    private Long impCuotaFija;
-    @Column(name = "IMP_EXCEDENTE_OBRERO", precision = 14, scale = 2)
-    private Long impExcedenteObrero;
-    @Column(name = "IMP_EXCEDENTE_PATRON", precision = 14, scale = 2)
-    private Long impExcedentePatron;
-    @Column(name = "IMP_PRESTACION_OBRERO", precision = 14, scale = 2)
-    private Long impPrestacionObrero;
-    @Column(name = "IMP_PRESTACION_PATRON", precision = 14, scale = 2)
-    private Long impPrestacionPatron;
-    @Column(name = "IMP_GMP_OBRERO", precision = 14, scale = 2)
-    private Long impGmpObrero;
-    @Column(name = "IMP_GMP_PATRON", precision = 14, scale = 2)
-    private Long impGmpPatron;
+    @Column(name = "IMP_EM_CUOTA_FIJA", precision = 14, scale = 2)
+    private BigDecimal impEmCuotaFija;
+    @Column(name = "IMP_EM_EXCEDENTE_OBRERO", precision = 14, scale = 2)
+    private BigDecimal impEmExcedenteObrero;
+    @Column(name = "IMP_EM_EXCEDENTE_PATRON", precision = 14, scale = 2)
+    private BigDecimal impEmExcedentePatron;
+    @Column(name = "IMP_EM_PRESTACION_OBRERO", precision = 14, scale = 2)
+    private BigDecimal impEmPrestacionObrero;
+    @Column(name = "IMP_EM_PRESTACION_PATRON", precision = 14, scale = 2)
+    private BigDecimal impEmPrestacionPatron;
+    @Column(name = "IMP_EM_GMP_OBRERO", precision = 14, scale = 2)
+    private BigDecimal impEmGmpObrero;
+    @Column(name = "IMP_EM_GMP_PATRON", precision = 14, scale = 2)
+    private BigDecimal impEmGmpPatron;
     @Column(name = "IMP_RIESGO_TRABAJO", precision = 14, scale = 2)
-    private Long impRiesgoTrabajo;
+    private BigDecimal impRiesgoTrabajo;
     @Column(name = "IMP_GUARDERIAS", precision = 14, scale = 2)
-    private Long impGuarderias;
+    private BigDecimal impGuarderias;
     @Column(name = "IMP_IV_OBRERO", precision = 14, scale = 2)
-    private Long impIvObrero;
+    private BigDecimal impIvObrero;
     @Column(name = "IMP_IV_PATRON", precision = 14, scale = 2)
-    private Long impIvPatron;
+    private BigDecimal impIvPatron;
     @Column(name = "IMP_SUERTE_COP", precision = 14, scale = 2)
-    private Long impSuerteCop;
+    private BigDecimal impSuerteCop;
     @Column(name = "IMP_ACTUALIZACION_COP", precision = 14, scale = 2)
-    private Long impActualizacionCop;
+    private BigDecimal impActualizacionCop;
     @Column(name = "IMP_RECARGOS_COP", precision = 14, scale = 2)
-    private Long impRecargosCop;
+    private BigDecimal impRecargosCop;
     @Column(name = "IMP_TOTAL_COP", precision = 14, scale = 2)
-    private Long impTotalCop;
+    private BigDecimal impTotalCop;
     @Column(name = "IMP_RETIRO", precision = 14, scale = 2)
-    private Long impRetiro;
+    private BigDecimal impRetiro;
     @Column(name = "IMP_CV_OBRERO", precision = 14, scale = 2)
-    private Long impCvObrero;
+    private BigDecimal impCvObrero;
     @Column(name = "IMP_CV_PATRON", precision = 14, scale = 2)
-    private Long impCvPatron;
+    private BigDecimal impCvPatron;
     @Column(name = "IMP_SUERTE_RCV", precision = 14, scale = 2)
-    private Long impSuerteRcv;
+    private BigDecimal impSuerteRcv;
     @Column(name = "IMP_ACTUALIZACION_RCV", precision = 14, scale = 2)
-    private Long impActualizacionRcv;
+    private BigDecimal impActualizacionRcv;
     @Column(name = "IMP_RECARGOS_RCV", precision = 14, scale = 2)
-    private Long impRecargosRcv;
+    private BigDecimal impRecargosRcv;
     @Column(name = "IMP_TOTAL_RCV", precision = 14, scale = 2)
-    private Long impTotalRcv;
+    private BigDecimal impTotalRcv;
     @Column(name = "IMP_INFONAVIT", precision = 14, scale = 2)
-    private Long impInfonavit;
+    private BigDecimal impInfonavit;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
@@ -141,22 +141,22 @@ public class NdtA3CuotaObreroPatronalDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA3CuotaObreroPatronalDO() {
     }
 
-    public NdtA3CuotaObreroPatronalDO(Long cveIdA3CuotaOp) {
+    public NdtA3CuotaObreroPatronalDO(BigDecimal cveIdA3CuotaOp) {
         this.cveIdA3CuotaOp = cveIdA3CuotaOp;
     }
 
-    public Long getCveIdA3CuotaOp() {
+    public BigDecimal getCveIdA3CuotaOp() {
         return cveIdA3CuotaOp;
     }
 
-    public void setCveIdA3CuotaOp(Long cveIdA3CuotaOp) {
+    public void setCveIdA3CuotaOp(BigDecimal cveIdA3CuotaOp) {
         this.cveIdA3CuotaOp = cveIdA3CuotaOp;
     }
 
@@ -200,187 +200,187 @@ public class NdtA3CuotaObreroPatronalDO implements Serializable {
         this.numDiasIncapacidad = numDiasIncapacidad;
     }
 
-    public Long getImpCuotaFija() {
-        return impCuotaFija;
+    public BigDecimal getImpEmCuotaFija() {
+        return impEmCuotaFija;
     }
 
-    public void setImpCuotaFija(Long impCuotaFija) {
-        this.impCuotaFija = impCuotaFija;
+    public void setImpEmCuotaFija(BigDecimal impEmCuotaFija) {
+        this.impEmCuotaFija = impEmCuotaFija;
     }
 
-    public Long getImpExcedenteObrero() {
-        return impExcedenteObrero;
+    public BigDecimal getImpEmExcedenteObrero() {
+        return impEmExcedenteObrero;
     }
 
-    public void setImpExcedenteObrero(Long impExcedenteObrero) {
-        this.impExcedenteObrero = impExcedenteObrero;
+    public void setImpEmExcedenteObrero(BigDecimal impEmExcedenteObrero) {
+        this.impEmExcedenteObrero = impEmExcedenteObrero;
     }
 
-    public Long getImpExcedentePatron() {
-        return impExcedentePatron;
+    public BigDecimal getImpEmExcedentePatron() {
+        return impEmExcedentePatron;
     }
 
-    public void setImpExcedentePatron(Long impExcedentePatron) {
-        this.impExcedentePatron = impExcedentePatron;
+    public void setImpEmExcedentePatron(BigDecimal impEmExcedentePatron) {
+        this.impEmExcedentePatron = impEmExcedentePatron;
     }
 
-    public Long getImpPrestacionObrero() {
-        return impPrestacionObrero;
+    public BigDecimal getImpEmPrestacionObrero() {
+        return impEmPrestacionObrero;
     }
 
-    public void setImpPrestacionObrero(Long impPrestacionObrero) {
-        this.impPrestacionObrero = impPrestacionObrero;
+    public void setImpEmPrestacionObrero(BigDecimal impEmPrestacionObrero) {
+        this.impEmPrestacionObrero = impEmPrestacionObrero;
     }
 
-    public Long getImpPrestacionPatron() {
-        return impPrestacionPatron;
+    public BigDecimal getImpEmPrestacionPatron() {
+        return impEmPrestacionPatron;
     }
 
-    public void setImpPrestacionPatron(Long impPrestacionPatron) {
-        this.impPrestacionPatron = impPrestacionPatron;
+    public void setImpEmPrestacionPatron(BigDecimal impEmPrestacionPatron) {
+        this.impEmPrestacionPatron = impEmPrestacionPatron;
     }
 
-    public Long getImpGmpObrero() {
-        return impGmpObrero;
+    public BigDecimal getImpEmGmpObrero() {
+        return impEmGmpObrero;
     }
 
-    public void setImpGmpObrero(Long impGmpObrero) {
-        this.impGmpObrero = impGmpObrero;
+    public void setImpEmGmpObrero(BigDecimal impEmGmpObrero) {
+        this.impEmGmpObrero = impEmGmpObrero;
     }
 
-    public Long getImpGmpPatron() {
-        return impGmpPatron;
+    public BigDecimal getImpEmGmpPatron() {
+        return impEmGmpPatron;
     }
 
-    public void setImpGmpPatron(Long impGmpPatron) {
-        this.impGmpPatron = impGmpPatron;
+    public void setImpEmGmpPatron(BigDecimal impEmGmpPatron) {
+        this.impEmGmpPatron = impEmGmpPatron;
     }
 
-    public Long getImpRiesgoTrabajo() {
+    public BigDecimal getImpRiesgoTrabajo() {
         return impRiesgoTrabajo;
     }
 
-    public void setImpRiesgoTrabajo(Long impRiesgoTrabajo) {
+    public void setImpRiesgoTrabajo(BigDecimal impRiesgoTrabajo) {
         this.impRiesgoTrabajo = impRiesgoTrabajo;
     }
 
-    public Long getImpGuarderias() {
+    public BigDecimal getImpGuarderias() {
         return impGuarderias;
     }
 
-    public void setImpGuarderias(Long impGuarderias) {
+    public void setImpGuarderias(BigDecimal impGuarderias) {
         this.impGuarderias = impGuarderias;
     }
 
-    public Long getImpIvObrero() {
+    public BigDecimal getImpIvObrero() {
         return impIvObrero;
     }
 
-    public void setImpIvObrero(Long impIvObrero) {
+    public void setImpIvObrero(BigDecimal impIvObrero) {
         this.impIvObrero = impIvObrero;
     }
 
-    public Long getImpIvPatron() {
+    public BigDecimal getImpIvPatron() {
         return impIvPatron;
     }
 
-    public void setImpIvPatron(Long impIvPatron) {
+    public void setImpIvPatron(BigDecimal impIvPatron) {
         this.impIvPatron = impIvPatron;
     }
 
-    public Long getImpSuerteCop() {
+    public BigDecimal getImpSuerteCop() {
         return impSuerteCop;
     }
 
-    public void setImpSuerteCop(Long impSuerteCop) {
+    public void setImpSuerteCop(BigDecimal impSuerteCop) {
         this.impSuerteCop = impSuerteCop;
     }
 
-    public Long getImpActualizacionCop() {
+    public BigDecimal getImpActualizacionCop() {
         return impActualizacionCop;
     }
 
-    public void setImpActualizacionCop(Long impActualizacionCop) {
+    public void setImpActualizacionCop(BigDecimal impActualizacionCop) {
         this.impActualizacionCop = impActualizacionCop;
     }
 
-    public Long getImpRecargosCop() {
+    public BigDecimal getImpRecargosCop() {
         return impRecargosCop;
     }
 
-    public void setImpRecargosCop(Long impRecargosCop) {
+    public void setImpRecargosCop(BigDecimal impRecargosCop) {
         this.impRecargosCop = impRecargosCop;
     }
 
-    public Long getImpTotalCop() {
+    public BigDecimal getImpTotalCop() {
         return impTotalCop;
     }
 
-    public void setImpTotalCop(Long impTotalCop) {
+    public void setImpTotalCop(BigDecimal impTotalCop) {
         this.impTotalCop = impTotalCop;
     }
 
-    public Long getImpRetiro() {
+    public BigDecimal getImpRetiro() {
         return impRetiro;
     }
 
-    public void setImpRetiro(Long impRetiro) {
+    public void setImpRetiro(BigDecimal impRetiro) {
         this.impRetiro = impRetiro;
     }
 
-    public Long getImpCvObrero() {
+    public BigDecimal getImpCvObrero() {
         return impCvObrero;
     }
 
-    public void setImpCvObrero(Long impCvObrero) {
+    public void setImpCvObrero(BigDecimal impCvObrero) {
         this.impCvObrero = impCvObrero;
     }
 
-    public Long getImpCvPatron() {
+    public BigDecimal getImpCvPatron() {
         return impCvPatron;
     }
 
-    public void setImpCvPatron(Long impCvPatron) {
+    public void setImpCvPatron(BigDecimal impCvPatron) {
         this.impCvPatron = impCvPatron;
     }
 
-    public Long getImpSuerteRcv() {
+    public BigDecimal getImpSuerteRcv() {
         return impSuerteRcv;
     }
 
-    public void setImpSuerteRcv(Long impSuerteRcv) {
+    public void setImpSuerteRcv(BigDecimal impSuerteRcv) {
         this.impSuerteRcv = impSuerteRcv;
     }
 
-    public Long getImpActualizacionRcv() {
+    public BigDecimal getImpActualizacionRcv() {
         return impActualizacionRcv;
     }
 
-    public void setImpActualizacionRcv(Long impActualizacionRcv) {
+    public void setImpActualizacionRcv(BigDecimal impActualizacionRcv) {
         this.impActualizacionRcv = impActualizacionRcv;
     }
 
-    public Long getImpRecargosRcv() {
+    public BigDecimal getImpRecargosRcv() {
         return impRecargosRcv;
     }
 
-    public void setImpRecargosRcv(Long impRecargosRcv) {
+    public void setImpRecargosRcv(BigDecimal impRecargosRcv) {
         this.impRecargosRcv = impRecargosRcv;
     }
 
-    public Long getImpTotalRcv() {
+    public BigDecimal getImpTotalRcv() {
         return impTotalRcv;
     }
 
-    public void setImpTotalRcv(Long impTotalRcv) {
+    public void setImpTotalRcv(BigDecimal impTotalRcv) {
         this.impTotalRcv = impTotalRcv;
     }
 
-    public Long getImpInfonavit() {
+    public BigDecimal getImpInfonavit() {
         return impInfonavit;
     }
 
-    public void setImpInfonavit(Long impInfonavit) {
+    public void setImpInfonavit(BigDecimal impInfonavit) {
         this.impInfonavit = impInfonavit;
     }
 
@@ -416,12 +416,12 @@ public class NdtA3CuotaObreroPatronalDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -446,7 +446,7 @@ public class NdtA3CuotaObreroPatronalDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA3CuotaObreroPatronal[ cveIdA3CuotaOp=" + cveIdA3CuotaOp + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA3CuotaObreroPatronalDO[ cveIdA3CuotaOp=" + cveIdA3CuotaOp + " ]";
     }
     
 }

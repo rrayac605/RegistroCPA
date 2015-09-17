@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -31,17 +31,17 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_CPA_ACREDITACION")
 @NamedQueries({
-    @NamedQuery(name = "NdtCpaAcreditacion.findAll", query = "SELECT n FROM NdtCpaAcreditacionDO n"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByCveIdAcreditacion", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.cveIdAcreditacion = :cveIdAcreditacion"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByIndAcredMembresia", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.indAcredMembresia = :indAcredMembresia"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByFecAcreditacionCp", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecAcreditacionCp = :fecAcreditacionCp"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByFecPresentacionAcreditacion", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecPresentacionAcreditacion = :fecPresentacionAcreditacion"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByFecDocumento1", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecDocumento1 = :fecDocumento1"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByFecDocumento2", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecDocumento2 = :fecDocumento2"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByFecRegistroAlta", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByFecRegistroBaja", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByFecRegistroActualizado", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtCpaAcreditacion.findByCveIdUsuario", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findAll", query = "SELECT n FROM NdtCpaAcreditacionDO n"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByCveIdAcreditacion", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.cveIdAcreditacion = :cveIdAcreditacion"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByIndAcredMembresia", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.indAcredMembresia = :indAcredMembresia"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByFecAcreditacionCp", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecAcreditacionCp = :fecAcreditacionCp"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByFecPresentacionAcreditacion", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecPresentacionAcreditacion = :fecPresentacionAcreditacion"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByFecDocumento1", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecDocumento1 = :fecDocumento1"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByFecDocumento2", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecDocumento2 = :fecDocumento2"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByFecRegistroAlta", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByFecRegistroBaja", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtCpaAcreditacionDO.findByCveIdUsuario", query = "SELECT n FROM NdtCpaAcreditacionDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtCpaAcreditacionDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -49,7 +49,7 @@ public class NdtCpaAcreditacionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ACREDITACION", nullable = false, precision = 22, scale = 0)
-    private Long cveIdAcreditacion;
+    private BigDecimal cveIdAcreditacion;
     @Column(name = "IND_ACRED_MEMBRESIA")
     private BigInteger indAcredMembresia;
     @Column(name = "FEC_ACREDITACION_CP")
@@ -89,15 +89,15 @@ public class NdtCpaAcreditacionDO implements Serializable {
     public NdtCpaAcreditacionDO() {
     }
 
-    public NdtCpaAcreditacionDO(Long cveIdAcreditacion) {
+    public NdtCpaAcreditacionDO(BigDecimal cveIdAcreditacion) {
         this.cveIdAcreditacion = cveIdAcreditacion;
     }
 
-    public Long getCveIdAcreditacion() {
+    public BigDecimal getCveIdAcreditacion() {
         return cveIdAcreditacion;
     }
 
-    public void setCveIdAcreditacion(Long cveIdAcreditacion) {
+    public void setCveIdAcreditacion(BigDecimal cveIdAcreditacion) {
         this.cveIdAcreditacion = cveIdAcreditacion;
     }
 
@@ -219,7 +219,7 @@ public class NdtCpaAcreditacionDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtCpaAcreditacion[ cveIdAcreditacion=" + cveIdAcreditacion + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtCpaAcreditacionDO[ cveIdAcreditacion=" + cveIdAcreditacion + " ]";
     }
     
 }

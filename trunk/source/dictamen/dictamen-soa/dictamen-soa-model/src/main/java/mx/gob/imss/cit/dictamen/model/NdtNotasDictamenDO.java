@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,22 +27,18 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_NOTAS_DICTAMEN")
 @NamedQueries({
-    @NamedQuery(name = "NdtNotasDictamen.findAll", query = "SELECT n FROM NdtNotasDictamenDO n"),
-    @NamedQuery(name = "NdtNotasDictamen.findByCveIdNotasAseveraciones", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.cveIdNotasAseveraciones = :cveIdNotasAseveraciones"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA1", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA1 = :desNotasAsevA1"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA2", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA2 = :desNotasAsevA2"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA3", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA3 = :desNotasAsevA3"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA31", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA31 = :desNotasAsevA31"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA4", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA4 = :desNotasAsevA4"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA5", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA5 = :desNotasAsevA5"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA51", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA51 = :desNotasAsevA51"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA6", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA6 = :desNotasAsevA6"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA61", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA61 = :desNotasAsevA61"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA7", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA7 = :desNotasAsevA7"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA8", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA8 = :desNotasAsevA8"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA9", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA9 = :desNotasAsevA9"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA91", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA91 = :desNotasAsevA91"),
-    @NamedQuery(name = "NdtNotasDictamen.findByDesNotasAsevA92", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA92 = :desNotasAsevA92")})
+    @NamedQuery(name = "NdtNotasDictamenDO.findAll", query = "SELECT n FROM NdtNotasDictamenDO n"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByCveIdNotasAseveraciones", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.cveIdNotasAseveraciones = :cveIdNotasAseveraciones"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA1", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA1 = :desNotasAsevA1"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA2", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA2 = :desNotasAsevA2"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA3", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA3 = :desNotasAsevA3"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA4", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA4 = :desNotasAsevA4"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA5", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA5 = :desNotasAsevA5"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA6", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA6 = :desNotasAsevA6"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA7", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA7 = :desNotasAsevA7"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA8", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA8 = :desNotasAsevA8"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA91", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA91 = :desNotasAsevA91"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA92", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA92 = :desNotasAsevA92")})
 public class NdtNotasDictamenDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -50,48 +46,36 @@ public class NdtNotasDictamenDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_NOTAS_ASEVERACIONES", nullable = false, precision = 22, scale = 0)
-    private Long cveIdNotasAseveraciones;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A1", length = 18)
+    private BigDecimal cveIdNotasAseveraciones;
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A1", length = 1000)
     private String desNotasAsevA1;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A2", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A2", length = 1000)
     private String desNotasAsevA2;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A3", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A3", length = 1000)
     private String desNotasAsevA3;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A31", length = 18)
-    private String desNotasAsevA31;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A4", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A4", length = 1000)
     private String desNotasAsevA4;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A5", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A5", length = 1000)
     private String desNotasAsevA5;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A51", length = 18)
-    private String desNotasAsevA51;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A6", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A6", length = 1000)
     private String desNotasAsevA6;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A61", length = 18)
-    private String desNotasAsevA61;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A7", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A7", length = 1000)
     private String desNotasAsevA7;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A8", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A8", length = 1000)
     private String desNotasAsevA8;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A9", length = 18)
-    private String desNotasAsevA9;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A91", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A91", length = 1000)
     private String desNotasAsevA91;
-    @Size(max = 18)
-    @Column(name = "DES_NOTAS_ASEV_A92", length = 18)
+    @Size(max = 1000)
+    @Column(name = "DES_NOTAS_ASEV_A92", length = 1000)
     private String desNotasAsevA92;
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -100,15 +84,15 @@ public class NdtNotasDictamenDO implements Serializable {
     public NdtNotasDictamenDO() {
     }
 
-    public NdtNotasDictamenDO(Long cveIdNotasAseveraciones) {
+    public NdtNotasDictamenDO(BigDecimal cveIdNotasAseveraciones) {
         this.cveIdNotasAseveraciones = cveIdNotasAseveraciones;
     }
 
-    public Long getCveIdNotasAseveraciones() {
+    public BigDecimal getCveIdNotasAseveraciones() {
         return cveIdNotasAseveraciones;
     }
 
-    public void setCveIdNotasAseveraciones(Long cveIdNotasAseveraciones) {
+    public void setCveIdNotasAseveraciones(BigDecimal cveIdNotasAseveraciones) {
         this.cveIdNotasAseveraciones = cveIdNotasAseveraciones;
     }
 
@@ -136,14 +120,6 @@ public class NdtNotasDictamenDO implements Serializable {
         this.desNotasAsevA3 = desNotasAsevA3;
     }
 
-    public String getDesNotasAsevA31() {
-        return desNotasAsevA31;
-    }
-
-    public void setDesNotasAsevA31(String desNotasAsevA31) {
-        this.desNotasAsevA31 = desNotasAsevA31;
-    }
-
     public String getDesNotasAsevA4() {
         return desNotasAsevA4;
     }
@@ -160,28 +136,12 @@ public class NdtNotasDictamenDO implements Serializable {
         this.desNotasAsevA5 = desNotasAsevA5;
     }
 
-    public String getDesNotasAsevA51() {
-        return desNotasAsevA51;
-    }
-
-    public void setDesNotasAsevA51(String desNotasAsevA51) {
-        this.desNotasAsevA51 = desNotasAsevA51;
-    }
-
     public String getDesNotasAsevA6() {
         return desNotasAsevA6;
     }
 
     public void setDesNotasAsevA6(String desNotasAsevA6) {
         this.desNotasAsevA6 = desNotasAsevA6;
-    }
-
-    public String getDesNotasAsevA61() {
-        return desNotasAsevA61;
-    }
-
-    public void setDesNotasAsevA61(String desNotasAsevA61) {
-        this.desNotasAsevA61 = desNotasAsevA61;
     }
 
     public String getDesNotasAsevA7() {
@@ -198,14 +158,6 @@ public class NdtNotasDictamenDO implements Serializable {
 
     public void setDesNotasAsevA8(String desNotasAsevA8) {
         this.desNotasAsevA8 = desNotasAsevA8;
-    }
-
-    public String getDesNotasAsevA9() {
-        return desNotasAsevA9;
-    }
-
-    public void setDesNotasAsevA9(String desNotasAsevA9) {
-        this.desNotasAsevA9 = desNotasAsevA9;
     }
 
     public String getDesNotasAsevA91() {
@@ -254,7 +206,7 @@ public class NdtNotasDictamenDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtNotasDictamen[ cveIdNotasAseveraciones=" + cveIdNotasAseveraciones + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtNotasDictamenDO[ cveIdNotasAseveraciones=" + cveIdNotasAseveraciones + " ]";
     }
     
 }

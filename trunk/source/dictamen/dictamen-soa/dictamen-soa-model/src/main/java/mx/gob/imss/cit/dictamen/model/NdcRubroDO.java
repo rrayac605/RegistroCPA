@@ -6,7 +6,8 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -33,12 +34,13 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDC_RUBRO")
 @NamedQueries({
-    @NamedQuery(name = "NdcRubro.findAll", query = "SELECT n FROM NdcRubroDO n"),
-    @NamedQuery(name = "NdcRubro.findByCveIdRubro", query = "SELECT n FROM NdcRubroDO n WHERE n.cveIdRubro = :cveIdRubro"),
-    @NamedQuery(name = "NdcRubro.findByDesRubro", query = "SELECT n FROM NdcRubroDO n WHERE n.desRubro = :desRubro"),
-    @NamedQuery(name = "NdcRubro.findByFecAltaRegistro", query = "SELECT n FROM NdcRubroDO n WHERE n.fecAltaRegistro = :fecAltaRegistro"),
-    @NamedQuery(name = "NdcRubro.findByFecActualizadoRegistro", query = "SELECT n FROM NdcRubroDO n WHERE n.fecActualizadoRegistro = :fecActualizadoRegistro"),
-    @NamedQuery(name = "NdcRubro.findByFecBajaRegistro", query = "SELECT n FROM NdcRubroDO n WHERE n.fecBajaRegistro = :fecBajaRegistro")})
+    @NamedQuery(name = "NdcRubroDO.findAll", query = "SELECT n FROM NdcRubroDO n"),
+    @NamedQuery(name = "NdcRubroDO.findByCveIdRubro", query = "SELECT n FROM NdcRubroDO n WHERE n.cveIdRubro = :cveIdRubro"),
+    @NamedQuery(name = "NdcRubroDO.findByDesRubro", query = "SELECT n FROM NdcRubroDO n WHERE n.desRubro = :desRubro"),
+    @NamedQuery(name = "NdcRubroDO.findByFecAltaRegistro", query = "SELECT n FROM NdcRubroDO n WHERE n.fecAltaRegistro = :fecAltaRegistro"),
+    @NamedQuery(name = "NdcRubroDO.findByFecActualizadoRegistro", query = "SELECT n FROM NdcRubroDO n WHERE n.fecActualizadoRegistro = :fecActualizadoRegistro"),
+    @NamedQuery(name = "NdcRubroDO.findByFecBajaRegistro", query = "SELECT n FROM NdcRubroDO n WHERE n.fecBajaRegistro = :fecBajaRegistro"),
+    @NamedQuery(name = "NdcRubroDO.findByIndOrden", query = "SELECT n FROM NdcRubroDO n WHERE n.indOrden = :indOrden")})
 public class NdcRubroDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -46,7 +48,7 @@ public class NdcRubroDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_RUBRO", nullable = false, precision = 22, scale = 0)
-    private Long cveIdRubro;
+    private BigDecimal cveIdRubro;
     @Size(max = 100)
     @Column(name = "DES_RUBRO", length = 100)
     private String desRubro;
@@ -59,24 +61,26 @@ public class NdcRubroDO implements Serializable {
     @Column(name = "FEC_BAJA_REGISTRO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecBajaRegistro;
+    @Column(name = "IND_ORDEN")
+    private BigInteger indOrden;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdRubro", fetch = FetchType.LAZY)
-    private List<NdtPreguntaDO> ndtPreguntaList;
-    @JoinColumn(name = "CVE_ID_CUESTIONARIO", referencedColumnName = "CVE_ID_CUESTIONARIO")
+    private List<NdcPreguntaDO> ndcPreguntaDOList;
+    @JoinColumn(name = "CVE_ID_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ATESTIGUAMIENTO")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdcCuestionarioDO cveIdCuestionario;
+    private NdcAtestiguamientoDO cveIdAtestiguamiento;
 
     public NdcRubroDO() {
     }
 
-    public NdcRubroDO(Long cveIdRubro) {
+    public NdcRubroDO(BigDecimal cveIdRubro) {
         this.cveIdRubro = cveIdRubro;
     }
 
-    public Long getCveIdRubro() {
+    public BigDecimal getCveIdRubro() {
         return cveIdRubro;
     }
 
-    public void setCveIdRubro(Long cveIdRubro) {
+    public void setCveIdRubro(BigDecimal cveIdRubro) {
         this.cveIdRubro = cveIdRubro;
     }
 
@@ -112,20 +116,28 @@ public class NdcRubroDO implements Serializable {
         this.fecBajaRegistro = fecBajaRegistro;
     }
 
-    public List<NdtPreguntaDO> getNdtPreguntaList() {
-        return ndtPreguntaList;
+    public BigInteger getIndOrden() {
+        return indOrden;
     }
 
-    public void setNdtPreguntaList(List<NdtPreguntaDO> ndtPreguntaList) {
-        this.ndtPreguntaList = ndtPreguntaList;
+    public void setIndOrden(BigInteger indOrden) {
+        this.indOrden = indOrden;
     }
 
-    public NdcCuestionarioDO getCveIdCuestionario() {
-        return cveIdCuestionario;
+    public List<NdcPreguntaDO> getNdcPreguntaDOList() {
+        return ndcPreguntaDOList;
     }
 
-    public void setCveIdCuestionario(NdcCuestionarioDO cveIdCuestionario) {
-        this.cveIdCuestionario = cveIdCuestionario;
+    public void setNdcPreguntaDOList(List<NdcPreguntaDO> ndcPreguntaDOList) {
+        this.ndcPreguntaDOList = ndcPreguntaDOList;
+    }
+
+    public NdcAtestiguamientoDO getCveIdAtestiguamiento() {
+        return cveIdAtestiguamiento;
+    }
+
+    public void setCveIdAtestiguamiento(NdcAtestiguamientoDO cveIdAtestiguamiento) {
+        this.cveIdAtestiguamiento = cveIdAtestiguamiento;
     }
 
     @Override
@@ -150,7 +162,7 @@ public class NdcRubroDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdcRubro[ cveIdRubro=" + cveIdRubro + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdcRubroDO[ cveIdRubro=" + cveIdRubro + " ]";
     }
     
 }

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -33,13 +33,13 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_CONTADOR_PUBLICO_AUT")
 @NamedQueries({
-    @NamedQuery(name = "NdtContadorPublicoAut.findAll", query = "SELECT n FROM NdtContadorPublicoAutDO n"),
-    @NamedQuery(name = "NdtContadorPublicoAut.findByCveIdCpa", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.cveIdCpa = :cveIdCpa"),
-    @NamedQuery(name = "NdtContadorPublicoAut.findByNumRegistroCpa", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.numRegistroCpa = :numRegistroCpa"),
-    @NamedQuery(name = "NdtContadorPublicoAut.findByFecRegistroAlta", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtContadorPublicoAut.findByFecRegistroBaja", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtContadorPublicoAut.findByFecRegistroActualizado", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtContadorPublicoAut.findByCveIdUsuario", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtContadorPublicoAutDO.findAll", query = "SELECT n FROM NdtContadorPublicoAutDO n"),
+    @NamedQuery(name = "NdtContadorPublicoAutDO.findByCveIdCpa", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.cveIdCpa = :cveIdCpa"),
+    @NamedQuery(name = "NdtContadorPublicoAutDO.findByNumRegistroCpa", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.numRegistroCpa = :numRegistroCpa"),
+    @NamedQuery(name = "NdtContadorPublicoAutDO.findByFecRegistroAlta", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtContadorPublicoAutDO.findByFecRegistroBaja", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtContadorPublicoAutDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtContadorPublicoAutDO.findByCveIdUsuario", query = "SELECT n FROM NdtContadorPublicoAutDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtContadorPublicoAutDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -47,7 +47,7 @@ public class NdtContadorPublicoAutDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_CPA", nullable = false, precision = 22, scale = 0)
-    private Long cveIdCpa;
+    private BigDecimal cveIdCpa;
     @Column(name = "NUM_REGISTRO_CPA")
     private Integer numRegistroCpa;
     @Column(name = "FEC_REGISTRO_ALTA")
@@ -63,37 +63,37 @@ public class NdtContadorPublicoAutDO implements Serializable {
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
     @OneToMany(mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
-    private List<NdtCpaTramiteDO> ndtCpaTramiteList;
+    private List<NdtCpaTramiteDO> ndtCpaTramiteDOList;
     @JoinColumn(name = "CVE_ID_ESTADO_CPA", referencedColumnName = "CVE_ID_ESTADO_CPA")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcEstadoCpaDO cveIdEstadoCpa;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
-    private List<NdtCpaAcreditacionDO> ndtCpaAcreditacionList;
+    private List<NdtCpaAcreditacionDO> ndtCpaAcreditacionDOList;
     @OneToMany(mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
-    private List<NdtDocumentoProbatorioDO> ndtDocumentoProbatorioList;
+    private List<NdtDocumentoProbatorioDO> ndtDocumentoProbatorioDOList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
-    private List<NdtR3ColegioDO> ndtR3ColegioList;
+    private List<NdtR3ColegioDO> ndtR3ColegioDOList;
     @OneToMany(mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
-    private List<NdtPatronDictamenCpaDO> ndtPatronDictamenCpaList;
+    private List<NdtPatronDictamenCpaDO> ndtPatronDictamenCpaDOList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
-    private List<NdtR2DespachoDO> ndtR2DespachoList;
+    private List<NdtR2DespachoDO> ndtR2DespachoDOList;
     @OneToMany(mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
-    private List<NdtCpaEstatusDO> ndtCpaEstatusList;
+    private List<NdtCpaEstatusDO> ndtCpaEstatusDOList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
-    private List<NdtR1DatosPersonalesDO> ndtR1DatosPersonalesList;
+    private List<NdtR1DatosPersonalesDO> ndtR1DatosPersonalesDOList;
 
     public NdtContadorPublicoAutDO() {
     }
 
-    public NdtContadorPublicoAutDO(Long cveIdCpa) {
+    public NdtContadorPublicoAutDO(BigDecimal cveIdCpa) {
         this.cveIdCpa = cveIdCpa;
     }
 
-    public Long getCveIdCpa() {
+    public BigDecimal getCveIdCpa() {
         return cveIdCpa;
     }
 
-    public void setCveIdCpa(Long cveIdCpa) {
+    public void setCveIdCpa(BigDecimal cveIdCpa) {
         this.cveIdCpa = cveIdCpa;
     }
 
@@ -137,12 +137,12 @@ public class NdtContadorPublicoAutDO implements Serializable {
         this.cveIdUsuario = cveIdUsuario;
     }
 
-    public List<NdtCpaTramiteDO> getNdtCpaTramiteList() {
-        return ndtCpaTramiteList;
+    public List<NdtCpaTramiteDO> getNdtCpaTramiteDOList() {
+        return ndtCpaTramiteDOList;
     }
 
-    public void setNdtCpaTramiteList(List<NdtCpaTramiteDO> ndtCpaTramiteList) {
-        this.ndtCpaTramiteList = ndtCpaTramiteList;
+    public void setNdtCpaTramiteDOList(List<NdtCpaTramiteDO> ndtCpaTramiteDOList) {
+        this.ndtCpaTramiteDOList = ndtCpaTramiteDOList;
     }
 
     public NdcEstadoCpaDO getCveIdEstadoCpa() {
@@ -153,60 +153,60 @@ public class NdtContadorPublicoAutDO implements Serializable {
         this.cveIdEstadoCpa = cveIdEstadoCpa;
     }
 
-    public List<NdtCpaAcreditacionDO> getNdtCpaAcreditacionList() {
-        return ndtCpaAcreditacionList;
+    public List<NdtCpaAcreditacionDO> getNdtCpaAcreditacionDOList() {
+        return ndtCpaAcreditacionDOList;
     }
 
-    public void setNdtCpaAcreditacionList(List<NdtCpaAcreditacionDO> ndtCpaAcreditacionList) {
-        this.ndtCpaAcreditacionList = ndtCpaAcreditacionList;
+    public void setNdtCpaAcreditacionDOList(List<NdtCpaAcreditacionDO> ndtCpaAcreditacionDOList) {
+        this.ndtCpaAcreditacionDOList = ndtCpaAcreditacionDOList;
     }
 
-    public List<NdtDocumentoProbatorioDO> getNdtDocumentoProbatorioList() {
-        return ndtDocumentoProbatorioList;
+    public List<NdtDocumentoProbatorioDO> getNdtDocumentoProbatorioDOList() {
+        return ndtDocumentoProbatorioDOList;
     }
 
-    public void setNdtDocumentoProbatorioList(List<NdtDocumentoProbatorioDO> ndtDocumentoProbatorioList) {
-        this.ndtDocumentoProbatorioList = ndtDocumentoProbatorioList;
+    public void setNdtDocumentoProbatorioDOList(List<NdtDocumentoProbatorioDO> ndtDocumentoProbatorioDOList) {
+        this.ndtDocumentoProbatorioDOList = ndtDocumentoProbatorioDOList;
     }
 
-    public List<NdtR3ColegioDO> getNdtR3ColegioList() {
-        return ndtR3ColegioList;
+    public List<NdtR3ColegioDO> getNdtR3ColegioDOList() {
+        return ndtR3ColegioDOList;
     }
 
-    public void setNdtR3ColegioList(List<NdtR3ColegioDO> ndtR3ColegioList) {
-        this.ndtR3ColegioList = ndtR3ColegioList;
+    public void setNdtR3ColegioDOList(List<NdtR3ColegioDO> ndtR3ColegioDOList) {
+        this.ndtR3ColegioDOList = ndtR3ColegioDOList;
     }
 
-    public List<NdtPatronDictamenCpaDO> getNdtPatronDictamenCpaList() {
-        return ndtPatronDictamenCpaList;
+    public List<NdtPatronDictamenCpaDO> getNdtPatronDictamenCpaDOList() {
+        return ndtPatronDictamenCpaDOList;
     }
 
-    public void setNdtPatronDictamenCpaList(List<NdtPatronDictamenCpaDO> ndtPatronDictamenCpaList) {
-        this.ndtPatronDictamenCpaList = ndtPatronDictamenCpaList;
+    public void setNdtPatronDictamenCpaDOList(List<NdtPatronDictamenCpaDO> ndtPatronDictamenCpaDOList) {
+        this.ndtPatronDictamenCpaDOList = ndtPatronDictamenCpaDOList;
     }
 
-    public List<NdtR2DespachoDO> getNdtR2DespachoList() {
-        return ndtR2DespachoList;
+    public List<NdtR2DespachoDO> getNdtR2DespachoDOList() {
+        return ndtR2DespachoDOList;
     }
 
-    public void setNdtR2DespachoList(List<NdtR2DespachoDO> ndtR2DespachoList) {
-        this.ndtR2DespachoList = ndtR2DespachoList;
+    public void setNdtR2DespachoDOList(List<NdtR2DespachoDO> ndtR2DespachoDOList) {
+        this.ndtR2DespachoDOList = ndtR2DespachoDOList;
     }
 
-    public List<NdtCpaEstatusDO> getNdtCpaEstatusList() {
-        return ndtCpaEstatusList;
+    public List<NdtCpaEstatusDO> getNdtCpaEstatusDOList() {
+        return ndtCpaEstatusDOList;
     }
 
-    public void setNdtCpaEstatusList(List<NdtCpaEstatusDO> ndtCpaEstatusList) {
-        this.ndtCpaEstatusList = ndtCpaEstatusList;
+    public void setNdtCpaEstatusDOList(List<NdtCpaEstatusDO> ndtCpaEstatusDOList) {
+        this.ndtCpaEstatusDOList = ndtCpaEstatusDOList;
     }
 
-    public List<NdtR1DatosPersonalesDO> getNdtR1DatosPersonalesList() {
-        return ndtR1DatosPersonalesList;
+    public List<NdtR1DatosPersonalesDO> getNdtR1DatosPersonalesDOList() {
+        return ndtR1DatosPersonalesDOList;
     }
 
-    public void setNdtR1DatosPersonalesList(List<NdtR1DatosPersonalesDO> ndtR1DatosPersonalesList) {
-        this.ndtR1DatosPersonalesList = ndtR1DatosPersonalesList;
+    public void setNdtR1DatosPersonalesDOList(List<NdtR1DatosPersonalesDO> ndtR1DatosPersonalesDOList) {
+        this.ndtR1DatosPersonalesDOList = ndtR1DatosPersonalesDOList;
     }
 
     @Override
@@ -231,7 +231,7 @@ public class NdtContadorPublicoAutDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAut[ cveIdCpa=" + cveIdCpa + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO[ cveIdCpa=" + cveIdCpa + " ]";
     }
     
 }

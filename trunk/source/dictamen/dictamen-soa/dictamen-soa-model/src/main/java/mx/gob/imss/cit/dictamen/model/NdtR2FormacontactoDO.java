@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,12 +30,12 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_R2_FORMACONTACTO")
 @NamedQueries({
-    @NamedQuery(name = "NdtR2Formacontacto.findAll", query = "SELECT n FROM NdtR2FormacontactoDO n"),
-    @NamedQuery(name = "NdtR2Formacontacto.findByCveIdR2Fcontacto", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.cveIdR2Fcontacto = :cveIdR2Fcontacto"),
-    @NamedQuery(name = "NdtR2Formacontacto.findByFecRegistroAlta", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtR2Formacontacto.findByFecRegistroBaja", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtR2Formacontacto.findByFecRegistroActualizado", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtR2Formacontacto.findByCveIdUsuario", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtR2FormacontactoDO.findAll", query = "SELECT n FROM NdtR2FormacontactoDO n"),
+    @NamedQuery(name = "NdtR2FormacontactoDO.findByCveIdR2Fcontacto", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.cveIdR2Fcontacto = :cveIdR2Fcontacto"),
+    @NamedQuery(name = "NdtR2FormacontactoDO.findByFecRegistroAlta", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtR2FormacontactoDO.findByFecRegistroBaja", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtR2FormacontactoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtR2FormacontactoDO.findByCveIdUsuario", query = "SELECT n FROM NdtR2FormacontactoDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtR2FormacontactoDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -43,7 +43,7 @@ public class NdtR2FormacontactoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R2_FCONTACTO", nullable = false, precision = 22, scale = 0)
-    private Long cveIdR2Fcontacto;
+    private BigDecimal cveIdR2Fcontacto;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -63,15 +63,15 @@ public class NdtR2FormacontactoDO implements Serializable {
     public NdtR2FormacontactoDO() {
     }
 
-    public NdtR2FormacontactoDO(Long cveIdR2Fcontacto) {
+    public NdtR2FormacontactoDO(BigDecimal cveIdR2Fcontacto) {
         this.cveIdR2Fcontacto = cveIdR2Fcontacto;
     }
 
-    public Long getCveIdR2Fcontacto() {
+    public BigDecimal getCveIdR2Fcontacto() {
         return cveIdR2Fcontacto;
     }
 
-    public void setCveIdR2Fcontacto(Long cveIdR2Fcontacto) {
+    public void setCveIdR2Fcontacto(BigDecimal cveIdR2Fcontacto) {
         this.cveIdR2Fcontacto = cveIdR2Fcontacto;
     }
 
@@ -137,7 +137,7 @@ public class NdtR2FormacontactoDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtR2Formacontacto[ cveIdR2Fcontacto=" + cveIdR2Fcontacto + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtR2FormacontactoDO[ cveIdR2Fcontacto=" + cveIdR2Fcontacto + " ]";
     }
     
 }

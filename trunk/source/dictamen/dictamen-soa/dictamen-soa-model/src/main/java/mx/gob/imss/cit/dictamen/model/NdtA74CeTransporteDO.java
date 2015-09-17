@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,17 +30,18 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A7_4_CE_TRANSPORTE")
 @NamedQueries({
-    @NamedQuery(name = "NdtA74CeTransporte.findAll", query = "SELECT n FROM NdtA74CeTransporteDO n"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByCveIdA74CeTransporte", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.cveIdA74CeTransporte = :cveIdA74CeTransporte"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByRegPatronal", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByNumUnidad", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.numUnidad = :numUnidad"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByNomTransporte", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.nomTransporte = :nomTransporte"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByDesTipoUso", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.desTipoUso = :desTipoUso"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByDesCapacidadPotencia", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.desCapacidadPotencia = :desCapacidadPotencia"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByCveIdUsuario", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByFecRegistroAlta", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByFecRegistroBaja", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA74CeTransporte.findByFecRegistroActualizado", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA74CeTransporteDO.findAll", query = "SELECT n FROM NdtA74CeTransporteDO n"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByCveIdA74CeTransporte", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.cveIdA74CeTransporte = :cveIdA74CeTransporte"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByRegPatronal", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByNumUnidad", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.numUnidad = :numUnidad"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByNomTransporte", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.nomTransporte = :nomTransporte"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByDesTipoUso", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.desTipoUso = :desTipoUso"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByDesTipoCombustible", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.desTipoCombustible = :desTipoCombustible"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByDesCapacidadPotencia", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.desCapacidadPotencia = :desCapacidadPotencia"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByCveIdUsuario", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA74CeTransporteDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA74CeTransporteDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA74CeTransporteDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -48,9 +49,9 @@ public class NdtA74CeTransporteDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A7_4_CE_TRANSPORTE", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA74CeTransporte;
-    @Size(max = 13)
-    @Column(name = "REG_PATRONAL", length = 13)
+    private BigDecimal cveIdA74CeTransporte;
+    @Size(max = 11)
+    @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
     @Column(name = "NUM_UNIDAD")
     private Integer numUnidad;
@@ -60,11 +61,14 @@ public class NdtA74CeTransporteDO implements Serializable {
     @Size(max = 30)
     @Column(name = "DES_TIPO_USO", length = 30)
     private String desTipoUso;
+    @Size(max = 50)
+    @Column(name = "DES_TIPO_COMBUSTIBLE", length = 50)
+    private String desTipoCombustible;
     @Size(max = 20)
     @Column(name = "DES_CAPACIDAD_POTENCIA", length = 20)
     private String desCapacidadPotencia;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -75,25 +79,22 @@ public class NdtA74CeTransporteDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
-    @JoinColumn(name = "CVE_ID_TIPO_CONSUMO_TRANSPORTE", referencedColumnName = "CVE_ID_TIPO_CONSUMO_TRANSPORTE")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private NdcTipoConsumoTransporteDO cveIdTipoConsumoTransporte;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA74CeTransporteDO() {
     }
 
-    public NdtA74CeTransporteDO(Long cveIdA74CeTransporte) {
+    public NdtA74CeTransporteDO(BigDecimal cveIdA74CeTransporte) {
         this.cveIdA74CeTransporte = cveIdA74CeTransporte;
     }
 
-    public Long getCveIdA74CeTransporte() {
+    public BigDecimal getCveIdA74CeTransporte() {
         return cveIdA74CeTransporte;
     }
 
-    public void setCveIdA74CeTransporte(Long cveIdA74CeTransporte) {
+    public void setCveIdA74CeTransporte(BigDecimal cveIdA74CeTransporte) {
         this.cveIdA74CeTransporte = cveIdA74CeTransporte;
     }
 
@@ -127,6 +128,14 @@ public class NdtA74CeTransporteDO implements Serializable {
 
     public void setDesTipoUso(String desTipoUso) {
         this.desTipoUso = desTipoUso;
+    }
+
+    public String getDesTipoCombustible() {
+        return desTipoCombustible;
+    }
+
+    public void setDesTipoCombustible(String desTipoCombustible) {
+        this.desTipoCombustible = desTipoCombustible;
     }
 
     public String getDesCapacidadPotencia() {
@@ -169,20 +178,12 @@ public class NdtA74CeTransporteDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
-    }
-
-    public NdcTipoConsumoTransporteDO getCveIdTipoConsumoTransporte() {
-        return cveIdTipoConsumoTransporte;
-    }
-
-    public void setCveIdTipoConsumoTransporte(NdcTipoConsumoTransporteDO cveIdTipoConsumoTransporte) {
-        this.cveIdTipoConsumoTransporte = cveIdTipoConsumoTransporte;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -207,7 +208,7 @@ public class NdtA74CeTransporteDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA74CeTransporte[ cveIdA74CeTransporte=" + cveIdA74CeTransporte + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA74CeTransporteDO[ cveIdA74CeTransporte=" + cveIdA74CeTransporte + " ]";
     }
     
 }

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,22 +30,22 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A6_SUBCONTRATACION_SP")
 @NamedQueries({
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findAll", query = "SELECT n FROM NdtA6SubcontratacionSpDO n"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByCveIdA6SubcontratacionSp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.cveIdA6SubcontratacionSp = :cveIdA6SubcontratacionSp"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByNomNombreRazonsocialPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.nomNombreRazonsocialPsp = :nomNombreRazonsocialPsp"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByRfcPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.rfcPsp = :rfcPsp"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByRegPatronalPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.regPatronalPsp = :regPatronalPsp"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByDesObjetoContratoPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.desObjetoContratoPsp = :desObjetoContratoPsp"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByFecVigenciaInicioContrato", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecVigenciaInicioContrato = :fecVigenciaInicioContrato"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByFecVigenciaFinalContrato", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecVigenciaFinalContrato = :fecVigenciaFinalContrato"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByNumTrabajadores", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.numTrabajadores = :numTrabajadores"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByIndElementosPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.indElementosPsp = :indElementosPsp"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByIndResponsableDireccion", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.indResponsableDireccion = :indResponsableDireccion"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByFolioSipress", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.folioSipress = :folioSipress"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByCveIdUsuario", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByFecRegistroAlta", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByFecRegistroBaja", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA6SubcontratacionSp.findByFecRegistroActualizado", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findAll", query = "SELECT n FROM NdtA6SubcontratacionSpDO n"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByCveIdA6SubcontratacionSp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.cveIdA6SubcontratacionSp = :cveIdA6SubcontratacionSp"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByNomNombreRazonsocialPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.nomNombreRazonsocialPsp = :nomNombreRazonsocialPsp"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByRfcPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.rfcPsp = :rfcPsp"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByRegPatronalPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.regPatronalPsp = :regPatronalPsp"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByDesObjetoContratoPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.desObjetoContratoPsp = :desObjetoContratoPsp"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByFecInicioContrato", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecInicioContrato = :fecInicioContrato"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByFecConclusionContrato", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecConclusionContrato = :fecConclusionContrato"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByNumTrabajadores", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.numTrabajadores = :numTrabajadores"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByIndElementosPsp", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.indElementosPsp = :indElementosPsp"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByIndResponsableDireccion", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.indResponsableDireccion = :indResponsableDireccion"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByDesFolioSipress", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.desFolioSipress = :desFolioSipress"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByCveIdUsuario", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA6SubcontratacionSpDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA6SubcontratacionSpDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA6SubcontratacionSpDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -53,7 +53,7 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A6_SUBCONTRATACION_SP", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA6SubcontratacionSp;
+    private BigDecimal cveIdA6SubcontratacionSp;
     @Size(max = 100)
     @Column(name = "NOM_NOMBRE_RAZONSOCIAL_PSP", length = 100)
     private String nomNombreRazonsocialPsp;
@@ -66,23 +66,25 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
     @Size(max = 300)
     @Column(name = "DES_OBJETO_CONTRATO_PSP", length = 300)
     private String desObjetoContratoPsp;
-    @Column(name = "FEC_VIGENCIA_INICIO_CONTRATO")
+    @Column(name = "FEC_INICIO_CONTRATO")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecVigenciaInicioContrato;
-    @Column(name = "FEC_VIGENCIA_FINAL_CONTRATO")
+    private Date fecInicioContrato;
+    @Column(name = "FEC_CONCLUSION_CONTRATO")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecVigenciaFinalContrato;
+    private Date fecConclusionContrato;
     @Column(name = "NUM_TRABAJADORES")
     private Integer numTrabajadores;
-    @Column(name = "IND_ELEMENTOS_PSP")
-    private Short indElementosPsp;
-    @Column(name = "IND_RESPONSABLE_DIRECCION")
-    private Short indResponsableDireccion;
+    @Size(max = 2)
+    @Column(name = "IND_ELEMENTOS_PSP", length = 2)
+    private String indElementosPsp;
+    @Size(max = 2)
+    @Column(name = "IND_RESPONSABLE_DIRECCION", length = 2)
+    private String indResponsableDireccion;
     @Size(max = 30)
-    @Column(name = "FOLIO_SIPRESS", length = 30)
-    private String folioSipress;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Column(name = "DES_FOLIO_SIPRESS", length = 30)
+    private String desFolioSipress;
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -93,22 +95,22 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA6SubcontratacionSpDO() {
     }
 
-    public NdtA6SubcontratacionSpDO(Long cveIdA6SubcontratacionSp) {
+    public NdtA6SubcontratacionSpDO(BigDecimal cveIdA6SubcontratacionSp) {
         this.cveIdA6SubcontratacionSp = cveIdA6SubcontratacionSp;
     }
 
-    public Long getCveIdA6SubcontratacionSp() {
+    public BigDecimal getCveIdA6SubcontratacionSp() {
         return cveIdA6SubcontratacionSp;
     }
 
-    public void setCveIdA6SubcontratacionSp(Long cveIdA6SubcontratacionSp) {
+    public void setCveIdA6SubcontratacionSp(BigDecimal cveIdA6SubcontratacionSp) {
         this.cveIdA6SubcontratacionSp = cveIdA6SubcontratacionSp;
     }
 
@@ -144,20 +146,20 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
         this.desObjetoContratoPsp = desObjetoContratoPsp;
     }
 
-    public Date getFecVigenciaInicioContrato() {
-        return fecVigenciaInicioContrato;
+    public Date getFecInicioContrato() {
+        return fecInicioContrato;
     }
 
-    public void setFecVigenciaInicioContrato(Date fecVigenciaInicioContrato) {
-        this.fecVigenciaInicioContrato = fecVigenciaInicioContrato;
+    public void setFecInicioContrato(Date fecInicioContrato) {
+        this.fecInicioContrato = fecInicioContrato;
     }
 
-    public Date getFecVigenciaFinalContrato() {
-        return fecVigenciaFinalContrato;
+    public Date getFecConclusionContrato() {
+        return fecConclusionContrato;
     }
 
-    public void setFecVigenciaFinalContrato(Date fecVigenciaFinalContrato) {
-        this.fecVigenciaFinalContrato = fecVigenciaFinalContrato;
+    public void setFecConclusionContrato(Date fecConclusionContrato) {
+        this.fecConclusionContrato = fecConclusionContrato;
     }
 
     public Integer getNumTrabajadores() {
@@ -168,28 +170,28 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
         this.numTrabajadores = numTrabajadores;
     }
 
-    public Short getIndElementosPsp() {
+    public String getIndElementosPsp() {
         return indElementosPsp;
     }
 
-    public void setIndElementosPsp(Short indElementosPsp) {
+    public void setIndElementosPsp(String indElementosPsp) {
         this.indElementosPsp = indElementosPsp;
     }
 
-    public Short getIndResponsableDireccion() {
+    public String getIndResponsableDireccion() {
         return indResponsableDireccion;
     }
 
-    public void setIndResponsableDireccion(Short indResponsableDireccion) {
+    public void setIndResponsableDireccion(String indResponsableDireccion) {
         this.indResponsableDireccion = indResponsableDireccion;
     }
 
-    public String getFolioSipress() {
-        return folioSipress;
+    public String getDesFolioSipress() {
+        return desFolioSipress;
     }
 
-    public void setFolioSipress(String folioSipress) {
-        this.folioSipress = folioSipress;
+    public void setDesFolioSipress(String desFolioSipress) {
+        this.desFolioSipress = desFolioSipress;
     }
 
     public String getCveIdUsuario() {
@@ -224,12 +226,12 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -254,7 +256,7 @@ public class NdtA6SubcontratacionSpDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA6SubcontratacionSp[ cveIdA6SubcontratacionSp=" + cveIdA6SubcontratacionSp + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA6SubcontratacionSpDO[ cveIdA6SubcontratacionSp=" + cveIdA6SubcontratacionSp + " ]";
     }
     
 }

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,13 +30,12 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_PATRON_DICTAMEN_CPA")
 @NamedQueries({
-    @NamedQuery(name = "NdtPatronDictamenCpa.findAll", query = "SELECT n FROM NdtPatronDictamenCpaDO n"),
-    @NamedQuery(name = "NdtPatronDictamenCpa.findByCveIdPatronCpaDictamen", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.cveIdPatronCpaDictamen = :cveIdPatronCpaDictamen"),
-    @NamedQuery(name = "NdtPatronDictamenCpa.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtPatronDictamenCpa.findByFecSolicitudPatronCpa", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecSolicitudPatronCpa = :fecSolicitudPatronCpa"),
-    @NamedQuery(name = "NdtPatronDictamenCpa.findByFecRegistroAlta", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtPatronDictamenCpa.findByFecRegistroBaja", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtPatronDictamenCpa.findByFecRegistroActualizado", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtPatronDictamenCpaDO.findAll", query = "SELECT n FROM NdtPatronDictamenCpaDO n"),
+    @NamedQuery(name = "NdtPatronDictamenCpaDO.findByCveIdPatronCpaDictamen", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.cveIdPatronCpaDictamen = :cveIdPatronCpaDictamen"),
+    @NamedQuery(name = "NdtPatronDictamenCpaDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtPatronDictamenCpaDO.findByFecRegistroAlta", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtPatronDictamenCpaDO.findByFecRegistroBaja", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtPatronDictamenCpaDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtPatronDictamenCpaDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -44,13 +43,10 @@ public class NdtPatronDictamenCpaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PATRON_CPA_DICTAMEN", nullable = false, precision = 22, scale = 0)
-    private Long cveIdPatronCpaDictamen;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    private BigDecimal cveIdPatronCpaDictamen;
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
-    @Column(name = "FEC_SOLICITUD_PATRON_CPA")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fecSolicitudPatronCpa;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -70,15 +66,15 @@ public class NdtPatronDictamenCpaDO implements Serializable {
     public NdtPatronDictamenCpaDO() {
     }
 
-    public NdtPatronDictamenCpaDO(Long cveIdPatronCpaDictamen) {
+    public NdtPatronDictamenCpaDO(BigDecimal cveIdPatronCpaDictamen) {
         this.cveIdPatronCpaDictamen = cveIdPatronCpaDictamen;
     }
 
-    public Long getCveIdPatronCpaDictamen() {
+    public BigDecimal getCveIdPatronCpaDictamen() {
         return cveIdPatronCpaDictamen;
     }
 
-    public void setCveIdPatronCpaDictamen(Long cveIdPatronCpaDictamen) {
+    public void setCveIdPatronCpaDictamen(BigDecimal cveIdPatronCpaDictamen) {
         this.cveIdPatronCpaDictamen = cveIdPatronCpaDictamen;
     }
 
@@ -88,14 +84,6 @@ public class NdtPatronDictamenCpaDO implements Serializable {
 
     public void setCveIdUsuario(String cveIdUsuario) {
         this.cveIdUsuario = cveIdUsuario;
-    }
-
-    public Date getFecSolicitudPatronCpa() {
-        return fecSolicitudPatronCpa;
-    }
-
-    public void setFecSolicitudPatronCpa(Date fecSolicitudPatronCpa) {
-        this.fecSolicitudPatronCpa = fecSolicitudPatronCpa;
     }
 
     public Date getFecRegistroAlta() {
@@ -160,7 +148,7 @@ public class NdtPatronDictamenCpaDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtPatronDictamenCpa[ cveIdPatronCpaDictamen=" + cveIdPatronCpaDictamen + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtPatronDictamenCpaDO[ cveIdPatronCpaDictamen=" + cveIdPatronCpaDictamen + " ]";
     }
     
 }

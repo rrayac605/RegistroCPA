@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,19 +30,19 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A4_PAGO_PERSONA_FISICA")
 @NamedQueries({
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findAll", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByCveIdA4Pagospersonasfisicas", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.cveIdA4Pagospersonasfisicas = :cveIdA4Pagospersonasfisicas"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByRfcPf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.rfcPf = :rfcPf"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByCurpPf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.curpPf = :curpPf"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByNomPrimerApellidoPf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.nomPrimerApellidoPf = :nomPrimerApellidoPf"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByNomSegundoApellidoPf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.nomSegundoApellidoPf = :nomSegundoApellidoPf"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByNomNombrePf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.nomNombrePf = :nomNombrePf"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByNumMesesOperacion", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.numMesesOperacion = :numMesesOperacion"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByImpOperaciones", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.impOperaciones = :impOperaciones"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByCveIdUsuario", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByFecRegistroAlta", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByFecRegistroBaja", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA4PagoPersonaFisica.findByFecRegistroActualizado", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findAll", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByCveIdA4Pagospersonasfisicas", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.cveIdA4Pagospersonasfisicas = :cveIdA4Pagospersonasfisicas"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByRfcPf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.rfcPf = :rfcPf"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByCurpPf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.curpPf = :curpPf"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByNomPrimerApellidoPf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.nomPrimerApellidoPf = :nomPrimerApellidoPf"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByNomSegundoApellidoPf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.nomSegundoApellidoPf = :nomSegundoApellidoPf"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByNomNombrePf", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.nomNombrePf = :nomNombrePf"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByNumMesesOpero", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.numMesesOpero = :numMesesOpero"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByImpMontoOperaciones", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.impMontoOperaciones = :impMontoOperaciones"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByCveIdUsuario", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA4PagoPersonaFisicaDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA4PagoPersonaFisicaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA4PagoPersonaFisicaDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -50,7 +50,7 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A4_PAGOSPERSONASFISICAS", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA4Pagospersonasfisicas;
+    private BigDecimal cveIdA4Pagospersonasfisicas;
     @Size(max = 13)
     @Column(name = "RFC_PF", length = 13)
     private String rfcPf;
@@ -66,12 +66,12 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
     @Size(max = 100)
     @Column(name = "NOM_NOMBRE_PF", length = 100)
     private String nomNombrePf;
-    @Column(name = "NUM_MESES_OPERACION")
-    private Integer numMesesOperacion;
-    @Column(name = "IMP_OPERACIONES", precision = 14, scale = 2)
-    private Long impOperaciones;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Column(name = "NUM_MESES_OPERO")
+    private Integer numMesesOpero;
+    @Column(name = "IMP_MONTO_OPERACIONES", precision = 14, scale = 2)
+    private BigDecimal impMontoOperaciones;
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -82,22 +82,22 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA4PagoPersonaFisicaDO() {
     }
 
-    public NdtA4PagoPersonaFisicaDO(Long cveIdA4Pagospersonasfisicas) {
+    public NdtA4PagoPersonaFisicaDO(BigDecimal cveIdA4Pagospersonasfisicas) {
         this.cveIdA4Pagospersonasfisicas = cveIdA4Pagospersonasfisicas;
     }
 
-    public Long getCveIdA4Pagospersonasfisicas() {
+    public BigDecimal getCveIdA4Pagospersonasfisicas() {
         return cveIdA4Pagospersonasfisicas;
     }
 
-    public void setCveIdA4Pagospersonasfisicas(Long cveIdA4Pagospersonasfisicas) {
+    public void setCveIdA4Pagospersonasfisicas(BigDecimal cveIdA4Pagospersonasfisicas) {
         this.cveIdA4Pagospersonasfisicas = cveIdA4Pagospersonasfisicas;
     }
 
@@ -141,20 +141,20 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
         this.nomNombrePf = nomNombrePf;
     }
 
-    public Integer getNumMesesOperacion() {
-        return numMesesOperacion;
+    public Integer getNumMesesOpero() {
+        return numMesesOpero;
     }
 
-    public void setNumMesesOperacion(Integer numMesesOperacion) {
-        this.numMesesOperacion = numMesesOperacion;
+    public void setNumMesesOpero(Integer numMesesOpero) {
+        this.numMesesOpero = numMesesOpero;
     }
 
-    public Long getImpOperaciones() {
-        return impOperaciones;
+    public BigDecimal getImpMontoOperaciones() {
+        return impMontoOperaciones;
     }
 
-    public void setImpOperaciones(Long impOperaciones) {
-        this.impOperaciones = impOperaciones;
+    public void setImpMontoOperaciones(BigDecimal impMontoOperaciones) {
+        this.impMontoOperaciones = impMontoOperaciones;
     }
 
     public String getCveIdUsuario() {
@@ -189,12 +189,12 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -219,7 +219,7 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA4PagoPersonaFisica[ cveIdA4Pagospersonasfisicas=" + cveIdA4Pagospersonasfisicas + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA4PagoPersonaFisicaDO[ cveIdA4Pagospersonasfisicas=" + cveIdA4Pagospersonasfisicas + " ]";
     }
     
 }

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,13 +30,13 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_DOCUMENTO_PROBATORIO")
 @NamedQueries({
-    @NamedQuery(name = "NdtDocumentoProbatorio.findAll", query = "SELECT n FROM NdtDocumentoProbatorioDO n"),
-    @NamedQuery(name = "NdtDocumentoProbatorio.findByCveIdDoctoProbatorio", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.cveIdDoctoProbatorio = :cveIdDoctoProbatorio"),
-    @NamedQuery(name = "NdtDocumentoProbatorio.findByUrlDocumentoProb", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.urlDocumentoProb = :urlDocumentoProb"),
-    @NamedQuery(name = "NdtDocumentoProbatorio.findByFecRegistroAlta", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtDocumentoProbatorio.findByFecRegistroBaja", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtDocumentoProbatorio.findByFecRegistroActualizado", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtDocumentoProbatorio.findByCveIdUsuario", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtDocumentoProbatorioDO.findAll", query = "SELECT n FROM NdtDocumentoProbatorioDO n"),
+    @NamedQuery(name = "NdtDocumentoProbatorioDO.findByCveIdDoctoProbatorio", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.cveIdDoctoProbatorio = :cveIdDoctoProbatorio"),
+    @NamedQuery(name = "NdtDocumentoProbatorioDO.findByUrlDocumentoProb", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.urlDocumentoProb = :urlDocumentoProb"),
+    @NamedQuery(name = "NdtDocumentoProbatorioDO.findByFecRegistroAlta", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtDocumentoProbatorioDO.findByFecRegistroBaja", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtDocumentoProbatorioDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtDocumentoProbatorioDO.findByCveIdUsuario", query = "SELECT n FROM NdtDocumentoProbatorioDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtDocumentoProbatorioDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -44,7 +44,7 @@ public class NdtDocumentoProbatorioDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_DOCTO_PROBATORIO", nullable = false, precision = 22, scale = 0)
-    private Long cveIdDoctoProbatorio;
+    private BigDecimal cveIdDoctoProbatorio;
     @Size(max = 250)
     @Column(name = "URL_DOCUMENTO_PROB", length = 250)
     private String urlDocumentoProb;
@@ -70,15 +70,15 @@ public class NdtDocumentoProbatorioDO implements Serializable {
     public NdtDocumentoProbatorioDO() {
     }
 
-    public NdtDocumentoProbatorioDO(Long cveIdDoctoProbatorio) {
+    public NdtDocumentoProbatorioDO(BigDecimal cveIdDoctoProbatorio) {
         this.cveIdDoctoProbatorio = cveIdDoctoProbatorio;
     }
 
-    public Long getCveIdDoctoProbatorio() {
+    public BigDecimal getCveIdDoctoProbatorio() {
         return cveIdDoctoProbatorio;
     }
 
-    public void setCveIdDoctoProbatorio(Long cveIdDoctoProbatorio) {
+    public void setCveIdDoctoProbatorio(BigDecimal cveIdDoctoProbatorio) {
         this.cveIdDoctoProbatorio = cveIdDoctoProbatorio;
     }
 
@@ -160,7 +160,7 @@ public class NdtDocumentoProbatorioDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtDocumentoProbatorio[ cveIdDoctoProbatorio=" + cveIdDoctoProbatorio + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtDocumentoProbatorioDO[ cveIdDoctoProbatorio=" + cveIdDoctoProbatorio + " ]";
     }
     
 }

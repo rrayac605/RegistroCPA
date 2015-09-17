@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -30,12 +30,12 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_DESPACHOS")
 @NamedQueries({
-    @NamedQuery(name = "NdtDespachos.findAll", query = "SELECT n FROM NdtDespachosDO n"),
-    @NamedQuery(name = "NdtDespachos.findByCveIdDespacho", query = "SELECT n FROM NdtDespachosDO n WHERE n.cveIdDespacho = :cveIdDespacho"),
-    @NamedQuery(name = "NdtDespachos.findByCveIdUsuario", query = "SELECT n FROM NdtDespachosDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtDespachos.findByFecRegistroAlta", query = "SELECT n FROM NdtDespachosDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtDespachos.findByFecRegistroBaja", query = "SELECT n FROM NdtDespachosDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtDespachos.findByFecActualizado", query = "SELECT n FROM NdtDespachosDO n WHERE n.fecActualizado = :fecActualizado")})
+    @NamedQuery(name = "NdtDespachosDO.findAll", query = "SELECT n FROM NdtDespachosDO n"),
+    @NamedQuery(name = "NdtDespachosDO.findByCveIdDespacho", query = "SELECT n FROM NdtDespachosDO n WHERE n.cveIdDespacho = :cveIdDespacho"),
+    @NamedQuery(name = "NdtDespachosDO.findByCveIdUsuario", query = "SELECT n FROM NdtDespachosDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtDespachosDO.findByFecRegistroAlta", query = "SELECT n FROM NdtDespachosDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtDespachosDO.findByFecRegistroBaja", query = "SELECT n FROM NdtDespachosDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtDespachosDO.findByFecActualizado", query = "SELECT n FROM NdtDespachosDO n WHERE n.fecActualizado = :fecActualizado")})
 public class NdtDespachosDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -43,7 +43,7 @@ public class NdtDespachosDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_DESPACHO", nullable = false, precision = 22, scale = 0)
-    private Long cveIdDespacho;
+    private BigDecimal cveIdDespacho;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
@@ -57,20 +57,20 @@ public class NdtDespachosDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecActualizado;
     @OneToMany(mappedBy = "cveIdDespacho", fetch = FetchType.LAZY)
-    private List<NdtR2DespachoDO> ndtR2DespachoList;
+    private List<NdtR2DespachoDO> ndtR2DespachoDOList;
 
     public NdtDespachosDO() {
     }
 
-    public NdtDespachosDO(Long cveIdDespacho) {
+    public NdtDespachosDO(BigDecimal cveIdDespacho) {
         this.cveIdDespacho = cveIdDespacho;
     }
 
-    public Long getCveIdDespacho() {
+    public BigDecimal getCveIdDespacho() {
         return cveIdDespacho;
     }
 
-    public void setCveIdDespacho(Long cveIdDespacho) {
+    public void setCveIdDespacho(BigDecimal cveIdDespacho) {
         this.cveIdDespacho = cveIdDespacho;
     }
 
@@ -106,12 +106,12 @@ public class NdtDespachosDO implements Serializable {
         this.fecActualizado = fecActualizado;
     }
 
-    public List<NdtR2DespachoDO> getNdtR2DespachoList() {
-        return ndtR2DespachoList;
+    public List<NdtR2DespachoDO> getNdtR2DespachoDOList() {
+        return ndtR2DespachoDOList;
     }
 
-    public void setNdtR2DespachoList(List<NdtR2DespachoDO> ndtR2DespachoList) {
-        this.ndtR2DespachoList = ndtR2DespachoList;
+    public void setNdtR2DespachoDOList(List<NdtR2DespachoDO> ndtR2DespachoDOList) {
+        this.ndtR2DespachoDOList = ndtR2DespachoDOList;
     }
 
     @Override
@@ -136,7 +136,7 @@ public class NdtDespachosDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtDespachos[ cveIdDespacho=" + cveIdDespacho + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtDespachosDO[ cveIdDespacho=" + cveIdDespacho + " ]";
     }
     
 }

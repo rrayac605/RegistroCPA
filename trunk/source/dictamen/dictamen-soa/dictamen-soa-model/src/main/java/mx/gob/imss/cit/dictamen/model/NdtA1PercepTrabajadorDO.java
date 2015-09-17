@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,51 +30,51 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A1_PERCEP_TRABAJADOR")
 @NamedQueries({
-    @NamedQuery(name = "NdtA1PercepTrabajador.findAll", query = "SELECT n FROM NdtA1PercepTrabajadorDO n"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByCveIdA1Perceptrab", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.cveIdA1Perceptrab = :cveIdA1Perceptrab"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByRegPatronal", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByNomPrimerApellidoTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.nomPrimerApellidoTrabajador = :nomPrimerApellidoTrabajador"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByNomSegundoAellidoTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.nomSegundoAellidoTrabajador = :nomSegundoAellidoTrabajador"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByNomNombreTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.nomNombreTrabajador = :nomNombreTrabajador"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByNumNssTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.numNssTrabajador = :numNssTrabajador"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByRfcTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.rfcTrabajador = :rfcTrabajador"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByCurpTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.curpTrabajador = :curpTrabajador"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpSueldosSalarios", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impSueldosSalarios = :impSueldosSalarios"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpGratificaciones", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impGratificaciones = :impGratificaciones"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpViaticos", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impViaticos = :impViaticos"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpTiempoExtra", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impTiempoExtra = :impTiempoExtra"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpPrimaVacacional", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPrimaVacacional = :impPrimaVacacional"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpPrimaDominical", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPrimaDominical = :impPrimaDominical"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpPtu", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPtu = :impPtu"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpReembolsoGm", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impReembolsoGm = :impReembolsoGm"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpFondoAhorro", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impFondoAhorro = :impFondoAhorro"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpCajaAhorro", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impCajaAhorro = :impCajaAhorro"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpValesDespensa", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impValesDespensa = :impValesDespensa"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpAyudaGf", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaGf = :impAyudaGf"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpContribucionPatron", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impContribucionPatron = :impContribucionPatron"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpPremioPuntualidad", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPremioPuntualidad = :impPremioPuntualidad"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpPremioAsistencia", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPremioAsistencia = :impPremioAsistencia"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpPrimaSeguroVida", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPrimaSeguroVida = :impPrimaSeguroVida"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpSeguroGmm", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impSeguroGmm = :impSeguroGmm"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpValesRestaurant", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impValesRestaurant = :impValesRestaurant"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpValesGasolina", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impValesGasolina = :impValesGasolina"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpValesRopa", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impValesRopa = :impValesRopa"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpAyudaRenta", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaRenta = :impAyudaRenta"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpAyudaEscolar", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaEscolar = :impAyudaEscolar"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpAyudaAnteojos", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaAnteojos = :impAyudaAnteojos"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpAyudaTransporte", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaTransporte = :impAyudaTransporte"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpCuotaSindical", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impCuotaSindical = :impCuotaSindical"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpSubsidioIncapacidad", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impSubsidioIncapacidad = :impSubsidioIncapacidad"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpBecaTrabajadorHijo", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impBecaTrabajadorHijo = :impBecaTrabajadorHijo"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpOtrosIngresosXsalario", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impOtrosIngresosXsalario = :impOtrosIngresosXsalario"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpPagoOtroEmpleador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPagoOtroEmpleador = :impPagoOtroEmpleador"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpJubPenRetiro", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impJubPenRetiro = :impJubPenRetiro"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpOtrosPagosXseparacion", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impOtrosPagosXseparacion = :impOtrosPagosXseparacion"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByImpTotal", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impTotal = :impTotal"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByCveIdUsuario", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByFecRegistroAlta", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByFecRegistroBaja", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA1PercepTrabajador.findByFecRegistroActualizado", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findAll", query = "SELECT n FROM NdtA1PercepTrabajadorDO n"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByCveIdA1Perceptrab", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.cveIdA1Perceptrab = :cveIdA1Perceptrab"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByRegPatronal", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByNomPrimerApellidoTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.nomPrimerApellidoTrabajador = :nomPrimerApellidoTrabajador"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByNomSegundoAellidoTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.nomSegundoAellidoTrabajador = :nomSegundoAellidoTrabajador"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByNomNombreTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.nomNombreTrabajador = :nomNombreTrabajador"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByNumNssTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.numNssTrabajador = :numNssTrabajador"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByRfcTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.rfcTrabajador = :rfcTrabajador"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByCurpTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.curpTrabajador = :curpTrabajador"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpSueldosSalarios", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impSueldosSalarios = :impSueldosSalarios"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpGratificaciones", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impGratificaciones = :impGratificaciones"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpViaticos", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impViaticos = :impViaticos"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpTiempoExtra", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impTiempoExtra = :impTiempoExtra"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpPrimaVacacional", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPrimaVacacional = :impPrimaVacacional"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpPrimaDominical", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPrimaDominical = :impPrimaDominical"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpPtu", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPtu = :impPtu"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpReembolsoGm", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impReembolsoGm = :impReembolsoGm"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpFondoAhorro", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impFondoAhorro = :impFondoAhorro"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpCajaAhorro", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impCajaAhorro = :impCajaAhorro"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpValesDespensa", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impValesDespensa = :impValesDespensa"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpAyudaGf", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaGf = :impAyudaGf"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpContribucionPatron", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impContribucionPatron = :impContribucionPatron"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpPremioPuntualidad", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPremioPuntualidad = :impPremioPuntualidad"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpPremioAsistencia", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPremioAsistencia = :impPremioAsistencia"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpPrimaSeguroVida", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPrimaSeguroVida = :impPrimaSeguroVida"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpSeguroGmm", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impSeguroGmm = :impSeguroGmm"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpValesRestaurant", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impValesRestaurant = :impValesRestaurant"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpValesGasolina", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impValesGasolina = :impValesGasolina"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpValesRopa", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impValesRopa = :impValesRopa"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpAyudaRenta", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaRenta = :impAyudaRenta"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpAyudaEscolar", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaEscolar = :impAyudaEscolar"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpAyudaAnteojos", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaAnteojos = :impAyudaAnteojos"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpAyudaTransporte", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impAyudaTransporte = :impAyudaTransporte"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpCuotaSindical", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impCuotaSindical = :impCuotaSindical"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpSubsidioIncapacidad", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impSubsidioIncapacidad = :impSubsidioIncapacidad"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpBecaTrabajadorHijo", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impBecaTrabajadorHijo = :impBecaTrabajadorHijo"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpOtrosIngresosXsalario", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impOtrosIngresosXsalario = :impOtrosIngresosXsalario"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpPagoOtroEmpleador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impPagoOtroEmpleador = :impPagoOtroEmpleador"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpJubPenRetiro", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impJubPenRetiro = :impJubPenRetiro"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpOtrosPagosXseparacion", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impOtrosPagosXseparacion = :impOtrosPagosXseparacion"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByImpTotal", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.impTotal = :impTotal"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByCveIdUsuario", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA1PercepTrabajadorDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -82,7 +82,7 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A1_PERCEPTRAB", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA1Perceptrab;
+    private BigDecimal cveIdA1Perceptrab;
     @Size(max = 13)
     @Column(name = "REG_PATRONAL", length = 13)
     private String regPatronal;
@@ -105,69 +105,69 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
     @Column(name = "CURP_TRABAJADOR", length = 18)
     private String curpTrabajador;
     @Column(name = "IMP_SUELDOS_SALARIOS", precision = 14, scale = 2)
-    private Long impSueldosSalarios;
+    private BigDecimal impSueldosSalarios;
     @Column(name = "IMP_GRATIFICACIONES", precision = 14, scale = 2)
-    private Long impGratificaciones;
+    private BigDecimal impGratificaciones;
     @Column(name = "IMP_VIATICOS", precision = 14, scale = 2)
-    private Long impViaticos;
+    private BigDecimal impViaticos;
     @Column(name = "IMP_TIEMPO_EXTRA", precision = 14, scale = 2)
-    private Long impTiempoExtra;
+    private BigDecimal impTiempoExtra;
     @Column(name = "IMP_PRIMA_VACACIONAL", precision = 14, scale = 2)
-    private Long impPrimaVacacional;
+    private BigDecimal impPrimaVacacional;
     @Column(name = "IMP_PRIMA_DOMINICAL", precision = 14, scale = 2)
-    private Long impPrimaDominical;
+    private BigDecimal impPrimaDominical;
     @Column(name = "IMP_PTU", precision = 14, scale = 2)
-    private Long impPtu;
+    private BigDecimal impPtu;
     @Column(name = "IMP_REEMBOLSO_GM", precision = 14, scale = 2)
-    private Long impReembolsoGm;
+    private BigDecimal impReembolsoGm;
     @Column(name = "IMP_FONDO_AHORRO", precision = 14, scale = 2)
-    private Long impFondoAhorro;
+    private BigDecimal impFondoAhorro;
     @Column(name = "IMP_CAJA_AHORRO", precision = 14, scale = 2)
-    private Long impCajaAhorro;
+    private BigDecimal impCajaAhorro;
     @Column(name = "IMP_VALES_DESPENSA", precision = 14, scale = 2)
-    private Long impValesDespensa;
+    private BigDecimal impValesDespensa;
     @Column(name = "IMP_AYUDA_GF", precision = 14, scale = 2)
-    private Long impAyudaGf;
+    private BigDecimal impAyudaGf;
     @Column(name = "IMP_CONTRIBUCION_PATRON", precision = 14, scale = 2)
-    private Long impContribucionPatron;
+    private BigDecimal impContribucionPatron;
     @Column(name = "IMP_PREMIO_PUNTUALIDAD", precision = 14, scale = 2)
-    private Long impPremioPuntualidad;
+    private BigDecimal impPremioPuntualidad;
     @Column(name = "IMP_PREMIO_ASISTENCIA", precision = 14, scale = 2)
-    private Long impPremioAsistencia;
+    private BigDecimal impPremioAsistencia;
     @Column(name = "IMP_PRIMA_SEGURO_VIDA", precision = 14, scale = 2)
-    private Long impPrimaSeguroVida;
+    private BigDecimal impPrimaSeguroVida;
     @Column(name = "IMP_SEGURO_GMM", precision = 14, scale = 2)
-    private Long impSeguroGmm;
+    private BigDecimal impSeguroGmm;
     @Column(name = "IMP_VALES_RESTAURANT", precision = 14, scale = 2)
-    private Long impValesRestaurant;
+    private BigDecimal impValesRestaurant;
     @Column(name = "IMP_VALES_GASOLINA", precision = 14, scale = 2)
-    private Long impValesGasolina;
+    private BigDecimal impValesGasolina;
     @Column(name = "IMP_VALES_ROPA", precision = 14, scale = 2)
-    private Long impValesRopa;
+    private BigDecimal impValesRopa;
     @Column(name = "IMP_AYUDA_RENTA", precision = 14, scale = 2)
-    private Long impAyudaRenta;
+    private BigDecimal impAyudaRenta;
     @Column(name = "IMP_AYUDA_ESCOLAR", precision = 14, scale = 2)
-    private Long impAyudaEscolar;
+    private BigDecimal impAyudaEscolar;
     @Column(name = "IMP_AYUDA_ANTEOJOS", precision = 14, scale = 2)
-    private Long impAyudaAnteojos;
+    private BigDecimal impAyudaAnteojos;
     @Column(name = "IMP_AYUDA_TRANSPORTE", precision = 14, scale = 2)
-    private Long impAyudaTransporte;
+    private BigDecimal impAyudaTransporte;
     @Column(name = "IMP_CUOTA_SINDICAL", precision = 14, scale = 2)
-    private Long impCuotaSindical;
+    private BigDecimal impCuotaSindical;
     @Column(name = "IMP_SUBSIDIO_INCAPACIDAD", precision = 14, scale = 2)
-    private Long impSubsidioIncapacidad;
+    private BigDecimal impSubsidioIncapacidad;
     @Column(name = "IMP_BECA_TRABAJADOR_HIJO", precision = 14, scale = 2)
-    private Long impBecaTrabajadorHijo;
+    private BigDecimal impBecaTrabajadorHijo;
     @Column(name = "IMP_OTROS_INGRESOS_XSALARIO", precision = 14, scale = 2)
-    private Long impOtrosIngresosXsalario;
+    private BigDecimal impOtrosIngresosXsalario;
     @Column(name = "IMP_PAGO_OTRO_EMPLEADOR", precision = 14, scale = 2)
-    private Long impPagoOtroEmpleador;
+    private BigDecimal impPagoOtroEmpleador;
     @Column(name = "IMP_JUB_PEN_RETIRO", precision = 14, scale = 2)
-    private Long impJubPenRetiro;
+    private BigDecimal impJubPenRetiro;
     @Column(name = "IMP_OTROS_PAGOS_XSEPARACION", precision = 14, scale = 2)
-    private Long impOtrosPagosXseparacion;
+    private BigDecimal impOtrosPagosXseparacion;
     @Column(name = "IMP_TOTAL", precision = 14, scale = 2)
-    private Long impTotal;
+    private BigDecimal impTotal;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
@@ -180,22 +180,22 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA1PercepTrabajadorDO() {
     }
 
-    public NdtA1PercepTrabajadorDO(Long cveIdA1Perceptrab) {
+    public NdtA1PercepTrabajadorDO(BigDecimal cveIdA1Perceptrab) {
         this.cveIdA1Perceptrab = cveIdA1Perceptrab;
     }
 
-    public Long getCveIdA1Perceptrab() {
+    public BigDecimal getCveIdA1Perceptrab() {
         return cveIdA1Perceptrab;
     }
 
-    public void setCveIdA1Perceptrab(Long cveIdA1Perceptrab) {
+    public void setCveIdA1Perceptrab(BigDecimal cveIdA1Perceptrab) {
         this.cveIdA1Perceptrab = cveIdA1Perceptrab;
     }
 
@@ -255,259 +255,259 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
         this.curpTrabajador = curpTrabajador;
     }
 
-    public Long getImpSueldosSalarios() {
+    public BigDecimal getImpSueldosSalarios() {
         return impSueldosSalarios;
     }
 
-    public void setImpSueldosSalarios(Long impSueldosSalarios) {
+    public void setImpSueldosSalarios(BigDecimal impSueldosSalarios) {
         this.impSueldosSalarios = impSueldosSalarios;
     }
 
-    public Long getImpGratificaciones() {
+    public BigDecimal getImpGratificaciones() {
         return impGratificaciones;
     }
 
-    public void setImpGratificaciones(Long impGratificaciones) {
+    public void setImpGratificaciones(BigDecimal impGratificaciones) {
         this.impGratificaciones = impGratificaciones;
     }
 
-    public Long getImpViaticos() {
+    public BigDecimal getImpViaticos() {
         return impViaticos;
     }
 
-    public void setImpViaticos(Long impViaticos) {
+    public void setImpViaticos(BigDecimal impViaticos) {
         this.impViaticos = impViaticos;
     }
 
-    public Long getImpTiempoExtra() {
+    public BigDecimal getImpTiempoExtra() {
         return impTiempoExtra;
     }
 
-    public void setImpTiempoExtra(Long impTiempoExtra) {
+    public void setImpTiempoExtra(BigDecimal impTiempoExtra) {
         this.impTiempoExtra = impTiempoExtra;
     }
 
-    public Long getImpPrimaVacacional() {
+    public BigDecimal getImpPrimaVacacional() {
         return impPrimaVacacional;
     }
 
-    public void setImpPrimaVacacional(Long impPrimaVacacional) {
+    public void setImpPrimaVacacional(BigDecimal impPrimaVacacional) {
         this.impPrimaVacacional = impPrimaVacacional;
     }
 
-    public Long getImpPrimaDominical() {
+    public BigDecimal getImpPrimaDominical() {
         return impPrimaDominical;
     }
 
-    public void setImpPrimaDominical(Long impPrimaDominical) {
+    public void setImpPrimaDominical(BigDecimal impPrimaDominical) {
         this.impPrimaDominical = impPrimaDominical;
     }
 
-    public Long getImpPtu() {
+    public BigDecimal getImpPtu() {
         return impPtu;
     }
 
-    public void setImpPtu(Long impPtu) {
+    public void setImpPtu(BigDecimal impPtu) {
         this.impPtu = impPtu;
     }
 
-    public Long getImpReembolsoGm() {
+    public BigDecimal getImpReembolsoGm() {
         return impReembolsoGm;
     }
 
-    public void setImpReembolsoGm(Long impReembolsoGm) {
+    public void setImpReembolsoGm(BigDecimal impReembolsoGm) {
         this.impReembolsoGm = impReembolsoGm;
     }
 
-    public Long getImpFondoAhorro() {
+    public BigDecimal getImpFondoAhorro() {
         return impFondoAhorro;
     }
 
-    public void setImpFondoAhorro(Long impFondoAhorro) {
+    public void setImpFondoAhorro(BigDecimal impFondoAhorro) {
         this.impFondoAhorro = impFondoAhorro;
     }
 
-    public Long getImpCajaAhorro() {
+    public BigDecimal getImpCajaAhorro() {
         return impCajaAhorro;
     }
 
-    public void setImpCajaAhorro(Long impCajaAhorro) {
+    public void setImpCajaAhorro(BigDecimal impCajaAhorro) {
         this.impCajaAhorro = impCajaAhorro;
     }
 
-    public Long getImpValesDespensa() {
+    public BigDecimal getImpValesDespensa() {
         return impValesDespensa;
     }
 
-    public void setImpValesDespensa(Long impValesDespensa) {
+    public void setImpValesDespensa(BigDecimal impValesDespensa) {
         this.impValesDespensa = impValesDespensa;
     }
 
-    public Long getImpAyudaGf() {
+    public BigDecimal getImpAyudaGf() {
         return impAyudaGf;
     }
 
-    public void setImpAyudaGf(Long impAyudaGf) {
+    public void setImpAyudaGf(BigDecimal impAyudaGf) {
         this.impAyudaGf = impAyudaGf;
     }
 
-    public Long getImpContribucionPatron() {
+    public BigDecimal getImpContribucionPatron() {
         return impContribucionPatron;
     }
 
-    public void setImpContribucionPatron(Long impContribucionPatron) {
+    public void setImpContribucionPatron(BigDecimal impContribucionPatron) {
         this.impContribucionPatron = impContribucionPatron;
     }
 
-    public Long getImpPremioPuntualidad() {
+    public BigDecimal getImpPremioPuntualidad() {
         return impPremioPuntualidad;
     }
 
-    public void setImpPremioPuntualidad(Long impPremioPuntualidad) {
+    public void setImpPremioPuntualidad(BigDecimal impPremioPuntualidad) {
         this.impPremioPuntualidad = impPremioPuntualidad;
     }
 
-    public Long getImpPremioAsistencia() {
+    public BigDecimal getImpPremioAsistencia() {
         return impPremioAsistencia;
     }
 
-    public void setImpPremioAsistencia(Long impPremioAsistencia) {
+    public void setImpPremioAsistencia(BigDecimal impPremioAsistencia) {
         this.impPremioAsistencia = impPremioAsistencia;
     }
 
-    public Long getImpPrimaSeguroVida() {
+    public BigDecimal getImpPrimaSeguroVida() {
         return impPrimaSeguroVida;
     }
 
-    public void setImpPrimaSeguroVida(Long impPrimaSeguroVida) {
+    public void setImpPrimaSeguroVida(BigDecimal impPrimaSeguroVida) {
         this.impPrimaSeguroVida = impPrimaSeguroVida;
     }
 
-    public Long getImpSeguroGmm() {
+    public BigDecimal getImpSeguroGmm() {
         return impSeguroGmm;
     }
 
-    public void setImpSeguroGmm(Long impSeguroGmm) {
+    public void setImpSeguroGmm(BigDecimal impSeguroGmm) {
         this.impSeguroGmm = impSeguroGmm;
     }
 
-    public Long getImpValesRestaurant() {
+    public BigDecimal getImpValesRestaurant() {
         return impValesRestaurant;
     }
 
-    public void setImpValesRestaurant(Long impValesRestaurant) {
+    public void setImpValesRestaurant(BigDecimal impValesRestaurant) {
         this.impValesRestaurant = impValesRestaurant;
     }
 
-    public Long getImpValesGasolina() {
+    public BigDecimal getImpValesGasolina() {
         return impValesGasolina;
     }
 
-    public void setImpValesGasolina(Long impValesGasolina) {
+    public void setImpValesGasolina(BigDecimal impValesGasolina) {
         this.impValesGasolina = impValesGasolina;
     }
 
-    public Long getImpValesRopa() {
+    public BigDecimal getImpValesRopa() {
         return impValesRopa;
     }
 
-    public void setImpValesRopa(Long impValesRopa) {
+    public void setImpValesRopa(BigDecimal impValesRopa) {
         this.impValesRopa = impValesRopa;
     }
 
-    public Long getImpAyudaRenta() {
+    public BigDecimal getImpAyudaRenta() {
         return impAyudaRenta;
     }
 
-    public void setImpAyudaRenta(Long impAyudaRenta) {
+    public void setImpAyudaRenta(BigDecimal impAyudaRenta) {
         this.impAyudaRenta = impAyudaRenta;
     }
 
-    public Long getImpAyudaEscolar() {
+    public BigDecimal getImpAyudaEscolar() {
         return impAyudaEscolar;
     }
 
-    public void setImpAyudaEscolar(Long impAyudaEscolar) {
+    public void setImpAyudaEscolar(BigDecimal impAyudaEscolar) {
         this.impAyudaEscolar = impAyudaEscolar;
     }
 
-    public Long getImpAyudaAnteojos() {
+    public BigDecimal getImpAyudaAnteojos() {
         return impAyudaAnteojos;
     }
 
-    public void setImpAyudaAnteojos(Long impAyudaAnteojos) {
+    public void setImpAyudaAnteojos(BigDecimal impAyudaAnteojos) {
         this.impAyudaAnteojos = impAyudaAnteojos;
     }
 
-    public Long getImpAyudaTransporte() {
+    public BigDecimal getImpAyudaTransporte() {
         return impAyudaTransporte;
     }
 
-    public void setImpAyudaTransporte(Long impAyudaTransporte) {
+    public void setImpAyudaTransporte(BigDecimal impAyudaTransporte) {
         this.impAyudaTransporte = impAyudaTransporte;
     }
 
-    public Long getImpCuotaSindical() {
+    public BigDecimal getImpCuotaSindical() {
         return impCuotaSindical;
     }
 
-    public void setImpCuotaSindical(Long impCuotaSindical) {
+    public void setImpCuotaSindical(BigDecimal impCuotaSindical) {
         this.impCuotaSindical = impCuotaSindical;
     }
 
-    public Long getImpSubsidioIncapacidad() {
+    public BigDecimal getImpSubsidioIncapacidad() {
         return impSubsidioIncapacidad;
     }
 
-    public void setImpSubsidioIncapacidad(Long impSubsidioIncapacidad) {
+    public void setImpSubsidioIncapacidad(BigDecimal impSubsidioIncapacidad) {
         this.impSubsidioIncapacidad = impSubsidioIncapacidad;
     }
 
-    public Long getImpBecaTrabajadorHijo() {
+    public BigDecimal getImpBecaTrabajadorHijo() {
         return impBecaTrabajadorHijo;
     }
 
-    public void setImpBecaTrabajadorHijo(Long impBecaTrabajadorHijo) {
+    public void setImpBecaTrabajadorHijo(BigDecimal impBecaTrabajadorHijo) {
         this.impBecaTrabajadorHijo = impBecaTrabajadorHijo;
     }
 
-    public Long getImpOtrosIngresosXsalario() {
+    public BigDecimal getImpOtrosIngresosXsalario() {
         return impOtrosIngresosXsalario;
     }
 
-    public void setImpOtrosIngresosXsalario(Long impOtrosIngresosXsalario) {
+    public void setImpOtrosIngresosXsalario(BigDecimal impOtrosIngresosXsalario) {
         this.impOtrosIngresosXsalario = impOtrosIngresosXsalario;
     }
 
-    public Long getImpPagoOtroEmpleador() {
+    public BigDecimal getImpPagoOtroEmpleador() {
         return impPagoOtroEmpleador;
     }
 
-    public void setImpPagoOtroEmpleador(Long impPagoOtroEmpleador) {
+    public void setImpPagoOtroEmpleador(BigDecimal impPagoOtroEmpleador) {
         this.impPagoOtroEmpleador = impPagoOtroEmpleador;
     }
 
-    public Long getImpJubPenRetiro() {
+    public BigDecimal getImpJubPenRetiro() {
         return impJubPenRetiro;
     }
 
-    public void setImpJubPenRetiro(Long impJubPenRetiro) {
+    public void setImpJubPenRetiro(BigDecimal impJubPenRetiro) {
         this.impJubPenRetiro = impJubPenRetiro;
     }
 
-    public Long getImpOtrosPagosXseparacion() {
+    public BigDecimal getImpOtrosPagosXseparacion() {
         return impOtrosPagosXseparacion;
     }
 
-    public void setImpOtrosPagosXseparacion(Long impOtrosPagosXseparacion) {
+    public void setImpOtrosPagosXseparacion(BigDecimal impOtrosPagosXseparacion) {
         this.impOtrosPagosXseparacion = impOtrosPagosXseparacion;
     }
 
-    public Long getImpTotal() {
+    public BigDecimal getImpTotal() {
         return impTotal;
     }
 
-    public void setImpTotal(Long impTotal) {
+    public void setImpTotal(BigDecimal impTotal) {
         this.impTotal = impTotal;
     }
 
@@ -543,12 +543,12 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -573,7 +573,7 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA1PercepTrabajador[ cveIdA1Perceptrab=" + cveIdA1Perceptrab + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA1PercepTrabajadorDO[ cveIdA1Perceptrab=" + cveIdA1Perceptrab + " ]";
     }
     
 }

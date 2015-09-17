@@ -6,14 +6,17 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -39,10 +42,10 @@ public class NdcTipoRespuestaDO implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "CVE_ID_RESPUESTA")
-    private Long cveIdRespuesta;
+    @Column(name = "CVE_ID_RESPUESTA", nullable = false, precision = 22, scale = 0)
+    private BigDecimal cveIdRespuesta;
     @Size(max = 50)
-    @Column(name = "DES_TIPO_RESPUESTA")
+    @Column(name = "DES_TIPO_RESPUESTA", length = 50)
     private String desTipoRespuesta;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -53,19 +56,21 @@ public class NdcTipoRespuestaDO implements Serializable {
     @Column(name = "FEC_REGISTRO_BAJA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroBaja;
+    @OneToMany(mappedBy = "cveIdRespuesta", fetch = FetchType.LAZY)
+    private List<NdcOpcionPreguntaDO> ndcOpcionPreguntaDOList;
 
     public NdcTipoRespuestaDO() {
     }
 
-    public NdcTipoRespuestaDO(Long cveIdRespuesta) {
+    public NdcTipoRespuestaDO(BigDecimal cveIdRespuesta) {
         this.cveIdRespuesta = cveIdRespuesta;
     }
 
-    public Long getCveIdRespuesta() {
+    public BigDecimal getCveIdRespuesta() {
         return cveIdRespuesta;
     }
 
-    public void setCveIdRespuesta(Long cveIdRespuesta) {
+    public void setCveIdRespuesta(BigDecimal cveIdRespuesta) {
         this.cveIdRespuesta = cveIdRespuesta;
     }
 
@@ -101,6 +106,14 @@ public class NdcTipoRespuestaDO implements Serializable {
         this.fecRegistroBaja = fecRegistroBaja;
     }
 
+    public List<NdcOpcionPreguntaDO> getNdcOpcionPreguntaDOList() {
+        return ndcOpcionPreguntaDOList;
+    }
+
+    public void setNdcOpcionPreguntaDOList(List<NdcOpcionPreguntaDO> ndcOpcionPreguntaDOList) {
+        this.ndcOpcionPreguntaDOList = ndcOpcionPreguntaDOList;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -123,7 +136,7 @@ public class NdcTipoRespuestaDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdcTipoRespuesta_1[ cveIdRespuesta=" + cveIdRespuesta + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO[ cveIdRespuesta=" + cveIdRespuesta + " ]";
     }
     
 }

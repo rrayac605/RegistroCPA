@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -30,11 +30,11 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDC_ESTADO_CPA")
 @NamedQueries({
-    @NamedQuery(name = "NdcEstadoCpa.findAll", query = "SELECT n FROM NdcEstadoCpaDO n"),
-    @NamedQuery(name = "NdcEstadoCpa.findByCveIdEstadoCpa", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.cveIdEstadoCpa = :cveIdEstadoCpa"),
-    @NamedQuery(name = "NdcEstadoCpa.findByDesEstadoCpa", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.desEstadoCpa = :desEstadoCpa"),
-    @NamedQuery(name = "NdcEstadoCpa.findByFecRegistroAlta", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdcEstadoCpa.findByFecRegistroBaja", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
+    @NamedQuery(name = "NdcEstadoCpaDO.findAll", query = "SELECT n FROM NdcEstadoCpaDO n"),
+    @NamedQuery(name = "NdcEstadoCpaDO.findByCveIdEstadoCpa", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.cveIdEstadoCpa = :cveIdEstadoCpa"),
+    @NamedQuery(name = "NdcEstadoCpaDO.findByDesEstadoCpa", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.desEstadoCpa = :desEstadoCpa"),
+    @NamedQuery(name = "NdcEstadoCpaDO.findByFecRegistroAlta", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdcEstadoCpaDO.findByFecRegistroBaja", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
 public class NdcEstadoCpaDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -42,7 +42,7 @@ public class NdcEstadoCpaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ESTADO_CPA", nullable = false, precision = 22, scale = 0)
-    private Long cveIdEstadoCpa;
+    private BigDecimal cveIdEstadoCpa;
     @Size(max = 50)
     @Column(name = "DES_ESTADO_CPA", length = 50)
     private String desEstadoCpa;
@@ -53,22 +53,22 @@ public class NdcEstadoCpaDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroBaja;
     @OneToMany(mappedBy = "cveIdEstadoCpa", fetch = FetchType.LAZY)
-    private List<NdtContadorPublicoAutDO> ndtContadorPublicoAutList;
+    private List<NdtContadorPublicoAutDO> ndtContadorPublicoAutDOList;
     @OneToMany(mappedBy = "cveIdEstadoCpa", fetch = FetchType.LAZY)
-    private List<NdtCpaEstatusDO> ndtCpaEstatusList;
+    private List<NdtCpaEstatusDO> ndtCpaEstatusDOList;
 
     public NdcEstadoCpaDO() {
     }
 
-    public NdcEstadoCpaDO(Long cveIdEstadoCpa) {
+    public NdcEstadoCpaDO(BigDecimal cveIdEstadoCpa) {
         this.cveIdEstadoCpa = cveIdEstadoCpa;
     }
 
-    public Long getCveIdEstadoCpa() {
+    public BigDecimal getCveIdEstadoCpa() {
         return cveIdEstadoCpa;
     }
 
-    public void setCveIdEstadoCpa(Long cveIdEstadoCpa) {
+    public void setCveIdEstadoCpa(BigDecimal cveIdEstadoCpa) {
         this.cveIdEstadoCpa = cveIdEstadoCpa;
     }
 
@@ -96,20 +96,20 @@ public class NdcEstadoCpaDO implements Serializable {
         this.fecRegistroBaja = fecRegistroBaja;
     }
 
-    public List<NdtContadorPublicoAutDO> getNdtContadorPublicoAutList() {
-        return ndtContadorPublicoAutList;
+    public List<NdtContadorPublicoAutDO> getNdtContadorPublicoAutDOList() {
+        return ndtContadorPublicoAutDOList;
     }
 
-    public void setNdtContadorPublicoAutList(List<NdtContadorPublicoAutDO> ndtContadorPublicoAutList) {
-        this.ndtContadorPublicoAutList = ndtContadorPublicoAutList;
+    public void setNdtContadorPublicoAutDOList(List<NdtContadorPublicoAutDO> ndtContadorPublicoAutDOList) {
+        this.ndtContadorPublicoAutDOList = ndtContadorPublicoAutDOList;
     }
 
-    public List<NdtCpaEstatusDO> getNdtCpaEstatusList() {
-        return ndtCpaEstatusList;
+    public List<NdtCpaEstatusDO> getNdtCpaEstatusDOList() {
+        return ndtCpaEstatusDOList;
     }
 
-    public void setNdtCpaEstatusList(List<NdtCpaEstatusDO> ndtCpaEstatusList) {
-        this.ndtCpaEstatusList = ndtCpaEstatusList;
+    public void setNdtCpaEstatusDOList(List<NdtCpaEstatusDO> ndtCpaEstatusDOList) {
+        this.ndtCpaEstatusDOList = ndtCpaEstatusDOList;
     }
 
     @Override
@@ -134,7 +134,7 @@ public class NdcEstadoCpaDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdcEstadoCpa[ cveIdEstadoCpa=" + cveIdEstadoCpa + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdcEstadoCpaDO[ cveIdEstadoCpa=" + cveIdEstadoCpa + " ]";
     }
     
 }

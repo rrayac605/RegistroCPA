@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,16 +30,16 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A7_1_CE_PROCESO")
 @NamedQueries({
-    @NamedQuery(name = "NdtA71CeProceso.findAll", query = "SELECT n FROM NdtA71CeProcesoDO n"),
-    @NamedQuery(name = "NdtA71CeProceso.findByCveIdA71CeProceso", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.cveIdA71CeProceso = :cveIdA71CeProceso"),
-    @NamedQuery(name = "NdtA71CeProceso.findByRegPatronal", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA71CeProceso.findByDesProcesoInicialXct", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.desProcesoInicialXct = :desProcesoInicialXct"),
-    @NamedQuery(name = "NdtA71CeProceso.findByDesProcesoIntermedioXct", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.desProcesoIntermedioXct = :desProcesoIntermedioXct"),
-    @NamedQuery(name = "NdtA71CeProceso.findByDesProcesoFinalXct", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.desProcesoFinalXct = :desProcesoFinalXct"),
-    @NamedQuery(name = "NdtA71CeProceso.findByCveIdUsuario", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA71CeProceso.findByFecRegistroAlta", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA71CeProceso.findByFecRegistroBaja", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA71CeProceso.findByFecRegistroActualizado", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA71CeProcesoDO.findAll", query = "SELECT n FROM NdtA71CeProcesoDO n"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByCveIdA71CeProceso", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.cveIdA71CeProceso = :cveIdA71CeProceso"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByRegPatronal", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByDesProcesoInicialXct", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.desProcesoInicialXct = :desProcesoInicialXct"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByDesProcesoIntermedioXct", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.desProcesoIntermedioXct = :desProcesoIntermedioXct"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByDesProcesoFinalXct", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.desProcesoFinalXct = :desProcesoFinalXct"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByCveIdUsuario", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA71CeProcesoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA71CeProcesoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA71CeProcesoDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -47,9 +47,9 @@ public class NdtA71CeProcesoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A7_1_CE_PROCESO", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA71CeProceso;
-    @Size(max = 13)
-    @Column(name = "REG_PATRONAL", length = 13)
+    private BigDecimal cveIdA71CeProceso;
+    @Size(max = 11)
+    @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
     @Size(max = 1000)
     @Column(name = "DES_PROCESO_INICIAL_XCT", length = 1000)
@@ -60,8 +60,8 @@ public class NdtA71CeProcesoDO implements Serializable {
     @Size(max = 1000)
     @Column(name = "DES_PROCESO_FINAL_XCT", length = 1000)
     private String desProcesoFinalXct;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -72,22 +72,22 @@ public class NdtA71CeProcesoDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA71CeProcesoDO() {
     }
 
-    public NdtA71CeProcesoDO(Long cveIdA71CeProceso) {
+    public NdtA71CeProcesoDO(BigDecimal cveIdA71CeProceso) {
         this.cveIdA71CeProceso = cveIdA71CeProceso;
     }
 
-    public Long getCveIdA71CeProceso() {
+    public BigDecimal getCveIdA71CeProceso() {
         return cveIdA71CeProceso;
     }
 
-    public void setCveIdA71CeProceso(Long cveIdA71CeProceso) {
+    public void setCveIdA71CeProceso(BigDecimal cveIdA71CeProceso) {
         this.cveIdA71CeProceso = cveIdA71CeProceso;
     }
 
@@ -155,12 +155,12 @@ public class NdtA71CeProcesoDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -185,7 +185,7 @@ public class NdtA71CeProcesoDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA71CeProceso[ cveIdA71CeProceso=" + cveIdA71CeProceso + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA71CeProcesoDODO[ cveIdA71CeProceso=" + cveIdA71CeProceso + " ]";
     }
     
 }

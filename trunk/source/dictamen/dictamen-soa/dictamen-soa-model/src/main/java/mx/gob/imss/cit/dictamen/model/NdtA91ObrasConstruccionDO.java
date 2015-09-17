@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,30 +30,31 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A9_1_OBRAS_CONSTRUCCION")
 @NamedQueries({
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findAll", query = "SELECT n FROM NdtA91ObrasConstruccionDO n"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByCveIdA91ObrasConstruccion", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.cveIdA91ObrasConstruccion = :cveIdA91ObrasConstruccion"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByRfc", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.rfc = :rfc"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByRegPatronal", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByCalle", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.calle = :calle"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByNumExterior", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numExterior = :numExterior"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByNumInterior", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numInterior = :numInterior"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByColonia", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.colonia = :colonia"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByDelegacion", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.delegacion = :delegacion"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByCodigoPostal", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.codigoPostal = :codigoPostal"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByEntidadFederativa", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.entidadFederativa = :entidadFederativa"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByNumRegObraImss", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numRegObraImss = :numRegObraImss"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByFecInicioObra", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecInicioObra = :fecInicioObra"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByFecFinObra", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecFinObra = :fecFinObra"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByDesTipoFaseObra", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.desTipoFaseObra = :desTipoFaseObra"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByNumContrato", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numContrato = :numContrato"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByImpContratado", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.impContratado = :impContratado"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByNumSuperficieM2", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numSuperficieM2 = :numSuperficieM2"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByNumTrabajadores", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numTrabajadores = :numTrabajadores"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByImpTotalRemuneracionPagada", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.impTotalRemuneracionPagada = :impTotalRemuneracionPagada"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByCveIdUsuario", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByFecRegistroAlta", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByFecRegistroBaja", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA91ObrasConstruccion.findByFecRegistroActualizado", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findAll", query = "SELECT n FROM NdtA91ObrasConstruccionDO n"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByCveIdA91ObrasConstruccion", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.cveIdA91ObrasConstruccion = :cveIdA91ObrasConstruccion"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByRfc", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.rfc = :rfc"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByRegPatronal", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByCalle", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.calle = :calle"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByNumExterior", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numExterior = :numExterior"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByNumInterior", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numInterior = :numInterior"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByColonia", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.colonia = :colonia"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByDelegacion", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.delegacion = :delegacion"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByCodigoPostal", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.codigoPostal = :codigoPostal"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByEntidadFederativa", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.entidadFederativa = :entidadFederativa"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByNumRegObraImss", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numRegObraImss = :numRegObraImss"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByFecInicioObra", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecInicioObra = :fecInicioObra"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByFecFinObra", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecFinObra = :fecFinObra"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByDesTipoPrivadaPublica", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.desTipoPrivadaPublica = :desTipoPrivadaPublica"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByDesTipoFaseObra", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.desTipoFaseObra = :desTipoFaseObra"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByNumContrato", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numContrato = :numContrato"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByImpContratado", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.impContratado = :impContratado"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByNumSuperficieM2", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numSuperficieM2 = :numSuperficieM2"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByNumTrabajadores", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.numTrabajadores = :numTrabajadores"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByImpTotalRemuneracionPagada", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.impTotalRemuneracionPagada = :impTotalRemuneracionPagada"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByCveIdUsuario", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA91ObrasConstruccionDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA91ObrasConstruccionDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA91ObrasConstruccionDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -61,7 +62,7 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A9_1_OBRAS_CONSTRUCCION", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA91ObrasConstruccion;
+    private BigDecimal cveIdA91ObrasConstruccion;
     @Size(max = 13)
     @Column(name = "RFC", length = 13)
     private String rfc;
@@ -97,6 +98,9 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
     @Column(name = "FEC_FIN_OBRA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecFinObra;
+    @Size(max = 50)
+    @Column(name = "DES_TIPO_PRIVADA_PUBLICA", length = 50)
+    private String desTipoPrivadaPublica;
     @Size(max = 100)
     @Column(name = "DES_TIPO_FASE_OBRA", length = 100)
     private String desTipoFaseObra;
@@ -104,15 +108,15 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
     @Column(name = "NUM_CONTRATO", length = 20)
     private String numContrato;
     @Column(name = "IMP_CONTRATADO", precision = 14, scale = 2)
-    private Long impContratado;
+    private BigDecimal impContratado;
     @Column(name = "NUM_SUPERFICIE_M2")
     private Integer numSuperficieM2;
     @Column(name = "NUM_TRABAJADORES")
     private Integer numTrabajadores;
     @Column(name = "IMP_TOTAL_REMUNERACION_PAGADA", precision = 14, scale = 2)
-    private Long impTotalRemuneracionPagada;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    private BigDecimal impTotalRemuneracionPagada;
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -123,25 +127,22 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
-    @JoinColumn(name = "CVE_ID_CLASE_OBRA", referencedColumnName = "CVE_ID_CLASE_OBRA")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private NdcClaseObraDO cveIdClaseObra;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA91ObrasConstruccionDO() {
     }
 
-    public NdtA91ObrasConstruccionDO(Long cveIdA91ObrasConstruccion) {
+    public NdtA91ObrasConstruccionDO(BigDecimal cveIdA91ObrasConstruccion) {
         this.cveIdA91ObrasConstruccion = cveIdA91ObrasConstruccion;
     }
 
-    public Long getCveIdA91ObrasConstruccion() {
+    public BigDecimal getCveIdA91ObrasConstruccion() {
         return cveIdA91ObrasConstruccion;
     }
 
-    public void setCveIdA91ObrasConstruccion(Long cveIdA91ObrasConstruccion) {
+    public void setCveIdA91ObrasConstruccion(BigDecimal cveIdA91ObrasConstruccion) {
         this.cveIdA91ObrasConstruccion = cveIdA91ObrasConstruccion;
     }
 
@@ -241,6 +242,14 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
         this.fecFinObra = fecFinObra;
     }
 
+    public String getDesTipoPrivadaPublica() {
+        return desTipoPrivadaPublica;
+    }
+
+    public void setDesTipoPrivadaPublica(String desTipoPrivadaPublica) {
+        this.desTipoPrivadaPublica = desTipoPrivadaPublica;
+    }
+
     public String getDesTipoFaseObra() {
         return desTipoFaseObra;
     }
@@ -257,11 +266,11 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
         this.numContrato = numContrato;
     }
 
-    public Long getImpContratado() {
+    public BigDecimal getImpContratado() {
         return impContratado;
     }
 
-    public void setImpContratado(Long impContratado) {
+    public void setImpContratado(BigDecimal impContratado) {
         this.impContratado = impContratado;
     }
 
@@ -281,11 +290,11 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
         this.numTrabajadores = numTrabajadores;
     }
 
-    public Long getImpTotalRemuneracionPagada() {
+    public BigDecimal getImpTotalRemuneracionPagada() {
         return impTotalRemuneracionPagada;
     }
 
-    public void setImpTotalRemuneracionPagada(Long impTotalRemuneracionPagada) {
+    public void setImpTotalRemuneracionPagada(BigDecimal impTotalRemuneracionPagada) {
         this.impTotalRemuneracionPagada = impTotalRemuneracionPagada;
     }
 
@@ -321,20 +330,12 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
-    }
-
-    public NdcClaseObraDO getCveIdClaseObra() {
-        return cveIdClaseObra;
-    }
-
-    public void setCveIdClaseObra(NdcClaseObraDO cveIdClaseObra) {
-        this.cveIdClaseObra = cveIdClaseObra;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -359,7 +360,7 @@ public class NdtA91ObrasConstruccionDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA91ObrasConstruccion[ cveIdA91ObrasConstruccion=" + cveIdA91ObrasConstruccion + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA91ObrasConstruccionDO[ cveIdA91ObrasConstruccion=" + cveIdA91ObrasConstruccion + " ]";
     }
     
 }

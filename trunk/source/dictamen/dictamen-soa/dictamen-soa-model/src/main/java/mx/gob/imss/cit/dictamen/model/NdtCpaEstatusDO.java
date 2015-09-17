@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,16 +30,16 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_CPA_ESTATUS")
 @NamedQueries({
-    @NamedQuery(name = "NdtCpaEstatus.findAll", query = "SELECT n FROM NdtCpaEstatusDO n"),
-    @NamedQuery(name = "NdtCpaEstatus.findByCveIdEstatusCpa", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.cveIdEstatusCpa = :cveIdEstatusCpa"),
-    @NamedQuery(name = "NdtCpaEstatus.findByFecAutorizacionRechazo", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecAutorizacionRechazo = :fecAutorizacionRechazo"),
-    @NamedQuery(name = "NdtCpaEstatus.findByFecBaja", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecBaja = :fecBaja"),
-    @NamedQuery(name = "NdtCpaEstatus.findByDesComentarios", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.desComentarios = :desComentarios"),
-    @NamedQuery(name = "NdtCpaEstatus.findByFecFallecimiento", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecFallecimiento = :fecFallecimiento"),
-    @NamedQuery(name = "NdtCpaEstatus.findByFecRegistroAlta", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtCpaEstatus.findByFecRegistroBaja", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtCpaEstatus.findByFecRegistroActualizado", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtCpaEstatus.findByCveIdUsuario", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtCpaEstatusDO.findAll", query = "SELECT n FROM NdtCpaEstatusDO n"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByCveIdEstatusCpa", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.cveIdEstatusCpa = :cveIdEstatusCpa"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByFecAutorizacionRechazo", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecAutorizacionRechazo = :fecAutorizacionRechazo"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByFecBaja", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecBaja = :fecBaja"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByDesComentarios", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.desComentarios = :desComentarios"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByFecFallecimiento", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecFallecimiento = :fecFallecimiento"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByFecRegistroAlta", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByFecRegistroBaja", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtCpaEstatusDO.findByCveIdUsuario", query = "SELECT n FROM NdtCpaEstatusDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtCpaEstatusDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -47,7 +47,7 @@ public class NdtCpaEstatusDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ESTATUS_CPA", nullable = false, precision = 22, scale = 0)
-    private Long cveIdEstatusCpa;
+    private BigDecimal cveIdEstatusCpa;
     @Column(name = "FEC_AUTORIZACION_RECHAZO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecAutorizacionRechazo;
@@ -85,15 +85,15 @@ public class NdtCpaEstatusDO implements Serializable {
     public NdtCpaEstatusDO() {
     }
 
-    public NdtCpaEstatusDO(Long cveIdEstatusCpa) {
+    public NdtCpaEstatusDO(BigDecimal cveIdEstatusCpa) {
         this.cveIdEstatusCpa = cveIdEstatusCpa;
     }
 
-    public Long getCveIdEstatusCpa() {
+    public BigDecimal getCveIdEstatusCpa() {
         return cveIdEstatusCpa;
     }
 
-    public void setCveIdEstatusCpa(Long cveIdEstatusCpa) {
+    public void setCveIdEstatusCpa(BigDecimal cveIdEstatusCpa) {
         this.cveIdEstatusCpa = cveIdEstatusCpa;
     }
 
@@ -207,7 +207,7 @@ public class NdtCpaEstatusDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtCpaEstatus[ cveIdEstatusCpa=" + cveIdEstatusCpa + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtCpaEstatusDO[ cveIdEstatusCpa=" + cveIdEstatusCpa + " ]";
     }
     
 }
