@@ -85,6 +85,7 @@ public class AWSServiceImpl implements AWSService {
 			awsSecretKey = PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SECRET_KEY);
 			
 			awsPolicyTO.setExpiration(FechasUtils.dateToString_yyyy_MM_dd_T_HH_mm_ss_Z(fechaFirma));	
+			awsPolicyTO.setAcl(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACL));
 			awsPolicyTO.setBucket(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_BUCKET));
 			awsPolicyTO.setAwsAccessKeyId(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACCESS_KEY_ID));
 			awsPolicyTO.setSuccessActionStatus(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SUCCESS_ACTION_ESTATUS));
@@ -98,7 +99,7 @@ public class AWSServiceImpl implements AWSService {
 		
 			awsPolicyTO.setKey(rutaDestino);			
 			
-			String policy=POLICY_TEMPLATE.replaceAll(DictamenServicesConstants.CARACTER_SPACE, DictamenServicesConstants.CARACTER_VACIO);
+			String policy=POLICY_TEMPLATE.replaceAll(DictamenServicesConstants.CARACTER_SALTO, DictamenServicesConstants.CARACTER_VACIO);
 			policy=policy.replaceAll(EXPIRATION, awsPolicyTO.getExpiration())
 						.replaceAll(BUCKET, awsPolicyTO.getBucket())
 						.replaceAll(KEY, awsPolicyTO.getKey())
