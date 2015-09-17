@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,22 +30,23 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A9_2_OBRAS_SUBCONTRATA")
 @NamedQueries({
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findAll", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByCveIdA92ObrasSubcontrata", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.cveIdA92ObrasSubcontrata = :cveIdA92ObrasSubcontrata"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByRfc", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.rfc = :rfc"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByRegPatronal", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByNomNombreRazonsocial", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.nomNombreRazonsocial = :nomNombreRazonsocial"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByDesFaseConstruccion", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.desFaseConstruccion = :desFaseConstruccion"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByNumRegObraImssSubcontrata", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.numRegObraImssSubcontrata = :numRegObraImssSubcontrata"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByNumSuperficieM2", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.numSuperficieM2 = :numSuperficieM2"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByImpContratado", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.impContratado = :impContratado"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByFecInicioEjecucion", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecInicioEjecucion = :fecInicioEjecucion"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByFecFinEjecucion", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecFinEjecucion = :fecFinEjecucion"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByNumTrabajadoresParticipantes", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.numTrabajadoresParticipantes = :numTrabajadoresParticipantes"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByCveIdUsuario", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByFecRegistroAlta", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByFecRegistroBaja", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA92ObrasSubcontrata.findByFecRegistroActualizado", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findAll", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByCveIdA92ObrasSubcontrata", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.cveIdA92ObrasSubcontrata = :cveIdA92ObrasSubcontrata"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByNomNombreRazonsocial", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.nomNombreRazonsocial = :nomNombreRazonsocial"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByRfc", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.rfc = :rfc"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByRegPatronal", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByNumRegObraImss", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.numRegObraImss = :numRegObraImss"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByNumRegObraImssSubcontra", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.numRegObraImssSubcontra = :numRegObraImssSubcontra"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByDesFaseConstruccion", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.desFaseConstruccion = :desFaseConstruccion"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByNumSuperficieM2", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.numSuperficieM2 = :numSuperficieM2"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByImpContratado", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.impContratado = :impContratado"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByFecDelEjecucion", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecDelEjecucion = :fecDelEjecucion"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByFecAlEjecucion", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecAlEjecucion = :fecAlEjecucion"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByNumTrabajadoresParticipantes", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.numTrabajadoresParticipantes = :numTrabajadoresParticipantes"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByCveIdUsuario", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA92ObrasSubcontrataDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA92ObrasSubcontrataDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA92ObrasSubcontrataDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -53,36 +54,39 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A9_2_OBRAS_SUBCONTRATA", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA92ObrasSubcontrata;
+    private BigDecimal cveIdA92ObrasSubcontrata;
+    @Size(max = 255)
+    @Column(name = "NOM_NOMBRE_RAZONSOCIAL", length = 255)
+    private String nomNombreRazonsocial;
     @Size(max = 13)
     @Column(name = "RFC", length = 13)
     private String rfc;
     @Size(max = 11)
     @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
-    @Size(max = 255)
-    @Column(name = "NOM_NOMBRE_RAZONSOCIAL", length = 255)
-    private String nomNombreRazonsocial;
+    @Size(max = 20)
+    @Column(name = "NUM_REG_OBRA_IMSS", length = 20)
+    private String numRegObraImss;
+    @Size(max = 20)
+    @Column(name = "NUM_REG_OBRA_IMSS_SUBCONTRA", length = 20)
+    private String numRegObraImssSubcontra;
     @Size(max = 255)
     @Column(name = "DES_FASE_CONSTRUCCION", length = 255)
     private String desFaseConstruccion;
-    @Size(max = 18)
-    @Column(name = "NUM_REG_OBRA_IMSS_SUBCONTRATA", length = 18)
-    private String numRegObraImssSubcontrata;
     @Column(name = "NUM_SUPERFICIE_M2")
     private Long numSuperficieM2;
     @Column(name = "IMP_CONTRATADO", precision = 15, scale = 2)
-    private Long impContratado;
-    @Column(name = "FEC_INICIO_EJECUCION")
+    private BigDecimal impContratado;
+    @Column(name = "FEC_DEL_EJECUCION")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecInicioEjecucion;
-    @Column(name = "FEC_FIN_EJECUCION")
+    private Date fecDelEjecucion;
+    @Column(name = "FEC_AL_EJECUCION")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecFinEjecucion;
+    private Date fecAlEjecucion;
     @Column(name = "NUM_TRABAJADORES_PARTICIPANTES")
     private Integer numTrabajadoresParticipantes;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -93,23 +97,31 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA92ObrasSubcontrataDO() {
     }
 
-    public NdtA92ObrasSubcontrataDO(Long cveIdA92ObrasSubcontrata) {
+    public NdtA92ObrasSubcontrataDO(BigDecimal cveIdA92ObrasSubcontrata) {
         this.cveIdA92ObrasSubcontrata = cveIdA92ObrasSubcontrata;
     }
 
-    public Long getCveIdA92ObrasSubcontrata() {
+    public BigDecimal getCveIdA92ObrasSubcontrata() {
         return cveIdA92ObrasSubcontrata;
     }
 
-    public void setCveIdA92ObrasSubcontrata(Long cveIdA92ObrasSubcontrata) {
+    public void setCveIdA92ObrasSubcontrata(BigDecimal cveIdA92ObrasSubcontrata) {
         this.cveIdA92ObrasSubcontrata = cveIdA92ObrasSubcontrata;
+    }
+
+    public String getNomNombreRazonsocial() {
+        return nomNombreRazonsocial;
+    }
+
+    public void setNomNombreRazonsocial(String nomNombreRazonsocial) {
+        this.nomNombreRazonsocial = nomNombreRazonsocial;
     }
 
     public String getRfc() {
@@ -128,12 +140,20 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
         this.regPatronal = regPatronal;
     }
 
-    public String getNomNombreRazonsocial() {
-        return nomNombreRazonsocial;
+    public String getNumRegObraImss() {
+        return numRegObraImss;
     }
 
-    public void setNomNombreRazonsocial(String nomNombreRazonsocial) {
-        this.nomNombreRazonsocial = nomNombreRazonsocial;
+    public void setNumRegObraImss(String numRegObraImss) {
+        this.numRegObraImss = numRegObraImss;
+    }
+
+    public String getNumRegObraImssSubcontra() {
+        return numRegObraImssSubcontra;
+    }
+
+    public void setNumRegObraImssSubcontra(String numRegObraImssSubcontra) {
+        this.numRegObraImssSubcontra = numRegObraImssSubcontra;
     }
 
     public String getDesFaseConstruccion() {
@@ -144,14 +164,6 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
         this.desFaseConstruccion = desFaseConstruccion;
     }
 
-    public String getNumRegObraImssSubcontrata() {
-        return numRegObraImssSubcontrata;
-    }
-
-    public void setNumRegObraImssSubcontrata(String numRegObraImssSubcontrata) {
-        this.numRegObraImssSubcontrata = numRegObraImssSubcontrata;
-    }
-
     public Long getNumSuperficieM2() {
         return numSuperficieM2;
     }
@@ -160,28 +172,28 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
         this.numSuperficieM2 = numSuperficieM2;
     }
 
-    public Long getImpContratado() {
+    public BigDecimal getImpContratado() {
         return impContratado;
     }
 
-    public void setImpContratado(Long impContratado) {
+    public void setImpContratado(BigDecimal impContratado) {
         this.impContratado = impContratado;
     }
 
-    public Date getFecInicioEjecucion() {
-        return fecInicioEjecucion;
+    public Date getFecDelEjecucion() {
+        return fecDelEjecucion;
     }
 
-    public void setFecInicioEjecucion(Date fecInicioEjecucion) {
-        this.fecInicioEjecucion = fecInicioEjecucion;
+    public void setFecDelEjecucion(Date fecDelEjecucion) {
+        this.fecDelEjecucion = fecDelEjecucion;
     }
 
-    public Date getFecFinEjecucion() {
-        return fecFinEjecucion;
+    public Date getFecAlEjecucion() {
+        return fecAlEjecucion;
     }
 
-    public void setFecFinEjecucion(Date fecFinEjecucion) {
-        this.fecFinEjecucion = fecFinEjecucion;
+    public void setFecAlEjecucion(Date fecAlEjecucion) {
+        this.fecAlEjecucion = fecAlEjecucion;
     }
 
     public Integer getNumTrabajadoresParticipantes() {
@@ -224,12 +236,12 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -254,7 +266,7 @@ public class NdtA92ObrasSubcontrataDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA92ObrasSubcontrata[ cveIdA92ObrasSubcontrata=" + cveIdA92ObrasSubcontrata + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA92ObrasSubcontrataDO[ cveIdA92ObrasSubcontrata=" + cveIdA92ObrasSubcontrata + " ]";
     }
     
 }

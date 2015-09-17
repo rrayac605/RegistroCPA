@@ -84,13 +84,26 @@
 	 -->		 
 			 
 		 
-			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
+<!-- 			
+            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb" />
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="eclipselink.ddl-generation.output-mode" value="database" />
 			<property name="eclipselink.ddl-generation" value="create-tables" />
 			<property name="eclipselink.logging.level" value="FINE" />
+ -->
+ 
+ 
+		    <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@172.16.8.166:1630:bdtu2" />
+			<property name="javax.persistence.jdbc.user" value="MGPNDIC1" />
+			<property name="javax.persistence.jdbc.password" value="MGPnd1cI" />
+			<property name="eclipselink.logging.level" value="FINE" />
+
+
+
+
 
 		</properties>
 	</persistence-unit>

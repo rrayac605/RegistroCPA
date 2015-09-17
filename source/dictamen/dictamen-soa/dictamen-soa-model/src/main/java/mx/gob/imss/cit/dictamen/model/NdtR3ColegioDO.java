@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,13 +30,13 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_R3_COLEGIO")
 @NamedQueries({
-    @NamedQuery(name = "NdtR3Colegio.findAll", query = "SELECT n FROM NdtR3ColegioDO n"),
-    @NamedQuery(name = "NdtR3Colegio.findByCveIdR3ColegioXcontador", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.cveIdR3ColegioXcontador = :cveIdR3ColegioXcontador"),
-    @NamedQuery(name = "NdtR3Colegio.findByCveIdUsuario", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtR3Colegio.findByUrlAcuseNotaria", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.urlAcuseNotaria = :urlAcuseNotaria"),
-    @NamedQuery(name = "NdtR3Colegio.findByNumTramiteNotaria", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.numTramiteNotaria = :numTramiteNotaria"),
-    @NamedQuery(name = "NdtR3Colegio.findByFecRegistroAlta", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtR3Colegio.findByFecRegistroBaja", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
+    @NamedQuery(name = "NdtR3ColegioDO.findAll", query = "SELECT n FROM NdtR3ColegioDO n"),
+    @NamedQuery(name = "NdtR3ColegioDO.findByCveIdR3ColegioXcontador", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.cveIdR3ColegioXcontador = :cveIdR3ColegioXcontador"),
+    @NamedQuery(name = "NdtR3ColegioDO.findByCveIdUsuario", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtR3ColegioDO.findByUrlAcuseNotaria", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.urlAcuseNotaria = :urlAcuseNotaria"),
+    @NamedQuery(name = "NdtR3ColegioDO.findByNumTramiteNotaria", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.numTramiteNotaria = :numTramiteNotaria"),
+    @NamedQuery(name = "NdtR3ColegioDO.findByFecRegistroAlta", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtR3ColegioDO.findByFecRegistroBaja", query = "SELECT n FROM NdtR3ColegioDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
 public class NdtR3ColegioDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -44,7 +44,7 @@ public class NdtR3ColegioDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R3_COLEGIO_XCONTADOR_", nullable = false, precision = 22, scale = 0)
-    private Long cveIdR3ColegioXcontador;
+    private BigDecimal cveIdR3ColegioXcontador;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
@@ -73,15 +73,15 @@ public class NdtR3ColegioDO implements Serializable {
     public NdtR3ColegioDO() {
     }
 
-    public NdtR3ColegioDO(Long cveIdR3ColegioXcontador) {
+    public NdtR3ColegioDO(BigDecimal cveIdR3ColegioXcontador) {
         this.cveIdR3ColegioXcontador = cveIdR3ColegioXcontador;
     }
 
-    public Long getCveIdR3ColegioXcontador() {
+    public BigDecimal getCveIdR3ColegioXcontador() {
         return cveIdR3ColegioXcontador;
     }
 
-    public void setCveIdR3ColegioXcontador(Long cveIdR3ColegioXcontador) {
+    public void setCveIdR3ColegioXcontador(BigDecimal cveIdR3ColegioXcontador) {
         this.cveIdR3ColegioXcontador = cveIdR3ColegioXcontador;
     }
 
@@ -171,7 +171,7 @@ public class NdtR3ColegioDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtR3Colegio[ cveIdR3ColegioXcontador=" + cveIdR3ColegioXcontador + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtR3ColegioDO[ cveIdR3ColegioXcontador=" + cveIdR3ColegioXcontador + " ]";
     }
     
 }

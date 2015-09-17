@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,22 +30,22 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A2_OTRA_PREST_OTORGADA")
 @NamedQueries({
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findAll", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByCveIdA2Otraspresotorgadas", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.cveIdA2Otraspresotorgadas = :cveIdA2Otraspresotorgadas"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpInstrumentosTrabajo", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impInstrumentosTrabajo = :impInstrumentosTrabajo"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpGastosPrevisionSocial", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impGastosPrevisionSocial = :impGastosPrevisionSocial"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpAlimentacion", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impAlimentacion = :impAlimentacion"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpHabitacion", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impHabitacion = :impHabitacion"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpAportacionAdicionalRcv", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impAportacionAdicionalRcv = :impAportacionAdicionalRcv"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpCuotaObrera", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impCuotaObrera = :impCuotaObrera"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpCuotaPatronal", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impCuotaPatronal = :impCuotaPatronal"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpFondoPensiones", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impFondoPensiones = :impFondoPensiones"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpOtrasPrestaciones", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impOtrasPrestaciones = :impOtrasPrestaciones"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByImpTotal", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impTotal = :impTotal"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByCveIdUsuario", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByFecRegistroAlta", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByFecRegistroBaja", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA2OtraPrestOtorgada.findByFecRegistroActualizado", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findAll", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByCveIdA2Otraspresotorgadas", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.cveIdA2Otraspresotorgadas = :cveIdA2Otraspresotorgadas"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpInstrumentosTrabajo", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impInstrumentosTrabajo = :impInstrumentosTrabajo"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpGastosPrevisionSocial", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impGastosPrevisionSocial = :impGastosPrevisionSocial"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpAlimentacion", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impAlimentacion = :impAlimentacion"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpHabitacion", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impHabitacion = :impHabitacion"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpAportacionAdicionalRcv", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impAportacionAdicionalRcv = :impAportacionAdicionalRcv"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpCuotaObrera", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impCuotaObrera = :impCuotaObrera"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpCuotaPatronalInfonavit", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impCuotaPatronalInfonavit = :impCuotaPatronalInfonavit"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpFondoPensiones", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impFondoPensiones = :impFondoPensiones"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpOtrasPrestaciones", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impOtrasPrestaciones = :impOtrasPrestaciones"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByImpTotal", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.impTotal = :impTotal"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByCveIdUsuario", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA2OtraPrestOtorgadaDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA2OtraPrestOtorgadaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA2OtraPrestOtorgadaDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -53,27 +53,27 @@ public class NdtA2OtraPrestOtorgadaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A2_OTRASPRESOTORGADAS", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA2Otraspresotorgadas;
+    private BigDecimal cveIdA2Otraspresotorgadas;
     @Column(name = "IMP_INSTRUMENTOS_TRABAJO", precision = 14, scale = 2)
-    private Long impInstrumentosTrabajo;
+    private BigDecimal impInstrumentosTrabajo;
     @Column(name = "IMP_GASTOS_PREVISION_SOCIAL", precision = 14, scale = 2)
-    private Long impGastosPrevisionSocial;
+    private BigDecimal impGastosPrevisionSocial;
     @Column(name = "IMP_ALIMENTACION", precision = 14, scale = 2)
-    private Long impAlimentacion;
+    private BigDecimal impAlimentacion;
     @Column(name = "IMP_HABITACION", precision = 14, scale = 2)
-    private Long impHabitacion;
+    private BigDecimal impHabitacion;
     @Column(name = "IMP_APORTACION_ADICIONAL_RCV", precision = 14, scale = 2)
-    private Long impAportacionAdicionalRcv;
+    private BigDecimal impAportacionAdicionalRcv;
     @Column(name = "IMP_CUOTA_OBRERA", precision = 14, scale = 2)
-    private Long impCuotaObrera;
-    @Column(name = "IMP_CUOTA_PATRONAL", precision = 14, scale = 2)
-    private Long impCuotaPatronal;
+    private BigDecimal impCuotaObrera;
+    @Column(name = "IMP_CUOTA_PATRONAL_INFONAVIT", precision = 14, scale = 2)
+    private BigDecimal impCuotaPatronalInfonavit;
     @Column(name = "IMP_FONDO_PENSIONES", precision = 14, scale = 2)
-    private Long impFondoPensiones;
+    private BigDecimal impFondoPensiones;
     @Column(name = "IMP_OTRAS_PRESTACIONES", precision = 14, scale = 2)
-    private Long impOtrasPrestaciones;
+    private BigDecimal impOtrasPrestaciones;
     @Column(name = "IMP_TOTAL", precision = 14, scale = 2)
-    private Long impTotal;
+    private BigDecimal impTotal;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
@@ -86,102 +86,102 @@ public class NdtA2OtraPrestOtorgadaDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA2OtraPrestOtorgadaDO() {
     }
 
-    public NdtA2OtraPrestOtorgadaDO(Long cveIdA2Otraspresotorgadas) {
+    public NdtA2OtraPrestOtorgadaDO(BigDecimal cveIdA2Otraspresotorgadas) {
         this.cveIdA2Otraspresotorgadas = cveIdA2Otraspresotorgadas;
     }
 
-    public Long getCveIdA2Otraspresotorgadas() {
+    public BigDecimal getCveIdA2Otraspresotorgadas() {
         return cveIdA2Otraspresotorgadas;
     }
 
-    public void setCveIdA2Otraspresotorgadas(Long cveIdA2Otraspresotorgadas) {
+    public void setCveIdA2Otraspresotorgadas(BigDecimal cveIdA2Otraspresotorgadas) {
         this.cveIdA2Otraspresotorgadas = cveIdA2Otraspresotorgadas;
     }
 
-    public Long getImpInstrumentosTrabajo() {
+    public BigDecimal getImpInstrumentosTrabajo() {
         return impInstrumentosTrabajo;
     }
 
-    public void setImpInstrumentosTrabajo(Long impInstrumentosTrabajo) {
+    public void setImpInstrumentosTrabajo(BigDecimal impInstrumentosTrabajo) {
         this.impInstrumentosTrabajo = impInstrumentosTrabajo;
     }
 
-    public Long getImpGastosPrevisionSocial() {
+    public BigDecimal getImpGastosPrevisionSocial() {
         return impGastosPrevisionSocial;
     }
 
-    public void setImpGastosPrevisionSocial(Long impGastosPrevisionSocial) {
+    public void setImpGastosPrevisionSocial(BigDecimal impGastosPrevisionSocial) {
         this.impGastosPrevisionSocial = impGastosPrevisionSocial;
     }
 
-    public Long getImpAlimentacion() {
+    public BigDecimal getImpAlimentacion() {
         return impAlimentacion;
     }
 
-    public void setImpAlimentacion(Long impAlimentacion) {
+    public void setImpAlimentacion(BigDecimal impAlimentacion) {
         this.impAlimentacion = impAlimentacion;
     }
 
-    public Long getImpHabitacion() {
+    public BigDecimal getImpHabitacion() {
         return impHabitacion;
     }
 
-    public void setImpHabitacion(Long impHabitacion) {
+    public void setImpHabitacion(BigDecimal impHabitacion) {
         this.impHabitacion = impHabitacion;
     }
 
-    public Long getImpAportacionAdicionalRcv() {
+    public BigDecimal getImpAportacionAdicionalRcv() {
         return impAportacionAdicionalRcv;
     }
 
-    public void setImpAportacionAdicionalRcv(Long impAportacionAdicionalRcv) {
+    public void setImpAportacionAdicionalRcv(BigDecimal impAportacionAdicionalRcv) {
         this.impAportacionAdicionalRcv = impAportacionAdicionalRcv;
     }
 
-    public Long getImpCuotaObrera() {
+    public BigDecimal getImpCuotaObrera() {
         return impCuotaObrera;
     }
 
-    public void setImpCuotaObrera(Long impCuotaObrera) {
+    public void setImpCuotaObrera(BigDecimal impCuotaObrera) {
         this.impCuotaObrera = impCuotaObrera;
     }
 
-    public Long getImpCuotaPatronal() {
-        return impCuotaPatronal;
+    public BigDecimal getImpCuotaPatronalInfonavit() {
+        return impCuotaPatronalInfonavit;
     }
 
-    public void setImpCuotaPatronal(Long impCuotaPatronal) {
-        this.impCuotaPatronal = impCuotaPatronal;
+    public void setImpCuotaPatronalInfonavit(BigDecimal impCuotaPatronalInfonavit) {
+        this.impCuotaPatronalInfonavit = impCuotaPatronalInfonavit;
     }
 
-    public Long getImpFondoPensiones() {
+    public BigDecimal getImpFondoPensiones() {
         return impFondoPensiones;
     }
 
-    public void setImpFondoPensiones(Long impFondoPensiones) {
+    public void setImpFondoPensiones(BigDecimal impFondoPensiones) {
         this.impFondoPensiones = impFondoPensiones;
     }
 
-    public Long getImpOtrasPrestaciones() {
+    public BigDecimal getImpOtrasPrestaciones() {
         return impOtrasPrestaciones;
     }
 
-    public void setImpOtrasPrestaciones(Long impOtrasPrestaciones) {
+    public void setImpOtrasPrestaciones(BigDecimal impOtrasPrestaciones) {
         this.impOtrasPrestaciones = impOtrasPrestaciones;
     }
 
-    public Long getImpTotal() {
+    public BigDecimal getImpTotal() {
         return impTotal;
     }
 
-    public void setImpTotal(Long impTotal) {
+    public void setImpTotal(BigDecimal impTotal) {
         this.impTotal = impTotal;
     }
 
@@ -217,12 +217,12 @@ public class NdtA2OtraPrestOtorgadaDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -247,7 +247,7 @@ public class NdtA2OtraPrestOtorgadaDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA2OtraPrestOtorgada[ cveIdA2Otraspresotorgadas=" + cveIdA2Otraspresotorgadas + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA2OtraPrestOtorgadaDO[ cveIdA2Otraspresotorgadas=" + cveIdA2Otraspresotorgadas + " ]";
     }
     
 }

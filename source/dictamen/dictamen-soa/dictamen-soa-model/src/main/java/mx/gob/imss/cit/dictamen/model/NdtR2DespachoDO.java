@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -33,17 +34,18 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_R2_DESPACHO")
 @NamedQueries({
-    @NamedQuery(name = "NdtR2Despacho.findAll", query = "SELECT n FROM NdtR2DespachoDO n"),
-    @NamedQuery(name = "NdtR2Despacho.findByCveIdR2Despacho", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cveIdR2Despacho = :cveIdR2Despacho"),
-    @NamedQuery(name = "NdtR2Despacho.findByFecActivacion", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecActivacion = :fecActivacion"),
-    @NamedQuery(name = "NdtR2Despacho.findByIndActivo", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.indActivo = :indActivo"),
-    @NamedQuery(name = "NdtR2Despacho.findByIndTipoCpa", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.indTipoCpa = :indTipoCpa"),
-    @NamedQuery(name = "NdtR2Despacho.findByNumTrabajadoresContratados", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.numTrabajadoresContratados = :numTrabajadoresContratados"),
-    @NamedQuery(name = "NdtR2Despacho.findByCargoQueDesempena", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cargoQueDesempena = :cargoQueDesempena"),
-    @NamedQuery(name = "NdtR2Despacho.findByFecRegistroAlta", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtR2Despacho.findByFecRegistroBaja", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtR2Despacho.findByFecRegistroActualizado", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtR2Despacho.findByCveIdUsuario", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtR2DespachoDO.findAll", query = "SELECT n FROM NdtR2DespachoDO n"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByCveIdR2Despacho", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cveIdR2Despacho = :cveIdR2Despacho"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByFecActivacion", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecActivacion = :fecActivacion"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByIndActivo", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.indActivo = :indActivo"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByIndTipoCpa", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.indTipoCpa = :indTipoCpa"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByNumTrabajadoresContratados", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.numTrabajadoresContratados = :numTrabajadoresContratados"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByCargoQueDesempena", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cargoQueDesempena = :cargoQueDesempena"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByFecRegistroAlta", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByFecRegistroBaja", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByCveIdUsuario", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtR2DespachoDO.findByIndCuentaconTrab", query = "SELECT n FROM NdtR2DespachoDO n WHERE n.indCuentaconTrab = :indCuentaconTrab")})
 public class NdtR2DespachoDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -51,7 +53,7 @@ public class NdtR2DespachoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R2_DESPACHO", nullable = false, precision = 22, scale = 0)
-    private Long cveIdR2Despacho;
+    private BigDecimal cveIdR2Despacho;
     @Column(name = "FEC_ACTIVACION")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecActivacion;
@@ -76,6 +78,9 @@ public class NdtR2DespachoDO implements Serializable {
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
+    @Size(max = 2)
+    @Column(name = "IND_CUENTACON_TRAB", length = 2)
+    private String indCuentaconTrab;
     @JoinColumn(name = "CVE_ID_DESPACHO", referencedColumnName = "CVE_ID_DESPACHO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtDespachosDO cveIdDespacho;
@@ -86,20 +91,20 @@ public class NdtR2DespachoDO implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private NdtContadorPublicoAutDO cveIdCpa;
     @OneToMany(mappedBy = "cveIdR2Despacho", fetch = FetchType.LAZY)
-    private List<NdtR2FormacontactoDO> ndtR2FormacontactoList;
+    private List<NdtR2FormacontactoDO> ndtR2FormacontactoDOList;
 
     public NdtR2DespachoDO() {
     }
 
-    public NdtR2DespachoDO(Long cveIdR2Despacho) {
+    public NdtR2DespachoDO(BigDecimal cveIdR2Despacho) {
         this.cveIdR2Despacho = cveIdR2Despacho;
     }
 
-    public Long getCveIdR2Despacho() {
+    public BigDecimal getCveIdR2Despacho() {
         return cveIdR2Despacho;
     }
 
-    public void setCveIdR2Despacho(Long cveIdR2Despacho) {
+    public void setCveIdR2Despacho(BigDecimal cveIdR2Despacho) {
         this.cveIdR2Despacho = cveIdR2Despacho;
     }
 
@@ -175,6 +180,14 @@ public class NdtR2DespachoDO implements Serializable {
         this.cveIdUsuario = cveIdUsuario;
     }
 
+    public String getIndCuentaconTrab() {
+        return indCuentaconTrab;
+    }
+
+    public void setIndCuentaconTrab(String indCuentaconTrab) {
+        this.indCuentaconTrab = indCuentaconTrab;
+    }
+
     public NdtDespachosDO getCveIdDespacho() {
         return cveIdDespacho;
     }
@@ -199,12 +212,12 @@ public class NdtR2DespachoDO implements Serializable {
         this.cveIdCpa = cveIdCpa;
     }
 
-    public List<NdtR2FormacontactoDO> getNdtR2FormacontactoList() {
-        return ndtR2FormacontactoList;
+    public List<NdtR2FormacontactoDO> getNdtR2FormacontactoDOList() {
+        return ndtR2FormacontactoDOList;
     }
 
-    public void setNdtR2FormacontactoList(List<NdtR2FormacontactoDO> ndtR2FormacontactoList) {
-        this.ndtR2FormacontactoList = ndtR2FormacontactoList;
+    public void setNdtR2FormacontactoDOList(List<NdtR2FormacontactoDO> ndtR2FormacontactoDOList) {
+        this.ndtR2FormacontactoDOList = ndtR2FormacontactoDOList;
     }
 
     @Override
@@ -229,7 +242,7 @@ public class NdtR2DespachoDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtR2Despacho[ cveIdR2Despacho=" + cveIdR2Despacho + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtR2DespachoDO[ cveIdR2Despacho=" + cveIdR2Despacho + " ]";
     }
-    
+
 }

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -30,21 +30,21 @@ import javax.validation.constraints.Size;
  * @author ajfuentes
  */
 @Entity
-@Table(name = "NDT_OPCION_PREGUNTA")
+@Table(name = "NDC_OPCION_PREGUNTA")
 @NamedQueries({
-    @NamedQuery(name = "NdtOpcionPregunta.findAll", query = "SELECT n FROM NdtOpcionPreguntaDO n"),
-    @NamedQuery(name = "NdtOpcionPregunta.findByCveIdOpcionPregunta", query = "SELECT n FROM NdtOpcionPreguntaDO n WHERE n.cveIdOpcionPregunta = :cveIdOpcionPregunta"),
-    @NamedQuery(name = "NdtOpcionPregunta.findByDesOpcionPregunta", query = "SELECT n FROM NdtOpcionPreguntaDO n WHERE n.desOpcionPregunta = :desOpcionPregunta"),
-    @NamedQuery(name = "NdtOpcionPregunta.findByFecAltaRegistro", query = "SELECT n FROM NdtOpcionPreguntaDO n WHERE n.fecAltaRegistro = :fecAltaRegistro"),
-    @NamedQuery(name = "NdtOpcionPregunta.findByFecBajaRegistro", query = "SELECT n FROM NdtOpcionPreguntaDO n WHERE n.fecBajaRegistro = :fecBajaRegistro")})
-public class NdtOpcionPreguntaDO implements Serializable {
+    @NamedQuery(name = "NdcOpcionPreguntaDO.findAll", query = "SELECT n FROM NdcOpcionPreguntaDO n"),
+    @NamedQuery(name = "NdcOpcionPreguntaDO.findByCveIdOpcionPregunta", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.cveIdOpcionPregunta = :cveIdOpcionPregunta"),
+    @NamedQuery(name = "NdcOpcionPreguntaDO.findByDesOpcionPregunta", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.desOpcionPregunta = :desOpcionPregunta"),
+    @NamedQuery(name = "NdcOpcionPreguntaDO.findByFecAltaRegistro", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.fecAltaRegistro = :fecAltaRegistro"),
+    @NamedQuery(name = "NdcOpcionPreguntaDO.findByFecBajaRegistro", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.fecBajaRegistro = :fecBajaRegistro")})
+public class NdcOpcionPreguntaDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_OPCION_PREGUNTA", nullable = false, precision = 22)
-    private Long cveIdOpcionPregunta;
+    private BigDecimal cveIdOpcionPregunta;
     @Size(max = 300)
     @Column(name = "DES_OPCION_PREGUNTA", length = 300)
     private String desOpcionPregunta;
@@ -54,27 +54,27 @@ public class NdtOpcionPreguntaDO implements Serializable {
     @Column(name = "FEC_BAJA_REGISTRO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecBajaRegistro;
+    @JoinColumn(name = "CVE_ID_RESPUESTA", referencedColumnName = "CVE_ID_RESPUESTA")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcTipoRespuestaDO cveIdRespuesta;
     @JoinColumn(name = "CVE_ID_PREGUNTA", referencedColumnName = "CVE_ID_PREGUNTA")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPreguntaDO cveIdPregunta;
-    @JoinColumn(name = "CVE_ID_RESPUESTA", referencedColumnName = "CVE_ID_RESPUESTA")
-    @ManyToOne(fetch = FetchType.LAZY )
-    private NdcTipoRespuestaDO cveIdRespuesta;
+    private NdcPreguntaDO cveIdPregunta;
     @OneToMany(mappedBy = "cveIdOpcionPregunta", fetch = FetchType.LAZY)
-    private List<NdtB1RespuestaAtestiguamienDO> ndtB1RespuestaAtestiguamienList;
+    private List<NdtAtestiguamientoPreguntasDO> ndtAtestiguamientoPreguntasDOList;
 
-    public NdtOpcionPreguntaDO() {
+    public NdcOpcionPreguntaDO() {
     }
 
-    public NdtOpcionPreguntaDO(Long cveIdOpcionPregunta) {
+    public NdcOpcionPreguntaDO(BigDecimal cveIdOpcionPregunta) {
         this.cveIdOpcionPregunta = cveIdOpcionPregunta;
     }
 
-    public Long getCveIdOpcionPregunta() {
+    public BigDecimal getCveIdOpcionPregunta() {
         return cveIdOpcionPregunta;
     }
 
-    public void setCveIdOpcionPregunta(Long cveIdOpcionPregunta) {
+    public void setCveIdOpcionPregunta(BigDecimal cveIdOpcionPregunta) {
         this.cveIdOpcionPregunta = cveIdOpcionPregunta;
     }
 
@@ -102,14 +102,6 @@ public class NdtOpcionPreguntaDO implements Serializable {
         this.fecBajaRegistro = fecBajaRegistro;
     }
 
-    public NdtPreguntaDO getCveIdPregunta() {
-        return cveIdPregunta;
-    }
-
-    public void setCveIdPregunta(NdtPreguntaDO cveIdPregunta) {
-        this.cveIdPregunta = cveIdPregunta;
-    }
-
     public NdcTipoRespuestaDO getCveIdRespuesta() {
         return cveIdRespuesta;
     }
@@ -118,12 +110,20 @@ public class NdtOpcionPreguntaDO implements Serializable {
         this.cveIdRespuesta = cveIdRespuesta;
     }
 
-    public List<NdtB1RespuestaAtestiguamienDO> getNdtB1RespuestaAtestiguamienList() {
-        return ndtB1RespuestaAtestiguamienList;
+    public NdcPreguntaDO getCveIdPregunta() {
+        return cveIdPregunta;
     }
 
-    public void setNdtB1RespuestaAtestiguamienList(List<NdtB1RespuestaAtestiguamienDO> ndtB1RespuestaAtestiguamienList) {
-        this.ndtB1RespuestaAtestiguamienList = ndtB1RespuestaAtestiguamienList;
+    public void setCveIdPregunta(NdcPreguntaDO cveIdPregunta) {
+        this.cveIdPregunta = cveIdPregunta;
+    }
+
+    public List<NdtAtestiguamientoPreguntasDO> getNdtAtestiguamientoPreguntasDOList() {
+        return ndtAtestiguamientoPreguntasDOList;
+    }
+
+    public void setNdtAtestiguamientoPreguntasDOList(List<NdtAtestiguamientoPreguntasDO> ndtAtestiguamientoPreguntasDOList) {
+        this.ndtAtestiguamientoPreguntasDOList = ndtAtestiguamientoPreguntasDOList;
     }
 
     @Override
@@ -136,10 +136,10 @@ public class NdtOpcionPreguntaDO implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof NdtOpcionPreguntaDO)) {
+        if (!(object instanceof NdcOpcionPreguntaDO)) {
             return false;
         }
-        NdtOpcionPreguntaDO other = (NdtOpcionPreguntaDO) object;
+        NdcOpcionPreguntaDO other = (NdcOpcionPreguntaDO) object;
         if ((this.cveIdOpcionPregunta == null && other.cveIdOpcionPregunta != null) || (this.cveIdOpcionPregunta != null && !this.cveIdOpcionPregunta.equals(other.cveIdOpcionPregunta))) {
             return false;
         }
@@ -148,7 +148,7 @@ public class NdtOpcionPreguntaDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtOpcionPregunta[ cveIdOpcionPregunta=" + cveIdOpcionPregunta + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO[ cveIdOpcionPregunta=" + cveIdOpcionPregunta + " ]";
     }
     
 }

@@ -6,7 +6,8 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -30,22 +31,23 @@ import javax.validation.constraints.Size;
  * @author ajfuentes
  */
 @Entity
-@Table(name = "NDT_PREGUNTA")
+@Table(name = "NDC_PREGUNTA")
 @NamedQueries({
-    @NamedQuery(name = "NdtPregunta.findAll", query = "SELECT n FROM NdtPreguntaDO n"),
-    @NamedQuery(name = "NdtPregunta.findByCveIdPregunta", query = "SELECT n FROM NdtPreguntaDO n WHERE n.cveIdPregunta = :cveIdPregunta"),
-    @NamedQuery(name = "NdtPregunta.findByDesPregunta", query = "SELECT n FROM NdtPreguntaDO n WHERE n.desPregunta = :desPregunta"),
-    @NamedQuery(name = "NdtPregunta.findByFecRegistroAlta", query = "SELECT n FROM NdtPreguntaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtPregunta.findByFecRegistroActualizado", query = "SELECT n FROM NdtPreguntaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtPregunta.findByFecRegistroBaja", query = "SELECT n FROM NdtPreguntaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
-public class NdtPreguntaDO implements Serializable {
+    @NamedQuery(name = "NdcPreguntaDO.findAll", query = "SELECT n FROM NdcPreguntaDO n"),
+    @NamedQuery(name = "NdcPreguntaDO.findByCveIdPregunta", query = "SELECT n FROM NdcPreguntaDO n WHERE n.cveIdPregunta = :cveIdPregunta"),
+    @NamedQuery(name = "NdcPreguntaDO.findByDesPregunta", query = "SELECT n FROM NdcPreguntaDO n WHERE n.desPregunta = :desPregunta"),
+    @NamedQuery(name = "NdcPreguntaDO.findByFecRegistroAlta", query = "SELECT n FROM NdcPreguntaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdcPreguntaDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcPreguntaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdcPreguntaDO.findByFecRegistroBaja", query = "SELECT n FROM NdcPreguntaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdcPreguntaDO.findByIndOrden", query = "SELECT n FROM NdcPreguntaDO n WHERE n.indOrden = :indOrden")})
+public class NdcPreguntaDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PREGUNTA", nullable = false, precision = 22)
-    private Long cveIdPregunta;
+    private BigDecimal cveIdPregunta;
     @Size(max = 255)
     @Column(name = "DES_PREGUNTA", length = 255)
     private String desPregunta;
@@ -58,29 +60,31 @@ public class NdtPreguntaDO implements Serializable {
     @Column(name = "FEC_REGISTRO_BAJA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroBaja;
-    @OneToMany(mappedBy = "cveIdPreguntaPadre", fetch = FetchType.LAZY)
-    private List<NdtPreguntaDO> ndtPreguntaList;
-    @JoinColumn(name = "CVE_ID_PREGUNTA_PADRE", referencedColumnName = "CVE_ID_PREGUNTA")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPreguntaDO cveIdPreguntaPadre;
+    @Column(name = "IND_ORDEN")
+    private BigInteger indOrden;
     @JoinColumn(name = "CVE_ID_RUBRO", referencedColumnName = "CVE_ID_RUBRO", nullable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private NdcRubroDO cveIdRubro;
+    @OneToMany(mappedBy = "cveIdPreguntaPadre", fetch = FetchType.LAZY)
+    private List<NdcPreguntaDO> ndcPreguntaDOList;
+    @JoinColumn(name = "CVE_ID_PREGUNTA_PADRE", referencedColumnName = "CVE_ID_PREGUNTA")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcPreguntaDO cveIdPreguntaPadre;
     @OneToMany(mappedBy = "cveIdPregunta", fetch = FetchType.LAZY)
-    private List<NdtOpcionPreguntaDO> ndtOpcionPreguntaList;
+    private List<NdcOpcionPreguntaDO> ndcOpcionPreguntaDOList;
 
-    public NdtPreguntaDO() {
+    public NdcPreguntaDO() {
     }
 
-    public NdtPreguntaDO(Long cveIdPregunta) {
+    public NdcPreguntaDO(BigDecimal cveIdPregunta) {
         this.cveIdPregunta = cveIdPregunta;
     }
 
-    public Long getCveIdPregunta() {
+    public BigDecimal getCveIdPregunta() {
         return cveIdPregunta;
     }
 
-    public void setCveIdPregunta(Long cveIdPregunta) {
+    public void setCveIdPregunta(BigDecimal cveIdPregunta) {
         this.cveIdPregunta = cveIdPregunta;
     }
 
@@ -116,20 +120,12 @@ public class NdtPreguntaDO implements Serializable {
         this.fecRegistroBaja = fecRegistroBaja;
     }
 
-    public List<NdtPreguntaDO> getNdtPreguntaList() {
-        return ndtPreguntaList;
+    public BigInteger getIndOrden() {
+        return indOrden;
     }
 
-    public void setNdtPreguntaList(List<NdtPreguntaDO> ndtPreguntaList) {
-        this.ndtPreguntaList = ndtPreguntaList;
-    }
-
-    public NdtPreguntaDO getCveIdPreguntaPadre() {
-        return cveIdPreguntaPadre;
-    }
-
-    public void setCveIdPreguntaPadre(NdtPreguntaDO cveIdPreguntaPadre) {
-        this.cveIdPreguntaPadre = cveIdPreguntaPadre;
+    public void setIndOrden(BigInteger indOrden) {
+        this.indOrden = indOrden;
     }
 
     public NdcRubroDO getCveIdRubro() {
@@ -140,12 +136,28 @@ public class NdtPreguntaDO implements Serializable {
         this.cveIdRubro = cveIdRubro;
     }
 
-    public List<NdtOpcionPreguntaDO> getNdtOpcionPreguntaList() {
-        return ndtOpcionPreguntaList;
+    public List<NdcPreguntaDO> getNdcPreguntaDOList() {
+        return ndcPreguntaDOList;
     }
 
-    public void setNdtOpcionPreguntaList(List<NdtOpcionPreguntaDO> ndtOpcionPreguntaList) {
-        this.ndtOpcionPreguntaList = ndtOpcionPreguntaList;
+    public void setNdcPreguntaDOList(List<NdcPreguntaDO> ndcPreguntaDOList) {
+        this.ndcPreguntaDOList = ndcPreguntaDOList;
+    }
+
+    public NdcPreguntaDO getCveIdPreguntaPadre() {
+        return cveIdPreguntaPadre;
+    }
+
+    public void setCveIdPreguntaPadre(NdcPreguntaDO cveIdPreguntaPadre) {
+        this.cveIdPreguntaPadre = cveIdPreguntaPadre;
+    }
+
+    public List<NdcOpcionPreguntaDO> getNdcOpcionPreguntaDOList() {
+        return ndcOpcionPreguntaDOList;
+    }
+
+    public void setNdcOpcionPreguntaDOList(List<NdcOpcionPreguntaDO> ndcOpcionPreguntaDOList) {
+        this.ndcOpcionPreguntaDOList = ndcOpcionPreguntaDOList;
     }
 
     @Override
@@ -158,10 +170,10 @@ public class NdtPreguntaDO implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof NdtPreguntaDO)) {
+        if (!(object instanceof NdcPreguntaDO)) {
             return false;
         }
-        NdtPreguntaDO other = (NdtPreguntaDO) object;
+        NdcPreguntaDO other = (NdcPreguntaDO) object;
         if ((this.cveIdPregunta == null && other.cveIdPregunta != null) || (this.cveIdPregunta != null && !this.cveIdPregunta.equals(other.cveIdPregunta))) {
             return false;
         }
@@ -170,7 +182,7 @@ public class NdtPreguntaDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtPregunta[ cveIdPregunta=" + cveIdPregunta + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdcPreguntaDO[ cveIdPregunta=" + cveIdPregunta + " ]";
     }
     
 }

@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -30,12 +30,12 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_COLEGIO")
 @NamedQueries({
-    @NamedQuery(name = "NdtColegio.findAll", query = "SELECT n FROM NdtColegioDO n"),
-    @NamedQuery(name = "NdtColegio.findByCveIdColegio", query = "SELECT n FROM NdtColegioDO n WHERE n.cveIdColegio = :cveIdColegio"),
-    @NamedQuery(name = "NdtColegio.findByCveIdUsuario", query = "SELECT n FROM NdtColegioDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtColegio.findByFecRegistroAlta", query = "SELECT n FROM NdtColegioDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtColegio.findByFecRegistroBaja", query = "SELECT n FROM NdtColegioDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtColegio.findByFecRegistroActualizado", query = "SELECT n FROM NdtColegioDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtColegioDO.findAll", query = "SELECT n FROM NdtColegioDO n"),
+    @NamedQuery(name = "NdtColegioDO.findByCveIdColegio", query = "SELECT n FROM NdtColegioDO n WHERE n.cveIdColegio = :cveIdColegio"),
+    @NamedQuery(name = "NdtColegioDO.findByCveIdUsuario", query = "SELECT n FROM NdtColegioDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtColegioDO.findByFecRegistroAlta", query = "SELECT n FROM NdtColegioDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtColegioDO.findByFecRegistroBaja", query = "SELECT n FROM NdtColegioDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtColegioDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtColegioDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtColegioDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -43,7 +43,7 @@ public class NdtColegioDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_COLEGIO", nullable = false, precision = 22, scale = 0)
-    private Long cveIdColegio;
+    private BigDecimal cveIdColegio;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
@@ -57,22 +57,22 @@ public class NdtColegioDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
     @OneToMany(mappedBy = "cveIdColegio", fetch = FetchType.LAZY)
-    private List<NdtCpaAcreditacionDO> ndtCpaAcreditacionList;
+    private List<NdtCpaAcreditacionDO> ndtCpaAcreditacionDOList;
     @OneToMany(mappedBy = "cveIdColegio", fetch = FetchType.LAZY)
-    private List<NdtR3ColegioDO> ndtR3ColegioList;
+    private List<NdtR3ColegioDO> ndtR3ColegioDOList;
 
     public NdtColegioDO() {
     }
 
-    public NdtColegioDO(Long cveIdColegio) {
+    public NdtColegioDO(BigDecimal cveIdColegio) {
         this.cveIdColegio = cveIdColegio;
     }
 
-    public Long getCveIdColegio() {
+    public BigDecimal getCveIdColegio() {
         return cveIdColegio;
     }
 
-    public void setCveIdColegio(Long cveIdColegio) {
+    public void setCveIdColegio(BigDecimal cveIdColegio) {
         this.cveIdColegio = cveIdColegio;
     }
 
@@ -108,20 +108,20 @@ public class NdtColegioDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public List<NdtCpaAcreditacionDO> getNdtCpaAcreditacionList() {
-        return ndtCpaAcreditacionList;
+    public List<NdtCpaAcreditacionDO> getNdtCpaAcreditacionDOList() {
+        return ndtCpaAcreditacionDOList;
     }
 
-    public void setNdtCpaAcreditacionList(List<NdtCpaAcreditacionDO> ndtCpaAcreditacionList) {
-        this.ndtCpaAcreditacionList = ndtCpaAcreditacionList;
+    public void setNdtCpaAcreditacionDOList(List<NdtCpaAcreditacionDO> ndtCpaAcreditacionDOList) {
+        this.ndtCpaAcreditacionDOList = ndtCpaAcreditacionDOList;
     }
 
-    public List<NdtR3ColegioDO> getNdtR3ColegioList() {
-        return ndtR3ColegioList;
+    public List<NdtR3ColegioDO> getNdtR3ColegioDOList() {
+        return ndtR3ColegioDOList;
     }
 
-    public void setNdtR3ColegioList(List<NdtR3ColegioDO> ndtR3ColegioList) {
-        this.ndtR3ColegioList = ndtR3ColegioList;
+    public void setNdtR3ColegioDOList(List<NdtR3ColegioDO> ndtR3ColegioDOList) {
+        this.ndtR3ColegioDOList = ndtR3ColegioDOList;
     }
 
     @Override
@@ -146,7 +146,7 @@ public class NdtColegioDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtColegio[ cveIdColegio=" + cveIdColegio + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtColegioDO[ cveIdColegio=" + cveIdColegio + " ]";
     }
     
 }

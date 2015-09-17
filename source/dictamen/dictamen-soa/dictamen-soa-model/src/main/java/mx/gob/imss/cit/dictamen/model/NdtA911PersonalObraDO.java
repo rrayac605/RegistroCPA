@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,17 +30,17 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A9_1_1_PERSONAL_OBRA")
 @NamedQueries({
-    @NamedQuery(name = "NdtA911PersonalObra.findAll", query = "SELECT n FROM NdtA911PersonalObraDO n"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByCveIdA911PersonalObra", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.cveIdA911PersonalObra = :cveIdA911PersonalObra"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByNumRegObraImss", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.numRegObraImss = :numRegObraImss"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByNomPrimerApellido", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.nomPrimerApellido = :nomPrimerApellido"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByNomSegundoApellido", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.nomSegundoApellido = :nomSegundoApellido"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByNomNombre", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.nomNombre = :nomNombre"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByNumNss", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.numNss = :numNss"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByCveUsuario", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.cveUsuario = :cveUsuario"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByFecRegistroAlta", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByFecRegistroBaja", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA911PersonalObra.findByFecRegistroActualizado", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA911PersonalObraDO.findAll", query = "SELECT n FROM NdtA911PersonalObraDO n"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByCveIdA911PersonalObra", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.cveIdA911PersonalObra = :cveIdA911PersonalObra"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByNumRegObraImss", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.numRegObraImss = :numRegObraImss"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByNomPrimerApellido", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.nomPrimerApellido = :nomPrimerApellido"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByNomSegundoApellido", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.nomSegundoApellido = :nomSegundoApellido"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByNomNombre", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.nomNombre = :nomNombre"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByNumNss", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.numNss = :numNss"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByCveIdUsuario", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA911PersonalObraDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA911PersonalObraDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA911PersonalObraDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -48,7 +48,7 @@ public class NdtA911PersonalObraDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A9_1_1_PERSONAL_OBRA", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA911PersonalObra;
+    private BigDecimal cveIdA911PersonalObra;
     @Column(name = "NUM_REG_OBRA_IMSS")
     private Long numRegObraImss;
     @Size(max = 100)
@@ -63,9 +63,9 @@ public class NdtA911PersonalObraDO implements Serializable {
     @Size(max = 11)
     @Column(name = "NUM_NSS", length = 11)
     private String numNss;
-    @Size(max = 18)
-    @Column(name = "CVE_USUARIO", length = 18)
-    private String cveUsuario;
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
+    private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -75,22 +75,22 @@ public class NdtA911PersonalObraDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA911PersonalObraDO() {
     }
 
-    public NdtA911PersonalObraDO(Long cveIdA911PersonalObra) {
+    public NdtA911PersonalObraDO(BigDecimal cveIdA911PersonalObra) {
         this.cveIdA911PersonalObra = cveIdA911PersonalObra;
     }
 
-    public Long getCveIdA911PersonalObra() {
+    public BigDecimal getCveIdA911PersonalObra() {
         return cveIdA911PersonalObra;
     }
 
-    public void setCveIdA911PersonalObra(Long cveIdA911PersonalObra) {
+    public void setCveIdA911PersonalObra(BigDecimal cveIdA911PersonalObra) {
         this.cveIdA911PersonalObra = cveIdA911PersonalObra;
     }
 
@@ -134,12 +134,12 @@ public class NdtA911PersonalObraDO implements Serializable {
         this.numNss = numNss;
     }
 
-    public String getCveUsuario() {
-        return cveUsuario;
+    public String getCveIdUsuario() {
+        return cveIdUsuario;
     }
 
-    public void setCveUsuario(String cveUsuario) {
-        this.cveUsuario = cveUsuario;
+    public void setCveIdUsuario(String cveIdUsuario) {
+        this.cveIdUsuario = cveIdUsuario;
     }
 
     public Date getFecRegistroAlta() {
@@ -166,12 +166,12 @@ public class NdtA911PersonalObraDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -196,7 +196,7 @@ public class NdtA911PersonalObraDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA911PersonalObra[ cveIdA911PersonalObra=" + cveIdA911PersonalObra + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA911PersonalObraDO[ cveIdA911PersonalObra=" + cveIdA911PersonalObra + " ]";
     }
     
 }

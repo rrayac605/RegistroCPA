@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,23 +30,23 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A5_PRESTADORA_SERVICIOS")
 @NamedQueries({
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findAll", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByCveIdA5PrestadoraServicios", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.cveIdA5PrestadoraServicios = :cveIdA5PrestadoraServicios"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByNomNombreRazonsocialBen", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.nomNombreRazonsocialBen = :nomNombreRazonsocialBen"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByRfcBeneficiario", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.rfcBeneficiario = :rfcBeneficiario"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByRegPatronalBeneficiario", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.regPatronalBeneficiario = :regPatronalBeneficiario"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByFecVigenciaInicioContrato", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecVigenciaInicioContrato = :fecVigenciaInicioContrato"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByFecVigenciaFinalContrato", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecVigenciaFinalContrato = :fecVigenciaFinalContrato"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByNumTrabajadores", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.numTrabajadores = :numTrabajadores"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByIndElementosPsp", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.indElementosPsp = :indElementosPsp"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByIndResponsableDireccion", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.indResponsableDireccion = :indResponsableDireccion"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByImpCostoAnualNomina", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.impCostoAnualNomina = :impCostoAnualNomina"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByFolioSipress", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.folioSipress = :folioSipress"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByCveIdUsuario", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByFecRegistroAlta", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByFecRegistroBaja", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByFecRegistroActualizado", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtA5PrestadoraServicios.findByDesOtroEspecifique", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.desOtroEspecifique = :desOtroEspecifique")})
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findAll", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByCveIdA5PrestadoraServicios", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.cveIdA5PrestadoraServicios = :cveIdA5PrestadoraServicios"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByNomNombreRazonsocialBen", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.nomNombreRazonsocialBen = :nomNombreRazonsocialBen"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByRfcBeneficiario", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.rfcBeneficiario = :rfcBeneficiario"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByRegPatronalBeneficiario", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.regPatronalBeneficiario = :regPatronalBeneficiario"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByDesObjetoContrato", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.desObjetoContrato = :desObjetoContrato"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByFecInicioContrato", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecInicioContrato = :fecInicioContrato"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByFecConclusionContrato", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecConclusionContrato = :fecConclusionContrato"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByNumTrabajadores", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.numTrabajadores = :numTrabajadores"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByIndElementosPsp", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.indElementosPsp = :indElementosPsp"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByIndResponsableDireccion", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.indResponsableDireccion = :indResponsableDireccion"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByImpCostoAnualNomina", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.impCostoAnualNomina = :impCostoAnualNomina"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByDesFolioSipress", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.desFolioSipress = :desFolioSipress"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByCveIdUsuario", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA5PrestadoraServiciosDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA5PrestadoraServiciosDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA5PrestadoraServiciosDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -54,7 +54,7 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A5_PRESTADORA_SERVICIOS", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA5PrestadoraServicios;
+    private BigDecimal cveIdA5PrestadoraServicios;
     @Size(max = 300)
     @Column(name = "NOM_NOMBRE_RAZONSOCIAL_BEN", length = 300)
     private String nomNombreRazonsocialBen;
@@ -64,25 +64,30 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
     @Size(max = 13)
     @Column(name = "REG_PATRONAL_BENEFICIARIO", length = 13)
     private String regPatronalBeneficiario;
-    @Column(name = "FEC_VIGENCIA_INICIO_CONTRATO")
+    @Size(max = 3000)
+    @Column(name = "DES_OBJETO_CONTRATO", length = 3000)
+    private String desObjetoContrato;
+    @Column(name = "FEC_INICIO_CONTRATO")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecVigenciaInicioContrato;
-    @Column(name = "FEC_VIGENCIA_FINAL_CONTRATO")
+    private Date fecInicioContrato;
+    @Column(name = "FEC_CONCLUSION_CONTRATO")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecVigenciaFinalContrato;
+    private Date fecConclusionContrato;
     @Column(name = "NUM_TRABAJADORES")
     private Integer numTrabajadores;
-    @Column(name = "IND_ELEMENTOS_PSP")
-    private Short indElementosPsp;
-    @Column(name = "IND_RESPONSABLE_DIRECCION")
-    private Short indResponsableDireccion;
+    @Size(max = 2)
+    @Column(name = "IND_ELEMENTOS_PSP", length = 2)
+    private String indElementosPsp;
+    @Size(max = 2)
+    @Column(name = "IND_RESPONSABLE_DIRECCION", length = 2)
+    private String indResponsableDireccion;
     @Column(name = "IMP_COSTO_ANUAL_NOMINA", precision = 14, scale = 2)
-    private Long impCostoAnualNomina;
+    private BigDecimal impCostoAnualNomina;
     @Size(max = 30)
-    @Column(name = "FOLIO_SIPRESS", length = 30)
-    private String folioSipress;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Column(name = "DES_FOLIO_SIPRESS", length = 30)
+    private String desFolioSipress;
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -93,25 +98,22 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @Size(max = 18)
-    @Column(name = "DES_OTRO_ESPECIFIQUE", length = 18)
-    private String desOtroEspecifique;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA5PrestadoraServiciosDO() {
     }
 
-    public NdtA5PrestadoraServiciosDO(Long cveIdA5PrestadoraServicios) {
+    public NdtA5PrestadoraServiciosDO(BigDecimal cveIdA5PrestadoraServicios) {
         this.cveIdA5PrestadoraServicios = cveIdA5PrestadoraServicios;
     }
 
-    public Long getCveIdA5PrestadoraServicios() {
+    public BigDecimal getCveIdA5PrestadoraServicios() {
         return cveIdA5PrestadoraServicios;
     }
 
-    public void setCveIdA5PrestadoraServicios(Long cveIdA5PrestadoraServicios) {
+    public void setCveIdA5PrestadoraServicios(BigDecimal cveIdA5PrestadoraServicios) {
         this.cveIdA5PrestadoraServicios = cveIdA5PrestadoraServicios;
     }
 
@@ -139,20 +141,28 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
         this.regPatronalBeneficiario = regPatronalBeneficiario;
     }
 
-    public Date getFecVigenciaInicioContrato() {
-        return fecVigenciaInicioContrato;
+    public String getDesObjetoContrato() {
+        return desObjetoContrato;
     }
 
-    public void setFecVigenciaInicioContrato(Date fecVigenciaInicioContrato) {
-        this.fecVigenciaInicioContrato = fecVigenciaInicioContrato;
+    public void setDesObjetoContrato(String desObjetoContrato) {
+        this.desObjetoContrato = desObjetoContrato;
     }
 
-    public Date getFecVigenciaFinalContrato() {
-        return fecVigenciaFinalContrato;
+    public Date getFecInicioContrato() {
+        return fecInicioContrato;
     }
 
-    public void setFecVigenciaFinalContrato(Date fecVigenciaFinalContrato) {
-        this.fecVigenciaFinalContrato = fecVigenciaFinalContrato;
+    public void setFecInicioContrato(Date fecInicioContrato) {
+        this.fecInicioContrato = fecInicioContrato;
+    }
+
+    public Date getFecConclusionContrato() {
+        return fecConclusionContrato;
+    }
+
+    public void setFecConclusionContrato(Date fecConclusionContrato) {
+        this.fecConclusionContrato = fecConclusionContrato;
     }
 
     public Integer getNumTrabajadores() {
@@ -163,36 +173,36 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
         this.numTrabajadores = numTrabajadores;
     }
 
-    public Short getIndElementosPsp() {
+    public String getIndElementosPsp() {
         return indElementosPsp;
     }
 
-    public void setIndElementosPsp(Short indElementosPsp) {
+    public void setIndElementosPsp(String indElementosPsp) {
         this.indElementosPsp = indElementosPsp;
     }
 
-    public Short getIndResponsableDireccion() {
+    public String getIndResponsableDireccion() {
         return indResponsableDireccion;
     }
 
-    public void setIndResponsableDireccion(Short indResponsableDireccion) {
+    public void setIndResponsableDireccion(String indResponsableDireccion) {
         this.indResponsableDireccion = indResponsableDireccion;
     }
 
-    public Long getImpCostoAnualNomina() {
+    public BigDecimal getImpCostoAnualNomina() {
         return impCostoAnualNomina;
     }
 
-    public void setImpCostoAnualNomina(Long impCostoAnualNomina) {
+    public void setImpCostoAnualNomina(BigDecimal impCostoAnualNomina) {
         this.impCostoAnualNomina = impCostoAnualNomina;
     }
 
-    public String getFolioSipress() {
-        return folioSipress;
+    public String getDesFolioSipress() {
+        return desFolioSipress;
     }
 
-    public void setFolioSipress(String folioSipress) {
-        this.folioSipress = folioSipress;
+    public void setDesFolioSipress(String desFolioSipress) {
+        this.desFolioSipress = desFolioSipress;
     }
 
     public String getCveIdUsuario() {
@@ -227,20 +237,12 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public String getDesOtroEspecifique() {
-        return desOtroEspecifique;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setDesOtroEspecifique(String desOtroEspecifique) {
-        this.desOtroEspecifique = desOtroEspecifique;
-    }
-
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
-    }
-
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -265,7 +267,7 @@ public class NdtA5PrestadoraServiciosDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA5PrestadoraServicios[ cveIdA5PrestadoraServicios=" + cveIdA5PrestadoraServicios + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA5PrestadoraServiciosDO[ cveIdA5PrestadoraServicios=" + cveIdA5PrestadoraServicios + " ]";
     }
     
 }

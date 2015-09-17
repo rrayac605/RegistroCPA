@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -32,15 +32,15 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_R1_DATOS_PERSONALES")
 @NamedQueries({
-    @NamedQuery(name = "NdtR1DatosPersonales.findAll", query = "SELECT n FROM NdtR1DatosPersonalesDO n"),
-    @NamedQuery(name = "NdtR1DatosPersonales.findByCveIdR1DatosPersonales", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.cveIdR1DatosPersonales = :cveIdR1DatosPersonales"),
-    @NamedQuery(name = "NdtR1DatosPersonales.findByCedulaProfesional", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.cedulaProfesional = :cedulaProfesional"),
-    @NamedQuery(name = "NdtR1DatosPersonales.findByDesTituloExpedidoPor", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.desTituloExpedidoPor = :desTituloExpedidoPor"),
-    @NamedQuery(name = "NdtR1DatosPersonales.findByFecExpedicionCedprof", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.fecExpedicionCedprof = :fecExpedicionCedprof"),
-    @NamedQuery(name = "NdtR1DatosPersonales.findByFecRegistroAlta", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtR1DatosPersonales.findByFecRegistroBaja", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtR1DatosPersonales.findByFecRegistroActualizado", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtR1DatosPersonales.findByCveIdUsuario", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findAll", query = "SELECT n FROM NdtR1DatosPersonalesDO n"),
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findByCveIdR1DatosPersonales", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.cveIdR1DatosPersonales = :cveIdR1DatosPersonales"),
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findByCedulaProfesional", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.cedulaProfesional = :cedulaProfesional"),
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findByDesTituloExpedidoPor", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.desTituloExpedidoPor = :desTituloExpedidoPor"),
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findByFecExpedicionCedprof", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.fecExpedicionCedprof = :fecExpedicionCedprof"),
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findByFecRegistroAlta", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findByFecRegistroBaja", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtR1DatosPersonalesDO.findByCveIdUsuario", query = "SELECT n FROM NdtR1DatosPersonalesDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtR1DatosPersonalesDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -48,7 +48,7 @@ public class NdtR1DatosPersonalesDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R1_DATOS_PERSONALES", nullable = false, precision = 22, scale = 0)
-    private Long cveIdR1DatosPersonales;
+    private BigDecimal cveIdR1DatosPersonales;
     @Size(max = 10)
     @Column(name = "CEDULA_PROFESIONAL", length = 10)
     private String cedulaProfesional;
@@ -71,7 +71,7 @@ public class NdtR1DatosPersonalesDO implements Serializable {
     @Column(name = "CVE_ID_USUARIO", length = 18)
     private String cveIdUsuario;
     @OneToMany(mappedBy = "cveIdR1DatosPersonales", fetch = FetchType.LAZY)
-    private List<NdtR1FormacontactoDO> ndtR1FormacontactoList;
+    private List<NdtR1FormacontactoDO> ndtR1FormacontactoDOList;
     @JoinColumn(name = "CVE_ID_CPA_TRAMITE", referencedColumnName = "CVE_ID_CPA_TRAMITE")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtCpaTramiteDO cveIdCpaTramite;
@@ -82,15 +82,15 @@ public class NdtR1DatosPersonalesDO implements Serializable {
     public NdtR1DatosPersonalesDO() {
     }
 
-    public NdtR1DatosPersonalesDO(Long cveIdR1DatosPersonales) {
+    public NdtR1DatosPersonalesDO(BigDecimal cveIdR1DatosPersonales) {
         this.cveIdR1DatosPersonales = cveIdR1DatosPersonales;
     }
 
-    public Long getCveIdR1DatosPersonales() {
+    public BigDecimal getCveIdR1DatosPersonales() {
         return cveIdR1DatosPersonales;
     }
 
-    public void setCveIdR1DatosPersonales(Long cveIdR1DatosPersonales) {
+    public void setCveIdR1DatosPersonales(BigDecimal cveIdR1DatosPersonales) {
         this.cveIdR1DatosPersonales = cveIdR1DatosPersonales;
     }
 
@@ -150,12 +150,12 @@ public class NdtR1DatosPersonalesDO implements Serializable {
         this.cveIdUsuario = cveIdUsuario;
     }
 
-    public List<NdtR1FormacontactoDO> getNdtR1FormacontactoList() {
-        return ndtR1FormacontactoList;
+    public List<NdtR1FormacontactoDO> getNdtR1FormacontactoDOList() {
+        return ndtR1FormacontactoDOList;
     }
 
-    public void setNdtR1FormacontactoList(List<NdtR1FormacontactoDO> ndtR1FormacontactoList) {
-        this.ndtR1FormacontactoList = ndtR1FormacontactoList;
+    public void setNdtR1FormacontactoDOList(List<NdtR1FormacontactoDO> ndtR1FormacontactoDOList) {
+        this.ndtR1FormacontactoDOList = ndtR1FormacontactoDOList;
     }
 
     public NdtCpaTramiteDO getCveIdCpaTramite() {
@@ -196,7 +196,7 @@ public class NdtR1DatosPersonalesDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtR1DatosPersonales[ cveIdR1DatosPersonales=" + cveIdR1DatosPersonales + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtR1DatosPersonalesDO[ cveIdR1DatosPersonales=" + cveIdR1DatosPersonales + " ]";
     }
     
 }

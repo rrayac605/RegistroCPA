@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,20 +30,20 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A5_1_PERSONAL_PROPORCIONAD")
 @NamedQueries({
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findAll", query = "SELECT n FROM NdtA51PersonalProporcionadDO n"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByCveIdA51Listadopersonal", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.cveIdA51Listadopersonal = :cveIdA51Listadopersonal"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByFolioSipress", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.folioSipress = :folioSipress"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByRegPatronal", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByNomPrimerApellidoTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.nomPrimerApellidoTrab = :nomPrimerApellidoTrab"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByNomSegundoApellidoTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.nomSegundoApellidoTrab = :nomSegundoApellidoTrab"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByNomNombreTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.nomNombreTrab = :nomNombreTrab"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByNumNssTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.numNssTrab = :numNssTrab"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByRfcTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.rfcTrab = :rfcTrab"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByCurpTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.curpTrab = :curpTrab"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByCveIdUsuario", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByFecRegistroAlta", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByFecRegistroBaja", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA51PersonalProporcionad.findByFecRegistroActualizado", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findAll", query = "SELECT n FROM NdtA51PersonalProporcionadDO n"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByCveIdA51Listadopersonal", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.cveIdA51Listadopersonal = :cveIdA51Listadopersonal"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByDesFolioSipress", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.desFolioSipress = :desFolioSipress"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByRegPatronal", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByNomPrimerApellidoTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.nomPrimerApellidoTrab = :nomPrimerApellidoTrab"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByNomSegundoApellidoTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.nomSegundoApellidoTrab = :nomSegundoApellidoTrab"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByNomNombreTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.nomNombreTrab = :nomNombreTrab"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByNumNssTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.numNssTrab = :numNssTrab"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByRfcTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.rfcTrab = :rfcTrab"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByCurpTrab", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.curpTrab = :curpTrab"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByCveIdUsuario", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA51PersonalProporcionadDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA51PersonalProporcionadDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA51PersonalProporcionadDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -51,10 +51,10 @@ public class NdtA51PersonalProporcionadDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A51_LISTADOPERSONAL", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA51Listadopersonal;
+    private BigDecimal cveIdA51Listadopersonal;
     @Size(max = 30)
-    @Column(name = "FOLIO_SIPRESS", length = 30)
-    private String folioSipress;
+    @Column(name = "DES_FOLIO_SIPRESS", length = 30)
+    private String desFolioSipress;
     @Size(max = 13)
     @Column(name = "REG_PATRONAL", length = 13)
     private String regPatronal;
@@ -76,8 +76,8 @@ public class NdtA51PersonalProporcionadDO implements Serializable {
     @Size(max = 18)
     @Column(name = "CURP_TRAB", length = 18)
     private String curpTrab;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -88,31 +88,31 @@ public class NdtA51PersonalProporcionadDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA51PersonalProporcionadDO() {
     }
 
-    public NdtA51PersonalProporcionadDO(Long cveIdA51Listadopersonal) {
+    public NdtA51PersonalProporcionadDO(BigDecimal cveIdA51Listadopersonal) {
         this.cveIdA51Listadopersonal = cveIdA51Listadopersonal;
     }
 
-    public Long getCveIdA51Listadopersonal() {
+    public BigDecimal getCveIdA51Listadopersonal() {
         return cveIdA51Listadopersonal;
     }
 
-    public void setCveIdA51Listadopersonal(Long cveIdA51Listadopersonal) {
+    public void setCveIdA51Listadopersonal(BigDecimal cveIdA51Listadopersonal) {
         this.cveIdA51Listadopersonal = cveIdA51Listadopersonal;
     }
 
-    public String getFolioSipress() {
-        return folioSipress;
+    public String getDesFolioSipress() {
+        return desFolioSipress;
     }
 
-    public void setFolioSipress(String folioSipress) {
-        this.folioSipress = folioSipress;
+    public void setDesFolioSipress(String desFolioSipress) {
+        this.desFolioSipress = desFolioSipress;
     }
 
     public String getRegPatronal() {
@@ -203,12 +203,12 @@ public class NdtA51PersonalProporcionadDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -233,7 +233,7 @@ public class NdtA51PersonalProporcionadDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA51PersonalProporcionad[ cveIdA51Listadopersonal=" + cveIdA51Listadopersonal + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA51PersonalProporcionadDO[ cveIdA51Listadopersonal=" + cveIdA51Listadopersonal + " ]";
     }
     
 }

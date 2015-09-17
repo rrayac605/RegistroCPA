@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,17 +30,18 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A7_3_CE_MAQUINARIA")
 @NamedQueries({
-    @NamedQuery(name = "NdtA73CeMaquinaria.findAll", query = "SELECT n FROM NdtA73CeMaquinariaDO n"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByCveIdA73CeMaquinaria", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.cveIdA73CeMaquinaria = :cveIdA73CeMaquinaria"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByRegPatronal", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByNumUnidad", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.numUnidad = :numUnidad"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByNomMaquinaria", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.nomMaquinaria = :nomMaquinaria"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByDesTipoUso", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.desTipoUso = :desTipoUso"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByDesCapacidadPotencia", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.desCapacidadPotencia = :desCapacidadPotencia"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByCveIdUsuario", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByFecRegistroAlta", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByFecRegistroBaja", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA73CeMaquinaria.findByFecRegistroActualizado", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findAll", query = "SELECT n FROM NdtA73CeMaquinariaDO n"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByCveIdA73CeMaquinaria", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.cveIdA73CeMaquinaria = :cveIdA73CeMaquinaria"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByRegPatronal", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByNumUnidad", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.numUnidad = :numUnidad"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByNomMaquinaria", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.nomMaquinaria = :nomMaquinaria"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByDesTipoUso", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.desTipoUso = :desTipoUso"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByDesTipoMotor", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.desTipoMotor = :desTipoMotor"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByDesCapacidadPotencia", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.desCapacidadPotencia = :desCapacidadPotencia"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByCveIdUsuario", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA73CeMaquinariaDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA73CeMaquinariaDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA73CeMaquinariaDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -48,9 +49,9 @@ public class NdtA73CeMaquinariaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A7_3_CE_MAQUINARIA", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA73CeMaquinaria;
-    @Size(max = 13)
-    @Column(name = "REG_PATRONAL", length = 13)
+    private BigDecimal cveIdA73CeMaquinaria;
+    @Size(max = 11)
+    @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
     @Column(name = "NUM_UNIDAD")
     private Integer numUnidad;
@@ -60,11 +61,14 @@ public class NdtA73CeMaquinariaDO implements Serializable {
     @Size(max = 20)
     @Column(name = "DES_TIPO_USO", length = 20)
     private String desTipoUso;
+    @Size(max = 50)
+    @Column(name = "DES_TIPO_MOTOR", length = 50)
+    private String desTipoMotor;
     @Size(max = 20)
     @Column(name = "DES_CAPACIDAD_POTENCIA", length = 20)
     private String desCapacidadPotencia;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -75,22 +79,22 @@ public class NdtA73CeMaquinariaDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA73CeMaquinariaDO() {
     }
 
-    public NdtA73CeMaquinariaDO(Long cveIdA73CeMaquinaria) {
+    public NdtA73CeMaquinariaDO(BigDecimal cveIdA73CeMaquinaria) {
         this.cveIdA73CeMaquinaria = cveIdA73CeMaquinaria;
     }
 
-    public Long getCveIdA73CeMaquinaria() {
+    public BigDecimal getCveIdA73CeMaquinaria() {
         return cveIdA73CeMaquinaria;
     }
 
-    public void setCveIdA73CeMaquinaria(Long cveIdA73CeMaquinaria) {
+    public void setCveIdA73CeMaquinaria(BigDecimal cveIdA73CeMaquinaria) {
         this.cveIdA73CeMaquinaria = cveIdA73CeMaquinaria;
     }
 
@@ -124,6 +128,14 @@ public class NdtA73CeMaquinariaDO implements Serializable {
 
     public void setDesTipoUso(String desTipoUso) {
         this.desTipoUso = desTipoUso;
+    }
+
+    public String getDesTipoMotor() {
+        return desTipoMotor;
+    }
+
+    public void setDesTipoMotor(String desTipoMotor) {
+        this.desTipoMotor = desTipoMotor;
     }
 
     public String getDesCapacidadPotencia() {
@@ -166,12 +178,12 @@ public class NdtA73CeMaquinariaDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -196,7 +208,7 @@ public class NdtA73CeMaquinariaDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA73CeMaquinaria[ cveIdA73CeMaquinaria=" + cveIdA73CeMaquinaria + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA73CeMaquinariaDO[ cveIdA73CeMaquinaria=" + cveIdA73CeMaquinaria + " ]";
     }
     
 }

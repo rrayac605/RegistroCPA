@@ -6,7 +6,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -14,6 +13,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -28,25 +29,24 @@ import javax.validation.constraints.Size;
  * @author ajfuentes
  */
 @Entity
-@Table(name = "NDC_TIPO_MODELO_OPINION")
+@Table(name = "NDC_FORMA_PAGO")
 @NamedQueries({
-    @NamedQuery(name = "NdcTipoModeloOpinionDO.findAll", query = "SELECT n FROM NdcTipoModeloOpinionDO n"),
-    @NamedQuery(name = "NdcTipoModeloOpinionDO.findByCveIdTipoOpinion", query = "SELECT n FROM NdcTipoModeloOpinionDO n WHERE n.cveIdTipoOpinion = :cveIdTipoOpinion"),
-    @NamedQuery(name = "NdcTipoModeloOpinionDO.findByDesModeloOpinion", query = "SELECT n FROM NdcTipoModeloOpinionDO n WHERE n.desModeloOpinion = :desModeloOpinion"),
-    @NamedQuery(name = "NdcTipoModeloOpinionDO.findByFecRegistroAlta", query = "SELECT n FROM NdcTipoModeloOpinionDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdcTipoModeloOpinionDO.findByFecRegistroBaja", query = "SELECT n FROM NdcTipoModeloOpinionDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdcTipoModeloOpinionDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcTipoModeloOpinionDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
-public class NdcTipoModeloOpinionDO implements Serializable {
+    @NamedQuery(name = "NdcFormaPagoDO.findAll", query = "SELECT n FROM NdcFormaPagoDO n"),
+    @NamedQuery(name = "NdcFormaPagoDO.findByCveIdFormaPago", query = "SELECT n FROM NdcFormaPagoDO n WHERE n.cveIdFormaPago = :cveIdFormaPago"),
+    @NamedQuery(name = "NdcFormaPagoDO.findByDesFormaPago", query = "SELECT n FROM NdcFormaPagoDO n WHERE n.desFormaPago = :desFormaPago"),
+    @NamedQuery(name = "NdcFormaPagoDO.findByFecRegistroAlta", query = "SELECT n FROM NdcFormaPagoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdcFormaPagoDO.findByFecRegistroBaja", query = "SELECT n FROM NdcFormaPagoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdcFormaPagoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcFormaPagoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+public class NdcFormaPagoDO implements Serializable {
     private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "CVE_ID_TIPO_OPINION", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdTipoOpinion;
+    @Column(name = "CVE_ID_FORMA_PAGO", nullable = false)
+    private Short cveIdFormaPago;
     @Size(max = 50)
-    @Column(name = "DES_MODELO_OPINION", length = 50)
-    private String desModeloOpinion;
+    @Column(name = "DES_FORMA_PAGO", length = 50)
+    private String desFormaPago;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -56,30 +56,33 @@ public class NdcTipoModeloOpinionDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @OneToMany(mappedBy = "cveIdTipoOpinion", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cveIdFormaPago", fetch = FetchType.LAZY)
     private List<NdtModeloOpinionDO> ndtModeloOpinionDOList;
+    @JoinColumn(name = "CVE_ID_TIPO_PAGO", referencedColumnName = "CVE_ID_TIPO_PAGO")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcTipoPagoDO cveIdTipoPago;
 
-    public NdcTipoModeloOpinionDO() {
+    public NdcFormaPagoDO() {
     }
 
-    public NdcTipoModeloOpinionDO(BigDecimal cveIdTipoOpinion) {
-        this.cveIdTipoOpinion = cveIdTipoOpinion;
+    public NdcFormaPagoDO(Short cveIdFormaPago) {
+        this.cveIdFormaPago = cveIdFormaPago;
     }
 
-    public BigDecimal getCveIdTipoOpinion() {
-        return cveIdTipoOpinion;
+    public Short getCveIdFormaPago() {
+        return cveIdFormaPago;
     }
 
-    public void setCveIdTipoOpinion(BigDecimal cveIdTipoOpinion) {
-        this.cveIdTipoOpinion = cveIdTipoOpinion;
+    public void setCveIdFormaPago(Short cveIdFormaPago) {
+        this.cveIdFormaPago = cveIdFormaPago;
     }
 
-    public String getDesModeloOpinion() {
-        return desModeloOpinion;
+    public String getDesFormaPago() {
+        return desFormaPago;
     }
 
-    public void setDesModeloOpinion(String desModeloOpinion) {
-        this.desModeloOpinion = desModeloOpinion;
+    public void setDesFormaPago(String desFormaPago) {
+        this.desFormaPago = desFormaPago;
     }
 
     public Date getFecRegistroAlta() {
@@ -114,21 +117,29 @@ public class NdcTipoModeloOpinionDO implements Serializable {
         this.ndtModeloOpinionDOList = ndtModeloOpinionDOList;
     }
 
+    public NdcTipoPagoDO getCveIdTipoPago() {
+        return cveIdTipoPago;
+    }
+
+    public void setCveIdTipoPago(NdcTipoPagoDO cveIdTipoPago) {
+        this.cveIdTipoPago = cveIdTipoPago;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (cveIdTipoOpinion != null ? cveIdTipoOpinion.hashCode() : 0);
+        hash += (cveIdFormaPago != null ? cveIdFormaPago.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof NdcTipoModeloOpinionDO)) {
+        if (!(object instanceof NdcFormaPagoDO)) {
             return false;
         }
-        NdcTipoModeloOpinionDO other = (NdcTipoModeloOpinionDO) object;
-        if ((this.cveIdTipoOpinion == null && other.cveIdTipoOpinion != null) || (this.cveIdTipoOpinion != null && !this.cveIdTipoOpinion.equals(other.cveIdTipoOpinion))) {
+        NdcFormaPagoDO other = (NdcFormaPagoDO) object;
+        if ((this.cveIdFormaPago == null && other.cveIdFormaPago != null) || (this.cveIdFormaPago != null && !this.cveIdFormaPago.equals(other.cveIdFormaPago))) {
             return false;
         }
         return true;
@@ -136,7 +147,7 @@ public class NdcTipoModeloOpinionDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdcTipoModeloOpinionDO[ cveIdTipoOpinion=" + cveIdTipoOpinion + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdcFormaPagoDO[ cveIdFormaPago=" + cveIdFormaPago + " ]";
     }
     
 }

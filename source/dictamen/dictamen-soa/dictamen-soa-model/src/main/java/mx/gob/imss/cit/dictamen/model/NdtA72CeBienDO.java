@@ -6,7 +6,7 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -30,15 +30,15 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_A7_2_CE_BIEN")
 @NamedQueries({
-    @NamedQuery(name = "NdtA72CeBien.findAll", query = "SELECT n FROM NdtA72CeBienDO n"),
-    @NamedQuery(name = "NdtA72CeBien.findByCveIdA72CeBien", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.cveIdA72CeBien = :cveIdA72CeBien"),
-    @NamedQuery(name = "NdtA72CeBien.findByRegPatronal", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.regPatronal = :regPatronal"),
-    @NamedQuery(name = "NdtA72CeBien.findByDesBienElaboradoSp", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.desBienElaboradoSp = :desBienElaboradoSp"),
-    @NamedQuery(name = "NdtA72CeBien.findByDesMateriaPrimaUtilizada", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.desMateriaPrimaUtilizada = :desMateriaPrimaUtilizada"),
-    @NamedQuery(name = "NdtA72CeBien.findByCveIdUsuario", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtA72CeBien.findByFecRegistroAlta", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtA72CeBien.findByFecRegistroBaja", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtA72CeBien.findByFecRegistroActualizado", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtA72CeBienDO.findAll", query = "SELECT n FROM NdtA72CeBienDO n"),
+    @NamedQuery(name = "NdtA72CeBienDO.findByCveIdA72CeBien", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.cveIdA72CeBien = :cveIdA72CeBien"),
+    @NamedQuery(name = "NdtA72CeBienDO.findByRegPatronal", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.regPatronal = :regPatronal"),
+    @NamedQuery(name = "NdtA72CeBienDO.findByDesBienElaboradoSp", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.desBienElaboradoSp = :desBienElaboradoSp"),
+    @NamedQuery(name = "NdtA72CeBienDO.findByDesMateriaPrimaUtilizada", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.desMateriaPrimaUtilizada = :desMateriaPrimaUtilizada"),
+    @NamedQuery(name = "NdtA72CeBienDO.findByCveIdUsuario", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtA72CeBienDO.findByFecRegistroAlta", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtA72CeBienDO.findByFecRegistroBaja", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtA72CeBienDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtA72CeBienDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdtA72CeBienDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -46,9 +46,9 @@ public class NdtA72CeBienDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A7_2_CE_BIEN", nullable = false, precision = 22, scale = 0)
-    private Long cveIdA72CeBien;
-    @Size(max = 13)
-    @Column(name = "REG_PATRONAL", length = 13)
+    private BigDecimal cveIdA72CeBien;
+    @Size(max = 11)
+    @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
     @Size(max = 1000)
     @Column(name = "DES_BIEN_ELABORADO_SP", length = 1000)
@@ -56,8 +56,8 @@ public class NdtA72CeBienDO implements Serializable {
     @Size(max = 1000)
     @Column(name = "DES_MATERIA_PRIMA_UTILIZADA", length = 1000)
     private String desMateriaPrimaUtilizada;
-    @Size(max = 18)
-    @Column(name = "CVE_ID_USUARIO", length = 18)
+    @Size(max = 20)
+    @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
@@ -68,22 +68,22 @@ public class NdtA72CeBienDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociadoDO cveIdPatronAsociado;
+    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtA72CeBienDO() {
     }
 
-    public NdtA72CeBienDO(Long cveIdA72CeBien) {
+    public NdtA72CeBienDO(BigDecimal cveIdA72CeBien) {
         this.cveIdA72CeBien = cveIdA72CeBien;
     }
 
-    public Long getCveIdA72CeBien() {
+    public BigDecimal getCveIdA72CeBien() {
         return cveIdA72CeBien;
     }
 
-    public void setCveIdA72CeBien(Long cveIdA72CeBien) {
+    public void setCveIdA72CeBien(BigDecimal cveIdA72CeBien) {
         this.cveIdA72CeBien = cveIdA72CeBien;
     }
 
@@ -143,12 +143,12 @@ public class NdtA72CeBienDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
-        return cveIdPatronAsociado;
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
-        this.cveIdPatronAsociado = cveIdPatronAsociado;
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override
@@ -173,7 +173,7 @@ public class NdtA72CeBienDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtA72CeBien[ cveIdA72CeBien=" + cveIdA72CeBien + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtA72CeBienDO[ cveIdA72CeBien=" + cveIdA72CeBien + " ]";
     }
     
 }
