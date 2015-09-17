@@ -10,6 +10,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
+import mx.gob.imss.cit.dictamen.web.util.CleanBeanUtil;
 import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
 
 import org.apache.log4j.Logger;
@@ -29,6 +30,7 @@ public class DatosPatronalesBean extends BaseBean {
 	private DatosPatronalesPage datosPatronalesPage;
 	
 	public void init(){
+		CleanBeanUtil.cleanFields(datosPatronalesPage);
 		datosPatronalesPage.setDatosPatron(new DatosPatronDTO());
 		datosPatronalesPage.setListaTipoDictamen(patronIntegration.findAllTipoDictamen());
 	}
@@ -42,10 +44,7 @@ public class DatosPatronalesBean extends BaseBean {
 	}
 	
 	public void limpiar(){
-		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_EJEMPLO.getCode());
-		FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_EJEMPLO2.getCode());
-		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_EJEMPLO3.getCode(),"uno");
-		FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_EJEMPLO4.getCode()," hola","hola2");
+		CleanBeanUtil.cleanFields(datosPatronalesPage);
 		
 	}
 	
