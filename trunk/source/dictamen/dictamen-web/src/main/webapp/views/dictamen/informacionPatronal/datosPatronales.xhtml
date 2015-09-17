@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<ui:composition
-	xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
 
-		<p:panel id="panelPatron"
-			header="#{msg['message.dictamen.dictaminar.datos.seccion']}"
-			style="margin-bottom:20px">
-			<h:form id="formDatosPatronales" >
+	<p:panel id="panelPatron"
+		header="#{msg['message.dictamen.dictaminar.datos.seccion']}"
+		style="margin-bottom:20px">
+		<h:form id="formDatosPatronales">
 
-				<h:panelGrid columns="5" cellpadding="5">
+			<p:panelGrid columns="1">
+
+
+				<p:panelGrid columns="3">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}" />
-					<p:inputText id="rfcPatron" required="true"
-						value="#{datosPatronalesPage.datosPatron.rfc}" requiredMessage="falta"/>
+					<p:inputText id="rfcPatron" 
+						value="#{datosPatronalesPage.datosPatron.rfc}"
+						required="true"
+						requiredMessage="falta rfc" />
 					<p:commandButton value="#{msg['message.button.buscar']}"
-						action="#{datosPatronalesBean.buscar}" immediate="true" ajax="false" />
+						action="#{datosPatronalesBean.buscar}"
+						immediate="true"
+						ajax="false" />
+				</p:panelGrid>
 
+
+				<p:panelGrid columns="2">
 					<h:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.tipo']}">:</h:outputLabel>
 					<p:selectOneMenu
@@ -31,14 +40,17 @@
 							var="tipo" itemLabel="#{tipo.descTipoDictamen}"
 							itemValue="#{tipo.idDictamen}" />
 					</p:selectOneMenu>
-				</h:panelGrid>
+				</p:panelGrid>
 
-				<h:panelGrid columns="4" cellpadding="5">
+				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}" />
 					<p:inputText id="trabajadores" required="true"
+						requiredMessage="falta numero trabajadores"
 						value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" />
+				</p:panelGrid>
 
+				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.construccion']}" />
 					<p:selectOneRadio id="construccion"
@@ -48,9 +60,10 @@
 							itemvalue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
 							itemValue="false" />
-
 					</p:selectOneRadio>
+				</p:panelGrid>
 
+				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" />
 					<p:selectOneRadio id="dictaminado"
@@ -60,9 +73,10 @@
 							itemvalue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
 							itemValue="false" />
-
 					</p:selectOneRadio>
-
+				</p:panelGrid>
+				
+				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.valuada']}" />
 					<p:selectOneRadio id="valuada"
@@ -73,39 +87,52 @@
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
 							itemValue="false" />
 					</p:selectOneRadio>
-				</h:panelGrid>
+				</p:panelGrid>
 
-				<h:panelGrid columns="4" cellpadding="5">
+				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.denominacion']}" />
 					<p:inputText id="denominacion" required="true"
+						requiredMessage="falta razon social"
 						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
-
+				</p:panelGrid>
+				
+				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}" />
 					<p:inputText id="ejercicio" required="true"
+						requiredMessage="falta ejercicio"
 						value="#{datosPatronalesPage.datosPatron.ejercicioDictaminar}" />
-
+				</p:panelGrid>
+				
+				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.patronales']}" />
 					<p:inputText id="patronales" required="true"
+						requiredMessage="falta numero de registros"
 						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
-
+				</p:panelGrid>
+				
+				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.fecha']}" />
 					<p:calendar id="button"
 						value="#{datosPatronalesPage.datosPatron.fechaPresentacionDictamen}"
 						showOn="button" />
-				</h:panelGrid>
-
-				<h:panelGrid columns="2">
+				</p:panelGrid>
+				
+				<p:panelGrid columns="2">
 					<p:commandButton value="#{msg['message.button.guardar']}"
-						action="#{datosPatronalesBean.guardar}"  ajax="false" />
+						action="#{datosPatronalesBean.guardar}" ajax="false" />
 					<p:commandButton value="#{msg['message.button.limpiar']}"
-						action="#{datosPatronalesBean.limpiar}" immediate="true" ajax="false"/>
-				</h:panelGrid>
+						action="#{datosPatronalesBean.limpiar}" immediate="true"
+						ajax="false" />
 
-			</h:form>
-		</p:panel>
+				</p:panelGrid>
+				
+			</p:panelGrid>
+
+		</h:form>
+	</p:panel>
 
 </ui:composition>
