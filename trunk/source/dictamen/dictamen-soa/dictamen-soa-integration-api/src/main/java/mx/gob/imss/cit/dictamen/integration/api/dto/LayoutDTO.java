@@ -10,6 +10,8 @@ public class LayoutDTO extends BaseDTO  {
 	private static final long serialVersionUID = -2644866008364925551L;
 	
 	private String name;
+	
+	private AWSPolicyDTO policy; 
 
 	/**
 	 * @return the name
@@ -25,4 +27,21 @@ public class LayoutDTO extends BaseDTO  {
 		this.name = name;
 	}
 
+	/**
+	 * @return the policy
+	 */
+	public AWSPolicyDTO getPolicy() {
+		return policy;
+	}
+
+	/**
+	 * @param policy the policy to set
+	 */
+	public void setPolicy(AWSPolicyDTO policy) {
+		this.policy = policy;
+	}
+
+	
+	
+	
 }
