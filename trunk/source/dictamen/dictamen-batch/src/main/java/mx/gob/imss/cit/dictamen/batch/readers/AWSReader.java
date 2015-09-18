@@ -35,12 +35,13 @@ public class AWSReader implements ItemReader<String> {
 	private String key;
 	private String bucketName;
 	private String destino;
+	private String delay;
 
 	@PostConstruct
 	public void init() throws IOException{
 		AWSCredentialsProvider credentials = null;
 		lineas = new ArrayList<String>();
-	    credentials = new ClasspathPropertiesFileCredentialsProvider();
+	    credentials = new ClasspathPropertiesFileCredentialsProvider("spring/batch/properties/AwsCredentials.properties");
 		AmazonS3 s3 = new AmazonS3Client(credentials);
 		ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
 		bucketName = labels.getString("aws.bucket");
@@ -88,6 +89,14 @@ public class AWSReader implements ItemReader<String> {
 
 	public void setDestino(String destino) {
 		this.destino = destino;
+	}
+
+	public String getDelay() {
+		return delay;
+	}
+
+	public void setDelay(String delay) {
+		this.delay = delay;
 	}
 	
 }

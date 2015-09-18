@@ -32,6 +32,7 @@ public class ScanBucket {
     private String rutaDestino;
     private String rutaProcesamiento;
     private String bucketName;
+    private String delay;
         
     @Autowired
     private JobLauncher jobLauncher;
@@ -41,15 +42,18 @@ public class ScanBucket {
     
     public ScanBucket(){
 		AWSCredentialsProvider credentials = null;
+//		Properties p = new Properties();	  	  
 		ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
 		rutaOrigen = labels.getString("aws.ruta.origen");
 		rutaProcesamiento = labels.getString("aws.ruta.procesamiento");
 		rutaDestino = labels.getString("configuracion.ruta.destino");
 		bucketName = labels.getString("aws.bucket");
+		delay = labels.getString("configuracion.scheduler.delay");
+//		PropertyConfigurator.configure(p.getClass().getResource(labels.getString("configuracion.log4j.file")));
 		
 		LOG.info("Origen: "+rutaOrigen);
 		LOG.info("Destino: "+rutaDestino);
-		credentials = new ClasspathPropertiesFileCredentialsProvider();		
+		credentials = new ClasspathPropertiesFileCredentialsProvider("spring/batch/properties/AwsCredentials.properties");		
 		s3 = new AmazonS3Client(credentials);
 	}
 	  
@@ -67,6 +71,7 @@ public class ScanBucket {
 				  parametersBuilder.addString("key", keyDestination).toJobParameters();
 				  parametersBuilder.addString("destino", rutaDestino+keyDestination).toJobParameters();
 				  parametersBuilder.addString("date", new Date().toString());
+				  parametersBuilder.addString("delay", delay);
 				  parameters = parametersBuilder.toJobParameters();
 				  JobExecution execution = jobLauncher.run(job, parameters);
 				  LOG.info("Exit Status : " + execution.getStatus());
