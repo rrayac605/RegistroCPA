@@ -1,0 +1,47 @@
+package mx.gob.imss.cit.dictamen.commons.to;
+
+import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
+
+public class LayoutTO extends BaseTO  {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2644866778364925551L;
+	
+	private String name;
+	
+	private AWSPolicyTO policy;
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the policy
+	 */
+	public AWSPolicyTO getPolicy() {
+		return policy;
+	}
+
+	/**
+	 * @param policy the policy to set
+	 */
+	public void setPolicy(AWSPolicyTO policy) {
+		this.policy = policy;
+	}
+	
+	
+	
+
+}
