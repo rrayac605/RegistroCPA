@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.dictamen.services.impl;
 
 import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -34,11 +35,13 @@ public class LayoutPatronAsociadoServiceImpl implements
 	@EJB
 	private AWSService  AWSService;
 	
+	private static final int NUM_DIAS=1;
+	
 	@Override
 	public	List<ParentLayoutTO> findLayoutAWSService() {
 		List<ParentLayoutTO> listaParents= layoutService.createList();
 		try{
-		AWSPolicyTO aws=AWSService.getAwsPoliciyEncrypted(FechasUtils.stringToDate_dd_MM_yyyy("03/09/2015"), PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_RUTA_BASE));
+		AWSPolicyTO aws=AWSService.getAwsPoliciyEncrypted(FechasUtils.agregaDias(new Date(), NUM_DIAS), PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_RUTA_BASE));
 		
 		if(listaParents!=null)
 		{
@@ -50,10 +53,7 @@ public class LayoutPatronAsociadoServiceImpl implements
 		}
 		}catch(DictamenException de){
 			LOG.error(de);
-		}catch(ParseException px ){
-			LOG.error(px);
 		}
-
 		return listaParents;
 	}
 	
