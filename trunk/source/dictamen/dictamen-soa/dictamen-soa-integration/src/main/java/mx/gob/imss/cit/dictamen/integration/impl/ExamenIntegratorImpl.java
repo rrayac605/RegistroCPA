@@ -12,6 +12,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.PreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.RespuestaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.SeccionDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.TipoPreguntaDTO;
+import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 
 @Stateless
 @Remote(mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator.class)
@@ -21,7 +22,7 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 	//private ExamenService examenService;
 	
 	@Override
-	public ExamenDTO getDetalleExamen(ExamenDTO examen) {
+	public ExamenDTO getDetalleExamen(ExamenDTO examen)throws DictamenNegocioException {
 
 		ExamenDTO   examenDetalle     = new ExamenDTO();
 		SeccionDTO  seccion0   = new SeccionDTO();
@@ -114,7 +115,7 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 		return examenDetalle;
 	}
 	
-public List<ExamenDTO> findExamenes() {
+public List<ExamenDTO> findExamenes()throws DictamenNegocioException {
 		
 		List<ExamenDTO> cuestionarios = new ArrayList<ExamenDTO>();
 		

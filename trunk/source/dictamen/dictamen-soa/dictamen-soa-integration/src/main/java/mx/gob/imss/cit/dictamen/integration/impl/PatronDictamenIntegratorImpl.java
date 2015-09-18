@@ -24,7 +24,7 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	private PatronDictamenService patronDictamenService;
 	
 	@Override
-	public DatosPatronDTO getDatosPatron(String rfc) {
+	public DatosPatronDTO getDatosPatron(String rfc) throws DictamenNegocioException{
 		DatosPatronDTO datosPatron= new	DatosPatronDTO();
 		datosPatron.setRazonSocialNombre("Fulanito de Tal SA de SV");
 		datosPatron.setEjercicioDictaminar("Enero 2016");
@@ -38,7 +38,7 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	}
 
 	@Override
-	public List<TipoDictamenDTO> findAllTipoDictamen() {
+	public List<TipoDictamenDTO> findAllTipoDictamen()throws DictamenNegocioException {
 		List<TipoDictamenDTO> listaTipoDictamen= new ArrayList<TipoDictamenDTO> ();
 		
 		TipoDictamenDTO tipoDictamenDTO= new TipoDictamenDTO();

@@ -6,8 +6,11 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import mx.gob.imss.cit.dictamen.integration.api.CargaArchivosIntegrator;
+import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.CargaArchivosPage;
+import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
 
 @ManagedBean(name = "cargaArchivosBean")
 @ViewScoped
@@ -23,7 +26,11 @@ public class CargaArchivosBean extends BaseBean {
 	private CargaArchivosPage cargaArchivosPage;
 	
 	public void init(){
-		cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout());
+		try {
+			cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout());
+		} catch (DictamenNegocioException e) {
+			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_LAYOUTS.getCode());
+		}
 	}
 	
 

@@ -7,6 +7,7 @@ import javax.faces.bean.ViewScoped;
 
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
+import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
@@ -32,7 +33,11 @@ public class DatosPatronalesBean extends BaseBean {
 	public void init(){
 		CleanBeanUtil.cleanFields(datosPatronalesPage);
 		datosPatronalesPage.setDatosPatron(new DatosPatronDTO());
-		datosPatronalesPage.setListaTipoDictamen(patronIntegration.findAllTipoDictamen());
+		try {
+			datosPatronalesPage.setListaTipoDictamen(patronIntegration.findAllTipoDictamen());
+		} catch (DictamenNegocioException e) {
+			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
+		}
 	}
 	
 	

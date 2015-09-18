@@ -10,6 +10,7 @@ import javax.ejb.Stateless;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
 import mx.gob.imss.cit.dictamen.integration.api.CargaArchivosIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
+import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUtils;
 import mx.gob.imss.cit.dictamen.services.LayoutPatronAsociadoService;
 
@@ -22,7 +23,7 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator{
 	LayoutPatronAsociadoService layoutPatronAsociadoService;
 	
 	
-	public List<ParentLayoutDTO> findLayout(){
+	public List<ParentLayoutDTO> findLayout()throws DictamenNegocioException{
 		List<ParentLayoutDTO> listaDTO= null;
 		
 		List<ParentLayoutTO> listaTO= layoutPatronAsociadoService.findLayoutAWSService();
