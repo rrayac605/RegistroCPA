@@ -8,15 +8,18 @@ package mx.gob.imss.cit.dictamen.model;
 import java.io.Serializable;
 
 import java.util.Date;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -82,6 +85,8 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A1_PERCEPTRAB", nullable = false, precision = 22, scale = 0)
+    @SequenceGenerator(name = "NdtA1PercepTrabajador_Id_Seq_Gen", sequenceName = "SEQ_NDTA1PERCEPTRABAJADOR")
+    @GeneratedValue(generator = "NdtA1PercepTrabajador_Id_Seq_Gen")
     private Long cveIdA1Perceptrab;
     @Size(max = 13)
     @Column(name = "REG_PATRONAL", length = 13)

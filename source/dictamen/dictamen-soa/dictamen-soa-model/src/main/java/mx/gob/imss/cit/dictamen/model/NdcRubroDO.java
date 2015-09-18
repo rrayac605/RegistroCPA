@@ -6,21 +6,23 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -48,7 +50,10 @@ public class NdcRubroDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_RUBRO", nullable = false, precision = 22, scale = 0)
+    @SequenceGenerator(name = "NdcRubro_Id_Seq_Gen", sequenceName = "SEQ_NDCRUBRO")
+    @GeneratedValue(generator = "NdcRubro_Id_Seq_Gen")
     private Long cveIdRubro;
+
     @Size(max = 100)
     @Column(name = "DES_RUBRO", length = 100)
     private String desRubro;
