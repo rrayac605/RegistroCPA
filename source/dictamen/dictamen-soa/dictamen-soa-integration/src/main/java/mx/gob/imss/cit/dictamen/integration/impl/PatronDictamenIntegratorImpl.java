@@ -4,17 +4,25 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import mx.gob.imss.cit.dictamen.integration.api.PatronIntegrator;
+import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
+import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.TipoDictamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
+import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
 
-@Remote({mx.gob.imss.cit.dictamen.integration.api.PatronIntegrator.class})
+@Remote({mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator.class})
 @Stateless
-public class PatronIntegratorImpl implements PatronIntegrator {
+public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 
+	@EJB
+	private PatronDictamenService patronDictamenService;
+	
 	@Override
 	public DatosPatronDTO getDatosPatron(String rfc) {
 		DatosPatronDTO datosPatron= new	DatosPatronDTO();
@@ -45,8 +53,14 @@ public class PatronIntegratorImpl implements PatronIntegrator {
 	}
 
 	@Override
-	public void executeRegistrar(DatosPatronDTO datosDTO) {
-		// TODO Auto-generated method stub
+	public void executeRegistrar(DatosPatronDTO datosDTO) throws DictamenNegocioException{
+
+		PatronDictamenTO patronDictamenTO=new PatronDictamenTO();
+		try {
+			patronDictamenService.saveDictamen(patronDictamenTO);
+		} catch (DictamenException e) {
+			throw new DictamenNegocioException(e.getMessage(), e);
+		}
 
 	}
 
