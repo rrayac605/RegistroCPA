@@ -45,7 +45,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_D4C82850_E78D_42f5_86F6_2C28DCA79E7F"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-15 17:10:24"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-17 19:02:20"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-18 16:18:05"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="PresentaciónDictamen"/>
@@ -94,17 +94,17 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="nsoria"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-15 17:06:17"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-17 19:02:33"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-18 16:19:09"/>
 				<UML:TaggedValue tag="package" value="EAPK_D4C82850_E78D_42f5_86F6_2C28DCA79E7F"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="89"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=EE6FFC35;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=D322B1EF;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=272;Top=154;Right=389;Bottom=232;" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" seqno="1" style="DUID=6C13D90C;"/>
+				<UML:DiagramElement geometry="Left=275;Top=152;Right=392;Bottom=230;" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" seqno="1" style="DUID=6C13D90C;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -115,9 +115,15 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El patrón accede a la opción Presentación de dictamen" guid="{980C18B9-EDAC-4f90-BAFE-A0C3084A71B5}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="En caso que no exista el dictamen firmado por el CPA, ver FA1 Presentación de dictamen sin " guid="{904FB986-4877-4427-9F64-D57C7D9AC1B6}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="En caso que no exista el dictamen firmado por el patrón ver FA1 Datos de patrón sin completar" guid="{904FB986-4877-4427-9F64-D57C7D9AC1B6}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El sistema muestra en pantalla la vista previa de la presentación de dictamen, sus medios de contacto y el botón de firmar. RF-C" guid="{D8911961-A5A2-485e-B5C1-30C644A9EFCE}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="En caso que el" guid="{E22BD47A-8203-49f6-BEEE-C4AAC83C00FE}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Si el patrón está conforme con sus medios de contacto y en caso de estar correctos y no requerir actualización RF-C, da clic en el botón Confirmar medios de contacto. En caso de requerir actualización llama FA2 Actualización de medios de contacto" guid="{E22BD47A-8203-49f6-BEEE-C4AAC83C00FE}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra en pantalla el MSG del RF-C18" guid="{AE48328D-9B77-4f7c-96B5-9F0ADEDA0B0B}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El patrón selecciona la opción Sí continua en el paso 7. En caso de seleccione la opción no, se llama a FA2 Actualización de medios de contacto" guid="{AB34EEC0-1F58-4070-BE9F-6634A176744E}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El patrón selecciona el botón Firmar y enviar RF-C" guid="{198E8701-F493-4fd6-B476-11E15065535F}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema despliega la ventana del componente de firma digital,  RF-C023 - Captura de FIEL." guid="{C4206354-E8C2-4da9-9313-A7D7CC48E1D0}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El patrón captura y selecciona los archivos correspondientes a la firma electrónica y da clic en el botón Firmar." guid="{9A2E0C4D-90A4-4be3-B933-57D22324B3CB}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema realiza la firma a través de notaría digital del trámite y genera el acuse respectivo. RF-C&#xA;El sistema despliega en PDF el acuse, lo almacena en la boveda personall y lo envía por correo electrónico al PAtrón y CPA RF-C." guid="{BDDAA398-C596-4113-9018-782CCDBD1566}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context/>
 					</path>
 				</EAScenarioContent>
