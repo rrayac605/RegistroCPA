@@ -1,9 +1,14 @@
 package mx.gob.imss.cit.dictamen.commons.util;
 
 import java.beans.Statement;
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 
@@ -68,16 +73,30 @@ public class TransformerHelper {
 	                	//List
 	                	if(Collection.class.isAssignableFrom(field.getType())){
 
-//	            			Object[] values = new Object[ServicesConstants.UNO];                            
-//	                        ArrayList<?> myList = (ArrayList<?>) field.get(origenObject);
-//	                        if(myList!=null){
-//	                        	myList.clear();
-//	                        }
-//	                        values[ServicesConstants.CERO] = myList;
-//	                        
-//	            	        Statement stmt = new Statement(origenObject, createSetter(field.getName()),values );
-//	                        stmt.execute();
-	                            
+	                		ArrayList<?> myList = (ArrayList<?>) valueFlied;
+	                			                        
+	                         //get the type as generic
+	                        ParameterizedType fieldGenericType =(ParameterizedType)field.getGenericType();
+	                        //get it's first type parameter
+	                        Class<?> fieldTypeParameterType =(Class<?>)fieldGenericType.getActualTypeArguments()[CERO];			                        
+	                        
+	                        if(mapClass.containsKey(fieldTypeParameterType)){
+	                        	Class<?> newClassField=mapClass.get(fieldTypeParameterType);
+	                        	
+	                        	List newList=getListWithNulls(newClassField, myList.size());
+	                        	
+	                        	Integer restaProfundidad= new Integer(profundidad.intValue() - UNO);
+	                        	
+	                        	for(int i=CERO;i<myList.size();i++){
+	                        	      Object obj=get (mapClass,myList.get(i), newClassField,restaProfundidad) ;
+	                        	      newList.set(i, obj);
+	                        	}
+	                        
+		                        values[CERO] = newList;
+		                        Statement stmt = new Statement(objectNew, createSetter(fieldNew.getName()), values);
+		                        stmt.execute();
+	                        
+	                        }    
 	                	} else if(field.getType().isPrimitive()) { 
 	                		
 	                        values[CERO] = valueFlied;
@@ -124,5 +143,11 @@ public class TransformerHelper {
            return SETTER_PREFIX + fieldName.substring(CERO, UNO).toUpperCase() + fieldName.substring(UNO);
        }
 
+
        
+       
+       public static <T> List<T> getListWithNulls(Class<T> componentType, int length) {
+    	   T[] array = (T[])Array.newInstance(componentType, length);
+    	   return new ArrayList<T>(Arrays.asList(array));
+    	}       
 }
