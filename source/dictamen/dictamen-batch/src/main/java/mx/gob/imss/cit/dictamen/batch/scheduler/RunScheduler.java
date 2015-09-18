@@ -6,26 +6,24 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.PropertyConfigurator;
-/**
- * 
- * 
- * @author cmarmolejo
- * 
- */
-import org.springframework.context.ApplicationContext;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class RunScheduler {
 	
   public static void main(String[] args) throws FileNotFoundException, IOException {
-	  
-	Properties p = new Properties();	  	  
-	ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
-	PropertyConfigurator.configure(p.getClass().getResource(labels.getString("configuracion.log4j.file")));
-		
-	String springConfig = "spring/batch/jobs/job-report.xml";    
-	ApplicationContext context = new ClassPathXmlApplicationContext(springConfig);	
-
+	  ConfigurableApplicationContext context = null;
+	  try{
+		  Properties p = new Properties();	  	  
+		  ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
+		  PropertyConfigurator.configure(p.getClass().getResource(labels.getString("configuracion.log4j.file")));
+				
+		  String springConfig = "spring/batch/jobs/job-report.xml";    
+		  context = new ClassPathXmlApplicationContext(springConfig);	  
+	  }catch (BeansException e){
+		  context.close();
+	  }
   }
 }
 

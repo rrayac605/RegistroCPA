@@ -2,7 +2,8 @@ package mx.gob.imss.cit.dictamen.batch.scanner;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.ResourceBundle;
+
+import javax.annotation.PostConstruct;
 
 import org.apache.log4j.Logger;
 import org.springframework.batch.core.Job;
@@ -33,6 +34,7 @@ public class ScanBucket {
     private String rutaProcesamiento;
     private String bucketName;
     private String delay;
+    private String rutaAWSCredentials;
         
     @Autowired
     private JobLauncher jobLauncher;
@@ -40,21 +42,13 @@ public class ScanBucket {
     @Autowired
     private Job job;
     
-    public ScanBucket(){
-		AWSCredentialsProvider credentials = null;
-//		Properties p = new Properties();	  	  
-		ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
-		rutaOrigen = labels.getString("aws.ruta.origen");
-		rutaProcesamiento = labels.getString("aws.ruta.procesamiento");
-		rutaDestino = labels.getString("configuracion.ruta.destino");
-		bucketName = labels.getString("aws.bucket");
-		delay = labels.getString("configuracion.scheduler.delay");
-//		PropertyConfigurator.configure(p.getClass().getResource(labels.getString("configuracion.log4j.file")));
-		
-		LOG.info("Origen: "+rutaOrigen);
-		LOG.info("Destino: "+rutaDestino);
-		credentials = new ClasspathPropertiesFileCredentialsProvider("spring/batch/properties/AwsCredentials.properties");		
+    @PostConstruct
+    public void init(){
+		AWSCredentialsProvider credentials = null;	
+		credentials = new ClasspathPropertiesFileCredentialsProvider(rutaAWSCredentials);		
 		s3 = new AmazonS3Client(credentials);
+		LOG.info("Origen: "+rutaOrigen);
+		LOG.info("Destino: "+rutaDestino);		
 	}
 	  
     public void run() {    	
@@ -111,5 +105,46 @@ public class ScanBucket {
 		  LOG.error("Error Message: " + ace.getMessage());
 	  }    	
     }
+
+	public String getRutaOrigen() {
+		return rutaOrigen;
+	}
+
+	public void setRutaOrigen(String rutaOrigen) {
+		this.rutaOrigen = rutaOrigen;
+	}
+
+	public String getRutaDestino() {
+		return rutaDestino;
+	}
+
+	public void setRutaDestino(String rutaDestino) {
+		this.rutaDestino = rutaDestino;
+	}
+
+	public String getRutaProcesamiento() {
+		return rutaProcesamiento;
+	}
+
+	public void setRutaProcesamiento(String rutaProcesamiento) {
+		this.rutaProcesamiento = rutaProcesamiento;
+	}
+
+	public String getBucketName() {
+		return bucketName;
+	}
+
+	public void setBucketName(String bucketName) {
+		this.bucketName = bucketName;
+	}
+
+	public String getRutaAWSCredentials() {
+		return rutaAWSCredentials;
+	}
+
+	public void setRutaAWSCredentials(String rutaAWSCredentials) {
+		this.rutaAWSCredentials = rutaAWSCredentials;
+	}
+    
 }
 

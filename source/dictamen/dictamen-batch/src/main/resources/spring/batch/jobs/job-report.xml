@@ -36,10 +36,17 @@
 		</batch:step>
 	</batch:job>
 	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>spring/batch/properties/configuration.properties</value>
+		</property>
+	</bean>
+	
 	<bean id="awsReader" class="mx.gob.imss.cit.dictamen.batch.readers.AWSReader" scope="job">
 		<property name="key" value="#{jobParameters[key]}"/>
 		<property name="destino" value="#{jobParameters[destino]}"></property>
-		<property name="delay" value="#{jobParameters[delay]}"></property>
+		<property name="bucketName" value="${aws.bucket}"></property>
+		<property name="rutaAWSCredentials" value="${aws.ruta.credentials}"></property>
 	</bean>
 
 	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
@@ -47,9 +54,15 @@
 	    <property name="lineAggregator">
 			<bean class="org.springframework.batch.item.file.transform.PassThroughLineAggregator"/>
 		</property>
-	</bean>	
+	</bean>			
 	
-	<bean id="scanScheduler" class="mx.gob.imss.cit.dictamen.batch.scanner.ScanBucket" />
+	<bean id="scanScheduler" class="mx.gob.imss.cit.dictamen.batch.scanner.ScanBucket" >
+		<property name="rutaOrigen" value="${aws.ruta.origen}"/>
+		<property name="rutaDestino" value="${configuracion.ruta.destino}"/>
+		<property name="rutaProcesamiento" value="${aws.ruta.procesamiento}"/>
+		<property name="bucketName" value="${aws.bucket}"/>
+		<property name="rutaAWSCredentials" value="${aws.ruta.credentials}"/>
+	</bean>
 
 	<task:scheduled-tasks>
 		<task:scheduled ref="scanScheduler" method="run" fixed-delay="${configuracion.scheduler.delay}"/>

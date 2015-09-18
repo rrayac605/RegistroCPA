@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
 
@@ -35,16 +34,14 @@ public class AWSReader implements ItemReader<String> {
 	private String key;
 	private String bucketName;
 	private String destino;
-	private String delay;
+	private String rutaAWSCredentials;
 
 	@PostConstruct
 	public void init() throws IOException{
 		AWSCredentialsProvider credentials = null;
 		lineas = new ArrayList<String>();
-	    credentials = new ClasspathPropertiesFileCredentialsProvider("spring/batch/properties/AwsCredentials.properties");
+	    credentials = new ClasspathPropertiesFileCredentialsProvider(rutaAWSCredentials);
 		AmazonS3 s3 = new AmazonS3Client(credentials);
-		ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
-		bucketName = labels.getString("aws.bucket");
 		LOG.info("Request object: "+key);
 		S3Object object = s3.getObject(new GetObjectRequest(bucketName, key));
         BufferedReader reader = new BufferedReader(new InputStreamReader(object.getObjectContent()));
@@ -91,12 +88,20 @@ public class AWSReader implements ItemReader<String> {
 		this.destino = destino;
 	}
 
-	public String getDelay() {
-		return delay;
+	public String getBucketName() {
+		return bucketName;
 	}
 
-	public void setDelay(String delay) {
-		this.delay = delay;
+	public void setBucketName(String bucketName) {
+		this.bucketName = bucketName;
+	}
+
+	public String getRutaAWSCredentials() {
+		return rutaAWSCredentials;
+	}
+
+	public void setRutaAWSCredentials(String rutaAWSCredentials) {
+		this.rutaAWSCredentials = rutaAWSCredentials;
 	}
 	
 }
