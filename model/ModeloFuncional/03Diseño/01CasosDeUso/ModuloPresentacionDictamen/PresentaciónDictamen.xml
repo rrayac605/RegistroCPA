@@ -45,7 +45,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_D4C82850_E78D_42f5_86F6_2C28DCA79E7F"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-15 17:10:24"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-18 16:18:05"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-18 16:57:18"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="PresentaciónDictamen"/>
@@ -105,6 +105,8 @@
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=275;Top=152;Right=392;Bottom=230;" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" seqno="1" style="DUID=6C13D90C;"/>
+				<UML:DiagramElement geometry="Left=20;Top=20;Right=180;Bottom=50;" subject="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" seqno="2" style="DUID=BB9C2F91;"/>
+				<UML:DiagramElement geometry="Left=20;Top=20;Right=180;Bottom=50;" subject="EAID_46B0A8D2_C997_42e3_B58D_7B4ED64FCCEB" seqno="3" style="DUID=39E15D7A;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -116,7 +118,7 @@
 					<path>
 						<step name="El patrón accede a la opción Presentación de dictamen" guid="{980C18B9-EDAC-4f90-BAFE-A0C3084A71B5}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="En caso que no exista el dictamen firmado por el patrón ver FA1 Datos de patrón sin completar" guid="{904FB986-4877-4427-9F64-D57C7D9AC1B6}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El sistema muestra en pantalla la vista previa de la presentación de dictamen, sus medios de contacto y el botón de firmar. RF-C" guid="{D8911961-A5A2-485e-B5C1-30C644A9EFCE}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema muestra en pantalla la vista previa de la presentación de dictamen, sus medios de contacto y el botón de firmar. RF-C029 - Envío y presentación de dictamen" guid="{D8911961-A5A2-485e-B5C1-30C644A9EFCE}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="Si el patrón está conforme con sus medios de contacto y en caso de estar correctos y no requerir actualización RF-C, da clic en el botón Confirmar medios de contacto. En caso de requerir actualización llama FA2 Actualización de medios de contacto" guid="{E22BD47A-8203-49f6-BEEE-C4AAC83C00FE}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema muestra en pantalla el MSG del RF-C18" guid="{AE48328D-9B77-4f7c-96B5-9F0ADEDA0B0B}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El patrón selecciona la opción Sí continua en el paso 7. En caso de seleccione la opción no, se llama a FA2 Actualización de medios de contacto" guid="{AB34EEC0-1F58-4070-BE9F-6634A176744E}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
