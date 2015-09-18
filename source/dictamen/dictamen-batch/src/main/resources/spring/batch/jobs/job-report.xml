@@ -39,6 +39,7 @@
 	<bean id="awsReader" class="mx.gob.imss.cit.dictamen.batch.readers.AWSReader" scope="job">
 		<property name="key" value="#{jobParameters[key]}"/>
 		<property name="destino" value="#{jobParameters[destino]}"></property>
+		<property name="delay" value="#{jobParameters[delay]}"></property>
 	</bean>
 
 	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
@@ -46,13 +47,13 @@
 	    <property name="lineAggregator">
 			<bean class="org.springframework.batch.item.file.transform.PassThroughLineAggregator"/>
 		</property>
-	</bean>
+	</bean>	
 	
 	<bean id="scanScheduler" class="mx.gob.imss.cit.dictamen.batch.scanner.ScanBucket" />
 
 	<task:scheduled-tasks>
-		<task:scheduled ref="scanScheduler" method="run"
-			cron="*/5 * * * * *" />
+		<task:scheduled ref="scanScheduler" method="run" fixed-delay="${configuracion.scheduler.delay}"/>
 	</task:scheduled-tasks>
 
 </beans>
+
