@@ -7,15 +7,18 @@ package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -46,6 +49,8 @@ public class NdtNotasDictamenDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_NOTAS_ASEVERACIONES", nullable = false, precision = 22, scale = 0)
+    @SequenceGenerator(name = "NdtNotasDictamen_Id_Seq_Gen", sequenceName = "SEQ_NDTNOTASDICTAMEN")
+    @GeneratedValue(generator = "NdtNotasDictamens_Id_Seq_Gen")
     private Long cveIdNotasAseveraciones;
     @Size(max = 1000)
     @Column(name = "DES_NOTAS_ASEV_A1", length = 1000)
