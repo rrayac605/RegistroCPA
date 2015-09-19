@@ -6,8 +6,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
-import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +14,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -28,6 +27,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 
 /**
  *
@@ -52,14 +52,20 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtPatronDictamenDO.findByFecRegistroAutorizado", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.fecRegistroAutorizado = :fecRegistroAutorizado"),
     @NamedQuery(name = "NdtPatronDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtPatronDictamenDO implements Serializable {
+    @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
+    private List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList;
+    
+    
+    
+    
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PATRON_DICTAMEN", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtPatronDictamen_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONDICTAMEN")
-    @GeneratedValue(generator = "NdtPatronDictamen_Id_Seq_Gen")
+    @SequenceGenerator(allocationSize=1, name = "NdtPatronDictamenDO_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONDICTAMEN")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtPatronDictamenDO_Id_Seq_Gen")
     private Long cveIdPatronDictamen;
     @Size(max = 50)
     @Column(name = "DES_RFC", length = 50)
@@ -68,11 +74,11 @@ public class NdtPatronDictamenDO implements Serializable {
     @Column(name = "DES_NOMBRE_RAZON_SOCIAL", length = 255)
     private String desNombreRazonSocial;
     @Column(name = "NUM_NUMERO_TRABAJADORES")
-    private BigInteger numNumeroTrabajadores;
+    private Integer numNumeroTrabajadores;
     @Column(name = "NUM_REGISTRO_PATRONALES")
-    private BigInteger numRegistroPatronales;
+    private Integer numRegistroPatronales;
     @Column(name = "IND_PATRON_OBLIGADO")
-    private BigInteger indPatronObligado;
+    private Integer indPatronObligado;
     @Column(name = "IND_PATRON_CONSTRUCCION")
     private Short indPatronConstruccion;
     @Column(name = "IND_REALIZO_ACT_CONSTRUCCION")
@@ -186,27 +192,27 @@ public class NdtPatronDictamenDO implements Serializable {
         this.desNombreRazonSocial = desNombreRazonSocial;
     }
 
-    public BigInteger getNumNumeroTrabajadores() {
+    public Integer getNumNumeroTrabajadores() {
         return numNumeroTrabajadores;
     }
 
-    public void setNumNumeroTrabajadores(BigInteger numNumeroTrabajadores) {
+    public void setNumNumeroTrabajadores(Integer numNumeroTrabajadores) {
         this.numNumeroTrabajadores = numNumeroTrabajadores;
     }
 
-    public BigInteger getNumRegistroPatronales() {
+    public Integer getNumRegistroPatronales() {
         return numRegistroPatronales;
     }
 
-    public void setNumRegistroPatronales(BigInteger numRegistroPatronales) {
+    public void setNumRegistroPatronales(Integer numRegistroPatronales) {
         this.numRegistroPatronales = numRegistroPatronales;
     }
 
-    public BigInteger getIndPatronObligado() {
+    public Integer getIndPatronObligado() {
         return indPatronObligado;
     }
 
-    public void setIndPatronObligado(BigInteger indPatronObligado) {
+    public void setIndPatronObligado(Integer indPatronObligado) {
         this.indPatronObligado = indPatronObligado;
     }
 
@@ -529,6 +535,14 @@ public class NdtPatronDictamenDO implements Serializable {
     @Override
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO[ cveIdPatronDictamen=" + cveIdPatronDictamen + " ]";
+    }
+
+    public List<NdtAtestiguamientoDictamenDO> getNdtAtestiguamientoDictamenDOList() {
+        return ndtAtestiguamientoDictamenDOList;
+    }
+
+    public void setNdtAtestiguamientoDictamenDOList(List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList) {
+        this.ndtAtestiguamientoDictamenDOList = ndtAtestiguamientoDictamenDOList;
     }
     
 }

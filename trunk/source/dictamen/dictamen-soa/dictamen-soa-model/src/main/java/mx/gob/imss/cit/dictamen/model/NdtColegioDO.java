@@ -6,7 +6,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -46,8 +46,8 @@ public class NdtColegioDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_COLEGIO", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtColegio_Id_Seq_Gen", sequenceName = "SEQ_NDTCOLEGIO")
-    @GeneratedValue(generator = "NdtColegio_Id_Seq_Gen")
+    @SequenceGenerator( allocationSize=1,name = "NdtColegio_Id_Seq_Gen", sequenceName = "SEQ_NDTCOLEGIO")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtColegio_Id_Seq_Gen")
     private Long cveIdColegio;
     @Size(max = 18)
     @Column(name = "CVE_ID_USUARIO", length = 18)

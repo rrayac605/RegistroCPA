@@ -6,7 +6,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.util.Date;
 
 import javax.persistence.Basic;
@@ -14,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -53,8 +53,8 @@ public class NdtA4PagoPersonaFisicaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A4_PAGOSPERSONASFISICAS", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtA4PagoPersonaFisica_Id_Seq_Gen", sequenceName = "SEQ_NDTA4PAGOPERSONAFISICA")
-    @GeneratedValue(generator = "NdtA4PagoPersonaFisica_Id_Seq_Gen")
+    @SequenceGenerator( allocationSize=1,name = "NdtA4PagoPersonaFisica_Id_Seq_Gen", sequenceName = "SEQ_NDTA4PAGOPERSONAFISICA")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtA4PagoPersonaFisica_Id_Seq_Gen")
     private Long cveIdA4Pagospersonasfisicas;
     @Size(max = 13)
     @Column(name = "RFC_PF", length = 13)

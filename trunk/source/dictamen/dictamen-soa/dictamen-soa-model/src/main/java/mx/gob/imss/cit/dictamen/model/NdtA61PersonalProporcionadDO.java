@@ -6,7 +6,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.util.Date;
 
 import javax.persistence.Basic;
@@ -14,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -53,8 +53,8 @@ public class NdtA61PersonalProporcionadDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A61_LISTADOPERSONAL", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtA61PersonalProporcionad_Id_Seq_Gen", sequenceName = "SEQ_NDTA61PERSONALPROPORCIONAD")
-    @GeneratedValue(generator = "NdtA61PersonalProporcionad_Id_Seq_Gen")
+    @SequenceGenerator( allocationSize=1,name = "NdtA61PersonalProporcionad_Id_Seq_Gen", sequenceName = "SEQ_NDTA61PERSONALPROPORCIONAD")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtA61PersonalProporcionad_Id_Seq_Gen")
     private Long cveIdA61Listadopersonal;
     @Size(max = 30)
     @Column(name = "DES_FOLIO_SIPRESS", length = 30)

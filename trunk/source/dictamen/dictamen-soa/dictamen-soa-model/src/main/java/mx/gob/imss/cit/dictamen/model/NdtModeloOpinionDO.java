@@ -6,7 +6,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -15,6 +14,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -56,8 +56,8 @@ public class NdtModeloOpinionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_MODELO_OPINION", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtModeloOpinion_Id_Seq_Gen", sequenceName = "SEQ_NDTMODELOOPINION")
-    @GeneratedValue(generator = "NdtModeloOpinion_Id_Seq_Gen")
+    @SequenceGenerator( allocationSize=1,name = "NdtModeloOpinion_Id_Seq_Gen", sequenceName = "SEQ_NDTMODELOOPINION")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtModeloOpinion_Id_Seq_Gen")
     private Long cveIdModeloOpinion;
     @Column(name = "FEC_FECHA_PAGO_PRIMERPAGO")
     @Temporal(TemporalType.TIMESTAMP)

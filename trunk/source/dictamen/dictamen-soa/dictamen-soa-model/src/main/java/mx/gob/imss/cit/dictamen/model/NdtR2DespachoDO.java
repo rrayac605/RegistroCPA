@@ -7,7 +7,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -17,6 +16,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -56,8 +56,8 @@ public class NdtR2DespachoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R2_DESPACHO", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtR2Despacho_Id_Seq_Gen", sequenceName = "SEQ_NDTR2DESPACHO")
-    @GeneratedValue(generator = "NdtR2Despacho_Id_Seq_Gen")
+    @SequenceGenerator( allocationSize=1,name = "NdtR2Despacho_Id_Seq_Gen", sequenceName = "SEQ_NDTR2DESPACHO")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtR2Despacho_Id_Seq_Gen")
     private Long cveIdR2Despacho;
     @Column(name = "FEC_ACTIVACION")
     @Temporal(TemporalType.TIMESTAMP)

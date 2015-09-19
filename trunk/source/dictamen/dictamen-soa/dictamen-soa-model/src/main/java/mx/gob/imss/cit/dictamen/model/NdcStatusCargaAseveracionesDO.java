@@ -6,7 +6,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -46,8 +46,8 @@ public class NdcStatusCargaAseveracionesDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_STATUS_CARGA", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdcStatusCargaAseveraciones_Id_Seq_Gen", sequenceName = "SEQ_NDCSTATUSCARGAASEVERACIONE")
-    @GeneratedValue(generator = "NdcStatusCargaAseveraciones_Id_Seq_Gen")
+    @SequenceGenerator( allocationSize=1,name = "NdcStatusCargaAseveraciones_Id_Seq_Gen", sequenceName = "SEQ_NDCSTATUSCARGAASEVERACIONE")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdcStatusCargaAseveraciones_Id_Seq_Gen")
     private Long cveIdStatusCarga;
 
     @Size(max = 100)

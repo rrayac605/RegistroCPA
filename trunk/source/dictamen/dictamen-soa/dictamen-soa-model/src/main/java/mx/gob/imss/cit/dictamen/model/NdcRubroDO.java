@@ -16,6 +16,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -50,8 +51,8 @@ public class NdcRubroDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_RUBRO", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdcRubro_Id_Seq_Gen", sequenceName = "SEQ_NDCRUBRO")
-    @GeneratedValue(generator = "NdcRubro_Id_Seq_Gen")
+    @SequenceGenerator( allocationSize=1,name = "NdcRubro_Id_Seq_Gen", sequenceName = "SEQ_NDCRUBRO")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdcRubro_Id_Seq_Gen")
     private Long cveIdRubro;
 
     @Size(max = 100)
