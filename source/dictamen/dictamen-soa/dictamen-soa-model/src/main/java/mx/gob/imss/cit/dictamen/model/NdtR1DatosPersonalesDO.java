@@ -6,7 +6,6 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -51,8 +51,8 @@ public class NdtR1DatosPersonalesDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R1_DATOS_PERSONALES", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtR1DatosPersonales_Id_Seq_Gen", sequenceName = "SEQ_NDTR1DATOSPERSONALES")
-    @GeneratedValue(generator = "NdtR1DatosPersonales_Id_Seq_Gen")
+    @SequenceGenerator( allocationSize=1,name = "NdtR1DatosPersonales_Id_Seq_Gen", sequenceName = "SEQ_NDTR1DATOSPERSONALES")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtR1DatosPersonales_Id_Seq_Gen")
     private Long cveIdR1DatosPersonales;
     @Size(max = 10)
     @Column(name = "CEDULA_PROFESIONAL", length = 10)

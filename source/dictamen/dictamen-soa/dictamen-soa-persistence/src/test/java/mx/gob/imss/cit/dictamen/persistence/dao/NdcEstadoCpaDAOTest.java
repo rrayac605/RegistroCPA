@@ -41,6 +41,9 @@ public class NdcEstadoCpaDAOTest extends AbstractDBTestUnit {
 		LOG.info("prueba");
 		List<NdcEstadoCpaDO> resultList = localDAO.findAll();
 		LOG.info("Lista: " + resultList.size());
+		for (NdcEstadoCpaDO ndcEstadoCpaDO : resultList) {
+			LOG.info(ndcEstadoCpaDO.getDesEstadoCpa());
+		}
 		Assert.assertNotNull(resultList);
 	}
 }

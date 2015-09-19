@@ -19,7 +19,7 @@ import org.junit.Test;
  */
 
 public class NdtPatronDictamenDAOTest extends AbstractDBTestUnit {
-	private NdtPatronDictamenDAO localDAO = new NdtPatronDictamenDAOImpl();
+	private NdtPatronDictamenDAO ndtPatronDictamenDAO = new NdtPatronDictamenDAOImpl();
 
 	private static final Logger LOG = Logger.getLogger(NdtPatronDictamenDAOTest.class);
 
@@ -32,16 +32,27 @@ public class NdtPatronDictamenDAOTest extends AbstractDBTestUnit {
 		super.setUp();
 		// Llamar los datos de negocio
 		// Conectar el EntityManager al servicio y sus daos
-		connect(localDAO);
+		connect(ndtPatronDictamenDAO);
 
 	}
 
 	@Test
 	public void testFindAll() {
 		LOG.info("prueba");
-		List<NdtPatronDictamenDO> resultList = localDAO.findAll();
+		List<NdtPatronDictamenDO> resultList = ndtPatronDictamenDAO.findAll();
 		LOG.info("Lista: " + resultList.size());
 		Assert.assertNotNull(resultList);
+	}
+	
+	@Test
+	public void testCreate() {
+		NdtPatronDictamenDO ndtPatronDictamenDO=new NdtPatronDictamenDO();
+		try{
+			ndtPatronDictamenDAO.create(ndtPatronDictamenDO);
+		}catch(Exception e){
+			LOG.error(e.getMessage(), e);
+		}
+		
 	}
 }
 

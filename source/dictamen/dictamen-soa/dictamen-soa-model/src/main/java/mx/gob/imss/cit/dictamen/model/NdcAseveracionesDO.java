@@ -13,8 +13,6 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -39,11 +37,16 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdcAseveracionesDO.findByFecRegistroBaja", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
     @NamedQuery(name = "NdcAseveracionesDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
 public class NdcAseveracionesDO implements Serializable {
+    @Column(name = "IND_OBLIGATORIO")
+    private Short indObligatorio;
+    @Column(name = "IND_CONSTRUCCION")
+    private Short indConstruccion;
+    @OneToMany(mappedBy = "cveIdAseveracion", fetch = FetchType.LAZY)
+    private List<NdcAtestiguamientoDO> ndcAtestiguamientoDOList;
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
-    @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="SEQ_NDCTIPOASEVERACIONES")
     @NotNull
     @Column(name = "CVE_ID_ASEVERACION", nullable = false, precision = 22, scale = 0)
     private Long cveIdAseveracion;
@@ -140,6 +143,30 @@ public class NdcAseveracionesDO implements Serializable {
     @Override
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO[ cveIdAseveracion=" + cveIdAseveracion + " ]";
+    }
+
+    public Short getIndObligatorio() {
+        return indObligatorio;
+    }
+
+    public void setIndObligatorio(Short indObligatorio) {
+        this.indObligatorio = indObligatorio;
+    }
+
+    public Short getIndConstruccion() {
+        return indConstruccion;
+    }
+
+    public void setIndConstruccion(Short indConstruccion) {
+        this.indConstruccion = indConstruccion;
+    }
+
+    public List<NdcAtestiguamientoDO> getNdcAtestiguamientoDOList() {
+        return ndcAtestiguamientoDOList;
+    }
+
+    public void setNdcAtestiguamientoDOList(List<NdcAtestiguamientoDO> ndcAtestiguamientoDOList) {
+        this.ndcAtestiguamientoDOList = ndcAtestiguamientoDOList;
     }
     
 }

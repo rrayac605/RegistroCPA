@@ -19,9 +19,14 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import mx.gob.imss.cit.dictamen.commons.util.ReflectionHelper;
-import mx.gob.imss.cit.dictamen.persistence.dao.*;
-import mx.gob.imss.cit.dictamen.persistence.dao.impl.*;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtContadorPublicoAutDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtPatronDictamenDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtR2DespachoDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtContadorPublicoAutDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtPatronDictamenDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtR2DespachoDAOImpl;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 
@@ -30,213 +35,181 @@ import org.junit.Before;
  * 
  * @author ajfuentes
  */
-public abstract class AbstractDBTestUnit
-{
+public abstract class AbstractDBTestUnit {
 
-  public Map<Class<?>, Class<?>> mapDAO;
-  
-  private EntityManager em;
+	private static final Logger LOG = Logger
+			.getLogger(AbstractDBTestUnit.class);
 
-  @Before
-  public void setUp()
-  {
-	  Properties prop = new Properties();
-	  try {
-		prop.load(AbstractDBTestUnit.class.getClassLoader().getResourceAsStream("db_embedida.properties"));
-	} catch (IOException e) {
-	
-		e.printStackTrace();
+	public Map<Class<?>, Class<?>> mapDAO;
+
+	private EntityManager em;
+
+	@Before
+	public void setUp() {
+		Properties prop = new Properties();
+		try {
+			prop.load(AbstractDBTestUnit.class.getClassLoader()
+					.getResourceAsStream("db_embedida.properties"));
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+		if (em == null) {
+
+			EntityManagerFactory emf = Persistence
+					.createEntityManagerFactory("DictamenPUTest");
+			em = emf.createEntityManager();
+			// Agregar la relación de daos y sus implementaciones
+			initMapDAO();
+
+			if (!em.getTransaction().isActive()) {
+				em.getTransaction().begin();
+			}
+
+			if ("true".equals(prop.getProperty("db_embedida"))) {
+				initializeData("dataset/init.sql");
+			}
+
+		}
 	}
-	
-    if( em == null )
-    {
 
-      EntityManagerFactory emf = Persistence.createEntityManagerFactory( "DictamenPUTest" );
-      em = emf.createEntityManager();
-      // Agregar la relación de daos y sus implementaciones
-      initMapDAO();
+	public void initializeData(String path) {
 
-      if( !em.getTransaction().isActive() ) {
-        em.getTransaction().begin();
-      }
-      
-      if("true".equals(prop.getProperty("db_embedida"))){
-    	  initializeData( "dataset/init.sql" );
-      }
-     
-    }
-  }
+		InputStream is = ClassLoader.getSystemResourceAsStream(path);
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
 
-  public void initializeData( String path )
-  {
-    
+		String line;
+		Query query = null;
+		try {
+			line = br.readLine();
+			while (line != null) {
+				if (line.length() > 20 && line.indexOf("//") != 0) {
+					query = em.createNativeQuery(line);
+					query.executeUpdate();
+					em.flush();
+				}
+				line = br.readLine();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			safeCloseBufferedReader(br);
+		}
+	}
 
-    InputStream is = ClassLoader.getSystemResourceAsStream( path );
-    InputStreamReader isr = new InputStreamReader( is );
-    BufferedReader br = new BufferedReader( isr );
+	private void safeCloseBufferedReader(BufferedReader br) {
+		if (br != null) {
+			try {
+				br.close();
+			} catch (IOException e) {
+				br = null;
+			}
+		}
+	}
 
-    String line;
-    Query query = null;
-    try
-    {
-      line = br.readLine();
-      while( line != null )
-      {
-        if( line.length() > 20 && line.indexOf( "//" ) != 0 )
-        {
-          query = em.createNativeQuery( line );
-          query.executeUpdate();
-          em.flush();
-        }
-        line = br.readLine();
-      }
-    }
-    catch( IOException e )
-    {
-      e.printStackTrace();
-    }
-    finally
-    {
-      safeCloseBufferedReader( br );
-    }
-  }
+	private void initMapDAO() {
+		// Agregar las relaciones de DAO y sus implementaciones
+		mapDAO = new HashMap<Class<?>, Class<?>>();
 
-  private void safeCloseBufferedReader( BufferedReader br )
-  {
-    if( br != null )
-    {
-      try
-      {
-        br.close();
-      }
-      catch( IOException e )
-      {
-        br = null;
-      }
-    }
-  }
+		mapDAO.put(NdtContadorPublicoAutDAO.class,
+				NdtContadorPublicoAutDAOImpl.class);
+		mapDAO.put(NdtPatronDictamenDAO.class, NdtPatronDictamenDAOImpl.class);
+		mapDAO.put(NdtR2DespachoDAO.class, NdtR2DespachoDAOImpl.class);
 
-  private void initMapDAO()
-  {
-    // Agregar las relaciones de DAO y sus implementaciones
-    mapDAO = new HashMap<Class<?>, Class<?>>();
+	}
 
-	mapDAO.put( NdtContadorPublicoAutDAO.class              ,NdtContadorPublicoAutDAOImpl.class);
-	mapDAO.put( NdtPatronDictamenDAO.class                  ,NdtPatronDictamenDAOImpl.class);
-	mapDAO.put( NdtR2DespachoDAO.class	                    ,NdtR2DespachoDAOImpl.class);	
+	protected void connect(Object o) {
+		connect(o, 3);
+	}
 
-  }
+	protected void connect(Object o, int n) {
+		if (n > 0) {
+			try {
 
-  protected void connect( Object o )
-  {
-    connect( o, 3 );
-  }
+				Field[] fields = o.getClass().getDeclaredFields();
 
-  protected void connect( Object o, int n )
-  {
-    if( n > 0 )
-    {
-      try
-      {
+				for (Field field : fields) {
+					PersistenceContext persistenceContext = field
+							.getAnnotation(PersistenceContext.class);
+					if (persistenceContext != null) {
+						ReflectionHelper.set(this.em, field.getName(), o);
+					}
 
-        Field[] fields = o.getClass().getDeclaredFields();
+					EJB ejb = field.getAnnotation(javax.ejb.EJB.class);
+					if (ejb != null) {
+						String className = field.getType().getCanonicalName();
 
-        for( Field field : fields )
-        {
-          PersistenceContext persistenceContext = field.getAnnotation( PersistenceContext.class );
-          if( persistenceContext != null )
-          {
-            ReflectionHelper.set( this.em, field.getName(), o );
-          }
+						Class<?> clazz = Class.forName(className);
 
-          EJB ejb = field.getAnnotation( javax.ejb.EJB.class );
-          if( ejb != null )
-          {
-            String className = field.getType().getCanonicalName();
+						if (this.mapDAO.containsKey(clazz)) {
+							Constructor<?> ctor = this.mapDAO.get(clazz)
+									.getConstructor();
+							Object dao = ctor.newInstance();
 
-            Class<?> clazz = Class.forName( className );
+							Field[] fieldDAOs = dao.getClass()
+									.getDeclaredFields();
+							for (Field fieldDAO : fieldDAOs) {
+								persistenceContext = fieldDAO
+										.getAnnotation(PersistenceContext.class);
+								if (persistenceContext != null) {
+									ReflectionHelper.set(this.em,
+											fieldDAO.getName(), dao);
+									ReflectionHelper.set(dao, field.getName(),
+											o);
+									break;
+								}
+							}
+							connect(dao, n - 1);
+						}
 
-            if( this.mapDAO.containsKey( clazz ) )
-            {
-              Constructor<?> ctor = this.mapDAO.get( clazz ).getConstructor();
-              Object dao = ctor.newInstance();
+					}
 
-              Field[] fieldDAOs = dao.getClass().getDeclaredFields();
-              for( Field fieldDAO : fieldDAOs )
-              {
-                persistenceContext = fieldDAO.getAnnotation( PersistenceContext.class );
-                if( persistenceContext != null )
-                {
-                  ReflectionHelper.set( this.em, fieldDAO.getName(), dao );
-                  ReflectionHelper.set( dao, field.getName(), o );
-                  break;
-                }
-              }
-              connect( dao, n - 1 );
-            }
+				}
+			} catch (ClassNotFoundException e) {
+				LOG.error(e.getMessage(), e);
+			} catch (SecurityException e) {
+				LOG.error(e.getMessage(), e);
+			} catch (NoSuchMethodException e) {
+				LOG.error(e.getMessage(), e);
+			} catch (IllegalArgumentException e) {
+				LOG.error(e.getMessage(), e);
+			} catch (InstantiationException e) {
+				LOG.error(e.getMessage(), e);
+			} catch (IllegalAccessException e) {
+				LOG.error(e.getMessage(), e);
+			} catch (InvocationTargetException e) {
+				LOG.error(e.getMessage(), e);
+			}
+		}
 
-          }
+	}
 
-        }
-      }
-      catch( ClassNotFoundException e )
-      {
-        e.printStackTrace();
-      }
-      catch( SecurityException e )
-      {
-        e.printStackTrace();
-      }
-      catch( NoSuchMethodException e )
-      {
-        e.printStackTrace();
-      }
-      catch( IllegalArgumentException e )
-      {
-        e.printStackTrace();
-      }
-      catch( InstantiationException e )
-      {
-        e.printStackTrace();
-      }
-      catch( IllegalAccessException e )
-      {
+	@After
+	public void tearDown() {
+		if (em != null) {
+			em.getTransaction().rollback();
+		}
 
-      }
-      catch( InvocationTargetException e )
-      {
-        e.printStackTrace();
-      }
-    }
+	}
 
-  }
+	public EntityManager getEntityManager() {
+		return this.em;
+	}
 
-  @After
-  public void tearDown()
-  {
-    if( em != null )
-    {
-      em.getTransaction().rollback();
-    }
+	/**
+	 * @return the mapDAO
+	 */
+	public Map<Class<?>, Class<?>> getMapDAO() {
+		return mapDAO;
+	}
 
-  }
-
-  public EntityManager getEntityManager()
-  {
-    return this.em;
-  }
-
-/**
- * @return the mapDAO
- */
-public Map<Class<?>, Class<?>> getMapDAO() {
-	return mapDAO;
-}
-
-/**
- * @param mapDAO the mapDAO to set
- */
-public void setMapDAO(Map<Class<?>, Class<?>> mapDAO) {
-	this.mapDAO = mapDAO;
-}
+	/**
+	 * @param mapDAO
+	 *            the mapDAO to set
+	 */
+	public void setMapDAO(Map<Class<?>, Class<?>> mapDAO) {
+		this.mapDAO = mapDAO;
+	}
 }
