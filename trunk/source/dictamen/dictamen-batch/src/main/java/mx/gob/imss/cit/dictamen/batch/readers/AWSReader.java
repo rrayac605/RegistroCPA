@@ -50,6 +50,8 @@ public class AWSReader implements ItemReader<String> {
         	if (line == null) break;        	
         	lineas.add(line);        	
         }
+        
+       reader.close();
 	}
 
 	@Override

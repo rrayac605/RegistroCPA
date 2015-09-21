@@ -27,7 +27,7 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 @Component
 public class ScanBucket {
 	private Logger LOG=Logger.getLogger(ScanBucket.class);
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     private AmazonS3 s3;
     private String rutaOrigen;
     private String rutaDestino;
@@ -70,7 +70,7 @@ public class ScanBucket {
 				  JobExecution execution = jobLauncher.run(job, parameters);
 				  LOG.info("Exit Status : " + execution.getStatus());
 			  } catch (Exception e) {
-				  e.printStackTrace();
+				  LOG.error(e.getMessage(), e);
 			  }
 		  }
 	  }
@@ -90,7 +90,7 @@ public class ScanBucket {
 		  LOG.error("Caught an AmazonServiceException, " +
         		"which means your request made it " + 
         		"to Amazon S3, but was rejected with an error " +
-                "response for some reason.");
+                "response for some reason.",ase);
 		  LOG.error("Error Message:    " + ase.getMessage());
 		  LOG.error("HTTP Status Code: " + ase.getStatusCode());
 		  LOG.error("AWS Error Code:   " + ase.getErrorCode());
@@ -102,7 +102,7 @@ public class ScanBucket {
                 "an internal error while trying to " +
                 " communicate with S3, " +
                 "such as not being able to access the network.");
-		  LOG.error("Error Message: " + ace.getMessage());
+		  LOG.error("Error Message: " + ace.getMessage(),ace);
 	  }    	
     }
 

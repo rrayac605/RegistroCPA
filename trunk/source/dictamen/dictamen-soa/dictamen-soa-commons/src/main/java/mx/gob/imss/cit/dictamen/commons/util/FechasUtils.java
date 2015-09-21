@@ -29,12 +29,12 @@ public final class FechasUtils {
 	/**
 	 * Constantes privadas para calculos
 	 */
-	private static final int N_1000 = 1000;
-	private static final int N_86400 = 86400;
-	private static final int N_3600 = 3600;
-	private static final int N_60 = 60;
-	private static final int N_24 = 24;
-	private static final int N_10 = 10;
+	private static final long N_1000 = 1000;
+	private static final long N_86400 = 86400;
+	private static final long N_3600 = 3600;
+	private static final long N_60 = 60;
+	private static final long N_24 = 24;
+	private static final long N_10 = 10;
 	
 	/**
 	 * Contructor privado.
@@ -111,10 +111,10 @@ public final class FechasUtils {
 	        return null;
 	    }
         long seconds =   (fin.getTime()-ini.getTime()) /N_1000;
-        int numDays =(int) Math.floor(seconds / N_86400*N_24);
-        int numHours = (int)Math.floor((seconds % N_86400) / N_3600);
-        int numMinutes = (int)Math.floor(((seconds % N_86400) % N_3600) / N_60);
-        int numSeconds = (int)Math.floor((seconds % N_86400) % N_3600) % N_60;
+        long numDays =Math.round(Math.floor(seconds / N_86400*N_24));
+        long numHours = Math.round(Math.floor((double)(seconds % N_86400) / N_3600));
+        long numMinutes = Math.round(Math.floor((double)((seconds % N_86400) % N_3600) / N_60));
+        long numSeconds = Math.round(Math.floor((double)(seconds % N_86400) % N_3600) % N_60);
      
         return getNumero2Digitos(numHours+numDays) + ":" + getNumero2Digitos(numMinutes) + ":" + getNumero2Digitos(numSeconds) ;
 	}
@@ -125,14 +125,14 @@ public final class FechasUtils {
 	        return null;
 	    }
         long seconds =   (fin.getTime()-ini.getTime()) /N_1000;
-        int numDays =(int) Math.floor(seconds / N_86400*N_24);
-        int numHours = (int)Math.floor((seconds % N_86400) / N_3600);
-        int numMinutes = (int)Math.floor(((seconds % N_86400) % N_3600) / N_60);
+        long numDays =Math.round(Math.floor((double)seconds / N_86400*N_24));
+        long numHours = Math.round(Math.floor((double)(seconds % N_86400) / N_3600));
+        long numMinutes = Math.round(Math.floor((double)((seconds % N_86400) % N_3600) / N_60));
      
         return getNumero2Digitos(numHours+numDays) + ":" + getNumero2Digitos(numMinutes);
 	}
 	
-	private static String getNumero2Digitos( int num ){
+	private static String getNumero2Digitos( long num ){
 		if( Math.abs(num) < N_10 ) {
 			return "0" + Math.abs(num);
 		} else {

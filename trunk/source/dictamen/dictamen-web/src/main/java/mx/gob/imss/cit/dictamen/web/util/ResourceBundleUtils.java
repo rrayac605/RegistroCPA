@@ -46,7 +46,7 @@ public final class ResourceBundleUtils {
         ResourceBundle rb = getResourceBundle(DictamenWebConstants.MESSAGE_NOTIFICACION_BUNDLE);
         String message = rb.getString(DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage);
         
-        if(message==null){
+        if(message.isEmpty()){
         	LOGGER.info("no se encontro el mensaje: " + DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage);
         	message=DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage;
         }else{
