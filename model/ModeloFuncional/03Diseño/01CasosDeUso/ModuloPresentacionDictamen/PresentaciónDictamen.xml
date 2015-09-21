@@ -45,7 +45,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_D4C82850_E78D_42f5_86F6_2C28DCA79E7F"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-15 17:10:24"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-18 16:57:18"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-21 13:44:46"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="PresentaciónDictamen"/>
@@ -85,6 +85,191 @@
 								</UML:Constraint>
 							</UML:ModelElement.constraint>
 						</UML:UseCase>
+						<UML:Dependency client="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" supplier="EAID_F906A792_6810_4ddc_940F_6B5A6C083F62" xmi.id="EAID_40A3D2FB_40FF_4779_BF96_215B1D110CE9" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="939"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Firma y presentación del dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A007 - Habilitación de botón Firmar y enviar en presentación de dictamen"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="973"/>
+								<UML:TaggedValue tag="ea_targetID" value="1215"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" supplier="EAID_AAC87BCC_2660_43b9_A2B0_2A511DDD1886" xmi.id="EAID_8F709814_DDFD_4a5f_9034_C2AB65D87DF1" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="938"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Firma y presentación del dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-C029 - Envío y presentación de dictamen"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="973"/>
+								<UML:TaggedValue tag="ea_targetID" value="1205"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" supplier="EAID_03DEFB8B_2E83_4da4_A69D_6FD27E311797" xmi.id="EAID_9F9C5573_B0AF_4364_93BF_47F90C8D5451" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="940"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Firma y presentación del dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-C030 - Médios de contacto para presentación de dictamen"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="973"/>
+								<UML:TaggedValue tag="ea_targetID" value="1186"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" supplier="EAID_46B0A8D2_C997_42e3_B58D_7B4ED64FCCEB" xmi.id="EAID_E19C1D95_9291_4c3e_8234_D298D09209CF" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="936"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Firma y presentación del dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-C023 - Captura de FIEL"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="973"/>
+								<UML:TaggedValue tag="ea_targetID" value="1198"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" supplier="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" xmi.id="EAID_EDE34670_2739_4c7c_B524_865BF1D46A52" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="937"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Firma y presentación del dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-C018 - Mensajes de notificación al usuario"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="973"/>
+								<UML:TaggedValue tag="ea_targetID" value="1201"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -94,42 +279,88 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="nsoria"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-15 17:06:17"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-18 16:19:09"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-21 13:50:48"/>
 				<UML:TaggedValue tag="package" value="EAPK_D4C82850_E78D_42f5_86F6_2C28DCA79E7F"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="89"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=D322B1EF;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=EBF2842E;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=275;Top=152;Right=392;Bottom=230;" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" seqno="1" style="DUID=6C13D90C;"/>
-				<UML:DiagramElement geometry="Left=20;Top=20;Right=180;Bottom=50;" subject="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" seqno="2" style="DUID=BB9C2F91;"/>
-				<UML:DiagramElement geometry="Left=20;Top=20;Right=180;Bottom=50;" subject="EAID_46B0A8D2_C997_42e3_B58D_7B4ED64FCCEB" seqno="3" style="DUID=39E15D7A;"/>
+				<UML:DiagramElement geometry="Left=567;Top=303;Right=727;Bottom=362;" subject="EAID_F906A792_6810_4ddc_940F_6B5A6C083F62" seqno="1" style="DUID=BD09607E;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=564;Top=212;Right=724;Bottom=271;" subject="EAID_03DEFB8B_2E83_4da4_A69D_6FD27E311797" seqno="2" style="DUID=4C86A9A4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=561;Top=154;Right=721;Bottom=187;" subject="EAID_AAC87BCC_2660_43b9_A2B0_2A511DDD1886" seqno="3" style="DUID=9511D5FD;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=276;Top=149;Right=393;Bottom=227;" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" seqno="4" style="DUID=6C13D90C;"/>
+				<UML:DiagramElement geometry="Left=564;Top=80;Right=724;Bottom=113;" subject="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" seqno="5" style="DUID=BB9C2F91;"/>
+				<UML:DiagramElement geometry="Left=561;Top=20;Right=721;Bottom=50;" subject="EAID_46B0A8D2_C997_42e3_B58D_7B4ED64FCCEB" seqno="6" style="DUID=39E15D7A;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9F9C5573_B0AF_4364_93BF_47F90C8D5451" style="Mode=3;EOID=4C86A9A4;SOID=6C13D90C;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_40A3D2FB_40FF_4779_BF96_215B1D110CE9" style="Mode=3;EOID=BD09607E;SOID=6C13D90C;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_8F709814_DDFD_4a5f_9034_C2AB65D87DF1" style="Mode=3;EOID=9511D5FD;SOID=6C13D90C;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_EDE34670_2739_4c7c_B524_865BF1D46A52" style="Mode=3;EOID=BB9C2F91;SOID=6C13D90C;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E19C1D95_9291_4c3e_8234_D298D09209CF" style="Mode=3;EOID=39E15D7A;SOID=6C13D90C;Color=-1;LWidth=0;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
 		<EAModel.scenario>
-			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" xmi.id="EAID_384E5F51_BA8D_45fc_B21B_68AFAF540433">
+			<EAScenario name="FA1 Datos de patrón a dictamier sin finalizar." type="Alternate" weight="1.00" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" xmi.id="EAID_8CBE25C6_9E68_4559_A8CA_C8CD18DAF9F8">
+				<EAScenarioContent>
+					<path>
+						<step name="El sistema muestra en pantalla el MSG22 del RF-C018 - Mensajes de notificación al usuario, ni el de firmar y enviar." guid="{34BFFA77-A253-45c8-807F-4B9D10DF14BB}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El patrón presiona el botón Cerrar para regresar al Escritorio virtual." guid="{0C9E9433-264B-464b-9531-E274C2010C42}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Termina flujo alterno" guid="{DD29B416-E2B8-492c-AB35-A5D4F4E084E1}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="RF-C030 - Médios de contacto para presentación de dictamen" guid="{03DEFB8B-2E83-4da4-A69D-6FD27E311797}"/>
+							<item oldname="RF-C023 - Captura de FIEL" guid="{46B0A8D2-C997-42e3-B58D-7B4ED64FCCEB}"/>
+							<item oldname="RF-C018 - Mensajes de notificación al usuario" guid="{617BA333-F57F-4437-91FB-E6DC3CC2693D}"/>
+							<item oldname="RF-C029 - Envío y presentación de dictamen" guid="{AAC87BCC-2660-43b9-A2B0-2A511DDD1886}"/>
+							<item oldname="RF-A007 - Habilitación de botón Firmar y enviar en presentación de dictamen" guid="{F906A792-6810-4ddc-940F-6B5A6C083F62}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA2  Actualización de medios de contacto" type="Alternate" weight="2.00" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" xmi.id="EAID_EE45F687_8716_4c84_8112_C1B3386FEC7C">
+				<EAScenarioContent>
+					<path>
+						<step name="El patrón para actualizar sus medios de contacto da clien en el botón cerrar de la ventana de &quot;Presentación de dictamen&quot; " guid="{D4D00E9B-0BA1-4387-AFEE-B3ED148AC83A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema regresa al escritorio virtual al patrón." guid="{5A18CBB8-86AC-4a37-8B7E-8022A850FE81}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Termina flujo alterno" guid="{0D9E8D30-6BC4-473d-994B-D98D126267A2}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context/>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FB Firma y presentación de dictamen" type="Basic Path" weight="0.00" subject="EAID_6F5947A0_A331_43f3_9F57_F0DDFBCA04FC" xmi.id="EAID_384E5F51_BA8D_45fc_B21B_68AFAF540433">
 				<EAScenarioContent>
 					<path>
 						<step name="El patrón accede a la opción Presentación de dictamen" guid="{980C18B9-EDAC-4f90-BAFE-A0C3084A71B5}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="En caso que no exista el dictamen firmado por el patrón ver FA1 Datos de patrón sin completar" guid="{904FB986-4877-4427-9F64-D57C7D9AC1B6}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El sistema muestra en pantalla la vista previa de la presentación de dictamen, sus medios de contacto y el botón de firmar. RF-C029 - Envío y presentación de dictamen" guid="{D8911961-A5A2-485e-B5C1-30C644A9EFCE}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="Si el patrón está conforme con sus medios de contacto y en caso de estar correctos y no requerir actualización RF-C, da clic en el botón Confirmar medios de contacto. En caso de requerir actualización llama FA2 Actualización de medios de contacto" guid="{E22BD47A-8203-49f6-BEEE-C4AAC83C00FE}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema muestra en pantalla el MSG del RF-C18" guid="{AE48328D-9B77-4f7c-96B5-9F0ADEDA0B0B}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El patrón selecciona la opción Sí continua en el paso 7. En caso de seleccione la opción no, se llama a FA2 Actualización de medios de contacto" guid="{AB34EEC0-1F58-4070-BE9F-6634A176744E}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El patrón selecciona el botón Firmar y enviar RF-C" guid="{198E8701-F493-4fd6-B476-11E15065535F}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="En caso que no exista el dictamen firmado por el CPA ver FA1 Datos de patrón a dictamier sin finalizar." guid="{904FB986-4877-4427-9F64-D57C7D9AC1B6}" level="2" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="2a" guid="{8CBE25C6-9E68-4559-A8CA-C8CD18DAF9F8}" join="End"/>
+						</step>
+						<step name="El sistema muestra en pantalla la vista previa de la presentación de dictamen, sus medios de contacto y el botón de firmar.RF-C030 - Médios de contacto para presentación de dictamen,  RF-C029 - Envío y presentación de dictamen (vista previa). Si el sistema no encuentra medios de contacto aparecerá en pantalla el MSG 20 del RF-C018 - Mensajes de notificación al usuario." guid="{D8911961-A5A2-485e-B5C1-30C644A9EFCE}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El patrón da clic en el botón  Confirmar medios de contacto." guid="{E22BD47A-8203-49f6-BEEE-C4AAC83C00FE}" level="4" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="En caso que el sistema no encuentre ningun medio de contacto, mostrará el MSG 20 del RF-C018 - Mensajes de notificación al usuario y continua en FA2. Actualización de medios de contacto.&#xA;Si el sistema encuentra información de medios de contacto muestra en pantalla el MSG 21 del RF-C018 - Mensajes de notificación al usuario." guid="{AE48328D-9B77-4f7c-96B5-9F0ADEDA0B0B}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="5a" guid="{EE45F687-8716-4c84-8112-C1B3386FEC7C}" join="End"/>
+						</step>
+						<step name="El patrón selecciona la opción Sí continua en el paso 7 RF-A007 - Habilitación de botón Firmar y enviar en presentación de dictamen. En caso de seleccione la opción no, se llama a FA2 Actualización de medios de contacto" guid="{AB34EEC0-1F58-4070-BE9F-6634A176744E}" level="6" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="6a" guid="{EE45F687-8716-4c84-8112-C1B3386FEC7C}" join="End"/>
+						</step>
+						<step name="El patrón selecciona el botón Firmar y enviar." guid="{198E8701-F493-4fd6-B476-11E15065535F}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema despliega la ventana del componente de firma digital,  RF-C023 - Captura de FIEL." guid="{C4206354-E8C2-4da9-9313-A7D7CC48E1D0}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El patrón captura y selecciona los archivos correspondientes a la firma electrónica y da clic en el botón Firmar." guid="{9A2E0C4D-90A4-4be3-B933-57D22324B3CB}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema realiza la firma a través de notaría digital del trámite y genera el acuse respectivo. RF-C&#xA;El sistema despliega en PDF el acuse, lo almacena en la boveda personall y lo envía por correo electrónico al PAtrón y CPA RF-C." guid="{BDDAA398-C596-4113-9018-782CCDBD1566}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema realiza la firma a través de notaría digital del trámite y genera el acuse respectivo. &#xA;El sistema despliega en PDF el acuse, lo almacena en la boveda personal y lo envía por correo electrónico al Patrón y CPA RF-C029 - Envío y presentación de dictamen." guid="{BDDAA398-C596-4113-9018-782CCDBD1566}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context/>
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
 		</EAModel.scenario>
+		<EAStub xmi.id="EAID_F906A792_6810_4ddc_940F_6B5A6C083F62" name="RF-A007 - Habilitación de botón Firmar y enviar en presentación de dictamen" UMLType="Requirement"/>
+		<EAModel.paramSub/>
+		<EAStub xmi.id="EAID_AAC87BCC_2660_43b9_A2B0_2A511DDD1886" name="RF-C029 - Envío y presentación de dictamen" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_03DEFB8B_2E83_4da4_A69D_6FD27E311797" name="RF-C030 - Médios de contacto para presentación de dictamen" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_46B0A8D2_C997_42e3_B58D_7B4ED64FCCEB" name="RF-C023 - Captura de FIEL" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" name="RF-C018 - Mensajes de notificación al usuario" UMLType="Requirement"/>
 	</XMI.extensions>
 </XMI>
