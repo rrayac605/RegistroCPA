@@ -14,7 +14,7 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
-<<<<<<< .mineimport mx.gob.imss.cit.dictamen.commons.to.*;
+import mx.gob.imss.cit.dictamen.commons.to.*;
 import mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.to.ClavePresupuestalTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.to.NivelAtencionTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.to.TipoUMFTO;
@@ -23,8 +23,8 @@ import mx.gob.imss.cit.dictamen.commons.to.sat.documento.probatorio.to.Documento
 import mx.gob.imss.cit.dictamen.commons.to.sat.documento.probatorio.to.DocumentoProbatorioTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.documento.probatorio.to.NacimientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.documento.probatorio.to.TipoDocumentoProbatorioTO;
-=======import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
->>>>>>> .theirsimport mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
@@ -73,8 +73,7 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Metadata.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Tramite.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.BovedaBaseObjectTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.BaseObject.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO.class, mx.gob.imss.cit.ws.commonschema.SGBDE.class);		
-<<<<<<< .mine		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO.class, mx.gob.imss.cit.ws.commonschema.SGBDE.class);				
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.to.ClavePresupuestalTO.class  	,mx.gob.imss.ctirss.delta.model.derechohabiente.ClavePresupuestal.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.to.NivelAtencionTO.class	   	,mx.gob.imss.ctirss.delta.model.derechohabiente.NivelAtencion.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.to.TipoUMFTO.class			   	,mx.gob.imss.ctirss.delta.model.derechohabiente.TipoUMF.class);
@@ -182,8 +181,8 @@ public class TransformerServiceUtils {
 		mapClass.put( mx.gob.imss.ctirss.delta.model.gestion.patronal.RegistroSindicato.class		,mx.gob.imss.cit.dictamen.commons.to.sat.patronal.to.RegistroSindicatoTO.class		);
 		mapClass.put( mx.gob.imss.ctirss.delta.model.gestion.patronal.TipoSociedad.class			,mx.gob.imss.cit.dictamen.commons.to.sat.patronal.to.TipoSociedadTO.class			);
 		
-=======		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class,mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO.class);
->>>>>>> .theirs	}
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class,mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO.class);
+}
 	
 	
 	private TransformerServiceUtils(){
