@@ -28,11 +28,11 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 		DatosPatronDTO datosPatron= new	DatosPatronDTO();
 		datosPatron.setRazonSocialNombre("Fulanito de Tal SA de SV");
 		datosPatron.setEjercicioDictaminar("Enero 2016");
-		datosPatron.setIdTipoDictamen(new Integer (2));		
+		datosPatron.setIdTipoDictamen( Integer.valueOf(2));		
 		
 		datosPatron.setFechaPresentacionDictamen(new Date());
-		datosPatron.setNumRegistroPatronales( new Integer(1));
-		datosPatron.setNumTrabajadoresPromedio(new Integer (5));
+		datosPatron.setNumRegistroPatronales( Integer.valueOf(1));
+		datosPatron.setNumTrabajadoresPromedio( Integer.valueOf(5));
 		datosPatron.setRfc(rfc);
 		return datosPatron;
 	}
@@ -42,7 +42,7 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 		List<TipoDictamenDTO> listaTipoDictamen= new ArrayList<TipoDictamenDTO> ();
 		
 		TipoDictamenDTO tipoDictamenDTO= new TipoDictamenDTO();
-		tipoDictamenDTO.setIdDictamen(new Integer (1));
+		tipoDictamenDTO.setIdDictamen( Integer.valueOf(1));
 		tipoDictamenDTO.setDescTipoDictamen("Obligatorio");
 		listaTipoDictamen.add(tipoDictamenDTO);
 		

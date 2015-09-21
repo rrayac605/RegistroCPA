@@ -85,7 +85,7 @@ public class TransformerHelper {
 	                        	
 	                        	List newList=getListWithNulls(newClassField, myList.size());
 	                        	
-	                        	Integer restaProfundidad= new Integer(profundidad.intValue() - UNO);
+	                        	Integer restaProfundidad= profundidad.intValue() - UNO;
 	                        	
 	                        	for(int i=CERO;i<myList.size();i++){
 	                        	      Object obj=get (mapClass,myList.get(i), newClassField,restaProfundidad) ;
@@ -105,7 +105,7 @@ public class TransformerHelper {
 	                        
 	                    } else if(mapClass.containsKey(field.getType()) ){
 	                    	if(profundidad.intValue()>CERO){
-		                    	Integer restaProfundidad= new Integer(profundidad.intValue() - UNO);
+		                    	Integer restaProfundidad= profundidad.intValue() - UNO;
 		                    	
 		                    	values[CERO] = get (mapClass,valueFlied, mapClass.get(field.getType()),restaProfundidad) ;
 		                        Statement stmt = new Statement(objectNew, createSetter(fieldNew.getName()), values);
