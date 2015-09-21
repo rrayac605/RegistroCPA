@@ -11,6 +11,7 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdtPatronDictamenDAO;
 import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
+import mx.gob.imss.cit.dictamen.services.transformer.TransformerServiceUtils;
 
 /**
  * @author ajfuentes
@@ -26,7 +27,10 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 	@Override
 	public void saveDictamen(PatronDictamenTO dictamen) throws DictamenException{
 		
-		NdtPatronDictamenDO ndtPatronDictamenDO=new NdtPatronDictamenDO();
+		
+		NdtPatronDictamenDO ndtPatronDictamenDO=TransformerServiceUtils.transformer(dictamen);
+		
+		
 		ndtPatronDictamenDAO.create(ndtPatronDictamenDO);
 		
 	}
