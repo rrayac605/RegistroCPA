@@ -3,8 +3,8 @@ package mx.gob.imss.cit.dictamen.services;
 import javax.ejb.Local;
 
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
-import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.to.FisicaTO;
-import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.to.MoralTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.FisicaTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.MoralTO;
 
 @Local
 public interface ConsultaSatRFCService {
