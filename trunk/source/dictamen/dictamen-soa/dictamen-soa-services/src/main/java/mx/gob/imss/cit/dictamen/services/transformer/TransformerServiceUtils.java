@@ -27,10 +27,18 @@ import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.*;
 import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.*;
 import mx.gob.imss.cit.dictamen.commons.to.sat.medio.contacto.*;
 import mx.gob.imss.cit.dictamen.commons.to.sat.patronal.*;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
+import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO;
+import mx.gob.imss.cit.dictamen.model.NdcPreguntaDO;
+import mx.gob.imss.cit.dictamen.model.NdcRubroDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO;
+import mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 import mx.gob.imss.cit.scicp.ws.DocumentoTO;
@@ -182,6 +190,17 @@ public class TransformerServiceUtils {
 		mapClass.put( mx.gob.imss.ctirss.delta.model.gestion.patronal.TipoSociedad.class			,mx.gob.imss.cit.dictamen.commons.to.sat.patronal.TipoSociedadTO.class			);
 		
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class,mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO.class);
+		
+		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class,mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class,mx.gob.imss.cit.dictamen.model.NdcRubroDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class,mx.gob.imss.cit.dictamen.model.NdcPreguntaDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class,mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcRubroDO.class			,mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class			);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcPreguntaDO.class			,mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class		);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class	);
+		
 }
 	
 	
@@ -593,7 +612,7 @@ public class TransformerServiceUtils {
 		Vialidad cont= (Vialidad) TransformerHelper.get(mapClass,vialidadTO, Vialidad.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
-	/***/
+
 	public static DatosPersonalesSATTO transformer( DatosPersonaSAT datosPersonalesSAT ) {
 		DatosPersonalesSATTO cont= (DatosPersonalesSATTO) TransformerHelper.get(mapClass,datosPersonalesSAT, DatosPersonalesSATTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
@@ -654,7 +673,7 @@ public class TransformerServiceUtils {
 		TipoPoderTO cont= (TipoPoderTO) TransformerHelper.get(mapClass,tipoPoder, TipoPoderTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
-	/**/
+
 	public static DatosPersonaSAT transformer( DatosPersonalesSATTO datosPersonaSATTO ) {
 		DatosPersonaSAT cont= (DatosPersonaSAT) TransformerHelper.get(mapClass,datosPersonaSATTO, DatosPersonaSAT.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
@@ -793,4 +812,44 @@ public class TransformerServiceUtils {
 		return cont;
 	}	
 	
+	
+	public static NdcAtestiguamientoDO transformer( AtestiguamientoTO AtestiguamientoTO ) {
+		NdcAtestiguamientoDO cont= (NdcAtestiguamientoDO) TransformerHelper.get(mapClass,AtestiguamientoTO, NdcAtestiguamientoDO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static NdcRubroDO transformer( RubroTO rubroTO ) {
+		NdcRubroDO cont= (NdcRubroDO) TransformerHelper.get(mapClass,rubroTO, NdcRubroDO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static NdcPreguntaDO transformer( PreguntaTO preguntaTO ) {
+		NdcPreguntaDO cont= (NdcPreguntaDO) TransformerHelper.get(mapClass,preguntaTO, NdcPreguntaDO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static NdcTipoRespuestaDO transformer( TipoRespuestaTO tipoRespuestaTO ) {
+		NdcTipoRespuestaDO cont= (NdcTipoRespuestaDO) TransformerHelper.get(mapClass,tipoRespuestaTO, NdcTipoRespuestaDO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static TipoRespuestaTO transformer( NdcTipoRespuestaDO ndcTipoRespuestaDO ) {
+		TipoRespuestaTO cont= (TipoRespuestaTO) TransformerHelper.get(mapClass,ndcTipoRespuestaDO, TipoRespuestaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static PreguntaTO transformer( NdcPreguntaDO ndcPreguntaDO ) {
+		PreguntaTO cont= (PreguntaTO) TransformerHelper.get(mapClass,ndcPreguntaDO, PreguntaTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static RubroTO transformer( NdcRubroDO ndcRubroDO ) {
+		RubroTO cont= (RubroTO) TransformerHelper.get(mapClass,ndcRubroDO, RubroTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static AtestiguamientoTO transformer( NdcAtestiguamientoDO ndcAtestiguamientoDO ) {
+		AtestiguamientoTO cont= (AtestiguamientoTO) TransformerHelper.get(mapClass,ndcAtestiguamientoDO, AtestiguamientoTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
 }
