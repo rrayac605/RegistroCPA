@@ -16,6 +16,6 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 @Local
 public interface PatronDictamenService {
 	
-	void saveDictamen(PatronDictamenTO dictamen) throws DictamenException;
+	PatronDictamenTO saveDictamen(PatronDictamenTO dictamen) throws DictamenException;
 
 }

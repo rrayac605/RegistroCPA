@@ -16,10 +16,16 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
 
+import org.apache.log4j.Logger;
+
 @Remote({mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator.class})
 @Stateless
 public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
+	
+	
 
+	private static final Logger LOG=Logger.getLogger(PatronDictamenIntegratorImpl.class);
+	
 	@EJB
 	private PatronDictamenService patronDictamenService;
 	
@@ -55,10 +61,23 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	@Override
 	public void executeRegistrar(DatosPatronDTO datosDTO) throws DictamenNegocioException{
 
-		PatronDictamenTO patronDictamenTO=new PatronDictamenTO();
+		
 		try {
+			PatronDictamenTO patronDictamenTO=new PatronDictamenTO();
+			
+			patronDictamenTO.setDesNombreRazonSocial(datosDTO.getRazonSocialNombre());
+			patronDictamenTO.setDesRfc(datosDTO.getRfc());
+			patronDictamenTO.setNumNumeroTrabajadores(datosDTO.getNumTrabajadoresPromedio());
+			patronDictamenTO.setIndPatronConstruccion(datosDTO.getIndustriaConstruccion()?Short.valueOf("1"):Short.valueOf("0"));
+			patronDictamenTO.setIndPatronEmpresaValuada(datosDTO.getEmpresaValuada()?Short.valueOf("1"):Short.valueOf("0"));			
+			patronDictamenTO.setIndRealizoActConstruccion(datosDTO.getActConstruccionOregObra()?Short.valueOf("1"):Short.valueOf("0"));
+			patronDictamenTO.setCveIdEjerFiscalId(Long.valueOf(datosDTO.getEjercicioDictaminar()));
+			patronDictamenTO.setCveIdTipoDictamenId(Long.valueOf(datosDTO.getIdTipoDictamen()));
+			patronDictamenTO.setNumRegistroPatronales(datosDTO.getNumRegistroPatronales());			
+			
 			patronDictamenService.saveDictamen(patronDictamenTO);
 		} catch (DictamenException e) {
+			LOG.error(e.getMessage(),e);
 			throw new DictamenNegocioException(e.getMessage(), e);
 		}
 
