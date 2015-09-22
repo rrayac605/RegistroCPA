@@ -23,10 +23,10 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator{
 	LayoutPatronAsociadoService layoutPatronAsociadoService;
 	
 	
-	public List<ParentLayoutDTO> findLayout()throws DictamenNegocioException{
+	public List<ParentLayoutDTO> findLayout(String anioEjercicio, String rfcUsuario, String rfcPatron)throws DictamenNegocioException{
 		List<ParentLayoutDTO> listaDTO= null;
 		
-		List<ParentLayoutTO> listaTO= layoutPatronAsociadoService.findLayoutAWSService();
+		List<ParentLayoutTO> listaTO= layoutPatronAsociadoService.findLayoutAWSService(anioEjercicio, rfcUsuario, rfcPatron);
 		for(ParentLayoutTO parentLayoutTO:listaTO){
 			if(listaDTO== null){
 				listaDTO=new ArrayList<ParentLayoutDTO>();				
