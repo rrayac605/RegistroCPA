@@ -9,5 +9,5 @@ import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
 @Local
 public interface LayoutPatronAsociadoService {
 	
-	List<ParentLayoutTO> findLayoutAWSService();
+	List<ParentLayoutTO> findLayoutAWSService(String anioEjercicio, String rfcUsuario, String rfcPAtron);
 }

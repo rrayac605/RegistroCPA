@@ -25,9 +25,9 @@ public class CargaArchivosBean extends BaseBean {
 	@ManagedProperty(value = "#{cargaArchivosPage}")
 	private CargaArchivosPage cargaArchivosPage;
 	
-	public void init(){
+	public void init(String anioEjercicio, String rfcUsuario, String rfcPatron){
 		try {
-			cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout());
+			cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout(anioEjercicio, rfcUsuario, rfcPatron));
 		} catch (DictamenNegocioException e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_LAYOUTS.getCode());
 		}
