@@ -1,40 +1,41 @@
 package mx.gob.imss.cit.dictamen.services;
 
+import gob.imss.webservice.sat.rfc.cliente.EntradaSAT;
+import gob.imss.webservice.sat.rfc.cliente.SalidaSAT;
+import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
+import mx.gob.imss.cit.dictamen.services.impl.ConsultaSatRFCServiceImpl;
+
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
-
-import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
-import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.FisicaTO;
-import mx.gob.imss.cit.dictamen.services.impl.ConsultaSatRFCServiceImpl;
 
 public class ConsultaSatRFCServiceTest {
 	private Logger LOG=Logger.getLogger(ConsultaSatRFCServiceTest.class);
 	
 	
-	@InjectMocks
+	
 	private ConsultaSatRFCService consultaSatRFCService = new ConsultaSatRFCServiceImpl();
-	
-	private String rfc= "MAHL881210A24";
-	
+
 	
 	@Before
 	public void init() throws Exception {	
 		consultaSatRFCService=new ConsultaSatRFCServiceImpl();
 	}
 	
+
+	
 	@Test
-	public void testbBuscarPersonaFisicaPorRfcEnSat(){
-		FisicaTO fisicaTO = null;
-		
+	public void testGetPatron(){
+		EntradaSAT entradaSAT = new EntradaSAT();
+		entradaSAT.setRfc("");
+		SalidaSAT salidaSAT =null;
 		try {
-			fisicaTO = consultaSatRFCService.buscarPersonaFisicaPorRfcEnSat(rfc);
+			salidaSAT = consultaSatRFCService.getPatron(entradaSAT);
 		} catch (DictamenException e) {
 			LOG.error(e.getMessage(),e);
 		}
-		Assert.assertNotNull(fisicaTO);
+		Assert.assertNotNull(salidaSAT);
 	}
 	
 }
