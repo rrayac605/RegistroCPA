@@ -61,9 +61,14 @@ public class DatosPatronalesBean extends BaseBean {
 	public void guardar(){
 		
 		LOG.info("los datos a guardar son: ");
-		LOG.info(datosPatronalesPage.getDatosPatron().getRazonSocialNombre());
+		try {
+			patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron());
+		} catch (DictamenNegocioException e) {
+			LOG.error(e.getMessage(),e);
+			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
+		}
+		
 		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_DATOS_PATRONALES.getCode());
-
 		
 	}
 		

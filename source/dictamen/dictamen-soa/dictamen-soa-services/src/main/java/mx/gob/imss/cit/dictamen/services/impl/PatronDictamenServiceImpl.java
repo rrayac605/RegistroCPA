@@ -35,7 +35,7 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 	public PatronDictamenTO saveDictamen(PatronDictamenTO dictamen) throws DictamenException{
 		
 		PatronDictamenTO dictamenResultado=null;
-		if(dictamen!=null){
+		if(dictamen==null){
 			LOG.error("el dictamen llego nulo");
 			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_PARAM_NULL);
 		}

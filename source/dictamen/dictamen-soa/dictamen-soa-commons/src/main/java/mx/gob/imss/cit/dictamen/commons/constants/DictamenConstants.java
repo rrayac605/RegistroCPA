@@ -1,15 +1,15 @@
-package mx.gob.imss.cit.dictamen.services.constants;
+package mx.gob.imss.cit.dictamen.commons.constants;
 
 
 /**
  * The Class PortalConstants.
  */
-public final class DictamenServicesConstants {
+public final class DictamenConstants {
 
 	/**
 	 * Instantiates a new portal constants.
 	 */
-	private DictamenServicesConstants() {
+	private DictamenConstants() {
 		
 	}
 	
@@ -57,6 +57,9 @@ public final class DictamenServicesConstants {
 	public static final int PROFUNDIDAD_MAPEO=2;
 	public static final String ENCODING_UTF8="UTF-8";
 	public static final String ALGORITHM_HMACSHA1="HmacSHA1";
+	
+	public static final String ESTADO_ACTIVO="1";
+	public static final String ESTADO_INACTIVO="2";
 	
 	
 	

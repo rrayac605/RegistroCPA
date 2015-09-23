@@ -12,12 +12,12 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.ejb.Stateless;
 
+import mx.gob.imss.cit.dictamen.commons.constants.DictamenConstants;
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO;
 import mx.gob.imss.cit.dictamen.commons.util.FechasUtils;
 import mx.gob.imss.cit.dictamen.services.AWSService;
-import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
 
@@ -82,24 +82,24 @@ public class AWSServiceImpl implements AWSService {
 
 		 try {
 			 
-			awsSecretKey = PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SECRET_KEY);
+			awsSecretKey = PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_SECRET_KEY);
 			
 			awsPolicyTO.setExpiration(FechasUtils.dateToString_yyyy_MM_dd_T_HH_mm_ss_Z(fechaFirma));	
-			awsPolicyTO.setAcl(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACL));
-			awsPolicyTO.setBucket(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_BUCKET));
-			awsPolicyTO.setAwsAccessKeyId(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_ACCESS_KEY_ID));
-			awsPolicyTO.setSuccessActionStatus(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_SUCCESS_ACTION_ESTATUS));
-			awsPolicyTO.setContentType(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_CONTENT_TYPE));
-			awsPolicyTO.setXamzMetaUuid(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_UUID));
-			awsPolicyTO.setXamzMetaTag(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_META_TAG));
-			awsPolicyTO.setXamzCredential(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_CREDENTIAL));
-			awsPolicyTO.setXamzAlgorithm(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_X_AMZ_ALGORITHM));
+			awsPolicyTO.setAcl(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_ACL));
+			awsPolicyTO.setBucket(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_BUCKET));
+			awsPolicyTO.setAwsAccessKeyId(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_ACCESS_KEY_ID));
+			awsPolicyTO.setSuccessActionStatus(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_SUCCESS_ACTION_ESTATUS));
+			awsPolicyTO.setContentType(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_CONTENT_TYPE));
+			awsPolicyTO.setXamzMetaUuid(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_X_AMZ_META_UUID));
+			awsPolicyTO.setXamzMetaTag(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_X_AMZ_META_TAG));
+			awsPolicyTO.setXamzCredential(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_X_AMZ_CREDENTIAL));
+			awsPolicyTO.setXamzAlgorithm(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_X_AMZ_ALGORITHM));
 			awsPolicyTO.setXamzDate(FechasUtils.dateToString_yyyyMMddTHHmmssZ(fechaFirma));
-			awsPolicyTO.setUrl(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_URL));
+			awsPolicyTO.setUrl(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_URL));
 		
 			awsPolicyTO.setKey(rutaDestino);			
 			
-			String policy=POLICY_TEMPLATE.replaceAll(DictamenServicesConstants.CARACTER_SALTO, DictamenServicesConstants.CARACTER_VACIO);
+			String policy=POLICY_TEMPLATE.replaceAll(DictamenConstants.CARACTER_SALTO, DictamenConstants.CARACTER_VACIO);
 			policy=policy.replaceAll(EXPIRATION, awsPolicyTO.getExpiration())
 						.replaceAll(BUCKET, awsPolicyTO.getBucket())
 						.replaceAll(KEY, awsPolicyTO.getKey())
@@ -113,10 +113,10 @@ public class AWSServiceImpl implements AWSService {
 						.replaceAll(X_AMZ_DATE, awsPolicyTO.getXamzDate());
 			LOG.debug(policy);
 			
-			Mac hmac = Mac.getInstance(DictamenServicesConstants.ALGORITHM_HMACSHA1);
-			hmac.init(new SecretKeySpec(awsSecretKey.getBytes(DictamenServicesConstants.ENCODING_UTF8), DictamenServicesConstants.ALGORITHM_HMACSHA1));			
-			String policy64=Base64.encodeBase64String(policy.getBytes(DictamenServicesConstants.ENCODING_UTF8));
-			String signature = Base64.encodeBase64String( hmac.doFinal(policy64.getBytes(DictamenServicesConstants.ENCODING_UTF8)));
+			Mac hmac = Mac.getInstance(DictamenConstants.ALGORITHM_HMACSHA1);
+			hmac.init(new SecretKeySpec(awsSecretKey.getBytes(DictamenConstants.ENCODING_UTF8), DictamenConstants.ALGORITHM_HMACSHA1));			
+			String policy64=Base64.encodeBase64String(policy.getBytes(DictamenConstants.ENCODING_UTF8));
+			String signature = Base64.encodeBase64String( hmac.doFinal(policy64.getBytes(DictamenConstants.ENCODING_UTF8)));
 			
 			awsPolicyTO.setPolicy(policy64);
 			awsPolicyTO.setSignature(signature);

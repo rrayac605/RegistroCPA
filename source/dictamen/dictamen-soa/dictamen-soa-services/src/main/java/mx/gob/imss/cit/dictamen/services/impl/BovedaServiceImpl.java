@@ -31,6 +31,7 @@ import mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Document;
 import mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.Metadata;
 import mx.gob.imss.cit.bp.ws.documentows.DocumentoWSServiceImplService;
 import mx.gob.imss.cit.bp.ws.documentows.IDocumentoWSService;
+import mx.gob.imss.cit.dictamen.commons.constants.DictamenConstants;
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaActorTO;
@@ -40,7 +41,6 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.services.BovedaService;
-import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 import mx.gob.imss.cit.dictamen.services.transformer.TransformerServiceUtils;
 import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
@@ -61,8 +61,8 @@ public class BovedaServiceImpl implements BovedaService {
 	
 	@PostConstruct
 	public void init() throws MalformedURLException{
-		wsdl= new URL(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BOVEDA_ENDPOINT));
-		name=new QName(PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BOVEDA_NAMESPACE),PropertiesConfigUtils.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_BOVEDA_SERVICE));
+		wsdl= new URL(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_ENDPOINT));
+		name=new QName(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_NAMESPACE),PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_SERVICE));
 		port = new DocumentoWSServiceImplService(wsdl, name).getDocumentoWSServiceImplPort();
 
 	}
