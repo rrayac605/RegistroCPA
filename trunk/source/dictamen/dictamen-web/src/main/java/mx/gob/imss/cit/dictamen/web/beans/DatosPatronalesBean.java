@@ -5,10 +5,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import mx.gob.imss.cit.dictamen.integration.api.ConsultaSATIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.EjercicioFiscalIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
-import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
@@ -29,6 +29,9 @@ public class DatosPatronalesBean extends BaseBean {
 	@EJB
 	private EjercicioFiscalIntegrator ejercicioFiscalIntegrator;
 	
+	@EJB
+	private ConsultaSATIntegrator consultaSATIntegrator;
+	
 	private static final long serialVersionUID = 2825687007915597308L;
 
 	@ManagedProperty(value = "#{datosPatronalesPage}")
@@ -40,7 +43,7 @@ public class DatosPatronalesBean extends BaseBean {
 		try {
 			datosPatronalesPage.setListaTipoDictamen(patronIntegration.findAllTipoDictamen());
 			datosPatronalesPage.setListaEjercicioFiscal(ejercicioFiscalIntegrator.findAll());
-		} catch (DictamenNegocioException e) {
+		} catch (Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}
 	}
@@ -48,7 +51,21 @@ public class DatosPatronalesBean extends BaseBean {
 	
 
 	public void buscar(){
-		FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_EJEMPLO2.getCode());
+		
+		try {
+			
+			String razonSocial=consultaSATIntegrator.getPatron(datosPatronalesPage.getDatosPatron().getRfc());
+			
+			if(razonSocial==null){
+				FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_NO_ENCONTRADO.getCode(),datosPatronalesPage.getDatosPatron().getRfc());
+			}else{
+				datosPatronalesPage.getDatosPatron().setRazonSocialNombre(razonSocial);
+			}
+		} catch (Exception e) {
+			LOG.error(e.getMessage(),e);
+			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_EXCEPCION.getCode());
+		}
+		
 
 
 	}
@@ -63,7 +80,7 @@ public class DatosPatronalesBean extends BaseBean {
 		LOG.info("los datos a guardar son: ");
 		try {
 			patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron());
-		} catch (DictamenNegocioException e) {
+		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}

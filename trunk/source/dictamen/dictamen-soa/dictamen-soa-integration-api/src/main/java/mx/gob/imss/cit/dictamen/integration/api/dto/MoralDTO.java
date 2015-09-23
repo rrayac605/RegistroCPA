@@ -1,27 +1,22 @@
-package mx.gob.imss.cit.dictamen.commons.to.sat.individuo;
+package mx.gob.imss.cit.dictamen.integration.api.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
-import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
-import mx.gob.imss.cit.dictamen.commons.to.sat.patronal.EscrituraConstitutivaTO;
-import mx.gob.imss.cit.dictamen.commons.to.sat.patronal.RegistroSindicatoTO;
-import mx.gob.imss.cit.dictamen.commons.to.sat.patronal.TipoSociedadTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
-public class MoralTO extends BaseTO{
+public class MoralDTO extends BaseDTO{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private String actaConstitutiva;
 	private String altaEnImss;
 	private String busqAprox;
 	private Long cveMoral;
-	private DatosPersonalesSATTO datosPersonalesSAT;
 	private String desSituacion;
-	private EscrituraConstitutivaTO escrituraConstitutiva;
 	private String estadosFormateados;
 	private Date fechaBaja;
 	private Date fechaCreacion;
@@ -34,11 +29,8 @@ public class MoralTO extends BaseTO{
 	private String nrp;
 	private Integer numeroLineaArchivo;
 	private String razonSocial;
-	private RegistroSindicatoTO registroSindicato;
 	private String rfcSat;
-	private List<SituacionSATTO> situacionesSAT;
 	private String subEstadosFormateados;
-	private TipoSociedadTO tipoSociedad;
 	public String getActaConstitutiva() {
 		return actaConstitutiva;
 	}
@@ -63,24 +55,14 @@ public class MoralTO extends BaseTO{
 	public void setCveMoral(Long cveMoral) {
 		this.cveMoral = cveMoral;
 	}
-	public DatosPersonalesSATTO getDatosPersonalesSAT() {
-		return datosPersonalesSAT;
-	}
-	public void setDatosPersonalesSAT(DatosPersonalesSATTO datosPersonalesSAT) {
-		this.datosPersonalesSAT = datosPersonalesSAT;
-	}
+
 	public String getDesSituacion() {
 		return desSituacion;
 	}
 	public void setDesSituacion(String desSituacion) {
 		this.desSituacion = desSituacion;
 	}
-	public EscrituraConstitutivaTO getEscrituraConstitutiva() {
-		return escrituraConstitutiva;
-	}
-	public void setEscrituraConstitutiva(EscrituraConstitutivaTO escrituraConstitutiva) {
-		this.escrituraConstitutiva = escrituraConstitutiva;
-	}
+
 	public String getEstadosFormateados() {
 		return estadosFormateados;
 	}
@@ -153,36 +135,21 @@ public class MoralTO extends BaseTO{
 	public void setRazonSocial(String razonSocial) {
 		this.razonSocial = razonSocial;
 	}
-	public RegistroSindicatoTO getRegistroSindicato() {
-		return registroSindicato;
-	}
-	public void setRegistroSindicato(RegistroSindicatoTO registroSindicato) {
-		this.registroSindicato = registroSindicato;
-	}
+
 	public String getRfcSat() {
 		return rfcSat;
 	}
 	public void setRfcSat(String rfcSat) {
 		this.rfcSat = rfcSat;
 	}
-	public List<SituacionSATTO> getSituacionesSAT() {
-		return situacionesSAT;
-	}
-	public void setSituacionesSAT(List<SituacionSATTO> situacionesSAT) {
-		this.situacionesSAT = situacionesSAT;
-	}
+
 	public String getSubEstadosFormateados() {
 		return subEstadosFormateados;
 	}
 	public void setSubEstadosFormateados(String subEstadosFormateados) {
 		this.subEstadosFormateados = subEstadosFormateados;
 	}
-	public TipoSociedadTO getTipoSociedad() {
-		return tipoSociedad;
-	}
-	public void setTipoSociedad(TipoSociedadTO tipoSociedad) {
-		this.tipoSociedad = tipoSociedad;
-	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -191,9 +158,7 @@ public class MoralTO extends BaseTO{
 		result = prime * result + ((altaEnImss == null) ? 0 : altaEnImss.hashCode());
 		result = prime * result + ((busqAprox == null) ? 0 : busqAprox.hashCode());
 		result = prime * result + ((cveMoral == null) ? 0 : cveMoral.hashCode());
-		result = prime * result + ((datosPersonalesSAT == null) ? 0 : datosPersonalesSAT.hashCode());
 		result = prime * result + ((desSituacion == null) ? 0 : desSituacion.hashCode());
-		result = prime * result + ((escrituraConstitutiva == null) ? 0 : escrituraConstitutiva.hashCode());
 		result = prime * result + ((estadosFormateados == null) ? 0 : estadosFormateados.hashCode());
 		result = prime * result + ((fechaBaja == null) ? 0 : fechaBaja.hashCode());
 		result = prime * result + ((fechaCreacion == null) ? 0 : fechaCreacion.hashCode());
@@ -206,11 +171,8 @@ public class MoralTO extends BaseTO{
 		result = prime * result + ((nrp == null) ? 0 : nrp.hashCode());
 		result = prime * result + ((numeroLineaArchivo == null) ? 0 : numeroLineaArchivo.hashCode());
 		result = prime * result + ((razonSocial == null) ? 0 : razonSocial.hashCode());
-		result = prime * result + ((registroSindicato == null) ? 0 : registroSindicato.hashCode());
 		result = prime * result + ((rfcSat == null) ? 0 : rfcSat.hashCode());
-		result = prime * result + ((situacionesSAT == null) ? 0 : situacionesSAT.hashCode());
 		result = prime * result + ((subEstadosFormateados == null) ? 0 : subEstadosFormateados.hashCode());
-		result = prime * result + ((tipoSociedad == null) ? 0 : tipoSociedad.hashCode());
 		return result;
 	}
 	@Override
@@ -221,7 +183,7 @@ public class MoralTO extends BaseTO{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		MoralTO other = (MoralTO) obj;
+		MoralDTO other = (MoralDTO) obj;
 		if (actaConstitutiva == null) {
 			if (other.actaConstitutiva != null)
 				return false;
@@ -242,21 +204,13 @@ public class MoralTO extends BaseTO{
 				return false;
 		} else if (!cveMoral.equals(other.cveMoral))
 			return false;
-		if (datosPersonalesSAT == null) {
-			if (other.datosPersonalesSAT != null)
-				return false;
-		} else if (!datosPersonalesSAT.equals(other.datosPersonalesSAT))
-			return false;
+
 		if (desSituacion == null) {
 			if (other.desSituacion != null)
 				return false;
 		} else if (!desSituacion.equals(other.desSituacion))
 			return false;
-		if (escrituraConstitutiva == null) {
-			if (other.escrituraConstitutiva != null)
-				return false;
-		} else if (!escrituraConstitutiva.equals(other.escrituraConstitutiva))
-			return false;
+
 		if (estadosFormateados == null) {
 			if (other.estadosFormateados != null)
 				return false;
@@ -317,31 +271,19 @@ public class MoralTO extends BaseTO{
 				return false;
 		} else if (!razonSocial.equals(other.razonSocial))
 			return false;
-		if (registroSindicato == null) {
-			if (other.registroSindicato != null)
-				return false;
-		} else if (!registroSindicato.equals(other.registroSindicato))
-			return false;
+
 		if (rfcSat == null) {
 			if (other.rfcSat != null)
 				return false;
 		} else if (!rfcSat.equals(other.rfcSat))
 			return false;
-		if (situacionesSAT == null) {
-			if (other.situacionesSAT != null)
-				return false;
-		} else if (!situacionesSAT.equals(other.situacionesSAT))
-			return false;
+
 		if (subEstadosFormateados == null) {
 			if (other.subEstadosFormateados != null)
 				return false;
 		} else if (!subEstadosFormateados.equals(other.subEstadosFormateados))
 			return false;
-		if (tipoSociedad == null) {
-			if (other.tipoSociedad != null)
-				return false;
-		} else if (!tipoSociedad.equals(other.tipoSociedad))
-			return false;
+
 		return true;
 	}
 	

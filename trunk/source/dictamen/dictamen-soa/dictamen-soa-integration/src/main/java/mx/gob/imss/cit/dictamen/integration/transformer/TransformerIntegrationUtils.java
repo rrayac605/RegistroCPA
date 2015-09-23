@@ -168,4 +168,5 @@ public class TransformerIntegrationUtils {
 	public static EjercicioFiscalTO transformer(EjercicioFiscalDTO object){
 		return (EjercicioFiscalTO) TransformerHelper.get(mapClass,object, EjercicioFiscalTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
+
 }
