@@ -13,6 +13,7 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.commons.to.FirmaElectronicaTO;
 import mx.gob.imss.cit.dictamen.commons.to.LayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaActorDTO;
@@ -24,6 +25,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaTramiteDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.FirmaElectronicaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
 import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 
 
@@ -64,6 +66,8 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO.class,mx.gob.imss.cit.dictamen.commons.to.LayoutTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO.class,mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO.class,mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO.class);
 		
 		
 		
@@ -156,5 +160,12 @@ public class TransformerIntegrationUtils {
 	
 	public static AWSPolicyTO transformer(AWSPolicyDTO dto){
 		return (AWSPolicyTO) TransformerHelper.get(mapClass,dto, AWSPolicyTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static EjercicioFiscalDTO transformer(EjercicioFiscalTO object){
+		return (EjercicioFiscalDTO) TransformerHelper.get(mapClass,object, EjercicioFiscalDTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	public static EjercicioFiscalTO transformer(EjercicioFiscalDTO object){
+		return (EjercicioFiscalTO) TransformerHelper.get(mapClass,object, EjercicioFiscalTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 }

@@ -18,15 +18,32 @@
 
 				<p:panelGrid columns="3">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}" for="rfcPatron"/>
-					<p:inputText id="rfcPatron" 
-						value="#{datosPatronalesPage.datosPatron.rfc}"
-						required="true"
+						value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}"
+						for="rfcPatron" />
+					<p:inputText id="rfcPatron"
+						value="#{datosPatronalesPage.datosPatron.rfc}" required="true"
 						requiredMessage="falta rfc" />
 					<p:commandButton value="#{msg['message.button.buscar']}"
-						action="#{datosPatronalesBean.buscar}"
-						immediate="true"
+						action="#{datosPatronalesBean.buscar}" immediate="true"
 						ajax="false" />
+				</p:panelGrid>
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.denominacion']}"
+						for="denominacion" />
+					<p:inputText id="denominacion" required="true"
+						requiredMessage="falta razon social"
+						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
+				</p:panelGrid>
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}"
+						for="trabajadores" />
+					<p:inputText id="trabajadores" required="true"
+						requiredMessage="falta numero trabajadores"
+						value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" />
 				</p:panelGrid>
 
 
@@ -44,10 +61,25 @@
 
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}" for="trabajadores"/>
-					<p:inputText id="trabajadores" required="true"
-						requiredMessage="falta numero trabajadores"
-						value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" />
+						value="#{msg['message.dictamen.dictaminar.datos.patronales']}"
+						for="patronales" />
+					<p:inputText id="patronales" required="true"
+						requiredMessage="falta numero de registros"
+						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
+				</p:panelGrid>
+
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}"
+						for="ejercicio" />
+					<p:selectOneMenu id="ejercicio"
+						value="#{datosPatronalesPage.datosPatron.ejercicioDictaminar}">
+						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
+						<f:selectItems value="#{datosPatronalesPage.listaEjercicioFiscal}"
+							var="ejercicio" itemLabel="#{ejercicio.desEjerFiscal}"
+							itemValue="#{ejercicio.cveIdEjerFiscal}" />
+					</p:selectOneMenu>
 				</p:panelGrid>
 
 				<p:panelGrid columns="2">
@@ -63,19 +95,8 @@
 					</p:selectOneRadio>
 				</p:panelGrid>
 
-				<p:panelGrid columns="2">
-					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" />
-					<p:selectOneRadio id="dictaminado"
-						value="#{datosPatronalesPage.datosPatron.empresaValuada}"
-						converter="#{booleanConverter}">
-						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
-							itemvalue="true" />
-						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
-							itemValue="false" />
-					</p:selectOneRadio>
-				</p:panelGrid>
-				
+
+
 				<p:panelGrid columns="2">
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.valuada']}" />
@@ -89,38 +110,24 @@
 					</p:selectOneRadio>
 				</p:panelGrid>
 
+
+
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.denominacion']}" for="denominacion"/>
-					<p:inputText id="denominacion" required="true"
-						requiredMessage="falta razon social"
-						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
+						value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" />
+					<p:selectOneRadio id="dictaminado"
+						value="#{datosPatronalesPage.datosPatron.empresaValuada}"
+						converter="#{booleanConverter}">
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
+							itemvalue="true" />
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
+							itemValue="false" />
+					</p:selectOneRadio>
 				</p:panelGrid>
-				
-				<p:panelGrid columns="2">
-					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}" for="ejercicio"/>
-					<p:inputText id="ejercicio" required="true"
-						requiredMessage="falta ejercicio"
-						value="#{datosPatronalesPage.datosPatron.ejercicioDictaminar}" />
-				</p:panelGrid>
-				
-				<p:panelGrid columns="2">
-					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.patronales']}" for="patronales"/>
-					<p:inputText id="patronales" required="true"
-						requiredMessage="falta numero de registros"
-						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
-				</p:panelGrid>
-				
-				<p:panelGrid columns="2">
-					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.fecha']}" />
-					<p:calendar id="button"
-						value="#{datosPatronalesPage.datosPatron.fechaPresentacionDictamen}"
-						showOn="button" />
-				</p:panelGrid>
-				
+
+
+
+
 				<p:panelGrid columns="2">
 					<p:commandButton value="#{msg['message.button.guardar']}"
 						action="#{datosPatronalesBean.guardar}" ajax="false" />
@@ -129,7 +136,7 @@
 						ajax="false" />
 
 				</p:panelGrid>
-				
+
 			</p:panelGrid>
 
 		</h:form>
