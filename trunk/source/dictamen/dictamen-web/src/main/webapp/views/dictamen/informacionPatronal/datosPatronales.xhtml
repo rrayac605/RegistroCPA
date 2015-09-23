@@ -22,7 +22,7 @@
 						for="rfcPatron" />
 					<p:inputText id="rfcPatron"
 						value="#{datosPatronalesPage.datosPatron.rfc}" required="true"
-						requiredMessage="falta rfc" />
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.rfcPatron']}" />
 					<p:commandButton value="#{msg['message.button.buscar']}"
 						action="#{datosPatronalesBean.buscar}" immediate="true"
 						ajax="false" />
@@ -33,7 +33,7 @@
 						value="#{msg['message.dictamen.dictaminar.datos.denominacion']}"
 						for="denominacion" />
 					<p:inputText id="denominacion" required="true"
-						requiredMessage="falta razon social"
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.denominacion']}"
 						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
 				</p:panelGrid>
 
@@ -42,7 +42,7 @@
 						value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}"
 						for="trabajadores" />
 					<p:inputText id="trabajadores" required="true"
-						requiredMessage="falta numero trabajadores"
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.trabajadores']}"
 						value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" />
 				</p:panelGrid>
 
@@ -64,7 +64,7 @@
 						value="#{msg['message.dictamen.dictaminar.datos.patronales']}"
 						for="patronales" />
 					<p:inputText id="patronales" required="true"
-						requiredMessage="falta numero de registros"
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.patronales']}"
 						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
 				</p:panelGrid>
 
@@ -89,7 +89,7 @@
 						value="#{datosPatronalesPage.datosPatron.industriaConstruccion}"
 						converter="#{booleanConverter}">
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
-							itemvalue="true" />
+							itemValue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
 							itemValue="false" />
 					</p:selectOneRadio>
@@ -104,7 +104,7 @@
 						value="#{datosPatronalesPage.datosPatron.actConstruccionOregObra}"
 						converter="#{booleanConverter}">
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
-							itemvalue="true" />
+							itemValue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
 							itemValue="false" />
 					</p:selectOneRadio>
@@ -119,7 +119,7 @@
 						value="#{datosPatronalesPage.datosPatron.empresaValuada}"
 						converter="#{booleanConverter}">
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
-							itemvalue="true" />
+							itemValue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
 							itemValue="false" />
 					</p:selectOneRadio>

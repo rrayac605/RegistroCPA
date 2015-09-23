@@ -4,15 +4,15 @@ import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
+import mx.gob.imss.cit.dictamen.commons.constants.DictamenConstants;
 
 
 
 public class PropertiesConfigUtils {
 	
-	private static final  ResourceBundle resourceBundleConfig = ResourceBundle.getBundle(DictamenServicesConstants.CONFIG_FILE);
+	private static final  ResourceBundle resourceBundleConfig = ResourceBundle.getBundle(DictamenConstants.CONFIG_FILE);
 		
-	private static final  ResourceBundle resourceBundleException = ResourceBundle.getBundle(DictamenServicesConstants.EXCEPTION_FILE);
+	private static final  ResourceBundle resourceBundleException = ResourceBundle.getBundle(DictamenConstants.EXCEPTION_FILE);
 	
 	
 	private PropertiesConfigUtils(){

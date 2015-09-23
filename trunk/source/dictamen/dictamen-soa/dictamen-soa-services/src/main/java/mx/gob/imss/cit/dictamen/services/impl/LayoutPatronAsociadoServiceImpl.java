@@ -7,8 +7,7 @@ import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 
-import org.apache.log4j.Logger;
-
+import mx.gob.imss.cit.dictamen.commons.constants.DictamenConstants;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO;
 import mx.gob.imss.cit.dictamen.commons.to.KeyTO;
@@ -18,8 +17,9 @@ import mx.gob.imss.cit.dictamen.services.AWSService;
 import mx.gob.imss.cit.dictamen.services.KeyGeneratorService;
 import mx.gob.imss.cit.dictamen.services.LayoutPatronAsociadoService;
 import mx.gob.imss.cit.dictamen.services.LayoutService;
-import mx.gob.imss.cit.dictamen.services.constants.DictamenServicesConstants;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
+
+import org.apache.log4j.Logger;
 
 @Local
 @Stateless
@@ -52,7 +52,7 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 						AWSPolicyTO aws = AWSService.getAwsPoliciyEncrypted(
 								FechasUtils.agregaDias(new Date(), NUM_DIAS),
 								PropertiesConfigUtils
-										.getPropertyConfig(DictamenServicesConstants.CONFIG_KEY_AWS_RUTA_BASE)
+										.getPropertyConfig(DictamenConstants.CONFIG_KEY_AWS_RUTA_BASE)
 										+ keyGeneratorService.getKey(keyTO));
 						parentLayout.getListaLayout().get(i).setPolicy(aws);
 					}

@@ -8,17 +8,17 @@ public class PatronDictamenDTO extends BaseDTO  {
 	 * 
 	 */
 	private static final long serialVersionUID = -4965830174738536075L;
-	String 	rfc;
-	Integer numTrabajadoresPromedio;
-	Long idTipoDictamen;
+	private String 	rfc;
+	private Integer numTrabajadoresPromedio;
+	private Long idTipoDictamen;
 	
-	Boolean industriaConstruccion;
-	Boolean empresaValuada;	
-	Boolean actConstruccionOregObra;
+	private Boolean industriaConstruccion;
+	private Boolean empresaValuada;	
+	private Boolean actConstruccionOregObra;
 	
-	String razonSocialNombre;
-	Long 	ejercicioDictaminar;
-	Integer numRegistroPatronales;
+	private String razonSocialNombre;
+	private Long 	ejercicioDictaminar;
+	private Integer numRegistroPatronales;
 
 	/**
 	 * @return the rfc

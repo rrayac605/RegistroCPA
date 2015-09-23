@@ -7,8 +7,8 @@ import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
@@ -31,7 +31,7 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	@Override
 	public PatronDictamenDTO getDatosPatron(String rfc) throws DictamenNegocioException{
 		PatronDictamenDTO datosPatron= new	PatronDictamenDTO();
-		datosPatron.setRazonSocialNombre("Fulanito de Tal SA de SV");
+		datosPatron.setRazonSocialNombre("Fulanito de Tal SA de CV");
 		datosPatron.setEjercicioDictaminar(Long.valueOf(2));
 		datosPatron.setIdTipoDictamen( Long.valueOf(2));		
 		
@@ -66,19 +66,21 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 			patronDictamenTO.setDesNombreRazonSocial(datosDTO.getRazonSocialNombre());
 			patronDictamenTO.setDesRfc(datosDTO.getRfc());
 			patronDictamenTO.setNumNumeroTrabajadores(datosDTO.getNumTrabajadoresPromedio());
-			patronDictamenTO.setIndPatronConstruccion(datosDTO.getIndustriaConstruccion()?Short.valueOf("1"):Short.valueOf("0"));
-			patronDictamenTO.setIndPatronEmpresaValuada(datosDTO.getEmpresaValuada()?Short.valueOf("1"):Short.valueOf("0"));			
-			patronDictamenTO.setIndRealizoActConstruccion(datosDTO.getActConstruccionOregObra()?Short.valueOf("1"):Short.valueOf("0"));
+			patronDictamenTO.setIndPatronConstruccion(ConverterUtils.convertBooleanToShort(datosDTO.getIndustriaConstruccion()));
+			patronDictamenTO.setIndPatronEmpresaValuada(ConverterUtils.convertBooleanToShort(datosDTO.getEmpresaValuada()));			
+			patronDictamenTO.setIndRealizoActConstruccion(ConverterUtils.convertBooleanToShort(datosDTO.getActConstruccionOregObra()));
 			patronDictamenTO.setCveIdEjerFiscalId(datosDTO.getEjercicioDictaminar());
 			patronDictamenTO.setCveIdTipoDictamenId(datosDTO.getIdTipoDictamen());
 			patronDictamenTO.setNumRegistroPatronales(datosDTO.getNumRegistroPatronales());			
 			
 			patronDictamenService.saveDictamen(patronDictamenTO);
-		} catch (DictamenException e) {
+		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			throw new DictamenNegocioException(e.getMessage(), e);
 		}
 
 	}
+
+
 
 }
