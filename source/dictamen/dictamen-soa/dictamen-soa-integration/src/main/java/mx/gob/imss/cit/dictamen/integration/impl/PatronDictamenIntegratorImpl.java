@@ -1,7 +1,6 @@
 package mx.gob.imss.cit.dictamen.integration.impl;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -11,8 +10,8 @@ import javax.ejb.Stateless;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
-import mx.gob.imss.cit.dictamen.integration.api.dto.DatosPatronDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.TipoDictamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
 
@@ -30,13 +29,12 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	private PatronDictamenService patronDictamenService;
 	
 	@Override
-	public DatosPatronDTO getDatosPatron(String rfc) throws DictamenNegocioException{
-		DatosPatronDTO datosPatron= new	DatosPatronDTO();
+	public PatronDictamenDTO getDatosPatron(String rfc) throws DictamenNegocioException{
+		PatronDictamenDTO datosPatron= new	PatronDictamenDTO();
 		datosPatron.setRazonSocialNombre("Fulanito de Tal SA de SV");
-		datosPatron.setEjercicioDictaminar("Enero 2016");
-		datosPatron.setIdTipoDictamen( Integer.valueOf(2));		
+		datosPatron.setEjercicioDictaminar(Long.valueOf(2));
+		datosPatron.setIdTipoDictamen( Long.valueOf(2));		
 		
-		datosPatron.setFechaPresentacionDictamen(new Date());
 		datosPatron.setNumRegistroPatronales( Integer.valueOf(1));
 		datosPatron.setNumTrabajadoresPromedio( Integer.valueOf(5));
 		datosPatron.setRfc(rfc);
@@ -59,7 +57,7 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	}
 
 	@Override
-	public void executeRegistrar(DatosPatronDTO datosDTO) throws DictamenNegocioException{
+	public void executeRegistrar(PatronDictamenDTO datosDTO) throws DictamenNegocioException{
 
 		
 		try {
@@ -71,8 +69,8 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 			patronDictamenTO.setIndPatronConstruccion(datosDTO.getIndustriaConstruccion()?Short.valueOf("1"):Short.valueOf("0"));
 			patronDictamenTO.setIndPatronEmpresaValuada(datosDTO.getEmpresaValuada()?Short.valueOf("1"):Short.valueOf("0"));			
 			patronDictamenTO.setIndRealizoActConstruccion(datosDTO.getActConstruccionOregObra()?Short.valueOf("1"):Short.valueOf("0"));
-			patronDictamenTO.setCveIdEjerFiscalId(Long.valueOf(datosDTO.getEjercicioDictaminar()));
-			patronDictamenTO.setCveIdTipoDictamenId(Long.valueOf(datosDTO.getIdTipoDictamen()));
+			patronDictamenTO.setCveIdEjerFiscalId(datosDTO.getEjercicioDictaminar());
+			patronDictamenTO.setCveIdTipoDictamenId(datosDTO.getIdTipoDictamen());
 			patronDictamenTO.setNumRegistroPatronales(datosDTO.getNumRegistroPatronales());			
 			
 			patronDictamenService.saveDictamen(patronDictamenTO);

@@ -14,7 +14,12 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
-import mx.gob.imss.cit.dictamen.commons.to.*;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.ClavePresupuestalTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.NivelAtencionTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.derechohabiente.TipoUMFTO;
@@ -23,15 +28,46 @@ import mx.gob.imss.cit.dictamen.commons.to.sat.documento.probatorio.DocumentoPor
 import mx.gob.imss.cit.dictamen.commons.to.sat.documento.probatorio.DocumentoProbatorioTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.documento.probatorio.NacimientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.sat.documento.probatorio.TipoDocumentoProbatorioTO;
-import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.*;
-import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.*;
-import mx.gob.imss.cit.dictamen.commons.to.sat.medio.contacto.*;
-import mx.gob.imss.cit.dictamen.commons.to.sat.patronal.*;
-import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.AsentamientoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.CodigoPostalTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.DelegacionTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.DomicilioCaminoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.DomicilioCarreteraTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.DomicilioFiscalTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.DomicilioTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.EntidadFederativaTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.LocalidadTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.MunicipioTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.PaisTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.SubdelegacionTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.TipoAdministracionTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.TipoAmbitoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.TipoAsentamientoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.TipoDerechoTransitoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.TipoDomicilioTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.TipoMargenTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.TipoTerminoGeneralTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.TipoVialidadTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.domicilio.VialidadTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.DatosPersonalesSATTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.EstadoCivilTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.FielTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.FisicaTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.IdentificadorTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.MoralTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.PersonaTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.RegimenTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.SexoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.SituacionSATTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.TipoIdentificadorTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.individuo.TipoPoderTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.medio.contacto.CorreoElectronicoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.medio.contacto.FacebookTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.medio.contacto.MedioContactoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.medio.contacto.TipoMedioContactoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.patronal.EscrituraConstitutivaTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.patronal.RegistroSindicatoTO;
+import mx.gob.imss.cit.dictamen.commons.to.sat.patronal.TipoSociedadTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO;
@@ -48,17 +84,52 @@ import mx.gob.imss.ctirss.delta.model.derechohabiente.ClavePresupuestal;
 import mx.gob.imss.ctirss.delta.model.derechohabiente.NivelAtencion;
 import mx.gob.imss.ctirss.delta.model.derechohabiente.TipoUMF;
 import mx.gob.imss.ctirss.delta.model.derechohabiente.UnidadMedicaFamiliar;
+import mx.gob.imss.ctirss.delta.model.domicilio.Asentamiento;
+import mx.gob.imss.ctirss.delta.model.domicilio.CodigoPostal;
+import mx.gob.imss.ctirss.delta.model.domicilio.Delegacion;
+import mx.gob.imss.ctirss.delta.model.domicilio.Domicilio;
+import mx.gob.imss.ctirss.delta.model.domicilio.DomicilioCamino;
+import mx.gob.imss.ctirss.delta.model.domicilio.DomicilioCarretera;
+import mx.gob.imss.ctirss.delta.model.domicilio.DomicilioFiscal;
+import mx.gob.imss.ctirss.delta.model.domicilio.EntidadFederativa;
+import mx.gob.imss.ctirss.delta.model.domicilio.Localidad;
+import mx.gob.imss.ctirss.delta.model.domicilio.Municipio;
+import mx.gob.imss.ctirss.delta.model.domicilio.Pais;
+import mx.gob.imss.ctirss.delta.model.domicilio.Subdelegacion;
+import mx.gob.imss.ctirss.delta.model.domicilio.TipoAdministracion;
+import mx.gob.imss.ctirss.delta.model.domicilio.TipoAmbito;
+import mx.gob.imss.ctirss.delta.model.domicilio.TipoAsentamiento;
+import mx.gob.imss.ctirss.delta.model.domicilio.TipoDerechoTransito;
+import mx.gob.imss.ctirss.delta.model.domicilio.TipoDomicilio;
+import mx.gob.imss.ctirss.delta.model.domicilio.TipoMargen;
+import mx.gob.imss.ctirss.delta.model.domicilio.TipoTerminoGeneral;
+import mx.gob.imss.ctirss.delta.model.domicilio.TipoVialidad;
+import mx.gob.imss.ctirss.delta.model.domicilio.Vialidad;
 import mx.gob.imss.ctirss.delta.model.gestion.documento.probatorio.CURP;
 import mx.gob.imss.ctirss.delta.model.gestion.documento.probatorio.Documento;
 import mx.gob.imss.ctirss.delta.model.gestion.documento.probatorio.DocumentoPorTipo;
 import mx.gob.imss.ctirss.delta.model.gestion.documento.probatorio.DocumentoProbatorio;
 import mx.gob.imss.ctirss.delta.model.gestion.documento.probatorio.Nacimiento;
 import mx.gob.imss.ctirss.delta.model.gestion.documento.probatorio.TipoDocumentoProbatorio;
-import mx.gob.imss.ctirss.delta.model.domicilio.*;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.*;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.DatosPersonaSAT;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.EstadoCivil;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fiel;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.Identificador;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.Moral;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.Persona;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.Regimen;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.Sexo;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.SituacionSAT;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.TipoIdentificador;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.TipoPoder;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.TipoSociedad;
-import mx.gob.imss.ctirss.delta.model.gestion.medio.contacto.*;
-import mx.gob.imss.ctirss.delta.model.gestion.patronal.*;
+import mx.gob.imss.ctirss.delta.model.gestion.medio.contacto.CorreoElectronico;
+import mx.gob.imss.ctirss.delta.model.gestion.medio.contacto.Facebook;
+import mx.gob.imss.ctirss.delta.model.gestion.medio.contacto.MedioContacto;
+import mx.gob.imss.ctirss.delta.model.gestion.medio.contacto.TipoMedioContacto;
+import mx.gob.imss.ctirss.delta.model.gestion.patronal.EscrituraConstitutiva;
+import mx.gob.imss.ctirss.delta.model.gestion.patronal.RegistroSindicato;
 
 public class TransformerServiceUtils {
 	
@@ -200,6 +271,10 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcRubroDO.class			,mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class			);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcPreguntaDO.class			,mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class		);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO.class			,mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class		);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class	,mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO.class);
+		
+		
 		
 }
 	
@@ -850,6 +925,16 @@ public class TransformerServiceUtils {
 	
 	public static AtestiguamientoTO transformer( NdcAtestiguamientoDO ndcAtestiguamientoDO ) {
 		AtestiguamientoTO cont= (AtestiguamientoTO) TransformerHelper.get(mapClass,ndcAtestiguamientoDO, AtestiguamientoTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static EjercicioFiscalTO transformer( NdcEjercicioFiscalDO ejerDO ) {
+		EjercicioFiscalTO cont= (EjercicioFiscalTO) TransformerHelper.get(mapClass,ejerDO, EjercicioFiscalTO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
+		return cont;
+	}	
+	
+	public static NdcEjercicioFiscalDO transformer( EjercicioFiscalTO ejerTO ) {
+		NdcEjercicioFiscalDO cont= (NdcEjercicioFiscalDO) TransformerHelper.get(mapClass,ejerTO, NdcEjercicioFiscalDO.class,DictamenServicesConstants.PROFUNDIDAD_MAPEO) ;
 		return cont;
 	}	
 }

@@ -1,10 +1,8 @@
-package mx.gob.imss.cit.dictamen.integration.api.dto;
-
-import java.util.Date;
+package mx.gob.imss.cit.dictamen.integration.api.dto.domain;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
-public class DatosPatronDTO extends BaseDTO  {
+public class PatronDictamenDTO extends BaseDTO  {
 
 	/**
 	 * 
@@ -12,16 +10,16 @@ public class DatosPatronDTO extends BaseDTO  {
 	private static final long serialVersionUID = -4965830174738536075L;
 	String 	rfc;
 	Integer numTrabajadoresPromedio;
-	Integer idTipoDictamen;
+	Long idTipoDictamen;
 	
 	Boolean industriaConstruccion;
 	Boolean empresaValuada;	
 	Boolean actConstruccionOregObra;
 	
 	String razonSocialNombre;
-	String 	ejercicioDictaminar;
+	Long 	ejercicioDictaminar;
 	Integer numRegistroPatronales;
-	Date fechaPresentacionDictamen;
+
 	/**
 	 * @return the rfc
 	 */
@@ -49,13 +47,13 @@ public class DatosPatronDTO extends BaseDTO  {
 	/**
 	 * @return the idTipoDictamen
 	 */
-	public Integer getIdTipoDictamen() {
+	public Long getIdTipoDictamen() {
 		return idTipoDictamen;
 	}
 	/**
 	 * @param idTipoDictamen the idTipoDictamen to set
 	 */
-	public void setIdTipoDictamen(Integer idTipoDictamen) {
+	public void setIdTipoDictamen(Long idTipoDictamen) {
 		this.idTipoDictamen = idTipoDictamen;
 	}
 	/**
@@ -109,13 +107,13 @@ public class DatosPatronDTO extends BaseDTO  {
 	/**
 	 * @return the ejercicioDictaminar
 	 */
-	public String getEjercicioDictaminar() {
+	public Long getEjercicioDictaminar() {
 		return ejercicioDictaminar;
 	}
 	/**
 	 * @param ejercicioDictaminar the ejercicioDictaminar to set
 	 */
-	public void setEjercicioDictaminar(String ejercicioDictaminar) {
+	public void setEjercicioDictaminar(Long ejercicioDictaminar) {
 		this.ejercicioDictaminar = ejercicioDictaminar;
 	}
 	/**
@@ -130,20 +128,7 @@ public class DatosPatronDTO extends BaseDTO  {
 	public void setNumRegistroPatronales(Integer numRegistroPatronales) {
 		this.numRegistroPatronales = numRegistroPatronales;
 	}
-	/**
-	 * @return the fechaPresentacionDictamen
-	 */
-	public Date getFechaPresentacionDictamen() {
-		return fechaPresentacionDictamen;
-	}
-	/**
-	 * @param fechaPresentacionDictamen the fechaPresentacionDictamen to set
-	 */
-	public void setFechaPresentacionDictamen(Date fechaPresentacionDictamen) {
-		this.fechaPresentacionDictamen = fechaPresentacionDictamen;
-	}
-	
-	
+
 	
 	
 }
