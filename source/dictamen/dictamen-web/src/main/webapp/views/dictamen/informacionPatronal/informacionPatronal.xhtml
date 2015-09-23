@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+		<p:panel>
+
+		<h:outputLabel value="#{informacionPatronalBean.init()}" />
+		<p:dataTable var="aseveracion" value="#{informacionPatronalPage.listadoAseveraciones}" >
+			<p:column
+				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.categoria']}">
+				<h:outputText value="#{aseveracion.categoria}"/>
+			</p:column>
+
+			<p:column
+				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.archivo']}">
+				<h:outputText value="#{aseveracion.nombreOriginalArchivo}" />
+			</p:column>
+			
+			<p:column
+				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.cargado']}">
+				<h:outputText value="#{aseveracion.carga}" />
+			</p:column>
+			
+			<p:column
+				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.validado']}">
+				<h:outputText value="#{aseveracion.validado}" />
+			</p:column>
+			
+			<p:column
+				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.resultado']}">
+				<h:outputText value="#{aseveracion.resultado}" />
+			</p:column>
+			
+			<p:column
+				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.acciones']}">
+				<h:outputText value="#{aseveracion.acciones}" />
+			</p:column>
+
+		</p:dataTable>
+		
+	</p:panel>
+</ui:composition>
