@@ -10,7 +10,10 @@
 		<class>mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoCargaDocumentoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoCpaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoDictamenDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcFormaPagoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcPreguntaDO</class>
@@ -19,6 +22,7 @@
 		<class>mx.gob.imss.cit.dictamen.model.NdcRubroDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcStatusCargaAseveracionesDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcTipoModeloOpinionDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcTipoPagoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO</class>
@@ -41,14 +45,18 @@
 		<class>mx.gob.imss.cit.dictamen.model.NdtA91ObrasConstruccionDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtA921PersSubcontratadoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtA92ObrasSubcontrataDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoPreguntasDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtB1CedulaRemuneracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtB1DetFondoAhorroDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosIngXsalarioDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosPagXseparacDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtB1DetPagosOtrosEmpleadDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtB2CedulaPrestacionesDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtBitacoraErroresDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtCargaAseveracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtCedulaPagosDiferenciasDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtColegioDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO</class>
@@ -56,9 +64,11 @@
 		<class>mx.gob.imss.cit.dictamen.model.NdtCpaEstatusDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtCpaTramiteDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtDespachosDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtDictamenEstadosDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtDocumentoProbatorioDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtModeloOpinionDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtNotasDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtPatronAsociado</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtPatronDictamenCpaDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtR1DatosPersonalesDO</class>
@@ -66,8 +76,6 @@
 		<class>mx.gob.imss.cit.dictamen.model.NdtR2DespachoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtR2FormacontactoDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtR3ColegioDO</class>
-		<class>mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO</class>
-		<class>mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO</class>
 		<class>mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO</class>
 
 		<properties>

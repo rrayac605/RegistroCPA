@@ -6,22 +6,19 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -51,14 +48,12 @@ public class NdtR1DatosPersonalesDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R1_DATOS_PERSONALES", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator( allocationSize=1,name = "NdtR1DatosPersonales_Id_Seq_Gen", sequenceName = "SEQ_NDTR1DATOSPERSONALES")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtR1DatosPersonales_Id_Seq_Gen")
     private Long cveIdR1DatosPersonales;
-    @Size(max = 10)
-    @Column(name = "CEDULA_PROFESIONAL", length = 10)
+    @Size(max = 50)
+    @Column(name = "CEDULA_PROFESIONAL", length = 50)
     private String cedulaProfesional;
-    @Size(max = 100)
-    @Column(name = "DES_TITULO_EXPEDIDO_POR", length = 100)
+    @Size(max = 200)
+    @Column(name = "DES_TITULO_EXPEDIDO_POR", length = 200)
     private String desTituloExpedidoPor;
     @Column(name = "FEC_EXPEDICION_CEDPROF")
     @Temporal(TemporalType.TIMESTAMP)

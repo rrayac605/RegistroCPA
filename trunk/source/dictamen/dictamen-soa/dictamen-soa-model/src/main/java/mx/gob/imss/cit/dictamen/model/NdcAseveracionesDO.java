@@ -6,14 +6,16 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -35,14 +37,10 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdcAseveracionesDO.findByDesTipoAseveracion", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.desTipoAseveracion = :desTipoAseveracion"),
     @NamedQuery(name = "NdcAseveracionesDO.findByFecRegistroAlta", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdcAseveracionesDO.findByFecRegistroBaja", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdcAseveracionesDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdcAseveracionesDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdcAseveracionesDO.findByIndObligatorio", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.indObligatorio = :indObligatorio"),
+    @NamedQuery(name = "NdcAseveracionesDO.findByIndConstruccion", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.indConstruccion = :indConstruccion")})
 public class NdcAseveracionesDO implements Serializable {
-    @Column(name = "IND_OBLIGATORIO")
-    private Short indObligatorio;
-    @Column(name = "IND_CONSTRUCCION")
-    private Short indConstruccion;
-    @OneToMany(mappedBy = "cveIdAseveracion", fetch = FetchType.LAZY)
-    private List<NdcAtestiguamientoDO> ndcAtestiguamientoDOList;
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
@@ -62,8 +60,19 @@ public class NdcAseveracionesDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
+    @Column(name = "IND_OBLIGATORIO")
+    private Short indObligatorio;
+    @Column(name = "IND_CONSTRUCCION")
+    private Short indConstruccion;
+    @OneToMany(mappedBy = "cveIdAseveracionPadre", fetch = FetchType.LAZY)
+    private List<NdcAseveracionesDO> ndcAseveracionesDOList;
+    @JoinColumn(name = "CVE_ID_ASEVERACION_PADRE", referencedColumnName = "CVE_ID_ASEVERACION")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcAseveracionesDO cveIdAseveracionPadre;
     @OneToMany(mappedBy = "cveIdAseveracion", fetch = FetchType.LAZY)
-    private List<NdtCargaAseveracionesDO> ndtCargaAseveracionesDOList;
+    private List<NdtCargaDocumentoDO> ndtCargaDocumentoDOList;
+    @OneToMany(mappedBy = "cveIdAseveracion", fetch = FetchType.LAZY)
+    private List<NdcAtestiguamientoDO> ndcAtestiguamientoDOList;
 
     public NdcAseveracionesDO() {
     }
@@ -112,12 +121,52 @@ public class NdcAseveracionesDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public List<NdtCargaAseveracionesDO> getNdtCargaAseveracionesDOList() {
-        return ndtCargaAseveracionesDOList;
+    public Short getIndObligatorio() {
+        return indObligatorio;
     }
 
-    public void setNdtCargaAseveracionesDOList(List<NdtCargaAseveracionesDO> ndtCargaAseveracionesDOList) {
-        this.ndtCargaAseveracionesDOList = ndtCargaAseveracionesDOList;
+    public void setIndObligatorio(Short indObligatorio) {
+        this.indObligatorio = indObligatorio;
+    }
+
+    public Short getIndConstruccion() {
+        return indConstruccion;
+    }
+
+    public void setIndConstruccion(Short indConstruccion) {
+        this.indConstruccion = indConstruccion;
+    }
+
+    public List<NdcAseveracionesDO> getNdcAseveracionesDOList() {
+        return ndcAseveracionesDOList;
+    }
+
+    public void setNdcAseveracionesDOList(List<NdcAseveracionesDO> ndcAseveracionesDOList) {
+        this.ndcAseveracionesDOList = ndcAseveracionesDOList;
+    }
+
+    public NdcAseveracionesDO getCveIdAseveracionPadre() {
+        return cveIdAseveracionPadre;
+    }
+
+    public void setCveIdAseveracionPadre(NdcAseveracionesDO cveIdAseveracionPadre) {
+        this.cveIdAseveracionPadre = cveIdAseveracionPadre;
+    }
+
+    public List<NdtCargaDocumentoDO> getNdtCargaDocumentoDOList() {
+        return ndtCargaDocumentoDOList;
+    }
+
+    public void setNdtCargaDocumentoDOList(List<NdtCargaDocumentoDO> ndtCargaDocumentoDOList) {
+        this.ndtCargaDocumentoDOList = ndtCargaDocumentoDOList;
+    }
+
+    public List<NdcAtestiguamientoDO> getNdcAtestiguamientoDOList() {
+        return ndcAtestiguamientoDOList;
+    }
+
+    public void setNdcAtestiguamientoDOList(List<NdcAtestiguamientoDO> ndcAtestiguamientoDOList) {
+        this.ndcAtestiguamientoDOList = ndcAtestiguamientoDOList;
     }
 
     @Override
@@ -143,30 +192,6 @@ public class NdcAseveracionesDO implements Serializable {
     @Override
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO[ cveIdAseveracion=" + cveIdAseveracion + " ]";
-    }
-
-    public Short getIndObligatorio() {
-        return indObligatorio;
-    }
-
-    public void setIndObligatorio(Short indObligatorio) {
-        this.indObligatorio = indObligatorio;
-    }
-
-    public Short getIndConstruccion() {
-        return indConstruccion;
-    }
-
-    public void setIndConstruccion(Short indConstruccion) {
-        this.indConstruccion = indConstruccion;
-    }
-
-    public List<NdcAtestiguamientoDO> getNdcAtestiguamientoDOList() {
-        return ndcAtestiguamientoDOList;
-    }
-
-    public void setNdcAtestiguamientoDOList(List<NdcAtestiguamientoDO> ndcAtestiguamientoDOList) {
-        this.ndcAtestiguamientoDOList = ndcAtestiguamientoDOList;
     }
     
 }

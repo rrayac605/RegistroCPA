@@ -7,7 +7,7 @@ package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
 
-import java.math.BigInteger;
+
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -75,7 +75,7 @@ public class NdtCedulaPagosDiferenciasDO implements Serializable {
     @Column(name = "REG_PATRONAL", length = 11)
     private String regPatronal;
     @Column(name = "NUM_COTIZANTES_REPORTADOS")
-    private BigInteger numCotizantesReportados;
+    private Integer numCotizantesReportados;
     @Column(name = "IMP_EM_CF", precision = 15, scale = 2)
     private Long impEmCf;
     @Column(name = "IMP_EM_EXCEDENTE_PAT", precision = 15, scale = 2)
@@ -139,6 +139,9 @@ public class NdtCedulaPagosDiferenciasDO implements Serializable {
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtPatronDictamenDO cveIdPatronDictamen;
+    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdtPatronAsociado cveIdPatronAsociado;
 
     public NdtCedulaPagosDiferenciasDO() {
     }
@@ -163,11 +166,11 @@ public class NdtCedulaPagosDiferenciasDO implements Serializable {
         this.regPatronal = regPatronal;
     }
 
-    public BigInteger getNumCotizantesReportados() {
+    public Integer getNumCotizantesReportados() {
         return numCotizantesReportados;
     }
 
-    public void setNumCotizantesReportados(BigInteger numCotizantesReportados) {
+    public void setNumCotizantesReportados(Integer numCotizantesReportados) {
         this.numCotizantesReportados = numCotizantesReportados;
     }
 
@@ -401,6 +404,14 @@ public class NdtCedulaPagosDiferenciasDO implements Serializable {
 
     public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
         this.cveIdPatronDictamen = cveIdPatronDictamen;
+    }
+
+    public NdtPatronAsociado getCveIdPatronAsociado() {
+        return cveIdPatronAsociado;
+    }
+
+    public void setCveIdPatronAsociado(NdtPatronAsociado cveIdPatronAsociado) {
+        this.cveIdPatronAsociado = cveIdPatronAsociado;
     }
 
     @Override

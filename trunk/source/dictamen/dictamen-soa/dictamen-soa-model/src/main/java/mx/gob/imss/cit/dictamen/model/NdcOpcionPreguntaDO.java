@@ -61,7 +61,7 @@ public class NdcOpcionPreguntaDO implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcPreguntaDO cveIdPregunta;
     @OneToMany(mappedBy = "cveIdOpcionPregunta", fetch = FetchType.LAZY)
-    private List<NdtAtestiguamientoPreguntasDO> ndtAtestiguamientoPreguntasDOList;
+    private List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList;
 
     public NdcOpcionPreguntaDO() {
     }
@@ -118,12 +118,12 @@ public class NdcOpcionPreguntaDO implements Serializable {
         this.cveIdPregunta = cveIdPregunta;
     }
 
-    public List<NdtAtestiguamientoPreguntasDO> getNdtAtestiguamientoPreguntasDOList() {
-        return ndtAtestiguamientoPreguntasDOList;
+    public List<NdtAtestigPreguntasRespuestDO> getNdtAtestigPreguntasRespuestDOList() {
+        return ndtAtestigPreguntasRespuestDOList;
     }
 
-    public void setNdtAtestiguamientoPreguntasDOList(List<NdtAtestiguamientoPreguntasDO> ndtAtestiguamientoPreguntasDOList) {
-        this.ndtAtestiguamientoPreguntasDOList = ndtAtestiguamientoPreguntasDOList;
+    public void setNdtAtestigPreguntasRespuestDOList(List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList) {
+        this.ndtAtestigPreguntasRespuestDOList = ndtAtestigPreguntasRespuestDOList;
     }
 
     @Override

@@ -6,20 +6,17 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -51,8 +48,6 @@ public class NdtA921PersSubcontratadoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A9_2_1_PERS_SUBCONTRATA", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator( allocationSize=1,name = "NdtA921PersSubcontratado_Id_Seq_Gen", sequenceName = "SEQ_NDTA921PERSSUBCONTRATADO")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtA921PersSubcontratado_Id_Seq_Gen")
     private Long cveIdA921PersSubcontrata;
     @Column(name = "NUM_REG_OBRA_IMSS")
     private Long numRegObraImss;
@@ -83,6 +78,9 @@ public class NdtA921PersSubcontratadoDO implements Serializable {
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtPatronDictamenDO cveIdPatronDictamen;
+    @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdtPatronAsociado cveIdPatronAsociado;
 
     public NdtA921PersSubcontratadoDO() {
     }
@@ -177,6 +175,14 @@ public class NdtA921PersSubcontratadoDO implements Serializable {
 
     public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
         this.cveIdPatronDictamen = cveIdPatronDictamen;
+    }
+
+    public NdtPatronAsociado getCveIdPatronAsociado() {
+        return cveIdPatronAsociado;
+    }
+
+    public void setCveIdPatronAsociado(NdtPatronAsociado cveIdPatronAsociado) {
+        this.cveIdPatronAsociado = cveIdPatronAsociado;
     }
 
     @Override

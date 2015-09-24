@@ -6,28 +6,25 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
+
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 
 /**
  *
@@ -52,20 +49,12 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtPatronDictamenDO.findByFecRegistroAutorizado", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.fecRegistroAutorizado = :fecRegistroAutorizado"),
     @NamedQuery(name = "NdtPatronDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtPatronDictamenDO implements Serializable {
-    @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
-    private List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList;
-    
-    
-    
-    
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PATRON_DICTAMEN", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(allocationSize=1, name = "NdtPatronDictamenDO_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONDICTAMEN")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtPatronDictamenDO_Id_Seq_Gen")
     private Long cveIdPatronDictamen;
     @Size(max = 50)
     @Column(name = "DES_RFC", length = 50)
@@ -103,9 +92,7 @@ public class NdtPatronDictamenDO implements Serializable {
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA51PersonalProporcionadDO> ndtA51PersonalProporcionadDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
-    private List<NdtCargaAseveracionesDO> ndtCargaAseveracionesDOList;
-    @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
-    private List<NdtA71CeProcesoDO> ndtA71CeProcesoDODOList;
+    private List<NdtA71CeProcesoDO> ndtA71CeProcesoDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA92ObrasSubcontrataDO> ndtA92ObrasSubcontrataDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
@@ -114,22 +101,25 @@ public class NdtPatronDictamenDO implements Serializable {
     private List<NdtA5PrestadoraServiciosDO> ndtA5PrestadoraServiciosDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA76CeActCompDO> ndtA76CeActCompDOList;
-    @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
-    private List<NdtAtestiguamientoPreguntasDO> ndtAtestiguamientoPreguntasDOList;
     @JoinColumn(name = "CVE_ID_TIPO_DICTAMEN", referencedColumnName = "CVE_ID_TIPO_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcTipoDictamenDO cveIdTipoDictamen;
+    @JoinColumn(name = "CVE_ID_ESTADO_DICTAMEN", referencedColumnName = "CVE_ID_ESTADO_DICTAMEN")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcEstadoDictamenDO cveIdEstadoDictamen;
     @JoinColumn(name = "CVE_ID_EJER_FISCAL", referencedColumnName = "CVE_ID_EJER_FISCAL")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcEjercicioFiscalDO cveIdEjerFiscal;
+    @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
+    private List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA3CuotaObreroPatronalDO> ndtA3CuotaObreroPatronalDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA74CeTransporteDO> ndtA74CeTransporteDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
-    private List<NdtA8BalanzaComprobacionDO> ndtA8BalanzaComprobacionDOList;
+    private List<NdtPatronAsociado> ndtPatronAsociadoList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
-    private List<NdtNotasDictamenDO> ndtNotasDictamenDOList;
+    private List<NdtA8BalanzaComprobacionDO> ndtA8BalanzaComprobacionDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA2OtraPrestOtorgadaDO> ndtA2OtraPrestOtorgadaDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
@@ -147,8 +137,6 @@ public class NdtPatronDictamenDO implements Serializable {
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtCedulaPagosDiferenciasDO> ndtCedulaPagosDiferenciasDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
-    private List<NdtPatronDictamenCpaDO> ndtPatronDictamenCpaDOList;
-    @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA1PercepTrabajadorDO> ndtA1PercepTrabajadorDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA75CePersonalDO> ndtA75CePersonalDOList;
@@ -157,9 +145,13 @@ public class NdtPatronDictamenDO implements Serializable {
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtB2CedulaPrestacionesDO> ndtB2CedulaPrestacionesDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
+    private List<NdtCargaDocumentoDO> ndtCargaDocumentoDOList;
+    @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA91ObrasConstruccionDO> ndtA91ObrasConstruccionDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA921PersSubcontratadoDO> ndtA921PersSubcontratadoDOList;
+    @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
+    private List<NdtDictamenEstadosDO> ndtDictamenEstadosDOList;
 
     public NdtPatronDictamenDO() {
     }
@@ -288,20 +280,12 @@ public class NdtPatronDictamenDO implements Serializable {
         this.ndtA51PersonalProporcionadDOList = ndtA51PersonalProporcionadDOList;
     }
 
-    public List<NdtCargaAseveracionesDO> getNdtCargaAseveracionesDOList() {
-        return ndtCargaAseveracionesDOList;
+    public List<NdtA71CeProcesoDO> getNdtA71CeProcesoDOList() {
+        return ndtA71CeProcesoDOList;
     }
 
-    public void setNdtCargaAseveracionesDOList(List<NdtCargaAseveracionesDO> ndtCargaAseveracionesDOList) {
-        this.ndtCargaAseveracionesDOList = ndtCargaAseveracionesDOList;
-    }
-
-    public List<NdtA71CeProcesoDO> getNdtA71CeProcesoDODOList() {
-        return ndtA71CeProcesoDODOList;
-    }
-
-    public void setNdtA71CeProcesoDODOList(List<NdtA71CeProcesoDO> ndtA71CeProcesoDODOList) {
-        this.ndtA71CeProcesoDODOList = ndtA71CeProcesoDODOList;
+    public void setNdtA71CeProcesoDOList(List<NdtA71CeProcesoDO> ndtA71CeProcesoDOList) {
+        this.ndtA71CeProcesoDOList = ndtA71CeProcesoDOList;
     }
 
     public List<NdtA92ObrasSubcontrataDO> getNdtA92ObrasSubcontrataDOList() {
@@ -336,14 +320,6 @@ public class NdtPatronDictamenDO implements Serializable {
         this.ndtA76CeActCompDOList = ndtA76CeActCompDOList;
     }
 
-    public List<NdtAtestiguamientoPreguntasDO> getNdtAtestiguamientoPreguntasDOList() {
-        return ndtAtestiguamientoPreguntasDOList;
-    }
-
-    public void setNdtAtestiguamientoPreguntasDOList(List<NdtAtestiguamientoPreguntasDO> ndtAtestiguamientoPreguntasDOList) {
-        this.ndtAtestiguamientoPreguntasDOList = ndtAtestiguamientoPreguntasDOList;
-    }
-
     public NdcTipoDictamenDO getCveIdTipoDictamen() {
         return cveIdTipoDictamen;
     }
@@ -352,12 +328,28 @@ public class NdtPatronDictamenDO implements Serializable {
         this.cveIdTipoDictamen = cveIdTipoDictamen;
     }
 
+    public NdcEstadoDictamenDO getCveIdEstadoDictamen() {
+        return cveIdEstadoDictamen;
+    }
+
+    public void setCveIdEstadoDictamen(NdcEstadoDictamenDO cveIdEstadoDictamen) {
+        this.cveIdEstadoDictamen = cveIdEstadoDictamen;
+    }
+
     public NdcEjercicioFiscalDO getCveIdEjerFiscal() {
         return cveIdEjerFiscal;
     }
 
     public void setCveIdEjerFiscal(NdcEjercicioFiscalDO cveIdEjerFiscal) {
         this.cveIdEjerFiscal = cveIdEjerFiscal;
+    }
+
+    public List<NdtAtestiguamientoDictamenDO> getNdtAtestiguamientoDictamenDOList() {
+        return ndtAtestiguamientoDictamenDOList;
+    }
+
+    public void setNdtAtestiguamientoDictamenDOList(List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList) {
+        this.ndtAtestiguamientoDictamenDOList = ndtAtestiguamientoDictamenDOList;
     }
 
     public List<NdtA3CuotaObreroPatronalDO> getNdtA3CuotaObreroPatronalDOList() {
@@ -376,20 +368,20 @@ public class NdtPatronDictamenDO implements Serializable {
         this.ndtA74CeTransporteDOList = ndtA74CeTransporteDOList;
     }
 
+    public List<NdtPatronAsociado> getNdtPatronAsociadoList() {
+        return ndtPatronAsociadoList;
+    }
+
+    public void setNdtPatronAsociadoList(List<NdtPatronAsociado> ndtPatronAsociadoList) {
+        this.ndtPatronAsociadoList = ndtPatronAsociadoList;
+    }
+
     public List<NdtA8BalanzaComprobacionDO> getNdtA8BalanzaComprobacionDOList() {
         return ndtA8BalanzaComprobacionDOList;
     }
 
     public void setNdtA8BalanzaComprobacionDOList(List<NdtA8BalanzaComprobacionDO> ndtA8BalanzaComprobacionDOList) {
         this.ndtA8BalanzaComprobacionDOList = ndtA8BalanzaComprobacionDOList;
-    }
-
-    public List<NdtNotasDictamenDO> getNdtNotasDictamenDOList() {
-        return ndtNotasDictamenDOList;
-    }
-
-    public void setNdtNotasDictamenDOList(List<NdtNotasDictamenDO> ndtNotasDictamenDOList) {
-        this.ndtNotasDictamenDOList = ndtNotasDictamenDOList;
     }
 
     public List<NdtA2OtraPrestOtorgadaDO> getNdtA2OtraPrestOtorgadaDOList() {
@@ -456,14 +448,6 @@ public class NdtPatronDictamenDO implements Serializable {
         this.ndtCedulaPagosDiferenciasDOList = ndtCedulaPagosDiferenciasDOList;
     }
 
-    public List<NdtPatronDictamenCpaDO> getNdtPatronDictamenCpaDOList() {
-        return ndtPatronDictamenCpaDOList;
-    }
-
-    public void setNdtPatronDictamenCpaDOList(List<NdtPatronDictamenCpaDO> ndtPatronDictamenCpaDOList) {
-        this.ndtPatronDictamenCpaDOList = ndtPatronDictamenCpaDOList;
-    }
-
     public List<NdtA1PercepTrabajadorDO> getNdtA1PercepTrabajadorDOList() {
         return ndtA1PercepTrabajadorDOList;
     }
@@ -496,6 +480,14 @@ public class NdtPatronDictamenDO implements Serializable {
         this.ndtB2CedulaPrestacionesDOList = ndtB2CedulaPrestacionesDOList;
     }
 
+    public List<NdtCargaDocumentoDO> getNdtCargaDocumentoDOList() {
+        return ndtCargaDocumentoDOList;
+    }
+
+    public void setNdtCargaDocumentoDOList(List<NdtCargaDocumentoDO> ndtCargaDocumentoDOList) {
+        this.ndtCargaDocumentoDOList = ndtCargaDocumentoDOList;
+    }
+
     public List<NdtA91ObrasConstruccionDO> getNdtA91ObrasConstruccionDOList() {
         return ndtA91ObrasConstruccionDOList;
     }
@@ -510,6 +502,14 @@ public class NdtPatronDictamenDO implements Serializable {
 
     public void setNdtA921PersSubcontratadoDOList(List<NdtA921PersSubcontratadoDO> ndtA921PersSubcontratadoDOList) {
         this.ndtA921PersSubcontratadoDOList = ndtA921PersSubcontratadoDOList;
+    }
+
+    public List<NdtDictamenEstadosDO> getNdtDictamenEstadosDOList() {
+        return ndtDictamenEstadosDOList;
+    }
+
+    public void setNdtDictamenEstadosDOList(List<NdtDictamenEstadosDO> ndtDictamenEstadosDOList) {
+        this.ndtDictamenEstadosDOList = ndtDictamenEstadosDOList;
     }
 
     @Override
@@ -535,14 +535,6 @@ public class NdtPatronDictamenDO implements Serializable {
     @Override
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO[ cveIdPatronDictamen=" + cveIdPatronDictamen + " ]";
-    }
-
-    public List<NdtAtestiguamientoDictamenDO> getNdtAtestiguamientoDictamenDOList() {
-        return ndtAtestiguamientoDictamenDOList;
-    }
-
-    public void setNdtAtestiguamientoDictamenDOList(List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList) {
-        this.ndtAtestiguamientoDictamenDOList = ndtAtestiguamientoDictamenDOList;
     }
     
 }

@@ -6,21 +6,18 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
-import java.util.Date;
 
+
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -56,8 +53,6 @@ public class NdtModeloOpinionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_MODELO_OPINION", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator( allocationSize=1,name = "NdtModeloOpinion_Id_Seq_Gen", sequenceName = "SEQ_NDTMODELOOPINION")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtModeloOpinion_Id_Seq_Gen")
     private Long cveIdModeloOpinion;
     @Column(name = "FEC_FECHA_PAGO_PRIMERPAGO")
     @Temporal(TemporalType.TIMESTAMP)
@@ -69,7 +64,7 @@ public class NdtModeloOpinionDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecFechaConvenio;
     @Column(name = "NUM_PARCIALIDADES")
-    private BigInteger numParcialidades;
+    private Integer numParcialidades;
     @Size(max = 3000)
     @Column(name = "DES_OBSERVACIONES", length = 3000)
     private String desObservaciones;
@@ -149,11 +144,11 @@ public class NdtModeloOpinionDO implements Serializable {
         this.fecFechaConvenio = fecFechaConvenio;
     }
 
-    public BigInteger getNumParcialidades() {
+    public Integer getNumParcialidades() {
         return numParcialidades;
     }
 
-    public void setNumParcialidades(BigInteger numParcialidades) {
+    public void setNumParcialidades(Integer numParcialidades) {
         this.numParcialidades = numParcialidades;
     }
 

@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package mx.gob.imss.cit.dictamen.model;
+
 import java.io.Serializable;
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -60,11 +61,14 @@ public class NdtRubroAtestiguamientoDictDO implements Serializable {
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
-    @OneToMany(mappedBy = "cveIdRubroAtestigDictamen", fetch = FetchType.LAZY)
-    private List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList;
     @JoinColumn(name = "CVE_ID_ATESTIG_DICTAMEN", referencedColumnName = "CVE_ID_ATESTIG_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtAtestiguamientoDictamenDO cveIdAtestigDictamen;
+    @JoinColumn(name = "CVE_ID_RUBRO", referencedColumnName = "CVE_ID_RUBRO")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcRubroDO cveIdRubro;
+    @OneToMany(mappedBy = "cveIdRubroAtestigDictamen", fetch = FetchType.LAZY)
+    private List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList;
 
     public NdtRubroAtestiguamientoDictDO() {
     }
@@ -121,20 +125,28 @@ public class NdtRubroAtestiguamientoDictDO implements Serializable {
         this.cveIdUsuario = cveIdUsuario;
     }
 
-    public List<NdtAtestigPreguntasRespuestDO> getNdtAtestigPreguntasRespuestDOList() {
-        return ndtAtestigPreguntasRespuestDOList;
-    }
-
-    public void setNdtAtestigPreguntasRespuestDOList(List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList) {
-        this.ndtAtestigPreguntasRespuestDOList = ndtAtestigPreguntasRespuestDOList;
-    }
-
     public NdtAtestiguamientoDictamenDO getCveIdAtestigDictamen() {
         return cveIdAtestigDictamen;
     }
 
     public void setCveIdAtestigDictamen(NdtAtestiguamientoDictamenDO cveIdAtestigDictamen) {
         this.cveIdAtestigDictamen = cveIdAtestigDictamen;
+    }
+
+    public NdcRubroDO getCveIdRubro() {
+        return cveIdRubro;
+    }
+
+    public void setCveIdRubro(NdcRubroDO cveIdRubro) {
+        this.cveIdRubro = cveIdRubro;
+    }
+
+    public List<NdtAtestigPreguntasRespuestDO> getNdtAtestigPreguntasRespuestDOList() {
+        return ndtAtestigPreguntasRespuestDOList;
+    }
+
+    public void setNdtAtestigPreguntasRespuestDOList(List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList) {
+        this.ndtAtestigPreguntasRespuestDOList = ndtAtestigPreguntasRespuestDOList;
     }
 
     @Override
@@ -159,7 +171,7 @@ public class NdtRubroAtestiguamientoDictDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.dos.NdtRubroAtestiguamientoDictDO[ cveIdRubroAtestigDictamen=" + cveIdRubroAtestigDictamen + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO[ cveIdRubroAtestigDictamen=" + cveIdRubroAtestigDictamen + " ]";
     }
     
 }

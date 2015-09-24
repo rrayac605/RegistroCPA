@@ -7,7 +7,7 @@ package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
 
-import java.math.BigInteger;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -61,7 +61,7 @@ public class NdcPreguntaDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroBaja;
     @Column(name = "IND_ORDEN")
-    private BigInteger indOrden;
+    private Integer indOrden;
     @JoinColumn(name = "CVE_ID_RUBRO", referencedColumnName = "CVE_ID_RUBRO", nullable = false)
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private NdcRubroDO cveIdRubro;
@@ -120,11 +120,11 @@ public class NdcPreguntaDO implements Serializable {
         this.fecRegistroBaja = fecRegistroBaja;
     }
 
-    public BigInteger getIndOrden() {
+    public Integer getIndOrden() {
         return indOrden;
     }
 
-    public void setIndOrden(BigInteger indOrden) {
+    public void setIndOrden(Integer indOrden) {
         this.indOrden = indOrden;
     }
 

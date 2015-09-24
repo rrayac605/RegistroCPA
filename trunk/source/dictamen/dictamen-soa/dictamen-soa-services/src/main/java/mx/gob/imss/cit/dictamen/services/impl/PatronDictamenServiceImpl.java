@@ -3,12 +3,15 @@
  */
 package mx.gob.imss.cit.dictamen.services.impl;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.util.ValidatorUtil;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdtPatronDictamenDAO;
 import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
@@ -54,6 +57,29 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 		return dictamenResultado;
 	
 		
+	}
+
+	@Override
+	public PatronDictamenTO getDictamenByRfcPatronAndIdContador(String rfc,
+			Long contador) throws DictamenException {
+		
+		PatronDictamenTO dictamenTO=null;
+		if(ValidatorUtil.isAnyNull(rfc,contador)){
+			
+		}
+		try{									
+			List<NdtPatronDictamenDO> listaDO=ndtPatronDictamenDAO.findByRfcPatronAndIdContador(rfc, contador);
+		
+			if(listaDO!=null && !listaDO.isEmpty()){
+				dictamenTO=TransformerServiceUtils.transformer(listaDO.get(0));
+			}
+			
+		}catch(Exception e){
+			LOG.error(e.getMessage(),e);
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_GUARDAR,e);
+		}
+		
+		return dictamenTO;
 	}
 
 }

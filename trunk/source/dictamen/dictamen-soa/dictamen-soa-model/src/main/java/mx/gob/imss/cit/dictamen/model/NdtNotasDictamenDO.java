@@ -7,18 +7,13 @@ package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -32,6 +27,7 @@ import javax.validation.constraints.Size;
 @NamedQueries({
     @NamedQuery(name = "NdtNotasDictamenDO.findAll", query = "SELECT n FROM NdtNotasDictamenDO n"),
     @NamedQuery(name = "NdtNotasDictamenDO.findByCveIdNotasAseveraciones", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.cveIdNotasAseveraciones = :cveIdNotasAseveraciones"),
+    @NamedQuery(name = "NdtNotasDictamenDO.findByCveIdPatronDictamen", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.cveIdPatronDictamen = :cveIdPatronDictamen"),
     @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA1", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA1 = :desNotasAsevA1"),
     @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA2", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA2 = :desNotasAsevA2"),
     @NamedQuery(name = "NdtNotasDictamenDO.findByDesNotasAsevA3", query = "SELECT n FROM NdtNotasDictamenDO n WHERE n.desNotasAsevA3 = :desNotasAsevA3"),
@@ -49,9 +45,9 @@ public class NdtNotasDictamenDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_NOTAS_ASEVERACIONES", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator( allocationSize=1,name = "NdtNotasDictamen_Id_Seq_Gen", sequenceName = "SEQ_NDTNOTASDICTAMEN")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtNotasDictamens_Id_Seq_Gen")
     private Long cveIdNotasAseveraciones;
+    @Column(name = "CVE_ID_PATRON_DICTAMEN")
+    private Integer cveIdPatronDictamen;
     @Size(max = 1000)
     @Column(name = "DES_NOTAS_ASEV_A1", length = 1000)
     private String desNotasAsevA1;
@@ -82,9 +78,6 @@ public class NdtNotasDictamenDO implements Serializable {
     @Size(max = 1000)
     @Column(name = "DES_NOTAS_ASEV_A92", length = 1000)
     private String desNotasAsevA92;
-    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronDictamenDO cveIdPatronDictamen;
 
     public NdtNotasDictamenDO() {
     }
@@ -99,6 +92,14 @@ public class NdtNotasDictamenDO implements Serializable {
 
     public void setCveIdNotasAseveraciones(Long cveIdNotasAseveraciones) {
         this.cveIdNotasAseveraciones = cveIdNotasAseveraciones;
+    }
+
+    public Integer getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
+    }
+
+    public void setCveIdPatronDictamen(Integer cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     public String getDesNotasAsevA1() {
@@ -179,14 +180,6 @@ public class NdtNotasDictamenDO implements Serializable {
 
     public void setDesNotasAsevA92(String desNotasAsevA92) {
         this.desNotasAsevA92 = desNotasAsevA92;
-    }
-
-    public NdtPatronDictamenDO getCveIdPatronDictamen() {
-        return cveIdPatronDictamen;
-    }
-
-    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
-        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     @Override

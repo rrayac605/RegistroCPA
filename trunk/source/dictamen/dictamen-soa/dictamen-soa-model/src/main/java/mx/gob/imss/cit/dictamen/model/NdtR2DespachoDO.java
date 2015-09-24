@@ -3,27 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
+
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -56,8 +52,6 @@ public class NdtR2DespachoDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_R2_DESPACHO", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator( allocationSize=1,name = "NdtR2Despacho_Id_Seq_Gen", sequenceName = "SEQ_NDTR2DESPACHO")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtR2Despacho_Id_Seq_Gen")
     private Long cveIdR2Despacho;
     @Column(name = "FEC_ACTIVACION")
     @Temporal(TemporalType.TIMESTAMP)
@@ -65,9 +59,9 @@ public class NdtR2DespachoDO implements Serializable {
     @Column(name = "IND_ACTIVO")
     private Short indActivo;
     @Column(name = "IND_TIPO_CPA")
-    private BigInteger indTipoCpa;
+    private Integer indTipoCpa;
     @Column(name = "NUM_TRABAJADORES_CONTRATADOS")
-    private BigInteger numTrabajadoresContratados;
+    private Integer numTrabajadoresContratados;
     @Size(max = 50)
     @Column(name = "CARGO_QUE_DESEMPENA", length = 50)
     private String cargoQueDesempena;
@@ -129,19 +123,19 @@ public class NdtR2DespachoDO implements Serializable {
         this.indActivo = indActivo;
     }
 
-    public BigInteger getIndTipoCpa() {
+    public Integer getIndTipoCpa() {
         return indTipoCpa;
     }
 
-    public void setIndTipoCpa(BigInteger indTipoCpa) {
+    public void setIndTipoCpa(Integer indTipoCpa) {
         this.indTipoCpa = indTipoCpa;
     }
 
-    public BigInteger getNumTrabajadoresContratados() {
+    public Integer getNumTrabajadoresContratados() {
         return numTrabajadoresContratados;
     }
 
-    public void setNumTrabajadoresContratados(BigInteger numTrabajadoresContratados) {
+    public void setNumTrabajadoresContratados(Integer numTrabajadoresContratados) {
         this.numTrabajadoresContratados = numTrabajadoresContratados;
     }
 
@@ -249,5 +243,5 @@ public class NdtR2DespachoDO implements Serializable {
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdtR2DespachoDO[ cveIdR2Despacho=" + cveIdR2Despacho + " ]";
     }
-
+    
 }
