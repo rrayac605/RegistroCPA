@@ -20,6 +20,7 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
@@ -66,7 +67,8 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO.class			,mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class		);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class	,mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO.class);
-		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class	,mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO.class			,mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class		);
 		
 		
 }
@@ -198,12 +200,18 @@ public class TransformerServiceUtils {
 	}	
 	
 	public static EjercicioFiscalTO transformer( NdcEjercicioFiscalDO ejerDO ) {
-		EjercicioFiscalTO cont= (EjercicioFiscalTO) TransformerHelper.get(mapClass,ejerDO, EjercicioFiscalTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-		return cont;
+		return (EjercicioFiscalTO) TransformerHelper.get(mapClass,ejerDO, EjercicioFiscalTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
 	public static NdcEjercicioFiscalDO transformer( EjercicioFiscalTO ejerTO ) {
-		NdcEjercicioFiscalDO cont= (NdcEjercicioFiscalDO) TransformerHelper.get(mapClass,ejerTO, NdcEjercicioFiscalDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-		return cont;
+		return  (NdcEjercicioFiscalDO) TransformerHelper.get(mapClass,ejerTO, NdcEjercicioFiscalDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
+	
+	public static NdcTipoDictamenDO transformer( TipoDictamenTO object) {
+		return (NdcTipoDictamenDO) TransformerHelper.get(mapClass,object, NdcTipoDictamenDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	
+	public static TipoDictamenTO transformer( NdcTipoDictamenDO object ) {
+		return (TipoDictamenTO) TransformerHelper.get(mapClass,object, NdcEjercicioFiscalDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
 }

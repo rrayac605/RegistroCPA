@@ -2,7 +2,6 @@ package mx.gob.imss.cit.dictamen.services;
 
 import gob.imss.webservice.sat.rfc.cliente.EntradaSAT;
 import gob.imss.webservice.sat.rfc.cliente.SalidaSAT;
-import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.services.impl.ConsultaSatRFCServiceImpl;
 
 import org.apache.log4j.Logger;
@@ -28,11 +27,11 @@ public class ConsultaSatRFCServiceTest {
 	@Test
 	public void testGetPatron(){
 		EntradaSAT entradaSAT = new EntradaSAT();
-		entradaSAT.setRfc("");
+		entradaSAT.setRfc("FURA831031N86");
 		SalidaSAT salidaSAT =null;
 		try {
 			salidaSAT = consultaSatRFCService.getPatron(entradaSAT);
-		} catch (DictamenException e) {
+		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 		}
 		Assert.assertNotNull(salidaSAT);

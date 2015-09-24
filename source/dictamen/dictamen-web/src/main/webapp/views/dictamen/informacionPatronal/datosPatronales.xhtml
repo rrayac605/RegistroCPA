@@ -34,7 +34,7 @@
 						for="denominacion" />
 					<p:inputText id="denominacion" required="true"
 						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.denominacion']}"
-						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" />
+						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" disabled="true"/>
 				</p:panelGrid>
 
 				<p:panelGrid columns="2">
@@ -54,8 +54,8 @@
 						value="#{datosPatronalesPage.datosPatron.idTipoDictamen}">
 						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
 						<f:selectItems value="#{datosPatronalesPage.listaTipoDictamen}"
-							var="tipo" itemLabel="#{tipo.descTipoDictamen}"
-							itemValue="#{tipo.idDictamen}" />
+							var="tipo" itemLabel="#{tipo.desTipoDictamen}"
+							itemValue="#{tipo.cveIdTipoDictamen}" />
 					</p:selectOneMenu>
 				</p:panelGrid>
 

@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.gob.imss.cit.dictamen.integration.api.dto.domain;
+package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
 
-import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
+import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 /**
  *
  * @author ajfuentes
  */
-public class TipoDictamenDTO extends BaseDTO {
+public class TipoDictamenTO extends BaseTO {
     private static final long serialVersionUID = 1L;
 
     private Long cveIdTipoDictamen;
@@ -22,10 +22,10 @@ public class TipoDictamenDTO extends BaseDTO {
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
 
-    public TipoDictamenDTO() {
+    public TipoDictamenTO() {
     }
 
-    public TipoDictamenDTO(Long cveIdTipoDictamen) {
+    public TipoDictamenTO(Long cveIdTipoDictamen) {
         this.cveIdTipoDictamen = cveIdTipoDictamen;
     }
 

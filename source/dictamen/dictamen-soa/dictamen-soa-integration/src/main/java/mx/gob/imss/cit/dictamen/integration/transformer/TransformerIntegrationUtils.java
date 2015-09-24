@@ -15,6 +15,7 @@ import mx.gob.imss.cit.dictamen.commons.to.FirmaElectronicaTO;
 import mx.gob.imss.cit.dictamen.commons.to.LayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaActorDTO;
@@ -27,6 +28,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.FirmaElectronicaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 
 
 public class TransformerIntegrationUtils {
@@ -68,6 +70,9 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO.class,mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO.class);
+		
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO.class);
 		
 		
 		
@@ -167,6 +172,14 @@ public class TransformerIntegrationUtils {
 	}	
 	public static EjercicioFiscalTO transformer(EjercicioFiscalDTO object){
 		return (EjercicioFiscalTO) TransformerHelper.get(mapClass,object, EjercicioFiscalTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static TipoDictamenDTO transformer(TipoDictamenTO object){
+		return (TipoDictamenDTO) TransformerHelper.get(mapClass,object, TipoDictamenDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static TipoDictamenTO transformer(TipoDictamenDTO object){
+		return (TipoDictamenTO) TransformerHelper.get(mapClass,object, TipoDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 
 }
