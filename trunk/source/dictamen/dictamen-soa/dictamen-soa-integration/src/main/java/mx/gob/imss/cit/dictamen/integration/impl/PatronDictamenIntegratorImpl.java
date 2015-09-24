@@ -1,8 +1,5 @@
 package mx.gob.imss.cit.dictamen.integration.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -11,7 +8,6 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
 
@@ -39,21 +35,6 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 		datosPatron.setNumTrabajadoresPromedio( Integer.valueOf(5));
 		datosPatron.setRfc(rfc);
 		return datosPatron;
-	}
-
-	@Override
-	public List<TipoDictamenDTO> findAllTipoDictamen()throws DictamenNegocioException {
-		List<TipoDictamenDTO> listaTipoDictamen= new ArrayList<TipoDictamenDTO> ();
-		
-		TipoDictamenDTO tipoDictamenDTO= new TipoDictamenDTO();
-		tipoDictamenDTO.setIdDictamen( Integer.valueOf(1));
-		tipoDictamenDTO.setDescTipoDictamen("Obligatorio");
-		listaTipoDictamen.add(tipoDictamenDTO);
-		
-		
-		
-		
-		return listaTipoDictamen;
 	}
 
 	@Override

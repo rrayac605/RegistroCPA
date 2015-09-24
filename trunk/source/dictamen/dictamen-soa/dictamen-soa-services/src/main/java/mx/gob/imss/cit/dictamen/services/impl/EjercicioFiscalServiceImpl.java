@@ -51,7 +51,7 @@ public class EjercicioFiscalServiceImpl implements EjercicioFiscalService {
 			
 		}catch(Exception e){
 			LOG.error(e.getMessage(),e);
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_EJERCICIO_FISCAL_FIND,e);
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_EJERCICIO_FISCAL_FIND,e);
 		}
 		return listaTO;
 	}

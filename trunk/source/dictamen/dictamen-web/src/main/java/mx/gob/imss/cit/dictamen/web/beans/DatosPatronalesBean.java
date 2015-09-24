@@ -8,6 +8,7 @@ import javax.faces.bean.ViewScoped;
 import mx.gob.imss.cit.dictamen.integration.api.ConsultaSATIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.EjercicioFiscalIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
+import mx.gob.imss.cit.dictamen.integration.api.TipoDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
@@ -30,6 +31,10 @@ public class DatosPatronalesBean extends BaseBean {
 	private EjercicioFiscalIntegrator ejercicioFiscalIntegrator;
 	
 	@EJB
+	private TipoDictamenIntegrator tipoDictamenIntegrator;
+
+	
+	@EJB
 	private ConsultaSATIntegrator consultaSATIntegrator;
 	
 	private static final long serialVersionUID = 2825687007915597308L;
@@ -41,7 +46,7 @@ public class DatosPatronalesBean extends BaseBean {
 		CleanBeanUtil.cleanFields(datosPatronalesPage);
 		datosPatronalesPage.setDatosPatron(new PatronDictamenDTO());
 		try {
-			datosPatronalesPage.setListaTipoDictamen(patronIntegration.findAllTipoDictamen());
+			datosPatronalesPage.setListaTipoDictamen(tipoDictamenIntegrator.findAll());
 			datosPatronalesPage.setListaEjercicioFiscal(ejercicioFiscalIntegrator.findAll());
 		} catch (Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
@@ -63,6 +68,8 @@ public class DatosPatronalesBean extends BaseBean {
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
+			datosPatronalesPage.getDatosPatron().setRazonSocialNombre("");
+			datosPatronalesPage.getDatosPatron().setRfc("");
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_EXCEPCION.getCode());
 		}
 		
