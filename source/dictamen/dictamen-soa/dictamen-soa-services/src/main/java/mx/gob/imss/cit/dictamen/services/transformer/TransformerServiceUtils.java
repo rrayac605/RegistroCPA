@@ -212,6 +212,6 @@ public class TransformerServiceUtils {
 	}
 	
 	public static TipoDictamenTO transformer( NdcTipoDictamenDO object ) {
-		return (TipoDictamenTO) TransformerHelper.get(mapClass,object, NdcEjercicioFiscalDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+		return (TipoDictamenTO) TransformerHelper.get(mapClass,object, TipoDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 }
