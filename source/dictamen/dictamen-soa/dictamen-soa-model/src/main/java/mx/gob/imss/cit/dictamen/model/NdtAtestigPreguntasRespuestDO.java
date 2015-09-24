@@ -6,8 +6,8 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -63,6 +63,9 @@ public class NdtAtestigPreguntasRespuestDO implements Serializable {
     @JoinColumn(name = "CVE_ID_RUBRO_ATESTIG_DICTAMEN", referencedColumnName = "CVE_ID_RUBRO_ATESTIG_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtRubroAtestiguamientoDictDO cveIdRubroAtestigDictamen;
+    @JoinColumn(name = "CVE_ID_OPCION_PREGUNTA", referencedColumnName = "CVE_ID_OPCION_PREGUNTA")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcOpcionPreguntaDO cveIdOpcionPregunta;
 
     public NdtAtestigPreguntasRespuestDO() {
     }
@@ -127,6 +130,14 @@ public class NdtAtestigPreguntasRespuestDO implements Serializable {
         this.cveIdRubroAtestigDictamen = cveIdRubroAtestigDictamen;
     }
 
+    public NdcOpcionPreguntaDO getCveIdOpcionPregunta() {
+        return cveIdOpcionPregunta;
+    }
+
+    public void setCveIdOpcionPregunta(NdcOpcionPreguntaDO cveIdOpcionPregunta) {
+        this.cveIdOpcionPregunta = cveIdOpcionPregunta;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -149,7 +160,7 @@ public class NdtAtestigPreguntasRespuestDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.dos.NdtAtestigPreguntasRespuestDO[ cveIdAtestiguamientos=" + cveIdAtestiguamientos + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO[ cveIdAtestiguamientos=" + cveIdAtestiguamientos + " ]";
     }
     
 }

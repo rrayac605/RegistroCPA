@@ -58,7 +58,7 @@ public class NdtBitacoraErroresDO implements Serializable {
     private Date fecRegistroActualizado;
     @JoinColumn(name = "CVE_ID_BITACORA_CARGA_ASEV", referencedColumnName = "CVE_ID_BITACORA_CARGA_ASEV")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtCargaAseveracionesDO cveIdBitacoraCargaAsev;
+    private NdtCargaDocumentoDO cveIdBitacoraCargaAsev;
 
     public NdtBitacoraErroresDO() {
     }
@@ -107,11 +107,11 @@ public class NdtBitacoraErroresDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public NdtCargaAseveracionesDO getCveIdBitacoraCargaAsev() {
+    public NdtCargaDocumentoDO getCveIdBitacoraCargaAsev() {
         return cveIdBitacoraCargaAsev;
     }
 
-    public void setCveIdBitacoraCargaAsev(NdtCargaAseveracionesDO cveIdBitacoraCargaAsev) {
+    public void setCveIdBitacoraCargaAsev(NdtCargaDocumentoDO cveIdBitacoraCargaAsev) {
         this.cveIdBitacoraCargaAsev = cveIdBitacoraCargaAsev;
     }
 

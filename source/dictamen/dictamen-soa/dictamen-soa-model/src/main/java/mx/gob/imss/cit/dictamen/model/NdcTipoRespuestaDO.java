@@ -6,20 +6,17 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -46,8 +43,6 @@ public class NdcTipoRespuestaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_RESPUESTA", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator( allocationSize=1,name = "NdcTipoRespuesta_Id_Seq_Gen", sequenceName = "SEQ_NDCTIPORESPUESTA")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdcTipoRespuesta_Id_Seq_Gen")
     private Long cveIdRespuesta;
     @Size(max = 50)
     @Column(name = "DES_TIPO_RESPUESTA", length = 50)

@@ -6,10 +6,9 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +25,6 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
 /**
  *
  * @author ajfuentes
@@ -41,18 +39,13 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroBaja", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
 public class NdcAtestiguamientoDO implements Serializable {
-    @JoinColumn(name = "CVE_ID_ASEVERACION", referencedColumnName = "CVE_ID_ASEVERACION")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private NdcAseveracionesDO cveIdAseveracion;
-    @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
-    private List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList;
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ATESTIGUAMIENTO", nullable = false, precision = 22, scale = 0)
-    private BigDecimal cveIdAtestiguamiento;
+    private Long cveIdAtestiguamiento;
     @Size(max = 100)
     @Column(name = "DES_ATESTIGUAMIENTO", length = 100)
     private String desAtestiguamiento;
@@ -66,26 +59,29 @@ public class NdcAtestiguamientoDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroBaja;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
-    private List<NdtAtestiguamientoPreguntasDO> ndtAtestiguamientoPreguntasDOList;
+    private List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
     private List<NdcRubroDO> ndcRubroDOList;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
     private List<NdtB1CedulaRemuneracionesDO> ndtB1CedulaRemuneracionesDOList;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
     private List<NdtB2CedulaPrestacionesDO> ndtB2CedulaPrestacionesDOList;
+    @JoinColumn(name = "CVE_ID_ASEVERACION", referencedColumnName = "CVE_ID_ASEVERACION")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcAseveracionesDO cveIdAseveracion;
 
     public NdcAtestiguamientoDO() {
     }
 
-    public NdcAtestiguamientoDO(BigDecimal cveIdAtestiguamiento) {
+    public NdcAtestiguamientoDO(Long cveIdAtestiguamiento) {
         this.cveIdAtestiguamiento = cveIdAtestiguamiento;
     }
 
-    public BigDecimal getCveIdAtestiguamiento() {
+    public Long getCveIdAtestiguamiento() {
         return cveIdAtestiguamiento;
     }
 
-    public void setCveIdAtestiguamiento(BigDecimal cveIdAtestiguamiento) {
+    public void setCveIdAtestiguamiento(Long cveIdAtestiguamiento) {
         this.cveIdAtestiguamiento = cveIdAtestiguamiento;
     }
 
@@ -121,12 +117,12 @@ public class NdcAtestiguamientoDO implements Serializable {
         this.fecRegistroBaja = fecRegistroBaja;
     }
 
-    public List<NdtAtestiguamientoPreguntasDO> getNdtAtestiguamientoPreguntasDOList() {
-        return ndtAtestiguamientoPreguntasDOList;
+    public List<NdtAtestiguamientoDictamenDO> getNdtAtestiguamientoDictamenDOList() {
+        return ndtAtestiguamientoDictamenDOList;
     }
 
-    public void setNdtAtestiguamientoPreguntasDOList(List<NdtAtestiguamientoPreguntasDO> ndtAtestiguamientoPreguntasDOList) {
-        this.ndtAtestiguamientoPreguntasDOList = ndtAtestiguamientoPreguntasDOList;
+    public void setNdtAtestiguamientoDictamenDOList(List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList) {
+        this.ndtAtestiguamientoDictamenDOList = ndtAtestiguamientoDictamenDOList;
     }
 
     public List<NdcRubroDO> getNdcRubroDOList() {
@@ -153,6 +149,14 @@ public class NdcAtestiguamientoDO implements Serializable {
         this.ndtB2CedulaPrestacionesDOList = ndtB2CedulaPrestacionesDOList;
     }
 
+    public NdcAseveracionesDO getCveIdAseveracion() {
+        return cveIdAseveracion;
+    }
+
+    public void setCveIdAseveracion(NdcAseveracionesDO cveIdAseveracion) {
+        this.cveIdAseveracion = cveIdAseveracion;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -176,22 +180,6 @@ public class NdcAtestiguamientoDO implements Serializable {
     @Override
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO[ cveIdAtestiguamiento=" + cveIdAtestiguamiento + " ]";
-    }
-
-    public NdcAseveracionesDO getCveIdAseveracion() {
-        return cveIdAseveracion;
-    }
-
-    public void setCveIdAseveracion(NdcAseveracionesDO cveIdAseveracion) {
-        this.cveIdAseveracion = cveIdAseveracion;
-    }
-
-    public List<NdtAtestiguamientoDictamenDO> getNdtAtestiguamientoDictamenDOList() {
-        return ndtAtestiguamientoDictamenDOList;
-    }
-
-    public void setNdtAtestiguamientoDictamenDOList(List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList) {
-        this.ndtAtestiguamientoDictamenDOList = ndtAtestiguamientoDictamenDOList;
     }
     
 }

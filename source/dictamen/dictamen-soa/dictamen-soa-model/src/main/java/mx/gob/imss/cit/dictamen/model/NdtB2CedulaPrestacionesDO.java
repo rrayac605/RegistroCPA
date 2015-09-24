@@ -66,6 +66,9 @@ public class NdtB2CedulaPrestacionesDO implements Serializable {
     @JoinColumn(name = "CVE_ID_PRESTACIONES", referencedColumnName = "CVE_ID_PRESTACIONES")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcPrestacionesDO cveIdPrestaciones;
+    @JoinColumn(name = "CVE_ID_ESTADO_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ESTADO_ATESTIGUAMIENTO")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcEstadoAtestiguamientoDO cveIdEstadoAtestiguamiento;
     @JoinColumn(name = "CVE_ID_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ATESTIGUAMIENTO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcAtestiguamientoDO cveIdAtestiguamiento;
@@ -139,6 +142,14 @@ public class NdtB2CedulaPrestacionesDO implements Serializable {
 
     public void setCveIdPrestaciones(NdcPrestacionesDO cveIdPrestaciones) {
         this.cveIdPrestaciones = cveIdPrestaciones;
+    }
+
+    public NdcEstadoAtestiguamientoDO getCveIdEstadoAtestiguamiento() {
+        return cveIdEstadoAtestiguamiento;
+    }
+
+    public void setCveIdEstadoAtestiguamiento(NdcEstadoAtestiguamientoDO cveIdEstadoAtestiguamiento) {
+        this.cveIdEstadoAtestiguamiento = cveIdEstadoAtestiguamiento;
     }
 
     public NdcAtestiguamientoDO getCveIdAtestiguamiento() {

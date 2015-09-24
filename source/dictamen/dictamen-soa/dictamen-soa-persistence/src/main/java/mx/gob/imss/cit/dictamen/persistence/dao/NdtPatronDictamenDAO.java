@@ -39,6 +39,13 @@ public interface NdtPatronDictamenDAO {
 	 */
 	List<NdtPatronDictamenDO> findAll();
 	
+	/**
+	 * Metodo de busqueda .
+	 *
+	 * @return the list
+	 */
+	List<NdtPatronDictamenDO> findByRfcPatronAndIdContador(String rfcPatron,Long idContador);
+	
 	
 	void flush();
 

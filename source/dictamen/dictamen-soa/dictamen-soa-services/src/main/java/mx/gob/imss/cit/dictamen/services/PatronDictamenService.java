@@ -17,5 +17,6 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 public interface PatronDictamenService {
 	
 	PatronDictamenTO saveDictamen(PatronDictamenTO dictamen) throws DictamenException;
+	PatronDictamenTO getDictamenByRfcPatronAndIdContador(String rfc, Long contador) throws DictamenException;
 
 }

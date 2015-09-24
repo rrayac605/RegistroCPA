@@ -6,9 +6,10 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
+
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,7 +49,7 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
     @Column(name = "CVE_ID_ATESTIG_DICTAMEN", nullable = false, precision = 22, scale = 0)
     private Long cveIdAtestigDictamen;
     @Column(name = "CVE_ID_DICTAMEN")
-    private Long cveIdDictamen;
+    private Integer cveIdDictamen;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -61,14 +62,17 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
+    @OneToMany(mappedBy = "cveIdAtestigDictamen", fetch = FetchType.LAZY)
+    private List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList;
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtPatronDictamenDO cveIdPatronDictamen;
+    @JoinColumn(name = "CVE_ID_ESTADO_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ESTADO_ATESTIGUAMIENTO")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcEstadoAtestiguamientoDO cveIdEstadoAtestiguamiento;
     @JoinColumn(name = "CVE_ID_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ATESTIGUAMIENTO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcAtestiguamientoDO cveIdAtestiguamiento;
-    @OneToMany(mappedBy = "cveIdAtestigDictamen", fetch = FetchType.LAZY)
-    private List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList;
 
     public NdtAtestiguamientoDictamenDO() {
     }
@@ -85,11 +89,11 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
         this.cveIdAtestigDictamen = cveIdAtestigDictamen;
     }
 
-    public Long getCveIdDictamen() {
+    public Integer getCveIdDictamen() {
         return cveIdDictamen;
     }
 
-    public void setCveIdDictamen(Long cveIdDictamen) {
+    public void setCveIdDictamen(Integer cveIdDictamen) {
         this.cveIdDictamen = cveIdDictamen;
     }
 
@@ -125,6 +129,14 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
         this.cveIdUsuario = cveIdUsuario;
     }
 
+    public List<NdtRubroAtestiguamientoDictDO> getNdtRubroAtestiguamientoDictDOList() {
+        return ndtRubroAtestiguamientoDictDOList;
+    }
+
+    public void setNdtRubroAtestiguamientoDictDOList(List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList) {
+        this.ndtRubroAtestiguamientoDictDOList = ndtRubroAtestiguamientoDictDOList;
+    }
+
     public NdtPatronDictamenDO getCveIdPatronDictamen() {
         return cveIdPatronDictamen;
     }
@@ -133,20 +145,20 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
         this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
+    public NdcEstadoAtestiguamientoDO getCveIdEstadoAtestiguamiento() {
+        return cveIdEstadoAtestiguamiento;
+    }
+
+    public void setCveIdEstadoAtestiguamiento(NdcEstadoAtestiguamientoDO cveIdEstadoAtestiguamiento) {
+        this.cveIdEstadoAtestiguamiento = cveIdEstadoAtestiguamiento;
+    }
+
     public NdcAtestiguamientoDO getCveIdAtestiguamiento() {
         return cveIdAtestiguamiento;
     }
 
     public void setCveIdAtestiguamiento(NdcAtestiguamientoDO cveIdAtestiguamiento) {
         this.cveIdAtestiguamiento = cveIdAtestiguamiento;
-    }
-
-    public List<NdtRubroAtestiguamientoDictDO> getNdtRubroAtestiguamientoDictDOList() {
-        return ndtRubroAtestiguamientoDictDOList;
-    }
-
-    public void setNdtRubroAtestiguamientoDictDOList(List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList) {
-        this.ndtRubroAtestiguamientoDictDOList = ndtRubroAtestiguamientoDictDOList;
     }
 
     @Override
@@ -171,7 +183,7 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.dos.NdtAtestiguamientoDictamenDO[ cveIdAtestigDictamen=" + cveIdAtestigDictamen + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO[ cveIdAtestigDictamen=" + cveIdAtestigDictamen + " ]";
     }
     
 }

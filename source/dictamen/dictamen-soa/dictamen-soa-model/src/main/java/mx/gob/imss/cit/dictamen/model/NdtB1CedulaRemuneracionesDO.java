@@ -7,7 +7,7 @@ package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
 
-import java.math.BigInteger;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -59,9 +59,9 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
     @Column(name = "IMP_IMPORTE_PAGADO", precision = 15, scale = 2)
     private Long impImportePagado;
     @Column(name = "POR_FAHORRO_APOPAT")
-    private BigInteger porFahorroApopat;
+    private Integer porFahorroApopat;
     @Column(name = "POR_FAHORRO_APOOBR")
-    private BigInteger porFahorroApoobr;
+    private Integer porFahorroApoobr;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -76,12 +76,17 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
     private String cveIdUsuario;
     @OneToMany(mappedBy = "cveIdB1CedRemunera", fetch = FetchType.LAZY)
     private List<NdtB1DetPagosOtrosEmpleadDO> ndtB1DetPagosOtrosEmpleadDOList;
+    @OneToMany(mappedBy = "cveIdB1CedRemunera", fetch = FetchType.LAZY)
+    private List<NdtB1DetFondoAhorroDO> ndtB1DetFondoAhorroDOList;
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtPatronDictamenDO cveIdPatronDictamen;
     @JoinColumn(name = "CVE_ID_REMUNERACIONES", referencedColumnName = "CVE_ID_REMUNERACIONES")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcRemuneracionesDO cveIdRemuneraciones;
+    @JoinColumn(name = "CVE_ID_ESTADO_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ESTADO_ATESTIGUAMIENTO")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdcEstadoAtestiguamientoDO cveIdEstadoAtestiguamiento;
     @JoinColumn(name = "CVE_ID_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ATESTIGUAMIENTO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcAtestiguamientoDO cveIdAtestiguamiento;
@@ -129,19 +134,19 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
         this.impImportePagado = impImportePagado;
     }
 
-    public BigInteger getPorFahorroApopat() {
+    public Integer getPorFahorroApopat() {
         return porFahorroApopat;
     }
 
-    public void setPorFahorroApopat(BigInteger porFahorroApopat) {
+    public void setPorFahorroApopat(Integer porFahorroApopat) {
         this.porFahorroApopat = porFahorroApopat;
     }
 
-    public BigInteger getPorFahorroApoobr() {
+    public Integer getPorFahorroApoobr() {
         return porFahorroApoobr;
     }
 
-    public void setPorFahorroApoobr(BigInteger porFahorroApoobr) {
+    public void setPorFahorroApoobr(Integer porFahorroApoobr) {
         this.porFahorroApoobr = porFahorroApoobr;
     }
 
@@ -185,6 +190,14 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
         this.ndtB1DetPagosOtrosEmpleadDOList = ndtB1DetPagosOtrosEmpleadDOList;
     }
 
+    public List<NdtB1DetFondoAhorroDO> getNdtB1DetFondoAhorroDOList() {
+        return ndtB1DetFondoAhorroDOList;
+    }
+
+    public void setNdtB1DetFondoAhorroDOList(List<NdtB1DetFondoAhorroDO> ndtB1DetFondoAhorroDOList) {
+        this.ndtB1DetFondoAhorroDOList = ndtB1DetFondoAhorroDOList;
+    }
+
     public NdtPatronDictamenDO getCveIdPatronDictamen() {
         return cveIdPatronDictamen;
     }
@@ -199,6 +212,14 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
 
     public void setCveIdRemuneraciones(NdcRemuneracionesDO cveIdRemuneraciones) {
         this.cveIdRemuneraciones = cveIdRemuneraciones;
+    }
+
+    public NdcEstadoAtestiguamientoDO getCveIdEstadoAtestiguamiento() {
+        return cveIdEstadoAtestiguamiento;
+    }
+
+    public void setCveIdEstadoAtestiguamiento(NdcEstadoAtestiguamientoDO cveIdEstadoAtestiguamiento) {
+        this.cveIdEstadoAtestiguamiento = cveIdEstadoAtestiguamiento;
     }
 
     public NdcAtestiguamientoDO getCveIdAtestiguamiento() {

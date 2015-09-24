@@ -7,7 +7,7 @@ package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
 
-import java.math.BigInteger;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -51,7 +51,7 @@ public class NdcRemuneracionesDO implements Serializable {
     @Column(name = "DES_REMUNERACIONES", length = 200)
     private String desRemuneraciones;
     @Column(name = "IND_ORDEN")
-    private BigInteger indOrden;
+    private Integer indOrden;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -90,11 +90,11 @@ public class NdcRemuneracionesDO implements Serializable {
         this.desRemuneraciones = desRemuneraciones;
     }
 
-    public BigInteger getIndOrden() {
+    public Integer getIndOrden() {
         return indOrden;
     }
 
-    public void setIndOrden(BigInteger indOrden) {
+    public void setIndOrden(Integer indOrden) {
         this.indOrden = indOrden;
     }
 

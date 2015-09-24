@@ -6,20 +6,18 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
+
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -35,6 +33,7 @@ import javax.validation.constraints.Size;
 @NamedQueries({
     @NamedQuery(name = "NdtPatronDictamenCpaDO.findAll", query = "SELECT n FROM NdtPatronDictamenCpaDO n"),
     @NamedQuery(name = "NdtPatronDictamenCpaDO.findByCveIdPatronCpaDictamen", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.cveIdPatronCpaDictamen = :cveIdPatronCpaDictamen"),
+    @NamedQuery(name = "NdtPatronDictamenCpaDO.findByCveIdPatronDictamen", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.cveIdPatronDictamen = :cveIdPatronDictamen"),
     @NamedQuery(name = "NdtPatronDictamenCpaDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
     @NamedQuery(name = "NdtPatronDictamenCpaDO.findByFecRegistroAlta", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtPatronDictamenCpaDO.findByFecRegistroBaja", query = "SELECT n FROM NdtPatronDictamenCpaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
@@ -46,9 +45,9 @@ public class NdtPatronDictamenCpaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PATRON_CPA_DICTAMEN", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator( allocationSize=1,name = "NdtPatronDictamenCpa_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONDICTAMENCPA")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdtPatronDictamenCpa_Id_Seq_Gen")
     private Long cveIdPatronCpaDictamen;
+    @Column(name = "CVE_ID_PATRON_DICTAMEN")
+    private Integer cveIdPatronDictamen;
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
@@ -61,9 +60,6 @@ public class NdtPatronDictamenCpaDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
-    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronDictamenDO cveIdPatronDictamen;
     @JoinColumn(name = "CVE_ID_CPA", referencedColumnName = "CVE_ID_CPA")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtContadorPublicoAutDO cveIdCpa;
@@ -81,6 +77,14 @@ public class NdtPatronDictamenCpaDO implements Serializable {
 
     public void setCveIdPatronCpaDictamen(Long cveIdPatronCpaDictamen) {
         this.cveIdPatronCpaDictamen = cveIdPatronCpaDictamen;
+    }
+
+    public Integer getCveIdPatronDictamen() {
+        return cveIdPatronDictamen;
+    }
+
+    public void setCveIdPatronDictamen(Integer cveIdPatronDictamen) {
+        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     public String getCveIdUsuario() {
@@ -113,14 +117,6 @@ public class NdtPatronDictamenCpaDO implements Serializable {
 
     public void setFecRegistroActualizado(Date fecRegistroActualizado) {
         this.fecRegistroActualizado = fecRegistroActualizado;
-    }
-
-    public NdtPatronDictamenDO getCveIdPatronDictamen() {
-        return cveIdPatronDictamen;
-    }
-
-    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
-        this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
     public NdtContadorPublicoAutDO getCveIdCpa() {

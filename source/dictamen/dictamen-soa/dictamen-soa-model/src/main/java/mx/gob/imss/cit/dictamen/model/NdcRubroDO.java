@@ -6,24 +6,21 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
+
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -51,10 +48,7 @@ public class NdcRubroDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_RUBRO", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator( allocationSize=1,name = "NdcRubro_Id_Seq_Gen", sequenceName = "SEQ_NDCRUBRO")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NdcRubro_Id_Seq_Gen")
     private Long cveIdRubro;
-
     @Size(max = 100)
     @Column(name = "DES_RUBRO", length = 100)
     private String desRubro;
@@ -68,9 +62,11 @@ public class NdcRubroDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecBajaRegistro;
     @Column(name = "IND_ORDEN")
-    private BigInteger indOrden;
+    private Integer indOrden;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdRubro", fetch = FetchType.LAZY)
     private List<NdcPreguntaDO> ndcPreguntaDOList;
+    @OneToMany(mappedBy = "cveIdRubro", fetch = FetchType.LAZY)
+    private List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList;
     @JoinColumn(name = "CVE_ID_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ATESTIGUAMIENTO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcAtestiguamientoDO cveIdAtestiguamiento;
@@ -122,11 +118,11 @@ public class NdcRubroDO implements Serializable {
         this.fecBajaRegistro = fecBajaRegistro;
     }
 
-    public BigInteger getIndOrden() {
+    public Integer getIndOrden() {
         return indOrden;
     }
 
-    public void setIndOrden(BigInteger indOrden) {
+    public void setIndOrden(Integer indOrden) {
         this.indOrden = indOrden;
     }
 
@@ -136,6 +132,14 @@ public class NdcRubroDO implements Serializable {
 
     public void setNdcPreguntaDOList(List<NdcPreguntaDO> ndcPreguntaDOList) {
         this.ndcPreguntaDOList = ndcPreguntaDOList;
+    }
+
+    public List<NdtRubroAtestiguamientoDictDO> getNdtRubroAtestiguamientoDictDOList() {
+        return ndtRubroAtestiguamientoDictDOList;
+    }
+
+    public void setNdtRubroAtestiguamientoDictDOList(List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList) {
+        this.ndtRubroAtestiguamientoDictDOList = ndtRubroAtestiguamientoDictDOList;
     }
 
     public NdcAtestiguamientoDO getCveIdAtestiguamiento() {
