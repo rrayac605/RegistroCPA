@@ -6,9 +6,8 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
-
 import java.util.Date;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,8 +45,9 @@ public class NdtPatronDictamenCpaDO implements Serializable {
     @NotNull
     @Column(name = "CVE_ID_PATRON_CPA_DICTAMEN", nullable = false, precision = 22, scale = 0)
     private Long cveIdPatronCpaDictamen;
-    @Column(name = "CVE_ID_PATRON_DICTAMEN")
-    private Integer cveIdPatronDictamen;
+    @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private NdtPatronDictamenDO cveIdPatronDictamen;
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
@@ -79,11 +79,11 @@ public class NdtPatronDictamenCpaDO implements Serializable {
         this.cveIdPatronCpaDictamen = cveIdPatronCpaDictamen;
     }
 
-    public Integer getCveIdPatronDictamen() {
+    public NdtPatronDictamenDO getCveIdPatronDictamen() {
         return cveIdPatronDictamen;
     }
 
-    public void setCveIdPatronDictamen(Integer cveIdPatronDictamen) {
+    public void setCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
         this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 

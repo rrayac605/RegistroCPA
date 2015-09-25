@@ -27,10 +27,11 @@ public class ConsultaSatRFCServiceTest {
 	@Test
 	public void testGetPatron(){
 		EntradaSAT entradaSAT = new EntradaSAT();
-		entradaSAT.setRfc("FURA831031N86");
+		entradaSAT.setRfc("CIT970206HB6");
 		SalidaSAT salidaSAT =null;
 		try {
 			salidaSAT = consultaSatRFCService.getPatron(entradaSAT);
+			System.out.println(salidaSAT.getRFCOriginal());
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 		}

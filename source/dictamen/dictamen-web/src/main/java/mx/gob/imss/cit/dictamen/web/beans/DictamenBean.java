@@ -29,7 +29,7 @@ public class DictamenBean extends BaseBean {
 	
 	
 	public String init(){
-		datosPatronalesBean.init();
+		datosPatronalesBean.init(778L);
 		cargaArchivosBean.init("2015","MASC870401GQ8","EEAC900408B17");
 		return null;
 	}

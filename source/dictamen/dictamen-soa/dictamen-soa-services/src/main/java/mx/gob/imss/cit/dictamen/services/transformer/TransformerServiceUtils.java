@@ -55,6 +55,7 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.BovedaBaseObjectTO.class, mx.gob.imss.cit.bp.ws.bovedapersonalcommonschema.BaseObject.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO.class, mx.gob.imss.cit.ws.commonschema.SGBDE.class);				
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class,mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class);
 		
 		
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class,mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO.class);
@@ -128,6 +129,12 @@ public class TransformerServiceUtils {
 	public static SGBDE transformer(BovedaHeaderTO headerTO){ 
 		return (SGBDE) TransformerHelper.get(mapClass,headerTO, SGBDE.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
+	
+	
+	
+	
+	
+	
 	
 	public static NdtPatronDictamenDO transformer( PatronDictamenTO patron ) {
 		NdtPatronDictamenDO cont=  (NdtPatronDictamenDO) TransformerHelper.get(mapClass,patron, NdtPatronDictamenDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
