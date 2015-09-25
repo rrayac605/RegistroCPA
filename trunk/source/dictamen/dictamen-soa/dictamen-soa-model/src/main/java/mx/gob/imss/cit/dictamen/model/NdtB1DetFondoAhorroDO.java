@@ -6,18 +6,19 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
-
 import java.util.Date;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -47,6 +48,8 @@ public class NdtB1DetFondoAhorroDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_B1_DET_FONDO_AHORRO", nullable = false, precision = 22, scale = 0)
+    @SequenceGenerator(name = "NdtB1DetFondoAhorro_Id_Seq_Gen", sequenceName = "SEQ_NDTB1DETFONDOAHORRO", allocationSize=1)
+    @GeneratedValue(generator = "NdtB1DetFondoAhorro_Id_Seq_Gen")
     private Long cveIdB1DetFondoAhorro;
     @Column(name = "IMP_IMPORTE_PAGADO", precision = 13, scale = 2)
     private Long impImportePagado;
