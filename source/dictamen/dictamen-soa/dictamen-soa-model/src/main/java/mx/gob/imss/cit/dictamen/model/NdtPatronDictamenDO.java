@@ -6,20 +6,21 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
-
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -47,10 +48,7 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtPatronDictamenDO.findByFecRegistroAlta", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtPatronDictamenDO.findByFecRegistroBaja", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
     @NamedQuery(name = "NdtPatronDictamenDO.findByFecRegistroAutorizado", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.fecRegistroAutorizado = :fecRegistroAutorizado"),
-    @NamedQuery(name = "NdtPatronDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtPatronDictamenDO.findByRfcPatronAndIdContador", query = "SELECT n FROM NdtPatronDictamenDO n,NdtPatronDictamenCpaDO c WHERE n.cveIdPatronDictamen=c.cveIdPatronDictamen.cveIdPatronDictamen and n.desRfc = :desRfc and c.cveIdCpa.cveIdCpa=:idContador")    
-})
-
+    @NamedQuery(name = "NdtPatronDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
 public class NdtPatronDictamenDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -58,6 +56,8 @@ public class NdtPatronDictamenDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PATRON_DICTAMEN", nullable = false, precision = 22, scale = 0)
+    @SequenceGenerator(name = "NdtPatronDictamen_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONDICTAMEN", allocationSize=1)
+    @GeneratedValue(generator = "NdtPatronDictamen_Id_Seq_Gen")
     private Long cveIdPatronDictamen;
     @Size(max = 50)
     @Column(name = "DES_RFC", length = 50)
@@ -120,7 +120,7 @@ public class NdtPatronDictamenDO implements Serializable {
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA74CeTransporteDO> ndtA74CeTransporteDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
-    private List<NdtPatronAsociado> ndtPatronAsociadoList;
+    private List<NdtPatronAsociadoDO> ndtPatronAsociadoList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA8BalanzaComprobacionDO> ndtA8BalanzaComprobacionDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
@@ -371,11 +371,11 @@ public class NdtPatronDictamenDO implements Serializable {
         this.ndtA74CeTransporteDOList = ndtA74CeTransporteDOList;
     }
 
-    public List<NdtPatronAsociado> getNdtPatronAsociadoList() {
+    public List<NdtPatronAsociadoDO> getNdtPatronAsociadoList() {
         return ndtPatronAsociadoList;
     }
 
-    public void setNdtPatronAsociadoList(List<NdtPatronAsociado> ndtPatronAsociadoList) {
+    public void setNdtPatronAsociadoList(List<NdtPatronAsociadoDO> ndtPatronAsociadoList) {
         this.ndtPatronAsociadoList = ndtPatronAsociadoList;
     }
 

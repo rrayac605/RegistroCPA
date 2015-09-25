@@ -6,20 +6,21 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
-
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,38 +34,40 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDT_PATRON_ASOCIADO")
 @NamedQueries({
-    @NamedQuery(name = "NdtPatronAsociado.findAll", query = "SELECT n FROM NdtPatronAsociado n"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdPatronAsociado", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdPatronAsociado = :cveIdPatronAsociado"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdPatronSujetoObligado", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdPatronSujetoObligado = :cveIdPatronSujetoObligado"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdSubdelegacion", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdSubdelegacion = :cveIdSubdelegacion"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdDivisionAlcierreEjer", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdDivisionAlcierreEjer = :cveIdDivisionAlcierreEjer"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdGrupoAlcierreEjer", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdGrupoAlcierreEjer = :cveIdGrupoAlcierreEjer"),
-    @NamedQuery(name = "NdtPatronAsociado.findByNumTrabajadoresPromedio", query = "SELECT n FROM NdtPatronAsociado n WHERE n.numTrabajadoresPromedio = :numTrabajadoresPromedio"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdFraccionAlcierreEjer", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdFraccionAlcierreEjer = :cveIdFraccionAlcierreEjer"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdClaseAlcierreEjer", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdClaseAlcierreEjer = :cveIdClaseAlcierreEjer"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdActividadAlcierreEjer", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdActividadAlcierreEjer = :cveIdActividadAlcierreEjer"),
-    @NamedQuery(name = "NdtPatronAsociado.findByIndPatronConeldomfiscal", query = "SELECT n FROM NdtPatronAsociado n WHERE n.indPatronConeldomfiscal = :indPatronConeldomfiscal"),
-    @NamedQuery(name = "NdtPatronAsociado.findByDesRfcPatron", query = "SELECT n FROM NdtPatronAsociado n WHERE n.desRfcPatron = :desRfcPatron"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCalleDomfiscal", query = "SELECT n FROM NdtPatronAsociado n WHERE n.calleDomfiscal = :calleDomfiscal"),
-    @NamedQuery(name = "NdtPatronAsociado.findByNumExteriorDomfiscal", query = "SELECT n FROM NdtPatronAsociado n WHERE n.numExteriorDomfiscal = :numExteriorDomfiscal"),
-    @NamedQuery(name = "NdtPatronAsociado.findByNumInteriorDomfiscal", query = "SELECT n FROM NdtPatronAsociado n WHERE n.numInteriorDomfiscal = :numInteriorDomfiscal"),
-    @NamedQuery(name = "NdtPatronAsociado.findByColoniaDomfiscal", query = "SELECT n FROM NdtPatronAsociado n WHERE n.coloniaDomfiscal = :coloniaDomfiscal"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCodigopostalDomfiscal", query = "SELECT n FROM NdtPatronAsociado n WHERE n.codigopostalDomfiscal = :codigopostalDomfiscal"),
-    @NamedQuery(name = "NdtPatronAsociado.findByMunicipioDomfiscal", query = "SELECT n FROM NdtPatronAsociado n WHERE n.municipioDomfiscal = :municipioDomfiscal"),
-    @NamedQuery(name = "NdtPatronAsociado.findByEntidadDomfiscal", query = "SELECT n FROM NdtPatronAsociado n WHERE n.entidadDomfiscal = :entidadDomfiscal"),
-    @NamedQuery(name = "NdtPatronAsociado.findByDesNombreRazonsocialPatron", query = "SELECT n FROM NdtPatronAsociado n WHERE n.desNombreRazonsocialPatron = :desNombreRazonsocialPatron"),
-    @NamedQuery(name = "NdtPatronAsociado.findByTelefono", query = "SELECT n FROM NdtPatronAsociado n WHERE n.telefono = :telefono"),
-    @NamedQuery(name = "NdtPatronAsociado.findByCveIdUsuario", query = "SELECT n FROM NdtPatronAsociado n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtPatronAsociado.findByFecRegistroAlta", query = "SELECT n FROM NdtPatronAsociado n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
-    @NamedQuery(name = "NdtPatronAsociado.findByFecRegistroBaja", query = "SELECT n FROM NdtPatronAsociado n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtPatronAsociado.findByFecRegistroActualizado", query = "SELECT n FROM NdtPatronAsociado n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
-public class NdtPatronAsociado implements Serializable {
+    @NamedQuery(name = "NdtPatronAsociadoDO.findAll", query = "SELECT n FROM NdtPatronAsociadoDO n"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdPatronAsociado", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdPatronAsociado = :cveIdPatronAsociado"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdPatronSujetoObligado", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdPatronSujetoObligado = :cveIdPatronSujetoObligado"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdSubdelegacion", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdSubdelegacion = :cveIdSubdelegacion"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdDivisionAlcierreEjer", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdDivisionAlcierreEjer = :cveIdDivisionAlcierreEjer"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdGrupoAlcierreEjer", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdGrupoAlcierreEjer = :cveIdGrupoAlcierreEjer"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByNumTrabajadoresPromedio", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.numTrabajadoresPromedio = :numTrabajadoresPromedio"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdFraccionAlcierreEjer", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdFraccionAlcierreEjer = :cveIdFraccionAlcierreEjer"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdClaseAlcierreEjer", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdClaseAlcierreEjer = :cveIdClaseAlcierreEjer"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdActividadAlcierreEjer", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdActividadAlcierreEjer = :cveIdActividadAlcierreEjer"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByIndPatronConeldomfiscal", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.indPatronConeldomfiscal = :indPatronConeldomfiscal"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByDesRfcPatron", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.desRfcPatron = :desRfcPatron"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCalleDomfiscal", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.calleDomfiscal = :calleDomfiscal"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByNumExteriorDomfiscal", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.numExteriorDomfiscal = :numExteriorDomfiscal"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByNumInteriorDomfiscal", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.numInteriorDomfiscal = :numInteriorDomfiscal"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByColoniaDomfiscal", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.coloniaDomfiscal = :coloniaDomfiscal"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCodigopostalDomfiscal", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.codigopostalDomfiscal = :codigopostalDomfiscal"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByMunicipioDomfiscal", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.municipioDomfiscal = :municipioDomfiscal"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByEntidadDomfiscal", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.entidadDomfiscal = :entidadDomfiscal"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByDesNombreRazonsocialPatron", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.desNombreRazonsocialPatron = :desNombreRazonsocialPatron"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByTelefono", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.telefono = :telefono"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByFecRegistroAlta", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByFecRegistroBaja", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+public class NdtPatronAsociadoDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PATRON_ASOCIADO", nullable = false, precision = 22, scale = 0)
+    @SequenceGenerator(name = "NdtPatronAsociado_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONASOCIADO", allocationSize=1)
+    @GeneratedValue(generator = "NdtPatronAsociado_Id_Seq_Gen")
     private Long cveIdPatronAsociado;
     @Column(name = "CVE_ID_PATRON_SUJETO_OBLIGADO")
     private Integer cveIdPatronSujetoObligado;
@@ -175,10 +178,10 @@ public class NdtPatronAsociado implements Serializable {
     @OneToMany(mappedBy = "cveIdPatronAsociado", fetch = FetchType.LAZY)
     private List<NdtA921PersSubcontratadoDO> ndtA921PersSubcontratadoDOList;
 
-    public NdtPatronAsociado() {
+    public NdtPatronAsociadoDO() {
     }
 
-    public NdtPatronAsociado(Long cveIdPatronAsociado) {
+    public NdtPatronAsociadoDO(Long cveIdPatronAsociado) {
         this.cveIdPatronAsociado = cveIdPatronAsociado;
     }
 
@@ -552,10 +555,10 @@ public class NdtPatronAsociado implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof NdtPatronAsociado)) {
+        if (!(object instanceof NdtPatronAsociadoDO)) {
             return false;
         }
-        NdtPatronAsociado other = (NdtPatronAsociado) object;
+        NdtPatronAsociadoDO other = (NdtPatronAsociadoDO) object;
         if ((this.cveIdPatronAsociado == null && other.cveIdPatronAsociado != null) || (this.cveIdPatronAsociado != null && !this.cveIdPatronAsociado.equals(other.cveIdPatronAsociado))) {
             return false;
         }
@@ -564,7 +567,7 @@ public class NdtPatronAsociado implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdtPatronAsociado[ cveIdPatronAsociado=" + cveIdPatronAsociado + " ]";
+        return "mx.gob.imss.cit.dictamen.model.NdtPatronAsociadoDO[ cveIdPatronAsociado=" + cveIdPatronAsociado + " ]";
     }
     
 }

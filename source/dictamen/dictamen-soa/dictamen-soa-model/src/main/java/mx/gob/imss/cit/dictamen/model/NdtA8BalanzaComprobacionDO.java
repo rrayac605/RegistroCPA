@@ -6,17 +6,19 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.util.Date;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -50,6 +52,8 @@ public class NdtA8BalanzaComprobacionDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_A8_BALANZA_COMPROBACION", nullable = false, precision = 22, scale = 0)
+    @SequenceGenerator(name = "NdtA8BalanzaComprobacion_Id_Seq_Gen", sequenceName = "SEQ_NDTA8BALANZACOMPROBACION", allocationSize=1)
+    @GeneratedValue(generator = "NdtA8BalanzaComprobacion_Id_Seq_Gen")
     private Long cveIdA8BalanzaComprobacion;
     @Column(name = "NUM_NIVEL")
     private Short numNivel;
@@ -84,7 +88,7 @@ public class NdtA8BalanzaComprobacionDO implements Serializable {
     private NdtPatronDictamenDO cveIdPatronDictamen;
     @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
     @ManyToOne(fetch = FetchType.LAZY)
-    private NdtPatronAsociado cveIdPatronAsociado;
+    private NdtPatronAsociadoDO cveIdPatronAsociado;
 
     public NdtA8BalanzaComprobacionDO() {
     }
@@ -197,11 +201,11 @@ public class NdtA8BalanzaComprobacionDO implements Serializable {
         this.cveIdPatronDictamen = cveIdPatronDictamen;
     }
 
-    public NdtPatronAsociado getCveIdPatronAsociado() {
+    public NdtPatronAsociadoDO getCveIdPatronAsociado() {
         return cveIdPatronAsociado;
     }
 
-    public void setCveIdPatronAsociado(NdtPatronAsociado cveIdPatronAsociado) {
+    public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
         this.cveIdPatronAsociado = cveIdPatronAsociado;
     }
 

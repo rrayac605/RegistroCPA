@@ -6,20 +6,21 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
-
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -48,6 +49,8 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ATESTIG_DICTAMEN", nullable = false, precision = 22, scale = 0)
+    @SequenceGenerator(name = "NdtAtestiguamientoDictamen_Id_Seq_Gen", sequenceName = "SEQ_NDTATESTIGUAMIENTODICTAMEN", allocationSize=1)
+    @GeneratedValue(generator = "NdtAtestiguamientoDictamen_Id_Seq_Gen")
     private Long cveIdAtestigDictamen;
     @Column(name = "CVE_ID_DICTAMEN")
     private Integer cveIdDictamen;
