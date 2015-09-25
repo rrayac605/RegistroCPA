@@ -42,13 +42,17 @@ public class DatosPatronalesBean extends BaseBean {
 	@ManagedProperty(value = "#{datosPatronalesPage}")
 	private DatosPatronalesPage datosPatronalesPage;
 	
-	public void init(){
+	public void init(Long idContador){
 		CleanBeanUtil.cleanFields(datosPatronalesPage);
 		datosPatronalesPage.setDatosPatron(new PatronDictamenDTO());
 		try {
+			datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
+			datosPatronalesPage.getDatosPatron().setIndustriaConstruccion(false);
+			datosPatronalesPage.getDatosPatron().setActConstruccionOregObra(false);
 			datosPatronalesPage.setListaTipoDictamen(tipoDictamenIntegrator.findAll());
 			datosPatronalesPage.setListaEjercicioFiscal(ejercicioFiscalIntegrator.findAll());
 		} catch (Exception e) {
+			LOG.error(e.getMessage(),e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}
 	}
@@ -61,15 +65,18 @@ public class DatosPatronalesBean extends BaseBean {
 			
 			String razonSocial=consultaSATIntegrator.getPatron(datosPatronalesPage.getDatosPatron().getRfc());
 			
-			if(razonSocial==null){
+			if(razonSocial==null ||"".equals(razonSocial)){
 				FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_NO_ENCONTRADO.getCode(),datosPatronalesPage.getDatosPatron().getRfc());
+				datosPatronalesPage.getDatosPatron().setRazonSocialNombre(null);
+				datosPatronalesPage.getDatosPatron().setRfc(null);
 			}else{
+				LOG.info("la razon social es: "+razonSocial);
 				datosPatronalesPage.getDatosPatron().setRazonSocialNombre(razonSocial);
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
-			datosPatronalesPage.getDatosPatron().setRazonSocialNombre("");
-			datosPatronalesPage.getDatosPatron().setRfc("");
+			datosPatronalesPage.getDatosPatron().setRazonSocialNombre(null);
+			datosPatronalesPage.getDatosPatron().setRfc(null);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_EXCEPCION.getCode());
 		}
 		

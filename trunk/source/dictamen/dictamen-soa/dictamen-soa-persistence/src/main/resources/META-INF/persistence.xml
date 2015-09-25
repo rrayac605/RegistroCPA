@@ -8,6 +8,7 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	<persistence-unit name="DictamenPU" transaction-type="JTA">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<jta-data-source>jdbc/dictamenDS</jta-data-source>
+		<!-- jta-data-source>jdbc/dictamenDSLocal</jta-data-source-->
 
 
 		<class>mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO</class>

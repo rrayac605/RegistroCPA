@@ -59,7 +59,7 @@ public class NdtPatronDictamenDAOTest extends AbstractDBTestUnit {
 	public void testFindByRfcPatronAndIdContador() {
 		List<NdtPatronDictamenDO> list=null;
 		try{
-			list=ndtPatronDictamenDAO.findByRfcPatronAndIdContador("RCO9402181WO", 778L);
+			list=ndtPatronDictamenDAO.findByRfcPatronAndIdContador("CIT970206HB6", 778L);
 			
 			for (NdtPatronDictamenDO ndtPatronDictamenDO : list) {
 				LOG.info(ndtPatronDictamenDO.getDesNombreRazonSocial());

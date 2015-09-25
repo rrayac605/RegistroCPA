@@ -3,15 +3,16 @@ package mx.gob.imss.cit.dictamen.web.pages;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.web.constants.DictamenWebConstants;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 @ManagedBean(name = "datosPatronalesPage")
-@ViewScoped
+@SessionScoped
 public class DatosPatronalesPage extends BaseBean {
 
 	/**
@@ -25,6 +26,8 @@ public class DatosPatronalesPage extends BaseBean {
 	private List<TipoDictamenDTO> listaTipoDictamen;
 	@Reset
 	private List<EjercicioFiscalDTO> listaEjercicioFiscal;
+	
+	private String validacionRfc=DictamenWebConstants.EXPRESION_REGULAR_RFC_MORAL;
 
 	/**
 	 * @return the listaTipoDictamen
@@ -67,6 +70,20 @@ public class DatosPatronalesPage extends BaseBean {
 	public void setListaEjercicioFiscal(
 			List<EjercicioFiscalDTO> listaEjercicioFiscal) {
 		this.listaEjercicioFiscal = listaEjercicioFiscal;
+	}
+
+	/**
+	 * @return the validacionRfc
+	 */
+	public String getValidacionRfc() {
+		return validacionRfc;
+	}
+
+	/**
+	 * @param validacionRfc the validacionRfc to set
+	 */
+	public void setValidacionRfc(String validacionRfc) {
+		this.validacionRfc = validacionRfc;
 	}
 	
 	

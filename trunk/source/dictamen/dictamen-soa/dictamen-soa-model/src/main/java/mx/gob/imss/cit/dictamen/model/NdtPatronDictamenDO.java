@@ -47,7 +47,10 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtPatronDictamenDO.findByFecRegistroAlta", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtPatronDictamenDO.findByFecRegistroBaja", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
     @NamedQuery(name = "NdtPatronDictamenDO.findByFecRegistroAutorizado", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.fecRegistroAutorizado = :fecRegistroAutorizado"),
-    @NamedQuery(name = "NdtPatronDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtPatronDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtPatronDictamenDO.findByRfcPatronAndIdContador", query = "SELECT n FROM NdtPatronDictamenDO n,NdtPatronDictamenCpaDO c WHERE n.cveIdPatronDictamen=c.cveIdPatronDictamen.cveIdPatronDictamen and n.desRfc = :desRfc and c.cveIdCpa.cveIdCpa=:idContador")    
+})
+
 public class NdtPatronDictamenDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
