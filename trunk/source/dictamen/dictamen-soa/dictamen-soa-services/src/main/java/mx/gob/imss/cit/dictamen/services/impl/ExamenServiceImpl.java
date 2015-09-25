@@ -22,18 +22,16 @@ public class ExamenServiceImpl implements ExamenService {
 	private NdcAtestiguamientoDAO ndcAtestiguamientoDAO;
 	
 	@Override
-	public List<AtestiguamientoTO> findExamen() throws DictamenException {
+	public List<AtestiguamientoTO> findExamenByIdPatronDictamen(Long cveIdPatronDictamen) throws DictamenException {
 		List <AtestiguamientoTO> atestiguamientosTO = new ArrayList<AtestiguamientoTO>();
 		List <NdcAtestiguamientoDO> atestiguamientosDO = new ArrayList<NdcAtestiguamientoDO>();
 
 		try{	
-			atestiguamientosDO= ndcAtestiguamientoDAO.findAll();
-			for(NdcAtestiguamientoDO ndcAtestiguamientoDO: atestiguamientosDO){
-				AtestiguamientoTO  atestiguamientoTO = TransformerServiceUtils.transformer(ndcAtestiguamientoDO);
-			}
+			
+		
 						
 		}catch(Exception e){
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_CONSULTA_SAT_RFC,e);
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_CONSULTA_EXAMENES,e);
 		}
 				
 		return atestiguamientosTO;

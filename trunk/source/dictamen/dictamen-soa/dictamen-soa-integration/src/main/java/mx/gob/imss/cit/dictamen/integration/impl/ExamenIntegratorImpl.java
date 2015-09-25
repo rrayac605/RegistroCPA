@@ -115,11 +115,11 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 		return examenDetalle;
 	}
 	
-public List<ExamenDTO> findExamenes()throws DictamenNegocioException {
+public List<ExamenDTO> findExamenesByIdPatronDictamen(Long cveIdPatronDictamen) throws DictamenNegocioException {
 		
 		List<ExamenDTO> cuestionarios = new ArrayList<ExamenDTO>();
 		
-		ExamenDTO a = new ExamenDTO();
+		/*ExamenDTO a = new ExamenDTO();
 		ExamenDTO b = new ExamenDTO();
 		ExamenDTO c = new ExamenDTO();
 		ExamenDTO d = new ExamenDTO();
@@ -160,7 +160,7 @@ public List<ExamenDTO> findExamenes()throws DictamenNegocioException {
 		cuestionarios.add(g);
 		cuestionarios.add(h);
 		cuestionarios.add(i);
-		cuestionarios.add(j);
+		cuestionarios.add(j);*/
 		
 		return cuestionarios;
 	}

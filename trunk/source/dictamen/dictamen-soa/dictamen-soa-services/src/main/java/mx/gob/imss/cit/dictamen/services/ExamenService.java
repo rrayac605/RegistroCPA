@@ -12,6 +12,6 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 @Local
 public interface ExamenService {
 	
-	public List<AtestiguamientoTO> findExamen()throws DictamenException;
+	public List<AtestiguamientoTO> findExamenByIdPatronDictamen(Long cveIdPatronDictamen)throws DictamenException;
 	
 }
