@@ -9,5 +9,5 @@ import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioExcepti
 public interface ExamenIntegrator {
 	
 	ExamenDTO getDetalleExamen(ExamenDTO examen)throws DictamenNegocioException;
-	List<ExamenDTO> findExamenes()throws DictamenNegocioException ;
+	List<ExamenDTO> findExamenesByIdPatronDictamen(Long cveIdPatronDictamen)throws DictamenNegocioException ;
 }
