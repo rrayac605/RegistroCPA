@@ -23,7 +23,8 @@
 						for="rfcPatron" />
 					<p:inputText id="rfcPatron"
 						value="#{datosPatronalesPage.datosPatron.rfc}" required="true"
-						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.rfcPatron']}" >
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.rfcPatron']}" 
+						validatorMessage="#{msg['message.label.validacionFormato']} #{msg['message.dictamen.dictaminar.datos.rfcPatron']}">
 							<f:validateRegex pattern="#{datosPatronalesPage.validacionRfc}"/>
 					
 					</p:inputText>	

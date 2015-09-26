@@ -5,6 +5,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
@@ -26,6 +27,8 @@ public class DatosPatronalesPage extends BaseBean {
 	private List<TipoDictamenDTO> listaTipoDictamen;
 	@Reset
 	private List<EjercicioFiscalDTO> listaEjercicioFiscal;
+	@Reset
+	private ContadorPublicoAutDTO contadorPublicoAutDTO;
 	
 	private String validacionRfc=DictamenWebConstants.EXPRESION_REGULAR_RFC_MORAL;
 
@@ -84,6 +87,20 @@ public class DatosPatronalesPage extends BaseBean {
 	 */
 	public void setValidacionRfc(String validacionRfc) {
 		this.validacionRfc = validacionRfc;
+	}
+
+	/**
+	 * @return the contadorPublicoAutDTO
+	 */
+	public ContadorPublicoAutDTO getContadorPublicoAutDTO() {
+		return contadorPublicoAutDTO;
+	}
+
+	/**
+	 * @param contadorPublicoAutDTO the contadorPublicoAutDTO to set
+	 */
+	public void setContadorPublicoAutDTO(ContadorPublicoAutDTO contadorPublicoAutDTO) {
+		this.contadorPublicoAutDTO = contadorPublicoAutDTO;
 	}
 	
 	

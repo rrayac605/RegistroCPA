@@ -3,6 +3,7 @@
  */
 package mx.gob.imss.cit.dictamen.services.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -10,9 +11,13 @@ import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
+import mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.util.ValidatorUtil;
+import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
+import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenCpaDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtPatronDictamenCpaDAO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdtPatronDictamenDAO;
 import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
 import mx.gob.imss.cit.dictamen.services.transformer.TransformerServiceUtils;
@@ -34,8 +39,11 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 	@EJB
 	private NdtPatronDictamenDAO ndtPatronDictamenDAO;
 	
+	@EJB
+	private NdtPatronDictamenCpaDAO ndtPatronDictamenCpaDAO;
+	
 	@Override
-	public PatronDictamenTO saveDictamen(PatronDictamenTO dictamen) throws DictamenException{
+	public PatronDictamenTO saveDictamen(PatronDictamenTO dictamen,ContadorPublicoAutTO contador) throws DictamenException{
 		
 		PatronDictamenTO dictamenResultado=null;
 		if(dictamen==null){
@@ -44,9 +52,26 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 		}
 		
 		try{
-						
-			NdtPatronDictamenDO ndtPatronDictamenDO=TransformerServiceUtils.transformer(dictamen);						
+			
+			NdtContadorPublicoAutDO ndtContadorPublicoAutDO=TransformerServiceUtils.transformer(contador);	
+			NdtPatronDictamenDO ndtPatronDictamenDO=TransformerServiceUtils.transformer(dictamen);	
+			ndtPatronDictamenDO.setFecRegistroAlta(new Date());
+			ndtPatronDictamenDO.setFecRegistroAutorizado(new Date());
+			ndtPatronDictamenDO.setFecRegistroBaja(new Date());
+			//se inserta en patron dictamen		
 			ndtPatronDictamenDAO.create(ndtPatronDictamenDO);
+			ndtPatronDictamenDAO.flush();
+			
+			
+			NdtPatronDictamenCpaDO patronDictamenCpaDO=new NdtPatronDictamenCpaDO();
+			patronDictamenCpaDO.setCveIdPatronDictamen(ndtPatronDictamenDO);
+			patronDictamenCpaDO.setCveIdCpa(ndtContadorPublicoAutDO);
+			patronDictamenCpaDO.setFecRegistroAlta(new Date());
+			patronDictamenCpaDO.setFecRegistroActualizado(new Date());
+			patronDictamenCpaDO.setFecRegistroBaja(new Date());
+			
+			//se inserta en patron dictamen cpa
+			ndtPatronDictamenCpaDAO.create(patronDictamenCpaDO);	
 			dictamenResultado=TransformerServiceUtils.transformer(ndtPatronDictamenDO);	
 			
 		}catch(Exception e){
@@ -60,8 +85,7 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 	}
 
 	@Override
-	public PatronDictamenTO getDictamenByRfcPatronAndIdContador(String rfc,
-			Long contador) throws DictamenException {
+	public PatronDictamenTO getDictamenByRfcPatronAndIdContador(String rfc,Long contador) throws DictamenException {
 		
 		PatronDictamenTO dictamenTO=null;
 		if(ValidatorUtil.isAnyNull(rfc,contador)){
