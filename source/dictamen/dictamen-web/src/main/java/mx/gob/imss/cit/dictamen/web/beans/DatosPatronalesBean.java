@@ -9,6 +9,7 @@ import mx.gob.imss.cit.dictamen.integration.api.ConsultaSATIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.EjercicioFiscalIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.TipoDictamenIntegrator;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
@@ -49,6 +50,9 @@ public class DatosPatronalesBean extends BaseBean {
 			datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
 			datosPatronalesPage.getDatosPatron().setIndustriaConstruccion(false);
 			datosPatronalesPage.getDatosPatron().setActConstruccionOregObra(false);
+			
+			datosPatronalesPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
+			datosPatronalesPage.getContadorPublicoAutDTO().setCveIdCpa(idContador);
 			datosPatronalesPage.setListaTipoDictamen(tipoDictamenIntegrator.findAll());
 			datosPatronalesPage.setListaEjercicioFiscal(ejercicioFiscalIntegrator.findAll());
 		} catch (Exception e) {
@@ -93,13 +97,14 @@ public class DatosPatronalesBean extends BaseBean {
 		
 		LOG.info("los datos a guardar son: ");
 		try {
-			patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron());
+			patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron(),datosPatronalesPage.getContadorPublicoAutDTO());
+			FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_DATOS_PATRONALES.getCode());
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}
 		
-		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_DATOS_PATRONALES.getCode());
+		
 		
 	}
 		

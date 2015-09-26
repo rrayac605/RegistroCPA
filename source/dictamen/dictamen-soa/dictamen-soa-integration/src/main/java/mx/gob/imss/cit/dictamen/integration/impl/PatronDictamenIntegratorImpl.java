@@ -4,9 +4,11 @@ import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
+import mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
@@ -38,7 +40,7 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	}
 
 	@Override
-	public void executeRegistrar(PatronDictamenDTO datosDTO) throws DictamenNegocioException{
+	public void executeRegistrar(PatronDictamenDTO datosDTO,ContadorPublicoAutDTO contador) throws DictamenNegocioException{
 
 		
 		try {
@@ -54,7 +56,9 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 			patronDictamenTO.setCveIdTipoDictamenId(datosDTO.getIdTipoDictamen());
 			patronDictamenTO.setNumRegistroPatronales(datosDTO.getNumRegistroPatronales());			
 			
-			patronDictamenService.saveDictamen(patronDictamenTO);
+			ContadorPublicoAutTO to=new ContadorPublicoAutTO();
+			to.setCveIdCpa(contador.getCveIdCpa());
+			patronDictamenService.saveDictamen(patronDictamenTO,to);
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			throw new DictamenNegocioException(e.getMessage(), e);

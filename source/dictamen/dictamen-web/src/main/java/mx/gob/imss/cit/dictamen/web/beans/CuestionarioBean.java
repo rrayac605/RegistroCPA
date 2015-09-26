@@ -38,7 +38,7 @@ public class CuestionarioBean extends BaseBean {
 	public String init() {
 		CleanBeanUtil.cleanFields(cuestionarioPage);
 		try {
-			cuestionarioPage.setExamenes(examenIntegrator.findExamenes());
+			cuestionarioPage.setExamenes(examenIntegrator.findExamenesByIdPatronDictamen(1L));
 		} catch (DictamenNegocioException e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_EXAMENES.getCode());
 		}
