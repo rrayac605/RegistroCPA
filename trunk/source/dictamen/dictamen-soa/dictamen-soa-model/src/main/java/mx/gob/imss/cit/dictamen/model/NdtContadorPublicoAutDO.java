@@ -71,6 +71,9 @@ public class NdtContadorPublicoAutDO implements Serializable {
     @JoinColumn(name = "CVE_ID_ESTADO_CPA", referencedColumnName = "CVE_ID_ESTADO_CPA")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcEstadoCpaDO cveIdEstadoCpa;
+    @Column(name = "CVE_ID_PERSONA")
+    private Long cveIdPersona;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
     private List<NdtCpaAcreditacionDO> ndtCpaAcreditacionDOList;
     @OneToMany(mappedBy = "cveIdCpa", fetch = FetchType.LAZY)
@@ -237,5 +240,19 @@ public class NdtContadorPublicoAutDO implements Serializable {
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO[ cveIdCpa=" + cveIdCpa + " ]";
     }
+
+	/**
+	 * @return the cveIdPersona
+	 */
+	public Long getCveIdPersona() {
+		return cveIdPersona;
+	}
+
+	/**
+	 * @param cveIdPersona the cveIdPersona to set
+	 */
+	public void setCveIdPersona(Long cveIdPersona) {
+		this.cveIdPersona = cveIdPersona;
+	}
     
 }

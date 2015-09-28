@@ -93,6 +93,16 @@ public class NdtPatronDictamenDO implements Serializable {
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
+    @Column(name = "CVE_ID_PERSONA_MORAL")
+    private Long cveIdPersonaMoral;
+    @Column(name = "CVE_ID_PATRON_SUJETO_OBLIGADO")
+    private Long cveIdPatronSujetoObligado;
+    @Column(name = "CVE_ID_SUBDELEGACION")
+    private Long cveIdSubdelegacion;
+    @Column(name = "CVE_ID_TRAMITE")
+    private Long cveIdTramite;
+    
+  
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
     private List<NdtA51PersonalProporcionadDO> ndtA51PersonalProporcionadDOList;
     @OneToMany(mappedBy = "cveIdPatronDictamen", fetch = FetchType.LAZY)
@@ -540,5 +550,61 @@ public class NdtPatronDictamenDO implements Serializable {
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO[ cveIdPatronDictamen=" + cveIdPatronDictamen + " ]";
     }
+
+	/**
+	 * @return the cveIdPersonaMoral
+	 */
+	public Long getCveIdPersonaMoral() {
+		return cveIdPersonaMoral;
+	}
+
+	/**
+	 * @param cveIdPersonaMoral the cveIdPersonaMoral to set
+	 */
+	public void setCveIdPersonaMoral(Long cveIdPersonaMoral) {
+		this.cveIdPersonaMoral = cveIdPersonaMoral;
+	}
+
+	/**
+	 * @return the cveIdPatronSujetoObligado
+	 */
+	public Long getCveIdPatronSujetoObligado() {
+		return cveIdPatronSujetoObligado;
+	}
+
+	/**
+	 * @param cveIdPatronSujetoObligado the cveIdPatronSujetoObligado to set
+	 */
+	public void setCveIdPatronSujetoObligado(Long cveIdPatronSujetoObligado) {
+		this.cveIdPatronSujetoObligado = cveIdPatronSujetoObligado;
+	}
+
+	/**
+	 * @return the cveIdSubdelegacion
+	 */
+	public Long getCveIdSubdelegacion() {
+		return cveIdSubdelegacion;
+	}
+
+	/**
+	 * @param cveIdSubdelegacion the cveIdSubdelegacion to set
+	 */
+	public void setCveIdSubdelegacion(Long cveIdSubdelegacion) {
+		this.cveIdSubdelegacion = cveIdSubdelegacion;
+	}
+
+	/**
+	 * @return the cveIdTramite
+	 */
+	public Long getCveIdTramite() {
+		return cveIdTramite;
+	}
+
+	/**
+	 * @param cveIdTramite the cveIdTramite to set
+	 */
+	public void setCveIdTramite(Long cveIdTramite) {
+		this.cveIdTramite = cveIdTramite;
+	}
     
 }
