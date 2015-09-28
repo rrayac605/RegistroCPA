@@ -21,6 +21,7 @@ public enum MensajesNotificacionesEnum {
 	MSG_ERROR_OBTENER_DET_EXAMEN(10),
 	MSG_ERROR_SAT_EXCEPCION(11),
 	MSG_ERROR_SAT_NO_ENCONTRADO(12),
+	MSG_ERROR_DATOS_PATRONALES_GET(13),
     ;
 
 	private int code;

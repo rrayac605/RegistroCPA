@@ -20,4 +20,9 @@ public final class ConverterUtils {
 		return valor ? Short.valueOf(DictamenConstants.ESTADO_ACTIVO) : Short.valueOf(DictamenConstants.ESTADO_INACTIVO);
 	}
 
+	
+	public static Boolean convertShortToBoolean(Short valor) {
+		return Short.valueOf(DictamenConstants.ESTADO_ACTIVO).equals(valor)?Boolean.TRUE : Boolean.FALSE;
+	}
+
 }

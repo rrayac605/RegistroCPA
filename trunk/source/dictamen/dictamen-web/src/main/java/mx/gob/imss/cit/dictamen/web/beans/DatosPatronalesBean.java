@@ -44,48 +44,88 @@ public class DatosPatronalesBean extends BaseBean {
 	private DatosPatronalesPage datosPatronalesPage;
 	
 	public void init(Long idContador){
-		CleanBeanUtil.cleanFields(datosPatronalesPage);
-		datosPatronalesPage.setDatosPatron(new PatronDictamenDTO());
+		
+	
 		try {
-			datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
-			datosPatronalesPage.getDatosPatron().setIndustriaConstruccion(false);
-			datosPatronalesPage.getDatosPatron().setActConstruccionOregObra(false);
+			//se obtienen catalogos
+			datosPatronalesPage.setListaTipoDictamen(tipoDictamenIntegrator.findAll());
+			datosPatronalesPage.setListaEjercicioFiscal(ejercicioFiscalIntegrator.findAll());
+						
+			CleanBeanUtil.cleanFields(datosPatronalesPage);
+			inicializarPatron();
 			
 			datosPatronalesPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
 			datosPatronalesPage.getContadorPublicoAutDTO().setCveIdCpa(idContador);
-			datosPatronalesPage.setListaTipoDictamen(tipoDictamenIntegrator.findAll());
-			datosPatronalesPage.setListaEjercicioFiscal(ejercicioFiscalIntegrator.findAll());
+
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}
 	}
+
+
+
+	/**
+	 * 
+	 */
+	private void inicializarPatron() {
+		datosPatronalesPage.setDatosPatron(new PatronDictamenDTO());
+		datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
+		datosPatronalesPage.getDatosPatron().setIndustriaConstruccion(false);
+		datosPatronalesPage.getDatosPatron().setActConstruccionOregObra(false);
+	}
 	
 	
 
-	public void buscar(){
-		
+	public void buscar(){			
+		//primero se intenta buscar si el dictamen ya fue dado de alta
+		PatronDictamenDTO dictamenDTO=busquedaInterna();
+		if(dictamenDTO==null){
+			 busquedaSat();
+		}else{
+			datosPatronalesPage.setDatosPatron(dictamenDTO);
+		}	  
+	}
+
+	
+	private PatronDictamenDTO busquedaInterna(){
+		PatronDictamenDTO dictamenDTO=null;
 		try {
-			
-			String razonSocial=consultaSATIntegrator.getPatron(datosPatronalesPage.getDatosPatron().getRfc());
-			
-			if(razonSocial==null ||"".equals(razonSocial)){
-				FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_NO_ENCONTRADO.getCode(),datosPatronalesPage.getDatosPatron().getRfc());
-				datosPatronalesPage.getDatosPatron().setRazonSocialNombre(null);
-				datosPatronalesPage.getDatosPatron().setRfc(null);
-			}else{
-				LOG.info("la razon social es: "+razonSocial);
-				datosPatronalesPage.getDatosPatron().setRazonSocialNombre(razonSocial);
-			}
+			dictamenDTO=patronIntegration.getDatosPatron(datosPatronalesPage.getDatosPatron(), datosPatronalesPage.getContadorPublicoAutDTO());
+	
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
-			datosPatronalesPage.getDatosPatron().setRazonSocialNombre(null);
-			datosPatronalesPage.getDatosPatron().setRfc(null);
-			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_EXCEPCION.getCode());
+			inicializarPatron();
+			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES_GET.getCode());
 		}
 		
+		return dictamenDTO;
+	}
 
 
+	/**
+	 * 
+	 */
+	private void busquedaSat() {
+		try {	
+			
+			if(!"".equals(datosPatronalesPage.getDatosPatron().getRfc())){
+				String razonSocial=consultaSATIntegrator.getPatron(datosPatronalesPage.getDatosPatron().getRfc());
+				
+				if(razonSocial==null ||"".equals(razonSocial)){
+					FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_NO_ENCONTRADO.getCode(),datosPatronalesPage.getDatosPatron().getRfc());
+					inicializarPatron();
+				}else{
+					LOG.info("la razon social es: "+razonSocial);
+					datosPatronalesPage.getDatosPatron().setRazonSocialNombre(razonSocial);
+				}
+			}
+			
+		} catch (Exception e) {
+			LOG.error(e.getMessage(),e);
+			inicializarPatron();
+			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_SAT_EXCEPCION.getCode());
+		}
 	}
 	
 	public void limpiar(){
@@ -97,15 +137,18 @@ public class DatosPatronalesBean extends BaseBean {
 		
 		LOG.info("los datos a guardar son: ");
 		try {
-			patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron(),datosPatronalesPage.getContadorPublicoAutDTO());
+			if(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen()==null){
+				patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron(),datosPatronalesPage.getContadorPublicoAutDTO());
+			}else{
+				patronIntegration.executeActualizar(datosPatronalesPage.getDatosPatron(),datosPatronalesPage.getContadorPublicoAutDTO());
+			}
+			
 			FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_DATOS_PATRONALES.getCode());
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}
-		
-		
-		
+						
 	}
 		
 	/**
