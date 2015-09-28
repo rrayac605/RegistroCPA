@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-09-07 09:49:58"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\Modulo de Cedulas\Modulo de Cedulas.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-08 12:58:44"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-09-15 16:53:04"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-07 11:29:28"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -37,6 +37,140 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
+						<UML:ActivityModel xmi.id="EAID_1D9CC443_7B58_4040_A540_21316EC05235_ActivityModel" context="EAPK_1D9CC443_7B58_4040_A540_21316EC05235" name="ActivityModel" visibility="public">
+							<UML:StateMachine.transitions/>
+							<UML:StateMachine.top>
+								<UML:CompositeState xmi.id="EAID_1D9CC443_7B58_4040_A540_21316EC05235_Activity_Top" name="{top}">
+									<UML:CompositeState.substate>
+										<UML:PseudoState xmi.id="EAID_02A430CB_E0CD_46f3_8C30_9F088C911DAB" visibility="public" namespace="EAPK_1D9CC443_7B58_4040_A540_21316EC05235" kind="join">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Synchronization"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
+												<UML:TaggedValue tag="owner" value="EAID_60B2FC04_6130_4687_823B_01F206826459"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-28 16:27:03"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-28 16:27:03"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Modulo de Cedulas"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="2983"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:PseudoState>
+										<UML:ActionState name="Activity" xmi.id="EAID_192C1EBF_1B4A_433c_B4E5_AF37E3B567AE" visibility="public" namespace="EAPK_1D9CC443_7B58_4040_A540_21316EC05235">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
+												<UML:TaggedValue tag="owner" value="EAID_589AE339_77A9_4adb_A6CE_0DD5F176925B"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-28 16:24:30"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-28 16:24:30"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Modulo de Cedulas"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="2980"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:PseudoState name="Despliega " xmi.id="EAID_235109EB_6CC1_4ab9_BB9A_ED07409EB7C0" visibility="public" namespace="EAPK_1D9CC443_7B58_4040_A540_21316EC05235">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="StateNode"/>
+												<UML:TaggedValue tag="ea_ntype" value="100"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
+												<UML:TaggedValue tag="owner" value="EAID_60B2FC04_6130_4687_823B_01F206826459"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-28 16:26:10"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-28 16:27:03"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Modulo de Cedulas"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="2982"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:PseudoState>
+										<UML:ActionState name="Sistema" xmi.id="EAID_60B2FC04_6130_4687_823B_01F206826459" visibility="public" namespace="EAPK_1D9CC443_7B58_4040_A540_21316EC05235">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="ActivityPartition"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
+												<UML:TaggedValue tag="owner" value="EAID_192C1EBF_1B4A_433c_B4E5_AF37E3B567AE"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-28 16:25:00"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-28 16:25:22"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Modulo de Cedulas"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="2981"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="CPA" xmi.id="EAID_6A7D5F39_7A1D_4655_9192_64A05116834C" visibility="public" namespace="EAPK_1D9CC443_7B58_4040_A540_21316EC05235">
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="ActivityPartition"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
+												<UML:TaggedValue tag="owner" value="EAID_192C1EBF_1B4A_433c_B4E5_AF37E3B567AE"/>
+												<UML:TaggedValue tag="date_created" value="2015-09-28 16:27:13"/>
+												<UML:TaggedValue tag="date_modified" value="2015-09-28 16:27:22"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="Modulo de Cedulas"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="raguirre"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="2984"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+									</UML:CompositeState.substate>
+								</UML:CompositeState>
+							</UML:StateMachine.top>
+						</UML:ActivityModel>
 						<UML:UseCase name="Actualizar Cédula" xmi.id="EAID_589AE339_77A9_4adb_A6CE_0DD5F176925B" visibility="public" namespace="EAPK_1D9CC443_7B58_4040_A540_21316EC05235" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="documentation" value="El Contador Público Autorizado, validará la cédula correspondiente al atestiguamiento efectuado."/>
@@ -47,7 +181,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-07 14:22:06"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-07 15:19:56"/>
+								<UML:TaggedValue tag="date_modified" value="2015-09-28 16:24:00"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Cedulas"/>
@@ -56,7 +190,7 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="607"/>
+								<UML:TaggedValue tag="ea_localid" value="1426"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
@@ -72,13 +206,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="44"/>
+								<UML:TaggedValue tag="ea_localid" value="2789"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
 								<UML:TaggedValue tag="ea_targetName" value="Actualizar Cédula"/>
 								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="484"/>
-								<UML:TaggedValue tag="ea_targetID" value="607"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2882"/>
+								<UML:TaggedValue tag="ea_targetID" value="1426"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 							<UML:Association.connection>
@@ -117,7 +251,7 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="608"/>
+								<UML:TaggedValue tag="ea_localid" value="1427"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
@@ -161,13 +295,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="43"/>
+								<UML:TaggedValue tag="ea_localid" value="2793"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
 								<UML:TaggedValue tag="ea_targetName" value="Cargar Cédula"/>
 								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="484"/>
-								<UML:TaggedValue tag="ea_targetID" value="608"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2882"/>
+								<UML:TaggedValue tag="ea_targetID" value="1427"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 							<UML:Association.connection>
@@ -187,6 +321,43 @@
 								</UML:AssociationEnd>
 							</UML:Association.connection>
 						</UML:Association>
+						<UML:Collaboration xmi.id="EAID_1D9CC443_7B58_4040_A540_21316EC05235_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement>
+								<UML:ClassifierRole name="RF-A70 - Valida totales remuneraciones pagadas en efectivo" xmi.id="EAID_EF0D973C_0655_438a_A0D1_1A0AE7026A21" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="El sistema valida que los totales cargados en el anexo A1. Remuneraciones pagadas en efectivo vía nómina a los trabajadores. coincida con los totales cargados en los Layouts a partir de la columna.&#xA;&lt;b&gt;Si&lt;/b&gt; existen diferencias, el sistema muestra el mensaje AG &lt;i&gt;&amp;ldquo;Existen diferencias entre los importes totales del archivo cargado en el módulo de información patronal del anexo Remuneraciones pagadas en efectivo vía nómina a los trabajadores.&lt;/i&gt;"/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
+										<UML:TaggedValue tag="date_created" value="2015-09-28 16:12:58"/>
+										<UML:TaggedValue tag="date_modified" value="2015-09-28 16:20:07"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Modulo de Cedulas"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="raguirre"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="2979"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={5A148E7F-6D20-4a81-8FEF-84144A30D2D3}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;GUID={3FF72C9E-81C1-4d88-90C3-94B10E952EA7};@ENDSTEREO;$DES;$CLT={EF0D973C-0655-438a-A0D1-1A0AE7026A21}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+							</UML:Namespace.ownedElement>
+							<UML:Collaboration.interaction/>
+						</UML:Collaboration>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -197,29 +368,59 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="raguirre"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-07 09:50:22"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-08 13:38:48"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-28 16:28:15"/>
 				<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="38"/>
+				<UML:TaggedValue tag="ea_localid" value="138"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=1;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=1;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;Whiteboard=1;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=5A7ADA3F;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;Whiteboard=1;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=24EC1FC3;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;Whiteboard=1;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=151;Top=242;Right=196;Bottom=332;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="1" style="DUID=8311CD57;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=317;Top=328;Right=422;Bottom=398;" subject="EAID_589AE339_77A9_4adb_A6CE_0DD5F176925B" seqno="2" style="DUID=7A9042AF;"/>
-				<UML:DiagramElement geometry="Left=314;Top=174;Right=419;Bottom=244;" subject="EAID_857E5A2E_CABB_498b_9876_66F59B404A26" seqno="3" style="DUID=F32E349B;"/>
+				<UML:DiagramElement geometry="Left=313;Top=173;Right=418;Bottom=243;" subject="EAID_589AE339_77A9_4adb_A6CE_0DD5F176925B" seqno="2" style="DUID=7A9042AF;"/>
+				<UML:DiagramElement geometry="Left=314;Top=306;Right=419;Bottom=376;" subject="EAID_857E5A2E_CABB_498b_9876_66F59B404A26" seqno="3" style="DUID=F32E349B;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_001CD78C_9CDC_4534_9B37_9B4B157EDA97" style="Mode=3;EOID=F32E349B;SOID=8311CD57;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_78FE2F71_1758_41be_9CB0_CE510D1551ED" style="Mode=3;EOID=7A9042AF;SOID=8311CD57;Color=-1;LWidth=0;Hidden=0;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
+		<UML:Diagram name="Activity" xmi.id="EAID_53E04A07_C768_45d9_8099_C8E43C96ED33" diagramType="ActivityDiagram" owner="EAPK_1D9CC443_7B58_4040_A540_21316EC05235" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="raguirre"/>
+				<UML:TaggedValue tag="created_date" value="2015-09-28 16:24:30"/>
+				<UML:TaggedValue tag="modified_date" value="2015-09-28 16:28:09"/>
+				<UML:TaggedValue tag="package" value="EAPK_1D9CC443_7B58_4040_A540_21316EC05235"/>
+				<UML:TaggedValue tag="type" value="Activity"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="261"/>
+				<UML:TaggedValue tag="parent" value="EAID_192C1EBF_1B4A_433c_B4E5_AF37E3B567AE"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=9EA6F9C2;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=184;Top=0;Right=445;Bottom=175;" subject="EAID_6A7D5F39_7A1D_4655_9192_64A05116834C" seqno="1" style="Dockable=on;DUID=058B5DFA;VPartition=1;"/>
+				<UML:DiagramElement geometry="Left=40;Top=118;Right=337;Bottom=124;" subject="EAID_02A430CB_E0CD_46f3_8C30_9F088C911DAB" seqno="2" style="DUID=2FE6D122;"/>
+				<UML:DiagramElement geometry="Left=81;Top=53;Right=101;Bottom=73;" subject="EAID_235109EB_6CC1_4ab9_BB9A_ED07409EB7C0" seqno="3" style="DUID=E7290BBA;LBL=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:ALT=0:ROT=0;"/>
+				<UML:DiagramElement geometry="Left=0;Top=0;Right=184;Bottom=411;" subject="EAID_60B2FC04_6130_4687_823B_01F206826459" seqno="4" style="Dockable=on;DUID=0E51FBCB;VPartition=1;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
-		<EAStub xmi.id="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" name="CPA" UMLType="Actor"/>
-		<EAModel.paramSub/>
 		<EAModel.scenario>
+			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_589AE339_77A9_4adb_A6CE_0DD5F176925B" xmi.id="EAID_4D0A3495_9F12_4cb9_9E60_2D1AD31D3C08">
+				<EAScenarioContent>
+					<path>
+						<step name="EL CPA " guid="{A68BA41F-1FC1-4971-8645-B6535623CA3D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
 			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_857E5A2E_CABB_498b_9876_66F59B404A26" xmi.id="EAID_756A5211_1B2A_4e80_8847_8C045CEF121C">
 				<EAScenarioContent>
 					<path>
@@ -276,5 +477,7 @@
 				</EAScenarioContent>
 			</EAScenario>
 		</EAModel.scenario>
+		<EAStub xmi.id="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" name="CPA" UMLType="Actor"/>
+		<EAModel.paramSub/>
 	</XMI.extensions>
 </XMI>
