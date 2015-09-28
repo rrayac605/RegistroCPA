@@ -31,21 +31,21 @@ public class LayoutServiceImpl implements LayoutService {
 		List<NdcAseveracionesDO> ndcAsevercionesDO = new ArrayList<NdcAseveracionesDO>();
 		ndcAsevercionesDO = ndcAseveracionesDAO.findAll();
 		
-		Map<Long, ArrayList<NdcAseveracionesDO>> tree  = new HashMap<Long,ArrayList<NdcAseveracionesDO>>();
+		Map<NdcAseveracionesDO, ArrayList<NdcAseveracionesDO>> tree  = new HashMap<NdcAseveracionesDO,ArrayList<NdcAseveracionesDO>>();
 		Map<Long, NdcAseveracionesDO> roots  = new HashMap<Long,NdcAseveracionesDO>();
 		for(NdcAseveracionesDO n : ndcAsevercionesDO) {
-		  if(n.getCveIdPadre() == null){
+		  if(n.getCveIdAseveracionPadre() == null){
 			  roots.put(n.getCveIdAseveracion(), n);
 		  }else {
-		    if(!tree.containsKey(n.getCveIdPadre())){
-		    	tree.put(n.getCveIdPadre(), new ArrayList<NdcAseveracionesDO>());
+		    if(!tree.containsKey(n.getCveIdAseveracionPadre())){
+		    	tree.put(n.getCveIdAseveracionPadre(), new ArrayList<NdcAseveracionesDO>());
 		    }				      
-		    tree.get(n.getCveIdPadre()).add(n);
+		    tree.get(n.getCveIdAseveracionPadre()).add(n);
 		  }
 		}
-		for (Map.Entry<Long, ArrayList<NdcAseveracionesDO>> entry: tree.entrySet()){
+		for (Map.Entry<NdcAseveracionesDO, ArrayList<NdcAseveracionesDO>> entry: tree.entrySet()){
 			parentLayoutTO = new ParentLayoutTO();
-			parentLayoutTO.setName(roots.get(entry.getKey()).getDesTipoAseveracion());
+			parentLayoutTO.setName(entry.getKey().getDesTipoAseveracion());
 			parentLayoutTO.setListaLayout(new ArrayList<LayoutTO>());
 			for (NdcAseveracionesDO aseveracion: entry.getValue()){
 				layoutTO = new LayoutTO();
