@@ -15,7 +15,9 @@ import mx.gob.imss.cit.dictamen.commons.to.FirmaElectronicaTO;
 import mx.gob.imss.cit.dictamen.commons.to.LayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaActorDTO;
@@ -28,6 +30,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.FirmaElectronicaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 
 
@@ -54,10 +57,7 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.FirmaElectronicaTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.FirmaElectronicaDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.LayoutTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO.class);
-		
-		
-		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO.class);						
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.BovedaDocumentoDTO.class, mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.BovedaActorDTO.class, mx.gob.imss.cit.dictamen.commons.to.BovedaActorTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.BovedaMetadataDTO.class, mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO.class);
@@ -69,10 +69,11 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO.class,mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO.class,mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO.class);
-		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO.class);		
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO.class);		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class);
 		
 		
 		
@@ -104,7 +105,6 @@ public class TransformerIntegrationUtils {
 	public static BovedaHeaderTO transformer(BovedaHeaderDTO sgbde){
 		return (BovedaHeaderTO) TransformerHelper.get(mapClass,sgbde, BovedaHeaderTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-
 		
 	public static BovedaDocumentoDTO transformer( BovedaDocumentoTO documentoTO ) {
 		return (BovedaDocumentoDTO) TransformerHelper.get(mapClass,documentoTO, BovedaDocumentoDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
@@ -136,9 +136,7 @@ public class TransformerIntegrationUtils {
 	
 	public static FirmaElectronicaTO transformer(FirmaElectronicaDTO dto){
 		return (FirmaElectronicaTO) TransformerHelper.get(mapClass,dto, FirmaElectronicaTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	
-	
+	}		
 	
 	public static ParentLayoutDTO transformer(ParentLayoutTO to){
 		return (ParentLayoutDTO) TransformerHelper.get(mapClass,to, ParentLayoutDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
@@ -146,9 +144,7 @@ public class TransformerIntegrationUtils {
 	
 	public static ParentLayoutTO transformer(ParentLayoutDTO dto){
 		return (ParentLayoutTO) TransformerHelper.get(mapClass,dto, ParentLayoutTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	
-	
+	}		
 
 	public static LayoutDTO transformer(LayoutTO to){
 		return (LayoutDTO) TransformerHelper.get(mapClass,to, LayoutDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
@@ -156,8 +152,7 @@ public class TransformerIntegrationUtils {
 	
 	public static LayoutTO transformer(LayoutDTO dto){
 		return (LayoutTO) TransformerHelper.get(mapClass,dto, LayoutTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-		
+	}		
 	
 	public static AWSPolicyDTO transformer(AWSPolicyTO to){
 		return (AWSPolicyDTO) TransformerHelper.get(mapClass,to, AWSPolicyDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
@@ -180,6 +175,38 @@ public class TransformerIntegrationUtils {
 	
 	public static TipoDictamenTO transformer(TipoDictamenDTO object){
 		return (TipoDictamenTO) TransformerHelper.get(mapClass,object, TipoDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static PatronDictamenDTO transformer(PatronDictamenTO object){
+		PatronDictamenDTO objRes= (PatronDictamenDTO) TransformerHelper.get(mapClass,object, PatronDictamenDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+		
+		objRes.setRazonSocialNombre(object.getDesNombreRazonSocial());
+		objRes.setRfc(object.getDesRfc());
+		objRes.setNumTrabajadoresPromedio(object.getNumNumeroTrabajadores());
+		objRes.setIndustriaConstruccion(ConverterUtils.convertShortToBoolean(object.getIndPatronConstruccion()));
+		objRes.setEmpresaValuada(ConverterUtils.convertShortToBoolean(object.getIndPatronEmpresaValuada()));
+		objRes.setActConstruccionOregObra(ConverterUtils.convertShortToBoolean(object.getIndRealizoActConstruccion()));		
+		objRes.setEjercicioDictaminar(object.getCveIdEjerFiscalId());
+		objRes.setIdTipoDictamen(object.getCveIdTipoDictamenId());
+		objRes.setNumRegistroPatronales(object.getNumRegistroPatronales());			
+		
+		return objRes;
+	}	
+	public static PatronDictamenTO transformer(PatronDictamenDTO object){
+		
+		PatronDictamenTO objRes= (PatronDictamenTO) TransformerHelper.get(mapClass,object, PatronDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+		
+		objRes.setDesNombreRazonSocial(object.getRazonSocialNombre());
+		objRes.setDesRfc(object.getRfc());
+		objRes.setNumNumeroTrabajadores(object.getNumTrabajadoresPromedio());
+		objRes.setIndPatronConstruccion(ConverterUtils.convertBooleanToShort(object.getIndustriaConstruccion()));
+		objRes.setIndPatronEmpresaValuada(ConverterUtils.convertBooleanToShort(object.getEmpresaValuada()));			
+		objRes.setIndRealizoActConstruccion(ConverterUtils.convertBooleanToShort(object.getActConstruccionOregObra()));
+		objRes.setCveIdEjerFiscalId(object.getEjercicioDictaminar());
+		objRes.setCveIdTipoDictamenId(object.getIdTipoDictamen());
+		objRes.setNumRegistroPatronales(object.getNumRegistroPatronales());			
+		
+		return objRes;
 	}	
 
 }

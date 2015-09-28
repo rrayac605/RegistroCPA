@@ -7,8 +7,10 @@ import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioExcepti
 
 public interface PatronDictamenIntegrator {
 
-	PatronDictamenDTO getDatosPatron(String rfc)throws DictamenNegocioException;
+	PatronDictamenDTO getDatosPatron(PatronDictamenDTO datosDTO,ContadorPublicoAutDTO contador)throws DictamenNegocioException;
 	
 	void executeRegistrar(PatronDictamenDTO datosDTO,ContadorPublicoAutDTO contador)throws DictamenNegocioException;
+	
+	void executeActualizar(PatronDictamenDTO datosDTO,ContadorPublicoAutDTO contador)throws DictamenNegocioException;
 	
 }

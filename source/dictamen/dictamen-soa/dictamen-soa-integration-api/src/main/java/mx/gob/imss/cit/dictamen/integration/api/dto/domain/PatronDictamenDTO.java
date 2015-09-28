@@ -8,6 +8,8 @@ public class PatronDictamenDTO extends BaseDTO  {
 	 * 
 	 */
 	private static final long serialVersionUID = -4965830174738536075L;
+	
+	private Long cveIdPatronDictamen;
 	private String 	rfc;
 	private Integer numTrabajadoresPromedio;
 	private Long idTipoDictamen;
@@ -127,6 +129,18 @@ public class PatronDictamenDTO extends BaseDTO  {
 	 */
 	public void setNumRegistroPatronales(Integer numRegistroPatronales) {
 		this.numRegistroPatronales = numRegistroPatronales;
+	}
+	/**
+	 * @return the cveIdPatronDictamen
+	 */
+	public Long getCveIdPatronDictamen() {
+		return cveIdPatronDictamen;
+	}
+	/**
+	 * @param cveIdPatronDictamen the cveIdPatronDictamen to set
+	 */
+	public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
+		this.cveIdPatronDictamen = cveIdPatronDictamen;
 	}
 
 	

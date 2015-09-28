@@ -6,11 +6,11 @@ import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
-import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
+import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUtils;
 import mx.gob.imss.cit.dictamen.services.PatronDictamenService;
 
 import org.apache.log4j.Logger;
@@ -27,16 +27,25 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	private PatronDictamenService patronDictamenService;
 	
 	@Override
-	public PatronDictamenDTO getDatosPatron(String rfc) throws DictamenNegocioException{
-		PatronDictamenDTO datosPatron= new	PatronDictamenDTO();
-		datosPatron.setRazonSocialNombre("Fulanito de Tal SA de CV");
-		datosPatron.setEjercicioDictaminar(Long.valueOf(2));
-		datosPatron.setIdTipoDictamen( Long.valueOf(2));		
+	public PatronDictamenDTO getDatosPatron(PatronDictamenDTO datosDTO,ContadorPublicoAutDTO contador) throws DictamenNegocioException{
 		
-		datosPatron.setNumRegistroPatronales( Integer.valueOf(1));
-		datosPatron.setNumTrabajadoresPromedio( Integer.valueOf(5));
-		datosPatron.setRfc(rfc);
-		return datosPatron;
+		PatronDictamenDTO res=null;
+		try {
+			
+			PatronDictamenTO patronDictamenTO=patronDictamenService.
+					getDictamenByRfcPatronAndIdContador(datosDTO.getRfc(), contador.getCveIdCpa());
+			
+			if(patronDictamenTO!=null){
+				res=TransformerIntegrationUtils.transformer(patronDictamenTO);
+			}
+			
+		} catch (Exception e) {
+			LOG.error(e.getMessage(),e);
+			throw new DictamenNegocioException(e.getMessage(), e);
+		}
+		
+		return res;
+
 	}
 
 	@Override
@@ -44,26 +53,23 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 
 		
 		try {
-			PatronDictamenTO patronDictamenTO=new PatronDictamenTO();
-			
-			patronDictamenTO.setDesNombreRazonSocial(datosDTO.getRazonSocialNombre());
-			patronDictamenTO.setDesRfc(datosDTO.getRfc());
-			patronDictamenTO.setNumNumeroTrabajadores(datosDTO.getNumTrabajadoresPromedio());
-			patronDictamenTO.setIndPatronConstruccion(ConverterUtils.convertBooleanToShort(datosDTO.getIndustriaConstruccion()));
-			patronDictamenTO.setIndPatronEmpresaValuada(ConverterUtils.convertBooleanToShort(datosDTO.getEmpresaValuada()));			
-			patronDictamenTO.setIndRealizoActConstruccion(ConverterUtils.convertBooleanToShort(datosDTO.getActConstruccionOregObra()));
-			patronDictamenTO.setCveIdEjerFiscalId(datosDTO.getEjercicioDictaminar());
-			patronDictamenTO.setCveIdTipoDictamenId(datosDTO.getIdTipoDictamen());
-			patronDictamenTO.setNumRegistroPatronales(datosDTO.getNumRegistroPatronales());			
-			
+			PatronDictamenTO patronDictamenTO=TransformerIntegrationUtils.transformer(datosDTO)	;			
 			ContadorPublicoAutTO to=new ContadorPublicoAutTO();
 			to.setCveIdCpa(contador.getCveIdCpa());
+			
 			patronDictamenService.saveDictamen(patronDictamenTO,to);
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			throw new DictamenNegocioException(e.getMessage(), e);
 		}
 
+	}
+
+	@Override
+	public void executeActualizar(PatronDictamenDTO datosDTO,
+			ContadorPublicoAutDTO contador) throws DictamenNegocioException {
+		// TODO Auto-generated method stub
+		
 	}
 
 
