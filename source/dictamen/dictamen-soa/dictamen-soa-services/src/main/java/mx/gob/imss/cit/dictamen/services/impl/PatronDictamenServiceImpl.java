@@ -10,10 +10,12 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
+import mx.gob.imss.cit.dictamen.commons.enums.EstadoDictamenEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.util.ValidatorUtil;
+import mx.gob.imss.cit.dictamen.model.NdcEstadoDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenCpaDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
@@ -69,7 +71,8 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 			patronDictamenCpaDO.setFecRegistroAlta(new Date());
 			patronDictamenCpaDO.setFecRegistroActualizado(new Date());
 			patronDictamenCpaDO.setFecRegistroBaja(new Date());
-			
+			NdcEstadoDictamenDO ndcEstadoDictamenDO=new NdcEstadoDictamenDO();
+			ndcEstadoDictamenDO.setCveIdEstadoDictamen(EstadoDictamenEnum.EN_PROCESO.getId());			
 			//se inserta en patron dictamen cpa
 			ndtPatronDictamenCpaDAO.create(patronDictamenCpaDO);	
 			dictamenResultado=TransformerServiceUtils.transformer(ndtPatronDictamenDO);	
