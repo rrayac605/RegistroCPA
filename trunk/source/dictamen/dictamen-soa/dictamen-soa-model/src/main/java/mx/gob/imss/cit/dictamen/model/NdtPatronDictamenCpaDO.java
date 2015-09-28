@@ -46,8 +46,8 @@ public class NdtPatronDictamenCpaDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_PATRON_CPA_DICTAMEN", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtPatronDictamen_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONDICTAMENCPA", allocationSize=1)
-    @GeneratedValue(generator = "NdtPatronDictamen_Id_Seq_Gen")
+    @SequenceGenerator(name = "NdtPatronDictamenCpa_Id_Seq_Gen", sequenceName = "SEQ_NDTPATRONDICTAMENCPA", allocationSize=1)
+    @GeneratedValue(generator = "NdtPatronDictamenCpa_Id_Seq_Gen")
     private Long cveIdPatronCpaDictamen;
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
