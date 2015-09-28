@@ -9,6 +9,7 @@ public class LayoutTO extends BaseTO  {
 	 */
 	private static final long serialVersionUID = -2644866778364925551L;
 	
+	private Long idLayout;
 	private String name;
 	
 	private AWSPolicyTO policy;
@@ -39,6 +40,14 @@ public class LayoutTO extends BaseTO  {
 	 */
 	public void setPolicy(AWSPolicyTO policy) {
 		this.policy = policy;
+	}
+
+	public Long getIdLayout() {
+		return idLayout;
+	}
+
+	public void setIdLayout(Long idLayout) {
+		this.idLayout = idLayout;
 	}
 	
 	

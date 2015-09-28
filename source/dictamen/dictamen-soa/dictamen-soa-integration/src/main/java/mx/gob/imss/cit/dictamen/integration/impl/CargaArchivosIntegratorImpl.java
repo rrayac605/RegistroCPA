@@ -23,6 +23,7 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator{
 	LayoutPatronAsociadoService layoutPatronAsociadoService;
 	
 	
+	@Override
 	public List<ParentLayoutDTO> findLayout(String anioEjercicio, String rfcUsuario, String rfcPatron)throws DictamenNegocioException{
 		List<ParentLayoutDTO> listaDTO= null;
 		
@@ -30,7 +31,7 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator{
 		for(ParentLayoutTO parentLayoutTO:listaTO){
 			if(listaDTO== null){
 				listaDTO=new ArrayList<ParentLayoutDTO>();				
-			}
+			}			
 			listaDTO.add(TransformerIntegrationUtils.transformer(parentLayoutTO));
 		}
 		

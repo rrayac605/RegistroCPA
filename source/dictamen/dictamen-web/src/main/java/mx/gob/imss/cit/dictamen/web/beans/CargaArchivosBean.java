@@ -5,7 +5,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.integration.api.CargaArchivosIntegrator;
+import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
@@ -16,8 +19,8 @@ import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
 @ViewScoped
 public class CargaArchivosBean extends BaseBean {
 
-	
 	private static final long serialVersionUID = 2825687007915597308L;
+	private static final Logger LOGGER = Logger.getLogger(CargaArchivosBean.class);
 	
 	@EJB
 	CargaArchivosIntegrator cargaArchivosIntegrator;
@@ -45,7 +48,12 @@ public class CargaArchivosBean extends BaseBean {
 		this.cargaArchivosPage = cargaArchivosPage;
 	}
 
-
+	/**
+	 * 
+	 */
+	public void registrarEstatusCarga(LayoutDTO layoutDTO){
+		LOGGER.info("+++++++++++++++++++++++++++++++++++++++ pizza ++++++++++++++++++++++" + layoutDTO.getName());	
+	}
 
 
 
