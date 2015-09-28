@@ -4,7 +4,7 @@ import java.util.Date;
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
-public class OpcionPregunta extends BaseTO{
+public class OpcionPreguntaTO extends BaseTO{
 
 	private static final long serialVersionUID = 1L;
 	private Double cveIdOpcionPregunta;

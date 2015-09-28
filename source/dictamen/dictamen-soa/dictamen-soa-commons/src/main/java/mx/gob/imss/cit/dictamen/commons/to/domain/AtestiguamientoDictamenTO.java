@@ -11,9 +11,10 @@ public class AtestiguamientoDictamenTO extends BaseTO{
 	 */
 	private static final long serialVersionUID = 2430453483478948042L;
 	private Long cveIdAtestiguamientoDictamen;
-	private Long cveIdPatronDictamen;
+	private PatronDictamenTO patronDictamen;
 	private Long cveIdDictamen;
-	private Long cveIdEstadoAtestiguamiento;
+	private AtestiguamientoTO atestiguamiento;
+	private EstadoAtestiguamientoTO estadoAtestiguamiento;
 	private Date fecRegistroAlta;
 	private Date fecRegistroActualizado;
 	private Date fecRegistroBaja;
@@ -24,11 +25,11 @@ public class AtestiguamientoDictamenTO extends BaseTO{
 	public void setCveIdAtestiguamientoDictamen(Long cveIdAtestiguamientoDictamen) {
 		this.cveIdAtestiguamientoDictamen = cveIdAtestiguamientoDictamen;
 	}
-	public Long getCveIdPatronDictamen() {
-		return cveIdPatronDictamen;
+	public PatronDictamenTO getPatronDictamen() {
+		return patronDictamen;
 	}
-	public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
-		this.cveIdPatronDictamen = cveIdPatronDictamen;
+	public void setPatronDictamen(PatronDictamenTO patronDictamen) {
+		this.patronDictamen = patronDictamen;
 	}
 	public Long getCveIdDictamen() {
 		return cveIdDictamen;
@@ -36,11 +37,17 @@ public class AtestiguamientoDictamenTO extends BaseTO{
 	public void setCveIdDictamen(Long cveIdDictamen) {
 		this.cveIdDictamen = cveIdDictamen;
 	}
-	public Long getCveIdEstadoAtestiguamiento() {
-		return cveIdEstadoAtestiguamiento;
+	public AtestiguamientoTO getAtestiguamiento() {
+		return atestiguamiento;
 	}
-	public void setCveIdEstadoAtestiguamiento(Long cveIdEstadoAtestiguamiento) {
-		this.cveIdEstadoAtestiguamiento = cveIdEstadoAtestiguamiento;
+	public void setAtestiguamiento(AtestiguamientoTO atestiguamiento) {
+		this.atestiguamiento = atestiguamiento;
+	}
+	public EstadoAtestiguamientoTO getEstadoAtestiguamiento() {
+		return estadoAtestiguamiento;
+	}
+	public void setEstadoAtestiguamiento(EstadoAtestiguamientoTO estadoAtestiguamiento) {
+		this.estadoAtestiguamiento = estadoAtestiguamiento;
 	}
 	public Date getFecRegistroAlta() {
 		return fecRegistroAlta;
@@ -66,5 +73,6 @@ public class AtestiguamientoDictamenTO extends BaseTO{
 	public void setCveIdUsuario(String cveIdUsuario) {
 		this.cveIdUsuario = cveIdUsuario;
 	}
-
+	
+	
 }

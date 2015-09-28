@@ -1,6 +1,5 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
@@ -12,16 +11,17 @@ public class AtestiguamientoTO extends BaseTO{
 	 */
 	private static final long serialVersionUID = 4993167636489570181L;
 	
-	private BigDecimal cveIdAtestiguamiento;
+	private Integer cveIdAtestiguamiento;
 	private AseveracionesTO cveIdAseveracion;
 	private String desAtestiguamiento;
 	private Date fecRegistroAlta;
 	private Date fecRegistroActualizado;
 	private Date fecRegistroBaja;
-	public BigDecimal getCveIdAtestiguamiento() {
+	
+	public Integer getCveIdAtestiguamiento() {
 		return cveIdAtestiguamiento;
 	}
-	public void setCveIdAtestiguamiento(BigDecimal cveIdAtestiguamiento) {
+	public void setCveIdAtestiguamiento(Integer cveIdAtestiguamiento) {
 		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
 	}
 	public AseveracionesTO getCveIdAseveracion() {

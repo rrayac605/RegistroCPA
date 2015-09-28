@@ -8,9 +8,17 @@ public class CuestionarioTO extends BaseTO{
 	 * 
 	 */
 	private static final long serialVersionUID = -463033895944526315L;
+	private Long clave;
 	private String concepto;
 	private String estado;
 	
+	public Long getClave() {
+		return clave;
+	}
+	
+	public void setClave(Long clave) {
+		this.clave = clave;
+	}
 	/**
 	 * @return the concepto
 	 */
@@ -35,24 +43,17 @@ public class CuestionarioTO extends BaseTO{
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((clave == null) ? 0 : clave.hashCode());
 		result = prime * result + ((concepto == null) ? 0 : concepto.hashCode());
 		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
 		return result;
 	}
-	
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -62,6 +63,11 @@ public class CuestionarioTO extends BaseTO{
 		if (getClass() != obj.getClass())
 			return false;
 		CuestionarioTO other = (CuestionarioTO) obj;
+		if (clave == null) {
+			if (other.clave != null)
+				return false;
+		} else if (!clave.equals(other.clave))
+			return false;
 		if (concepto == null) {
 			if (other.concepto != null)
 				return false;
@@ -74,5 +80,7 @@ public class CuestionarioTO extends BaseTO{
 			return false;
 		return true;
 	}
+	
+	
 	
 }
