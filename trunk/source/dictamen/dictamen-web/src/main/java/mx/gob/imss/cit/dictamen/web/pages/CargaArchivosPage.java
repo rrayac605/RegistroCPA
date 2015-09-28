@@ -15,8 +15,7 @@ public class CargaArchivosPage extends BaseBean {
 	 * 
 	 */
 	private static final long serialVersionUID = -4268387060742221657L;
-	
-	
+		
 	private List<ParentLayoutDTO> listaParentLayout;
 
 	/**
@@ -31,8 +30,6 @@ public class CargaArchivosPage extends BaseBean {
 	 */
 	public void setListaParentLayout(List<ParentLayoutDTO> listaParentLayout) {
 		this.listaParentLayout = listaParentLayout;
-	}
-	
-	
+	}	
 	
 }
