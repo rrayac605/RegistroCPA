@@ -11,6 +11,6 @@ public interface PatronDictamenIntegrator {
 	
 	void executeRegistrar(PatronDictamenDTO datosDTO,ContadorPublicoAutDTO contador)throws DictamenNegocioException;
 	
-	void executeActualizar(PatronDictamenDTO datosDTO,ContadorPublicoAutDTO contador)throws DictamenNegocioException;
+	void executeActualizar(PatronDictamenDTO datosDTO)throws DictamenNegocioException;
 	
 }

@@ -29,84 +29,138 @@ import org.apache.log4j.Logger;
 
 /**
  * @author ajfuentes
- *
+ * 
  */
 
 @Stateless
 public class PatronDictamenServiceImpl implements PatronDictamenService {
 
-	
-	private static final Logger LOG=Logger.getLogger(PatronDictamenServiceImpl.class);
-	
+	private static final Logger LOG = Logger
+			.getLogger(PatronDictamenServiceImpl.class);
+
 	@EJB
 	private NdtPatronDictamenDAO ndtPatronDictamenDAO;
-	
+
 	@EJB
 	private NdtPatronDictamenCpaDAO ndtPatronDictamenCpaDAO;
-	
+
 	@Override
-	public PatronDictamenTO saveDictamen(PatronDictamenTO dictamen,ContadorPublicoAutTO contador) throws DictamenException{
-		
-		PatronDictamenTO dictamenResultado=null;
-		if(dictamen==null){
+	public PatronDictamenTO saveDictamen(PatronDictamenTO dictamen,
+			ContadorPublicoAutTO contador) throws DictamenException {
+
+		PatronDictamenTO dictamenResultado = null;
+		if (dictamen == null) {
 			LOG.error("el dictamen llego nulo");
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_PARAM_NULL);
+			throw DictamenExceptionBuilder
+					.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_PARAM_NULL);
 		}
-		
-		try{
-			
-			NdtContadorPublicoAutDO ndtContadorPublicoAutDO=TransformerServiceUtils.transformer(contador);	
-			NdtPatronDictamenDO ndtPatronDictamenDO=TransformerServiceUtils.transformer(dictamen);	
-			ndtPatronDictamenDO.setFecRegistroAlta(new Date());
-			ndtPatronDictamenDO.setFecRegistroAutorizado(new Date());
-			ndtPatronDictamenDO.setFecRegistroBaja(new Date());
-			//se inserta en patron dictamen		
+
+		try {
+
+			NdtContadorPublicoAutDO ndtContadorPublicoAutDO = TransformerServiceUtils
+					.transformer(contador);
+			NdtPatronDictamenDO ndtPatronDictamenDO = TransformerServiceUtils
+					.transformer(dictamen);
+			ndtPatronDictamenDO.setFecRegistroAlta(new Date());			
+			NdcEstadoDictamenDO ndcEstadoDictamenDO = new NdcEstadoDictamenDO();
+			ndcEstadoDictamenDO.setCveIdEstadoDictamen(EstadoDictamenEnum.EN_PROCESO.getId());
+			ndtPatronDictamenDO.setCveIdEstadoDictamen(ndcEstadoDictamenDO);
+			// se inserta en patron dictamen
 			ndtPatronDictamenDAO.create(ndtPatronDictamenDO);
 			ndtPatronDictamenDAO.flush();
-			
-			
-			NdtPatronDictamenCpaDO patronDictamenCpaDO=new NdtPatronDictamenCpaDO();
+
+			NdtPatronDictamenCpaDO patronDictamenCpaDO = new NdtPatronDictamenCpaDO();
 			patronDictamenCpaDO.setCveIdPatronDictamen(ndtPatronDictamenDO);
 			patronDictamenCpaDO.setCveIdCpa(ndtContadorPublicoAutDO);
 			patronDictamenCpaDO.setFecRegistroAlta(new Date());
 			patronDictamenCpaDO.setFecRegistroActualizado(new Date());
-			patronDictamenCpaDO.setFecRegistroBaja(new Date());
-			NdcEstadoDictamenDO ndcEstadoDictamenDO=new NdcEstadoDictamenDO();
-			ndcEstadoDictamenDO.setCveIdEstadoDictamen(EstadoDictamenEnum.EN_PROCESO.getId());			
-			//se inserta en patron dictamen cpa
-			ndtPatronDictamenCpaDAO.create(patronDictamenCpaDO);	
-			dictamenResultado=TransformerServiceUtils.transformer(ndtPatronDictamenDO);	
-			
-		}catch(Exception e){
-			LOG.error(e.getMessage(),e);
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_GUARDAR,e);
+			// se inserta en patron dictamen cpa
+			ndtPatronDictamenCpaDAO.create(patronDictamenCpaDO);
+			dictamenResultado = TransformerServiceUtils
+					.transformer(ndtPatronDictamenDO);
+
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+			throw DictamenExceptionBuilder
+					.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_GUARDAR,
+							e);
 		}
-		
+
 		return dictamenResultado;
-	
-		
+
 	}
 
 	@Override
-	public PatronDictamenTO getDictamenByRfcPatronAndIdContador(String rfc,Long contador) throws DictamenException {
-		
-		PatronDictamenTO dictamenTO=null;
-		if(ValidatorUtil.isAnyNull(rfc,contador)){
-			
+	public PatronDictamenTO getDictamenByRfcPatronAndIdContador(String rfc,
+			Long contador) throws DictamenException {
+
+		PatronDictamenTO dictamenTO = null;
+		if (ValidatorUtil.isAnyNull(rfc, contador)) {
+
 		}
-		try{									
-			List<NdtPatronDictamenDO> listaDO=ndtPatronDictamenDAO.findByRfcPatronAndIdContador(rfc, contador);
-		
-			if(listaDO!=null && !listaDO.isEmpty()){
-				dictamenTO=TransformerServiceUtils.transformer(listaDO.get(0));
+		try {
+			List<NdtPatronDictamenDO> listaDO = ndtPatronDictamenDAO
+					.findByRfcPatronAndIdContador(rfc, contador);
+
+			if (listaDO != null && !listaDO.isEmpty()) {
+				dictamenTO = TransformerServiceUtils
+						.transformer(listaDO.get(0));
 			}
-			
-		}catch(Exception e){
-			LOG.error(e.getMessage(),e);
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_GUARDAR,e);
+
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+			throw DictamenExceptionBuilder
+					.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_OBTENER,
+							e);
 		}
-		
+
 		return dictamenTO;
+	}
+
+	@Override
+	public PatronDictamenTO updateDictamen(PatronDictamenTO dictamen)
+			throws DictamenException {
+		
+		PatronDictamenTO dictamenResultado = null;
+		if (dictamen == null || dictamen.getCveIdPatronDictamen()==null) {
+			LOG.error("el dictamen llego nulo");
+			throw DictamenExceptionBuilder
+					.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_PARAM_NULL);
+		}
+
+		try {
+			NdtPatronDictamenDO patronBD=new NdtPatronDictamenDO();
+			patronBD.setCveIdPatronDictamen(dictamen.getCveIdPatronDictamen());
+			LOG.error("el id a buscar es el "+dictamen.getCveIdPatronDictamen());
+			patronBD=ndtPatronDictamenDAO.get(patronBD.getCveIdPatronDictamen());
+			
+			
+			NdtPatronDictamenDO patronActualiza = TransformerServiceUtils.transformer(dictamen);
+	
+			patronBD.setNumNumeroTrabajadores(patronActualiza.getNumNumeroTrabajadores());
+			patronBD.setNumRegistroPatronales(patronActualiza.getNumRegistroPatronales());
+			patronBD.setCveIdTipoDictamen(patronActualiza.getCveIdTipoDictamen());
+			patronBD.setIndPatronConstruccion(patronActualiza.getIndPatronConstruccion());
+			patronBD.setIndPatronEmpresaValuada(patronActualiza.getIndPatronEmpresaValuada());
+			patronBD.setIndRealizoActConstruccion(patronActualiza.getIndRealizoActConstruccion());
+			patronBD.setCveIdEjerFiscal(patronActualiza.getCveIdEjerFiscal());
+			patronBD.setCveIdTipoDictamen(patronActualiza.getCveIdTipoDictamen());
+
+			// se inserta en patron dictamen
+			ndtPatronDictamenDAO.edit(patronBD);
+			
+			
+			dictamenResultado = TransformerServiceUtils.transformer(patronBD);
+
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+			throw DictamenExceptionBuilder
+					.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_DATOS_PATRONALES_ACTUALIZAR,
+							e);
+		}
+
+		return dictamenResultado;
+
 	}
 
 }

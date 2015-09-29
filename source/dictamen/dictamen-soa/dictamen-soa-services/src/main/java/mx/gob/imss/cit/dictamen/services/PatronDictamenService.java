@@ -19,5 +19,6 @@ public interface PatronDictamenService {
 	
 	PatronDictamenTO saveDictamen(PatronDictamenTO dictamen,ContadorPublicoAutTO contador) throws DictamenException;
 	PatronDictamenTO getDictamenByRfcPatronAndIdContador(String rfc, Long contador) throws DictamenException;
+	PatronDictamenTO updateDictamen(PatronDictamenTO dictamen) throws DictamenException;
 
 }
