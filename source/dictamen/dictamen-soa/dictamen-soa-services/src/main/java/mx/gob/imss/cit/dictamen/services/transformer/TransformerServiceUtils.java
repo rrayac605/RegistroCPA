@@ -17,6 +17,7 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.CargaAseveracionesTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO;
@@ -27,15 +28,19 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
+import mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO;
 import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO;
 import mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO;
+import mx.gob.imss.cit.dictamen.model.NdcEstadoCargaDocumentoDO;
 import mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO;
 import mx.gob.imss.cit.dictamen.model.NdcPreguntaDO;
 import mx.gob.imss.cit.dictamen.model.NdcRubroDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO;
+import mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO;
 import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
+import mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO;
 import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.ws.commonschema.SGBDE;
@@ -86,8 +91,7 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	,mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class);		
-		
-	}
+}
 	
 	private TransformerServiceUtils(){
 		
@@ -148,7 +152,26 @@ public class TransformerServiceUtils {
 	
 	
 	
-	
+	public static NdtCargaDocumentoDO transformer( CargaAseveracionesTO cargaAseveracionTO ) {
+		NdtCargaDocumentoDO cargaDocumentoDO = (NdtCargaDocumentoDO) TransformerHelper.get(mapClass,cargaAseveracionTO, NdtCargaDocumentoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;		
+
+		NdcEstadoCargaDocumentoDO estadoCargaDocumentoDO = new NdcEstadoCargaDocumentoDO();
+		NdcAseveracionesDO ndcAseveracionesDO = new NdcAseveracionesDO();
+		NdcTipoDocumentoDO ndcTipoDocumentoDO = new NdcTipoDocumentoDO();
+		NdtPatronDictamenDO ndtPatronDictamenDO = new NdtPatronDictamenDO();
+		
+		estadoCargaDocumentoDO.setCveIdEstadoCargoDoc(Long.valueOf(cargaAseveracionTO.getCveIdStatusCarga().getCveIdStatusCarga()));
+		ndcAseveracionesDO.setCveIdAseveracion(cargaAseveracionTO.getCveIdAseveracion().getCveIdAseveracion());
+		ndcTipoDocumentoDO.setCveIdTipoDocumento(cargaAseveracionTO.getCveIdTipoDocumento().getCveIdTipoDocumento());
+		ndtPatronDictamenDO.setCveIdPatronDictamen(cargaAseveracionTO.getCveIdPatronDictamen().getCveIdPatronDictamen());
+		
+		cargaDocumentoDO.setCveIdAseveracion(ndcAseveracionesDO);
+		cargaDocumentoDO.setCveIdEstadoCargoDoc(estadoCargaDocumentoDO);
+		cargaDocumentoDO.setCveIdTipoDocumento(ndcTipoDocumentoDO);
+		cargaDocumentoDO.setCveIdPatronDictamen(ndtPatronDictamenDO);
+		
+		return cargaDocumentoDO;
+	}
 	
 	public static NdtPatronDictamenDO transformer( PatronDictamenTO patron ) {
 		NdtPatronDictamenDO cont=  (NdtPatronDictamenDO) TransformerHelper.get(mapClass,patron, NdtPatronDictamenDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
@@ -176,6 +199,7 @@ public class TransformerServiceUtils {
 
 		return cont;
 	}	
+	
 	
 
 	
