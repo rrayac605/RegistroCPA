@@ -69,13 +69,13 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
     @OneToMany(mappedBy = "cveIdAtestigDictamen", fetch = FetchType.LAZY)
     private List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList;
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private NdtPatronDictamenDO cveIdPatronDictamen;
     @JoinColumn(name = "CVE_ID_ESTADO_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ESTADO_ATESTIGUAMIENTO")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private NdcEstadoAtestiguamientoDO cveIdEstadoAtestiguamiento;
     @JoinColumn(name = "CVE_ID_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ATESTIGUAMIENTO")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private NdcAtestiguamientoDO cveIdAtestiguamiento;
 
     public NdtAtestiguamientoDictamenDO() {

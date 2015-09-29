@@ -7,7 +7,6 @@ import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ExamenDTO;
@@ -18,9 +17,14 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.TipoPreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.services.ExamenService;
 
+import org.apache.log4j.Logger;
+
 @Stateless
 @Remote(mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator.class)
 public class ExamenIntegratorImpl implements ExamenIntegrator{
+	
+	private Logger LOG=Logger.getLogger(ExamenIntegratorImpl.class);
+	
 
 	@EJB
 	private ExamenService examenService;
@@ -126,65 +130,21 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 		List<AtestiguamientoDictamenTO> atestiguamientoDictamenTOList = new ArrayList<AtestiguamientoDictamenTO>();
 		
 		try {
-			atestiguamientoDictamenTOList = examenService.findExamenByIdPatronDictamen(cveIdPatronDictamen);
-			System.out.println(atestiguamientoDictamenTOList.size());
+			atestiguamientoDictamenTOList = examenService.findExamenByIdPatronDictamen(cveIdPatronDictamen);			
 			for( AtestiguamientoDictamenTO atestiguamientoDictamenTO:atestiguamientoDictamenTOList){
 				
-				ExamenDTO examen = new ExamenDTO();
-				System.out.println(atestiguamientoDictamenTO.getCveIdAtestiguamiento());
-				//System.out.println(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
-				System.out.println(atestiguamientoDictamenTO.getCveIdEstadoAtestiguamiento());
+				ExamenDTO examen = new ExamenDTO();				
 				examen.setClave(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
 				examen.setNombre(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
 				examen.setEstado(atestiguamientoDictamenTO.getCveIdEstadoAtestiguamiento().getDesEstadoAtestiguamiento());
 				cuestionarios.add(examen);
 			}
-		} catch (DictamenException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			LOG.error(e.getMessage(),e);
+			throw new DictamenNegocioException(e.getMessage(),e);
+		
 		}
-		/*ExamenDTO a = new ExamenDTO();
-		ExamenDTO b = new ExamenDTO();
-		ExamenDTO c = new ExamenDTO();
-		ExamenDTO d = new ExamenDTO();
-		ExamenDTO e = new ExamenDTO();
-		ExamenDTO f = new ExamenDTO();
-		ExamenDTO g = new ExamenDTO();
-		ExamenDTO h = new ExamenDTO();
-		ExamenDTO i = new ExamenDTO();
-		ExamenDTO j = new ExamenDTO();
-		
-		a.setNombre("Remuneraciones pagadas en efectivo via nomina a los trabajadores");
-		a.setEstado("Completo");
-		b.setNombre("Otras Prestaciones Otorgadas a los trabajadores");
-		b.setEstado("Incompleto");
-		c.setNombre("Cuotas obrero patronales enteradas al instituto");
-		c.setEstado("Incompleto");
-		d.setNombre("Pago efectuado a personas fisicas");
-		d.setEstado("Incompleto");
-		e.setNombre("Prestaciones de Servicio de Personal");
-		e.setEstado("Incompleto");
-		f.setNombre("Subcontratacion de servicios de personal");
-		f.setEstado("Incompleto");
-		g.setNombre("Clasificacion de empresas");
-		g.setEstado("Incompleto");
-		h.setNombre("Balanza de comprobación");
-		h.setEstado("Incompleto");
-		i.setNombre("Obras de Construcción");
-		i.setEstado("Incompleto");
-		j.setNombre("Otros aspectos a atestiguar");
-		j.setEstado("Incompleto");
-		
-		cuestionarios.add(a);
-		cuestionarios.add(b);
-		cuestionarios.add(c);
-		cuestionarios.add(d);
-		cuestionarios.add(e);
-		cuestionarios.add(f);
-		cuestionarios.add(g);
-		cuestionarios.add(h);
-		cuestionarios.add(i);
-		cuestionarios.add(j);*/
-		
+
 		return cuestionarios;
 	}
 
