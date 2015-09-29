@@ -16,8 +16,16 @@
 
 			<div id="bodyContainer">
 
-				<p:panel>
-					<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" showSummary="true" />
+
+				<p:panel id="panelPrincipal">
+					<p:messages id="messages" showDetail="false" autoUpdate="true"
+						closable="true" showSummary="true" />
+
+
+					<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+						closable="false" resizable="false" showHeader="false">
+						<h:graphicImage value="/images/ajax-loader.gif" />
+					</p:dialog>
 
 					<ui:insert name="bodyContainer">
 					</ui:insert>

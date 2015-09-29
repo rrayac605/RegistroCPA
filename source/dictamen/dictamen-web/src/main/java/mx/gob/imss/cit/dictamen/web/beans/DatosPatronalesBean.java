@@ -47,11 +47,12 @@ public class DatosPatronalesBean extends BaseBean {
 		
 	
 		try {
+			CleanBeanUtil.cleanFields(datosPatronalesPage);
+			
 			//se obtienen catalogos
 			datosPatronalesPage.setListaTipoDictamen(tipoDictamenIntegrator.findAll());
 			datosPatronalesPage.setListaEjercicioFiscal(ejercicioFiscalIntegrator.findAll());
 						
-			CleanBeanUtil.cleanFields(datosPatronalesPage);
 			inicializarPatron();
 			
 			datosPatronalesPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
