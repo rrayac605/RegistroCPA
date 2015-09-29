@@ -35,11 +35,9 @@ import mx.gob.imss.cit.dictamen.model.NdcPreguntaDO;
 import mx.gob.imss.cit.dictamen.model.NdcRubroDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO;
-import mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO;
 import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
-import mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO;
 import mx.gob.imss.cit.ws.commonschema.SGBDE;
 
 public class TransformerServiceUtils {
