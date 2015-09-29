@@ -23,13 +23,12 @@ public class ExamenServiceImpl implements ExamenService {
 	
 	@Override
 	public List<AtestiguamientoDictamenTO> findExamenByIdPatronDictamen(Long cveIdPatronDictamen) throws DictamenException {
-		List<NdtAtestiguamientoDictamenDO> atestiguamientosDOList = new ArrayList<NdtAtestiguamientoDictamenDO>();
 		List<AtestiguamientoDictamenTO> atestiguamientosTOList = new ArrayList<AtestiguamientoDictamenTO>();
 		try{	
-			atestiguamientosDOList = ndtAtestiguamientoDictamenDAO.findExamenesByIdPatronDictamen(cveIdPatronDictamen);
+			List<NdtAtestiguamientoDictamenDO> atestiguamientosDOList = ndtAtestiguamientoDictamenDAO.findExamenesByIdPatronDictamen(cveIdPatronDictamen);
+
 			for(NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO: atestiguamientosDOList){
-				AtestiguamientoDictamenTO atestiguamientoDictamenTO = new AtestiguamientoDictamenTO();
-				atestiguamientoDictamenTO = TransformerServiceUtils.transformer(ndtAtestiguamientoDictamenDO);
+				AtestiguamientoDictamenTO atestiguamientoDictamenTO = TransformerServiceUtils.transformer(ndtAtestiguamientoDictamenDO);
 				atestiguamientosTOList.add(atestiguamientoDictamenTO);
 			}
 		}catch(Exception e){

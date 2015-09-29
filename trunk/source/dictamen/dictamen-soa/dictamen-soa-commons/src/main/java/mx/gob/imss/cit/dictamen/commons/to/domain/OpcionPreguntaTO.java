@@ -1,35 +1,28 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
+import java.util.List;
+
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class OpcionPreguntaTO extends BaseTO{
 
-	private static final long serialVersionUID = 1L;
-	private Double cveIdOpcionPregunta;
-	private Long cveIdPregunta;
-	private Long cveIdRespuesta;
-	private String desOpcionPregunta;
-	private Date fecRegistroAlta;
-	private Date fecRegistroBaja;
-	public Double getCveIdOpcionPregunta() {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3308710887108580782L;
+	private Long cveIdOpcionPregunta;
+    private String desOpcionPregunta;
+    private Date fecAltaRegistro;
+    private Date fecBajaRegistro;
+    private TipoRespuestaTO cveIdRespuesta;
+    private PreguntaTO cveIdPregunta;
+	public Long getCveIdOpcionPregunta() {
 		return cveIdOpcionPregunta;
 	}
-	public void setCveIdOpcionPregunta(Double cveIdOpcionPregunta) {
+	public void setCveIdOpcionPregunta(Long cveIdOpcionPregunta) {
 		this.cveIdOpcionPregunta = cveIdOpcionPregunta;
-	}
-	public Long getCveIdPregunta() {
-		return cveIdPregunta;
-	}
-	public void setCveIdPregunta(Long cveIdPregunta) {
-		this.cveIdPregunta = cveIdPregunta;
-	}
-	public Long getCveIdRespuesta() {
-		return cveIdRespuesta;
-	}
-	public void setCveIdRespuesta(Long cveIdRespuesta) {
-		this.cveIdRespuesta = cveIdRespuesta;
 	}
 	public String getDesOpcionPregunta() {
 		return desOpcionPregunta;
@@ -37,16 +30,29 @@ public class OpcionPreguntaTO extends BaseTO{
 	public void setDesOpcionPregunta(String desOpcionPregunta) {
 		this.desOpcionPregunta = desOpcionPregunta;
 	}
-	public Date getFecRegistroAlta() {
-		return fecRegistroAlta;
+	public Date getFecAltaRegistro() {
+		return fecAltaRegistro;
 	}
-	public void setFecRegistroAlta(Date fecRegistroAlta) {
-		this.fecRegistroAlta = fecRegistroAlta;
+	public void setFecAltaRegistro(Date fecAltaRegistro) {
+		this.fecAltaRegistro = fecAltaRegistro;
 	}
-	public Date getFecRegistroBaja() {
-		return fecRegistroBaja;
+	public Date getFecBajaRegistro() {
+		return fecBajaRegistro;
 	}
-	public void setFecRegistroBaja(Date fecRegistroBaja) {
-		this.fecRegistroBaja = fecRegistroBaja;
+	public void setFecBajaRegistro(Date fecBajaRegistro) {
+		this.fecBajaRegistro = fecBajaRegistro;
 	}
+	public TipoRespuestaTO getCveIdRespuesta() {
+		return cveIdRespuesta;
+	}
+	public void setCveIdRespuesta(TipoRespuestaTO cveIdRespuesta) {
+		this.cveIdRespuesta = cveIdRespuesta;
+	}
+	public PreguntaTO getCveIdPregunta() {
+		return cveIdPregunta;
+	}
+	public void setCveIdPregunta(PreguntaTO cveIdPregunta) {
+		this.cveIdPregunta = cveIdPregunta;
+	}
+   
 }

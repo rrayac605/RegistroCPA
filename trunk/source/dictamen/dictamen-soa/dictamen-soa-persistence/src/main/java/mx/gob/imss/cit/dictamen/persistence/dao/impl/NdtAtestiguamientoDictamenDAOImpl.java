@@ -16,6 +16,7 @@ import mx.gob.imss.cit.dictamen.persistence.util.ExceptionHandlerDAOInterceptor;
 @Stateless
 @Interceptors({ ExceptionHandlerDAOInterceptor.class })
 public class NdtAtestiguamientoDictamenDAOImpl extends AbstractBaseDAO<NdtAtestiguamientoDictamenDO> implements NdtAtestiguamientoDictamenDAO {
+	
 	/** The em. */
 	@PersistenceContext(unitName = "DictamenPU")
 	private EntityManager em;

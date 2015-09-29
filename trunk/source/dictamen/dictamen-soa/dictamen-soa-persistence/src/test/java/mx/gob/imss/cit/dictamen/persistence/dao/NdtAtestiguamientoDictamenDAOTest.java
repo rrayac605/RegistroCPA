@@ -33,7 +33,7 @@ public class NdtAtestiguamientoDictamenDAOTest extends AbstractDBTestUnit {
 	@Test
 	public void testFindByIdPatronDictamen() {
 		LOG.info("prueba");
-		List<NdtAtestiguamientoDictamenDO> resultList = localDAO.findExamenesByIdPatronDictamen(22L);
+		List<NdtAtestiguamientoDictamenDO> resultList = localDAO.findExamenesByIdPatronDictamen(63L);
 		LOG.info("Lista: " + resultList.size());
 		for (NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO : resultList) {
 			LOG.info(ndtAtestiguamientoDictamenDO.getCveIdAtestiguamiento().getDesAtestiguamiento());

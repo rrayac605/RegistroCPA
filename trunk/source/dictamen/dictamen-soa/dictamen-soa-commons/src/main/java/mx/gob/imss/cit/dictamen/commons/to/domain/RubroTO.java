@@ -1,36 +1,16 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
-import java.math.BigInteger;
 import java.util.Date;
-
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class RubroTO extends BaseTO{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3863533582583699591L;
-	private Long cveIdRubro;
-	private AtestiguamientoTO cveIdAtestiguamiento;
-	private String desRubro;
-	private Date fecAltaRegistro;
-    private Date fecActualizadoRegistro;
-    private Date fecBajaRegistro;
-    private BigInteger indOrden;
-    
 	public Long getCveIdRubro() {
 		return cveIdRubro;
 	}
 	public void setCveIdRubro(Long cveIdRubro) {
 		this.cveIdRubro = cveIdRubro;
-	}
-	public AtestiguamientoTO getCveIdAtestiguamiento() {
-		return cveIdAtestiguamiento;
-	}
-	public void setCveIdAtestiguamiento(AtestiguamientoTO cveIdAtestiguamiento) {
-		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
 	}
 	public String getDesRubro() {
 		return desRubro;
@@ -56,11 +36,32 @@ public class RubroTO extends BaseTO{
 	public void setFecBajaRegistro(Date fecBajaRegistro) {
 		this.fecBajaRegistro = fecBajaRegistro;
 	}
-	public BigInteger getIndOrden() {
+	public Integer getIndOrden() {
 		return indOrden;
 	}
-	public void setIndOrden(BigInteger indOrden) {
+	public void setIndOrden(Integer indOrden) {
 		this.indOrden = indOrden;
 	}
+	public AtestiguamientoTO getCveIdAtestiguamiento() {
+		return cveIdAtestiguamiento;
+	}
+	public void setCveIdAtestiguamiento(AtestiguamientoTO cveIdAtestiguamiento) {
+		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
+	}
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5269246747882446456L;
+	/**
+	 * 
+	 */
+	private Long cveIdRubro;
+    private String desRubro;
+    private Date fecAltaRegistro;
+    private Date fecActualizadoRegistro;
+    private Date fecBajaRegistro;
+    private Integer indOrden;
+    private AtestiguamientoTO cveIdAtestiguamiento;
+
     
 }

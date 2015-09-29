@@ -10,16 +10,16 @@ public class ExamenDTO extends BaseDTO{
 	 * 
 	 */
 	private static final long serialVersionUID = -3901424321125859112L;
-	private Integer clave;
+	private Long clave;
 	private String nombre;
 	private List<SeccionDTO> secciones;
 	private String estado;
 	
-	public Integer getClave() {
+	public Long getClave() {
 		return clave;
 	}
-	public void setClave(Integer clave) {
-		this.clave = clave;
+	public void setClave(Long long1) {
+		this.clave = long1;
 	}
 	public String getNombre() {
 		return nombre;

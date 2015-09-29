@@ -1,7 +1,6 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
-
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class TipoRespuestaTO extends BaseTO{
@@ -11,7 +10,7 @@ public class TipoRespuestaTO extends BaseTO{
 	 */
 	private static final long serialVersionUID = -7566762193029409672L;
 	private Long cveIdRespuesta;
-	private String desTipoRespuesta;
+    private String desTipoRespuesta;
     private Date fecRegistroAlta;
     private Date fecRegistroActualizado;
     private Date fecRegistroBaja;
@@ -45,5 +44,4 @@ public class TipoRespuestaTO extends BaseTO{
 	public void setFecRegistroBaja(Date fecRegistroBaja) {
 		this.fecRegistroBaja = fecRegistroBaja;
 	}
-    
 }

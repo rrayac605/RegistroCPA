@@ -19,9 +19,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import mx.gob.imss.cit.dictamen.commons.util.ReflectionHelper;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtAtestiguamientoDictamenDAO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdtContadorPublicoAutDAO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdtPatronDictamenDAO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdtR2DespachoDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtAtestiguamientoDictamenDAOImpl;
 import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtContadorPublicoAutDAOImpl;
 import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtPatronDictamenDAOImpl;
 import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtR2DespachoDAOImpl;
@@ -113,11 +115,10 @@ public abstract class AbstractDBTestUnit {
 		// Agregar las relaciones de DAO y sus implementaciones
 		mapDAO = new HashMap<Class<?>, Class<?>>();
 
-		mapDAO.put(NdtContadorPublicoAutDAO.class,
-				NdtContadorPublicoAutDAOImpl.class);
+		mapDAO.put(NdtContadorPublicoAutDAO.class,NdtContadorPublicoAutDAOImpl.class);
 		mapDAO.put(NdtPatronDictamenDAO.class, NdtPatronDictamenDAOImpl.class);
 		mapDAO.put(NdtR2DespachoDAO.class, NdtR2DespachoDAOImpl.class);
-
+		mapDAO.put(NdtAtestiguamientoDictamenDAO.class, NdtAtestiguamientoDictamenDAOImpl.class);
 	}
 
 	protected void connect(Object o) {

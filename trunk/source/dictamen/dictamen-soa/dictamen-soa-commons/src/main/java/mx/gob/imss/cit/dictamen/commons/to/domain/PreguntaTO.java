@@ -1,46 +1,35 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
-import java.math.BigInteger;
 import java.util.Date;
+
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class PreguntaTO extends BaseTO {
 
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -5456592500183571783L;
+	private static final long serialVersionUID = 6522227905470930975L;
 	private Long cveIdPregunta;
-	private RubroTO cveIdRubro;
-	private String desPregunta;
-	private PreguntaTO cveIdPreguntaPadre;
-	private Date fecRegistroAlta;
+    private String desPregunta;
+    private Date fecRegistroAlta;
     private Date fecRegistroActualizado;
     private Date fecRegistroBaja;
-    private BigInteger indOrden;
+    private Integer indOrden;
+    private RubroTO cveIdRubro;
+    private PreguntaTO cveIdPreguntaPadre;
 	public Long getCveIdPregunta() {
 		return cveIdPregunta;
 	}
 	public void setCveIdPregunta(Long cveIdPregunta) {
 		this.cveIdPregunta = cveIdPregunta;
 	}
-	public RubroTO getCveIdRubro() {
-		return cveIdRubro;
-	}
-	public void setCveIdRubro(RubroTO cveIdRubro) {
-		this.cveIdRubro = cveIdRubro;
-	}
 	public String getDesPregunta() {
 		return desPregunta;
 	}
 	public void setDesPregunta(String desPregunta) {
 		this.desPregunta = desPregunta;
-	}
-	public PreguntaTO getCveIdPreguntaPadre() {
-		return cveIdPreguntaPadre;
-	}
-	public void setCveIdPreguntaPadre(PreguntaTO cveIdPreguntaPadre) {
-		this.cveIdPreguntaPadre = cveIdPreguntaPadre;
 	}
 	public Date getFecRegistroAlta() {
 		return fecRegistroAlta;
@@ -60,11 +49,25 @@ public class PreguntaTO extends BaseTO {
 	public void setFecRegistroBaja(Date fecRegistroBaja) {
 		this.fecRegistroBaja = fecRegistroBaja;
 	}
-	public BigInteger getIndOrden() {
+	public Integer getIndOrden() {
 		return indOrden;
 	}
-	public void setIndOrden(BigInteger indOrden) {
+	public void setIndOrden(Integer indOrden) {
 		this.indOrden = indOrden;
 	}
-
+	public RubroTO getCveIdRubro() {
+		return cveIdRubro;
+	}
+	public void setCveIdRubro(RubroTO cveIdRubro) {
+		this.cveIdRubro = cveIdRubro;
+	}
+	public PreguntaTO getCveIdPreguntaPadre() {
+		return cveIdPreguntaPadre;
+	}
+	public void setCveIdPreguntaPadre(PreguntaTO cveIdPreguntaPadre) {
+		this.cveIdPreguntaPadre = cveIdPreguntaPadre;
+	}
+    
+    
+    
 }

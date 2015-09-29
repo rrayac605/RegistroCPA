@@ -106,7 +106,7 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 		preguntasseccion2.add(pregunta22);
 		seccion2.setPreguntas(preguntasseccion2);
 		
-		examenDetalle.setClave(1);
+		examenDetalle.setClave(1L);
 		examenDetalle.setNombre("Remuneraciones pagadas en efectivo via nomina a los trabajadores");
 		List<SeccionDTO> seccionesExamen1 = new ArrayList<SeccionDTO>();
 		seccionesExamen1.add(seccion0);
@@ -127,11 +127,16 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 		
 		try {
 			atestiguamientoDictamenTOList = examenService.findExamenByIdPatronDictamen(cveIdPatronDictamen);
+			System.out.println(atestiguamientoDictamenTOList.size());
 			for( AtestiguamientoDictamenTO atestiguamientoDictamenTO:atestiguamientoDictamenTOList){
+				
 				ExamenDTO examen = new ExamenDTO();
-				examen.setClave(atestiguamientoDictamenTO.getAtestiguamiento().getCveIdAtestiguamiento());
-				examen.setEstado(atestiguamientoDictamenTO.getAtestiguamiento().getDesAtestiguamiento());
-				examen.setEstado(atestiguamientoDictamenTO.getEstadoAtestiguamiento().getDesEstadoAtestiguamiento());
+				System.out.println(atestiguamientoDictamenTO.getCveIdAtestiguamiento());
+				//System.out.println(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
+				System.out.println(atestiguamientoDictamenTO.getCveIdEstadoAtestiguamiento());
+				examen.setClave(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
+				examen.setNombre(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
+				examen.setEstado(atestiguamientoDictamenTO.getCveIdEstadoAtestiguamiento().getDesEstadoAtestiguamiento());
 				cuestionarios.add(examen);
 			}
 		} catch (DictamenException e) {
