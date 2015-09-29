@@ -30,7 +30,9 @@
 					</p:inputText>	
 					<p:commandButton value="#{msg['message.button.buscar']}"
 						action="#{datosPatronalesBean.buscar}"
-						ajax="true" update=":formDatosPatronales"/>
+						ajax="true" update=":formDatosPatronales"
+						onstart="statusDialog.show();"
+						oncomplete="statusDialog.hide();"/>
 					
 				</p:panelGrid>
 				
@@ -140,8 +142,12 @@
 
 
 				<p:panelGrid columns="2">
+				
 					<p:commandButton value="#{msg['message.button.guardar']}"
-						action="#{datosPatronalesBean.guardar}" ajax="false" />
+						action="#{datosPatronalesBean.guardar}" ajax="false" 
+						onstart="PF('blockUIWidget').block()"
+						oncomplete="PF('blockUIWidget').unblock()"/>
+						
 					<p:commandButton value="#{msg['message.button.limpiar']}"
 						action="#{datosPatronalesBean.limpiar}" immediate="true"
 						ajax="false" />
