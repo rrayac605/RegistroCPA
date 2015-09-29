@@ -66,10 +66,16 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 	}
 
 	@Override
-	public void executeActualizar(PatronDictamenDTO datosDTO,
-			ContadorPublicoAutDTO contador) throws DictamenNegocioException {
-		// TODO Auto-generated method stub
-		
+	public void executeActualizar(PatronDictamenDTO datosDTO) throws DictamenNegocioException {
+
+		try {
+			PatronDictamenTO patronDictamenTO=TransformerIntegrationUtils.transformer(datosDTO)	;			
+			patronDictamenService.updateDictamen(patronDictamenTO);
+		} catch (Exception e) {
+			LOG.error(e.getMessage(),e);
+			throw new DictamenNegocioException(e.getMessage(), e);
+		}
+
 	}
 
 

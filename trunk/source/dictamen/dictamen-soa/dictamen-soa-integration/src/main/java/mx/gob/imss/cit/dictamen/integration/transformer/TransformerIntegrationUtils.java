@@ -188,7 +188,7 @@ public class TransformerIntegrationUtils {
 		objRes.setActConstruccionOregObra(ConverterUtils.convertShortToBoolean(object.getIndRealizoActConstruccion()));		
 		objRes.setEjercicioDictaminar(object.getCveIdEjerFiscalId());
 		objRes.setIdTipoDictamen(object.getCveIdTipoDictamenId());
-		objRes.setNumRegistroPatronales(object.getNumRegistroPatronales());			
+		objRes.setNumRegistroPatronales(object.getNumRegistroPatronales());		
 		
 		return objRes;
 	}	
@@ -204,7 +204,7 @@ public class TransformerIntegrationUtils {
 		objRes.setIndRealizoActConstruccion(ConverterUtils.convertBooleanToShort(object.getActConstruccionOregObra()));
 		objRes.setCveIdEjerFiscalId(object.getEjercicioDictaminar());
 		objRes.setCveIdTipoDictamenId(object.getIdTipoDictamen());
-		objRes.setNumRegistroPatronales(object.getNumRegistroPatronales());			
+		objRes.setNumRegistroPatronales(object.getNumRegistroPatronales());	
 		
 		return objRes;
 	}	

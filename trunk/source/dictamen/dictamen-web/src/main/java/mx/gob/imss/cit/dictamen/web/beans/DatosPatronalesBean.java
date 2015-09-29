@@ -131,6 +131,7 @@ public class DatosPatronalesBean extends BaseBean {
 	
 	public void limpiar(){
 		CleanBeanUtil.cleanFields(datosPatronalesPage);
+		inicializarPatron();
 		
 	}
 	
@@ -139,9 +140,11 @@ public class DatosPatronalesBean extends BaseBean {
 		LOG.info("los datos a guardar son: ");
 		try {
 			if(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen()==null){
+				LOG.info("nuevo registro ");
 				patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron(),datosPatronalesPage.getContadorPublicoAutDTO());
 			}else{
-				patronIntegration.executeActualizar(datosPatronalesPage.getDatosPatron(),datosPatronalesPage.getContadorPublicoAutDTO());
+				LOG.info("se actualizara "+datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
+				patronIntegration.executeActualizar(datosPatronalesPage.getDatosPatron());
 			}
 			
 			FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_DATOS_PATRONALES.getCode());
