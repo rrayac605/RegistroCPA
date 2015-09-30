@@ -8,6 +8,7 @@ import javax.ejb.Local;
 import javax.ejb.Stateless;
 
 import mx.gob.imss.cit.dictamen.commons.constants.DictamenConstants;
+import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO;
 import mx.gob.imss.cit.dictamen.commons.to.KeyTO;
@@ -17,6 +18,7 @@ import mx.gob.imss.cit.dictamen.services.AWSService;
 import mx.gob.imss.cit.dictamen.services.KeyGeneratorService;
 import mx.gob.imss.cit.dictamen.services.LayoutPatronAsociadoService;
 import mx.gob.imss.cit.dictamen.services.LayoutService;
+import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
 
 import org.apache.log4j.Logger;
@@ -39,11 +41,14 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 	private static final int NUM_DIAS = 1;
 
 	@Override
-	public List<ParentLayoutTO> findLayoutAWSService(String anioEjercicio, String rfcUsuario, String rfcPatron) {
+	public List<ParentLayoutTO> findLayoutAWSService(String anioEjercicio, String rfcUsuario, String rfcPatron)throws DictamenException {
 		List<ParentLayoutTO> listaParents = layoutService.createList();
+		
 		KeyTO keyTO;
 		try {
+			LOG.info("iniciando politicas de amazon");
 			if (listaParents != null) {
+				LOG.info("la lista de grupos de layout es de "+listaParents.size());
 				for (ParentLayoutTO parentLayout : listaParents) {
 					for (int i = 0; parentLayout.getListaLayout() != null
 							&& i < parentLayout.getListaLayout().size(); i++) {
@@ -58,8 +63,9 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 					}
 				}
 			}
-		} catch (DictamenException de) {
-			LOG.error(de);
+		} catch (Exception de) {
+			LOG.error(de.getMessage(),de);
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_CARGA_ARCHIVOS_GUARDAR,de);
 		}
 		return listaParents;
 	}

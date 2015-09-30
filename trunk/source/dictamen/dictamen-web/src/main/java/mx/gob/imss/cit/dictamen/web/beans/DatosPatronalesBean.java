@@ -9,11 +9,11 @@ import mx.gob.imss.cit.dictamen.integration.api.ConsultaSATIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.EjercicioFiscalIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.TipoDictamenIntegrator;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
+import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
 import mx.gob.imss.cit.dictamen.web.util.CleanBeanUtil;
 import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
 
@@ -43,7 +43,10 @@ public class DatosPatronalesBean extends BaseBean {
 	@ManagedProperty(value = "#{datosPatronalesPage}")
 	private DatosPatronalesPage datosPatronalesPage;
 	
-	public void init(Long idContador){
+	@ManagedProperty(value = "#{dictamenPage}")
+	private DictamenPage dictamenPage;
+	
+	public void init(){
 		
 	
 		try {
@@ -55,11 +58,10 @@ public class DatosPatronalesBean extends BaseBean {
 						
 			inicializarPatron();
 			
-			datosPatronalesPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
-			datosPatronalesPage.getContadorPublicoAutDTO().setCveIdCpa(idContador);
 
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
+			inhabilitaOpciones();
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}
 	}
@@ -85,6 +87,9 @@ public class DatosPatronalesBean extends BaseBean {
 			 busquedaSat();
 		}else{
 			datosPatronalesPage.setDatosPatron(dictamenDTO);
+			datosPatronalesPage.getDatosPatron().setEjercicioDictaminarDesc("2015");
+			habilitaOpciones();
+			
 		}	  
 	}
 
@@ -92,11 +97,12 @@ public class DatosPatronalesBean extends BaseBean {
 	private PatronDictamenDTO busquedaInterna(){
 		PatronDictamenDTO dictamenDTO=null;
 		try {
-			dictamenDTO=patronIntegration.getDatosPatron(datosPatronalesPage.getDatosPatron(), datosPatronalesPage.getContadorPublicoAutDTO());
+			dictamenDTO=patronIntegration.getDatosPatron(datosPatronalesPage.getDatosPatron(), dictamenPage.getContadorPublicoAutDTO());
 	
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			inicializarPatron();
+			inhabilitaOpciones();
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES_GET.getCode());
 		}
 		
@@ -132,25 +138,42 @@ public class DatosPatronalesBean extends BaseBean {
 	public void limpiar(){
 		CleanBeanUtil.cleanFields(datosPatronalesPage);
 		inicializarPatron();
+		inhabilitaOpciones();
+		
 		
 	}
 	
+
+	
+	private void inhabilitaOpciones(){
+		dictamenPage.setBanderaOcultaTabs(true);
+	}
+	
+	private void habilitaOpciones(){
+		dictamenPage.setBanderaOcultaTabs(false);
+	}
+	
+
 	public void guardar(){
 		
 		LOG.info("los datos a guardar son: ");
 		try {
 			if(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen()==null){
 				LOG.info("nuevo registro ");
-				patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron(),datosPatronalesPage.getContadorPublicoAutDTO());
+				patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron(),dictamenPage.getContadorPublicoAutDTO());
+				datosPatronalesPage.getDatosPatron().setEjercicioDictaminarDesc("2015");
 			}else{
 				LOG.info("se actualizara "+datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
 				patronIntegration.executeActualizar(datosPatronalesPage.getDatosPatron());
+				datosPatronalesPage.getDatosPatron().setEjercicioDictaminarDesc("2015");
 			}
 			
+			habilitaOpciones();
 			FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_DATOS_PATRONALES.getCode());
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
+			inhabilitaOpciones();
 		}
 						
 	}
@@ -161,6 +184,34 @@ public class DatosPatronalesBean extends BaseBean {
 	public void setDatosPatronalesPage(DatosPatronalesPage datosPatronalesPage) {
 		this.datosPatronalesPage = datosPatronalesPage;
 	}
+
+
+
+	/**
+	 * @return the dictamenPage
+	 */
+	public DictamenPage getDictamenPage() {
+		return dictamenPage;
+	}
+
+
+
+	/**
+	 * @param dictamenPage the dictamenPage to set
+	 */
+	public void setDictamenPage(DictamenPage dictamenPage) {
+		this.dictamenPage = dictamenPage;
+	}
+
+
+
+	/**
+	 * @return the datosPatronalesPage
+	 */
+	public DatosPatronalesPage getDatosPatronalesPage() {
+		return datosPatronalesPage;
+	}
+
 
 
 

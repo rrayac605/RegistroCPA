@@ -30,9 +30,9 @@
 					</p:inputText>	
 					<p:commandButton value="#{msg['message.button.buscar']}"
 						action="#{datosPatronalesBean.buscar}"
-						ajax="true" update=":formDatosPatronales"
+						ajax="true" update=":formDatosPatronales :dictaminacionWizardForm"
 						onstart="statusDialog.show();"
-						oncomplete="statusDialog.hide();"/>
+						oncomplete="statusDialog.hide();" />
 					
 				</p:panelGrid>
 				

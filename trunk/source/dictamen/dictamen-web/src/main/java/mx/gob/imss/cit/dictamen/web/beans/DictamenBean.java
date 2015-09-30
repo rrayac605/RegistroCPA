@@ -4,6 +4,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
 
@@ -15,25 +16,30 @@ public class DictamenBean extends BaseBean {
 	 * 
 	 */
 	private static final long serialVersionUID = -614637897623862471L;
-	
+
+	@ManagedProperty(value = "#{dictamenPage}")
+	private DictamenPage dictamenPage;
 	
 	@ManagedProperty(value = "#{datosPatronalesBean}")
 	private DatosPatronalesBean datosPatronalesBean;
-	
-	@ManagedProperty(value = "#{dictamenPage}")
-	private DictamenPage dictamenPage;
 
 	@ManagedProperty(value = "#{cargaArchivosBean}")
 	private CargaArchivosBean cargaArchivosBean;
-	
-	
+
 	
 	public String init(){
-		datosPatronalesBean.init(778L);
-		cargaArchivosBean.init("2015","MASC870401GQ8","EEAC900408B17");
-		return null;
-	}
+		
+		
+		dictamenPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
+		dictamenPage.getContadorPublicoAutDTO().setCveIdCpa(778L);
+		dictamenPage.getContadorPublicoAutDTO().setRfc("GATS4812123D7");
 
+		datosPatronalesBean.init();		
+		cargaArchivosBean.init();
+		
+		dictamenPage.setBanderaOcultaTabs(true);
+		return "";
+	}
 
 
 	/**
@@ -55,15 +61,40 @@ public class DictamenBean extends BaseBean {
 
 
 	/**
+	 * @return the cargaArchivosBean
+	 */
+	public CargaArchivosBean getCargaArchivosBean() {
+		return cargaArchivosBean;
+	}
+
+
+
+	/**
 	 * @param cargaArchivosBean the cargaArchivosBean to set
 	 */
 	public void setCargaArchivosBean(CargaArchivosBean cargaArchivosBean) {
 		this.cargaArchivosBean = cargaArchivosBean;
 	}
-	
 
-	
-	
+
+
+	/**
+	 * @return the dictamenPage
+	 */
+	public DictamenPage getDictamenPage() {
+		return dictamenPage;
+	}
+
+
+
+	/**
+	 * @return the datosPatronalesBean
+	 */
+	public DatosPatronalesBean getDatosPatronalesBean() {
+		return datosPatronalesBean;
+	}
+
+
 	
 	
 }
