@@ -20,6 +20,7 @@ public class PatronDictamenDTO extends BaseDTO  {
 	
 	private String razonSocialNombre;
 	private Long 	ejercicioDictaminar;
+	private String 	ejercicioDictaminarDesc;
 	private Integer numRegistroPatronales;
 
 	/**
@@ -141,6 +142,18 @@ public class PatronDictamenDTO extends BaseDTO  {
 	 */
 	public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
 		this.cveIdPatronDictamen = cveIdPatronDictamen;
+	}
+	/**
+	 * @return the ejercicioDictaminarDesc
+	 */
+	public String getEjercicioDictaminarDesc() {
+		return ejercicioDictaminarDesc;
+	}
+	/**
+	 * @param ejercicioDictaminarDesc the ejercicioDictaminarDesc to set
+	 */
+	public void setEjercicioDictaminarDesc(String ejercicioDictaminarDesc) {
+		this.ejercicioDictaminarDesc = ejercicioDictaminarDesc;
 	}
 
 	

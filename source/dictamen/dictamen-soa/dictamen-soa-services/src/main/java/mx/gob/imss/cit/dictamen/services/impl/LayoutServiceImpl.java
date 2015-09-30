@@ -15,12 +15,16 @@ import mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdcAseveracionesDAO;
 import mx.gob.imss.cit.dictamen.services.LayoutService;
 
+import org.apache.log4j.Logger;
+
 @Local
 @Stateless
 public class LayoutServiceImpl implements LayoutService {
 	
+	private Logger LOG=Logger.getLogger(LayoutServiceImpl.class) ;
+	
 	@EJB
-	NdcAseveracionesDAO ndcAseveracionesDAO;
+	private NdcAseveracionesDAO ndcAseveracionesDAO;
 	
 	@Override
 	public List<ParentLayoutTO> createList(){
@@ -29,8 +33,10 @@ public class LayoutServiceImpl implements LayoutService {
 		LayoutTO layoutTO;
 		
 		List<NdcAseveracionesDO> ndcAsevercionesDO = new ArrayList<NdcAseveracionesDO>();
+		LOG.info("consultando aseveraciones");
 		ndcAsevercionesDO = ndcAseveracionesDAO.findAll();
 		
+		LOG.info("armando lista layout");
 		Map<NdcAseveracionesDO, ArrayList<NdcAseveracionesDO>> tree  = new HashMap<NdcAseveracionesDO,ArrayList<NdcAseveracionesDO>>();
 		Map<Long, NdcAseveracionesDO> roots  = new HashMap<Long,NdcAseveracionesDO>();
 		for(NdcAseveracionesDO n : ndcAsevercionesDO) {

@@ -22,6 +22,7 @@ public class ContadorPublicoAutDTO  extends BaseDTO {
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
     private String cveIdUsuario;
+    private String rfc;
    
 
     public ContadorPublicoAutDTO() {
@@ -103,5 +104,19 @@ public class ContadorPublicoAutDTO  extends BaseDTO {
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO[ cveIdCpa=" + cveIdCpa + " ]";
     }
+
+	/**
+	 * @return the rfc
+	 */
+	public String getRfc() {
+		return rfc;
+	}
+
+	/**
+	 * @param rfc the rfc to set
+	 */
+	public void setRfc(String rfc) {
+		this.rfc = rfc;
+	}
     
 }
