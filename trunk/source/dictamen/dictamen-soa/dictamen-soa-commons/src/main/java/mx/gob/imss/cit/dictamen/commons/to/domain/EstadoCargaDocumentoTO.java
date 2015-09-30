@@ -9,7 +9,7 @@ import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
  * @author cmarmolejo
  * 
  */
-public class StatusCargaAseveracionesTO extends BaseTO{
+public class EstadoCargaDocumentoTO extends BaseTO{
 	/**
 	 * 
 	 */

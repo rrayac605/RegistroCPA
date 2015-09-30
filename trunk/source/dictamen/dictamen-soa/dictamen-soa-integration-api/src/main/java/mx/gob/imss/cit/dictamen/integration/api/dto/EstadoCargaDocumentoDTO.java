@@ -6,7 +6,7 @@ package mx.gob.imss.cit.dictamen.integration.api.dto;
  * @author cmarmolejo
  * 
  */
-public class StatusCargaAseveracionesDTO {
+public class EstadoCargaDocumentoDTO {
 	private int cveIdStatusCarga;
 
 	public int getCveIdStatusCarga() {

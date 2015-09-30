@@ -10,7 +10,7 @@ import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
  * @author cmarmolejo
  * 
  */
-public class CargaAseveracionesTO extends BaseTO{
+public class CargaDocumentoTO extends BaseTO{
     /**
 	 * 
 	 */
@@ -20,7 +20,7 @@ public class CargaAseveracionesTO extends BaseTO{
     private AseveracionesTO cveIdAseveracion;
     private TipoDocumentoTO cveIdTipoDocumento;
     private Date fecFechaCarga;
-    private StatusCargaAseveracionesTO cveIdStatusCarga;
+    private EstadoCargaDocumentoTO cveIdStatusCarga;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
@@ -50,10 +50,10 @@ public class CargaAseveracionesTO extends BaseTO{
 	public void setFecFechaCarga(Date fecFechaCarga) {
 		this.fecFechaCarga = fecFechaCarga;
 	}
-	public StatusCargaAseveracionesTO getCveIdStatusCarga() {
+	public EstadoCargaDocumentoTO getCveIdStatusCarga() {
 		return cveIdStatusCarga;
 	}
-	public void setCveIdStatusCarga(StatusCargaAseveracionesTO cveIdStatusCarga) {
+	public void setCveIdStatusCarga(EstadoCargaDocumentoTO cveIdStatusCarga) {
 		this.cveIdStatusCarga = cveIdStatusCarga;
 	}
 	public Date getFecRegistroAlta() {
