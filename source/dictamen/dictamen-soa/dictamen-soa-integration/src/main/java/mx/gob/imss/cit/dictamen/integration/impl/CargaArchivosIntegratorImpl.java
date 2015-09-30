@@ -15,12 +15,12 @@ import mx.gob.imss.cit.dictamen.commons.enums.TipoDocumentoEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AseveracionesTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.CargaAseveracionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.StatusCargaAseveracionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO;
 import mx.gob.imss.cit.dictamen.integration.api.CargaArchivosIntegrator;
-import mx.gob.imss.cit.dictamen.integration.api.dto.CargaAseveracionesDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.CargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUtils;
@@ -58,9 +58,9 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 
 
 	@Override
-	public boolean registrarCargaAseveracion(CargaAseveracionesDTO cargaAseveracionesDTO)
+	public boolean registrarCargaAseveracion(CargaDocumentoDTO cargaAseveracionesDTO)
 			throws DictamenNegocioException {
-		StatusCargaAseveracionesTO estatus = new StatusCargaAseveracionesTO();
+		EstadoCargaDocumentoTO estatus = new EstadoCargaDocumentoTO();
 		AseveracionesTO aseveracionTO = new AseveracionesTO();
 		TipoDocumentoTO cveIdTipoDocumento = new TipoDocumentoTO();
 		PatronDictamenTO patronDictamenTO = new PatronDictamenTO();		
@@ -70,7 +70,7 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 		cveIdTipoDocumento.setCveIdTipoDocumento(TipoDocumentoEnum.TIPO_DOCUMENTO_ASEVERACIONES);	
 		patronDictamenTO.setCveIdPatronDictamen(cargaAseveracionesDTO.getCveIdPatronDictamen());
 		
-		CargaAseveracionesTO cargaAseveracionesTO = new CargaAseveracionesTO(); 
+		CargaDocumentoTO cargaAseveracionesTO = new CargaDocumentoTO(); 
 		cargaAseveracionesTO.setCveIdStatusCarga(estatus);
 		cargaAseveracionesTO.setCveIdUsuario(cargaAseveracionesDTO.getCveIdUsuario());
 		cargaAseveracionesTO.setFecFechaCarga(new Date());

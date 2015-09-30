@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import mx.gob.imss.cit.dictamen.integration.api.CargaArchivosIntegrator;
-import mx.gob.imss.cit.dictamen.integration.api.dto.CargaAseveracionesDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.CargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
@@ -54,7 +54,7 @@ public class CargaArchivosBean extends BaseBean {
 		PatronDictamenDTO patronDictamenDTO = new PatronDictamenDTO();
 		patronDictamenDTO.setCveIdPatronDictamen(63l);
 		
-		CargaAseveracionesDTO cargaAseveracionesDTO = new CargaAseveracionesDTO();		
+		CargaDocumentoDTO cargaAseveracionesDTO = new CargaDocumentoDTO();		
 		cargaAseveracionesDTO.setCveIdAseveracion(layoutDTO.getIdLayout().intValue());
 		cargaAseveracionesDTO.setCveIdPatronDictamen(63l);
 		cargaAseveracionesDTO.setCveIdUsuario("289435511");

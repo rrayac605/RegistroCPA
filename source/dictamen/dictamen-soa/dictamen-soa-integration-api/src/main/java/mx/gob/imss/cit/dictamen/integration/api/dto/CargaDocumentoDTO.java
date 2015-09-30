@@ -10,7 +10,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
  * @author cmarmolejo
  * 
  */
-public class CargaAseveracionesDTO extends BaseDTO{
+public class CargaDocumentoDTO extends BaseDTO{
 	/**
 	 * 
 	 */
@@ -19,7 +19,7 @@ public class CargaAseveracionesDTO extends BaseDTO{
     private Long cveIdPatronDictamen;   
     private Integer cveIdAseveracion;
     private Date fecFechaCarga;
-    private StatusCargaAseveracionesDTO cveIdStatusCarga;
+    private EstadoCargaDocumentoDTO cveIdStatusCarga;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
@@ -49,10 +49,10 @@ public class CargaAseveracionesDTO extends BaseDTO{
 	public void setFecFechaCarga(Date fecFechaCarga) {
 		this.fecFechaCarga = fecFechaCarga;
 	}
-	public StatusCargaAseveracionesDTO getCveIdStatusCarga() {
+	public EstadoCargaDocumentoDTO getCveIdStatusCarga() {
 		return cveIdStatusCarga;
 	}
-	public void setCveIdStatusCarga(StatusCargaAseveracionesDTO cveIdStatusCarga) {
+	public void setCveIdStatusCarga(EstadoCargaDocumentoDTO cveIdStatusCarga) {
 		this.cveIdStatusCarga = cveIdStatusCarga;
 	}
 	public Date getFecRegistroAlta() {

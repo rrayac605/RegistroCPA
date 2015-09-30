@@ -17,7 +17,7 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.CargaAseveracionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO;
@@ -152,7 +152,7 @@ public class TransformerServiceUtils {
 	
 	
 	
-	public static NdtCargaDocumentoDO transformer( CargaAseveracionesTO cargaAseveracionTO ) {
+	public static NdtCargaDocumentoDO transformer( CargaDocumentoTO cargaAseveracionTO ) {
 		NdtCargaDocumentoDO cargaDocumentoDO = (NdtCargaDocumentoDO) TransformerHelper.get(mapClass,cargaAseveracionTO, NdtCargaDocumentoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;		
 
 		NdcEstadoCargaDocumentoDO estadoCargaDocumentoDO = new NdcEstadoCargaDocumentoDO();
