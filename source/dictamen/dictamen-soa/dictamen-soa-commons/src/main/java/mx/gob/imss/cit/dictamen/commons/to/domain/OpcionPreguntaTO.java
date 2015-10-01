@@ -1,8 +1,6 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
-import java.util.List;
-
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 

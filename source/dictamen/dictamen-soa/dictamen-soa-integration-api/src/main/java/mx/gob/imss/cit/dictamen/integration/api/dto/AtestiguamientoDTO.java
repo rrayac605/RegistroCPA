@@ -3,7 +3,6 @@ package mx.gob.imss.cit.dictamen.integration.api.dto;
 import java.util.Date;
 import java.util.List;
 
-
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
 public class AtestiguamientoDTO extends BaseDTO {
@@ -14,7 +13,7 @@ public class AtestiguamientoDTO extends BaseDTO {
     private Date fecRegistroAlta;
     private Date fecRegistroActualizado;
     private Date fecRegistroBaja;
-   // private List<RubroDTO> ndcRubroDOList;
+    private List<RubroDTO> ndcRubroDOList;
     
 	public Long getCveIdAtestiguamiento() {
 		return cveIdAtestiguamiento;
@@ -47,7 +46,7 @@ public class AtestiguamientoDTO extends BaseDTO {
 		this.fecRegistroBaja = fecRegistroBaja;
 	}
 	
-	/*public List<RubroDTO> getNdcRubroDOList() {
+	public List<RubroDTO> getNdcRubroDOList() {
 		return ndcRubroDOList;
 	}
 	public void setNdcRubroDOList(List<RubroDTO> ndcRubroDOList) {
@@ -105,7 +104,7 @@ public class AtestiguamientoDTO extends BaseDTO {
 		} else if (!ndcRubroDOList.equals(other.ndcRubroDOList))
 			return false;
 		return true;
-	}*/
+	}
 	
 	
 }

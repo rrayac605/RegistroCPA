@@ -27,10 +27,10 @@ public class ExamenDTO extends BaseDTO{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public List<RubroDTO> getrubros() {
+	public List<RubroDTO> getRubros() {
 		return rubros;
 	}
-	public void setrubros(List<RubroDTO> rubros) {
+	public void setRubros(List<RubroDTO> rubros) {
 		this.rubros = rubros;
 	}
 	@Override
