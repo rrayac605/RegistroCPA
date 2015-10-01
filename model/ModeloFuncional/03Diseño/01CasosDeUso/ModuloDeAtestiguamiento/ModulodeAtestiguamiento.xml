@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-09-03 07:18:47"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\ModuloDeAtestiguamiento\ModulodeAtestiguamiento.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-09-30 14:27:24"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-10-01 11:59:45"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-09-03 12:43:39"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F"/>
 								<UML:TaggedValue tag="date_created" value="2015-09-03 12:49:58"/>
-								<UML:TaggedValue tag="date_modified" value="2015-09-25 16:54:31"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-01 12:53:53"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Modulo de Atestiguamiento"/>
@@ -57,7 +57,7 @@
 								<UML:TaggedValue tag="object_style" value="MDoc=0;"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="18760"/>
+								<UML:TaggedValue tag="ea_localid" value="19244"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={2A0C8CB1-0306-4740-8B12-92DC2146919C}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={804ED735-8F28-4332-AC46-35D1CDCC9AEA}$CLT;$SUP={2FAC522E-31D2-46e4-B7E0-0C34C965A85B}$SUP;$ENDXREF;$XREFPROP=$XID={26CB26B4-64B9-4279-A58B-88FB12AEA3E0}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={804ED735-8F28-4332-AC46-35D1CDCC9AEA}$CLT;$SUP={617BA333-F57F-4437-91FB-E6DC3CC2693D}$SUP;$ENDXREF;"/>
@@ -65,7 +65,7 @@
 							<UML:ModelElement.constraint>
 								<UML:Constraint name="Autenticarse en el portal IMSS">
 									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="description" value="El usuario primero debe autenticarse, mediante su firma electrónica avanzada (FIEL), en el portal IMSS"/>
+										<UML:TaggedValue tag="description" value="El usuario debe autenticarse mediante su firma electrónica avanzada (FIEL), en el portal IMSS "/>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
 										<UML:TaggedValue tag="weight" value="0.00"/>
 										<UML:TaggedValue tag="status" value="Approved"/>
@@ -73,7 +73,7 @@
 								</UML:Constraint>
 								<UML:Constraint name="Carga concluida de información patronal (aseveraciones)">
 									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="description" value="El usuario debió realizar la carga de los anexos &quot;Layouts de aseveraciones&quot; en el Módulo de “Información patronal” en el portal de servicios digitales del Instituto Mexicano del Seguro Social (IMSS). "/>
+										<UML:TaggedValue tag="description" value="Las cargas de Aseveraciones (Layouts) deberán encontrarse en estado &quot;Correcto&quot;. "/>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
 										<UML:TaggedValue tag="weight" value="200.00"/>
 										<UML:TaggedValue tag="status" value="Approved"/>
@@ -81,7 +81,7 @@
 								</UML:Constraint>
 								<UML:Constraint name="Información Patronal Registrada">
 									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="description" value="Los datos del patrón deben estar registrados en el modulo de &quot;Información Patronal&quot;"/>
+										<UML:TaggedValue tag="description" value="Los datos del patrón  a dictaminar deben estar registrados en el módulo de &quot;Información Patronal&quot;"/>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
 										<UML:TaggedValue tag="weight" value="100.00"/>
 										<UML:TaggedValue tag="status" value="Approved"/>
@@ -100,13 +100,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11694"/>
+								<UML:TaggedValue tag="ea_localid" value="12055"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N009 Exámenes para patrón con Obras"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18927"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19419"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -137,13 +137,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11720"/>
+								<UML:TaggedValue tag="ea_localid" value="12081"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C018 - Mensajes de notificación al usuario"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18956"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19448"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -174,13 +174,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11738"/>
+								<UML:TaggedValue tag="ea_localid" value="12099"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18942"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19434"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -211,13 +211,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11688"/>
+								<UML:TaggedValue tag="ea_localid" value="12049"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N004 - Opción de respuesta de examen"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18934"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19426"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -248,13 +248,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11674"/>
+								<UML:TaggedValue tag="ea_localid" value="12035"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A003 - Lineamientos para opción de respuesta &quot;No aplica&quot; en Rubros"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18908"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19400"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -285,13 +285,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11682"/>
+								<UML:TaggedValue tag="ea_localid" value="12043"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A005  Capturar Omisiones Encontradas"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18899"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19391"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -322,13 +322,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11692"/>
+								<UML:TaggedValue tag="ea_localid" value="12053"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N007 - Validar Rubros y preguntas del examen"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18929"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19421"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -359,13 +359,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11697"/>
+								<UML:TaggedValue tag="ea_localid" value="12058"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N005- Cantidad límite de respuesta de examen"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18924"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19416"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -396,13 +396,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11735"/>
+								<UML:TaggedValue tag="ea_localid" value="12096"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C015 -  Contenido de Exámenes con dependencia de Layout "/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18944"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19436"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -433,13 +433,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11745"/>
+								<UML:TaggedValue tag="ea_localid" value="12106"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
 								<UML:TaggedValue tag="ea_targetName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18974"/>
-								<UML:TaggedValue tag="ea_targetID" value="18760"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19466"/>
+								<UML:TaggedValue tag="ea_targetID" value="19244"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 							<UML:Association.connection>
@@ -470,13 +470,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11690"/>
+								<UML:TaggedValue tag="ea_localid" value="12051"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N008 Exámenes relacionados a Cedulas"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18932"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19424"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -507,13 +507,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11693"/>
+								<UML:TaggedValue tag="ea_localid" value="12054"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N006 -  Examen sin dependencia de Layout"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18928"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19420"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -544,13 +544,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11714"/>
+								<UML:TaggedValue tag="ea_localid" value="12075"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C031 - Edición de atestiguamientos"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18958"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19450"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -581,13 +581,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11708"/>
+								<UML:TaggedValue tag="ea_localid" value="12069"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C007 -  Caracteristicas del campo &quot;Observaciones&quot; &quot;Emisiones Encontradas&quot; de los modulos  Opinión y Atestiguamiento"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18964"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19456"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -618,13 +618,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11684"/>
+								<UML:TaggedValue tag="ea_localid" value="12045"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N010 Exámenes para patrón sin Obras"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18939"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19431"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -655,13 +655,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="11729"/>
+								<UML:TaggedValue tag="ea_localid" value="12090"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU05 - Contestar examen de atestiguamiento"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C012 - Lineamientos para respuesta &quot;No&quot;"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="18760"/>
-								<UML:TaggedValue tag="ea_targetID" value="18950"/>
+								<UML:TaggedValue tag="ea_sourceID" value="19244"/>
+								<UML:TaggedValue tag="ea_targetID" value="19442"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -681,7 +681,7 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Collaboration xmi.id="EAID_F3A9BB06_27D8_4d89_A360_3CBDA8CCE6D7_Collaboration" name="Collaborations">
+						<UML:Collaboration xmi.id="EAID_CD641C07_1E50_4ab7_B8AB_BF1CED283397_Collaboration" name="Collaborations">
 							<UML:Namespace.ownedElement/>
 							<UML:Collaboration.interaction>
 								<UML:Interaction>
@@ -846,14 +846,14 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="bhernandezj"/>
 				<UML:TaggedValue tag="created_date" value="2015-09-03 12:48:35"/>
-				<UML:TaggedValue tag="modified_date" value="2015-09-30 14:34:03"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-01 12:42:58"/>
 				<UML:TaggedValue tag="package" value="EAPK_9910BEAB_9FE8_468a_8AE7_6784F937368F"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="1404"/>
+				<UML:TaggedValue tag="ea_localid" value="1439"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=803;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=A69AE1CC;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=9245CFDE;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=459;Top=12;Right=619;Bottom=45;" subject="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" seqno="1" style="DUID=EF9EC883;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
@@ -871,24 +871,24 @@
 				<UML:DiagramElement geometry="Left=663;Top=473;Right=823;Bottom=506;" subject="EAID_3A71D105_CDBD_4115_9E56_78C7E497F44A" seqno="13" style="DUID=94D77A55;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="Left=66;Top=265;Right=111;Bottom=355;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="14" style="DUID=59AF3CEB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="Left=659;Top=521;Right=819;Bottom=554;" subject="EAID_FCD39D40_85D1_4479_B225_7139045F06E7" seqno="15" style="DUID=BC2DA9C3;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=670;Top=167;Right=830;Bottom=200;" subject="EAID_834CD50D_A085_457c_9922_F40B2E5BABDB" seqno="16" style="DUID=6948F2D8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=173;Top=258;Right=317;Bottom=354;" subject="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" seqno="17" style="DUID=AA941728;"/>
-				<UML:DiagramElement geometry="SX=28;SY=-39;EX=-76;EY=12;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-541$634:-541$634:-312$;" subject="EAID_536183DC_7F32_422f_A546_3220C3CBDC10" style="Mode=3;EOID=C3BB03DE;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-51;SY=48;EX=-31;EY=2;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=298:-236$;" subject="EAID_4EEA4FE2_0BFD_47fe_BC53_60F5F1F3B09C" style="Mode=3;EOID=5E8CA209;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-44;SY=-41;EX=-50;EY=-10;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-541$;" subject="EAID_B1E86EEA_8CD0_476e_8EA6_D8D3D40B903E" style="Mode=3;EOID=BC2DA9C3;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=23;SY=-48;EX=-79;EY=16;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-539$633:-539$633:-242$;" subject="EAID_3169916D_DB58_4f6c_9EBF_F51080718889" style="Mode=3;EOID=56E1C752;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=16;SY=-3;EX=-80;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=298:-64$;" subject="EAID_6A999814_C5F5_4fcf_8226_DD096252E4CE" style="Mode=3;EOID=8CB63E3A;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=24;SY=-48;EX=-78;EY=16;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-541$635:-541$635:-445$;" subject="EAID_51D7783C_E5FE_402b_BDE2_499EE352A601" style="Mode=3;EOID=6F327431;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="Left=174;Top=259;Right=318;Bottom=355;" subject="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" seqno="16" style="DUID=AA941728;"/>
+				<UML:DiagramElement geometry="Left=670;Top=167;Right=830;Bottom=200;" subject="EAID_834CD50D_A085_457c_9922_F40B2E5BABDB" seqno="17" style="DUID=6948F2D8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="SX=-11;SY=-46;EX=-80;EY=16;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=286:-535$635:-535$635:-242$;" subject="EAID_3169916D_DB58_4f6c_9EBF_F51080718889" style="Mode=3;EOID=56E1C752;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=24;SY=-48;EX=-80;EY=5;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=287:-534$635:-534$635:-427$;" subject="EAID_51D7783C_E5FE_402b_BDE2_499EE352A601" style="Mode=3;EOID=6F327431;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-11;SY=41;EX=-9;EY=9;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=287:-539$635:-539$635:-377$;" subject="EAID_70BE86FB_FF7B_4a65_9D68_8058A0AABAF7" style="Mode=3;EOID=EFD4D1BB;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-4;SY=-12;EX=-46;EY=-10;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=286:-539$635:-539$635:-487$;" subject="EAID_24241507_585E_4b47_A549_46ADD9F06E12" style="Mode=3;EOID=94D77A55;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=21;SY=-40;EX=-76;EY=11;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=290:-538$635:-538$635:-314$;" subject="EAID_536183DC_7F32_422f_A546_3220C3CBDC10" style="Mode=3;EOID=C3BB03DE;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=32;SY=6;EX=-76;EY=29;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=298:-137$;" subject="EAID_4C935CEF_3DB8_4d69_90B9_63477DE971A4" style="Mode=3;EOID=1AED103D;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-4;SY=-12;EX=-34;EY=2;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-539$635:-539$635:-487$;" subject="EAID_24241507_585E_4b47_A549_46ADD9F06E12" style="Mode=3;EOID=94D77A55;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=16;SY=-3;EX=-80;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=298:-64$;" subject="EAID_6A999814_C5F5_4fcf_8226_DD096252E4CE" style="Mode=3;EOID=8CB63E3A;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-72;SY=-48;EX=-48;EY=-16;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=286:-539$;" subject="EAID_B1E86EEA_8CD0_476e_8EA6_D8D3D40B903E" style="Mode=3;EOID=BC2DA9C3;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_5F4C56B9_AED3_4fc7_806D_A9B63F9D15B6" style="Mode=3;EOID=AA941728;SOID=59AF3CEB;Color=-1;LWidth=0;TREE=LH;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=9;SY=-2;EX=8;EY=41;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-381$;" subject="EAID_934BE0BE_3245_4f98_B429_BF4D6C07DDB1" style="Mode=3;EOID=23555DEB;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=67;SY=47;EX=-79;EY=4;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-539$633:-539$633:-183$;" subject="EAID_8F22B80A_5712_45ef_8A06_0F3F63A91EDE" style="Mode=3;EOID=6948F2D8;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=9;SY=-2;EX=-1;EY=8;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=290:-414$;" subject="EAID_934BE0BE_3245_4f98_B429_BF4D6C07DDB1" style="Mode=3;EOID=23555DEB;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=67;SY=47;EX=-80;EY=-16;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=287:-539$635:-539$635:-183$;" subject="EAID_8F22B80A_5712_45ef_8A06_0F3F63A91EDE" style="Mode=3;EOID=6948F2D8;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="EDGE=1;SX=37;SY=39;EX=-44;EY=15;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=298:-28$;" subject="EAID_2C893742_1BA6_447e_8CAB_6C7811A5DB0B" style="Mode=3;EOID=EF9EC883;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=58;SY=-31;EX=-77;EY=-1;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-542$633:-542$633:-24$;" subject="EAID_F39CA063_BDCA_4acd_8BEC_F62A996B6360" style="Mode=3;EOID=3497A288;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-30;SY=12;EX=-20;EY=29;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-541$633:-541$633:-87$;" subject="EAID_5F0B8B22_06C0_4364_9FF5_E1D5A41586D9" style="Mode=3;EOID=BC427A60;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=43;SY=-43;EX=-78;EY=-1;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=290:-534$635:-534$635:-24$;" subject="EAID_F39CA063_BDCA_4acd_8BEC_F62A996B6360" style="Mode=3;EOID=3497A288;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-49;SY=-36;EX=-21;EY=18;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=286:-539$635:-539$635:-90$;" subject="EAID_5F0B8B22_06C0_4364_9FF5_E1D5A41586D9" style="Mode=3;EOID=BC427A60;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_2D6083F5_0F52_4800_8C15_61958F546D33" style="Mode=3;EOID=8194BD3A;SOID=AA941728;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-11;SY=41;EX=-21;EY=-2;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-541$633:-541$633:-364$;" subject="EAID_70BE86FB_FF7B_4a65_9D68_8058A0AABAF7" style="Mode=3;EOID=EFD4D1BB;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-51;SY=48;EX=-31;EY=2;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=298:-236$;" subject="EAID_4EEA4FE2_0BFD_47fe_BC53_60F5F1F3B09C" style="Mode=3;EOID=5E8CA209;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="Left=450;Top=127;Right=610;Bottom=186;" subject="EAID_C06A094D_2DD1_4ba7_97D9_6756247E3611" seqno="1" style="DUID=7A8D0B6E;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="SX=55;SY=48;EX=-74;EY=2;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=298:-150$;" subject="EAID_8C0D1630_506B_4305_8DAD_97912945C5AC" style="Mode=3;EOID=7A8D0B6E;SOID=AA941728;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="Left=725;Top=311;Right=885;Bottom=344;" subject="EAID_E22E695B_8456_4775_9A61_383D0497E568" seqno="7" style="DUID=3316FA97;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
@@ -905,7 +905,7 @@
 			<EAScenario name="CU3 Contestar examen de atestiguamiento" type="Basic Path" weight="0.00" description="El presente caso de uso describe la funcionalidad para que el Contador Público Autorizado, realice el trabajo de atestiguamiento, con base en la información entregada por el patrón, a fin de verificar el correcto cumplimiento de las obligaciones en materia de seguridad social, particularmente sobre las “Remuneraciones pagadas en efectivo vía nómina a los trabajadores”." subject="EAID_804ED735_8F28_4332_AC46_35D1CDCC9AEA" xmi.id="EAID_91ADD9C4_3646_4617_B8A3_2C4497BE7F8E">
 				<EAScenarioContent>
 					<path>
-						<step name="FB1. El caso de uso inicia cuando el actor (CPA) ingresa al módulo de formulación y  presentación del dictamen y selecciona Atestiguamiento La relación Tabla campo para elaborar este módulo será de acuerdo a " guid="{D088E6BD-3140-411f-9CC1-6AB9D98322E7}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB1. El caso de uso inicia cuando el actor (CPA) ingresa al módulo de formulación y presentación del dictamen y selecciona Atestiguamiento. La relación Tabla campo para elaborar este módulo será de acuerdo a " guid="{D088E6BD-3140-411f-9CC1-6AB9D98322E7}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="FB2. El sistema mostrará la sección de datos del patrón a Dictaminar de acuerdo a &#xA;RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{AB11D057-F94D-482f-A860-F2ECCFCB5302}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB3. El sistema valida que la carga o cargas realizadas de layouts  se encuentren en estado &quot;Correcto&quot;, y mostrará la sección de Atestiguamiento con el listado de los exámenes de acuerdo a RF-N009 Exámenes para patrón con Obras RF-N010 Exámenes para patrón sin Obras RF-N006 -  Examen sin dependencia de Layout" guid="{57F6E8ED-5E39-4132-990F-0E54B8315072}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB4. El actor (CPA) selecciona el examen a responder , Sí el usario selecciona el icono de editar continua en el FA6 Editar respuestas de examen" guid="{69B84023-3F90-4550-8E18-72AA854CFA20}" level="4" uses="" useslist="" result="" state="" trigger="1" link="">
@@ -920,7 +920,7 @@
 						<step name="FB8. El actor (CPA)  termina de responder las preguntas mostradas y selecciona &quot;Finalizar&quot;, si el examen contiene más preguntas mostradas en otra ventana continúa en el FA3 Preguntas continuan en otra ventana" guid="{FA9E2B9C-499D-42c2-9592-355CD8FEA997}" level="8" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="8a" guid="{8C3759B9-22A4-4e6f-B9BD-C18D6D4766D0}" join="{A7B910FD-B351-4b13-BF7D-21AC31827B48}"/>
 						</step>
-						<step name="FB9. El sistema valida que no tenga Rubros o preguntas  sin responder RF-N007 - Validar Rubros y preguntas del examen  si existen Rubros o preguntas sin respuesta continúa en el FA4 Preguntas sin responder, de lo contrario permite finalizar  al actor (CPA)  el examen." guid="{9206637F-54BF-4be2-B8C4-DBA97C8014E4}" level="9" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name="FB9. El sistema valida que no tenga Rubros o preguntas  sin responder RF-N007 - Validar Rubros y preguntas del examen  si existen Rubros o preguntas sin respuesta continua en el FA4 Preguntas sin responder, de lo contrario permite finalizar  al actor (CPA)  el examen." guid="{9206637F-54BF-4be2-B8C4-DBA97C8014E4}" level="9" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="9a" guid="{5FD95522-9846-45f2-A87F-0754487587DF}" join="{18E35879-C874-4eac-9D85-8AC00E24B906}"/>
 						</step>
 						<step name="FB10. El sistema guarda en la BD la respuestas de examen y las omisiones capturadas y regresa a la pantalla de atestiguamiento, si el examen tiene relación con cedula continúa en el FA5 Examen relacionado a cedula, En caso de que se presente algún error mientras las respuestas del examen y las omisiones  están siendo almacenadas en la BD, el sistema llamara al EX1 Error en almacenamiento de datos " guid="{3E890784-D49A-46c7-9C77-4355019BAB8C}" level="10" uses="" useslist="" result="" state="" trigger="0" link="">
@@ -929,22 +929,22 @@
 						</step>
 						<step name="FB11. Fin del caso de uso" guid="{F358948C-3FAE-4c06-8396-798FD010783E}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
-							<item oldname="RF-N005- Cantidad límite de respuesta de examen" guid="{0F1DD5A1-5567-45ab-BD1D-3371A1EC7A25}"/>
-							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
-							<item oldname="RF-A005  Capturar Omisiones Encontradas" guid="{1BF95B34-36A8-4bb8-9F4A-0E2AC6C4D1CF}"/>
-							<item oldname="RF-A003 - Lineamientos para opción de respuesta &quot;No aplica&quot; en Rubros" guid="{8F68F6AC-5300-4b69-A32C-73054370AB10}"/>
-							<item oldname="RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
-							<item oldname="RF-C015 -  Contenido de Exámenes con dependencia de Layout " guid="{19AF5D23-7262-4c31-8C4D-CF772011459F}"/>
-							<item oldname="RF-C012 - Lineamientos para respuesta &quot;No&quot;" guid="{35A22AA1-D603-429b-93F2-0325D755A7D5}"/>
-							<item oldname="RF-C018 - Mensajes de notificación al usuario" guid="{617BA333-F57F-4437-91FB-E6DC3CC2693D}"/>
-							<item oldname="RF-C031 - Edición de atestiguamientos" guid="{834CD50D-A085-457c-9922-F40B2E5BABDB}"/>
 							<item oldname="RF-C007 -  Caracteristicas del campo &quot;Observaciones&quot; &quot;Emisiones Encontradas&quot; de los modulos  Opinión y Atestiguamiento" guid="{B704D115-8CF2-4d75-8A94-8F6761649A29}"/>
+							<item oldname="RF-A005  Capturar Omisiones Encontradas" guid="{1BF95B34-36A8-4bb8-9F4A-0E2AC6C4D1CF}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF-A003 - Lineamientos para opción de respuesta &quot;No aplica&quot; en Rubros" guid="{8F68F6AC-5300-4b69-A32C-73054370AB10}"/>
+							<item oldname="RF-N005- Cantidad límite de respuesta de examen" guid="{0F1DD5A1-5567-45ab-BD1D-3371A1EC7A25}"/>
 							<item oldname="RF-N009 Exámenes para patrón con Obras" guid="{3A71D105-CDBD-4115-9E56-78C7E497F44A}"/>
 							<item oldname="RF-N006 -  Examen sin dependencia de Layout" guid="{7CAEFD21-3272-4752-BBFA-6DF2DA909B3C}"/>
 							<item oldname="RF-N007 - Validar Rubros y preguntas del examen" guid="{87E690AF-1342-4125-834D-2A8DC67788A9}"/>
 							<item oldname="RF-N008 Exámenes relacionados a Cedulas" guid="{C58AAFC7-5D26-4f8c-B7D4-AD24C67289E1}"/>
 							<item oldname="RF-N004 - Opción de respuesta de examen" guid="{D38931F8-5199-4dd0-8FE1-CC97991980FF}"/>
 							<item oldname="RF-N010 Exámenes para patrón sin Obras" guid="{FCD39D40-85D1-4479-B225-7139045F06E7}"/>
+							<item oldname="RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RF-C015 -  Contenido de Exámenes con dependencia de Layout " guid="{19AF5D23-7262-4c31-8C4D-CF772011459F}"/>
+							<item oldname="RF-C012 - Lineamientos para respuesta &quot;No&quot;" guid="{35A22AA1-D603-429b-93F2-0325D755A7D5}"/>
+							<item oldname="RF-C018 - Mensajes de notificación al usuario" guid="{617BA333-F57F-4437-91FB-E6DC3CC2693D}"/>
+							<item oldname="RF-C031 - Edición de atestiguamientos" guid="{834CD50D-A085-457c-9922-F40B2E5BABDB}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
