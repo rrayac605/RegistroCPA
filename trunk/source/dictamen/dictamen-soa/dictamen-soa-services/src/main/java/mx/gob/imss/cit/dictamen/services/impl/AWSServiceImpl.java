@@ -12,6 +12,9 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.ejb.Stateless;
 
+import org.apache.commons.codec.binary.Base64;
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.commons.constants.DictamenConstants;
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
@@ -20,9 +23,6 @@ import mx.gob.imss.cit.dictamen.commons.util.FechasUtils;
 import mx.gob.imss.cit.dictamen.services.AWSService;
 import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
-
-import org.apache.commons.codec.binary.Base64;
-import org.apache.log4j.Logger;
 
 /**
  * @author ajfuentes
@@ -70,7 +70,8 @@ public class AWSServiceImpl implements AWSService {
 											"\n" +
 											"    {\"x-amz-credential\": \"#X_AMZ_CREDENTIAL#\"},\n" +
 											"    {\"x-amz-algorithm\": \"#X_AMZ_ALGORITHM#\"},\n" +
-											"    {\"x-amz-date\": \"#X_AMZ_DATE#\" }\n" +
+											"    {\"x-amz-date\": \"#X_AMZ_DATE#\" },\n" +
+											"    [\"starts-with\", \"$javax.faces.ViewState\", \"\"]\n" +
 											"  ]\n" +
 											"}";	
 
