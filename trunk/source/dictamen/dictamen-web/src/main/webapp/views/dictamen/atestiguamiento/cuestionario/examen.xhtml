@@ -12,18 +12,18 @@
 
 	<ui:define name="bodyContainer">
 
-				#{examenPage.examen.nombre}<br />
+				#{examenPage.examen.desAtestiguamiento}<br />
 		<br />
-		<ui:repeat var="s" value="#{examenPage.examen.secciones}"
+		<ui:repeat var="s" value="#{examenPage.examen.ndcRubroDOList}"
 			varStatus="status">
-					#{s.seccion}<br />
+					#{s.desRubro}<br />
 			<br />
-			<ui:repeat var="p" value="#{s.preguntas}" varStatus="status">
-						#{p.pregunta}<br />
+			<ui:repeat var="p" value="#{s.ndcPreguntaDOList}" varStatus="status">
+						#{p.desPregunta}<br />
 				<br />
 				<p:selectOneRadio id="edo" value="#{examenPage.estado}">
-					<f:selectItems var="r" value="#{p.respuestas}"
-						itemLabel="#{r.respuesta}" itemValue="#{r.clave}" />
+					<f:selectItems var="r" value="#{p.ndcOpcionPreguntaDOList}"
+						itemLabel="#{r.desOpcionPregunta}" itemValue="#{r.cveIdOpcionPregunta}" />
 				</p:selectOneRadio>
 				<br />
 				<br />

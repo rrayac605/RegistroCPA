@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
@@ -18,6 +19,8 @@ public class AtestiguamientoTO extends BaseTO{
     private Date fecRegistroActualizado;
     private Date fecRegistroBaja;
     private AseveracionesTO cveIdAseveracion;
+   // private List<RubroTO> ndcRubroDOList;
+    
 	public Long getCveIdAtestiguamiento() {
 		return cveIdAtestiguamiento;
 	}
@@ -54,5 +57,10 @@ public class AtestiguamientoTO extends BaseTO{
 	public void setCveIdAseveracion(AseveracionesTO cveIdAseveracion) {
 		this.cveIdAseveracion = cveIdAseveracion;
 	}
-    
+/*	public List<RubroTO> getNdcRubroDOList() {
+		return ndcRubroDOList;
+	}
+	public void setNdcRubroDOList(List<RubroTO> ndcRubroDOList) {
+		this.ndcRubroDOList = ndcRubroDOList;
+	}*/
 }

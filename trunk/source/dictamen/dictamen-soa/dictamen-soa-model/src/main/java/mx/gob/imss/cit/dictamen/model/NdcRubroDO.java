@@ -63,7 +63,7 @@ public class NdcRubroDO implements Serializable {
     private Date fecBajaRegistro;
     @Column(name = "IND_ORDEN")
     private Integer indOrden;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdRubro", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdRubro", fetch = FetchType.EAGER)
     private List<NdcPreguntaDO> ndcPreguntaDOList;
     @OneToMany(mappedBy = "cveIdRubro", fetch = FetchType.LAZY)
     private List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList;

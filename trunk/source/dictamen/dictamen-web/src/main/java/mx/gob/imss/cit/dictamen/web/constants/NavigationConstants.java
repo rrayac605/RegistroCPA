@@ -11,8 +11,6 @@ public final class NavigationConstants {
      */
     private NavigationConstants() {
     }
-
-
     
     public static final String PAGE_ERROR= "error";
     
@@ -24,5 +22,4 @@ public final class NavigationConstants {
     
     public static final String PAGE_DICTAMINACION= "dictaminacion";
     
-
 }

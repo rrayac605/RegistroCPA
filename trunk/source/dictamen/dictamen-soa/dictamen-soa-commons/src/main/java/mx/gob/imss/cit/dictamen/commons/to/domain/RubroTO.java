@@ -1,10 +1,21 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class RubroTO extends BaseTO{
+
+	private static final long serialVersionUID = -5269246747882446456L;
+	private Long cveIdRubro;
+    private String desRubro;
+    private Date fecAltaRegistro;
+    private Date fecActualizadoRegistro;
+    private Date fecBajaRegistro;
+    private Integer indOrden;
+    private AtestiguamientoTO cveIdAtestiguamiento;
+    private List<PreguntaTO> ndcPreguntaDOList;
 
 	public Long getCveIdRubro() {
 		return cveIdRubro;
@@ -48,20 +59,12 @@ public class RubroTO extends BaseTO{
 	public void setCveIdAtestiguamiento(AtestiguamientoTO cveIdAtestiguamiento) {
 		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
 	}
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5269246747882446456L;
-	/**
-	 * 
-	 */
-	private Long cveIdRubro;
-    private String desRubro;
-    private Date fecAltaRegistro;
-    private Date fecActualizadoRegistro;
-    private Date fecBajaRegistro;
-    private Integer indOrden;
-    private AtestiguamientoTO cveIdAtestiguamiento;
-
-    
+	public List<PreguntaTO> getNdcPreguntaDOList() {
+		return ndcPreguntaDOList;
+	}
+	public void setNdcPreguntaDOList(List<PreguntaTO> ndcPreguntaDOList) {
+		this.ndcPreguntaDOList = ndcPreguntaDOList;
+	}
+	
+	
 }

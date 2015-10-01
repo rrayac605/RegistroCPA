@@ -12,7 +12,7 @@ public class ExamenDTO extends BaseDTO{
 	private static final long serialVersionUID = -3901424321125859112L;
 	private Long clave;
 	private String nombre;
-	private List<SeccionDTO> secciones;
+	private List<RubroDTO> rubros;
 	private String estado;
 	
 	public Long getClave() {
@@ -27,11 +27,11 @@ public class ExamenDTO extends BaseDTO{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public List<SeccionDTO> getSecciones() {
-		return secciones;
+	public List<RubroDTO> getrubros() {
+		return rubros;
 	}
-	public void setSecciones(List<SeccionDTO> secciones) {
-		this.secciones = secciones;
+	public void setrubros(List<RubroDTO> rubros) {
+		this.rubros = rubros;
 	}
 	@Override
 	public int hashCode() {
@@ -39,7 +39,7 @@ public class ExamenDTO extends BaseDTO{
 		int result = 1;
 		result = prime * result + ((clave == null) ? 0 : clave.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + ((secciones == null) ? 0 : secciones.hashCode());
+		result = prime * result + ((rubros == null) ? 0 : rubros.hashCode());
 		return result;
 	}
 	@Override
@@ -61,10 +61,10 @@ public class ExamenDTO extends BaseDTO{
 				return false;
 		} else if (!nombre.equals(other.nombre))
 			return false;
-		if (secciones == null) {
-			if (other.secciones != null)
+		if (rubros == null) {
+			if (other.rubros != null)
 				return false;
-		} else if (!secciones.equals(other.secciones))
+		} else if (!rubros.equals(other.rubros))
 			return false;
 		return true;
 	}

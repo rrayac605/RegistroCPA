@@ -1,5 +1,6 @@
 package mx.gob.imss.cit.dictamen.integration.api.dto;
 
+import java.util.Date;
 import java.util.List;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
@@ -10,59 +11,83 @@ public class PreguntaDTO extends BaseDTO{
 	 * 
 	 */
 	private static final long serialVersionUID = 2372740005419028723L;
-	private Integer clave;
-	private String pregunta;
-	private List<RespuestaDTO> respuestas;
-	private TipoPreguntaDTO tipo;
-	private Boolean habilitaPregunta;
-	private Boolean habilitaComentario;
-	public Integer getClave() {
-		return clave;
+	private Long cveIdPregunta;
+    private String desPregunta;
+    private Date fecRegistroAlta;
+    private Date fecRegistroActualizado;
+    private Date fecRegistroBaja;
+    private Integer indOrden;
+    private RubroDTO cveIdRubro;
+    private PreguntaDTO cveIdPreguntaPadre;
+    private List<OpcionPreguntaDTO> ndcOpcionPreguntaDOList;
+    
+	public Long getCveIdPregunta() {
+		return cveIdPregunta;
 	}
-	public void setClave(Integer clave) {
-		this.clave = clave;
+	public void setCveIdPregunta(Long cveIdPregunta) {
+		this.cveIdPregunta = cveIdPregunta;
 	}
-	public String getPregunta() {
-		return pregunta;
+	public String getDesPregunta() {
+		return desPregunta;
 	}
-	public void setPregunta(String pregunta) {
-		this.pregunta = pregunta;
+	public void setDesPregunta(String desPregunta) {
+		this.desPregunta = desPregunta;
 	}
-	public List<RespuestaDTO> getRespuestas() {
-		return respuestas;
+	public Date getFecRegistroAlta() {
+		return fecRegistroAlta;
 	}
-	public void setRespuestas(List<RespuestaDTO> respuestas) {
-		this.respuestas = respuestas;
+	public void setFecRegistroAlta(Date fecRegistroAlta) {
+		this.fecRegistroAlta = fecRegistroAlta;
 	}
-	public TipoPreguntaDTO getTipo() {
-		return tipo;
+	public Date getFecRegistroActualizado() {
+		return fecRegistroActualizado;
 	}
-	public void setTipo(TipoPreguntaDTO tipo) {
-		this.tipo = tipo;
+	public void setFecRegistroActualizado(Date fecRegistroActualizado) {
+		this.fecRegistroActualizado = fecRegistroActualizado;
 	}
-	public Boolean getHabilitaPregunta() {
-		return habilitaPregunta;
+	public Date getFecRegistroBaja() {
+		return fecRegistroBaja;
 	}
-	public void setHabilitaPregunta(Boolean habilitaPregunta) {
-		this.habilitaPregunta = habilitaPregunta;
+	public void setFecRegistroBaja(Date fecRegistroBaja) {
+		this.fecRegistroBaja = fecRegistroBaja;
 	}
-	public Boolean getHabilitaComentario() {
-		return habilitaComentario;
+	public Integer getIndOrden() {
+		return indOrden;
 	}
-	public void setHabilitaComentario(Boolean habilitaComentario) {
-		this.habilitaComentario = habilitaComentario;
+	public void setIndOrden(Integer indOrden) {
+		this.indOrden = indOrden;
 	}
-	
+	public RubroDTO getCveIdRubro() {
+		return cveIdRubro;
+	}
+	public void setCveIdRubro(RubroDTO cveIdRubro) {
+		this.cveIdRubro = cveIdRubro;
+	}
+	public PreguntaDTO getCveIdPreguntaPadre() {
+		return cveIdPreguntaPadre;
+	}
+	public void setCveIdPreguntaPadre(PreguntaDTO cveIdPreguntaPadre) {
+		this.cveIdPreguntaPadre = cveIdPreguntaPadre;
+	}
+	public List<OpcionPreguntaDTO> getNdcOpcionPreguntaDOList() {
+		return ndcOpcionPreguntaDOList;
+	}
+	public void setNdcOpcionPreguntaDOList(List<OpcionPreguntaDTO> ndcOpcionPreguntaDOList) {
+		this.ndcOpcionPreguntaDOList = ndcOpcionPreguntaDOList;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((clave == null) ? 0 : clave.hashCode());
-		result = prime * result + ((habilitaPregunta == null) ? 0 : habilitaPregunta.hashCode());
-		result = prime * result + ((habilitaComentario == null) ? 0 : habilitaComentario.hashCode());
-		result = prime * result + ((pregunta == null) ? 0 : pregunta.hashCode());
-		result = prime * result + ((respuestas == null) ? 0 : respuestas.hashCode());
-		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
+		result = prime * result + ((cveIdPregunta == null) ? 0 : cveIdPregunta.hashCode());
+		result = prime * result + ((cveIdPreguntaPadre == null) ? 0 : cveIdPreguntaPadre.hashCode());
+		result = prime * result + ((cveIdRubro == null) ? 0 : cveIdRubro.hashCode());
+		result = prime * result + ((desPregunta == null) ? 0 : desPregunta.hashCode());
+		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
+		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
+		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((indOrden == null) ? 0 : indOrden.hashCode());
+		result = prime * result + ((ndcOpcionPreguntaDOList == null) ? 0 : ndcOpcionPreguntaDOList.hashCode());
 		return result;
 	}
 	@Override
@@ -74,35 +99,50 @@ public class PreguntaDTO extends BaseDTO{
 		if (getClass() != obj.getClass())
 			return false;
 		PreguntaDTO other = (PreguntaDTO) obj;
-		if (clave == null) {
-			if (other.clave != null)
+		if (cveIdPregunta == null) {
+			if (other.cveIdPregunta != null)
 				return false;
-		} else if (!clave.equals(other.clave))
+		} else if (!cveIdPregunta.equals(other.cveIdPregunta))
 			return false;
-		if (habilitaPregunta == null) {
-			if (other.habilitaPregunta != null)
+		if (cveIdPreguntaPadre == null) {
+			if (other.cveIdPreguntaPadre != null)
 				return false;
-		} else if (!habilitaPregunta.equals(other.habilitaPregunta))
+		} else if (!cveIdPreguntaPadre.equals(other.cveIdPreguntaPadre))
 			return false;
-		if (habilitaComentario == null) {
-			if (other.habilitaComentario != null)
+		if (cveIdRubro == null) {
+			if (other.cveIdRubro != null)
 				return false;
-		} else if (!habilitaComentario.equals(other.habilitaComentario))
+		} else if (!cveIdRubro.equals(other.cveIdRubro))
 			return false;
-		if (pregunta == null) {
-			if (other.pregunta != null)
+		if (desPregunta == null) {
+			if (other.desPregunta != null)
 				return false;
-		} else if (!pregunta.equals(other.pregunta))
+		} else if (!desPregunta.equals(other.desPregunta))
 			return false;
-		if (respuestas == null) {
-			if (other.respuestas != null)
+		if (fecRegistroActualizado == null) {
+			if (other.fecRegistroActualizado != null)
 				return false;
-		} else if (!respuestas.equals(other.respuestas))
+		} else if (!fecRegistroActualizado.equals(other.fecRegistroActualizado))
 			return false;
-		if (tipo == null) {
-			if (other.tipo != null)
+		if (fecRegistroAlta == null) {
+			if (other.fecRegistroAlta != null)
 				return false;
-		} else if (!tipo.equals(other.tipo))
+		} else if (!fecRegistroAlta.equals(other.fecRegistroAlta))
+			return false;
+		if (fecRegistroBaja == null) {
+			if (other.fecRegistroBaja != null)
+				return false;
+		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
+			return false;
+		if (indOrden == null) {
+			if (other.indOrden != null)
+				return false;
+		} else if (!indOrden.equals(other.indOrden))
+			return false;
+		if (ndcOpcionPreguntaDOList == null) {
+			if (other.ndcOpcionPreguntaDOList != null)
+				return false;
+		} else if (!ndcOpcionPreguntaDOList.equals(other.ndcOpcionPreguntaDOList))
 			return false;
 		return true;
 	}

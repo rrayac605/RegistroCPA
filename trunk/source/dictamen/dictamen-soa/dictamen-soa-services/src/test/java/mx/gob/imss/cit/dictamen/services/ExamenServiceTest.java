@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.persistence.dao.base.AbstractDBTestUnit;
 import mx.gob.imss.cit.dictamen.services.impl.ExamenServiceImpl;
 
@@ -40,6 +41,19 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 			LOG.error(e.getMessage(),e);
 		}
 		Assert.assertNotNull(atestiguamientosTOList);
+	}
+	
+	@Test
+	public void getDetalleExamenByAtestiguamientoeTest(){
+		AtestiguamientoTO atestiguamientoTO = new AtestiguamientoTO();
+		try {
+			atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(1L);
+			LOG.info(""+atestiguamientoTO.getDesAtestiguamiento() );
+				
+		} catch (Exception e) {
+			LOG.error(e.getMessage(),e);
+		}
+		Assert.assertNotNull(atestiguamientoTO);
 	}
 
 

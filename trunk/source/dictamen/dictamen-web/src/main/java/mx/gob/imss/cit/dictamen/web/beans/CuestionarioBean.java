@@ -6,9 +6,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ExamenDTO;
-import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.constants.NavigationConstants;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
@@ -24,6 +25,7 @@ public class CuestionarioBean extends BaseBean {
 	 * 
 	 */
 	private static final long serialVersionUID = 4837421797087101L;
+	private static final Logger LOGGER = Logger.getLogger(CuestionarioBean.class);
 	
 	@EJB
 	private ExamenIntegrator examenIntegrator;
@@ -47,15 +49,14 @@ public class CuestionarioBean extends BaseBean {
 	
 	
 	public String editar(ExamenDTO examen){
-		
+		LOGGER.info("+++++++++++++++++++++++++++++++++++++++++++++editar CuestionarioBeann+++++++++++++++++++++++++++++++++++++++++++++"+examen.getNombre());
 		examenBean.init(examen);		
 		return NavigationConstants.PAGE_EXAMEN;
-		
-		
 	}
 	
-	
-	public void borrar(ExamenDTO examen){}
+	public String borrar(ExamenDTO examen){
+		return "";
+	}
 
 	
 	

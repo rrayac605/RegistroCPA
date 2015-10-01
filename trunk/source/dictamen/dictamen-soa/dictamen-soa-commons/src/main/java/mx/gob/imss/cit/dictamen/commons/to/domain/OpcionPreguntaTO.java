@@ -18,6 +18,7 @@ public class OpcionPreguntaTO extends BaseTO{
     private Date fecBajaRegistro;
     private TipoRespuestaTO cveIdRespuesta;
     private PreguntaTO cveIdPregunta;
+    
 	public Long getCveIdOpcionPregunta() {
 		return cveIdOpcionPregunta;
 	}

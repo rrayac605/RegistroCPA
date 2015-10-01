@@ -13,7 +13,7 @@ public class AtestiguamientoDictamenTO extends BaseTO{
 	 * 
 	 */
 	private Long cveIdAtestigDictamen;
-    private Integer cveIdDictamen;
+    private Long cveIdDictamen;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
@@ -21,16 +21,18 @@ public class AtestiguamientoDictamenTO extends BaseTO{
     private PatronDictamenTO cveIdPatronDictamen;
     private EstadoAtestiguamientoTO cveIdEstadoAtestiguamiento;
     private AtestiguamientoTO cveIdAtestiguamiento;
+    
+    
 	public Long getCveIdAtestigDictamen() {
 		return cveIdAtestigDictamen;
 	}
 	public void setCveIdAtestigDictamen(Long cveIdAtestigDictamen) {
 		this.cveIdAtestigDictamen = cveIdAtestigDictamen;
 	}
-	public Integer getCveIdDictamen() {
+	public Long getCveIdDictamen() {
 		return cveIdDictamen;
 	}
-	public void setCveIdDictamen(Integer cveIdDictamen) {
+	public void setCveIdDictamen(Long cveIdDictamen) {
 		this.cveIdDictamen = cveIdDictamen;
 	}
 	public Date getFecRegistroAlta() {
