@@ -12,14 +12,9 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.AtestiguamientoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ExamenDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.PreguntaDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.RespuestaDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.RubroDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.TipoPreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUtils;
 import mx.gob.imss.cit.dictamen.services.ExamenService;
-import mx.gob.imss.cit.dictamen.services.transformer.TransformerServiceUtils;
 
 import org.apache.log4j.Logger;
 

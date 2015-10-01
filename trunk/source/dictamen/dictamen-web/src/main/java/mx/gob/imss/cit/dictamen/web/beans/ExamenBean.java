@@ -5,16 +5,15 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import org.apache.log4j.Logger;
-
 import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ExamenDTO;
-import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.ExamenPage;
 import mx.gob.imss.cit.dictamen.web.util.CleanBeanUtil;
 import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
+
+import org.apache.log4j.Logger;
 
 @ManagedBean(name = "examenBean")
 @ViewScoped
@@ -36,7 +35,7 @@ public class ExamenBean extends BaseBean {
 		LOGGER.info("########################################## init examen Bean");
 		try {
 			examenPage.setExamen(examenIntegration.getDetalleExamenByAtestiguamiento(examenDTO.getClave()));
-		} catch (DictamenNegocioException e) {
+		} catch (Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_DET_EXAMEN.getCode());
 		}
 		return "";

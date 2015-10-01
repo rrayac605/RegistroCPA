@@ -5,7 +5,6 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -73,7 +72,7 @@ public class TransformerHelper {
 	                	//List
 	                	if(Collection.class.isAssignableFrom(field.getType())){
 
-	                		ArrayList<?> myList = (ArrayList<?>) valueFlied;
+	                		List<?> myList = (List<?>) valueFlied;
 	                			                        
 	                         //get the type as generic
 	                        ParameterizedType fieldGenericType =(ParameterizedType)field.getGenericType();
@@ -148,6 +147,6 @@ public class TransformerHelper {
        
        public static <T> List<T> getListWithNulls(Class<T> componentType, int length) {
     	   T[] array = (T[])Array.newInstance(componentType, length);
-    	   return new ArrayList<T>(Arrays.asList(array));
+    	   return Arrays.asList(array);
     	}       
 }
