@@ -70,7 +70,7 @@ public class NdcPreguntaDO implements Serializable {
     @JoinColumn(name = "CVE_ID_PREGUNTA_PADRE", referencedColumnName = "CVE_ID_PREGUNTA")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcPreguntaDO cveIdPreguntaPadre;
-    @OneToMany(mappedBy = "cveIdPregunta", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cveIdPregunta", fetch = FetchType.EAGER)
     private List<NdcOpcionPreguntaDO> ndcOpcionPreguntaDOList;
 
     public NdcPreguntaDO() {

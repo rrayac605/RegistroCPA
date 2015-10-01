@@ -60,7 +60,7 @@ public class NdcAtestiguamientoDO implements Serializable {
     private Date fecRegistroBaja;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
     private List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList;
-    @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.EAGER)
     private List<NdcRubroDO> ndcRubroDOList;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
     private List<NdtB1CedulaRemuneracionesDO> ndtB1CedulaRemuneracionesDOList;

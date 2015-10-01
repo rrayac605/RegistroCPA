@@ -4,7 +4,7 @@ package mx.gob.imss.cit.dictamen.web.pages;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import mx.gob.imss.cit.dictamen.integration.api.dto.ExamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.AtestiguamientoDTO;
 import mx.gob.imss.cit.dictamen.web.pages.base.BasePage;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 
@@ -18,7 +18,7 @@ public class ExamenPage extends BasePage{
 	private static final long serialVersionUID = 4532952060079534807L;
 	
 	@Reset
-	private ExamenDTO examen;
+	private AtestiguamientoDTO examen;
 	
 	
 	private Integer estado;
@@ -33,21 +33,13 @@ public class ExamenPage extends BasePage{
 		this.estado = estado;
 	}
 
-	/**
-	 * @return the examen
-	 */
-	public ExamenDTO getExamen() {
+	public AtestiguamientoDTO getExamen() {
 		return examen;
 	}
 
-	/**
-	 * @param examen the examen to set
-	 */
-	public void setExamen(ExamenDTO examen) {
+	public void setExamen(AtestiguamientoDTO examen) {
 		this.examen = examen;
 	}
 
-
-	
 
 }

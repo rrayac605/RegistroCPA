@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
@@ -19,6 +20,9 @@ public class PreguntaTO extends BaseTO {
     private Integer indOrden;
     private RubroTO cveIdRubro;
     private PreguntaTO cveIdPreguntaPadre;
+    private List<OpcionPreguntaTO> ndcOpcionPreguntaDOList;
+    
+    
 	public Long getCveIdPregunta() {
 		return cveIdPregunta;
 	}
@@ -66,6 +70,12 @@ public class PreguntaTO extends BaseTO {
 	}
 	public void setCveIdPreguntaPadre(PreguntaTO cveIdPreguntaPadre) {
 		this.cveIdPreguntaPadre = cveIdPreguntaPadre;
+	}
+	public List<OpcionPreguntaTO> getNdcOpcionPreguntaDOList() {
+		return ndcOpcionPreguntaDOList;
+	}
+	public void setNdcOpcionPreguntaDOList(List<OpcionPreguntaTO> ndcOpcionPreguntaDOList) {
+		this.ndcOpcionPreguntaDOList = ndcOpcionPreguntaDOList;
 	}
     
     

@@ -55,7 +55,7 @@ public class NdcOpcionPreguntaDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecBajaRegistro;
     @JoinColumn(name = "CVE_ID_RESPUESTA", referencedColumnName = "CVE_ID_RESPUESTA")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private NdcTipoRespuestaDO cveIdRespuesta;
     @JoinColumn(name = "CVE_ID_PREGUNTA", referencedColumnName = "CVE_ID_PREGUNTA")
     @ManyToOne(fetch = FetchType.LAZY)

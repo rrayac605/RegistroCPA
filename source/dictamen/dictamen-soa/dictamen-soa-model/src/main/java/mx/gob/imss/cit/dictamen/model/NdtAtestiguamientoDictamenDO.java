@@ -53,7 +53,7 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
     @GeneratedValue(generator = "NdtAtestiguamientoDictamen_Id_Seq_Gen")
     private Long cveIdAtestigDictamen;
     @Column(name = "CVE_ID_DICTAMEN")
-    private Integer cveIdDictamen;
+    private Long cveIdDictamen;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -93,11 +93,11 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
         this.cveIdAtestigDictamen = cveIdAtestigDictamen;
     }
 
-    public Integer getCveIdDictamen() {
+    public Long getCveIdDictamen() {
         return cveIdDictamen;
     }
 
-    public void setCveIdDictamen(Integer cveIdDictamen) {
+    public void setCveIdDictamen(Long cveIdDictamen) {
         this.cveIdDictamen = cveIdDictamen;
     }
 
