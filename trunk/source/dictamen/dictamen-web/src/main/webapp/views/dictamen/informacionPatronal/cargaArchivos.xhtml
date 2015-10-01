@@ -15,9 +15,10 @@
 
 	 <form  action="http://XXXXXx.XXXXXX.com/" method="post" enctype="multipart/form-data" style="width:100%;height:100% " >																	
 	</form>					   
+	 <p:outputLabel value="#{cargaArchivosBean.initDictamen()}"/>
 	 <p:accordionPanel value="#{cargaArchivosPage.listaParentLayout}" var="parentLayout" multiple="true" activeIndex="0,1,2,3,4,5">
 					        <p:tab title="#{parentLayout.name}">
-					            <p:panel>         		
+					            <p:panel>         							                   
 									   <p:carousel  value="#{parentLayout.listaLayout}" var="layout" itemStyle="text-align:center" 
 									   style="width:100%" numVisible="4" > 					   
 									        <p:panel columns="1" style="width:250px;height:300px;margin:10px 0px" layout="grid" >									            

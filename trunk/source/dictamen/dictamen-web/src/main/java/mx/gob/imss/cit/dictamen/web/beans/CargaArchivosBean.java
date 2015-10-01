@@ -54,12 +54,14 @@ public class CargaArchivosBean extends BaseBean {
 			LOG.info("rfc contador "+dictamenPage.getContadorPublicoAutDTO().getRfc());
 			LOG.info("año "+datosPatronalesPage.getDatosPatron().getEjercicioDictaminarDesc());
 			
-			if(!dictamenPage.isBanderaOcultaTabs()){
 				cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout(datosPatronalesPage.getDatosPatron().getEjercicioDictaminarDesc(),
 						dictamenPage.getContadorPublicoAutDTO().getRfc(), datosPatronalesPage.getDatosPatron().getRfc()));
-			}
+
+			
+			LOG.info("el numero de aseveraciones es:"+cargaArchivosPage.getListaParentLayout().size());
 			
 		} catch (DictamenNegocioException e) {
+			LOG.error(e.getMessage(), e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_LAYOUTS.getCode());
 		}
 		return "";
@@ -78,12 +80,12 @@ public class CargaArchivosBean extends BaseBean {
 	 */
 	public void registrarEstatusCarga(LayoutDTO layoutDTO){
 		PatronDictamenDTO patronDictamenDTO = new PatronDictamenDTO();
-		patronDictamenDTO.setCveIdPatronDictamen(63l);
+		patronDictamenDTO.setCveIdPatronDictamen(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
 		
 		CargaDocumentoDTO cargaAseveracionesDTO = new CargaDocumentoDTO();		
 		cargaAseveracionesDTO.setCveIdAseveracion(layoutDTO.getIdLayout().intValue());
-		cargaAseveracionesDTO.setCveIdPatronDictamen(63l);
-		cargaAseveracionesDTO.setCveIdUsuario("289435511");
+		cargaAseveracionesDTO.setCveIdPatronDictamen(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
+		cargaAseveracionesDTO.setCveIdUsuario(datosPatronalesPage.getDatosPatron().getRfc());
 		try {
 			cargaArchivosIntegrator.registrarCargaAseveracion(cargaAseveracionesDTO);
 		} catch (DictamenNegocioException e) {
