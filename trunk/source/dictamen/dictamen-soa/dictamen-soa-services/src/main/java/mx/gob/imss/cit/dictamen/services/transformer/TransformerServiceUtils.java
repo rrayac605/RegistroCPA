@@ -91,7 +91,8 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	,mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class);		
-}
+		
+	}
 	
 	private TransformerServiceUtils(){
 		
@@ -199,9 +200,6 @@ public class TransformerServiceUtils {
 
 		return cont;
 	}	
-	
-	
-
 	
 	public static NdcAtestiguamientoDO transformer( AtestiguamientoTO atestiguamientoTO ) {
 		NdcAtestiguamientoDO cont= (NdcAtestiguamientoDO) TransformerHelper.get(mapClass,atestiguamientoTO, NdcAtestiguamientoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
