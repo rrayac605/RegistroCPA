@@ -14,6 +14,7 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.commons.to.FirmaElectronicaTO;
 import mx.gob.imss.cit.dictamen.commons.to.LayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO;
@@ -25,7 +26,6 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
 import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.AtestiguamientoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaActorDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaBaseObjectDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaDocumentoDTO;
@@ -34,14 +34,16 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaMetadataDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaTramiteDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.FirmaElectronicaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.OpcionPreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.PreguntaDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.RubroDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.TipoRespuestaDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.OpcionPreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO;
 
 
 public class TransformerIntegrationUtils {
@@ -85,16 +87,19 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class);
 		
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.RubroDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class		,mx.gob.imss.cit.dictamen.integration.api.dto.PreguntaDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	,mx.gob.imss.cit.dictamen.integration.api.dto.OpcionPreguntaDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.TipoRespuestaDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.RubroDTO.class		,mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class			);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.PreguntaDTO.class		,mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class		);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.OpcionPreguntaDTO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.TipoRespuestaDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.AtestiguamientoDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.AtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class		,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	,mx.gob.imss.cit.dictamen.integration.api.dto.domain.OpcionPreguntaDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO.class		,mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class			);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO.class		,mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class		);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.OpcionPreguntaDTO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO.class	);
+	
 	}
 	
 
@@ -265,6 +270,14 @@ public class TransformerIntegrationUtils {
 	
 	public static AtestiguamientoTO transformer(AtestiguamientoDTO object){
 		return (AtestiguamientoTO) TransformerHelper.get(mapClass,object, AtestiguamientoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static AtestiguamientoDictamenDTO transformer(AtestiguamientoDictamenTO object){
+		return (AtestiguamientoDictamenDTO) TransformerHelper.get(mapClass,object, AtestiguamientoDictamenDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static AtestiguamientoDictamenTO transformer(AtestiguamientoDictamenDTO object){
+		return (AtestiguamientoDictamenTO) TransformerHelper.get(mapClass,object, AtestiguamientoDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 
 }

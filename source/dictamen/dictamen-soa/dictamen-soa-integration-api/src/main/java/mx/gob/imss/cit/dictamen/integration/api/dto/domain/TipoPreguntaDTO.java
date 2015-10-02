@@ -1,15 +1,15 @@
-package mx.gob.imss.cit.dictamen.integration.api.dto;
+package mx.gob.imss.cit.dictamen.integration.api.dto.domain;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
-public class RespuestaDTO extends BaseDTO{
+public class TipoPreguntaDTO extends BaseDTO{
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7561699858242961237L;
+	private static final long serialVersionUID = 8961703327515757791L;
 	private Integer clave;
-	private String respuesta;
+	private String tipo;
 	
 	public Integer getClave() {
 		return clave;
@@ -17,18 +17,19 @@ public class RespuestaDTO extends BaseDTO{
 	public void setClave(Integer clave) {
 		this.clave = clave;
 	}
-	public String getRespuesta() {
-		return respuesta;
+	public String getTipo() {
+		return tipo;
 	}
-	public void setRespuesta(String respuesta) {
-		this.respuesta = respuesta;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((clave == null) ? 0 : clave.hashCode());
-		result = prime * result + ((respuesta == null) ? 0 : respuesta.hashCode());
+		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
 	@Override
@@ -39,19 +40,20 @@ public class RespuestaDTO extends BaseDTO{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		RespuestaDTO other = (RespuestaDTO) obj;
+		TipoPreguntaDTO other = (TipoPreguntaDTO) obj;
 		if (clave == null) {
 			if (other.clave != null)
 				return false;
 		} else if (!clave.equals(other.clave))
 			return false;
-		if (respuesta == null) {
-			if (other.respuesta != null)
+		if (tipo == null) {
+			if (other.tipo != null)
 				return false;
-		} else if (!respuesta.equals(other.respuesta))
+		} else if (!tipo.equals(other.tipo))
 			return false;
 		return true;
 	}
+	
 	
 	
 

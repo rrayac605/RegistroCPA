@@ -1,4 +1,4 @@
-package mx.gob.imss.cit.dictamen.integration.api.dto;
+package mx.gob.imss.cit.dictamen.integration.api.dto.domain;
 
 import java.util.Date;
 

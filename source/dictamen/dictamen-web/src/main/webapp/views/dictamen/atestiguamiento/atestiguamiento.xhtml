@@ -15,12 +15,12 @@
 			<p:dataTable var="examen" value="#{cuestionarioPage.examenes}">
 				<p:column
 					headerText="#{msg['message.label.views.dictamen.atestiguamiento.concepto']}">
-					<h:outputText value="#{examen.nombre}" />
+					<h:outputText value="#{examen.cveIdAtestiguamiento.desAtestiguamiento}" />
 				</p:column>
 
 				<p:column
 					headerText="#{msg['message.label.views.dictamen.atestiguamiento.estado']}">
-					<h:outputText value="#{examen.estado}" />
+					<h:outputText value="#{examen.cveIdEstadoAtestiguamiento.desEstadoAtestiguamiento}" />
 				</p:column>
 
 				<p:column
