@@ -10,8 +10,8 @@ import javax.ejb.Stateless;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator;
-import mx.gob.imss.cit.dictamen.integration.api.dto.AtestiguamientoDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.ExamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUtils;
 import mx.gob.imss.cit.dictamen.services.ExamenService;
@@ -42,28 +42,22 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 	}
 
 	@Override
-	public List<ExamenDTO> findExamenesByIdPatronDictamen(Long cveIdPatronDictamen) throws DictamenNegocioException {
-		
-		List<ExamenDTO> cuestionarios = new ArrayList<ExamenDTO>();
+	public List<AtestiguamientoDictamenDTO> findExamenesByIdPatronDictamen(Long cveIdPatronDictamen) throws DictamenNegocioException {
+		List<AtestiguamientoDictamenDTO> listAtestiguamientoDictamenDTO = new ArrayList<AtestiguamientoDictamenDTO>();
 		List<AtestiguamientoDictamenTO> atestiguamientoDictamenTOList = new ArrayList<AtestiguamientoDictamenTO>();
-		
 		try {
-			atestiguamientoDictamenTOList = examenService.findExamenByIdPatronDictamen(cveIdPatronDictamen);			
+			atestiguamientoDictamenTOList = examenService.findExamenByIdPatronDictamen(cveIdPatronDictamen);
 			for( AtestiguamientoDictamenTO atestiguamientoDictamenTO:atestiguamientoDictamenTOList){
-				
-				ExamenDTO examen = new ExamenDTO();				
-				examen.setClave(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
-				examen.setNombre(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
-				examen.setEstado(atestiguamientoDictamenTO.getCveIdEstadoAtestiguamiento().getDesEstadoAtestiguamiento());
-				cuestionarios.add(examen);
+				AtestiguamientoDictamenDTO atestiguamientoDictamenDTO = new AtestiguamientoDictamenDTO();	
+				atestiguamientoDictamenDTO = TransformerIntegrationUtils.transformer(atestiguamientoDictamenTO);
+				listAtestiguamientoDictamenDTO.add(atestiguamientoDictamenDTO);
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			throw new DictamenNegocioException(e.getMessage(),e);
-		
 		}
 
-		return cuestionarios;
+		return listAtestiguamientoDictamenDTO;
 	}
 
 

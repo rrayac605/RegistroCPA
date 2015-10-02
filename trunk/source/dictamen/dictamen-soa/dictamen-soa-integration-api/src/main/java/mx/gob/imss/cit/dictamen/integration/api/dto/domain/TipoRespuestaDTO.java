@@ -1,31 +1,29 @@
-package mx.gob.imss.cit.dictamen.integration.api.dto;
+package mx.gob.imss.cit.dictamen.integration.api.dto.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
-public class AtestiguamientoDTO extends BaseDTO {
-
-	private static final long serialVersionUID = 1L;
-	private Long cveIdAtestiguamiento;
-    private String desAtestiguamiento;
+public class TipoRespuestaDTO extends BaseDTO {
+	private static final long serialVersionUID = 7566762193029409672L;
+	private Long cveIdRespuesta;
+    private String desTipoRespuesta;
     private Date fecRegistroAlta;
     private Date fecRegistroActualizado;
     private Date fecRegistroBaja;
-    private List<RubroDTO> ndcRubroDOList;
+	
     
-	public Long getCveIdAtestiguamiento() {
-		return cveIdAtestiguamiento;
+    public Long getCveIdRespuesta() {
+		return cveIdRespuesta;
 	}
-	public void setCveIdAtestiguamiento(Long cveIdAtestiguamiento) {
-		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
+	public void setCveIdRespuesta(Long cveIdRespuesta) {
+		this.cveIdRespuesta = cveIdRespuesta;
 	}
-	public String getDesAtestiguamiento() {
-		return desAtestiguamiento;
+	public String getDesTipoRespuesta() {
+		return desTipoRespuesta;
 	}
-	public void setDesAtestiguamiento(String desAtestiguamiento) {
-		this.desAtestiguamiento = desAtestiguamiento;
+	public void setDesTipoRespuesta(String desTipoRespuesta) {
+		this.desTipoRespuesta = desTipoRespuesta;
 	}
 	public Date getFecRegistroAlta() {
 		return fecRegistroAlta;
@@ -45,23 +43,15 @@ public class AtestiguamientoDTO extends BaseDTO {
 	public void setFecRegistroBaja(Date fecRegistroBaja) {
 		this.fecRegistroBaja = fecRegistroBaja;
 	}
-	
-	public List<RubroDTO> getNdcRubroDOList() {
-		return ndcRubroDOList;
-	}
-	public void setNdcRubroDOList(List<RubroDTO> ndcRubroDOList) {
-		this.ndcRubroDOList = ndcRubroDOList;
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((cveIdAtestiguamiento == null) ? 0 : cveIdAtestiguamiento.hashCode());
-		result = prime * result + ((desAtestiguamiento == null) ? 0 : desAtestiguamiento.hashCode());
+		result = prime * result + ((cveIdRespuesta == null) ? 0 : cveIdRespuesta.hashCode());
+		result = prime * result + ((desTipoRespuesta == null) ? 0 : desTipoRespuesta.hashCode());
 		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
 		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
 		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
-		result = prime * result + ((ndcRubroDOList == null) ? 0 : ndcRubroDOList.hashCode());
 		return result;
 	}
 	@Override
@@ -72,16 +62,16 @@ public class AtestiguamientoDTO extends BaseDTO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AtestiguamientoDTO other = (AtestiguamientoDTO) obj;
-		if (cveIdAtestiguamiento == null) {
-			if (other.cveIdAtestiguamiento != null)
+		TipoRespuestaDTO other = (TipoRespuestaDTO) obj;
+		if (cveIdRespuesta == null) {
+			if (other.cveIdRespuesta != null)
 				return false;
-		} else if (!cveIdAtestiguamiento.equals(other.cveIdAtestiguamiento))
+		} else if (!cveIdRespuesta.equals(other.cveIdRespuesta))
 			return false;
-		if (desAtestiguamiento == null) {
-			if (other.desAtestiguamiento != null)
+		if (desTipoRespuesta == null) {
+			if (other.desTipoRespuesta != null)
 				return false;
-		} else if (!desAtestiguamiento.equals(other.desAtestiguamiento))
+		} else if (!desTipoRespuesta.equals(other.desTipoRespuesta))
 			return false;
 		if (fecRegistroActualizado == null) {
 			if (other.fecRegistroActualizado != null)
@@ -98,13 +88,6 @@ public class AtestiguamientoDTO extends BaseDTO {
 				return false;
 		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
 			return false;
-		if (ndcRubroDOList == null) {
-			if (other.ndcRubroDOList != null)
-				return false;
-		} else if (!ndcRubroDOList.equals(other.ndcRubroDOList))
-			return false;
 		return true;
 	}
-	
-	
 }

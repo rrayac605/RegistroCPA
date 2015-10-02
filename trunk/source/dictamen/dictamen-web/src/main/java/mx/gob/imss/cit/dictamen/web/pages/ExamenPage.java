@@ -4,7 +4,7 @@ package mx.gob.imss.cit.dictamen.web.pages;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import mx.gob.imss.cit.dictamen.integration.api.dto.AtestiguamientoDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO;
 import mx.gob.imss.cit.dictamen.web.pages.base.BasePage;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 
