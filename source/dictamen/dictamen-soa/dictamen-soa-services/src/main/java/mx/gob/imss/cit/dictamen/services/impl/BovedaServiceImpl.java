@@ -60,11 +60,16 @@ public class BovedaServiceImpl implements BovedaService {
 	private IDocumentoWSService port;
 	
 	@PostConstruct
-	public void init() throws MalformedURLException{
-		wsdl= new URL(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_ENDPOINT));
-		name=new QName(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_NAMESPACE),PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_SERVICE));
-		port = new DocumentoWSServiceImplService(wsdl, name).getDocumentoWSServiceImplPort();
+	public void init(){
+		try {
+			wsdl= new URL(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_ENDPOINT));
+			name=new QName(PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_NAMESPACE),PropertiesConfigUtils.getPropertyConfig(DictamenConstants.CONFIG_KEY_BOVEDA_SERVICE));
+			port = new DocumentoWSServiceImplService(wsdl, name).getDocumentoWSServiceImplPort();
 
+		} catch (MalformedURLException e) {
+	
+		}
+		
 	}
 
 
