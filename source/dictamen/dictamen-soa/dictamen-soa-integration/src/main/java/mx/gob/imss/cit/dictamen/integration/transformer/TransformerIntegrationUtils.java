@@ -99,6 +99,8 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class	);
 	
 	}
 	
