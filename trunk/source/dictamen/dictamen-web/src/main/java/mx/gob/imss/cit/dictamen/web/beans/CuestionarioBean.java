@@ -46,7 +46,7 @@ public class CuestionarioBean extends BaseBean {
 	
 	
 	public String editar(AtestiguamientoDictamenDTO examen){
-		examenBean.init(examen);		
+		examenBean.init(examen);	
 		return NavigationConstants.PAGE_EXAMEN;
 	}
 	

@@ -94,7 +94,7 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO.class		,mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class			);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO.class		,mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class		);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.OpcionPreguntaDTO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO.class,     mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO.class);

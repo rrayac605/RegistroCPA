@@ -53,5 +53,6 @@ public class OpcionPreguntaTO extends BaseTO{
 	public void setCveIdPregunta(PreguntaTO cveIdPregunta) {
 		this.cveIdPregunta = cveIdPregunta;
 	}
-   
+    
+	
 }

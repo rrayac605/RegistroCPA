@@ -11,25 +11,24 @@
 
 
 	<ui:define name="bodyContainer">
-
-				#{examenPage.examen.desAtestiguamiento}<br />
-		<br />
-		<ui:repeat var="s" value="#{examenPage.examen.ndcRubroDOList}"
-			varStatus="status">
-					#{s.desRubro}<br />
-			<br />
-			<ui:repeat var="p" value="#{s.ndcPreguntaDOList}" varStatus="status">
-						#{p.desPregunta}<br />
+				#{examenPage.atestiguamientoDTO.desAtestiguamiento}
 				<br />
+		<br />
+		<ui:repeat var="rubro" value="#{examenPage.atestiguamientoDTO.ndcRubros}"
+			varStatus="status">
+					#{rubro.desRubro}<br />
+			<br />
+			<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}" varStatus="status">
+						#{pregunta.desPregunta}<br />
+
 				<p:selectOneRadio id="edo" value="#{examenPage.estado}">
-					<f:selectItems var="r" value="#{p.ndcOpcionPreguntaDOList}"
-						itemLabel="#{r.cveIdRespuesta.desTipoRespuesta}" itemValue="#{r.cveIdOpcionPregunta}" />
+						<f:selectItems itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}" var="respuesta"
+							itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}" value="#{pregunta.ndcOpcionesPregunta}"/>
 				</p:selectOneRadio>
 				<br />
 				<br />
 			</ui:repeat>
 		</ui:repeat>
-
 	</ui:define>
 </ui:composition>
 

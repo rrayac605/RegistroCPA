@@ -17,7 +17,7 @@ public class RubroDTO extends BaseDTO{
     private Date fecActualizadoRegistro;
     private Date fecBajaRegistro;
     private Integer indOrden;
-    private List<PreguntaDTO> ndcPreguntaDOList;
+    private List<PreguntaDTO> ndcPreguntas;
 
 	public Long getCveIdRubro() {
 		return cveIdRubro;
@@ -55,11 +55,11 @@ public class RubroDTO extends BaseDTO{
 	public void setIndOrden(Integer indOrden) {
 		this.indOrden = indOrden;
 	}
-	public List<PreguntaDTO> getNdcPreguntaDOList() {
-		return ndcPreguntaDOList;
+	public List<PreguntaDTO> getNdcPreguntas() {
+		return ndcPreguntas;
 	}
-	public void setNdcPreguntaDOList(List<PreguntaDTO> ndcPreguntaDOList) {
-		this.ndcPreguntaDOList = ndcPreguntaDOList;
+	public void setNdcPreguntas(List<PreguntaDTO> ndcPreguntaDOList) {
+		this.ndcPreguntas = ndcPreguntaDOList;
 	}
 	@Override
 	public int hashCode() {
@@ -71,7 +71,7 @@ public class RubroDTO extends BaseDTO{
 		result = prime * result + ((fecAltaRegistro == null) ? 0 : fecAltaRegistro.hashCode());
 		result = prime * result + ((fecBajaRegistro == null) ? 0 : fecBajaRegistro.hashCode());
 		result = prime * result + ((indOrden == null) ? 0 : indOrden.hashCode());
-		result = prime * result + ((ndcPreguntaDOList == null) ? 0 : ndcPreguntaDOList.hashCode());
+		result = prime * result + ((ndcPreguntas == null) ? 0 : ndcPreguntas.hashCode());
 		return result;
 	}
 	@Override
@@ -113,10 +113,10 @@ public class RubroDTO extends BaseDTO{
 				return false;
 		} else if (!indOrden.equals(other.indOrden))
 			return false;
-		if (ndcPreguntaDOList == null) {
-			if (other.ndcPreguntaDOList != null)
+		if (ndcPreguntas == null) {
+			if (other.ndcPreguntas != null)
 				return false;
-		} else if (!ndcPreguntaDOList.equals(other.ndcPreguntaDOList))
+		} else if (!ndcPreguntas.equals(other.ndcPreguntas))
 			return false;
 		return true;
 	}

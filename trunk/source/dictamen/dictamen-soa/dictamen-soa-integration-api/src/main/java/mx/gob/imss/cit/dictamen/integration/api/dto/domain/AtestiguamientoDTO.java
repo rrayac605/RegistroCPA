@@ -13,7 +13,7 @@ public class AtestiguamientoDTO extends BaseDTO {
     private Date fecRegistroAlta;
     private Date fecRegistroActualizado;
     private Date fecRegistroBaja;
-    private List<RubroDTO> ndcRubroDOList;
+    private List<RubroDTO> ndcRubros;
     
 	public Long getCveIdAtestiguamiento() {
 		return cveIdAtestiguamiento;
@@ -46,11 +46,11 @@ public class AtestiguamientoDTO extends BaseDTO {
 		this.fecRegistroBaja = fecRegistroBaja;
 	}
 	
-	public List<RubroDTO> getNdcRubroDOList() {
-		return ndcRubroDOList;
+	public List<RubroDTO> getNdcRubros() {
+		return ndcRubros;
 	}
-	public void setNdcRubroDOList(List<RubroDTO> ndcRubroDOList) {
-		this.ndcRubroDOList = ndcRubroDOList;
+	public void setNdcRubros(List<RubroDTO> ndcRubro) {
+		this.ndcRubros = ndcRubro;
 	}
 	@Override
 	public int hashCode() {
@@ -61,7 +61,7 @@ public class AtestiguamientoDTO extends BaseDTO {
 		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
 		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
 		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
-		result = prime * result + ((ndcRubroDOList == null) ? 0 : ndcRubroDOList.hashCode());
+		result = prime * result + ((ndcRubros == null) ? 0 : ndcRubros.hashCode());
 		return result;
 	}
 	@Override
@@ -98,10 +98,10 @@ public class AtestiguamientoDTO extends BaseDTO {
 				return false;
 		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
 			return false;
-		if (ndcRubroDOList == null) {
-			if (other.ndcRubroDOList != null)
+		if (ndcRubros == null) {
+			if (other.ndcRubros != null)
 				return false;
-		} else if (!ndcRubroDOList.equals(other.ndcRubroDOList))
+		} else if (!ndcRubros.equals(other.ndcRubros))
 			return false;
 		return true;
 	}

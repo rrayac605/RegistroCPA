@@ -61,7 +61,7 @@ public class NdcAtestiguamientoDO implements Serializable {
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
     private List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.EAGER)
-    private List<NdcRubroDO> ndcRubroDOList;
+    private List<NdcRubroDO> ndcRubros;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
     private List<NdtB1CedulaRemuneracionesDO> ndtB1CedulaRemuneracionesDOList;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
@@ -125,12 +125,12 @@ public class NdcAtestiguamientoDO implements Serializable {
         this.ndtAtestiguamientoDictamenDOList = ndtAtestiguamientoDictamenDOList;
     }
 
-    public List<NdcRubroDO> getNdcRubroDOList() {
-        return ndcRubroDOList;
+    public List<NdcRubroDO> getNdcRubros() {
+        return ndcRubros;
     }
 
-    public void setNdcRubroDOList(List<NdcRubroDO> ndcRubroDOList) {
-        this.ndcRubroDOList = ndcRubroDOList;
+    public void setNdcRubros(List<NdcRubroDO> ndcRubros) {
+        this.ndcRubros = ndcRubros;
     }
 
     public List<NdtB1CedulaRemuneracionesDO> getNdtB1CedulaRemuneracionesDOList() {

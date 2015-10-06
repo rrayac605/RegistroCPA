@@ -18,7 +18,7 @@ public class ExamenPage extends BasePage{
 	private static final long serialVersionUID = 4532952060079534807L;
 	
 	@Reset
-	private AtestiguamientoDTO examen;
+	private AtestiguamientoDTO atestiguamientoDTO;
 	
 	
 	private Integer estado;
@@ -33,12 +33,12 @@ public class ExamenPage extends BasePage{
 		this.estado = estado;
 	}
 
-	public AtestiguamientoDTO getExamen() {
-		return examen;
+	public AtestiguamientoDTO getAtestiguamientoDTO() {
+		return atestiguamientoDTO;
 	}
 
-	public void setExamen(AtestiguamientoDTO examen) {
-		this.examen = examen;
+	public void setAtestiguamientoDTO(AtestiguamientoDTO atestiguamientoDTO) {
+		this.atestiguamientoDTO = atestiguamientoDTO;
 	}
 
 

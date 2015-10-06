@@ -7,19 +7,14 @@ import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 
 public class AtestiguamientoTO extends BaseTO{
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4993167636489570181L;
-	
 	private Long cveIdAtestiguamiento;
     private String desAtestiguamiento;
     private Date fecRegistroAlta;
     private Date fecRegistroActualizado;
     private Date fecRegistroBaja;
     private AseveracionesTO cveIdAseveracion;
-    private List<RubroTO> ndcRubroDOList;
+    private List<RubroTO> ndcRubros;
     
 	public Long getCveIdAtestiguamiento() {
 		return cveIdAtestiguamiento;
@@ -57,10 +52,10 @@ public class AtestiguamientoTO extends BaseTO{
 	public void setCveIdAseveracion(AseveracionesTO cveIdAseveracion) {
 		this.cveIdAseveracion = cveIdAseveracion;
 	}
-	public List<RubroTO> getNdcRubroDOList() {
-		return ndcRubroDOList;
+	public List<RubroTO> getNdcRubros() {
+		return ndcRubros;
 	}
-	public void setNdcRubroDOList(List<RubroTO> ndcRubroDOList) {
-		this.ndcRubroDOList = ndcRubroDOList;
+	public void setNdcRubros(List<RubroTO> ndcRubro) {
+		this.ndcRubros = ndcRubro;
 	}
 }
