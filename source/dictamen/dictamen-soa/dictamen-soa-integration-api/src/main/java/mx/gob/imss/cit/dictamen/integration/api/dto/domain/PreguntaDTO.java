@@ -19,7 +19,7 @@ public class PreguntaDTO extends BaseDTO{
     private Integer indOrden;
     private RubroDTO cveIdRubro;
     private PreguntaDTO cveIdPreguntaPadre;
-    private List<OpcionPreguntaDTO> ndcOpcionPreguntaDOList;
+    private List<OpcionPreguntaDTO> ndcOpcionesPregunta;
     
 	public Long getCveIdPregunta() {
 		return cveIdPregunta;
@@ -69,11 +69,11 @@ public class PreguntaDTO extends BaseDTO{
 	public void setCveIdPreguntaPadre(PreguntaDTO cveIdPreguntaPadre) {
 		this.cveIdPreguntaPadre = cveIdPreguntaPadre;
 	}
-	public List<OpcionPreguntaDTO> getNdcOpcionPreguntaDOList() {
-		return ndcOpcionPreguntaDOList;
+	public List<OpcionPreguntaDTO> getNdcOpcionesPregunta() {
+		return ndcOpcionesPregunta;
 	}
-	public void setNdcOpcionPreguntaDOList(List<OpcionPreguntaDTO> ndcOpcionPreguntaDOList) {
-		this.ndcOpcionPreguntaDOList = ndcOpcionPreguntaDOList;
+	public void setNdcOpcionesPregunta(List<OpcionPreguntaDTO> ndcOpcionesPregunta) {
+		this.ndcOpcionesPregunta = ndcOpcionesPregunta;
 	}
 	@Override
 	public int hashCode() {
@@ -87,7 +87,7 @@ public class PreguntaDTO extends BaseDTO{
 		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
 		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
 		result = prime * result + ((indOrden == null) ? 0 : indOrden.hashCode());
-		result = prime * result + ((ndcOpcionPreguntaDOList == null) ? 0 : ndcOpcionPreguntaDOList.hashCode());
+		result = prime * result + ((ndcOpcionesPregunta == null) ? 0 : ndcOpcionesPregunta.hashCode());
 		return result;
 	}
 	@Override
@@ -139,10 +139,10 @@ public class PreguntaDTO extends BaseDTO{
 				return false;
 		} else if (!indOrden.equals(other.indOrden))
 			return false;
-		if (ndcOpcionPreguntaDOList == null) {
-			if (other.ndcOpcionPreguntaDOList != null)
+		if (ndcOpcionesPregunta == null) {
+			if (other.ndcOpcionesPregunta!= null)
 				return false;
-		} else if (!ndcOpcionPreguntaDOList.equals(other.ndcOpcionPreguntaDOList))
+		} else if (!ndcOpcionesPregunta.equals(other.ndcOpcionesPregunta))
 			return false;
 		return true;
 	}

@@ -5,15 +5,13 @@ import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class TipoRespuestaTO extends BaseTO{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7566762193029409672L;
+	private static final long serialVersionUID = 7787323420111216028L;
 	private Long cveIdRespuesta;
     private String desTipoRespuesta;
     private Date fecRegistroAlta;
     private Date fecRegistroActualizado;
     private Date fecRegistroBaja;
+    
 	public Long getCveIdRespuesta() {
 		return cveIdRespuesta;
 	}

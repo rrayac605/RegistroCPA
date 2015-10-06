@@ -5,14 +5,13 @@ import java.util.Date;
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
 public class OpcionPreguntaDTO extends BaseDTO {
-	private static final long serialVersionUID = 308710887108580782L;
+	private static final long serialVersionUID = -5663789493709186799L;
 	private Long cveIdOpcionPregunta;
     private String desOpcionPregunta;
     private Date fecAltaRegistro;
     private Date fecBajaRegistro;
     private TipoRespuestaDTO cveIdRespuesta;
     private PreguntaDTO cveIdPregunta;
-    
     
 	public Long getCveIdOpcionPregunta() {
 		return cveIdOpcionPregunta;
@@ -103,5 +102,7 @@ public class OpcionPreguntaDTO extends BaseDTO {
 			return false;
 		return true;
 	}
+    
+    
 	
 }

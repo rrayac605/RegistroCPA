@@ -7,10 +7,6 @@ import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class PreguntaTO extends BaseTO {
 
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6522227905470930975L;
 	private Long cveIdPregunta;
     private String desPregunta;
@@ -20,7 +16,7 @@ public class PreguntaTO extends BaseTO {
     private Integer indOrden;
     private RubroTO cveIdRubro;
     private PreguntaTO cveIdPreguntaPadre;
-    private List<OpcionPreguntaTO> ndcOpcionPreguntaDOList;
+    private List<OpcionPreguntaTO> ndcOpcionesPregunta;
     
     
 	public Long getCveIdPregunta() {
@@ -71,11 +67,11 @@ public class PreguntaTO extends BaseTO {
 	public void setCveIdPreguntaPadre(PreguntaTO cveIdPreguntaPadre) {
 		this.cveIdPreguntaPadre = cveIdPreguntaPadre;
 	}
-	public List<OpcionPreguntaTO> getNdcOpcionPreguntaDOList() {
-		return ndcOpcionPreguntaDOList;
+	public List<OpcionPreguntaTO> getNdcOpcionesPregunta() {
+		return ndcOpcionesPregunta;
 	}
-	public void setNdcOpcionPreguntaDOList(List<OpcionPreguntaTO> ndcOpcionPreguntaDOList) {
-		this.ndcOpcionPreguntaDOList = ndcOpcionPreguntaDOList;
+	public void setNdcOpcionesPregunta(List<OpcionPreguntaTO> ndcOpcionesPregunta) {
+		this.ndcOpcionesPregunta = ndcOpcionesPregunta;
 	}
     
     

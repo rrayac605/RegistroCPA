@@ -13,6 +13,7 @@ public class EstadoAtestiguamientoDTO extends BaseDTO{
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
+    
 	public Long getCveIdEstadoAtestiguamiento() {
 		return cveIdEstadoAtestiguamiento;
 	}

@@ -55,5 +55,4 @@ public class ExamenServiceImpl implements ExamenService {
 		}
 		return atestiguamientonTO   ;
 	}
-
 }

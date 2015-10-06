@@ -29,10 +29,10 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 	private ExamenService examenService;
 	
 	@Override
-	public AtestiguamientoDTO getDetalleExamenByAtestiguamiento(Long examenDTO)throws DictamenNegocioException {
-		AtestiguamientoDTO atestiguamientoDTO = new AtestiguamientoDTO();
+	public AtestiguamientoDTO getDetalleExamenByAtestiguamiento(Long atestiguamiento)throws DictamenNegocioException {
+		AtestiguamientoDTO atestiguamientoDTO = null;
 		try {
-			AtestiguamientoTO  atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(examenDTO);
+			AtestiguamientoTO  atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(atestiguamiento);
 			atestiguamientoDTO = TransformerIntegrationUtils.transformer(atestiguamientoTO);
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
@@ -43,21 +43,21 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 
 	@Override
 	public List<AtestiguamientoDictamenDTO> findExamenesByIdPatronDictamen(Long cveIdPatronDictamen) throws DictamenNegocioException {
-		List<AtestiguamientoDictamenDTO> listAtestiguamientoDictamenDTO = new ArrayList<AtestiguamientoDictamenDTO>();
+		List<AtestiguamientoDictamenDTO> atestiguamientoDictamenDTOList = new ArrayList<AtestiguamientoDictamenDTO>();
 		List<AtestiguamientoDictamenTO> atestiguamientoDictamenTOList = new ArrayList<AtestiguamientoDictamenTO>();
 		try {
 			atestiguamientoDictamenTOList = examenService.findExamenByIdPatronDictamen(cveIdPatronDictamen);
 			for( AtestiguamientoDictamenTO atestiguamientoDictamenTO:atestiguamientoDictamenTOList){
 				AtestiguamientoDictamenDTO atestiguamientoDictamenDTO = new AtestiguamientoDictamenDTO();	
 				atestiguamientoDictamenDTO = TransformerIntegrationUtils.transformer(atestiguamientoDictamenTO);
-				listAtestiguamientoDictamenDTO.add(atestiguamientoDictamenDTO);
+				atestiguamientoDictamenDTOList.add(atestiguamientoDictamenDTO);
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			throw new DictamenNegocioException(e.getMessage(),e);
 		}
 
-		return listAtestiguamientoDictamenDTO;
+		return atestiguamientoDictamenDTOList;
 	}
 
 

@@ -45,10 +45,9 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 	
 	@Test
 	public void getDetalleExamenByAtestiguamientoeTest(){
-		AtestiguamientoTO atestiguamientoTO = new AtestiguamientoTO();
+		AtestiguamientoTO atestiguamientoTO = null;
 		try {
 			atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(1L);
-			LOG.info(""+atestiguamientoTO.getDesAtestiguamiento() );
 				
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);

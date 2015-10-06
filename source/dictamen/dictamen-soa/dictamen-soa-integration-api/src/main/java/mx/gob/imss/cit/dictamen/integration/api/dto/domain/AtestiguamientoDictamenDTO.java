@@ -17,6 +17,7 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
     private PatronDictamenDTO cveIdPatronDictamen;
     private EstadoAtestiguamientoDTO cveIdEstadoAtestiguamiento;
     private AtestiguamientoDTO cveIdAtestiguamiento;
+    
 	public Long getCveIdAtestigDictamen() {
 		return cveIdAtestigDictamen;
 	}

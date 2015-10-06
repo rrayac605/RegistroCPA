@@ -31,7 +31,7 @@ public class ExamenBean extends BaseBean {
 	public	String init(AtestiguamientoDictamenDTO examenDTO) {
 		CleanBeanUtil.cleanFields(examenPage);
 		try {
-			examenPage.setExamen(examenIntegration.getDetalleExamenByAtestiguamiento(examenDTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento()));
+			examenPage.setAtestiguamientoDTO(examenIntegration.getDetalleExamenByAtestiguamiento(examenDTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento()));
 		} catch (Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_DET_EXAMEN.getCode());
 		}
