@@ -5,19 +5,21 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.integration.api.ConsultaSATIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.EjercicioFiscalIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.PatronDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.TipoDictamenIntegrator;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
 import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
 import mx.gob.imss.cit.dictamen.web.util.CleanBeanUtil;
 import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
-
-import org.apache.log4j.Logger;
 
 @ManagedBean(name = "datosPatronalesBean")
 @ViewScoped
@@ -73,6 +75,8 @@ public class DatosPatronalesBean extends BaseBean {
 	 */
 	private void inicializarPatron() {
 		datosPatronalesPage.setDatosPatron(new PatronDictamenDTO());
+		datosPatronalesPage.getDatosPatron().setCveIdEjerFiscal(new EjercicioFiscalDTO());
+		datosPatronalesPage.getDatosPatron().setCveIdTipoDictamen(new TipoDictamenDTO());
 		datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
 		datosPatronalesPage.getDatosPatron().setIndustriaConstruccion(false);
 		datosPatronalesPage.getDatosPatron().setActConstruccionOregObra(false);
@@ -86,8 +90,9 @@ public class DatosPatronalesBean extends BaseBean {
 		if(dictamenDTO==null){
 			 busquedaSat();
 		}else{
+			
 			datosPatronalesPage.setDatosPatron(dictamenDTO);
-			datosPatronalesPage.getDatosPatron().setEjercicioDictaminarDesc("2015");
+			LOG.info("tipo dictamen"+datosPatronalesPage.getDatosPatron().getCveIdTipoDictamen().getCveIdTipoDictamen());
 			habilitaOpciones();
 			
 		}	  
@@ -135,8 +140,7 @@ public class DatosPatronalesBean extends BaseBean {
 		}
 	}
 	
-	public void limpiar(){
-		CleanBeanUtil.cleanFields(datosPatronalesPage);
+	public void limpiar(){		
 		inicializarPatron();
 		inhabilitaOpciones();
 		
@@ -161,11 +165,11 @@ public class DatosPatronalesBean extends BaseBean {
 			if(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen()==null){
 				LOG.info("nuevo registro ");
 				patronIntegration.executeRegistrar(datosPatronalesPage.getDatosPatron(),dictamenPage.getContadorPublicoAutDTO());
-				datosPatronalesPage.getDatosPatron().setEjercicioDictaminarDesc("2015");
+
 			}else{
 				LOG.info("se actualizara "+datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
 				patronIntegration.executeActualizar(datosPatronalesPage.getDatosPatron());
-				datosPatronalesPage.getDatosPatron().setEjercicioDictaminarDesc("2015");
+
 			}
 			
 			habilitaOpciones();

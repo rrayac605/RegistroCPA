@@ -38,7 +38,7 @@
  * holder.
  */
 
-package mx.gob.imss.cit.dictamen.web.converters;
+package mx.gob.imss.cit.dictamen.web.util;
 
 import java.io.IOException;
 import java.io.NotSerializableException;

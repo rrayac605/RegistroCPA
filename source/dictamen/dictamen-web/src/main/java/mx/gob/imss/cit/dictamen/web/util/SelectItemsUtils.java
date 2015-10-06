@@ -1,4 +1,4 @@
-package mx.gob.imss.cit.dictamen.web.converters;
+package mx.gob.imss.cit.dictamen.web.util;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

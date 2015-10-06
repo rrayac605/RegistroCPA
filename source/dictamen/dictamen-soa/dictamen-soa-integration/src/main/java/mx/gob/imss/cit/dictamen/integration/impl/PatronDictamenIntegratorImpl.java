@@ -37,6 +37,7 @@ public class PatronDictamenIntegratorImpl implements PatronDictamenIntegrator {
 			
 			if(patronDictamenTO!=null){
 				res=TransformerIntegrationUtils.transformer(patronDictamenTO);
+				LOG.info("tipo dictamen"+res.getCveIdTipoDictamen().getCveIdTipoDictamen());
 			}
 			
 		} catch (Exception e) {

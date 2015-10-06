@@ -64,13 +64,14 @@
 
 				<p:panelGrid columns="2">
 					<h:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.tipo']}">:</h:outputLabel>
-					<p:selectOneMenu
-						value="#{datosPatronalesPage.datosPatron.idTipoDictamen}">
+						value="#{msg['message.dictamen.dictaminar.datos.tipo']}" 
+						for="tipo">:</h:outputLabel>
+					<p:selectOneMenu id="tipo"
+						value="#{datosPatronalesPage.datosPatron.cveIdTipoDictamen}"  converter="tipoDictamenConverter">
 						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
 						<f:selectItems value="#{datosPatronalesPage.listaTipoDictamen}"
 							var="tipo" itemLabel="#{tipo.desTipoDictamen}"
-							itemValue="#{tipo.cveIdTipoDictamen}" />
+							itemValue="#{tipo}" />
 					</p:selectOneMenu>
 				</p:panelGrid>
 
@@ -89,11 +90,11 @@
 						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}"
 						for="ejercicio" />
 					<p:selectOneMenu id="ejercicio"
-						value="#{datosPatronalesPage.datosPatron.ejercicioDictaminar}">
+						value="#{datosPatronalesPage.datosPatron.cveIdEjerFiscal}" converter="ejercicioFiscalConverter" >
 						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
 						<f:selectItems value="#{datosPatronalesPage.listaEjercicioFiscal}"
 							var="ejercicio" itemLabel="#{ejercicio.desEjerFiscal}"
-							itemValue="#{ejercicio.cveIdEjerFiscal}" />
+							itemValue="#{ejercicio}" />
 					</p:selectOneMenu>
 				</p:panelGrid>
 
@@ -102,7 +103,7 @@
 						value="#{msg['message.dictamen.dictaminar.datos.construccion']}" />
 					<p:selectOneRadio id="construccion"
 						value="#{datosPatronalesPage.datosPatron.industriaConstruccion}"
-						converter="#{booleanConverter}">
+						converter="booleanConverter">
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
 							itemValue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
@@ -117,7 +118,7 @@
 						value="#{msg['message.dictamen.dictaminar.datos.valuada']}" />
 					<p:selectOneRadio id="valuada"
 						value="#{datosPatronalesPage.datosPatron.actConstruccionOregObra}"
-						converter="#{booleanConverter}">
+						converter="booleanConverter">
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
 							itemValue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
@@ -132,7 +133,7 @@
 						value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" />
 					<p:selectOneRadio id="dictaminado"
 						value="#{datosPatronalesPage.datosPatron.empresaValuada}"
-						converter="#{booleanConverter}">
+						converter="booleanConverter">
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
 							itemValue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
@@ -149,11 +150,13 @@
 						action="#{datosPatronalesBean.guardar}" 
 						ajax="true" 
 						onstart="statusDialog.show();"
-						oncomplete="statusDialog.hide();"/>
+						oncomplete="statusDialog.hide();"
+						update=":dictaminacionWizardPanel"/>
 						
 					<p:commandButton value="#{msg['message.button.limpiar']}"
-						action="#{datosPatronalesBean.limpiar}" immediate="true"
-						ajax="false" />
+						actionListener="#{datosPatronalesBean.limpiar}" 
+						ajax="true"
+						update="@form :formDatosRfc :dictaminacionWizardPanel" />
 
 				</p:panelGrid>
 			</h:form>

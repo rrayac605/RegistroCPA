@@ -175,15 +175,7 @@ public class TransformerServiceUtils {
 	}
 	
 	public static NdtPatronDictamenDO transformer( PatronDictamenTO patron ) {
-		NdtPatronDictamenDO cont=  (NdtPatronDictamenDO) TransformerHelper.get(mapClass,patron, NdtPatronDictamenDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-		
-		NdcTipoDictamenDO ndcTipoDictamenDO=new NdcTipoDictamenDO();
-		ndcTipoDictamenDO.setCveIdTipoDictamen(patron.getCveIdTipoDictamenId());
-		NdcEjercicioFiscalDO ndcEjercicioFiscalDO=new NdcEjercicioFiscalDO();
-		ndcEjercicioFiscalDO.setCveIdEjerFiscal(patron.getCveIdEjerFiscalId());
-		
-		cont.setCveIdEjerFiscal(ndcEjercicioFiscalDO);
-		cont.setCveIdTipoDictamen(ndcTipoDictamenDO);
+		NdtPatronDictamenDO cont=  (NdtPatronDictamenDO) TransformerHelper.get(mapClass,patron, NdtPatronDictamenDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;		
 		
 		return cont;
 	}	
@@ -191,13 +183,6 @@ public class TransformerServiceUtils {
 	public static PatronDictamenTO transformer( NdtPatronDictamenDO patron ) {
 		PatronDictamenTO cont=  (PatronDictamenTO) TransformerHelper.get(mapClass,patron, PatronDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 		
-		if(patron.getCveIdTipoDictamen()!=null){
-			cont.setCveIdTipoDictamenId(patron.getCveIdTipoDictamen().getCveIdTipoDictamen());
-		}
-		if(patron.getCveIdEjerFiscal()!=null){
-			cont.setCveIdEjerFiscalId(patron.getCveIdEjerFiscal().getCveIdEjerFiscal());
-		}
-
 		return cont;
 	}	
 	

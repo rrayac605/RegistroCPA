@@ -32,13 +32,25 @@ public class PatronDictamenTO extends BaseTO{
     private Date fecRegistroBaja;
     private Date fecRegistroAutorizado;
     private String cveIdUsuario;
-    private Long cveIdTipoDictamenId;    
-    private Long cveIdEjerFiscalId;
+    private TipoDictamenTO cveIdTipoDictamen;    
+    private EjercicioFiscalTO cveIdEjerFiscal;
 	/**
 	 * @return the cveIdPatronDictamen
 	 */
 	public Long getCveIdPatronDictamen() {
 		return cveIdPatronDictamen;
+	}
+	public TipoDictamenTO getCveIdTipoDictamen() {
+		return cveIdTipoDictamen;
+	}
+	public void setCveIdTipoDictamen(TipoDictamenTO cveIdTipoDictamen) {
+		this.cveIdTipoDictamen = cveIdTipoDictamen;
+	}
+	public EjercicioFiscalTO getCveIdEjerFiscal() {
+		return cveIdEjerFiscal;
+	}
+	public void setCveIdEjerFiscal(EjercicioFiscalTO cveIdEjerFiscal) {
+		this.cveIdEjerFiscal = cveIdEjerFiscal;
 	}
 	/**
 	 * @param cveIdPatronDictamen the cveIdPatronDictamen to set
@@ -202,31 +214,7 @@ public class PatronDictamenTO extends BaseTO{
 	public void setCveIdUsuario(String cveIdUsuario) {
 		this.cveIdUsuario = cveIdUsuario;
 	}
-	/**
-	 * @return the cveIdTipoDictamenId
-	 */
-	public Long getCveIdTipoDictamenId() {
-		return cveIdTipoDictamenId;
-	}
-	/**
-	 * @param cveIdTipoDictamenId the cveIdTipoDictamenId to set
-	 */
-	public void setCveIdTipoDictamenId(Long cveIdTipoDictamenId) {
-		this.cveIdTipoDictamenId = cveIdTipoDictamenId;
-	}
-	/**
-	 * @return the cveIdEjerFiscalId
-	 */
-	public Long getCveIdEjerFiscalId() {
-		return cveIdEjerFiscalId;
-	}
-	/**
-	 * @param cveIdEjerFiscalId the cveIdEjerFiscalId to set
-	 */
-	public void setCveIdEjerFiscalId(Long cveIdEjerFiscalId) {
-		this.cveIdEjerFiscalId = cveIdEjerFiscalId;
-	}
-   
+
 
 
 

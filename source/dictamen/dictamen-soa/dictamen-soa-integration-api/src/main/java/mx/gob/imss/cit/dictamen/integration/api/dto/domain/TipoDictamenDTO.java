@@ -80,7 +80,7 @@ public class TipoDictamenDTO extends BaseDTO {
 
     @Override
     public String toString() {
-        return "mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO[ cveIdTipoDictamen=" + cveIdTipoDictamen + " ]";
+        return "mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO[ cveIdTipoDictamen=" + cveIdTipoDictamen + " ]";
     }
     
 }
