@@ -54,7 +54,7 @@ public final class ResourceBundleUtils {
         }
         
     
-		LOGGER.info("Message error : " + message);
+		LOGGER.info("Message : " + message);
 		return message;
         
     }

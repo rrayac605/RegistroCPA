@@ -131,7 +131,7 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 		try {
 			NdtPatronDictamenDO patronBD=new NdtPatronDictamenDO();
 			patronBD.setCveIdPatronDictamen(dictamen.getCveIdPatronDictamen());
-			LOG.error("el id a buscar es el "+dictamen.getCveIdPatronDictamen());
+			LOG.info("el id a buscar es el "+dictamen.getCveIdPatronDictamen());
 			patronBD=ndtPatronDictamenDAO.get(patronBD.getCveIdPatronDictamen());
 			
 			

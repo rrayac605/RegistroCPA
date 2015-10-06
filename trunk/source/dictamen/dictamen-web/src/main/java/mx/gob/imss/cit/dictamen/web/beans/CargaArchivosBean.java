@@ -7,6 +7,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.integration.api.CargaArchivosIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.CargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
@@ -19,8 +21,6 @@ import mx.gob.imss.cit.dictamen.web.pages.CargaArchivosPage;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
 import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
 import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
-
-import org.apache.log4j.Logger;
 
 @ManagedBean(name = "cargaArchivosBean")
 @ViewScoped
@@ -52,9 +52,9 @@ public class CargaArchivosBean extends BaseBean {
 			LOG.info("init una vez cragado el dictamen");
 			LOG.info("rfc patron "+ datosPatronalesPage.getDatosPatron().getRfc());
 			LOG.info("rfc contador "+dictamenPage.getContadorPublicoAutDTO().getRfc());
-			LOG.info("año "+datosPatronalesPage.getDatosPatron().getEjercicioDictaminarDesc());
+			LOG.info("año "+datosPatronalesPage.getDatosPatron().getCveIdEjerFiscal().getDesEjerFiscal());
 			
-				cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout(datosPatronalesPage.getDatosPatron().getEjercicioDictaminarDesc(),
+				cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout(datosPatronalesPage.getDatosPatron().getCveIdEjerFiscal().getDesEjerFiscal(),
 						dictamenPage.getContadorPublicoAutDTO().getRfc(), datosPatronalesPage.getDatosPatron().getRfc()));
 
 			

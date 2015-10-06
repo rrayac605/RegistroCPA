@@ -31,13 +31,13 @@ public class TipoDictamenIntegratorImpl implements TipoDictamenIntegrator {
 	@Override
 	public List<TipoDictamenDTO> findAll() throws DictamenNegocioException{
 
-		List<TipoDictamenDTO> listaTO=new ArrayList<TipoDictamenDTO>();
+		List<TipoDictamenDTO> listaDTO=new ArrayList<TipoDictamenDTO>();
 		try {
 			
 			List<TipoDictamenTO> ejercicioFiscalTOs=tipoDictamenService.findAll();
 			
 			for (TipoDictamenTO to : ejercicioFiscalTOs) {
-				listaTO.add(TransformerIntegrationUtils.transformer(to));
+				listaDTO.add(TransformerIntegrationUtils.transformer(to));
 			}
 			
 		} catch (DictamenException e) {
@@ -45,7 +45,7 @@ public class TipoDictamenIntegratorImpl implements TipoDictamenIntegrator {
 			throw new DictamenNegocioException(e.getMessage(), e);
 		}
 		
-		return listaTO;
+		return listaDTO;
 
 	}
 

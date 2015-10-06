@@ -12,17 +12,31 @@ public class PatronDictamenDTO extends BaseDTO  {
 	private Long cveIdPatronDictamen;
 	private String 	rfc;
 	private Integer numTrabajadoresPromedio;
-	private Long idTipoDictamen;
+	private TipoDictamenDTO cveIdTipoDictamen;
 	
 	private Boolean industriaConstruccion;
 	private Boolean empresaValuada;	
 	private Boolean actConstruccionOregObra;
 	
 	private String razonSocialNombre;
-	private Long 	ejercicioDictaminar;
-	private String 	ejercicioDictaminarDesc;
+	private EjercicioFiscalDTO 	cveIdEjerFiscal;
 	private Integer numRegistroPatronales;
+	
 
+
+
+	public TipoDictamenDTO getCveIdTipoDictamen() {
+		return cveIdTipoDictamen;
+	}
+	public void setCveIdTipoDictamen(TipoDictamenDTO cveIdTipoDictamen) {
+		this.cveIdTipoDictamen = cveIdTipoDictamen;
+	}
+	public EjercicioFiscalDTO getCveIdEjerFiscal() {
+		return cveIdEjerFiscal;
+	}
+	public void setCveIdEjerFiscal(EjercicioFiscalDTO cveIdEjerFiscal) {
+		this.cveIdEjerFiscal = cveIdEjerFiscal;
+	}
 	/**
 	 * @return the rfc
 	 */
@@ -47,18 +61,8 @@ public class PatronDictamenDTO extends BaseDTO  {
 	public void setNumTrabajadoresPromedio(Integer numTrabajadoresPromedio) {
 		this.numTrabajadoresPromedio = numTrabajadoresPromedio;
 	}
-	/**
-	 * @return the idTipoDictamen
-	 */
-	public Long getIdTipoDictamen() {
-		return idTipoDictamen;
-	}
-	/**
-	 * @param idTipoDictamen the idTipoDictamen to set
-	 */
-	public void setIdTipoDictamen(Long idTipoDictamen) {
-		this.idTipoDictamen = idTipoDictamen;
-	}
+
+
 	/**
 	 * @return the industriaConstruccion
 	 */
@@ -107,18 +111,7 @@ public class PatronDictamenDTO extends BaseDTO  {
 	public void setRazonSocialNombre(String razonSocialNombre) {
 		this.razonSocialNombre = razonSocialNombre;
 	}
-	/**
-	 * @return the ejercicioDictaminar
-	 */
-	public Long getEjercicioDictaminar() {
-		return ejercicioDictaminar;
-	}
-	/**
-	 * @param ejercicioDictaminar the ejercicioDictaminar to set
-	 */
-	public void setEjercicioDictaminar(Long ejercicioDictaminar) {
-		this.ejercicioDictaminar = ejercicioDictaminar;
-	}
+
 	/**
 	 * @return the numRegistroPatronales
 	 */
@@ -142,18 +135,6 @@ public class PatronDictamenDTO extends BaseDTO  {
 	 */
 	public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
 		this.cveIdPatronDictamen = cveIdPatronDictamen;
-	}
-	/**
-	 * @return the ejercicioDictaminarDesc
-	 */
-	public String getEjercicioDictaminarDesc() {
-		return ejercicioDictaminarDesc;
-	}
-	/**
-	 * @param ejercicioDictaminarDesc the ejercicioDictaminarDesc to set
-	 */
-	public void setEjercicioDictaminarDesc(String ejercicioDictaminarDesc) {
-		this.ejercicioDictaminarDesc = ejercicioDictaminarDesc;
 	}
 
 	
