@@ -14,21 +14,31 @@
 				#{examenPage.atestiguamientoDTO.desAtestiguamiento}
 				<br />
 		<br />
-		<ui:repeat var="rubro" value="#{examenPage.atestiguamientoDTO.ndcRubros}"
-			varStatus="status">
+		<ui:repeat var="rubro"
+			value="#{examenPage.atestiguamientoDTO.ndcRubros}" varStatus="status">
 					#{rubro.desRubro}<br />
 			<br />
-			<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}" varStatus="status">
+			<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}"
+				varStatus="status">
 						#{pregunta.desPregunta}<br />
 
 				<p:selectOneRadio id="edo" value="#{examenPage.estado}">
-						<f:selectItems itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}" var="respuesta"
-							itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}" value="#{pregunta.ndcOpcionesPregunta}"/>
+					<f:selectItems
+						itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}"
+						var="respuesta"
+						itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}"
+						value="#{pregunta.ndcOpcionesPregunta}" />
 				</p:selectOneRadio>
 				<br />
 				<br />
 			</ui:repeat>
 		</ui:repeat>
+
+		<h:form>
+				<p:commandButton action="#{examenBean.regresar()}" ajax="false"
+					value="#{msg['message.button.views.dictamen.atestiguamiento.regresar']}"
+					immediate="true"></p:commandButton>
+		</h:form>
 	</ui:define>
 </ui:composition>
 

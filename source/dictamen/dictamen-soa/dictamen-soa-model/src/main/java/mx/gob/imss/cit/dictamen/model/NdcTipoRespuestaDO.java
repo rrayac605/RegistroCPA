@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -57,6 +58,7 @@ public class NdcTipoRespuestaDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroBaja;
     @OneToMany(mappedBy = "cveIdRespuesta", fetch = FetchType.LAZY)
+    @OrderBy
     private List<NdcOpcionPreguntaDO> ndcOpcionPreguntaDOList;
 
     public NdcTipoRespuestaDO() {

@@ -8,6 +8,7 @@ import javax.faces.bean.ViewScoped;
 import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.web.constants.NavigationConstants;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.ExamenPage;
 import mx.gob.imss.cit.dictamen.web.util.CleanBeanUtil;
@@ -46,5 +47,8 @@ public class ExamenBean extends BaseBean {
 		this.examenPage = examenPage;
 	}
 	
+	public String regresar(){	
+		return NavigationConstants.PAGE_EXAMEN_REGRESAR;
+	}
 	
 }

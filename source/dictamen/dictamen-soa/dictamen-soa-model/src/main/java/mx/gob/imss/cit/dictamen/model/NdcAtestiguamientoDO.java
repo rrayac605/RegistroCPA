@@ -33,7 +33,7 @@ import javax.validation.constraints.Size;
 @Table(name = "NDC_ATESTIGUAMIENTO")
 @NamedQueries({
     @NamedQuery(name = "NdcAtestiguamientoDO.findAll", query = "SELECT n FROM NdcAtestiguamientoDO n"),
-    @NamedQuery(name = "NdcAtestiguamientoDO.findByCveIdAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.cveIdAtestiguamiento = :cveIdAtestiguamiento"),
+    @NamedQuery(name = "NdcAtestiguamientoDO.findByCveIdAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.cveIdAtestiguamiento = :cveIdAtestiguamiento "),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByDesAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.desAtestiguamiento = :desAtestiguamiento"),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroAlta", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
