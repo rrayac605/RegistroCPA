@@ -34,9 +34,6 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 		List<AtestiguamientoDictamenTO> atestiguamientosTOList = new ArrayList<AtestiguamientoDictamenTO>();
 		try {
 			atestiguamientosTOList = examenService.findExamenByIdPatronDictamen(63L);
-			for (AtestiguamientoDictamenTO atestiguamientoDictamenTO : atestiguamientosTOList) {
-				System.out.println(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
-			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 		}

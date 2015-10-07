@@ -22,4 +22,6 @@ public final class NavigationConstants {
     
     public static final String PAGE_DICTAMINACION= "dictaminacion";
     
+    public static final String PAGE_EXAMEN_REGRESAR= "examenRegresar";
+    
 }
