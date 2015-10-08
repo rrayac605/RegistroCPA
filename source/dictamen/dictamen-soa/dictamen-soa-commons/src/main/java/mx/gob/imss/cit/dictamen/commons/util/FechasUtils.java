@@ -154,6 +154,21 @@ public final class FechasUtils {
 
 		return dateFormat.format(fechaCompleta);
     }
+	
+	/**
+	 * Devuelve la hora a partir de un Date
+	 * 
+	 * @param fechaCompleta
+	 * 
+	 * @return
+	 */
+	public static String getAnioFromDate(Date fechaCompleta){
+
+		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy");		
+
+		return dateFormat.format(fechaCompleta);
+    }
+
 
    public static Date getFechaMasMenosDias(Date fechaActual, Integer dias) {
         Calendar c1 = Calendar.getInstance();
@@ -202,6 +217,15 @@ public final class FechasUtils {
        cal.add(Calendar.DATE, numDias);
        return cal.getTime();
    }
+   
+   /** Suma dias a la fecha recibida **/
+   public static Date restarAnios(Date fecha, int numAnios){
+       Calendar cal = Calendar.getInstance();
+       cal.setTime(fecha);
+       cal.add(Calendar.YEAR, -numAnios);
+       return cal.getTime();
+   }
+   
    
    /**
     * Regresa la fecha proporcionada pero con 

@@ -36,8 +36,7 @@ import javax.validation.constraints.Size;
 @NamedQueries({
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findAll", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdAtestigDictamen", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdAtestigDictamen = :cveIdAtestigDictamen"),
-    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdPatronDictamen", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdPatronDictamen.cveIdPatronDictamen = :cveIdPatronDictamen"),
-    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdDictamen", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdDictamen = :cveIdDictamen"),
+    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdPatronDictamen", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdPatronDictamen.cveIdPatronDictamen = :cveIdPatronDictamen"),  
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroAlta", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroBaja", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
@@ -52,8 +51,6 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
     @SequenceGenerator(name = "NdtAtestiguamientoDictamen_Id_Seq_Gen", sequenceName = "SEQ_NDTATESTIGUAMIENTODICTAMEN", allocationSize=1)
     @GeneratedValue(generator = "NdtAtestiguamientoDictamen_Id_Seq_Gen")
     private Long cveIdAtestigDictamen;
-    @Column(name = "CVE_ID_DICTAMEN")
-    private Long cveIdDictamen;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroAlta;
@@ -91,14 +88,6 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
 
     public void setCveIdAtestigDictamen(Long cveIdAtestigDictamen) {
         this.cveIdAtestigDictamen = cveIdAtestigDictamen;
-    }
-
-    public Long getCveIdDictamen() {
-        return cveIdDictamen;
-    }
-
-    public void setCveIdDictamen(Long cveIdDictamen) {
-        this.cveIdDictamen = cveIdDictamen;
     }
 
     public Date getFecRegistroAlta() {
