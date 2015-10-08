@@ -57,10 +57,8 @@ public class AWSReader implements ItemReader<String> {
 	@Override
 	public String read()
 			throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
-        if (index < lineas.size()) {
-            String str = lineas.get(index++);
-            LOG.info(str);
-            return str;
+        if (index < lineas.size()) {            
+            return lineas.get(index++);
         } else {
             return null;
         }
