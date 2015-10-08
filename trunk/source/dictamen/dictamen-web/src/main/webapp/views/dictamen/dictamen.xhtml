@@ -30,18 +30,7 @@
 
 			<p:panel id="dictaminacionWizardPanel">
 				<p:tabView id="solicitudWizard">
-
-
-					<p:tab id="loadRp"
-						title="#{msg['message.dictamen.dictaminar.wizard.titulo.registroPatronal']}"
-						disabled="#{dictamenPage.banderaOcultaTabs}">
-						<p:panel rendered="#{!dictamenPage.banderaOcultaTabs}">
-							<ui:include
-								src="/views/dictamen/informacionPatronal/cargaRegistroPatronal.xhtml" />
-						</p:panel>
-
-					</p:tab>
-
+					
 					<p:tab id="loadData"
 						title="#{msg['message.dictamen.dictaminar.wizard.titulo.adjuntar']}"
 						disabled="#{dictamenPage.banderaOcultaTabs}">
@@ -52,6 +41,16 @@
 
 
 					</p:tab>
+					
+					<p:tab id="loadRp"
+						title="#{msg['message.dictamen.dictaminar.wizard.titulo.registroPatronal']}"
+						disabled="#{dictamenPage.banderaOcultaTabs}">
+						<p:panel rendered="#{!dictamenPage.banderaOcultaTabs}">
+							<ui:include
+								src="/views/dictamen/informacionPatronal/cargaRegistroPatronal.xhtml" />
+						</p:panel>
+
+					</p:tab>									
 
 					<p:tab id="infoTab"
 						title="#{msg['message.dictamen.dictaminar.wizard.titulo.infoPatronal']}"
