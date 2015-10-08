@@ -23,7 +23,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  *
@@ -33,8 +32,7 @@ import javax.validation.constraints.Size;
 @Table(name = "NDC_OPCION_PREGUNTA")
 @NamedQueries({
     @NamedQuery(name = "NdcOpcionPreguntaDO.findAll", query = "SELECT n FROM NdcOpcionPreguntaDO n"),
-    @NamedQuery(name = "NdcOpcionPreguntaDO.findByCveIdOpcionPregunta", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.cveIdOpcionPregunta = :cveIdOpcionPregunta"),
-    @NamedQuery(name = "NdcOpcionPreguntaDO.findByDesOpcionPregunta", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.desOpcionPregunta = :desOpcionPregunta"),
+    @NamedQuery(name = "NdcOpcionPreguntaDO.findByCveIdOpcionPregunta", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.cveIdOpcionPregunta = :cveIdOpcionPregunta"),  
     @NamedQuery(name = "NdcOpcionPreguntaDO.findByFecAltaRegistro", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.fecAltaRegistro = :fecAltaRegistro"),
     @NamedQuery(name = "NdcOpcionPreguntaDO.findByFecBajaRegistro", query = "SELECT n FROM NdcOpcionPreguntaDO n WHERE n.fecBajaRegistro = :fecBajaRegistro")})
 public class NdcOpcionPreguntaDO implements Serializable {
@@ -45,9 +43,6 @@ public class NdcOpcionPreguntaDO implements Serializable {
     @NotNull
     @Column(name = "CVE_ID_OPCION_PREGUNTA", nullable = false, precision = 22)
     private Long cveIdOpcionPregunta;
-    @Size(max = 300)
-    @Column(name = "DES_OPCION_PREGUNTA", length = 300)
-    private String desOpcionPregunta;
     @Column(name = "FEC_ALTA_REGISTRO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecAltaRegistro;
@@ -76,14 +71,6 @@ public class NdcOpcionPreguntaDO implements Serializable {
 
     public void setCveIdOpcionPregunta(Long cveIdOpcionPregunta) {
         this.cveIdOpcionPregunta = cveIdOpcionPregunta;
-    }
-
-    public String getDesOpcionPregunta() {
-        return desOpcionPregunta;
-    }
-
-    public void setDesOpcionPregunta(String desOpcionPregunta) {
-        this.desOpcionPregunta = desOpcionPregunta;
     }
 
     public Date getFecAltaRegistro() {

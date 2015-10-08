@@ -19,4 +19,6 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
 public interface EjercicioFiscalService {
 	
 	List<EjercicioFiscalTO>  findAll() throws DictamenException;
+	
+	EjercicioFiscalTO obtenerEjercicioFiscalActual(List<EjercicioFiscalTO> ejercicios)throws DictamenException;
 }

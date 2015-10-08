@@ -26,8 +26,20 @@ public class DatosPatronalesPage extends BaseBean {
 	private List<TipoDictamenDTO> listaTipoDictamen;
 	@Reset
 	private List<EjercicioFiscalDTO> listaEjercicioFiscal;
+	
+	@Reset
+	private Boolean habilitarEmpresaValuada;
+	
 
 	
+	public Boolean getHabilitarEmpresaValuada() {
+		return habilitarEmpresaValuada;
+	}
+
+	public void setHabilitarEmpresaValuada(Boolean habilitarEmpresaValuada) {
+		this.habilitarEmpresaValuada = habilitarEmpresaValuada;
+	}
+
 	private String validacionRfc=DictamenWebConstants.EXPRESION_REGULAR_RFC_MORAL;
 
 	/**

@@ -17,4 +17,7 @@ import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioExcepti
 public interface EjercicioFiscalIntegrator {
 
 	List<EjercicioFiscalDTO> findAll() throws DictamenNegocioException;
+	
+	EjercicioFiscalDTO obtenerEjercicioFiscalActual(List<EjercicioFiscalDTO> ejercicios)throws DictamenNegocioException;
+	
 }

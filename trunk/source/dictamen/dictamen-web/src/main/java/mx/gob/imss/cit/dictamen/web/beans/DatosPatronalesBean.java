@@ -14,6 +14,7 @@ import mx.gob.imss.cit.dictamen.integration.api.TipoDictamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
+import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
@@ -59,6 +60,7 @@ public class DatosPatronalesBean extends BaseBean {
 			datosPatronalesPage.setListaEjercicioFiscal(ejercicioFiscalIntegrator.findAll());
 						
 			inicializarPatron();
+			inicializarEjercicioFiscal();
 			
 
 		} catch (Exception e) {
@@ -75,11 +77,47 @@ public class DatosPatronalesBean extends BaseBean {
 	 */
 	private void inicializarPatron() {
 		datosPatronalesPage.setDatosPatron(new PatronDictamenDTO());
-		datosPatronalesPage.getDatosPatron().setCveIdEjerFiscal(new EjercicioFiscalDTO());
+	
 		datosPatronalesPage.getDatosPatron().setCveIdTipoDictamen(new TipoDictamenDTO());
 		datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
 		datosPatronalesPage.getDatosPatron().setIndustriaConstruccion(false);
-		datosPatronalesPage.getDatosPatron().setActConstruccionOregObra(false);
+		datosPatronalesPage.getDatosPatron().setActConstruccionOregObra(false);			
+		datosPatronalesPage.getDatosPatron().setCveIdEjerFiscal(new EjercicioFiscalDTO());
+		datosPatronalesPage.setHabilitarEmpresaValuada(false);
+	}
+	
+	private void inicializarEjercicioFiscal() throws DictamenNegocioException{
+		EjercicioFiscalDTO ejerActual=ejercicioFiscalIntegrator.obtenerEjercicioFiscalActual(datosPatronalesPage.getListaEjercicioFiscal());
+		datosPatronalesPage.getDatosPatron().setCveIdEjerFiscal(ejerActual);
+		
+	}
+	
+	public void calcularTipoDictamen(){
+		int trabajadores=datosPatronalesPage.getDatosPatron().getNumTrabajadoresPromedio();
+		TipoDictamenDTO tipoDictamenDTO=new TipoDictamenDTO();
+		if(trabajadores<300){
+			tipoDictamenDTO.setCveIdTipoDictamen(2L);
+			datosPatronalesPage.getDatosPatron().setCveIdTipoDictamen(tipoDictamenDTO);
+		}else{
+			tipoDictamenDTO.setCveIdTipoDictamen(1L);
+			datosPatronalesPage.getDatosPatron().setCveIdTipoDictamen(tipoDictamenDTO);
+
+		}
+		
+	}
+	
+	public void calcularValuada(){
+		boolean industria=datosPatronalesPage.getDatosPatron().getIndustriaConstruccion();
+		
+		if(industria){
+			datosPatronalesPage.setHabilitarEmpresaValuada(true);
+			datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
+		}else{
+			datosPatronalesPage.setHabilitarEmpresaValuada(false);
+			datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
+
+		}
+		
 	}
 	
 	
@@ -94,7 +132,7 @@ public class DatosPatronalesBean extends BaseBean {
 			datosPatronalesPage.setDatosPatron(dictamenDTO);
 			LOG.info("tipo dictamen"+datosPatronalesPage.getDatosPatron().getCveIdTipoDictamen().getCveIdTipoDictamen());
 			habilitaOpciones();
-			
+			calcularValuada();
 		}	  
 	}
 
@@ -140,11 +178,15 @@ public class DatosPatronalesBean extends BaseBean {
 		}
 	}
 	
-	public void limpiar(){		
-		inicializarPatron();
-		inhabilitaOpciones();
-		
-		
+	public void limpiar(){						
+		try {
+			inicializarPatron();
+			inhabilitaOpciones();
+			inicializarEjercicioFiscal();
+		} catch (DictamenNegocioException e) {
+			LOG.error(e.getMessage(),e);
+			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES_GET.getCode());		
+		}				
 	}
 	
 
