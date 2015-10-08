@@ -7,6 +7,8 @@ import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.commons.constants.DictamenConstants;
 import mx.gob.imss.cit.dictamen.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
@@ -20,8 +22,6 @@ import mx.gob.imss.cit.dictamen.services.LayoutPatronAsociadoService;
 import mx.gob.imss.cit.dictamen.services.LayoutService;
 import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
-
-import org.apache.log4j.Logger;
 
 @Local
 @Stateless
@@ -69,5 +69,20 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 		}
 		return listaParents;
 	}
+
+	@Override
+	public void setLayoutService(LayoutService layoutService) {
+		this.layoutService = layoutService;
+	}
+
+	@Override
+	public void setKeyGeneratorService(KeyGeneratorService keyGeneratorService) {
+		this.keyGeneratorService = keyGeneratorService;
+	}
+
+	@Override
+	public void setAWSService(AWSService aWSService) {
+		AWSService = aWSService;
+	}		
 
 }

@@ -18,21 +18,25 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import mx.gob.imss.cit.dictamen.commons.util.ReflectionHelper;
-import mx.gob.imss.cit.dictamen.persistence.dao.NdcAtestiguamientoDAO;
-import mx.gob.imss.cit.dictamen.persistence.dao.NdtAtestiguamientoDictamenDAO;
-import mx.gob.imss.cit.dictamen.persistence.dao.NdtContadorPublicoAutDAO;
-import mx.gob.imss.cit.dictamen.persistence.dao.NdtPatronDictamenDAO;
-import mx.gob.imss.cit.dictamen.persistence.dao.NdtR2DespachoDAO;
-import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdcAtestiguamientoDAOImpl;
-import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtAtestiguamientoDictamenDAOImpl;
-import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtContadorPublicoAutDAOImpl;
-import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtPatronDictamenDAOImpl;
-import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtR2DespachoDAOImpl;
-
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
+
+import mx.gob.imss.cit.dictamen.commons.util.ReflectionHelper;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdcAseveracionesDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdcAtestiguamientoDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtAtestiguamientoDictamenDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtCargaDocumentoDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtContadorPublicoAutDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtPatronDictamenDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtR2DespachoDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdcAseveracionesDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdcAtestiguamientoDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtAtestiguamientoDictamenDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtCargaDocumentoDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtContadorPublicoAutDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtPatronDictamenDAOImpl;
+import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtR2DespachoDAOImpl;
 
 /**
  * Clase de prueba unitaria de la que deben extender los
@@ -122,6 +126,8 @@ public abstract class AbstractDBTestUnit {
 		mapDAO.put(NdtR2DespachoDAO.class, NdtR2DespachoDAOImpl.class);
 		mapDAO.put(NdtAtestiguamientoDictamenDAO.class, NdtAtestiguamientoDictamenDAOImpl.class);
 		mapDAO.put(NdcAtestiguamientoDAO.class, NdcAtestiguamientoDAOImpl.class);
+		mapDAO.put(NdtCargaDocumentoDAO.class, NdtCargaDocumentoDAOImpl.class);
+		mapDAO.put(NdcAseveracionesDAO.class, NdcAseveracionesDAOImpl.class);
 	}
 
 	protected void connect(Object o) {

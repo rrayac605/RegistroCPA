@@ -10,10 +10,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 
 public class TransformerHelper {
 	
-	
+	private static final Logger LOG=Logger.getLogger(TransformerHelper.class);
     private static final String SETTER_PREFIX = "set";
     
     private static final int CERO=0;
@@ -117,9 +119,8 @@ public class TransformerHelper {
 	                        stmt.execute();
 	                    }
 	                }	
-	        } catch (Exception e) {
-	        	e.printStackTrace();
-	            //LOGGER.error("Se produjo un error al borrar los campos de " + beanObject.getClass().getName() + " en el campo " + field.getName(), e);
+	        } catch (Exception e) {	        	
+	        	LOG.error("Se produjo un error en el mapeo de campos", e);
 	        }	  
 	    }
 	    
