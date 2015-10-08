@@ -54,27 +54,29 @@ public class ScanBucket {
     public void run() {    	
 	  JobParameters parameters;
 	  String keyDestination;
-	  for (S3ObjectSummary object1 : s3.listObjects(bucketName).getObjectSummaries()) {    		
-		  if (object1.getKey().startsWith(rutaOrigen) && object1.getKey().endsWith(".txt")){
-			  try {
-				  LOG.info("Objeto a procesar: "+object1.getKey());
-				  keyDestination=object1.getKey().replaceFirst(rutaOrigen, rutaProcesamiento);
-				  moveObject(object1.getKey(), keyDestination);
-				  LOG.info("Destino: "+keyDestination);    				
-				  JobParametersBuilder parametersBuilder = new JobParametersBuilder();
-				  parametersBuilder.addString("key", keyDestination).toJobParameters();
-				  parametersBuilder.addString("destino", rutaDestino+keyDestination).toJobParameters();
-				  parametersBuilder.addString("date", new Date().toString());
-				  parametersBuilder.addString("delay", delay);
-				  parameters = parametersBuilder.toJobParameters();
-				  JobExecution execution = jobLauncher.run(job, parameters);
-				  LOG.info("Exit Status : " + execution.getStatus());
-			  } catch (Exception e) {
-				  LOG.error(e.getMessage(), e);
+	  try {
+		  for (S3ObjectSummary object1 : s3.listObjects(bucketName,rutaOrigen).getObjectSummaries()) {    		
+			  if (object1.getKey().startsWith(rutaOrigen) && object1.getKey().endsWith(".txt")){
+	
+					  LOG.info("Objeto a procesar: "+object1.getKey());
+					  keyDestination=object1.getKey().replaceFirst(rutaOrigen, rutaProcesamiento);
+					  moveObject(object1.getKey(), keyDestination);
+					  LOG.info("Destino: "+keyDestination);    				
+					  JobParametersBuilder parametersBuilder = new JobParametersBuilder();
+					  parametersBuilder.addString("key", keyDestination).toJobParameters();
+					  parametersBuilder.addString("destino", rutaDestino+keyDestination).toJobParameters();
+					  parametersBuilder.addString("date", new Date().toString());
+					  parametersBuilder.addString("delay", delay);
+					  parameters = parametersBuilder.toJobParameters();
+					  JobExecution execution = jobLauncher.run(job, parameters);
+					  LOG.info("Exit Status : " + execution.getStatus());
+				  
 			  }
 		  }
+	  } catch (Exception e) {
+		  LOG.error(e.getMessage(), e);
 	  }
-	  LOG.info("The time is now " + dateFormat.format(new Date()));
+	  LOG.debug("The time is now " + dateFormat.format(new Date()));
     }
 	  
     public void moveObject(String key, String destinationKey){
