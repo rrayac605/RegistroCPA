@@ -22,7 +22,7 @@ import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
  */
 @Stateless
 public class CargaArchivosServiceImpl implements CargaArchivosService {
-	private static final Logger LOG=Logger.getLogger(PatronDictamenServiceImpl.class);
+	private static final Logger LOG=Logger.getLogger(CargaArchivosServiceImpl.class);
 	
 	@EJB
 	private NdtCargaDocumentoDAO ndtCargaDocumentoDAO;	
@@ -43,11 +43,11 @@ public class CargaArchivosServiceImpl implements CargaArchivosService {
 				ndtCargaDocumentoDAO.create(ndtCargaDocumentoDO);
 			}			
 			ndtCargaDocumentoDAO.flush();
+			return true;
 		}catch(Exception e){
 			LOG.error(e.getMessage(),e);
-			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_CARGA_ARCHIVOS_GUARDAR,e);
-		}
-		return false;
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_CARGA_ARCHIVOS_GUARDAR,e);			
+		}		
 	}
 
 }

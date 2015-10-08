@@ -11,4 +11,11 @@ import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
 public interface LayoutPatronAsociadoService {
 	
 	List<ParentLayoutTO> findLayoutAWSService(String anioEjercicio, String rfcUsuario, String rfcPAtron)throws DictamenException;
+
+	void setLayoutService(LayoutService layoutService);
+
+	void setKeyGeneratorService(KeyGeneratorService keyGeneratorService);
+
+	void setAWSService(AWSService aWSService);
+
 }
