@@ -39,6 +39,7 @@ public interface NdtCargaDocumentoDAO {
 	 */
 	List<NdtCargaDocumentoDO> findAll();
 	
+	NdtCargaDocumentoDO findByCveIdPatronDictamen(NdtCargaDocumentoDO entity);
 	
 	void flush();
 

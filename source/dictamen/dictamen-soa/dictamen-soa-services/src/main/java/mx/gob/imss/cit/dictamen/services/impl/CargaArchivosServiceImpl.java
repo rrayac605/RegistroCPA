@@ -35,7 +35,13 @@ public class CargaArchivosServiceImpl implements CargaArchivosService {
 		}
 		try{
 			NdtCargaDocumentoDO ndtCargaDocumentoDO=TransformerServiceUtils.transformer(cargaAseveracionesTO);			
-			ndtCargaDocumentoDAO.create(ndtCargaDocumentoDO);
+			NdtCargaDocumentoDO ndtCargaDocumentoDOEdit = ndtCargaDocumentoDAO.findByCveIdPatronDictamen(ndtCargaDocumentoDO);
+			if (ndtCargaDocumentoDOEdit != null){
+				ndtCargaDocumentoDO.setCveIdBitacoraCargaAsev(ndtCargaDocumentoDOEdit.getCveIdBitacoraCargaAsev());
+				ndtCargaDocumentoDAO.edit(ndtCargaDocumentoDO);	
+			}else{
+				ndtCargaDocumentoDAO.create(ndtCargaDocumentoDO);
+			}			
 			ndtCargaDocumentoDAO.flush();
 		}catch(Exception e){
 			LOG.error(e.getMessage(),e);
