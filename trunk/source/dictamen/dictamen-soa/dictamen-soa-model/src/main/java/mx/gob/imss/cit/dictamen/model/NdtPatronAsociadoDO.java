@@ -58,7 +58,8 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdUsuario", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
     @NamedQuery(name = "NdtPatronAsociadoDO.findByFecRegistroAlta", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtPatronAsociadoDO.findByFecRegistroBaja", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtPatronAsociadoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado")})
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.findByIdPatronDictamen", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdPatronDictamen.cveIdPatronDictamen = :cveIdPatronDictamen")})
 public class NdtPatronAsociadoDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation

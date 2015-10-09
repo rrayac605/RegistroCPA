@@ -24,6 +24,7 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
@@ -45,6 +46,7 @@ import mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO;
 import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO;
 import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
+import mx.gob.imss.cit.dictamen.model.NdtPatronAsociadoDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.ws.commonschema.SGBDE;
 
@@ -93,7 +95,9 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class	,mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	,mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class);			
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class	,mx.gob.imss.cit.dictamen.model.NdtPatronAsociadoDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtPatronAsociadoDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class);		
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO.class , mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO.class);			
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class , mx.gob.imss.cit.dictamen.model.NdcEstadoCargaDocumentoDO.class);
@@ -102,7 +106,7 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.AseveracionesTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO.class , mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO.class);
-}
+	}
 	
 	private TransformerServiceUtils(){
 		
@@ -308,6 +312,14 @@ public class TransformerServiceUtils {
 	}
 	public static NdtContadorPublicoAutDO transformer( ContadorPublicoAutTO object ) {
 		return (NdtContadorPublicoAutDO) TransformerHelper.get(mapClass,object, NdtContadorPublicoAutDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	
+	public static NdtPatronAsociadoDO transformer( PatronAsociadoTO object ) {
+		return (NdtPatronAsociadoDO) TransformerHelper.get(mapClass,object, NdtPatronAsociadoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	
+	public static PatronAsociadoTO transformer( NdtPatronAsociadoDO object ) {
+		return (PatronAsociadoTO) TransformerHelper.get(mapClass,object, PatronAsociadoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
 	public static EstadoCargaDocumentoTO transformer( NdcEstadoCargaDocumentoDO object){
