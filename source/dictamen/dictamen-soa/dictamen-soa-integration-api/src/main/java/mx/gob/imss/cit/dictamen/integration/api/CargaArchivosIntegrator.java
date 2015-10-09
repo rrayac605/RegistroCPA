@@ -9,4 +9,7 @@ import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioExcepti
 public interface CargaArchivosIntegrator {
 	List<ParentLayoutDTO> findLayout(String anioEjercicio, String rfcUsuario, String rfcPatron)throws DictamenNegocioException;
 	boolean registrarCargaAseveracion(CargaDocumentoDTO cargaAseveracionesDTO)throws DictamenNegocioException;
+	
+	List<CargaDocumentoDTO> findCvePatronEstadoAseveracion(Long cveIdPatronDictamen, Long cveIdCpa, String desRfc) throws DictamenNegocioException;
+
 }

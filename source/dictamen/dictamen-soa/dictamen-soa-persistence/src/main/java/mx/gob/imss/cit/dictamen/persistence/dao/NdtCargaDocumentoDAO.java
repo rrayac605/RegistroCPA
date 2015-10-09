@@ -42,5 +42,8 @@ public interface NdtCargaDocumentoDAO {
 	NdtCargaDocumentoDO findByCveIdPatronDictamen(NdtCargaDocumentoDO entity);
 	
 	void flush();
+	List<NdtCargaDocumentoDO> findCvePatronEstadoAseveracion(Long cveIdPatronDictamen, Long cveIdCpa, String desRfc);
+
+
 
 }

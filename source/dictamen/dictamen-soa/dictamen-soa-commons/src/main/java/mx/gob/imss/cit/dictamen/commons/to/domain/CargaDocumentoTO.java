@@ -20,7 +20,7 @@ public class CargaDocumentoTO extends BaseTO{
     private AseveracionesTO cveIdAseveracion;
     private TipoDocumentoTO cveIdTipoDocumento;
     private Date fecFechaCarga;
-    private EstadoCargaDocumentoTO cveIdStatusCarga;
+    private EstadoCargaDocumentoTO cveIdEstadoCargoDoc;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
@@ -50,12 +50,12 @@ public class CargaDocumentoTO extends BaseTO{
 	public void setFecFechaCarga(Date fecFechaCarga) {
 		this.fecFechaCarga = fecFechaCarga;
 	}
-	public EstadoCargaDocumentoTO getCveIdStatusCarga() {
-		return cveIdStatusCarga;
+	public EstadoCargaDocumentoTO getCveIdEstadoCargoDoc() {
+		return cveIdEstadoCargoDoc;
 	}
-	public void setCveIdStatusCarga(EstadoCargaDocumentoTO cveIdStatusCarga) {
-		this.cveIdStatusCarga = cveIdStatusCarga;
-	}
+	public void setCveIdEstadoCargoDoc(EstadoCargaDocumentoTO cveIdEstadoCargoDoc) {
+		this.cveIdEstadoCargoDoc = cveIdEstadoCargoDoc;
+	}	
 	public Date getFecRegistroAlta() {
 		return fecRegistroAlta;
 	}
@@ -86,6 +86,5 @@ public class CargaDocumentoTO extends BaseTO{
 	public void setCveIdTipoDocumento(TipoDocumentoTO cveIdTipoDocumento) {
 		this.cveIdTipoDocumento = cveIdTipoDocumento;
 	}
-	
 }
 

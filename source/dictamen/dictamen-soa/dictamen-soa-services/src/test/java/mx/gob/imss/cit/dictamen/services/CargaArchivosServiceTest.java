@@ -1,11 +1,8 @@
 package mx.gob.imss.cit.dictamen.services;
 
+import java.util.ArrayList;
 import java.util.Date;
-
-import org.apache.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import java.util.List;
 
 import mx.gob.imss.cit.dictamen.commons.enums.EstadoCargaDocumentoEnum;
 import mx.gob.imss.cit.dictamen.commons.enums.TipoDocumentoEnum;
@@ -16,6 +13,11 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO;
 import mx.gob.imss.cit.dictamen.persistence.dao.base.AbstractDBTestUnit;
 import mx.gob.imss.cit.dictamen.services.impl.CargaArchivosServiceImpl;
+
+import org.apache.log4j.Logger;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class CargaArchivosServiceTest extends AbstractDBTestUnit {
 	private Logger LOG=Logger.getLogger(CargaArchivosServiceTest.class);
@@ -46,12 +48,12 @@ public class CargaArchivosServiceTest extends AbstractDBTestUnit {
 		
 		cveIdAseveracion.setCveIdAseveracion(1L);
 		cveIdPatronDictamen.setCveIdPatronDictamen(63L);
-		cveIdStatusCarga.setCveIdStatusCarga(EstadoCargaDocumentoEnum.ESTATUS_CARGADO);
-		cveIdTipoDocumento.setCveIdTipoDocumento(TipoDocumentoEnum.TIPO_DOCUMENTO_ASEVERACIONES);
+		cveIdStatusCarga.setCveIdEstadoCargoDoc(EstadoCargaDocumentoEnum.ESTATUS_CARGADO.getId());
+		cveIdTipoDocumento.setCveIdTipoDocumento(TipoDocumentoEnum.TIPO_DOCUMENTO_ASEVERACIONES.getId());
 		
 		cargaArchivosTO.setCveIdAseveracion(cveIdAseveracion);		
 		cargaArchivosTO.setCveIdPatronDictamen(cveIdPatronDictamen);	
-		cargaArchivosTO.setCveIdStatusCarga(cveIdStatusCarga);		
+		cargaArchivosTO.setCveIdEstadoCargoDoc(cveIdStatusCarga);		
 		cargaArchivosTO.setCveIdTipoDocumento(cveIdTipoDocumento);		
 		cargaArchivosTO.setCveIdUsuario(cveIdUsuario);
 		cargaArchivosTO.setFecFechaCarga(new Date());
@@ -66,5 +68,22 @@ public class CargaArchivosServiceTest extends AbstractDBTestUnit {
 		}
 		Assert.assertTrue(salida);
 	}
+	
+	@Test
+	public void findListadoAseveracionesTest(){
+		LOG.info("prueba-----------------service");
+		List<CargaDocumentoTO> patronalTOList = new ArrayList<CargaDocumentoTO>();
+		try{
+			patronalTOList = cargaArchivosService.findListadoAseveraciones(63L, 778L, "CIT970206HB6");
+			for(CargaDocumentoTO cargaDocumentoTO:patronalTOList){
+				LOG.info(cargaDocumentoTO.getCveIdPatronDictamen().getCveIdPatronDictamen());
+				LOG.info(cargaDocumentoTO.getCveIdBitacoraCargaAsev());
+			}
+		}catch (Exception e) {
+			LOG.error(e.getMessage());
+		}
+		Assert.assertNotNull(patronalTOList);
+	}
+	
 	
 }

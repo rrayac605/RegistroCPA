@@ -39,8 +39,23 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtCargaDocumentoDO.findByFecFechaCarga", query = "SELECT n FROM NdtCargaDocumentoDO n WHERE n.fecFechaCarga = :fecFechaCarga"),
     @NamedQuery(name = "NdtCargaDocumentoDO.findByFecRegistroAlta", query = "SELECT n FROM NdtCargaDocumentoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtCargaDocumentoDO.findByFecRegistroBaja", query = "SELECT n FROM NdtCargaDocumentoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
-    @NamedQuery(name = "NdtCargaDocumentoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtCargaDocumentoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),    
+    @NamedQuery(name = "NdtCargaDocumentoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtCargaDocumentoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
     @NamedQuery(name = "NdtCargaDocumentoDO.findByCveIdUsuario", query = "SELECT n FROM NdtCargaDocumentoDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtCargaDocumentoDO.findByCvePatronRfcCpaPatron", query =  "SELECT A "
+    		+"FROM NdtCargaDocumentoDO A, "
+    		+"NdcEstadoCargaDocumentoDO E, "
+    		+"NdcAseveracionesDO F, "
+    		+"NdtPatronDictamenDO B, "
+    		+"NdtPatronDictamenCpaDO C, "
+    		+"NdtContadorPublicoAutDO D "
+    		+"WHERE E.cveIdEstadoCargoDoc = A.cveIdEstadoCargoDoc.cveIdEstadoCargoDoc"
+    		+" and F.cveIdAseveracion = A.cveIdAseveracion.cveIdAseveracion "
+    		+" and A.cveIdPatronDictamen.cveIdPatronDictamen = B.cveIdPatronDictamen "
+    		+" and C.cveIdPatronDictamen.cveIdPatronDictamen = B.cveIdPatronDictamen"
+    		+" and D.cveIdCpa = C.cveIdCpa.cveIdCpa "
+    	    +" and A.cveIdPatronDictamen.cveIdPatronDictamen =:cveIdPatronDictamen"
+    	    +" and D.cveIdCpa =:cveIdCpa"
+    		+" and B.desRfc =:desRfc"),
     @NamedQuery(name = "NdtCargaDocumentoDO.findByCveIdPatronDictamenAndCveIdAseveracion", query = "SELECT n FROM NdtCargaDocumentoDO n WHERE n.cveIdAseveracion.cveIdAseveracion = :cveIdAseveracion and n.cveIdPatronDictamen.cveIdPatronDictamen = :cveIdPatronDictamen")})
 public class NdtCargaDocumentoDO implements Serializable {
     private static final long serialVersionUID = 1L;

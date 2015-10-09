@@ -5,7 +5,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import mx.gob.imss.cit.dictamen.integration.api.dto.InformacionPatronalDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.CargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.web.pages.base.BasePage;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 
@@ -20,19 +20,19 @@ public class InformacionPatronalPage extends BasePage{
 	private static final long serialVersionUID = -1090075736267777378L;
 	
 	@Reset
-	private List<InformacionPatronalDTO> listadoAseveraciones;
+	private List<CargaDocumentoDTO> listadoAseveraciones;
 
 	/**
 	 * @return the listadoAseveraciones
 	 */
-	public List<InformacionPatronalDTO> getListadoAseveraciones() {
+	public List<CargaDocumentoDTO> getListadoAseveraciones() {
 		return listadoAseveraciones;
 	}
 
 	/**
 	 * @param listadoAseveraciones the listadoAseveraciones to set
 	 */
-	public void setListadoAseveraciones(List<InformacionPatronalDTO> listadoAseveraciones) {
+	public void setListadoAseveraciones(List<CargaDocumentoDTO> listadoAseveraciones) {
 		this.listadoAseveraciones = listadoAseveraciones;
 	}
 

@@ -7,18 +7,18 @@ package mx.gob.imss.cit.dictamen.commons.enums;
  * 
  */
 public enum EstadoCargaDocumentoEnum {
-	ESTATUS_VALIDADO(1),
-	ESTATUS_CARGADO(2),
+	ESTATUS_VALIDADO(1L),
+	ESTATUS_CARGADO(2L),
 	;
 	
-	private EstadoCargaDocumentoEnum( int id )
+	private EstadoCargaDocumentoEnum( Long id )
 	  {
 	    this.id = id;
 	  }
 
-	  private int id;
+	  private Long id;
 
-	  public int getId()
+	  public Long getId()
 	  {
 	    return id;
 	  }

@@ -16,7 +16,7 @@ public class DictamenBean extends BaseBean {
 	 * 
 	 */
 	private static final long serialVersionUID = -614637897623862471L;
-
+		
 	@ManagedProperty(value = "#{dictamenPage}")
 	private DictamenPage dictamenPage;
 	
