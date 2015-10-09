@@ -38,6 +38,8 @@
 					
 				</p:panelGrid>
 				
+				
+				
 		    </h:form>
 
 			<h:form id="formDatosPatronales">
@@ -49,7 +51,7 @@
 						for="razonSocial" />
 					<p:inputText id="razonSocial" required="true"
 						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.denominacion']}"
-						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" readonly="true"/>
+						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" readonly="true" maxlength="250" size="250" />
 				</p:panelGrid>
 
 				<p:panelGrid columns="2">
@@ -59,6 +61,7 @@
 					<p:inputText id="trabajadores" required="true"
 						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.trabajadores']}"
 						value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" >
+							<f:validateLongRange minimum="1"/>
 						   <f:ajax event="blur" listener="#{datosPatronalesBean.calcularTipoDictamen}" render="tipo"/>
 				    </p:inputText>
 				</p:panelGrid>
@@ -82,7 +85,10 @@
 						for="patronales" />
 					<p:inputText id="patronales" required="true"
 						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.patronales']}"
-						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" />
+						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" >
+						<f:validateLongRange minimum="1" />
+						<f:ajax event="blur" />
+					</p:inputText>
 				</p:panelGrid>
 
 
@@ -101,11 +107,11 @@
 
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.construccion']}" />
+						value="#{msg['message.dictamen.dictaminar.datos.construccion']}" for="construccion"/>
 					<p:selectOneRadio id="construccion"
 						value="#{datosPatronalesPage.datosPatron.industriaConstruccion}"
 						converter="booleanConverter" required="true">
-						 <f:ajax event="change" listener="#{datosPatronalesBean.calcularValuada}" render="valuada" />            
+						 <f:ajax event="change" listener="#{datosPatronalesBean.calcularValuada}" render="dictaminado" />            
 						
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
 							itemValue="true" />
@@ -118,10 +124,10 @@
 
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.valuada']}" />
-					<p:selectOneRadio id="valuada"
+						value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" for="dictaminado"/>
+					<p:selectOneRadio id="dictaminado"
 						value="#{datosPatronalesPage.datosPatron.actConstruccionOregObra}"
-						converter="booleanConverter" required="true" disabled="#{datosPatronalesPage.habilitarEmpresaValuada}">
+						converter="booleanConverter" required="true" disabled="#{!datosPatronalesPage.habilitarEmpresaValuada}">
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
 							itemValue="true" />
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
@@ -133,8 +139,8 @@
 
 				<p:panelGrid columns="2">
 					<p:outputLabel
-						value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" />
-					<p:selectOneRadio id="dictaminado"
+						value="#{msg['message.dictamen.dictaminar.datos.valuada']}" for="valuada"/>
+					<p:selectOneRadio id="valuada"
 						value="#{datosPatronalesPage.datosPatron.empresaValuada}"
 						converter="booleanConverter" required="true">
 						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
@@ -163,6 +169,7 @@
 
 				</p:panelGrid>
 			</h:form>
+			
 		</p:panelGrid>
 
 

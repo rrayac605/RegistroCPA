@@ -17,13 +17,14 @@ import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO;
@@ -33,6 +34,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaHeaderDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaMetadataDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaTramiteDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.FirmaElectronicaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
@@ -40,12 +42,12 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.OpcionPreguntaDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO;
 
 
 public class TransformerIntegrationUtils {
@@ -105,6 +107,8 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class	);
 	}
 	
 
@@ -287,6 +291,12 @@ public class TransformerIntegrationUtils {
 	
 	public static EstadoCargaDocumentoTO transformer(EstadoCargaDocumentoDTO object){
 		return (EstadoCargaDocumentoTO) TransformerHelper.get(mapClass,object, EstadoCargaDocumentoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	public static PatronAsociadoDTO transformer(PatronAsociadoTO object){
+		return (PatronAsociadoDTO) TransformerHelper.get(mapClass,object, PatronAsociadoDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	public static PatronAsociadoTO transformer(PatronAsociadoDTO object){
+		return (PatronAsociadoTO) TransformerHelper.get(mapClass,object, PatronAsociadoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 
 }

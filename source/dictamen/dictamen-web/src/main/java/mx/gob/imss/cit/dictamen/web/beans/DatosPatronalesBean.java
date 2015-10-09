@@ -69,6 +69,8 @@ public class DatosPatronalesBean extends BaseBean {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}
 	}
+	
+	
 
 
 
@@ -83,7 +85,7 @@ public class DatosPatronalesBean extends BaseBean {
 		datosPatronalesPage.getDatosPatron().setIndustriaConstruccion(false);
 		datosPatronalesPage.getDatosPatron().setActConstruccionOregObra(false);			
 		datosPatronalesPage.getDatosPatron().setCveIdEjerFiscal(new EjercicioFiscalDTO());
-		datosPatronalesPage.setHabilitarEmpresaValuada(false);
+		datosPatronalesPage.setHabilitarEmpresaValuada(true);
 	}
 	
 	private void inicializarEjercicioFiscal() throws DictamenNegocioException{
@@ -110,12 +112,11 @@ public class DatosPatronalesBean extends BaseBean {
 		boolean industria=datosPatronalesPage.getDatosPatron().getIndustriaConstruccion();
 		
 		if(industria){
-			datosPatronalesPage.setHabilitarEmpresaValuada(true);
 			datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
-		}else{
 			datosPatronalesPage.setHabilitarEmpresaValuada(false);
+		}else{
 			datosPatronalesPage.getDatosPatron().setEmpresaValuada(false);
-
+			datosPatronalesPage.setHabilitarEmpresaValuada(true);
 		}
 		
 	}
