@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
@@ -15,6 +16,7 @@ public class AseveracionesTO extends BaseTO{
 	private Date fecRegistroAlta;
 	private Date fecRegistroBaja;
 	private Date fecRegistroActualizado;
+	private List<AseveracionesTO> ndtCargaDocumentos;
 	public Long getCveIdAseveracion() {
 		return cveIdAseveracion;
 	}
@@ -44,6 +46,18 @@ public class AseveracionesTO extends BaseTO{
 	}
 	public void setFecRegistroActualizado(Date fecRegistroActualizado) {
 		this.fecRegistroActualizado = fecRegistroActualizado;
+	}
+	/**
+	 * @return the ndtCargaDocumentos
+	 */
+	public List<AseveracionesTO> getNdtCargaDocumentos() {
+		return ndtCargaDocumentos;
+	}
+	/**
+	 * @param ndtCargaDocumentos the ndtCargaDocumentos to set
+	 */
+	public void setNdtCargaDocumentos(List<AseveracionesTO> ndtCargaDocumentos) {
+		this.ndtCargaDocumentos = ndtCargaDocumentos;
 	}
 	
 }

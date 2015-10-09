@@ -15,17 +15,20 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AseveracionesTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO;
@@ -90,9 +93,16 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class	,mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class	,mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class);		
-		
-	}
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO.class , mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO.class);			
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class , mx.gob.imss.cit.dictamen.model.NdcEstadoCargaDocumentoDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcEstadoCargaDocumentoDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class);		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AseveracionesTO.class , mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.AseveracionesTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO.class , mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO.class);
+}
 	
 	private TransformerServiceUtils(){
 		
@@ -153,18 +163,18 @@ public class TransformerServiceUtils {
 	
 	
 	
-	public static NdtCargaDocumentoDO transformer( CargaDocumentoTO cargaAseveracionTO ) {
-		NdtCargaDocumentoDO cargaDocumentoDO = (NdtCargaDocumentoDO) TransformerHelper.get(mapClass,cargaAseveracionTO, NdtCargaDocumentoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;		
+	public static NdtCargaDocumentoDO transformer( CargaDocumentoTO cargaDocumentoTO ) {
+		NdtCargaDocumentoDO cargaDocumentoDO = (NdtCargaDocumentoDO) TransformerHelper.get(mapClass,cargaDocumentoTO, NdtCargaDocumentoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;		
 
 		NdcEstadoCargaDocumentoDO estadoCargaDocumentoDO = new NdcEstadoCargaDocumentoDO();
 		NdcAseveracionesDO ndcAseveracionesDO = new NdcAseveracionesDO();
 		NdcTipoDocumentoDO ndcTipoDocumentoDO = new NdcTipoDocumentoDO();
 		NdtPatronDictamenDO ndtPatronDictamenDO = new NdtPatronDictamenDO();
 		
-		estadoCargaDocumentoDO.setCveIdEstadoCargoDoc(Long.valueOf(cargaAseveracionTO.getCveIdStatusCarga().getCveIdStatusCarga()));
-		ndcAseveracionesDO.setCveIdAseveracion(cargaAseveracionTO.getCveIdAseveracion().getCveIdAseveracion());
-		ndcTipoDocumentoDO.setCveIdTipoDocumento(cargaAseveracionTO.getCveIdTipoDocumento().getCveIdTipoDocumento());
-		ndtPatronDictamenDO.setCveIdPatronDictamen(cargaAseveracionTO.getCveIdPatronDictamen().getCveIdPatronDictamen());
+		estadoCargaDocumentoDO.setCveIdEstadoCargoDoc(cargaDocumentoTO.getCveIdEstadoCargoDoc().getCveIdEstadoCargoDoc());
+		ndcAseveracionesDO.setCveIdAseveracion(cargaDocumentoTO.getCveIdAseveracion().getCveIdAseveracion());
+		ndcTipoDocumentoDO.setCveIdTipoDocumento(cargaDocumentoTO.getCveIdTipoDocumento().getCveIdTipoDocumento());
+		ndtPatronDictamenDO.setCveIdPatronDictamen(cargaDocumentoTO.getCveIdPatronDictamen().getCveIdPatronDictamen());
 		
 		cargaDocumentoDO.setCveIdAseveracion(ndcAseveracionesDO);
 		cargaDocumentoDO.setCveIdEstadoCargoDoc(estadoCargaDocumentoDO);
@@ -172,6 +182,27 @@ public class TransformerServiceUtils {
 		cargaDocumentoDO.setCveIdPatronDictamen(ndtPatronDictamenDO);
 		
 		return cargaDocumentoDO;
+	}
+	public static CargaDocumentoTO transformer(NdtCargaDocumentoDO ndtCargaDocumentoDO) {
+		CargaDocumentoTO cargaDocumentoTO = (CargaDocumentoTO) TransformerHelper.get(mapClass, ndtCargaDocumentoDO, CargaDocumentoTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+		
+		EstadoCargaDocumentoTO estadoCargaDocumentoTO = new EstadoCargaDocumentoTO();
+		AseveracionesTO aseveracionesTO = new AseveracionesTO();
+		TipoDocumentoTO tipoDocumentoTO = new TipoDocumentoTO();
+		PatronDictamenTO patronDictamenTO = new PatronDictamenTO();
+		
+		estadoCargaDocumentoTO.setCveIdEstadoCargoDoc(ndtCargaDocumentoDO.getCveIdEstadoCargoDoc().getCveIdEstadoCargoDoc());
+		estadoCargaDocumentoTO.setDesStatusCargaAseveraciones(ndtCargaDocumentoDO.getCveIdEstadoCargoDoc().getDesStatusCargaAseveraciones());
+		aseveracionesTO.setCveIdAseveracion(ndtCargaDocumentoDO.getCveIdAseveracion().getCveIdAseveracion());
+		aseveracionesTO.setDesTipoAseveracion(ndtCargaDocumentoDO.getCveIdAseveracion().getDesTipoAseveracion());
+		patronDictamenTO.setCveIdPatronDictamen(ndtCargaDocumentoDO.getCveIdPatronDictamen().getCveIdPatronDictamen());
+		
+		cargaDocumentoTO.setCveIdEstadoCargoDoc(estadoCargaDocumentoTO);
+		cargaDocumentoTO.setCveIdAseveracion(aseveracionesTO);
+		cargaDocumentoTO.setCveIdTipoDocumento(tipoDocumentoTO);
+		cargaDocumentoTO.setCveIdPatronDictamen(patronDictamenTO);
+		
+		return cargaDocumentoTO;
 	}
 	
 	public static NdtPatronDictamenDO transformer( PatronDictamenTO patron ) {
@@ -278,4 +309,26 @@ public class TransformerServiceUtils {
 	public static NdtContadorPublicoAutDO transformer( ContadorPublicoAutTO object ) {
 		return (NdtContadorPublicoAutDO) TransformerHelper.get(mapClass,object, NdtContadorPublicoAutDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
+	
+	public static EstadoCargaDocumentoTO transformer( NdcEstadoCargaDocumentoDO object){
+		return (EstadoCargaDocumentoTO)TransformerHelper.get(mapClass, object, EstadoCargaDocumentoTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdcEstadoCargaDocumentoDO transformer( EstadoCargaDocumentoTO object){
+		return (NdcEstadoCargaDocumentoDO)TransformerHelper.get(mapClass, object, NdcEstadoCargaDocumentoDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	
+	public static AseveracionesTO transformer( NdcAseveracionesDO object){
+		return (AseveracionesTO)TransformerHelper.get(mapClass, object, AseveracionesTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdcAseveracionesDO transformer( AseveracionesTO object){
+		return (NdcAseveracionesDO)TransformerHelper.get(mapClass, object, NdcAseveracionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	
+	public static TipoDocumentoTO transformer( NdcTipoDocumentoDO object){
+		return (TipoDocumentoTO)TransformerHelper.get(mapClass, object, AseveracionesTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdcTipoDocumentoDO transformer( TipoDocumentoTO object){
+		return (NdcTipoDocumentoDO)TransformerHelper.get(mapClass, object, NdcTipoDocumentoDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+
 }

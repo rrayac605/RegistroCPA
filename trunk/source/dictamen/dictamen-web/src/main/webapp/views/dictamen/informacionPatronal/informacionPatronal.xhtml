@@ -14,33 +14,14 @@
 		<p:dataTable var="aseveracion" value="#{informacionPatronalPage.listadoAseveraciones}" >
 			<p:column
 				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.categoria']}">
-				<h:outputText value="#{aseveracion.categoria}"/>
+				<p:outputLabel value="#{aseveracion.cveIdAseveracion.desTipoAseveracion}"/>
+			</p:column>
+			
+			<p:column
+				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.estatus']}">
+				<p:outputLabel value="#{aseveracion.cveIdEstadoCargoDoc.desStatusCargaAseveraciones}" />
 			</p:column>
 
-			<p:column
-				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.archivo']}">
-				<h:outputText value="#{aseveracion.nombreOriginalArchivo}" />
-			</p:column>
-			
-			<p:column
-				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.cargado']}">
-				<h:outputText value="#{aseveracion.carga}" />
-			</p:column>
-			
-			<p:column
-				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.validado']}">
-				<h:outputText value="#{aseveracion.validado}" />
-			</p:column>
-			
-			<p:column
-				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.resultado']}">
-				<h:outputText value="#{aseveracion.resultado}" />
-			</p:column>
-			
-			<p:column
-				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.acciones']}">
-				<h:outputText value="#{aseveracion.acciones}" />
-			</p:column>
 
 		</p:dataTable>
 		

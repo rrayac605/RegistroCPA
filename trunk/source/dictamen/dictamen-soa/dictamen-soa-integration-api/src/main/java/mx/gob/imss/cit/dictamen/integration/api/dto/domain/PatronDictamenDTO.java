@@ -11,6 +11,7 @@ public class PatronDictamenDTO extends BaseDTO  {
 	
 	private Long cveIdPatronDictamen;
 	private String 	rfc;
+	private String 	desRfc;
 	private Integer numTrabajadoresPromedio;
 	private TipoDictamenDTO cveIdTipoDictamen;
 	
@@ -23,7 +24,7 @@ public class PatronDictamenDTO extends BaseDTO  {
 	private Integer numRegistroPatronales;
 	
 
-
+	
 
 	public TipoDictamenDTO getCveIdTipoDictamen() {
 		return cveIdTipoDictamen;
@@ -135,6 +136,18 @@ public class PatronDictamenDTO extends BaseDTO  {
 	 */
 	public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
 		this.cveIdPatronDictamen = cveIdPatronDictamen;
+	}
+	/**
+	 * @return the desRfc
+	 */
+	public String getDesRfc() {
+		return desRfc;
+	}
+	/**
+	 * @param desRfc the desRfc to set
+	 */
+	public void setDesRfc(String desRfc) {
+		this.desRfc = desRfc;
 	}
 
 	

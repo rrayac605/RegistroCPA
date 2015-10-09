@@ -1,6 +1,5 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
-import mx.gob.imss.cit.dictamen.commons.enums.EstadoCargaDocumentoEnum;
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 /**
@@ -14,14 +13,36 @@ public class EstadoCargaDocumentoTO extends BaseTO{
 	 * 
 	 */
 	private static final long serialVersionUID = 8136616077473296323L;
-	private int cveIdStatusCarga;
+	private Long cveIdEstadoCargoDoc;
+	private String desStatusCargaAseveraciones;
 
-	public int getCveIdStatusCarga() {
-		return cveIdStatusCarga;
+	/**
+	 * @return the cveIdEstadoCargoDoc
+	 */
+	public Long getCveIdEstadoCargoDoc() {
+		return cveIdEstadoCargoDoc;
 	}
 
-	public void setCveIdStatusCarga(EstadoCargaDocumentoEnum estatus) {
-		this.cveIdStatusCarga = estatus.getId();
+	/**
+	 * @param cveIdEstadoCargoDoc the cveIdEstadoCargoDoc to set
+	 */
+	public void setCveIdEstadoCargoDoc(Long cveIdEstadoCargoDoc) {
+		this.cveIdEstadoCargoDoc = cveIdEstadoCargoDoc;
+	}
+
+	/**
+	 * @return the desStatusCargaAseveraciones
+	 */
+	public String getDesStatusCargaAseveraciones() {
+		return desStatusCargaAseveraciones;
+	}
+
+	/**
+	 * @param desStatusCargaAseveraciones the desStatusCargaAseveraciones to set
+	 */
+	public void setDesStatusCargaAseveraciones(
+			String desStatusCargaAseveraciones) {
+		this.desStatusCargaAseveraciones = desStatusCargaAseveraciones;
 	}
 	
 }

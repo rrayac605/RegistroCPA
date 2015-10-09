@@ -10,6 +10,7 @@ import javax.faces.bean.ViewScoped;
 import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.integration.api.CargaArchivosIntegrator;
+import mx.gob.imss.cit.dictamen.integration.api.dto.AseveracionesDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.CargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
@@ -49,6 +50,7 @@ public class CargaArchivosBean extends BaseBean {
 	
 	public String initDictamen(){
 		try {
+
 			LOG.info("init una vez cragado el dictamen");
 			LOG.info("rfc patron "+ datosPatronalesPage.getDatosPatron().getRfc());
 			LOG.info("rfc contador "+dictamenPage.getContadorPublicoAutDTO().getRfc());
@@ -82,10 +84,14 @@ public class CargaArchivosBean extends BaseBean {
 		PatronDictamenDTO patronDictamenDTO = new PatronDictamenDTO();
 		patronDictamenDTO.setCveIdPatronDictamen(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
 		
-		CargaDocumentoDTO cargaAseveracionesDTO = new CargaDocumentoDTO();		
-		cargaAseveracionesDTO.setCveIdAseveracion(layoutDTO.getIdLayout().intValue());
+		CargaDocumentoDTO cargaAseveracionesDTO = new CargaDocumentoDTO();	
+		AseveracionesDTO aseveracionesDTO=new AseveracionesDTO();
+		aseveracionesDTO.setCveIdAseveracion(layoutDTO.getIdLayout());		
+		
+		cargaAseveracionesDTO.setCveIdAseveracion(aseveracionesDTO);
 		cargaAseveracionesDTO.setCveIdPatronDictamen(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
 		cargaAseveracionesDTO.setCveIdUsuario(datosPatronalesPage.getDatosPatron().getRfc());
+		
 		try {
 			cargaArchivosIntegrator.registrarCargaAseveracion(cargaAseveracionesDTO);
 		} catch (DictamenNegocioException e) {

@@ -49,5 +49,6 @@ public class LayoutDTO extends BaseDTO  {
 	public void setIdLayout(Long idLayout) {
 		this.idLayout = idLayout;
 	}
-	
+
+
 }

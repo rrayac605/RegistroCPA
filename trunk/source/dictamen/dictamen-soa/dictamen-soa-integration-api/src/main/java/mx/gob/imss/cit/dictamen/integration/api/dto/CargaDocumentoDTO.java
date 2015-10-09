@@ -17,9 +17,9 @@ public class CargaDocumentoDTO extends BaseDTO{
 	private static final long serialVersionUID = 2440312503048372155L;
 	private Long cveIdBitacoraCargaAsev;
     private Long cveIdPatronDictamen;   
-    private Integer cveIdAseveracion;
+    private AseveracionesDTO cveIdAseveracion; 
     private Date fecFechaCarga;
-    private EstadoCargaDocumentoDTO cveIdStatusCarga;
+    private EstadoCargaDocumentoDTO cveIdEstadoCargoDoc;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
@@ -37,24 +37,14 @@ public class CargaDocumentoDTO extends BaseDTO{
 	public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
 		this.cveIdPatronDictamen = cveIdPatronDictamen;
 	}
-	public Integer getCveIdAseveracion() {
-		return cveIdAseveracion;
-	}
-	public void setCveIdAseveracion(Integer cveIdAseveracion) {
-		this.cveIdAseveracion = cveIdAseveracion;
-	}
+
 	public Date getFecFechaCarga() {
 		return fecFechaCarga;
 	}
 	public void setFecFechaCarga(Date fecFechaCarga) {
 		this.fecFechaCarga = fecFechaCarga;
 	}
-	public EstadoCargaDocumentoDTO getCveIdStatusCarga() {
-		return cveIdStatusCarga;
-	}
-	public void setCveIdStatusCarga(EstadoCargaDocumentoDTO cveIdStatusCarga) {
-		this.cveIdStatusCarga = cveIdStatusCarga;
-	}
+
 	public Date getFecRegistroAlta() {
 		return fecRegistroAlta;
 	}
@@ -78,6 +68,31 @@ public class CargaDocumentoDTO extends BaseDTO{
 	}
 	public void setCveIdUsuario(String cveIdUsuario) {
 		this.cveIdUsuario = cveIdUsuario;
-	}        
+	}
+	/**
+	 * @return the cveIdAseveracion
+	 */
+	public AseveracionesDTO getCveIdAseveracion() {
+		return cveIdAseveracion;
+	}
+	/**
+	 * @param cveIdAseveracion the cveIdAseveracion to set
+	 */
+	public void setCveIdAseveracion(AseveracionesDTO cveIdAseveracion) {
+		this.cveIdAseveracion = cveIdAseveracion;
+	}
+	/**
+	 * @return the cveIdEstadoCargoDoc
+	 */
+	public EstadoCargaDocumentoDTO getCveIdEstadoCargoDoc() {
+		return cveIdEstadoCargoDoc;
+	}
+	/**
+	 * @param cveIdEstadoCargoDoc the cveIdEstadoCargoDoc to set
+	 */
+	public void setCveIdEstadoCargoDoc(EstadoCargaDocumentoDTO cveIdEstadoCargoDoc) {
+		this.cveIdEstadoCargoDoc = cveIdEstadoCargoDoc;
+	}
+
 }
 

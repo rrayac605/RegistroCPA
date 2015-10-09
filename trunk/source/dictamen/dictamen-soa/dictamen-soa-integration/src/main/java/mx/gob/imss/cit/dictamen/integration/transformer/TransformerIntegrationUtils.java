@@ -23,6 +23,7 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO;
@@ -44,6 +45,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO;
 
 
 public class TransformerIntegrationUtils {
@@ -101,7 +103,8 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class	);
-	
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class	);
 	}
 	
 
@@ -276,6 +279,14 @@ public class TransformerIntegrationUtils {
 	
 	public static AtestiguamientoDictamenTO transformer(AtestiguamientoDictamenDTO object){
 		return (AtestiguamientoDictamenTO) TransformerHelper.get(mapClass,object, AtestiguamientoDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	
+	public static EstadoCargaDocumentoDTO transformer(EstadoCargaDocumentoTO object){
+		return (EstadoCargaDocumentoDTO) TransformerHelper.get(mapClass,object, EstadoCargaDocumentoDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
+	
+	public static EstadoCargaDocumentoTO transformer(EstadoCargaDocumentoDTO object){
+		return (EstadoCargaDocumentoTO) TransformerHelper.get(mapClass,object, EstadoCargaDocumentoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
 
 }

@@ -1,4 +1,6 @@
 package mx.gob.imss.cit.dictamen.persistence.dao.impl;
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
@@ -22,13 +24,12 @@ public class NdtCargaDocumentoDAOImpl extends AbstractBaseDAO<NdtCargaDocumentoD
 
 	public NdtCargaDocumentoDAOImpl() {
 		super(NdtCargaDocumentoDO.class);
-
 	}
 
 	@Override
 	protected EntityManager getEntityManager() {
 		return em;
-	}
+	}	
 	
 	@Override
 	public NdtCargaDocumentoDO findByCveIdPatronDictamen(NdtCargaDocumentoDO entity) {
@@ -43,6 +44,21 @@ public class NdtCargaDocumentoDAOImpl extends AbstractBaseDAO<NdtCargaDocumentoD
 		}catch (NoResultException e){
 			return null;
 		}		
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<NdtCargaDocumentoDO> findCvePatronEstadoAseveracion(Long cveIdPatronDictamen, Long cveIdCpa, String desRfc) {	
+		
+		List<NdtCargaDocumentoDO> list = null;
+		Query q = null;
+		q = em.createNamedQuery("NdtCargaDocumentoDO.findByCvePatronRfcCpaPatron");
+		q.setParameter("cveIdPatronDictamen", cveIdPatronDictamen);
+		q.setParameter("cveIdCpa", cveIdCpa);
+		q.setParameter("desRfc", desRfc);
+		list = (List<NdtCargaDocumentoDO>)q.getResultList();
+
+		return list;
 	}
 
 }

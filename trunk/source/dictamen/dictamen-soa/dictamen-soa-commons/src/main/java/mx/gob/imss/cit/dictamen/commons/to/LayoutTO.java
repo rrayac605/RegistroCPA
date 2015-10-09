@@ -9,6 +9,7 @@ public class LayoutTO extends BaseTO  {
 	 */
 	private static final long serialVersionUID = -2644866778364925551L;
 	
+	private Long cveIdAseveracion;
 	private Long idLayout;
 	private String name;
 	
@@ -48,6 +49,20 @@ public class LayoutTO extends BaseTO  {
 
 	public void setIdLayout(Long idLayout) {
 		this.idLayout = idLayout;
+	}
+
+	/**
+	 * @return the cveIdAseveracion
+	 */
+	public Long getCveIdAseveracion() {
+		return cveIdAseveracion;
+	}
+
+	/**
+	 * @param cveIdAseveracion the cveIdAseveracion to set
+	 */
+	public void setCveIdAseveracion(Long cveIdAseveracion) {
+		this.cveIdAseveracion = cveIdAseveracion;
 	}
 	
 	
