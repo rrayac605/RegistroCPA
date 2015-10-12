@@ -2,46 +2,39 @@ package mx.gob.imss.cit.dictamen.persistence.dao;
 
 import java.util.List;
 
-import javax.ejb.Local;
+import mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO;
 
-import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
-@Local
-public interface NdtAtestiguamientoDictamenDAO {
-	
+public interface NdtAtestigPreguntasRespuestDAO {
 	/** Genera un registro de la entidad NdcAtestiguamientoDO.
 	 *
 	 * @param entity the entity
 	 */
-	void create(NdtAtestiguamientoDictamenDO entity);
+	void create(NdtAtestigPreguntasRespuestDO entity);
 	/**
 	 * Metodo editar o actualizar.
 	 *
 	 * @param entity the entity
 	 */
-	void edit(NdtAtestiguamientoDictamenDO entity);
+	void edit(NdtAtestigPreguntasRespuestDO entity);
 	/**
 	 * Metodo Eliminar.
 	 *
 	 * @param entity the entity
 	 */
-	void remove(NdtAtestiguamientoDictamenDO entity);
+	void remove(NdtAtestigPreguntasRespuestDO entity);
 	/**
 	 * Metodo de busqueda por Id.
 	 *
 	 * @param id the id
 	 * @return the NdcAtestiguamientoDO do
 	 */
-	NdtAtestiguamientoDictamenDO get(Object id);
+	NdtAtestigPreguntasRespuestDO get(Object id);
 	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
 	 */
-	List<NdtAtestiguamientoDictamenDO> findAll();
-	
-	
-	List<NdtAtestiguamientoDictamenDO> findExamenesByIdPatronDictamen(Long cveIdPatronDictamen);
-	
+	List<NdtAtestigPreguntasRespuestDO> findAll();
 	
 	void flush();
 }

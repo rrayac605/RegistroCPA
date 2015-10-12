@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.dictamen.integration.api.dto.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
@@ -14,6 +15,7 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
     private String cveIdUsuario;
+    private List<RubroAtestiguamientoDictDTO> ndtRubroAtestiguamientos;
     private PatronDictamenDTO cveIdPatronDictamen;
     private EstadoAtestiguamientoDTO cveIdEstadoAtestiguamiento;
     private AtestiguamientoDTO cveIdAtestiguamiento;
@@ -72,6 +74,12 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
 	public void setCveIdAtestiguamiento(AtestiguamientoDTO cveIdAtestiguamiento) {
 		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
 	}
+	public List<RubroAtestiguamientoDictDTO> getNdtRubroAtestiguamientos() {
+		return ndtRubroAtestiguamientos;
+	}
+	public void setNdtRubroAtestiguamientos(List<RubroAtestiguamientoDictDTO> ndtRubroAtestiguamientos) {
+		this.ndtRubroAtestiguamientos = ndtRubroAtestiguamientos;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -85,6 +93,7 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
 		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
 		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
 		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((ndtRubroAtestiguamientos == null) ? 0 : ndtRubroAtestiguamientos.hashCode());
 		return result;
 	}
 	@Override
@@ -141,7 +150,11 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
 				return false;
 		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
 			return false;
+		if (ndtRubroAtestiguamientos == null) {
+			if (other.ndtRubroAtestiguamientos != null)
+				return false;
+		} else if (!ndtRubroAtestiguamientos.equals(other.ndtRubroAtestiguamientos))
+			return false;
 		return true;
 	}
-    
 }

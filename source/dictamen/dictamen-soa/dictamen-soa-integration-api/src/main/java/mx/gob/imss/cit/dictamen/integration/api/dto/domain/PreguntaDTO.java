@@ -20,6 +20,8 @@ public class PreguntaDTO extends BaseDTO{
     private RubroDTO cveIdRubro;
     private PreguntaDTO cveIdPreguntaPadre;
     private List<OpcionPreguntaDTO> ndcOpcionesPregunta;
+    private Integer opcionSeleccionada;
+    private String observaciones;
     
 	public Long getCveIdPregunta() {
 		return cveIdPregunta;
@@ -75,10 +77,23 @@ public class PreguntaDTO extends BaseDTO{
 	public void setNdcOpcionesPregunta(List<OpcionPreguntaDTO> ndcOpcionesPregunta) {
 		this.ndcOpcionesPregunta = ndcOpcionesPregunta;
 	}
+	public Integer getOpcionSeleccionada() {
+		return opcionSeleccionada;
+	}
+	public void setOpcionSeleccionada(Integer opcionSeleccionada) {
+		this.opcionSeleccionada = opcionSeleccionada;
+	}
+	public String getObservaciones() {
+		return observaciones;
+	}
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((opcionSeleccionada == null) ? 0 : opcionSeleccionada.hashCode());
 		result = prime * result + ((cveIdPregunta == null) ? 0 : cveIdPregunta.hashCode());
 		result = prime * result + ((cveIdPreguntaPadre == null) ? 0 : cveIdPreguntaPadre.hashCode());
 		result = prime * result + ((cveIdRubro == null) ? 0 : cveIdRubro.hashCode());
@@ -88,6 +103,7 @@ public class PreguntaDTO extends BaseDTO{
 		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
 		result = prime * result + ((indOrden == null) ? 0 : indOrden.hashCode());
 		result = prime * result + ((ndcOpcionesPregunta == null) ? 0 : ndcOpcionesPregunta.hashCode());
+		result = prime * result + ((observaciones == null) ? 0 : observaciones.hashCode());
 		return result;
 	}
 	@Override
@@ -99,6 +115,11 @@ public class PreguntaDTO extends BaseDTO{
 		if (getClass() != obj.getClass())
 			return false;
 		PreguntaDTO other = (PreguntaDTO) obj;
+		if (opcionSeleccionada == null) {
+			if (other.opcionSeleccionada != null)
+				return false;
+		} else if (!opcionSeleccionada.equals(other.opcionSeleccionada))
+			return false;
 		if (cveIdPregunta == null) {
 			if (other.cveIdPregunta != null)
 				return false;
@@ -140,11 +161,15 @@ public class PreguntaDTO extends BaseDTO{
 		} else if (!indOrden.equals(other.indOrden))
 			return false;
 		if (ndcOpcionesPregunta == null) {
-			if (other.ndcOpcionesPregunta!= null)
+			if (other.ndcOpcionesPregunta != null)
 				return false;
 		} else if (!ndcOpcionesPregunta.equals(other.ndcOpcionesPregunta))
 			return false;
+		if (observaciones == null) {
+			if (other.observaciones != null)
+				return false;
+		} else if (!observaciones.equals(other.observaciones))
+			return false;
 		return true;
 	}
-	
 }

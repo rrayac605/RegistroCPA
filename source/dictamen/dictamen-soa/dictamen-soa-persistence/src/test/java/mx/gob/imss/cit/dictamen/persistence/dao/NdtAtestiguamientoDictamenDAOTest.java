@@ -1,5 +1,8 @@
 package mx.gob.imss.cit.dictamen.persistence.dao;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -7,7 +10,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
+import mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO;
 import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
+import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.base.AbstractDBTestUnit;
 import mx.gob.imss.cit.dictamen.persistence.dao.impl.NdtAtestiguamientoDictamenDAOImpl;
 
@@ -39,6 +45,55 @@ public class NdtAtestiguamientoDictamenDAOTest extends AbstractDBTestUnit {
 			LOG.info(ndtAtestiguamientoDictamenDO.getCveIdAtestiguamiento().getDesAtestiguamiento());
 		}
 		Assert.assertNotNull(resultList);
+	}
+	
+	@Test
+	public void testSaveAtestiguamientoDictamenDAO_Error() {
+		LOG.info("prueba");
+		Boolean error= false;
+		NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO = new NdtAtestiguamientoDictamenDO();
+		try{
+		localDAO.create(ndtAtestiguamientoDictamenDO);
+		}catch(Exception e){
+		//	LOG.error(e.getMessage(), e);
+			error = true;
+		}
+		Assert.assertFalse(error);
+	}
+	
+	@Test
+	public void testSaveAtestiguamientoDictamenDAO_Ok() {
+		LOG.info("prueba");
+		Boolean error = true;
+		Date fecha = new Date();
+		Date fechaFinal = new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy"); 
+		try {
+			fechaFinal = sdf.parse(sdf.format(fecha));
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
+		
+		NdtPatronDictamenDO ndtPatronDictamenDO = new NdtPatronDictamenDO(63L);
+		NdcAtestiguamientoDO ndcAtestiguamientoDO= new NdcAtestiguamientoDO(1L);
+		NdcEstadoAtestiguamientoDO ndcEstadoAtestiguamientoDO = new NdcEstadoAtestiguamientoDO(2L);
+		NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO = new NdtAtestiguamientoDictamenDO();
+		ndtAtestiguamientoDictamenDO.setCveIdPatronDictamen(ndtPatronDictamenDO);
+		ndtAtestiguamientoDictamenDO.setCveIdAtestiguamiento(ndcAtestiguamientoDO);
+		ndtAtestiguamientoDictamenDO.setCveIdEstadoAtestiguamiento(ndcEstadoAtestiguamientoDO);
+		ndtAtestiguamientoDictamenDO.setFecRegistroActualizado(fechaFinal);
+		ndtAtestiguamientoDictamenDO.setFecRegistroAlta(fechaFinal);
+		ndtAtestiguamientoDictamenDO.setFecRegistroBaja(null);
+		ndtAtestiguamientoDictamenDO.setCveIdUsuario(null);
+		
+		
+		try{
+		localDAO.create(ndtAtestiguamientoDictamenDO);
+		}catch(Exception e){
+			LOG.error(e.getMessage(), e);
+			error = false;
+		}
+		Assert.assertTrue(error);
 	}
 
 }

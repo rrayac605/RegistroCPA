@@ -1,6 +1,8 @@
 package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
+import java.util.List;
+
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class AtestiguamientoDictamenTO extends BaseTO{
@@ -18,6 +20,7 @@ public class AtestiguamientoDictamenTO extends BaseTO{
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
     private String cveIdUsuario;
+    private List<RubroAtestiguamientoDictTO> ndtRubrosAtestiguamiento;
     private PatronDictamenTO cveIdPatronDictamen;
     private EstadoAtestiguamientoTO cveIdEstadoAtestiguamiento;
     private AtestiguamientoTO cveIdAtestiguamiento;
@@ -76,5 +79,11 @@ public class AtestiguamientoDictamenTO extends BaseTO{
 	}
 	public void setCveIdAtestiguamiento(AtestiguamientoTO cveIdAtestiguamiento) {
 		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
+	}
+	public List<RubroAtestiguamientoDictTO> getNdtRubrosAtestiguamiento() {
+		return ndtRubrosAtestiguamiento;
+	}
+	public void setNdtRubrosAtestiguamiento(List<RubroAtestiguamientoDictTO> ndtRubrosAtestiguamiento) {
+		this.ndtRubrosAtestiguamiento = ndtRubrosAtestiguamiento;
 	}
 }

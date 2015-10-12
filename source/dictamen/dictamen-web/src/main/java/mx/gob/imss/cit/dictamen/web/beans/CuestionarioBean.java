@@ -12,6 +12,8 @@ import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.constants.NavigationConstants;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.CuestionarioPage;
+import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
+import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
 import mx.gob.imss.cit.dictamen.web.util.CleanBeanUtil;
 import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
 
@@ -33,11 +35,17 @@ public class CuestionarioBean extends BaseBean {
 	@ManagedProperty(value = "#{examenBean}")
 	private ExamenBean  examenBean;
 	
+	@ManagedProperty(value = "#{datosPatronalesPage}")
+	private DatosPatronalesPage  datosPatronalesPage;
+	
+	@ManagedProperty(value = "#{dictamenPage}")
+	private DictamenPage  dictamenPage;
+	
 	
 	public String init() {
 		CleanBeanUtil.cleanFields(cuestionarioPage);
 		try {
-			cuestionarioPage.setExamenes(examenIntegrator.findExamenesByIdPatronDictamen(63L));
+			cuestionarioPage.setExamenes(examenIntegrator.findExamenesByIdPatronDictamen(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen()));
 		} catch (Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_EXAMENES.getCode());
 		}
@@ -79,5 +87,24 @@ public class CuestionarioBean extends BaseBean {
 		this.examenBean = examenBean;
 	}
 
+
+	public DatosPatronalesPage getDatosPatronalesPage() {
+		return datosPatronalesPage;
+	}
+
+
+	public void setDatosPatronalesPage(DatosPatronalesPage datosPatronalesPage) {
+		this.datosPatronalesPage = datosPatronalesPage;
+	}
+
+
+	public DictamenPage getDictamenPage() {
+		return dictamenPage;
+	}
+
+
+	public void setDictamenPage(DictamenPage dictamenPage) {
+		this.dictamenPage = dictamenPage;
+	}
 	
 }
