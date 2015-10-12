@@ -113,13 +113,11 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 				EstadoCargaDocumentoDTO estadoCargaDocumentoDTO = new EstadoCargaDocumentoDTO();
 				estadoCargaDocumentoDTO.setCveIdEstadoCargoDoc(cargaDocumentoTO.getCveIdEstadoCargoDoc().getCveIdEstadoCargoDoc());
 				estadoCargaDocumentoDTO.setDesStatusCargaAseveraciones(cargaDocumentoTO.getCveIdEstadoCargoDoc().getDesStatusCargaAseveraciones());
-				System.out.println("estatus: "+cargaDocumentoTO.getCveIdEstadoCargoDoc().getDesStatusCargaAseveraciones());
 				cargaDocumentoDTO.setCveIdEstadoCargoDoc(estadoCargaDocumentoDTO);
 				
 				AseveracionesDTO aseveracionesDTO =new AseveracionesDTO();
 				aseveracionesDTO.setCveIdAseveracion(cargaDocumentoTO.getCveIdAseveracion().getCveIdAseveracion());
 				aseveracionesDTO.setDesTipoAseveracion(cargaDocumentoTO.getCveIdAseveracion().getDesTipoAseveracion());
-				System.out.println("categoria: "+cargaDocumentoTO.getCveIdAseveracion().getDesTipoAseveracion());
 				cargaDocumentoDTO.setCveIdAseveracion(aseveracionesDTO);
 				
 				cargaDocumentoDTOList.add(cargaDocumentoDTO);
