@@ -14,28 +14,16 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.commons.to.FirmaElectronicaTO;
 import mx.gob.imss.cit.dictamen.commons.to.LayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPagosDiferenciasTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPrestacionesTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.CedulaRemuneracionesTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.DetFondoAhorroTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosIngXsalarioTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosPagXseparacTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.DetPagosOtrosEmpleadTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.PrestacionesTO;
-import mx.gob.imss.cit.dictamen.commons.to.domain.RemuneracionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.util.ConverterUtils;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.integration.api.dto.AWSPolicyDTO;
@@ -45,31 +33,19 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaHeaderDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaMetadataDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.BovedaTramiteDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.FirmaElectronicaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestigPreguntasRespuestDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.OpcionPreguntaDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroAtestiguamientoDictDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaRemuneracionesDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetFondoAhorroDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetOtrosIngXsalarioDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetOtrosPagXseparacDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetPagosOtrosEmpleadDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaPrestacionesDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaPagosDiferenciasDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PrestacionesDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.RemuneracionesDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO;
 
 
 public class TransformerIntegrationUtils {
@@ -111,7 +87,7 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO.class);		
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO.class);		
 		
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO.class		,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO.class);
@@ -127,33 +103,9 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class	);	
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroAtestiguamientoDictDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroAtestiguamientoDictDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestigPreguntasRespuestDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestigPreguntasRespuestDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO.class	);
 		
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.CedulaRemuneracionesTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaRemuneracionesDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaRemuneracionesDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.CedulaRemuneracionesTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.DetFondoAhorroTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetFondoAhorroDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetFondoAhorroDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.DetFondoAhorroTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosIngXsalarioTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetOtrosIngXsalarioDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetOtrosIngXsalarioDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosIngXsalarioTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosPagXseparacTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetOtrosPagXseparacDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetOtrosPagXseparacDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosPagXseparacTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.DetPagosOtrosEmpleadTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetPagosOtrosEmpleadDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.DetPagosOtrosEmpleadDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.DetPagosOtrosEmpleadTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPrestacionesTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaPrestacionesDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaPrestacionesDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPrestacionesTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPagosDiferenciasTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaPagosDiferenciasDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.CedulaPagosDiferenciasDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPagosDiferenciasTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PrestacionesTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.PrestacionesDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PrestacionesDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.PrestacionesTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RemuneracionesTO.class, mx.gob.imss.cit.dictamen.integration.api.dto.domain.RemuneracionesDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.RemuneracionesDTO.class, mx.gob.imss.cit.dictamen.commons.to.domain.RemuneracionesTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class);
 	}
 	
 
@@ -279,7 +231,7 @@ public class TransformerIntegrationUtils {
 		objRes.setNumRegistroPatronales(object.getNumRegistroPatronales());			
 		
 		return objRes;
-	}	
+	}
 	
 	public static RubroDTO transformer(RubroTO object){
 		return (RubroDTO) TransformerHelper.get(mapClass,object, RubroDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
@@ -337,81 +289,5 @@ public class TransformerIntegrationUtils {
 	public static EstadoCargaDocumentoTO transformer(EstadoCargaDocumentoDTO object){
 		return (EstadoCargaDocumentoTO) TransformerHelper.get(mapClass,object, EstadoCargaDocumentoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static PatronAsociadoDTO transformer(PatronAsociadoTO object){
-		return (PatronAsociadoDTO) TransformerHelper.get(mapClass,object, PatronAsociadoDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static PatronAsociadoTO transformer(PatronAsociadoDTO object){
-		return (PatronAsociadoTO) TransformerHelper.get(mapClass,object, PatronAsociadoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-		public static RubroAtestiguamientoDictDTO transformer(RubroAtestiguamientoDictTO object){
-		return (RubroAtestiguamientoDictDTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	
-	public static RubroAtestiguamientoDictTO transformer(RubroAtestiguamientoDictDTO object){
-		return (RubroAtestiguamientoDictTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	
-	public static AtestigPreguntasRespuestDTO transformer(AtestigPreguntasRespuestTO object){
-		return (AtestigPreguntasRespuestDTO) TransformerHelper.get(mapClass,object, AtestigPreguntasRespuestDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	
-	public static AtestigPreguntasRespuestTO transformer(AtestigPreguntasRespuestDTO object){
-		return (AtestigPreguntasRespuestTO) TransformerHelper.get(mapClass,object, AtestigPreguntasRespuestTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	
-	
-	public static CedulaRemuneracionesDTO transformer(CedulaRemuneracionesTO object){
-		return (CedulaRemuneracionesDTO) TransformerHelper.get(mapClass,object, CedulaRemuneracionesDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static CedulaRemuneracionesTO transformer(CedulaRemuneracionesDTO object){
-		return (CedulaRemuneracionesTO) TransformerHelper.get(mapClass,object, CedulaRemuneracionesTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static DetFondoAhorroDTO transformer(DetFondoAhorroTO object){
-		return (DetFondoAhorroDTO) TransformerHelper.get(mapClass,object, DetFondoAhorroDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static DetFondoAhorroTO transformer(DetFondoAhorroDTO object){
-		return (DetFondoAhorroTO) TransformerHelper.get(mapClass,object, DetFondoAhorroTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static DetOtrosIngXsalarioDTO transformer(DetOtrosIngXsalarioTO object){
-		return (DetOtrosIngXsalarioDTO) TransformerHelper.get(mapClass,object, DetOtrosIngXsalarioDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static DetOtrosIngXsalarioTO transformer(DetOtrosIngXsalarioDTO object){
-		return (DetOtrosIngXsalarioTO) TransformerHelper.get(mapClass,object, DetOtrosIngXsalarioTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static DetOtrosPagXseparacDTO transformer(DetOtrosPagXseparacTO object){
-		return (DetOtrosPagXseparacDTO) TransformerHelper.get(mapClass,object, DetOtrosPagXseparacDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static DetOtrosPagXseparacTO transformer(DetOtrosPagXseparacDTO object){
-		return (DetOtrosPagXseparacTO) TransformerHelper.get(mapClass,object, DetOtrosPagXseparacTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static DetPagosOtrosEmpleadDTO transformer(DetPagosOtrosEmpleadTO object){
-		return (DetPagosOtrosEmpleadDTO) TransformerHelper.get(mapClass,object, DetPagosOtrosEmpleadDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static DetPagosOtrosEmpleadTO transformer(DetPagosOtrosEmpleadDTO object){
-		return (DetPagosOtrosEmpleadTO) TransformerHelper.get(mapClass,object, DetPagosOtrosEmpleadTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static CedulaPrestacionesDTO transformer(CedulaPrestacionesTO object){
-		return (CedulaPrestacionesDTO) TransformerHelper.get(mapClass,object, CedulaPrestacionesDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static CedulaRemuneracionesTO transformer(CedulaPrestacionesDTO object){
-		return (CedulaRemuneracionesTO) TransformerHelper.get(mapClass,object, CedulaRemuneracionesTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static CedulaPagosDiferenciasDTO transformer(CedulaPagosDiferenciasTO object){
-		return (CedulaPagosDiferenciasDTO) TransformerHelper.get(mapClass,object, CedulaPagosDiferenciasDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static CedulaPagosDiferenciasTO transformer(CedulaPagosDiferenciasDTO object){
-		return (CedulaPagosDiferenciasTO) TransformerHelper.get(mapClass,object, CedulaPagosDiferenciasTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static PrestacionesDTO transformer(PrestacionesTO object){
-		return (PrestacionesDTO) TransformerHelper.get(mapClass,object, PrestacionesDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static PrestacionesTO transformer(PrestacionesDTO object){
-		return (PrestacionesTO) TransformerHelper.get(mapClass,object, PrestacionesTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}
-	public static RemuneracionesDTO transformer(RemuneracionesTO object){
-		return (RemuneracionesDTO) TransformerHelper.get(mapClass,object, RemuneracionesDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
-	public static RemuneracionesTO transformer(RemuneracionesDTO object){
-		return (RemuneracionesTO) TransformerHelper.get(mapClass,object, RemuneracionesTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
-	}	
+
 }

@@ -6,9 +6,10 @@ import java.util.List;
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
 public class AtestiguamientoDictamenDTO extends BaseDTO {
-
-	
-	private static final long serialVersionUID = -7892175772742349433L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7801434299681197097L;
 	private Long cveIdAtestigDictamen;
     private Long cveIdDictamen;
     private Date fecRegistroAlta;

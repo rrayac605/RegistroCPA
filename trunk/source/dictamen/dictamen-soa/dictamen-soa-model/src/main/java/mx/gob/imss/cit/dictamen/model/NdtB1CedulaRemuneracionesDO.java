@@ -78,9 +78,9 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
     @OneToMany(mappedBy = "cveIdB1CedRemunera", fetch = FetchType.LAZY)
-    private List<NdtB1DetPagosOtrosEmpleadDO> ndtB1DetPagosOtrosEmpleadDOList;
+    private List<NdtB1DetPagosOtrosEmpleadDO> ndtB1DetPagosOtrosEmpleadList;
     @OneToMany(mappedBy = "cveIdB1CedRemunera", fetch = FetchType.LAZY)
-    private List<NdtB1DetFondoAhorroDO> ndtB1DetFondoAhorroDOList;
+    private List<NdtB1DetFondoAhorroDO> ndtB1DetFondoAhorroList;
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtPatronDictamenDO cveIdPatronDictamen;
@@ -94,9 +94,9 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcAtestiguamientoDO cveIdAtestiguamiento;
     @OneToMany(mappedBy = "cveIdB1CedRemunera", fetch = FetchType.LAZY)
-    private List<NdtB1DetOtrosIngXsalarioDO> ndtB1DetOtrosIngXsalarioDOList;
+    private List<NdtB1DetOtrosIngXsalarioDO> ndtB1DetOtrosIngXsalarioList;
     @OneToMany(mappedBy = "cveIdB1CedRemunera", fetch = FetchType.LAZY)
-    private List<NdtB1DetOtrosPagXseparacDO> ndtB1DetOtrosPagXseparacDOList;
+    private List<NdtB1DetOtrosPagXseparacDO> ndtB1DetOtrosPagXseparacList;
 
     public NdtB1CedulaRemuneracionesDO() {
     }
@@ -185,20 +185,20 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
         this.cveIdUsuario = cveIdUsuario;
     }
 
-    public List<NdtB1DetPagosOtrosEmpleadDO> getNdtB1DetPagosOtrosEmpleadDOList() {
-        return ndtB1DetPagosOtrosEmpleadDOList;
+    public List<NdtB1DetPagosOtrosEmpleadDO> getNdtB1DetPagosOtrosEmpleadList() {
+        return ndtB1DetPagosOtrosEmpleadList;
     }
 
-    public void setNdtB1DetPagosOtrosEmpleadDOList(List<NdtB1DetPagosOtrosEmpleadDO> ndtB1DetPagosOtrosEmpleadDOList) {
-        this.ndtB1DetPagosOtrosEmpleadDOList = ndtB1DetPagosOtrosEmpleadDOList;
+    public void setNdtB1DetPagosOtrosEmpleadList(List<NdtB1DetPagosOtrosEmpleadDO> ndtB1DetPagosOtrosEmpleadList) {
+        this.ndtB1DetPagosOtrosEmpleadList = ndtB1DetPagosOtrosEmpleadList;
     }
 
-    public List<NdtB1DetFondoAhorroDO> getNdtB1DetFondoAhorroDOList() {
-        return ndtB1DetFondoAhorroDOList;
+    public List<NdtB1DetFondoAhorroDO> getNdtB1DetFondoAhorroList() {
+        return ndtB1DetFondoAhorroList;
     }
 
-    public void setNdtB1DetFondoAhorroDOList(List<NdtB1DetFondoAhorroDO> ndtB1DetFondoAhorroDOList) {
-        this.ndtB1DetFondoAhorroDOList = ndtB1DetFondoAhorroDOList;
+    public void setNdtB1DetFondoAhorroList(List<NdtB1DetFondoAhorroDO> ndtB1DetFondoAhorroDOList) {
+        this.ndtB1DetFondoAhorroList = ndtB1DetFondoAhorroDOList;
     }
 
     public NdtPatronDictamenDO getCveIdPatronDictamen() {
@@ -233,20 +233,20 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
         this.cveIdAtestiguamiento = cveIdAtestiguamiento;
     }
 
-    public List<NdtB1DetOtrosIngXsalarioDO> getNdtB1DetOtrosIngXsalarioDOList() {
-        return ndtB1DetOtrosIngXsalarioDOList;
+    public List<NdtB1DetOtrosIngXsalarioDO> getNdtB1DetOtrosIngXsalarioList() {
+        return ndtB1DetOtrosIngXsalarioList;
     }
 
-    public void setNdtB1DetOtrosIngXsalarioDOList(List<NdtB1DetOtrosIngXsalarioDO> ndtB1DetOtrosIngXsalarioDOList) {
-        this.ndtB1DetOtrosIngXsalarioDOList = ndtB1DetOtrosIngXsalarioDOList;
+    public void setNdtB1DetOtrosIngXsalarioList(List<NdtB1DetOtrosIngXsalarioDO> ndtB1DetOtrosIngXsalarioDOList) {
+        this.ndtB1DetOtrosIngXsalarioList = ndtB1DetOtrosIngXsalarioDOList;
     }
 
-    public List<NdtB1DetOtrosPagXseparacDO> getNdtB1DetOtrosPagXseparacDOList() {
-        return ndtB1DetOtrosPagXseparacDOList;
+    public List<NdtB1DetOtrosPagXseparacDO> getNdtB1DetOtrosPagXseparacList() {
+        return ndtB1DetOtrosPagXseparacList;
     }
 
-    public void setNdtB1DetOtrosPagXseparacDOList(List<NdtB1DetOtrosPagXseparacDO> ndtB1DetOtrosPagXseparacDOList) {
-        this.ndtB1DetOtrosPagXseparacDOList = ndtB1DetOtrosPagXseparacDOList;
+    public void setNdtB1DetOtrosPagXseparacList(List<NdtB1DetOtrosPagXseparacDO> ndtB1DetOtrosPagXseparacDOList) {
+        this.ndtB1DetOtrosPagXseparacList = ndtB1DetOtrosPagXseparacDOList;
     }
 
     @Override

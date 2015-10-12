@@ -57,7 +57,7 @@ public class NdcPrestacionesDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
     @OneToMany(mappedBy = "cveIdPrestaciones", fetch = FetchType.LAZY)
-    private List<NdtB2CedulaPrestacionesDO> ndtB2CedulaPrestacionesDOList;
+    private List<NdtB2CedulaPrestacionesDO> ndtB2CedulaPrestacionesList;
 
     public NdcPrestacionesDO() {
     }
@@ -106,13 +106,14 @@ public class NdcPrestacionesDO implements Serializable {
         this.fecRegistroActualizado = fecRegistroActualizado;
     }
 
-    public List<NdtB2CedulaPrestacionesDO> getNdtB2CedulaPrestacionesDOList() {
-        return ndtB2CedulaPrestacionesDOList;
-    }
+	public List<NdtB2CedulaPrestacionesDO> getNdtB2CedulaPrestacionesList() {
+		return ndtB2CedulaPrestacionesList;
+	}
 
-    public void setNdtB2CedulaPrestacionesDOList(List<NdtB2CedulaPrestacionesDO> ndtB2CedulaPrestacionesDOList) {
-        this.ndtB2CedulaPrestacionesDOList = ndtB2CedulaPrestacionesDOList;
-    }
+	public void setNdtB2CedulaPrestacionesList(
+			List<NdtB2CedulaPrestacionesDO> ndtB2CedulaPrestacionesList) {
+		this.ndtB2CedulaPrestacionesList = ndtB2CedulaPrestacionesList;
+	}
 
     @Override
     public int hashCode() {
@@ -137,6 +138,5 @@ public class NdcPrestacionesDO implements Serializable {
     @Override
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdcPrestacionesDO[ cveIdPrestaciones=" + cveIdPrestaciones + " ]";
-    }
-    
+    }    
 }
