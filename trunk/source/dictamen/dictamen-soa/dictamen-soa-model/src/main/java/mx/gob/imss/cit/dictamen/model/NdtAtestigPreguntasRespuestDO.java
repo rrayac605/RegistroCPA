@@ -46,7 +46,7 @@ public class NdtAtestigPreguntasRespuestDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_ATESTIGUAMIENTOS", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtAtestigPreguntasRespuest_Id_Seq_Gen", sequenceName = "SEQ_NDTATESTIGPREGUNTASRESPUEST", allocationSize=1)
+    @SequenceGenerator(name = "NdtAtestigPreguntasRespuest_Id_Seq_Gen", sequenceName = "SEQ_NDTATESTIGPREGUNTASRESPUES", allocationSize=1)
     @GeneratedValue(generator = "NdtAtestigPreguntasRespuest_Id_Seq_Gen")
     private Long cveIdAtestiguamientos;
     @Size(max = 3000)

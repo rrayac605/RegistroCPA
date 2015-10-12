@@ -17,6 +17,8 @@ public class PreguntaTO extends BaseTO {
     private RubroTO cveIdRubro;
     private PreguntaTO cveIdPreguntaPadre;
     private List<OpcionPreguntaTO> ndcOpcionesPregunta;
+    private Integer opcionSeleccionada;
+    private String observaciones;
     
     
 	public Long getCveIdPregunta() {
@@ -73,7 +75,16 @@ public class PreguntaTO extends BaseTO {
 	public void setNdcOpcionesPregunta(List<OpcionPreguntaTO> ndcOpcionesPregunta) {
 		this.ndcOpcionesPregunta = ndcOpcionesPregunta;
 	}
-    
-    
-    
+	public Integer getOpcionSeleccionada() {
+		return opcionSeleccionada;
+	}
+	public void setOpcionSeleccionada(Integer opcionSeleccionada) {
+		this.opcionSeleccionada = opcionSeleccionada;
+	}
+	public String getObservaciones() {
+		return observaciones;
+	}
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
+	}
 }

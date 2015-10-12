@@ -1,6 +1,8 @@
 package mx.gob.imss.cit.dictamen.web.pages;
 
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -21,16 +23,16 @@ public class ExamenPage extends BasePage{
 	private AtestiguamientoDTO atestiguamientoDTO;
 	
 	
-	private Integer estado;
+	private List<Integer> estados;
 	
 
 
-	public Integer getEstado() {
-		return estado;
+	public List<Integer> getEstados() {
+		return estados;
 	}
 
-	public void setEstado(Integer estado) {
-		this.estado = estado;
+	public void setEstado(List<Integer> estados) {
+		this.estados = estados;
 	}
 
 	public AtestiguamientoDTO getAtestiguamientoDTO() {

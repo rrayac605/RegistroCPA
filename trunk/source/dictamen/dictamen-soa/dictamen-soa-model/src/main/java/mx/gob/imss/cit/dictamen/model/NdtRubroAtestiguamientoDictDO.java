@@ -48,7 +48,7 @@ public class NdtRubroAtestiguamientoDictDO implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "CVE_ID_RUBRO_ATESTIG_DICTAMEN", nullable = false, precision = 22, scale = 0)
-    @SequenceGenerator(name = "NdtRubroAtestiguamientoDict_Id_Seq_Gen", sequenceName = "SEQ_NDTRUBROATESTIGUAMIENTODICT", allocationSize=1)
+    @SequenceGenerator(name = "NdtRubroAtestiguamientoDict_Id_Seq_Gen", sequenceName = "SEQ_NDTRUBROATESTIGUAMIENTODIC", allocationSize=1)
     @GeneratedValue(generator = "NdtRubroAtestiguamientoDict_Id_Seq_Gen")
     private Long cveIdRubroAtestigDictamen;
     @Column(name = "IND_APLICA")

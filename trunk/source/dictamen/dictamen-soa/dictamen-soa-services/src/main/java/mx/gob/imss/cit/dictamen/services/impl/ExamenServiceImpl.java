@@ -11,9 +11,13 @@ import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
+import mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO;
 import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
+import mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdcAtestiguamientoDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtAtestigPreguntasRespuestDAO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdtAtestiguamientoDictamenDAO;
+import mx.gob.imss.cit.dictamen.persistence.dao.NdtRubroAtestiguamientoDictDAO;
 import mx.gob.imss.cit.dictamen.services.ExamenService;
 import mx.gob.imss.cit.dictamen.services.transformer.TransformerServiceUtils;
 import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
@@ -25,6 +29,10 @@ public class ExamenServiceImpl implements ExamenService {
 	private NdtAtestiguamientoDictamenDAO ndtAtestiguamientoDictamenDAO;
 	@EJB
 	private NdcAtestiguamientoDAO ndcAtestiguamientoDAO;
+	@EJB
+	private NdtRubroAtestiguamientoDictDAO ndtRubroAtestiguamientoDictDAO;
+	@EJB
+	private NdtAtestigPreguntasRespuestDAO ndtAtestigPreguntasRespuestDAO;
 	
 	@Override
 	public List<AtestiguamientoDictamenTO> findExamenByIdPatronDictamen(Long cveIdPatronDictamen) throws DictamenException {
@@ -55,4 +63,24 @@ public class ExamenServiceImpl implements ExamenService {
 		}
 		return atestiguamientonTO   ;
 	}
+
+	@Override
+	public void saveExamenAtestiguamiento(AtestiguamientoDictamenTO atestiguamientoDictamenTO) 
+			throws DictamenException {
+		try {
+			NdtAtestiguamientoDictamenDO atestiguamientoDictamenDO = TransformerServiceUtils.transformer(atestiguamientoDictamenTO);
+			ndtAtestiguamientoDictamenDAO.create(atestiguamientoDictamenDO);
+			 List<NdtRubroAtestiguamientoDictDO> NdtRubroAtestiguamientoDictDOList =  atestiguamientoDictamenDO.getNdtRubrosAtestiguamiento();
+			for(NdtRubroAtestiguamientoDictDO ndtRubroAtestiguamientoDictDO: NdtRubroAtestiguamientoDictDOList){
+				ndtRubroAtestiguamientoDictDAO.create(ndtRubroAtestiguamientoDictDO);
+				List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList = ndtRubroAtestiguamientoDictDO.getNdtAtestigPreguntasRespuestDOList();
+				for(NdtAtestigPreguntasRespuestDO ndtAtestigPreguntasRespuestDO: ndtAtestigPreguntasRespuestDOList){
+					ndtAtestigPreguntasRespuestDAO.create(ndtAtestigPreguntasRespuestDO);
+				}
+			}
+		} catch (Exception e) {
+			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_GUARDAR_EXAMEN_ATESTIGUAMIENTO,e);
+		}		
+	}
+
 }

@@ -14,5 +14,5 @@ public interface ExamenService {
 	
 	public List<AtestiguamientoDictamenTO> findExamenByIdPatronDictamen(Long cveIdPatronDictamen)throws DictamenException;
 	public AtestiguamientoTO getDetalleExamenByAtestiguamiento(Long cveIdAtestiguamiento)throws DictamenException;
-	
+	public void saveExamenAtestiguamiento(AtestiguamientoDictamenTO atestiguamientoDictamenTO)throws DictamenException;
 }

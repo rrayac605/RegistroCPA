@@ -14,6 +14,7 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.commons.to.FirmaElectronicaTO;
 import mx.gob.imss.cit.dictamen.commons.to.LayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EjercicioFiscalTO;
@@ -22,6 +23,7 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
@@ -38,6 +40,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.FirmaElectronicaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestigPreguntasRespuestDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
@@ -45,6 +48,7 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.domain.OpcionPreguntaDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PreguntaDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroAtestiguamientoDictDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoRespuestaDTO;
@@ -108,7 +112,12 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class	);
-		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class	);	
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroAtestiguamientoDictDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroAtestiguamientoDictDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestigPreguntasRespuestDTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestigPreguntasRespuestDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO.class	);
+
 	}
 	
 
@@ -298,5 +307,19 @@ public class TransformerIntegrationUtils {
 	public static PatronAsociadoTO transformer(PatronAsociadoDTO object){
 		return (PatronAsociadoTO) TransformerHelper.get(mapClass,object, PatronAsociadoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-
+		public static RubroAtestiguamientoDictDTO transformer(RubroAtestiguamientoDictTO object){
+		return (RubroAtestiguamientoDictDTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static RubroAtestiguamientoDictTO transformer(RubroAtestiguamientoDictDTO object){
+		return (RubroAtestiguamientoDictTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static AtestigPreguntasRespuestDTO transformer(AtestigPreguntasRespuestTO object){
+		return (AtestigPreguntasRespuestDTO) TransformerHelper.get(mapClass,object, AtestigPreguntasRespuestDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}	
+	
+	public static AtestigPreguntasRespuestTO transformer(AtestigPreguntasRespuestDTO object){
+		return (AtestigPreguntasRespuestTO) TransformerHelper.get(mapClass,object, AtestigPreguntasRespuestTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
 }

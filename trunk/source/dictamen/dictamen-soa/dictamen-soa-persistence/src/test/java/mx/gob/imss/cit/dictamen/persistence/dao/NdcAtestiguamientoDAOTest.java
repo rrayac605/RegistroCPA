@@ -23,11 +23,12 @@ public class NdcAtestiguamientoDAOTest extends AbstractDBTestUnit {
 	}
 	
 	@Test
-	public void getByIdAtestiguamiento() {
+	public void testgetByIdAtestiguamiento() {
 		LOG.info("prueba");
 		NdcAtestiguamientoDO ndtAtestiguamientoDO = localDAO.get(1l);
 		LOG.info(ndtAtestiguamientoDO.getCveIdAtestiguamiento());
 		Assert.assertNotNull(ndtAtestiguamientoDO);
 	}
+	
 	
 }

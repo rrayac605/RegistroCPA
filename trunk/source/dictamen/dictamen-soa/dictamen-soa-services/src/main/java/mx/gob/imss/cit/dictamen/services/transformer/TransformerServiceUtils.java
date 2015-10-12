@@ -16,6 +16,7 @@ import mx.gob.imss.cit.dictamen.commons.to.BovedaHeaderTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaMetadataTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaTramiteTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AseveracionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO;
@@ -27,6 +28,7 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.OpcionPreguntaTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PreguntaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO;
@@ -43,11 +45,13 @@ import mx.gob.imss.cit.dictamen.model.NdcRubroDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO;
+import mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO;
 import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO;
 import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronAsociadoDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
+import mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO;
 import mx.gob.imss.cit.ws.commonschema.SGBDE;
 
 public class TransformerServiceUtils {
@@ -106,7 +110,11 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.AseveracionesTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO.class , mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO.class , mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO.class);
-	}
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO.class	,mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO.class);		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO.class	,mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO.class);		
+}
 	
 	private TransformerServiceUtils(){
 		
@@ -162,10 +170,6 @@ public class TransformerServiceUtils {
 	public static SGBDE transformer(BovedaHeaderTO headerTO){ 
 		return (SGBDE) TransformerHelper.get(mapClass,headerTO, SGBDE.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	
-	
-	
-	
 	
 	public static NdtCargaDocumentoDO transformer( CargaDocumentoTO cargaDocumentoTO ) {
 		NdtCargaDocumentoDO cargaDocumentoDO = (NdtCargaDocumentoDO) TransformerHelper.get(mapClass,cargaDocumentoTO, NdtCargaDocumentoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;		
@@ -341,6 +345,21 @@ public class TransformerServiceUtils {
 	}
 	public static NdcTipoDocumentoDO transformer( TipoDocumentoTO object){
 		return (NdcTipoDocumentoDO)TransformerHelper.get(mapClass, object, NdcTipoDocumentoDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static RubroAtestiguamientoDictTO transformer( NdtRubroAtestiguamientoDictDO object ) {
+		return (RubroAtestiguamientoDictTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	
+	public static NdtRubroAtestiguamientoDictDO transformer( RubroAtestiguamientoDictTO object ) {
+		return (NdtRubroAtestiguamientoDictDO) TransformerHelper.get(mapClass,object, NdtRubroAtestiguamientoDictDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	
+	public static AtestigPreguntasRespuestTO transformer( NdtAtestigPreguntasRespuestDO object ) {
+		return (AtestigPreguntasRespuestTO) TransformerHelper.get(mapClass,object, AtestigPreguntasRespuestTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+	}
+	
+	public static NdtAtestigPreguntasRespuestDO transformer( AtestigPreguntasRespuestTO object ) {
+		return (NdtAtestigPreguntasRespuestDO) TransformerHelper.get(mapClass,object, NdtAtestigPreguntasRespuestDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 
 }
