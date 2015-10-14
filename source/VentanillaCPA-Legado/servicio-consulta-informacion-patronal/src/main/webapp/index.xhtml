@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head></h:head>
+<h:form id="index-form">
+    <center>
+        <h2>
+            <h:outputText value="#{msg['aseveracion.consulta.title']}" />
+        </h2>
+    </center>
+    <hr/>
+    <center>
+        <p:panelGrid columns="1" style="width: 300px;">
+            <c:forEach items="${indexView.descriptoresTablaList}" var="descriptor">
+                <p:button outcome="consultaAseveracion" value="${descriptor.titulo}" style="width: 270px;">
+                    <f:param name="selectedTable" value="${descriptor.clave}" />
+                </p:button>
+            </c:forEach>
+        </p:panelGrid>
+    </center>
+</h:form>
+</html>
