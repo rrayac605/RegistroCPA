@@ -8,6 +8,8 @@ import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.commons.enums.EstadoCargaDocumentoEnum;
 import mx.gob.imss.cit.dictamen.commons.enums.TipoDocumentoEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
@@ -22,12 +24,11 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.AseveracionesDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.CargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUtils;
 import mx.gob.imss.cit.dictamen.services.CargaArchivosService;
 import mx.gob.imss.cit.dictamen.services.LayoutPatronAsociadoService;
-
-import org.apache.log4j.Logger;
 
 @Remote(mx.gob.imss.cit.dictamen.integration.api.CargaArchivosIntegrator.class)
 @Stateless
@@ -43,19 +44,16 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 	private CargaArchivosService cargaArchivosService;
 	
 	@Override
-	public List<ParentLayoutDTO> findLayout(String anioEjercicio,
-			String rfcUsuario, String rfcPatron)
-			throws DictamenNegocioException {
+	public List<ParentLayoutDTO> findLayout(PatronDictamenDTO patronDictamenDTO,String rfcContador)throws DictamenNegocioException {
 		List<ParentLayoutDTO> listaDTO = null;
+		PatronDictamenTO patronDictamenTO=TransformerIntegrationUtils.transformer(patronDictamenDTO);
 		try {
-			List<ParentLayoutTO> listaTO = layoutPatronAsociadoService
-					.findLayoutAWSService(anioEjercicio, rfcUsuario, rfcPatron);
+			List<ParentLayoutTO> listaTO = layoutPatronAsociadoService.findLayoutAWSService( patronDictamenTO, rfcContador);
 			for (ParentLayoutTO parentLayoutTO : listaTO) {
 				if (listaDTO == null) {
 					listaDTO = new ArrayList<ParentLayoutDTO>();
 				}
-				listaDTO.add(TransformerIntegrationUtils
-						.transformer(parentLayoutTO));
+				listaDTO.add(TransformerIntegrationUtils.transformer(parentLayoutTO));
 			}
 		} catch (DictamenException e) {
 			LOG.error(e.getMessage(), e);
