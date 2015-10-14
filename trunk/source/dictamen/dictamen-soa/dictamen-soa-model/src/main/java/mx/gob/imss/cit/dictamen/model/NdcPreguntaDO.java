@@ -47,8 +47,8 @@ public class NdcPreguntaDO implements Serializable {
     @NotNull
     @Column(name = "CVE_ID_PREGUNTA", nullable = false, precision = 22)
     private Long cveIdPregunta;
-    @Size(max = 255)
-    @Column(name = "DES_PREGUNTA", length = 255)
+    @Size(max = 500)
+    @Column(name = "DES_PREGUNTA", length = 500)
     private String desPregunta;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
