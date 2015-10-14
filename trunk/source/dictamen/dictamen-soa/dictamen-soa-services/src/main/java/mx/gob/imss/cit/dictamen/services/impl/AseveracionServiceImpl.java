@@ -44,14 +44,16 @@ public class AseveracionServiceImpl implements AseveracionService {
 		}
 		
 		if(esObras==1){
+			ndcAsevercionesFiltrada.addAll(ndcAsevercionesDO);
+			
+		}else{
 			for (NdcAseveracionesDO  ndcAseveracionesDO: ndcAsevercionesDO) {
-				if(ndcAseveracionesDO.getIndConstruccion()==null || ndcAseveracionesDO.getIndConstruccion()==1){
+				if(ndcAseveracionesDO.getIndConstruccion()==null || !(ndcAseveracionesDO.getIndConstruccion()==1)){
 					ndcAsevercionesFiltrada.add(ndcAseveracionesDO);
 				}
 				
 			}
-		}else{
-			ndcAsevercionesFiltrada.addAll(ndcAsevercionesDO);
+			
 		}
 		
 		
