@@ -33,10 +33,16 @@ public class ExamenBean extends BaseBean {
 	@ManagedProperty(value = "#{examenPage}")
 	private ExamenPage  examenPage;
 	
+
 	@ManagedProperty(value = "#{datosPatronalesPage}")
 	private DatosPatronalesPage datosPatronalesPage;
+
+	@ManagedProperty(value = "#{datosPatronalesBean}")
+	private DatosPatronalesBean datosPatronalesBean;
 	
-	
+
+
+
 	public	String init(AtestiguamientoDictamenDTO examenDTO) {
 		CleanBeanUtil.cleanFields(examenPage);
 		try {
@@ -47,18 +53,19 @@ public class ExamenBean extends BaseBean {
 		return "";
 	}
 
-	public String regresar(){	
-		return NavigationConstants.PAGE_EXAMEN_REGRESAR;
-	}
 	
-	public void guardar(AtestiguamientoDTO atestiguamientoDTO){	
+	public String guardar(AtestiguamientoDTO atestiguamientoDTO){	
 		try {
 			examenIntegration.getSaveExamenAtestiguamiento(atestiguamientoDTO, datosPatronalesPage.getDatosPatron());
 			LOG.info("Atestiguamiento guardado"+ atestiguamientoDTO.getDesAtestiguamiento() );
+			datosPatronalesBean.initExamen();
+		
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_GUARDAR_EL_ATESTIGUAMIENTO.getCode());
 		}
+		
+		return NavigationConstants.PAGE_EXAMEN_REGRESAR;
 	}
 
 	public ExamenPage getExamenPage() {
@@ -68,13 +75,29 @@ public class ExamenBean extends BaseBean {
 	public void setExamenPage(ExamenPage examenPage) {
 		this.examenPage = examenPage;
 	}
-	
+
+	public String regresar(){	
+		datosPatronalesBean.initExamen();
+		return NavigationConstants.PAGE_EXAMEN_REGRESAR;
+
+	}
+
+
+	public void setDatosPatronalesPage(DatosPatronalesPage datosPatronalesPage) {
+		this.datosPatronalesPage = datosPatronalesPage;
+	}
+
 	public DatosPatronalesPage getDatosPatronalesPage() {
 		return datosPatronalesPage;
 	}
 
-	public void setDatosPatronalesPage(DatosPatronalesPage datosPatronalesPage) {
-		this.datosPatronalesPage = datosPatronalesPage;
+	
+	public DatosPatronalesBean getDatosPatronalesBean() {
+		return datosPatronalesBean;
+	}
+
+	public void setDatosPatronalesBean(DatosPatronalesBean datosPatronalesBean) {
+		this.datosPatronalesBean = datosPatronalesBean;
 	}
 	
 }

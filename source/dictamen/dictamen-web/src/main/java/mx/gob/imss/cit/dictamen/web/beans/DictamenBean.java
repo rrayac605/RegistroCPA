@@ -4,6 +4,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import org.primefaces.component.tabview.TabView;
+import org.primefaces.event.TabChangeEvent;
+
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
@@ -11,71 +14,59 @@ import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
 @ManagedBean(name = "dictamenBean")
 @ViewScoped
 public class DictamenBean extends BaseBean {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -614637897623862471L;
-		
+
 	@ManagedProperty(value = "#{dictamenPage}")
 	private DictamenPage dictamenPage;
-	
+
 	@ManagedProperty(value = "#{datosPatronalesBean}")
 	private DatosPatronalesBean datosPatronalesBean;
 
-	@ManagedProperty(value = "#{cargaArchivosBean}")
-	private CargaArchivosBean cargaArchivosBean;
+	public String init() {
 
-	
-	public String init(){
-		
-		
-		dictamenPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
-		dictamenPage.getContadorPublicoAutDTO().setCveIdCpa(778L);
-		dictamenPage.getContadorPublicoAutDTO().setRfc("GATS4812123D7");
+		if(datosPatronalesBean.getDatosPatronalesPage().getDatosPatron()==null ||datosPatronalesBean.getDatosPatronalesPage().getDatosPatron().getCveIdPatronDictamen()==null){
+			
+			dictamenPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
+			dictamenPage.getContadorPublicoAutDTO().setCveIdCpa(778L);
+			dictamenPage.getContadorPublicoAutDTO().setRfc("GATS4812123D7");
+			dictamenPage.setIndexUltimoWizard(0);
+			dictamenPage.setIndexWizard(0);
+			
+			datosPatronalesBean.init();
 
-		datosPatronalesBean.init();		
-		cargaArchivosBean.init();
+			dictamenPage.setBanderaOcultaTabs(true);
+		}
 		
-		dictamenPage.setBanderaOcultaTabs(true);
+		
 		return "";
 	}
 
+	public void cambiarPestania(TabChangeEvent event) {
+		
+		TabView tabView = (TabView) event.getComponent();	     
+		dictamenPage.setIndexUltimoWizard(tabView.getChildren().indexOf(event.getTab()));
+
+	}
 
 	/**
-	 * @param datosPatronalesBean the datosPatronalesBean to set
+	 * @param datosPatronalesBean
+	 *            the datosPatronalesBean to set
 	 */
 	public void setDatosPatronalesBean(DatosPatronalesBean datosPatronalesBean) {
 		this.datosPatronalesBean = datosPatronalesBean;
 	}
 
-
-
 	/**
-	 * @param dictamenPage the dictamenPage to set
+	 * @param dictamenPage
+	 *            the dictamenPage to set
 	 */
 	public void setDictamenPage(DictamenPage dictamenPage) {
 		this.dictamenPage = dictamenPage;
 	}
-
-
-
-	/**
-	 * @return the cargaArchivosBean
-	 */
-	public CargaArchivosBean getCargaArchivosBean() {
-		return cargaArchivosBean;
-	}
-
-
-
-	/**
-	 * @param cargaArchivosBean the cargaArchivosBean to set
-	 */
-	public void setCargaArchivosBean(CargaArchivosBean cargaArchivosBean) {
-		this.cargaArchivosBean = cargaArchivosBean;
-	}
-
 
 
 	/**
@@ -85,8 +76,6 @@ public class DictamenBean extends BaseBean {
 		return dictamenPage;
 	}
 
-
-
 	/**
 	 * @return the datosPatronalesBean
 	 */
@@ -94,7 +83,4 @@ public class DictamenBean extends BaseBean {
 		return datosPatronalesBean;
 	}
 
-
-	
-	
 }

@@ -8,12 +8,12 @@ import javax.faces.bean.SessionScoped;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EjercicioFiscalDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.TipoDictamenDTO;
-import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.constants.DictamenWebConstants;
+import mx.gob.imss.cit.dictamen.web.pages.base.BasePage;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 @ManagedBean(name = "datosPatronalesPage")
 @SessionScoped
-public class DatosPatronalesPage extends BaseBean {
+public class DatosPatronalesPage extends BasePage {
 
 	/**
 	 * 

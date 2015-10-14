@@ -3,13 +3,13 @@ package mx.gob.imss.cit.dictamen.web.pages;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
-import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.web.pages.base.BasePage;
 @ManagedBean(name = "cargaArchivosPage")
-@ViewScoped
-public class CargaArchivosPage extends BaseBean {
+@SessionScoped
+public class CargaArchivosPage extends BasePage {
 
 	/**
 	 * 
