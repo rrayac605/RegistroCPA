@@ -25,13 +25,20 @@
 
 				<p:column
 					headerText="#{msg['message.label.views.dictamen.atestiguamiento.accion']}">
-					<p:commandButton action="#{cuestionarioBean.editar(examen)}"
-						ajax="false"
-						value="#{msg['message.button.views.dictamen.atestiguamiento.editar']}"
-						immediate="true"></p:commandButton>
-					<p:commandButton action="examen"
-						value="#{msg['message.button.views.dictamen.atestiguamiento.borrar']}"
-						immediate="true" ajax="false"></p:commandButton>
+
+						
+				  <p:commandLink action="#{cuestionarioBean.editar(examen)}" 								 
+								  onstart="statusDialog.show();"
+						          oncomplete="statusDialog.hide();">
+					    <h:graphicImage value="/images/document_edit.png"  />
+					</p:commandLink>
+				
+					  <p:commandLink 
+								  onstart="statusDialog.show();"
+						          oncomplete="statusDialog.hide();">
+					    <h:graphicImage value="/images/document_delete.gif" />
+					</p:commandLink>
+				
 				</p:column>
 
 			</p:dataTable>

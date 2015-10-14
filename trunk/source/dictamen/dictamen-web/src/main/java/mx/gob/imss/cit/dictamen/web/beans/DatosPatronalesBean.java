@@ -53,6 +53,9 @@ public class DatosPatronalesBean extends BaseBean {
 		
 	
 		try {
+			
+			
+			
 			CleanBeanUtil.cleanFields(datosPatronalesPage);
 			
 			//se obtienen catalogos
@@ -62,12 +65,23 @@ public class DatosPatronalesBean extends BaseBean {
 			inicializarPatron();
 			inicializarEjercicioFiscal();
 			
-
+			dictamenPage.setIndexUltimoWizard(0);
+			dictamenPage.setIndexWizard(0);
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			inhabilitaOpciones();
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES.getCode());
 		}
+	}
+	
+	
+	
+
+	public void initExamen(){
+		habilitaOpciones();
+		calcularValuada();		
+		dictamenPage.setIndexWizard(dictamenPage.getIndexUltimoWizard());
+		
 	}
 	
 	
@@ -131,9 +145,9 @@ public class DatosPatronalesBean extends BaseBean {
 		}else{
 			
 			datosPatronalesPage.setDatosPatron(dictamenDTO);
-			LOG.info("tipo dictamen"+datosPatronalesPage.getDatosPatron().getCveIdTipoDictamen().getCveIdTipoDictamen());
 			habilitaOpciones();
-			calcularValuada();
+			calcularValuada();		
+
 		}	  
 	}
 
@@ -184,6 +198,8 @@ public class DatosPatronalesBean extends BaseBean {
 			inicializarPatron();
 			inhabilitaOpciones();
 			inicializarEjercicioFiscal();
+			dictamenPage.setIndexUltimoWizard(0);
+			dictamenPage.setIndexWizard(0);
 		} catch (DictamenNegocioException e) {
 			LOG.error(e.getMessage(),e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_DATOS_PATRONALES_GET.getCode());		

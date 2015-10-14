@@ -1,14 +1,14 @@
 package mx.gob.imss.cit.dictamen.web.pages;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
-import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.web.pages.base.BasePage;
 import mx.gob.imss.cit.dictamen.web.util.annotations.Reset;
 @ManagedBean(name = "dictamenPage")
-@ViewScoped
-public class DictamenPage extends BaseBean {
+@SessionScoped
+public class DictamenPage extends BasePage {
 
 	/**
 	 * 
@@ -20,9 +20,26 @@ public class DictamenPage extends BaseBean {
 	
 	private boolean banderaOcultaTabs;
 	
+	private int indexWizard;
 	
+	private int indexUltimoWizard;
 	
-	
+
+	public int getIndexUltimoWizard() {
+		return indexUltimoWizard;
+	}
+
+	public void setIndexUltimoWizard(int indexUltimoWizard) {
+		this.indexUltimoWizard = indexUltimoWizard;
+	}
+
+	public int getIndexWizard() {
+		return indexWizard;
+	}
+
+	public void setIndexWizard(int indexWizard) {
+		this.indexWizard = indexWizard;
+	}
 
 	/**
 	 * @return the contadorPublicoAutDTO

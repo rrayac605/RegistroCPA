@@ -16,16 +16,16 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
-import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.dictamen.web.pages.CargaArchivosPage;
 import mx.gob.imss.cit.dictamen.web.pages.DatosPatronalesPage;
 import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
+import mx.gob.imss.cit.dictamen.web.pages.base.BasePage;
 import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
 
 @ManagedBean(name = "cargaArchivosBean")
 @ViewScoped
-public class CargaArchivosBean extends BaseBean {
+public class CargaArchivosBean extends BasePage {
 
 	private static final long serialVersionUID = 2825687007915597308L;
 	

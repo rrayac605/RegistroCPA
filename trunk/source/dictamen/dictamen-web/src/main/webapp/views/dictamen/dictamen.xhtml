@@ -29,15 +29,15 @@
 			<p:separator />
 
 			<p:panel id="dictaminacionWizardPanel">
-				<p:tabView id="solicitudWizard">
-
+				<p:tabView id="solicitudWizard" activeIndex="#{dictamenPage.indexWizard}" >
+					<p:ajax event="tabChange" listener="#{dictamenBean.cambiarPestania}" />
 
 
 					<p:tab id="loadData"
 						title="#{msg['message.dictamen.dictaminar.wizard.titulo.adjuntar']}"
 						disabled="#{dictamenPage.banderaOcultaTabs}">
 						<p:panel rendered="#{!dictamenPage.banderaOcultaTabs}">
-					
+								<ui:include src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml"/>
 						</p:panel>
 
 
