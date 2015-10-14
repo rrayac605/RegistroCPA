@@ -1,0 +1,63 @@
+/*definicion de estrutura para mapeo de tablas aseveracion*/
+{
+  "tablas": [
+    {
+      "clave": "aseveracion.1",
+      "titulo": "Aseveracion 1",
+      "entidad": "mx.gob.imss.distss.dictamen.modelo.entidad.NdtA1PercepTrabajador",
+      "dto": "mx.gob.imss.distss.dictamen.modelo.dto.NdtA1PercepTrabajadorDTO",
+      "campos": [
+        {
+          "clave": "curpTrabajador",
+          "titulo": "CURP",
+          "filtro": true
+        },
+        {
+          "clave": "impAyudaAnteojos",
+          "titulo": "IMPORTE"
+        },
+        {
+          "clave": "numNssTrabajador",
+          "titulo": "NSS"
+        },
+        {
+          "clave": "regPatronal",
+          "titulo": "REGISTRO PATRONAL"
+        },
+        {
+          "clave": "rfcTrabajador",
+          "titulo": "RFC"
+        }
+      ]
+    },
+    {
+      "clave": "aseveracion.2",
+      "titulo": "Aseveracion 2",
+      "entidad": "mx.gob.imss.distss.dictamen.modelo.entidad.NdtA2OtraPrestOtorgada",
+      "dto": "mx.gob.imss.distss.dictamen.modelo.dto.NdtA2OtraPrestOtorgadaDTO",
+      "campos": [
+        {
+          "clave": "impInstrumentosTrabajo",
+          "titulo": "Importe instrumentos de trabajo"
+        },
+        {
+          "clave": "fecRegistroActualizado",
+          "titulo": "Fecha registro actualizado"
+        },
+        {
+          "clave": "fecRegistroAlta",
+          "titulo": "Fecha registro alta"
+        },
+        {
+          "clave": "fecRegistroBaja",
+          "titulo": "Fecha registro baja"
+        },
+        {
+          "clave": "impCuotaPatronalInfonavit",
+          "titulo": "RFC"
+        }
+      ]
+    }
+  ]
+
+}

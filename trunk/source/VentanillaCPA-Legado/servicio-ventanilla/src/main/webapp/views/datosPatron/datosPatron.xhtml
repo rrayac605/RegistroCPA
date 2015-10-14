@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:form id="form">
+
+	<p:panelGrid columns="2" id="panelDatosPatron">
+		<f:facet name="header">
+			<p:row>
+				<p:column>Datos Patron</p:column>
+			</p:row>
+		</f:facet>
+
+		<p:outputLabel value="(*) Registro Federal de Contribuyentes (RFC) " />
+		<p:inputText id="rfc" value="" validatorMessage="Formato Incorrecto"/>
+
+		<h:outputText value="Nombre, Denominación o Razón Social." />
+		<p:inputText value="" />
+
+		<h:outputText value="(*) Número de trabajadores Promedio." />
+		<p:inputText value="" maxlength="6" />
+
+		<h:outputText value="Tipo de Dictamen" />
+		<p:selectOneMenu id="listaTipoDictamen" style="width:150px">
+			<f:selectItem itemLabel="Seleccione" itemValue=""
+				noSelectionOption="true" />
+			<f:selectItems value="#{datosPatronController.listaTipoDictamen}"
+				var="tipoDic" itemLabel="#{tipoDic.descripcion}"
+				itemValue="#{tipoDic.clave}" />
+		</p:selectOneMenu>
+
+		<h:outputText value="(*) Número de Registros Patronales." />
+		<p:inputText value="" />
+
+		<h:outputText value="Ejercicio a dictaminar" />
+		<p:selectOneMenu id="listaEjercicio" style="width:150px">
+			<f:selectItem itemLabel="Seleccione" itemValue=""
+				noSelectionOption="true" />
+			<f:selectItems value="#{datosPatronController.listaEjercicio}"
+				var="ejercicio" itemLabel="#{ejercicio.descripcion}"
+				itemValue="#{ejercicio.clave}" />
+		</p:selectOneMenu>
+
+		<h:outputText
+			value="(*) ¿Es Patrón de la Industria de la Construcción?" />
+		<p:selectOneMenu id="listaPatron" style="width:150px">
+			<f:selectItem itemLabel="Seleccione" itemValue=""
+				noSelectionOption="true" />
+			<f:selectItems value="#{datosPatronController.listaSiNo}" var="list"
+				itemLabel="#{list.descripcion}" itemValue="#{list.clave}" />
+		</p:selectOneMenu>
+
+		<h:outputText
+			value="(*) ¿Realizó esporádicamente actividades de la \n
+			construcción o presentó algún registro de obra en el 
+			ejercicio dictaminado" />
+		<p:selectOneMenu id="listaActPer" style="width:150px">
+			<f:selectItem itemLabel="Seleccione" itemValue=""
+				noSelectionOption="true" />
+			<f:selectItems value="#{datosPatronController.listaSiNo}" var="list"
+				itemLabel="#{list.descripcion}" itemValue="#{list.clave}" />
+		</p:selectOneMenu>
+
+		<h:outputText value="(*) ¿Es un patrón o empresa valuada?" />
+		<p:selectOneMenu id="listaPatronEmp" style="width:150px">
+			<f:selectItem itemLabel="Seleccione" itemValue=""
+				noSelectionOption="true" />
+			<f:selectItems value="#{datosPatronController.listaSiNo}" var="list"
+				itemLabel="#{list.descripcion}" itemValue="#{list.clave}" />
+		</p:selectOneMenu>
+
+	</p:panelGrid>
+
+	<p:menuButton value="Opciones">
+		<p:menuitem value="Guardar" actionListener="#{menuView.save}"
+			icon="fa-upload" />
+		<p:menuitem value="Limpiar" icon="fa-download" resetValues="true" update="panelDatosPatron"/>
+		<p:menuitem value="Cancelar" icon="fa-remove"  action="index.xhtml?faces-redirect=true"/>
+	</p:menuButton>
+</h:form>
+</html>
