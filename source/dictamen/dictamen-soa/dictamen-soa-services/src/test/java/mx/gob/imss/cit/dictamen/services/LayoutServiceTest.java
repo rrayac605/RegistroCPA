@@ -7,26 +7,40 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import mx.gob.imss.cit.dictamen.commons.to.LayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.persistence.dao.base.AbstractDBTestUnit;
-import mx.gob.imss.cit.dictamen.services.impl.LayoutServiceImpl;
+import mx.gob.imss.cit.dictamen.services.impl.AseveracionServiceImpl;
 
 public class LayoutServiceTest extends AbstractDBTestUnit {
 	private Logger LOG=Logger.getLogger(LayoutServiceTest.class);		
-	private LayoutService layoutService = new LayoutServiceImpl();
+	private AseveracionService layoutService = new AseveracionServiceImpl();
 	
 	@Before
 	public void init() throws Exception {
 		super.setUp();
-		layoutService = new LayoutServiceImpl();
+		layoutService = new AseveracionServiceImpl();
 		connect(layoutService);
 	}	
 	
 	@Test
 	public void testCreateList(){		
 		List<ParentLayoutTO> salida = null;
+		PatronDictamenTO dictamenTO=new PatronDictamenTO();
+		dictamenTO.setIndPatronConstruccion((short)1);
+		dictamenTO.setIndRealizoActConstruccion((short)0);
+		
 		try {			
-			salida = layoutService.createList();
+			salida = layoutService.findAseveraciones(dictamenTO);
+			for (ParentLayoutTO parentLayoutTO : salida) {
+				LOG.info(parentLayoutTO.getName());
+				System.out.println(parentLayoutTO.getName());
+				for (LayoutTO lay : parentLayoutTO.getListaLayout()) {
+					LOG.info(parentLayoutTO.getName());
+					System.out.println("     "+lay.getName());				
+				}
+			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 		}

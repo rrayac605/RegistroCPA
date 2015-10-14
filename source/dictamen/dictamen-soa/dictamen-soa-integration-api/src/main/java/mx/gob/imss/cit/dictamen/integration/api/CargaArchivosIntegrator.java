@@ -4,10 +4,11 @@ import java.util.List;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.CargaDocumentoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.ParentLayoutDTO;
+import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 
 public interface CargaArchivosIntegrator {
-	List<ParentLayoutDTO> findLayout(String anioEjercicio, String rfcUsuario, String rfcPatron)throws DictamenNegocioException;
+	List<ParentLayoutDTO> findLayout(PatronDictamenDTO patronDictamenDTO,String rfcContador)throws DictamenNegocioException;
 	boolean registrarCargaAseveracion(CargaDocumentoDTO cargaAseveracionesDTO)throws DictamenNegocioException;
 	
 	List<CargaDocumentoDTO> findCvePatronEstadoAseveracion(Long cveIdPatronDictamen, Long cveIdCpa, String desRfc) throws DictamenNegocioException;

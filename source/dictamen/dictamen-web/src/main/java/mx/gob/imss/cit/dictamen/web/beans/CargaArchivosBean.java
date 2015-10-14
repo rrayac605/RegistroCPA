@@ -56,8 +56,9 @@ public class CargaArchivosBean extends BasePage {
 			LOG.info("rfc contador "+dictamenPage.getContadorPublicoAutDTO().getRfc());
 			LOG.info("año "+datosPatronalesPage.getDatosPatron().getCveIdEjerFiscal().getDesEjerFiscal());
 			
-				cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout(datosPatronalesPage.getDatosPatron().getCveIdEjerFiscal().getDesEjerFiscal(),
-						dictamenPage.getContadorPublicoAutDTO().getRfc(), datosPatronalesPage.getDatosPatron().getRfc()));
+			cargaArchivosPage.setListaParentLayout(cargaArchivosIntegrator.findLayout(
+					datosPatronalesPage.getDatosPatron(),
+					dictamenPage.getContadorPublicoAutDTO().getRfc()));
 
 			
 			LOG.info("el numero de aseveraciones es:"+cargaArchivosPage.getListaParentLayout().size());

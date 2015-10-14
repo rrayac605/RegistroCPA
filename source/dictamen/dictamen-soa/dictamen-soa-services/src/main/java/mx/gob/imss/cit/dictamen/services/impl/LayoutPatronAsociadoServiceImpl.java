@@ -15,11 +15,12 @@ import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO;
 import mx.gob.imss.cit.dictamen.commons.to.KeyTO;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.util.FechasUtils;
 import mx.gob.imss.cit.dictamen.services.AWSService;
+import mx.gob.imss.cit.dictamen.services.AseveracionService;
 import mx.gob.imss.cit.dictamen.services.KeyGeneratorService;
 import mx.gob.imss.cit.dictamen.services.LayoutPatronAsociadoService;
-import mx.gob.imss.cit.dictamen.services.LayoutService;
 import mx.gob.imss.cit.dictamen.services.util.DictamenExceptionBuilder;
 import mx.gob.imss.cit.dictamen.services.util.PropertiesConfigUtils;
 
@@ -30,7 +31,7 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 	private static final Logger LOG = Logger.getLogger(LayoutPatronAsociadoServiceImpl.class);
 
 	@EJB
-	private LayoutService layoutService;
+	private AseveracionService layoutService;
 
 	@EJB
 	private AWSService AWSService;
@@ -41,8 +42,9 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 	private static final int NUM_DIAS = 1;
 
 	@Override
-	public List<ParentLayoutTO> findLayoutAWSService(String anioEjercicio, String rfcUsuario, String rfcPatron)throws DictamenException {
-		List<ParentLayoutTO> listaParents = layoutService.createList();
+	public List<ParentLayoutTO> findLayoutAWSService(PatronDictamenTO patronDictamenTO,String rfcContador)throws DictamenException {
+		
+		List<ParentLayoutTO> listaParents = layoutService.findAseveraciones(patronDictamenTO);
 		
 		KeyTO keyTO;
 		try {
@@ -50,9 +52,8 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 			if (listaParents != null) {
 				LOG.info("la lista de grupos de layout es de "+listaParents.size());
 				for (ParentLayoutTO parentLayout : listaParents) {
-					for (int i = 0; parentLayout.getListaLayout() != null
-							&& i < parentLayout.getListaLayout().size(); i++) {
-						keyTO = new KeyTO(anioEjercicio, rfcUsuario, rfcPatron,
+					for (int i = 0; parentLayout.getListaLayout() != null && i < parentLayout.getListaLayout().size(); i++) {
+						keyTO = new KeyTO(patronDictamenTO.getCveIdEjerFiscal().getDesEjerFiscal(), rfcContador, patronDictamenTO.getDesRfc(),
 								parentLayout.getListaLayout().get(i).getName());
 						AWSPolicyTO aws = AWSService.getAwsPoliciyEncrypted(
 								FechasUtils.agregaDias(new Date(), NUM_DIAS),
@@ -71,7 +72,7 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 	}
 
 	@Override
-	public void setLayoutService(LayoutService layoutService) {
+	public void setLayoutService(AseveracionService layoutService) {
 		this.layoutService = layoutService;
 	}
 
