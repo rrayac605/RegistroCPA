@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <appender name="STDOUT" class="com.certum.commons.lang.log.FilteringConsoleAppender">
+        <param name="FilterPattern" value="cit.imss.gob.mx.ws.*"/>
+	 <param name="FilterPattern" value="mx.gob.imss.cit.*"/>
+       <param name="FilterPattern" value="mx.gob.imss.ws.*"/>
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+              value="[%d{yyyy-MM-dd HH:mm:ss:SSS}] %-6p [%-25.25c{1}:%4L] %m%n" />
+        </layout>
+    </appender>
+	
+   <category name="cit.imss.gob.mx.ws">
+      <priority value="DEBUG"/>
+   </category>
+    <category name="mx.gob.imss.cit">
+      <priority value="DEBUG"/>
+   </category>
+   <category name="mx.gob.imss.ws">
+      <priority value="DEBUG"/>
+   </category>
+
+    <!--                           -->
+    <!-- setup log4j's root logger -->
+    <!--                           -->
+    <root>
+        <level value="DEBUG" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</log4j:configuration>
