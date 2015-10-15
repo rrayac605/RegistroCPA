@@ -51,8 +51,8 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 	@Override
 	public List<ParentLayoutDTO> findLayout(PatronDictamenDTO patronDictamenDTO,String rfcContador)throws DictamenNegocioException {
 		List<ParentLayoutDTO> listaDTO = null;
-		PatronDictamenTO patronDictamenTO=TransformerIntegrationUtils.transformer(patronDictamenDTO);
 		try {
+			PatronDictamenTO patronDictamenTO=TransformerIntegrationUtils.transformer(patronDictamenDTO);
 			List<ParentLayoutTO> listaTO = layoutPatronAsociadoService.findLayoutAWSService( patronDictamenTO, rfcContador);
 			for (ParentLayoutTO parentLayoutTO : listaTO) {
 				if (listaDTO == null) {
