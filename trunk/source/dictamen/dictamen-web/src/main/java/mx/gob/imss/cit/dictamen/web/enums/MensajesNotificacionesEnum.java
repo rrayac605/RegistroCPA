@@ -24,6 +24,7 @@ public enum MensajesNotificacionesEnum {
 	MSG_ERROR_DATOS_PATRONALES_GET(13),
 	MSG_ERROR_GUARDAR_ASEVERACION(14),
 	MSG_ERROR_GUARDAR_EL_ATESTIGUAMIENTO(15),
+	MSG_EXITO_SAT(16),
     ;
 
 	private int code;

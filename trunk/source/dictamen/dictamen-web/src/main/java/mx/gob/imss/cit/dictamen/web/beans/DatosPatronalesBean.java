@@ -182,6 +182,7 @@ public class DatosPatronalesBean extends BaseBean {
 					inicializarPatron();
 				}else{
 					LOG.info("la razon social es: "+razonSocial);
+					FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_SAT.getCode(),datosPatronalesPage.getDatosPatron().getRfc());
 					datosPatronalesPage.getDatosPatron().setRazonSocialNombre(razonSocial);
 				}
 			}
