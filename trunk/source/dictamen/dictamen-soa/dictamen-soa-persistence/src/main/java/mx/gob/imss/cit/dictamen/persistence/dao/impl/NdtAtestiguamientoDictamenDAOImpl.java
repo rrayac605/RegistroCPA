@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.AbstractBaseDAO;
 import mx.gob.imss.cit.dictamen.persistence.dao.NdtAtestiguamientoDictamenDAO;
@@ -38,6 +39,19 @@ public class NdtAtestiguamientoDictamenDAOImpl extends AbstractBaseDAO<NdtAtesti
 	       return lst;
 	 }
 
+	@Override
+	public  NdcAtestiguamientoDO getDetalleExamenByAtestiguamiento(Long cveIdEstadoAtestiguamiento, Long cveIdAtestiguamiento) {
+		NdcAtestiguamientoDO ndcAtestiguamientoDO = null;
+       Query q = null;
+       
+       q = em.createNamedQuery("NdtAtestiguamientoDictamenDO.getDetalleExamenByAtestiguamiento");
+       q.setParameter("cveIdAtestiguamiento", cveIdAtestiguamiento);
+       q.setParameter("cveIdEstadoAtestiguamiento", cveIdEstadoAtestiguamiento);
+       ndcAtestiguamientoDO =(NdcAtestiguamientoDO) q.getSingleResult();
+       
+       return ndcAtestiguamientoDO;
+	}
+	
 	@Override
 	protected EntityManager getEntityManager() {
 		return em;

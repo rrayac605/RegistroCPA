@@ -2,13 +2,12 @@ package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
 
-
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class AtestigPreguntasRespuestTO extends BaseTO {
 	
 	private static final long serialVersionUID = 3990957852699991321L;
-	private Long cveIdAtestiguamientos;
+    private Long cveIdAtestiguamientos;
     private String desObservaciones;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
@@ -16,6 +15,8 @@ public class AtestigPreguntasRespuestTO extends BaseTO {
     private String cveIdUsuario;
     private RubroAtestiguamientoDictTO cveIdRubroAtestigDictamen;
     private OpcionPreguntaTO cveIdOpcionPregunta;
+    
+    
 	public Long getCveIdAtestiguamientos() {
 		return cveIdAtestiguamientos;
 	}

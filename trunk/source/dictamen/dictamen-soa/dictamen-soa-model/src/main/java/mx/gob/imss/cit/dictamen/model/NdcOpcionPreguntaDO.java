@@ -55,7 +55,7 @@ public class NdcOpcionPreguntaDO implements Serializable {
     @JoinColumn(name = "CVE_ID_PREGUNTA", referencedColumnName = "CVE_ID_PREGUNTA")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcPreguntaDO cveIdPregunta;
-    @OneToMany(mappedBy = "cveIdOpcionPregunta", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cveIdOpcionPregunta", fetch = FetchType.EAGER)
     private List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList;
 
     public NdcOpcionPreguntaDO() {

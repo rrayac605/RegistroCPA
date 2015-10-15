@@ -64,8 +64,8 @@ public class NdcRubroDO implements Serializable {
     private Integer indOrden;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdRubro", fetch = FetchType.EAGER)
     private List<NdcPreguntaDO> ndcPreguntas;
-    @OneToMany(mappedBy = "cveIdRubro", fetch = FetchType.LAZY)
-    private List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList;
+    @OneToMany(mappedBy = "cveIdRubro", fetch = FetchType.EAGER)
+    private List<NdtRubroAtestiguamientoDictDO> ndtRubrosAtestiguamientoDict;
     @JoinColumn(name = "CVE_ID_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ATESTIGUAMIENTO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcAtestiguamientoDO cveIdAtestiguamiento;
@@ -133,12 +133,12 @@ public class NdcRubroDO implements Serializable {
         this.ndcPreguntas = ndcPreguntas;
     }
 
-    public List<NdtRubroAtestiguamientoDictDO> getNdtRubroAtestiguamientoDictDOList() {
-        return ndtRubroAtestiguamientoDictDOList;
+    public List<NdtRubroAtestiguamientoDictDO> getNdtRubrosAtestiguamientoDict() {
+        return ndtRubrosAtestiguamientoDict;
     }
 
-    public void setNdtRubroAtestiguamientoDictDOList(List<NdtRubroAtestiguamientoDictDO> ndtRubroAtestiguamientoDictDOList) {
-        this.ndtRubroAtestiguamientoDictDOList = ndtRubroAtestiguamientoDictDOList;
+    public void setNdtRubrosAtestiguamientoDict(List<NdtRubroAtestiguamientoDictDO> ndtRubrosAtestiguamientoDict) {
+        this.ndtRubrosAtestiguamientoDict = ndtRubrosAtestiguamientoDict;
     }
 
     public NdcAtestiguamientoDO getCveIdAtestiguamiento() {

@@ -6,17 +6,15 @@ import java.util.List;
 import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
 public class AtestiguamientoDictamenDTO extends BaseDTO {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 7801434299681197097L;
+
+	
+	private static final long serialVersionUID = -7892175772742349433L;
 	private Long cveIdAtestigDictamen;
-    private Long cveIdDictamen;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
     private String cveIdUsuario;
-    private List<RubroAtestiguamientoDictDTO> ndtRubroAtestiguamientos;
+    private List<RubroAtestiguamientoDictDTO> ndtRubrosAtestiguamiento;
     private PatronDictamenDTO cveIdPatronDictamen;
     private EstadoAtestiguamientoDTO cveIdEstadoAtestiguamiento;
     private AtestiguamientoDTO cveIdAtestiguamiento;
@@ -26,12 +24,6 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
 	}
 	public void setCveIdAtestigDictamen(Long cveIdAtestigDictamen) {
 		this.cveIdAtestigDictamen = cveIdAtestigDictamen;
-	}
-	public Long getCveIdDictamen() {
-		return cveIdDictamen;
-	}
-	public void setCveIdDictamen(Long cveIdDictamen) {
-		this.cveIdDictamen = cveIdDictamen;
 	}
 	public Date getFecRegistroAlta() {
 		return fecRegistroAlta;
@@ -75,11 +67,11 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
 	public void setCveIdAtestiguamiento(AtestiguamientoDTO cveIdAtestiguamiento) {
 		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
 	}
-	public List<RubroAtestiguamientoDictDTO> getNdtRubroAtestiguamientos() {
-		return ndtRubroAtestiguamientos;
+	public List<RubroAtestiguamientoDictDTO> getNdtRubrosAtestiguamiento() {
+		return ndtRubrosAtestiguamiento;
 	}
-	public void setNdtRubroAtestiguamientos(List<RubroAtestiguamientoDictDTO> ndtRubroAtestiguamientos) {
-		this.ndtRubroAtestiguamientos = ndtRubroAtestiguamientos;
+	public void setNdtRubrosAtestiguamiento(List<RubroAtestiguamientoDictDTO> ndtRubrosAtestiguamiento) {
+		this.ndtRubrosAtestiguamiento = ndtRubrosAtestiguamiento;
 	}
 	@Override
 	public int hashCode() {
@@ -87,14 +79,13 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
 		int result = 1;
 		result = prime * result + ((cveIdAtestigDictamen == null) ? 0 : cveIdAtestigDictamen.hashCode());
 		result = prime * result + ((cveIdAtestiguamiento == null) ? 0 : cveIdAtestiguamiento.hashCode());
-		result = prime * result + ((cveIdDictamen == null) ? 0 : cveIdDictamen.hashCode());
 		result = prime * result + ((cveIdEstadoAtestiguamiento == null) ? 0 : cveIdEstadoAtestiguamiento.hashCode());
 		result = prime * result + ((cveIdPatronDictamen == null) ? 0 : cveIdPatronDictamen.hashCode());
 		result = prime * result + ((cveIdUsuario == null) ? 0 : cveIdUsuario.hashCode());
 		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
 		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
 		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
-		result = prime * result + ((ndtRubroAtestiguamientos == null) ? 0 : ndtRubroAtestiguamientos.hashCode());
+		result = prime * result + ((ndtRubrosAtestiguamiento == null) ? 0 : ndtRubrosAtestiguamiento.hashCode());
 		return result;
 	}
 	@Override
@@ -115,11 +106,6 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
 			if (other.cveIdAtestiguamiento != null)
 				return false;
 		} else if (!cveIdAtestiguamiento.equals(other.cveIdAtestiguamiento))
-			return false;
-		if (cveIdDictamen == null) {
-			if (other.cveIdDictamen != null)
-				return false;
-		} else if (!cveIdDictamen.equals(other.cveIdDictamen))
 			return false;
 		if (cveIdEstadoAtestiguamiento == null) {
 			if (other.cveIdEstadoAtestiguamiento != null)
@@ -151,10 +137,10 @@ public class AtestiguamientoDictamenDTO extends BaseDTO {
 				return false;
 		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
 			return false;
-		if (ndtRubroAtestiguamientos == null) {
-			if (other.ndtRubroAtestiguamientos != null)
+		if (ndtRubrosAtestiguamiento == null) {
+			if (other.ndtRubrosAtestiguamiento != null)
 				return false;
-		} else if (!ndtRubroAtestiguamientos.equals(other.ndtRubroAtestiguamientos))
+		} else if (!ndtRubrosAtestiguamiento.equals(other.ndtRubrosAtestiguamiento))
 			return false;
 		return true;
 	}
