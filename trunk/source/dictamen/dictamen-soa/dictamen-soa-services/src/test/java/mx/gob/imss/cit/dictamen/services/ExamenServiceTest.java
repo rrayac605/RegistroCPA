@@ -96,7 +96,7 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 		AtestiguamientoTO atestiguamientoTO = new AtestiguamientoTO();
 		atestiguamientoTO.setCveIdAtestiguamiento(1L);
 		EstadoAtestiguamientoTO estadoAtestiguamientoTO = new EstadoAtestiguamientoTO();
-		estadoAtestiguamientoTO.setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum.VALIDADO);
+		estadoAtestiguamientoTO.setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum.VALIDADO.getId());
 		AtestiguamientoDictamenTO atestiguamientoDictamenTO = new AtestiguamientoDictamenTO();
 		atestiguamientoDictamenTO.setCveIdPatronDictamen(patronDictamenTO);
 		atestiguamientoDictamenTO.setCveIdAtestiguamiento(atestiguamientoTO);
