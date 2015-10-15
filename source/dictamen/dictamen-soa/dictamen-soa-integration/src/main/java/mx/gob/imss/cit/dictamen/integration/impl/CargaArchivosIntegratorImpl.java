@@ -95,7 +95,7 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 		AtestiguamientoDictamenTO atestiguamientoTO = new AtestiguamientoDictamenTO();
 		EstadoAtestiguamientoTO cveIdEstadoAtestiguamiento = new EstadoAtestiguamientoTO();	
 		
-		cveIdEstadoAtestiguamiento.setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum.INICIADO);		
+		cveIdEstadoAtestiguamiento.setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum.INICIADO.getId());		
 		atestiguamientoTO.setCveIdEstadoAtestiguamiento(cveIdEstadoAtestiguamiento);
 		atestiguamientoTO.setCveIdPatronDictamen(patronDictamenTO);
 		atestiguamientoTO.setCveIdUsuario(cargaAseveracionesDTO
