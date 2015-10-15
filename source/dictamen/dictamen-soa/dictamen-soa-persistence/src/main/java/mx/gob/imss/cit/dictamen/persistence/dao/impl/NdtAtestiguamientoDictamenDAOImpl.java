@@ -47,7 +47,7 @@ public class NdtAtestiguamientoDictamenDAOImpl extends AbstractBaseDAO<NdtAtesti
        q = em.createNamedQuery("NdtAtestiguamientoDictamenDO.getDetalleExamenByAtestiguamiento");
        q.setParameter("cveIdAtestiguamiento", cveIdAtestiguamiento);
        q.setParameter("cveIdEstadoAtestiguamiento", cveIdEstadoAtestiguamiento);
-       ndcAtestiguamientoDO =(NdcAtestiguamientoDO) q.getSingleResult();
+       ndcAtestiguamientoDO =(NdcAtestiguamientoDO) q.getResultList().get(0);
        
        return ndcAtestiguamientoDO;
 	}
