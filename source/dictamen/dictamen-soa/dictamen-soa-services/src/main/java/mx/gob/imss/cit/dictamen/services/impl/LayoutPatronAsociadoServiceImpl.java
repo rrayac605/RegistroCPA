@@ -54,7 +54,8 @@ public class LayoutPatronAsociadoServiceImpl implements LayoutPatronAsociadoServ
 				for (ParentLayoutTO parentLayout : listaParents) {
 					for (int i = 0; parentLayout.getListaLayout() != null && i < parentLayout.getListaLayout().size(); i++) {
 						keyTO = new KeyTO(patronDictamenTO.getCveIdEjerFiscal().getDesEjerFiscal(), rfcContador, patronDictamenTO.getDesRfc(),
-								parentLayout.getListaLayout().get(i).getName());
+								parentLayout.getListaLayout().get(i).getName(), 
+								parentLayout.getListaLayout().get(i).getIdLayout().toString());
 						AWSPolicyTO aws = AWSService.getAwsPoliciyEncrypted(
 								FechasUtils.agregaDias(new Date(), NUM_DIAS),
 								PropertiesConfigUtils

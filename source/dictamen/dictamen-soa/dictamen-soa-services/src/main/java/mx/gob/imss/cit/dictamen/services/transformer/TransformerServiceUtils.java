@@ -307,6 +307,19 @@ public class TransformerServiceUtils {
 	
 	public static NdtAtestiguamientoDictamenDO transformer( AtestiguamientoDictamenTO atestiguamientoDictamenTO ) {
 		NdtAtestiguamientoDictamenDO cont= (NdtAtestiguamientoDictamenDO) TransformerHelper.get(mapClass,atestiguamientoDictamenTO, NdtAtestiguamientoDictamenDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+		
+		NdcAtestiguamientoDO cveIdAtestiguamiento = new NdcAtestiguamientoDO();
+		NdcEstadoAtestiguamientoDO cveIdEstadoAtestiguamiento = new NdcEstadoAtestiguamientoDO();
+		NdtPatronDictamenDO cveIdPatronDictamen = new NdtPatronDictamenDO();		
+		
+		cveIdAtestiguamiento.setCveIdAtestiguamiento(atestiguamientoDictamenTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
+		cveIdEstadoAtestiguamiento.setCveIdEstadoAtestiguamiento(atestiguamientoDictamenTO.getCveIdEstadoAtestiguamiento().getCveIdEstadoAtestiguamiento());
+		cveIdPatronDictamen.setCveIdPatronDictamen(atestiguamientoDictamenTO.getCveIdPatronDictamen().getCveIdPatronDictamen());
+		
+		cont.setCveIdAtestiguamiento(cveIdAtestiguamiento);		
+		cont.setCveIdEstadoAtestiguamiento(cveIdEstadoAtestiguamiento);		
+		cont.setCveIdPatronDictamen(cveIdPatronDictamen);
+		
 		return cont;
 	}
 
@@ -319,11 +332,11 @@ public class TransformerServiceUtils {
 	}
 	
 	public static NdtPatronAsociadoDO transformer( PatronAsociadoTO object ) {
-		return (NdtPatronAsociadoDO) TransformerHelper.get(mapClass,object, NdtPatronAsociadoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+		return (NdtPatronAsociadoDO) TransformerHelper.get(mapClass,object, NdtPatronAsociadoDO.class,DictamenConstants.PROFUNDIDAD_MAPEO);
 	}
 	
 	public static PatronAsociadoTO transformer( NdtPatronAsociadoDO object ) {
-		return (PatronAsociadoTO) TransformerHelper.get(mapClass,object, PatronAsociadoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+		return (PatronAsociadoTO) TransformerHelper.get(mapClass,object, PatronAsociadoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO);
 	}
 	
 	public static EstadoCargaDocumentoTO transformer( NdcEstadoCargaDocumentoDO object){
@@ -347,7 +360,7 @@ public class TransformerServiceUtils {
 		return (NdcTipoDocumentoDO)TransformerHelper.get(mapClass, object, NdcTipoDocumentoDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
 	}
 	public static RubroAtestiguamientoDictTO transformer( NdtRubroAtestiguamientoDictDO object ) {
-		return (RubroAtestiguamientoDictTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
+		return (RubroAtestiguamientoDictTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictTO.class,DictamenConstants.PROFUNDIDAD_MAPEO);
 	}
 	
 	public static NdtRubroAtestiguamientoDictDO transformer( RubroAtestiguamientoDictTO object ) {

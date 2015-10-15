@@ -6,9 +6,9 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
-
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,11 +33,12 @@ import javax.validation.constraints.Size;
 @Table(name = "NDC_ATESTIGUAMIENTO")
 @NamedQueries({
     @NamedQuery(name = "NdcAtestiguamientoDO.findAll", query = "SELECT n FROM NdcAtestiguamientoDO n"),
-    @NamedQuery(name = "NdcAtestiguamientoDO.findByCveIdAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.cveIdAtestiguamiento = :cveIdAtestiguamiento "),
+    @NamedQuery(name = "NdcAtestiguamientoDO.findByCveIdAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.cveIdAtestiguamiento = :cveIdAtestiguamiento"),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByDesAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.desAtestiguamiento = :desAtestiguamiento"),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroAlta", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroBaja", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
+    @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroBaja", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
+    @NamedQuery(name = "NdcAtestiguamientoDO.findByCveIdAseveracion", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.cveIdAseveracion.cveIdAseveracion = :cveIdAseveracion")})
 public class NdcAtestiguamientoDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation

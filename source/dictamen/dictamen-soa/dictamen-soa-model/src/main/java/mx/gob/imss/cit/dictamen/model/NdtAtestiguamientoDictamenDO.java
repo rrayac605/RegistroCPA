@@ -36,7 +36,7 @@ import javax.validation.constraints.Size;
 @NamedQueries({
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findAll", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdAtestigDictamen", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdAtestigDictamen = :cveIdAtestigDictamen"),
-    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdPatronDictamen", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdPatronDictamen.cveIdPatronDictamen = :cveIdPatronDictamen"),  
+    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdPatronDictamen", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdPatronDictamen.cveIdPatronDictamen = :cveIdPatronDictamen"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroAlta", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroBaja", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),

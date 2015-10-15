@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import mx.gob.imss.cit.dictamen.commons.enums.EstadoAtestiguamientoEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
@@ -95,7 +96,7 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 		AtestiguamientoTO atestiguamientoTO = new AtestiguamientoTO();
 		atestiguamientoTO.setCveIdAtestiguamiento(1L);
 		EstadoAtestiguamientoTO estadoAtestiguamientoTO = new EstadoAtestiguamientoTO();
-		estadoAtestiguamientoTO.setCveIdEstadoAtestiguamiento(2L);
+		estadoAtestiguamientoTO.setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum.VALIDADO);
 		AtestiguamientoDictamenTO atestiguamientoDictamenTO = new AtestiguamientoDictamenTO();
 		atestiguamientoDictamenTO.setCveIdPatronDictamen(patronDictamenTO);
 		atestiguamientoDictamenTO.setCveIdAtestiguamiento(atestiguamientoTO);

@@ -10,12 +10,16 @@ import javax.ejb.Stateless;
 
 import org.apache.log4j.Logger;
 
+import mx.gob.imss.cit.dictamen.commons.enums.EstadoAtestiguamientoEnum;
 import mx.gob.imss.cit.dictamen.commons.enums.EstadoCargaDocumentoEnum;
 import mx.gob.imss.cit.dictamen.commons.enums.TipoDocumentoEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.ParentLayoutTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AseveracionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.CargaDocumentoTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO;
@@ -36,13 +40,14 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 	/**
 	 * 
 	 */
-	private static final Logger LOG=Logger.getLogger(CargaArchivosIntegratorImpl.class);
+	private static final Logger LOG = Logger
+			.getLogger(CargaArchivosIntegratorImpl.class);
 	@EJB
 	LayoutPatronAsociadoService layoutPatronAsociadoService;
-	
+
 	@EJB
 	private CargaArchivosService cargaArchivosService;
-	
+
 	@Override
 	public List<ParentLayoutDTO> findLayout(PatronDictamenDTO patronDictamenDTO,String rfcContador)throws DictamenNegocioException {
 		List<ParentLayoutDTO> listaDTO = null;
@@ -86,9 +91,25 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 		cargaAseveracionesTO.setCveIdAseveracion(aseveracionTO);
 		cargaAseveracionesTO.setCveIdTipoDocumento(cveIdTipoDocumento);
 		cargaAseveracionesTO.setCveIdPatronDictamen(patronDictamenTO);
-
+		
+		AtestiguamientoDictamenTO atestiguamientoTO = new AtestiguamientoDictamenTO();
+		EstadoAtestiguamientoTO cveIdEstadoAtestiguamiento = new EstadoAtestiguamientoTO();	
+		
+		cveIdEstadoAtestiguamiento.setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum.INICIADO);		
+		atestiguamientoTO.setCveIdEstadoAtestiguamiento(cveIdEstadoAtestiguamiento);
+		atestiguamientoTO.setCveIdPatronDictamen(patronDictamenTO);
+		atestiguamientoTO.setCveIdUsuario(cargaAseveracionesDTO
+				.getCveIdUsuario());
+		atestiguamientoTO.setFecRegistroActualizado(new Date());
+		atestiguamientoTO.setFecRegistroAlta(new Date());
+		
+		
 		try {
-			cargaArchivosService.registraCargaArchivos(cargaAseveracionesTO);
+			AtestiguamientoTO cveIdAtestiguamiento = cargaArchivosService.getAtestiguamientoByIdAseveracion(aseveracionTO.getCveIdAseveracion());
+			atestiguamientoTO.setCveIdAtestiguamiento(cveIdAtestiguamiento);
+			
+			cargaArchivosService.registraCargaArchivos(cargaAseveracionesTO);			
+			cargaArchivosService.registraAtestiguamientoDictamen(atestiguamientoTO);
 		} catch (DictamenException e) {
 			LOG.error(e.getMessage(), e);
 			throw new DictamenNegocioException(e.getMessage(), e);

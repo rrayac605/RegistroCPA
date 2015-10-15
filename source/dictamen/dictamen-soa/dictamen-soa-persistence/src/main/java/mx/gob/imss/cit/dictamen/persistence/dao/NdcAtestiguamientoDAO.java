@@ -33,6 +33,13 @@ public interface NdcAtestiguamientoDAO {
 	 */
 	NdcAtestiguamientoDO get(Object id);
 	/**
+	 * Metodo de busqueda por Id.
+	 *
+	 * @param id the id
+	 * @return the NdcAtestiguamientoDO do
+	 */
+	NdcAtestiguamientoDO getByIdAseveracion(Object id);	
+	/**
 	 * Metodo de busqueda por todos.
 	 *
 	 * @return the list
