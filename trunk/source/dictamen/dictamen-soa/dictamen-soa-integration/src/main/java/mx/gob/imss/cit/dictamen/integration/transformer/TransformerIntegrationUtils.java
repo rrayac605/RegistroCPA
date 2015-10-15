@@ -129,7 +129,7 @@ public class TransformerIntegrationUtils {
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoAtestiguamientoTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO.class);
-		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class	);
+		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.EstadoCargaDocumentoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.EstadoCargaDocumentoTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class,mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class	);
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PatronAsociadoTO.class,mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronAsociadoDTO.class	);	
 		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RubroAtestiguamientoDictTO.class			,mx.gob.imss.cit.dictamen.integration.api.dto.domain.RubroAtestiguamientoDictDTO.class);

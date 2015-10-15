@@ -8,8 +8,7 @@ import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 public class AtestiguamientoDictamenTO extends BaseTO{
 
 	private static final long serialVersionUID = -2262570965490960405L;
-	
-    private Long cveIdAtestigDictamen;
+	private Long cveIdAtestigDictamen;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
