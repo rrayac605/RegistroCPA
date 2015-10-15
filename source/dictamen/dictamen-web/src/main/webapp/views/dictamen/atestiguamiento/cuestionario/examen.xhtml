@@ -12,44 +12,45 @@
 
 	<ui:define name="bodyContainer">
 		<h:form>
-		<h1>#{examenPage.atestiguamientoDTO.desAtestiguamiento}</h1>
-				<br />
-			<br />
-			<ui:repeat var="rubro"
-				value="#{examenPage.atestiguamientoDTO.ndcRubros}"
-				varStatus="status">
-					<h2>#{rubro.desRubro}</h2><br />
-				<br />
-				<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}"
-					varStatus="status" >
-						#{pregunta.desPregunta}<br />
-
-					<p:selectOneRadio id="opcion"
-						value="#{pregunta.opcionSeleccionada}" required="true" requiredMessage="#{msg['message.button.views.dictamen.atestiguamiento.error']}">
-						<f:selectItems
-							itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}"
-							var="respuesta"
-							itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}"
-							value="#{pregunta.ndcOpcionesPregunta}" />
-					</p:selectOneRadio>
-					<br />
-					<br />
-				</ui:repeat>
-			</ui:repeat>
-
-			<p:commandButton action="#{examenBean.guardar()}"
-				ajax="false"
-				value="#{msg['message.button.views.dictamen.atestiguamiento.guardar']}">
-				</p:commandButton>
-			<br />
-
+			<p:panelGrid columns="1">
+				<p:panelGrid columns="1">
+					<p:panel>
+						<h2>#{examenPage.atestiguamientoDTO.desAtestiguamiento}</h2>
+						<br />
+						
+						<ui:repeat var="rubro"
+							value="#{examenPage.atestiguamientoDTO.ndcRubros}"
+							varStatus="status">
+							<h4>#{rubro.desRubro}</h4>
+							<br />
+							<br />
+							<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}"
+								varStatus="status">
+								<p:outputLabel id="preguntaLabel#{pregunta.cveIdPregunta}" value="#{pregunta.desPregunta}" for="opcionRadio#{pregunta.cveIdPregunta}"/>
+								<p:selectOneRadio id="opcionRadio#{pregunta.cveIdPregunta}"
+									value="#{pregunta.opcionSeleccionada}" required="true"
+									requiredMessage="#{msg['message.label.views.dictamen.atestiguamiento.error']} #{pregunta.desPregunta}" >
+									<f:selectItems
+										itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}"
+										var="respuesta"
+										itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}"
+										value="#{pregunta.ndcOpcionesPregunta}" />
+								</p:selectOneRadio>
+								<br />
+								<br />
+							</ui:repeat>
+						</ui:repeat>
+					</p:panel>
+				</p:panelGrid>
+				<p:panelGrid columns="2" style="center">
+					<p:commandButton action="#{examenBean.guardar()}" 
+						value="#{msg['message.button.views.dictamen.atestiguamiento.guardar']}">
+					</p:commandButton>
+					<p:commandButton action="#{examenBean.regresar()}" 
+						value="#{msg['message.button.views.dictamen.atestiguamiento.regresar']}"
+						immediate="true"></p:commandButton>
+				</p:panelGrid>
+			</p:panelGrid>
 		</h:form>
-		<h:form>
-			<p:commandButton action="#{examenBean.regresar()}" ajax="false"
-				value="#{msg['message.button.views.dictamen.atestiguamiento.regresar']}"
-				immediate="true"></p:commandButton>
-		</h:form>
-
 	</ui:define>
 </ui:composition>
-
