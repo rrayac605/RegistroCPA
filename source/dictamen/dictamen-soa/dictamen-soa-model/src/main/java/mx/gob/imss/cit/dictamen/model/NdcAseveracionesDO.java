@@ -32,7 +32,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "NDC_ASEVERACIONES")
 @NamedQueries({
-    @NamedQuery(name = "NdcAseveracionesDO.findAll", query = "SELECT n FROM NdcAseveracionesDO n"),
+    @NamedQuery(name = "NdcAseveracionesDO.findAll", query = "SELECT n FROM NdcAseveracionesDO n order by n.indOrden asc"),
     @NamedQuery(name = "NdcAseveracionesDO.findByCveIdAseveracion", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.cveIdAseveracion = :cveIdAseveracion"),
     @NamedQuery(name = "NdcAseveracionesDO.findByDesTipoAseveracion", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.desTipoAseveracion = :desTipoAseveracion"),
     @NamedQuery(name = "NdcAseveracionesDO.findByFecRegistroAlta", query = "SELECT n FROM NdcAseveracionesDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
@@ -64,6 +64,8 @@ public class NdcAseveracionesDO implements Serializable {
     private Short indObligatorio;
     @Column(name = "IND_CONSTRUCCION")
     private Short indConstruccion;
+    @Column(name = "IND_ORDEN")
+    private Integer indOrden;
     @OneToMany(mappedBy = "cveIdAseveracionPadre", fetch = FetchType.LAZY)
     private List<NdcAseveracionesDO> ndcAseveracionesDOList;
     @JoinColumn(name = "CVE_ID_ASEVERACION_PADRE", referencedColumnName = "CVE_ID_ASEVERACION")
@@ -193,5 +195,13 @@ public class NdcAseveracionesDO implements Serializable {
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO[ cveIdAseveracion=" + cveIdAseveracion + " ]";
     }
+
+	public Integer getIndOrden() {
+		return indOrden;
+	}
+
+	public void setIndOrden(Integer indOrden) {
+		this.indOrden = indOrden;
+	}
     
 }
