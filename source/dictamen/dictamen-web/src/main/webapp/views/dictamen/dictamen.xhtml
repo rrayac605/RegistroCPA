@@ -30,7 +30,7 @@
 
 			<p:panel id="dictaminacionWizardPanel">
 				<p:tabView id="solicitudWizard" activeIndex="#{dictamenPage.indexWizard}" >
-					<p:ajax event="tabChange" listener="#{dictamenBean.cambiarPestania}" />
+					<p:ajax event="tabChange" listener="#{dictamenBean.cambiarPestania}" update="informacionPatronalPanel atestiguamientoPanel"/>
 
 
 					<p:tab id="loadData"

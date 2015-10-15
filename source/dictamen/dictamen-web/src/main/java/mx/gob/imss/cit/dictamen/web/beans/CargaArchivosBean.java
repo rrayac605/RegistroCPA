@@ -43,6 +43,12 @@ public class CargaArchivosBean extends BasePage {
 	@ManagedProperty(value = "#{datosPatronalesPage}")
 	private DatosPatronalesPage datosPatronalesPage;
 	
+	@ManagedProperty(value = "#{informacionPatronalBean}")
+	private InformacionPatronalBean informacionPatronalBean;
+	
+	@ManagedProperty(value = "#{cuestionarioBean}")
+	private CuestionarioBean cuestionarioBean;
+	
 	public void init(){
 		LOG.info("init sin cargar datos");
 		cargaArchivosPage.setListaParentLayout(new ArrayList<ParentLayoutDTO>());
@@ -95,6 +101,9 @@ public class CargaArchivosBean extends BasePage {
 		
 		try {
 			cargaArchivosIntegrator.registrarCargaAseveracion(cargaAseveracionesDTO);
+			
+			cuestionarioBean.init();
+			informacionPatronalBean.init();
 		} catch (DictamenNegocioException e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_GUARDAR_ASEVERACION.getCode());
 		}
@@ -116,6 +125,21 @@ public class CargaArchivosBean extends BasePage {
 		this.datosPatronalesPage = datosPatronalesPage;
 	}
 
+	public InformacionPatronalBean getInformacionPatronalBean() {
+		return informacionPatronalBean;
+	}
+
+	public void setInformacionPatronalBean(InformacionPatronalBean informacionPatronalBean) {
+		this.informacionPatronalBean = informacionPatronalBean;
+	}
+
+	public CuestionarioBean getCuestionarioBean() {
+		return cuestionarioBean;
+	}
+
+	public void setCuestionarioBean(CuestionarioBean cuestionarioBean) {
+		this.cuestionarioBean = cuestionarioBean;
+	}
 
 
 }
