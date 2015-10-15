@@ -16,7 +16,8 @@ public class RubroAtestiguamientoDictTO extends BaseTO{
     private String cveIdUsuario;
     private AtestiguamientoDictamenTO cveIdAtestigDictamen;
     private RubroTO cveIdRubro;
-    private List<AtestigPreguntasRespuestTO> ndtAtestigPreguntasRespuestDOList;
+    private List<AtestigPreguntasRespuestTO> ndtAtestigPreguntasRespuesta;
+  
     
 	public Long getCveIdRubroAtestigDictamen() {
 		return cveIdRubroAtestigDictamen;
@@ -66,11 +67,11 @@ public class RubroAtestiguamientoDictTO extends BaseTO{
 	public void setCveIdRubro(RubroTO cveIdRubro) {
 		this.cveIdRubro = cveIdRubro;
 	}
-	public List<AtestigPreguntasRespuestTO> getNdtAtestigPreguntasRespuestDOList() {
-		return ndtAtestigPreguntasRespuestDOList;
+	public List<AtestigPreguntasRespuestTO> getNdtAtestigPreguntasRespuesta() {
+		return ndtAtestigPreguntasRespuesta;
 	}
-	public void setNdtAtestigPreguntasRespuestDOList(List<AtestigPreguntasRespuestTO> ndtAtestigPreguntasRespuestDOList) {
-		this.ndtAtestigPreguntasRespuestDOList = ndtAtestigPreguntasRespuestDOList;
+	public void setNdtAtestigPreguntasRespuesta(List<AtestigPreguntasRespuestTO> ndtAtestigPreguntasRespuesta) {
+		this.ndtAtestigPreguntasRespuesta = ndtAtestigPreguntasRespuesta;
 	}
     
     

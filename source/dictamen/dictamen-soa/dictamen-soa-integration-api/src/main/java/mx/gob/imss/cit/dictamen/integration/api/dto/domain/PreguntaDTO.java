@@ -7,9 +7,6 @@ import mx.gob.imss.cit.dictamen.integration.api.dto.base.BaseDTO;
 
 public class PreguntaDTO extends BaseDTO{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2372740005419028723L;
 	private Long cveIdPregunta;
     private String desPregunta;
@@ -20,8 +17,10 @@ public class PreguntaDTO extends BaseDTO{
     private RubroDTO cveIdRubro;
     private PreguntaDTO cveIdPreguntaPadre;
     private List<OpcionPreguntaDTO> ndcOpcionesPregunta;
-    private Integer opcionSeleccionada;
+    private Long opcionSeleccionada;
     private String observaciones;
+    
+    
     
 	public Long getCveIdPregunta() {
 		return cveIdPregunta;
@@ -77,10 +76,10 @@ public class PreguntaDTO extends BaseDTO{
 	public void setNdcOpcionesPregunta(List<OpcionPreguntaDTO> ndcOpcionesPregunta) {
 		this.ndcOpcionesPregunta = ndcOpcionesPregunta;
 	}
-	public Integer getOpcionSeleccionada() {
+	public Long getOpcionSeleccionada() {
 		return opcionSeleccionada;
 	}
-	public void setOpcionSeleccionada(Integer opcionSeleccionada) {
+	public void setOpcionSeleccionada(Long opcionSeleccionada) {
 		this.opcionSeleccionada = opcionSeleccionada;
 	}
 	public String getObservaciones() {

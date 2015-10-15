@@ -13,6 +13,6 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 public interface ExamenService {
 	
 	public List<AtestiguamientoDictamenTO> findExamenByIdPatronDictamen(Long cveIdPatronDictamen)throws DictamenException;
-	public AtestiguamientoTO getDetalleExamenByAtestiguamiento(Long cveIdAtestiguamiento)throws DictamenException;
+	public AtestiguamientoTO getDetalleExamenByAtestiguamiento(Long cveIdEstadoAtestiguamiento, Long veIdAtestiguamiento)throws DictamenException;
 	public void saveExamenAtestiguamiento(AtestiguamientoDictamenTO atestiguamientoDictamenTO)throws DictamenException;
 }

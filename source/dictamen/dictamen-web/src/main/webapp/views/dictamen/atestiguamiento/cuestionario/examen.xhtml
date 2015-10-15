@@ -12,20 +12,20 @@
 
 	<ui:define name="bodyContainer">
 		<h:form>
-				#{examenPage.atestiguamientoDTO.desAtestiguamiento}
+		<h1>#{examenPage.atestiguamientoDTO.desAtestiguamiento}</h1>
 				<br />
 			<br />
 			<ui:repeat var="rubro"
 				value="#{examenPage.atestiguamientoDTO.ndcRubros}"
 				varStatus="status">
-					#{rubro.desRubro}<br />
+					<h2>#{rubro.desRubro}</h2><br />
 				<br />
 				<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}"
-					varStatus="status">
+					varStatus="status" >
 						#{pregunta.desPregunta}<br />
 
 					<p:selectOneRadio id="opcion"
-						value="#{pregunta.opcionSeleccionada}" required="true">
+						value="#{pregunta.opcionSeleccionada}" required="true" requiredMessage="#{msg['message.button.views.dictamen.atestiguamiento.error']}">
 						<f:selectItems
 							itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}"
 							var="respuesta"
@@ -37,7 +37,7 @@
 				</ui:repeat>
 			</ui:repeat>
 
-			<p:commandButton action="#{examenBean.guardar(atestiguamientoDTO)}"
+			<p:commandButton action="#{examenBean.guardar()}"
 				ajax="false"
 				value="#{msg['message.button.views.dictamen.atestiguamiento.guardar']}">
 				</p:commandButton>

@@ -16,6 +16,7 @@ public class RubroTO extends BaseTO{
     private Integer indOrden;
     private AtestiguamientoTO cveIdAtestiguamiento;
     private List<PreguntaTO> ndcPreguntas;
+    private List<RubroAtestiguamientoDictTO> ndtRubrosAtestiguamientoDict;
 
 	public Long getCveIdRubro() {
 		return cveIdRubro;
@@ -65,6 +66,13 @@ public class RubroTO extends BaseTO{
 	public void setNdcPreguntas(List<PreguntaTO> ndcPreguntas) {
 		this.ndcPreguntas = ndcPreguntas;
 	}
+	public List<RubroAtestiguamientoDictTO> getNdtRubrosAtestiguamientoDict() {
+		return ndtRubrosAtestiguamientoDict;
+	}
+	public void setNdtRubrosAtestiguamientoDict(List<RubroAtestiguamientoDictTO> ndtRubrosAtestiguamientoDict) {
+		this.ndtRubrosAtestiguamientoDict = ndtRubrosAtestiguamientoDict;
+	}
+	
 	
 	
 }

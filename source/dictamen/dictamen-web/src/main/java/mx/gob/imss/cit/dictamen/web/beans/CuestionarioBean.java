@@ -38,6 +38,7 @@ public class CuestionarioBean extends BaseBean {
 	@ManagedProperty(value = "#{datosPatronalesPage}")
 	private DatosPatronalesPage  datosPatronalesPage;
 	
+	
 	@ManagedProperty(value = "#{dictamenPage}")
 	private DictamenPage  dictamenPage;
 	
@@ -62,7 +63,6 @@ public class CuestionarioBean extends BaseBean {
 		return "";
 	}
 
-	
 	
 	/**
 	 * @return the cuestionarioPage

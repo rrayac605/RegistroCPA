@@ -16,7 +16,9 @@ public class RubroAtestiguamientoDictDTO extends BaseDTO {
     private String cveIdUsuario;
     private AtestiguamientoDictamenDTO cveIdAtestigDictamen;
     private RubroDTO cveIdRubro;
-    private List<AtestigPreguntasRespuestDTO> ndtAtestigPreguntasRespuestDOList;
+    private List<AtestigPreguntasRespuestDTO> ndtAtestigPreguntasRespuesta;
+    
+    
 	public Long getCveIdRubroAtestigDictamen() {
 		return cveIdRubroAtestigDictamen;
 	}
@@ -65,11 +67,11 @@ public class RubroAtestiguamientoDictDTO extends BaseDTO {
 	public void setCveIdRubro(RubroDTO cveIdRubro) {
 		this.cveIdRubro = cveIdRubro;
 	}
-	public List<AtestigPreguntasRespuestDTO> getNdtAtestigPreguntasRespuestDOList() {
-		return ndtAtestigPreguntasRespuestDOList;
+	public List<AtestigPreguntasRespuestDTO> getNdtAtestigPreguntasRespuesta() {
+		return ndtAtestigPreguntasRespuesta;
 	}
-	public void setNdtAtestigPreguntasRespuestDOList(List<AtestigPreguntasRespuestDTO> ndtAtestigPreguntasRespuestDOList) {
-		this.ndtAtestigPreguntasRespuestDOList = ndtAtestigPreguntasRespuestDOList;
+	public void setNdtAtestigPreguntasRespuesta(List<AtestigPreguntasRespuestDTO> ndtAtestigPreguntasRespuesta) {
+		this.ndtAtestigPreguntasRespuesta = ndtAtestigPreguntasRespuesta;
 	}
 	@Override
 	public int hashCode() {
@@ -83,6 +85,8 @@ public class RubroAtestiguamientoDictDTO extends BaseDTO {
 		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
 		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
 		result = prime * result + ((indAplica == null) ? 0 : indAplica.hashCode());
+		result = prime * result
+				+ ((ndtAtestigPreguntasRespuesta == null) ? 0 : ndtAtestigPreguntasRespuesta.hashCode());
 		return result;
 	}
 	@Override
@@ -134,7 +138,13 @@ public class RubroAtestiguamientoDictDTO extends BaseDTO {
 				return false;
 		} else if (!indAplica.equals(other.indAplica))
 			return false;
+		if (ndtAtestigPreguntasRespuesta == null) {
+			if (other.ndtAtestigPreguntasRespuesta != null)
+				return false;
+		} else if (!ndtAtestigPreguntasRespuesta.equals(other.ndtAtestigPreguntasRespuesta))
+			return false;
 		return true;
 	}
+	
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO;
 @Local
 public interface NdtAtestiguamientoDictamenDAO {
@@ -41,6 +42,15 @@ public interface NdtAtestiguamientoDictamenDAO {
 	
 	
 	List<NdtAtestiguamientoDictamenDO> findExamenesByIdPatronDictamen(Long cveIdPatronDictamen);
+	
+	
+	/**
+	 * Metodo para mostrar examen
+	 *
+	 * @return the list
+	 */
+	NdcAtestiguamientoDO getDetalleExamenByAtestiguamiento(Long cveIdEstadoAtestiguamiento, Long cveIdAtestiguamiento);
+	
 	
 	
 	void flush();

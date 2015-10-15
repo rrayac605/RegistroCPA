@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -40,7 +41,11 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroAlta", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroBaja", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.getDetalleExamenByAtestiguamiento",  query = "SELECT a FROM NdtAtestiguamientoDictamenDO n, NdcAtestiguamientoDO a "
+    		+ " WHERE n.cveIdAtestiguamiento.cveIdAtestiguamiento  = a.cveIdAtestiguamiento"
+    		+ " and n.cveIdAtestiguamiento.cveIdAtestiguamiento  = :cveIdAtestiguamiento"
+    		+ " and n.cveIdEstadoAtestiguamiento.cveIdEstadoAtestiguamiento = :cveIdEstadoAtestiguamiento ")})
 public class NdtAtestiguamientoDictamenDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
@@ -63,7 +68,7 @@ public class NdtAtestiguamientoDictamenDO implements Serializable {
     @Size(max = 20)
     @Column(name = "CVE_ID_USUARIO", length = 20)
     private String cveIdUsuario;
-    @OneToMany(mappedBy = "cveIdAtestigDictamen", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cveIdAtestigDictamen", fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
     private List<NdtRubroAtestiguamientoDictDO> ndtRubrosAtestiguamiento;
     @JoinColumn(name = "CVE_ID_PATRON_DICTAMEN", referencedColumnName = "CVE_ID_PATRON_DICTAMEN")
     @ManyToOne(fetch = FetchType.EAGER)

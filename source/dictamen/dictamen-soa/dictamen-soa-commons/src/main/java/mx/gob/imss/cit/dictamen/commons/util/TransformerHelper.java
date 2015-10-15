@@ -12,6 +12,8 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
+
 
 public class TransformerHelper {
 	
@@ -26,7 +28,7 @@ public class TransformerHelper {
 	}
 	
 
-	 public static Object get (Map<Class<?>, Class<?>> mapClass,Object origenObject, Class clazz, Integer profundidadMax) {
+	 public static Object get (Map<Class<?>, Class<?>> mapClass,Object origenObject, Class clazz, Integer profundidadMax) throws DictamenException {
 		  Object objectNew = null;
 		  if(origenObject!=null){
 			  
@@ -41,8 +43,7 @@ public class TransformerHelper {
 		        	
 		        }
 			} catch (Exception e) {
-				
-				e.printStackTrace();
+				throw new DictamenException("Error en el mapeo", e);
 			}
 		  } 
 		  return objectNew;

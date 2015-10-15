@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import mx.gob.imss.cit.dictamen.commons.constants.DictamenConstants;
+import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.AWSPolicyTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaActorTO;
 import mx.gob.imss.cit.dictamen.commons.to.BovedaBaseObjectTO;
@@ -158,102 +159,102 @@ public class TransformerIntegrationUtils {
 	
 
 
-	public static BovedaDocumentoTO transformer( BovedaDocumentoDTO document ) {
+	public static BovedaDocumentoTO transformer( BovedaDocumentoDTO document ) throws DictamenException {
 		return (BovedaDocumentoTO) TransformerHelper.get(mapClass,document, BovedaDocumentoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static BovedaMetadataTO transformer(BovedaMetadataDTO metadata){
+	public static BovedaMetadataTO transformer(BovedaMetadataDTO metadata) throws DictamenException{
 		return  (BovedaMetadataTO) TransformerHelper.get(mapClass,metadata, BovedaMetadataTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static BovedaTramiteTO transformer( BovedaTramiteDTO tramite ) {
+	public static BovedaTramiteTO transformer( BovedaTramiteDTO tramite ) throws DictamenException{
 		return  (BovedaTramiteTO) TransformerHelper.get(mapClass,tramite, BovedaTramiteTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static BovedaActorTO transformer(BovedaActorDTO actor){
+	public static BovedaActorTO transformer(BovedaActorDTO actor)throws DictamenException{
 		return (BovedaActorTO) TransformerHelper.get(mapClass,actor, BovedaActorTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static BovedaBaseObjectTO transformer(BovedaBaseObjectDTO baseObject){
+	public static BovedaBaseObjectTO transformer(BovedaBaseObjectDTO baseObject)throws DictamenException{
 		return (BovedaBaseObjectTO) TransformerHelper.get(mapClass,baseObject, BovedaBaseObjectTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static BovedaHeaderTO transformer(BovedaHeaderDTO sgbde){
+	public static BovedaHeaderTO transformer(BovedaHeaderDTO sgbde)throws DictamenException{
 		return (BovedaHeaderTO) TransformerHelper.get(mapClass,sgbde, BovedaHeaderTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 		
-	public static BovedaDocumentoDTO transformer( BovedaDocumentoTO documentoTO ) {
+	public static BovedaDocumentoDTO transformer( BovedaDocumentoTO documentoTO ) throws DictamenException{
 		return (BovedaDocumentoDTO) TransformerHelper.get(mapClass,documentoTO, BovedaDocumentoDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static BovedaMetadataDTO transformer(BovedaMetadataTO metadataTO){
+	public static BovedaMetadataDTO transformer(BovedaMetadataTO metadataTO)throws DictamenException{
 		return (BovedaMetadataDTO) TransformerHelper.get(mapClass,metadataTO, BovedaMetadataDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static BovedaTramiteDTO transformer( BovedaTramiteTO tramiteTO ) {
+	public static BovedaTramiteDTO transformer( BovedaTramiteTO tramiteTO ) throws DictamenException{
 		return (BovedaTramiteDTO) TransformerHelper.get(mapClass,tramiteTO, BovedaTramiteDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static BovedaActorDTO transformer(BovedaActorTO actorTO){
+	public static BovedaActorDTO transformer(BovedaActorTO actorTO)throws DictamenException{
 		return (BovedaActorDTO) TransformerHelper.get(mapClass,actorTO, BovedaActorDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static BovedaBaseObjectDTO transformer(BovedaBaseObjectTO baseObjectTO){
+	public static BovedaBaseObjectDTO transformer(BovedaBaseObjectTO baseObjectTO)throws DictamenException{
 		return (BovedaBaseObjectDTO) TransformerHelper.get(mapClass,baseObjectTO, BovedaBaseObjectDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static BovedaHeaderDTO transformer(BovedaHeaderTO headerTO){
+	public static BovedaHeaderDTO transformer(BovedaHeaderTO headerTO)throws DictamenException{
 		return (BovedaHeaderDTO) TransformerHelper.get(mapClass,headerTO, BovedaHeaderDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static FirmaElectronicaDTO transformer(FirmaElectronicaTO to){
+	public static FirmaElectronicaDTO transformer(FirmaElectronicaTO to)throws DictamenException{
 		return (FirmaElectronicaDTO) TransformerHelper.get(mapClass,to, FirmaElectronicaDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static FirmaElectronicaTO transformer(FirmaElectronicaDTO dto){
+	public static FirmaElectronicaTO transformer(FirmaElectronicaDTO dto)throws DictamenException{
 		return (FirmaElectronicaTO) TransformerHelper.get(mapClass,dto, FirmaElectronicaTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}		
 	
-	public static ParentLayoutDTO transformer(ParentLayoutTO to){
+	public static ParentLayoutDTO transformer(ParentLayoutTO to)throws DictamenException{
 		return (ParentLayoutDTO) TransformerHelper.get(mapClass,to, ParentLayoutDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static ParentLayoutTO transformer(ParentLayoutDTO dto){
+	public static ParentLayoutTO transformer(ParentLayoutDTO dto)throws DictamenException{
 		return (ParentLayoutTO) TransformerHelper.get(mapClass,dto, ParentLayoutTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}		
 
-	public static LayoutDTO transformer(LayoutTO to){
+	public static LayoutDTO transformer(LayoutTO to)throws DictamenException{
 		return (LayoutDTO) TransformerHelper.get(mapClass,to, LayoutDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static LayoutTO transformer(LayoutDTO dto){
+	public static LayoutTO transformer(LayoutDTO dto)throws DictamenException{
 		return (LayoutTO) TransformerHelper.get(mapClass,dto, LayoutTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}		
 	
-	public static AWSPolicyDTO transformer(AWSPolicyTO to){
+	public static AWSPolicyDTO transformer(AWSPolicyTO to)throws DictamenException{
 		return (AWSPolicyDTO) TransformerHelper.get(mapClass,to, AWSPolicyDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static AWSPolicyTO transformer(AWSPolicyDTO dto){
+	public static AWSPolicyTO transformer(AWSPolicyDTO dto)throws DictamenException{
 		return (AWSPolicyTO) TransformerHelper.get(mapClass,dto, AWSPolicyTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static EjercicioFiscalDTO transformer(EjercicioFiscalTO object){
+	public static EjercicioFiscalDTO transformer(EjercicioFiscalTO object)throws DictamenException{
 		return (EjercicioFiscalDTO) TransformerHelper.get(mapClass,object, EjercicioFiscalDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static EjercicioFiscalTO transformer(EjercicioFiscalDTO object){
+	public static EjercicioFiscalTO transformer(EjercicioFiscalDTO object)throws DictamenException{
 		return (EjercicioFiscalTO) TransformerHelper.get(mapClass,object, EjercicioFiscalTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static TipoDictamenDTO transformer(TipoDictamenTO object){
+	public static TipoDictamenDTO transformer(TipoDictamenTO object)throws DictamenException{
 		return (TipoDictamenDTO) TransformerHelper.get(mapClass,object, TipoDictamenDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static TipoDictamenTO transformer(TipoDictamenDTO object){
+	public static TipoDictamenTO transformer(TipoDictamenDTO object)throws DictamenException{
 		return (TipoDictamenTO) TransformerHelper.get(mapClass,object, TipoDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static PatronDictamenDTO transformer(PatronDictamenTO object){
+	public static PatronDictamenDTO transformer(PatronDictamenTO object)throws DictamenException{
 		PatronDictamenDTO objRes= (PatronDictamenDTO) TransformerHelper.get(mapClass,object, PatronDictamenDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 		
 		objRes.setRazonSocialNombre(object.getDesNombreRazonSocial());
@@ -266,7 +267,7 @@ public class TransformerIntegrationUtils {
 		
 		return objRes;
 	}	
-	public static PatronDictamenTO transformer(PatronDictamenDTO object){
+	public static PatronDictamenTO transformer(PatronDictamenDTO object)throws DictamenException{
 		
 		PatronDictamenTO objRes= (PatronDictamenTO) TransformerHelper.get(mapClass,object, PatronDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 		
@@ -281,137 +282,137 @@ public class TransformerIntegrationUtils {
 		return objRes;
 	}	
 	
-	public static RubroDTO transformer(RubroTO object){
+	public static RubroDTO transformer(RubroTO object)throws DictamenException{
 		return (RubroDTO) TransformerHelper.get(mapClass,object, RubroDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static RubroTO transformer(RubroDTO object){
+	public static RubroTO transformer(RubroDTO object)throws DictamenException{
 		return (RubroTO) TransformerHelper.get(mapClass,object, RubroTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static PreguntaDTO transformer(PreguntaTO object){
+	public static PreguntaDTO transformer(PreguntaTO object)throws DictamenException{
 		return (PreguntaDTO) TransformerHelper.get(mapClass,object, PreguntaDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static PreguntaTO transformer(PreguntaDTO object){
+	public static PreguntaTO transformer(PreguntaDTO object)throws DictamenException{
 		return (PreguntaTO) TransformerHelper.get(mapClass,object, PreguntaTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
 	
-	public static OpcionPreguntaDTO transformer(OpcionPreguntaTO object){
+	public static OpcionPreguntaDTO transformer(OpcionPreguntaTO object)throws DictamenException{
 		return (OpcionPreguntaDTO) TransformerHelper.get(mapClass,object, OpcionPreguntaDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static OpcionPreguntaTO transformer(OpcionPreguntaDTO object){
+	public static OpcionPreguntaTO transformer(OpcionPreguntaDTO object)throws DictamenException{
 		return (OpcionPreguntaTO) TransformerHelper.get(mapClass,object, OpcionPreguntaTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static TipoRespuestaDTO transformer(TipoRespuestaTO object){
+	public static TipoRespuestaDTO transformer(TipoRespuestaTO object)throws DictamenException{
 		return (TipoRespuestaDTO) TransformerHelper.get(mapClass,object, TipoRespuestaDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static TipoRespuestaTO transformer(TipoRespuestaDTO object){
+	public static TipoRespuestaTO transformer(TipoRespuestaDTO object)throws DictamenException{
 		return (TipoRespuestaTO) TransformerHelper.get(mapClass,object, TipoRespuestaTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static AtestiguamientoDTO transformer(AtestiguamientoTO object){
+	public static AtestiguamientoDTO transformer(AtestiguamientoTO object)throws DictamenException{
 		return (AtestiguamientoDTO) TransformerHelper.get(mapClass,object, AtestiguamientoDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static AtestiguamientoTO transformer(AtestiguamientoDTO object){
+	public static AtestiguamientoTO transformer(AtestiguamientoDTO object)throws DictamenException{
 		return (AtestiguamientoTO) TransformerHelper.get(mapClass,object, AtestiguamientoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static AtestiguamientoDictamenDTO transformer(AtestiguamientoDictamenTO object){
+	public static AtestiguamientoDictamenDTO transformer(AtestiguamientoDictamenTO object)throws DictamenException{
 		return (AtestiguamientoDictamenDTO) TransformerHelper.get(mapClass,object, AtestiguamientoDictamenDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static AtestiguamientoDictamenTO transformer(AtestiguamientoDictamenDTO object){
+	public static AtestiguamientoDictamenTO transformer(AtestiguamientoDictamenDTO object)throws DictamenException{
 		return (AtestiguamientoDictamenTO) TransformerHelper.get(mapClass,object, AtestiguamientoDictamenTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
-	public static EstadoCargaDocumentoDTO transformer(EstadoCargaDocumentoTO object){
+	public static EstadoCargaDocumentoDTO transformer(EstadoCargaDocumentoTO object)throws DictamenException{
 		return (EstadoCargaDocumentoDTO) TransformerHelper.get(mapClass,object, EstadoCargaDocumentoDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static EstadoCargaDocumentoTO transformer(EstadoCargaDocumentoDTO object){
+	public static EstadoCargaDocumentoTO transformer(EstadoCargaDocumentoDTO object)throws DictamenException{
 		return (EstadoCargaDocumentoTO) TransformerHelper.get(mapClass,object, EstadoCargaDocumentoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static PatronAsociadoDTO transformer(PatronAsociadoTO object){
+	public static PatronAsociadoDTO transformer(PatronAsociadoTO object)throws DictamenException{
 		return (PatronAsociadoDTO) TransformerHelper.get(mapClass,object, PatronAsociadoDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static PatronAsociadoTO transformer(PatronAsociadoDTO object){
+	public static PatronAsociadoTO transformer(PatronAsociadoDTO object)throws DictamenException{
 		return (PatronAsociadoTO) TransformerHelper.get(mapClass,object, PatronAsociadoTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-		public static RubroAtestiguamientoDictDTO transformer(RubroAtestiguamientoDictTO object){
+		public static RubroAtestiguamientoDictDTO transformer(RubroAtestiguamientoDictTO object)throws DictamenException{
 		return (RubroAtestiguamientoDictDTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static RubroAtestiguamientoDictTO transformer(RubroAtestiguamientoDictDTO object){
+	public static RubroAtestiguamientoDictTO transformer(RubroAtestiguamientoDictDTO object)throws DictamenException{
 		return (RubroAtestiguamientoDictTO) TransformerHelper.get(mapClass,object, RubroAtestiguamientoDictTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static AtestigPreguntasRespuestDTO transformer(AtestigPreguntasRespuestTO object){
+	public static AtestigPreguntasRespuestDTO transformer(AtestigPreguntasRespuestTO object)throws DictamenException{
 		return (AtestigPreguntasRespuestDTO) TransformerHelper.get(mapClass,object, AtestigPreguntasRespuestDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 	
-	public static AtestigPreguntasRespuestTO transformer(AtestigPreguntasRespuestDTO object){
+	public static AtestigPreguntasRespuestTO transformer(AtestigPreguntasRespuestDTO object)throws DictamenException{
 		return (AtestigPreguntasRespuestTO) TransformerHelper.get(mapClass,object, AtestigPreguntasRespuestTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
 	
 	
-	public static CedulaRemuneracionesDTO transformer(CedulaRemuneracionesTO object){
+	public static CedulaRemuneracionesDTO transformer(CedulaRemuneracionesTO object)throws DictamenException{
 		return (CedulaRemuneracionesDTO) TransformerHelper.get(mapClass,object, CedulaRemuneracionesDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static CedulaRemuneracionesTO transformer(CedulaRemuneracionesDTO object){
+	public static CedulaRemuneracionesTO transformer(CedulaRemuneracionesDTO object)throws DictamenException{
 		return (CedulaRemuneracionesTO) TransformerHelper.get(mapClass,object, CedulaRemuneracionesTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static DetFondoAhorroDTO transformer(DetFondoAhorroTO object){
+	public static DetFondoAhorroDTO transformer(DetFondoAhorroTO object)throws DictamenException{
 		return (DetFondoAhorroDTO) TransformerHelper.get(mapClass,object, DetFondoAhorroDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static DetFondoAhorroTO transformer(DetFondoAhorroDTO object){
+	public static DetFondoAhorroTO transformer(DetFondoAhorroDTO object)throws DictamenException{
 		return (DetFondoAhorroTO) TransformerHelper.get(mapClass,object, DetFondoAhorroTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static DetOtrosIngXsalarioDTO transformer(DetOtrosIngXsalarioTO object){
+	public static DetOtrosIngXsalarioDTO transformer(DetOtrosIngXsalarioTO object)throws DictamenException{
 		return (DetOtrosIngXsalarioDTO) TransformerHelper.get(mapClass,object, DetOtrosIngXsalarioDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static DetOtrosIngXsalarioTO transformer(DetOtrosIngXsalarioDTO object){
+	public static DetOtrosIngXsalarioTO transformer(DetOtrosIngXsalarioDTO object)throws DictamenException{
 		return (DetOtrosIngXsalarioTO) TransformerHelper.get(mapClass,object, DetOtrosIngXsalarioTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static DetOtrosPagXseparacDTO transformer(DetOtrosPagXseparacTO object){
+	public static DetOtrosPagXseparacDTO transformer(DetOtrosPagXseparacTO object)throws DictamenException{
 		return (DetOtrosPagXseparacDTO) TransformerHelper.get(mapClass,object, DetOtrosPagXseparacDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static DetOtrosPagXseparacTO transformer(DetOtrosPagXseparacDTO object){
+	public static DetOtrosPagXseparacTO transformer(DetOtrosPagXseparacDTO object)throws DictamenException{
 		return (DetOtrosPagXseparacTO) TransformerHelper.get(mapClass,object, DetOtrosPagXseparacTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static DetPagosOtrosEmpleadDTO transformer(DetPagosOtrosEmpleadTO object){
+	public static DetPagosOtrosEmpleadDTO transformer(DetPagosOtrosEmpleadTO object)throws DictamenException{
 		return (DetPagosOtrosEmpleadDTO) TransformerHelper.get(mapClass,object, DetPagosOtrosEmpleadDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static DetPagosOtrosEmpleadTO transformer(DetPagosOtrosEmpleadDTO object){
+	public static DetPagosOtrosEmpleadTO transformer(DetPagosOtrosEmpleadDTO object)throws DictamenException{
 		return (DetPagosOtrosEmpleadTO) TransformerHelper.get(mapClass,object, DetPagosOtrosEmpleadTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static CedulaPrestacionesDTO transformer(CedulaPrestacionesTO object){
+	public static CedulaPrestacionesDTO transformer(CedulaPrestacionesTO object)throws DictamenException{
 		return (CedulaPrestacionesDTO) TransformerHelper.get(mapClass,object, CedulaPrestacionesDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static CedulaRemuneracionesTO transformer(CedulaPrestacionesDTO object){
+	public static CedulaRemuneracionesTO transformer(CedulaPrestacionesDTO object)throws DictamenException{
 		return (CedulaRemuneracionesTO) TransformerHelper.get(mapClass,object, CedulaRemuneracionesTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static CedulaPagosDiferenciasDTO transformer(CedulaPagosDiferenciasTO object){
+	public static CedulaPagosDiferenciasDTO transformer(CedulaPagosDiferenciasTO object)throws DictamenException{
 		return (CedulaPagosDiferenciasDTO) TransformerHelper.get(mapClass,object, CedulaPagosDiferenciasDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static CedulaPagosDiferenciasTO transformer(CedulaPagosDiferenciasDTO object){
+	public static CedulaPagosDiferenciasTO transformer(CedulaPagosDiferenciasDTO object)throws DictamenException{
 		return (CedulaPagosDiferenciasTO) TransformerHelper.get(mapClass,object, CedulaPagosDiferenciasTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static PrestacionesDTO transformer(PrestacionesTO object){
+	public static PrestacionesDTO transformer(PrestacionesTO object)throws DictamenException{
 		return (PrestacionesDTO) TransformerHelper.get(mapClass,object, PrestacionesDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static PrestacionesTO transformer(PrestacionesDTO object){
+	public static PrestacionesTO transformer(PrestacionesDTO object)throws DictamenException{
 		return (PrestacionesTO) TransformerHelper.get(mapClass,object, PrestacionesTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}
-	public static RemuneracionesDTO transformer(RemuneracionesTO object){
+	public static RemuneracionesDTO transformer(RemuneracionesTO object)throws DictamenException{
 		return (RemuneracionesDTO) TransformerHelper.get(mapClass,object, RemuneracionesDTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
-	public static RemuneracionesTO transformer(RemuneracionesDTO object){
+	public static RemuneracionesTO transformer(RemuneracionesDTO object)throws DictamenException{
 		return (RemuneracionesTO) TransformerHelper.get(mapClass,object, RemuneracionesTO.class,DictamenConstants.PROFUNDIDAD_MAPEO) ;
 	}	
 }

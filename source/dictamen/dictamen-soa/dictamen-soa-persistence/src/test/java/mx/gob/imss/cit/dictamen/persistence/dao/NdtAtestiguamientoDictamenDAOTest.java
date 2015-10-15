@@ -95,5 +95,13 @@ public class NdtAtestiguamientoDictamenDAOTest extends AbstractDBTestUnit {
 		}
 		Assert.assertTrue(error);
 	}
+	
+	@Test
+	public void testGetDetalleExamenByAtestiguamiento() {
+		LOG.info("prueba");
+		NdcAtestiguamientoDO resultList  = localDAO.getDetalleExamenByAtestiguamiento(2L, 10L);
+		LOG.info(resultList.getDesAtestiguamiento());
+		Assert.assertNotNull(resultList);
+	}
 
 }

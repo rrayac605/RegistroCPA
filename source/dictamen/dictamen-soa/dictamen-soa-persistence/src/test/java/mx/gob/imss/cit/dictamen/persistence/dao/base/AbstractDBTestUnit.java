@@ -205,9 +205,9 @@ public abstract class AbstractDBTestUnit {
 
 	@After
 	public void tearDown() {
-		if (em != null) {
-			em.getTransaction().rollback();
-		}
+//		if (em != null) {
+//			em.getTransaction().rollback();
+//		}
 
 	}
 

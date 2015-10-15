@@ -17,7 +17,10 @@ public class RubroDTO extends BaseDTO{
     private Date fecActualizadoRegistro;
     private Date fecBajaRegistro;
     private Integer indOrden;
+    private AtestiguamientoDTO cveIdAtestiguamiento;
     private List<PreguntaDTO> ndcPreguntas;
+    private List<RubroAtestiguamientoDictDTO> ndtRubrosAtestiguamientoDict;
+
 
 	public Long getCveIdRubro() {
 		return cveIdRubro;
@@ -61,10 +64,23 @@ public class RubroDTO extends BaseDTO{
 	public void setNdcPreguntas(List<PreguntaDTO> ndcPreguntaDOList) {
 		this.ndcPreguntas = ndcPreguntaDOList;
 	}
+	public List<RubroAtestiguamientoDictDTO> getNdtRubrosAtestiguamientoDict() {
+		return ndtRubrosAtestiguamientoDict;
+	}
+	public void setNdtRubrosAtestiguamientoDict(List<RubroAtestiguamientoDictDTO> ndtRubrosAtestiguamientoDict) {
+		this.ndtRubrosAtestiguamientoDict = ndtRubrosAtestiguamientoDict;
+	}
+	public AtestiguamientoDTO getCveIdAtestiguamiento() {
+		return cveIdAtestiguamiento;
+	}
+	public void setCveIdAtestiguamiento(AtestiguamientoDTO cveIdAtestiguamiento) {
+		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((cveIdAtestiguamiento == null) ? 0 : cveIdAtestiguamiento.hashCode());
 		result = prime * result + ((cveIdRubro == null) ? 0 : cveIdRubro.hashCode());
 		result = prime * result + ((desRubro == null) ? 0 : desRubro.hashCode());
 		result = prime * result + ((fecActualizadoRegistro == null) ? 0 : fecActualizadoRegistro.hashCode());
@@ -72,6 +88,8 @@ public class RubroDTO extends BaseDTO{
 		result = prime * result + ((fecBajaRegistro == null) ? 0 : fecBajaRegistro.hashCode());
 		result = prime * result + ((indOrden == null) ? 0 : indOrden.hashCode());
 		result = prime * result + ((ndcPreguntas == null) ? 0 : ndcPreguntas.hashCode());
+		result = prime * result
+				+ ((ndtRubrosAtestiguamientoDict == null) ? 0 : ndtRubrosAtestiguamientoDict.hashCode());
 		return result;
 	}
 	@Override
@@ -83,6 +101,11 @@ public class RubroDTO extends BaseDTO{
 		if (getClass() != obj.getClass())
 			return false;
 		RubroDTO other = (RubroDTO) obj;
+		if (cveIdAtestiguamiento == null) {
+			if (other.cveIdAtestiguamiento != null)
+				return false;
+		} else if (!cveIdAtestiguamiento.equals(other.cveIdAtestiguamiento))
+			return false;
 		if (cveIdRubro == null) {
 			if (other.cveIdRubro != null)
 				return false;
@@ -118,9 +141,12 @@ public class RubroDTO extends BaseDTO{
 				return false;
 		} else if (!ndcPreguntas.equals(other.ndcPreguntas))
 			return false;
+		if (ndtRubrosAtestiguamientoDict == null) {
+			if (other.ndtRubrosAtestiguamientoDict != null)
+				return false;
+		} else if (!ndtRubrosAtestiguamientoDict.equals(other.ndtRubrosAtestiguamientoDict))
+			return false;
 		return true;
 	}
-	
-	
 	
 }

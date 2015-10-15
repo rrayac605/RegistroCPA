@@ -7,15 +7,9 @@ import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class AtestiguamientoDictamenTO extends BaseTO{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/**
-	 * 
-	 */
-	private Long cveIdAtestigDictamen;
-    private Long cveIdDictamen;
+	private static final long serialVersionUID = -2262570965490960405L;
+	
+    private Long cveIdAtestigDictamen;
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
@@ -25,18 +19,11 @@ public class AtestiguamientoDictamenTO extends BaseTO{
     private EstadoAtestiguamientoTO cveIdEstadoAtestiguamiento;
     private AtestiguamientoTO cveIdAtestiguamiento;
     
-    
 	public Long getCveIdAtestigDictamen() {
 		return cveIdAtestigDictamen;
 	}
 	public void setCveIdAtestigDictamen(Long cveIdAtestigDictamen) {
 		this.cveIdAtestigDictamen = cveIdAtestigDictamen;
-	}
-	public Long getCveIdDictamen() {
-		return cveIdDictamen;
-	}
-	public void setCveIdDictamen(Long cveIdDictamen) {
-		this.cveIdDictamen = cveIdDictamen;
 	}
 	public Date getFecRegistroAlta() {
 		return fecRegistroAlta;

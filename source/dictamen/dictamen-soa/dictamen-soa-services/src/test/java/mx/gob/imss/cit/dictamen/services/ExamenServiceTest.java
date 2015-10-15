@@ -11,7 +11,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import mx.gob.imss.cit.dictamen.commons.enums.EstadoAtestiguamientoEnum;
 import mx.gob.imss.cit.dictamen.commons.exception.DictamenException;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoDictamenTO;
@@ -52,10 +51,10 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 	}
 	
 	@Test
-	public void testGetDetalleExamenByAtestiguamientoe(){
-		AtestiguamientoTO atestiguamientoTO = null;
+	public void testGetDetalleExamenByAtestiguamiento(){
+		AtestiguamientoTO atestiguamientoTO  = null;
 		try {
-			atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(1L);
+		 atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(2L, 10L);
 				
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
@@ -96,8 +95,9 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 		AtestiguamientoTO atestiguamientoTO = new AtestiguamientoTO();
 		atestiguamientoTO.setCveIdAtestiguamiento(1L);
 		EstadoAtestiguamientoTO estadoAtestiguamientoTO = new EstadoAtestiguamientoTO();
-		estadoAtestiguamientoTO.setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum.VALIDADO.getId());
+		estadoAtestiguamientoTO.setCveIdEstadoAtestiguamiento(2L);
 		AtestiguamientoDictamenTO atestiguamientoDictamenTO = new AtestiguamientoDictamenTO();
+		atestiguamientoDictamenTO.setCveIdAtestigDictamen(10L);
 		atestiguamientoDictamenTO.setCveIdPatronDictamen(patronDictamenTO);
 		atestiguamientoDictamenTO.setCveIdAtestiguamiento(atestiguamientoTO);
 		atestiguamientoDictamenTO.setCveIdEstadoAtestiguamiento(estadoAtestiguamientoTO);
@@ -130,7 +130,7 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 		
 		List<AtestigPreguntasRespuestTO> atestigPreguntasRespuestTOList = new ArrayList<AtestigPreguntasRespuestTO>();
 		atestigPreguntasRespuestTOList.add(atestigPreguntasRespuestTO);
-		rubroAtestiguamientoDictTO.setNdtAtestigPreguntasRespuestDOList(atestigPreguntasRespuestTOList);
+		rubroAtestiguamientoDictTO.setNdtAtestigPreguntasRespuesta(atestigPreguntasRespuestTOList);
 		List<RubroAtestiguamientoDictTO> rubroAtestiguamientoDictTOList = new ArrayList<RubroAtestiguamientoDictTO>();
 		rubroAtestiguamientoDictTOList.add(rubroAtestiguamientoDictTO);
 		atestiguamientoDictamenTO.setNdtRubrosAtestiguamiento(rubroAtestiguamientoDictTOList);

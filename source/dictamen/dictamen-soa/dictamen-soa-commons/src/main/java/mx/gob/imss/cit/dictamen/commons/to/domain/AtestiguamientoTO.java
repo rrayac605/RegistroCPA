@@ -15,6 +15,7 @@ public class AtestiguamientoTO extends BaseTO{
     private Date fecRegistroBaja;
     private AseveracionesTO cveIdAseveracion;
     private List<RubroTO> ndcRubros;
+    private List<AtestiguamientoDictamenTO> ndtAtestiguamientosDictamen;
     
 	public Long getCveIdAtestiguamiento() {
 		return cveIdAtestiguamiento;
@@ -58,4 +59,11 @@ public class AtestiguamientoTO extends BaseTO{
 	public void setNdcRubros(List<RubroTO> ndcRubro) {
 		this.ndcRubros = ndcRubro;
 	}
+	public List<AtestiguamientoDictamenTO> getNdtAtestiguamientosDictamen() {
+		return ndtAtestiguamientosDictamen;
+	}
+	public void setNdtAtestiguamientosDictamen(List<AtestiguamientoDictamenTO> ndtAtestiguamientosDictamen) {
+		this.ndtAtestiguamientosDictamen = ndtAtestiguamientosDictamen;
+	}
+	
 }

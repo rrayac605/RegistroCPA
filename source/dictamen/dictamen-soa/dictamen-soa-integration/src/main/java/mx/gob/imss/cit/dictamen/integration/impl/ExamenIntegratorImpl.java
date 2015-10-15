@@ -14,8 +14,6 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.AtestiguamientoTO;
 import mx.gob.imss.cit.dictamen.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDTO;
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.AtestiguamientoDictamenDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.EstadoAtestiguamientoDTO;
-import mx.gob.imss.cit.dictamen.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.dictamen.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.dictamen.integration.transformer.TransformerIntegrationUtils;
 import mx.gob.imss.cit.dictamen.services.ExamenService;
@@ -31,10 +29,11 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 	private ExamenService examenService;
 	
 	@Override
-	public AtestiguamientoDTO getDetalleExamenByAtestiguamiento(Long atestiguamiento)throws DictamenNegocioException {
-		AtestiguamientoDTO atestiguamientoDTO = null;
+	public AtestiguamientoDTO getDetalleExamenByAtestiguamiento(Long cveIdEstadoAtestiguamiento, Long cveIdAtestiguamiento)throws DictamenNegocioException {
+		AtestiguamientoDTO  atestiguamientoDTO = new AtestiguamientoDTO();
+		AtestiguamientoTO atestiguamientoTO = new AtestiguamientoTO();
 		try {
-			AtestiguamientoTO  atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(atestiguamiento);
+		    atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(cveIdEstadoAtestiguamiento, cveIdAtestiguamiento);
 			atestiguamientoDTO = TransformerIntegrationUtils.transformer(atestiguamientoTO);
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
@@ -63,15 +62,16 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 	}
 
 	@Override
-	public void getSaveExamenAtestiguamiento(AtestiguamientoDTO atestiguamientoDTO, PatronDictamenDTO patronDictamenDTO ) 
+	public void saveExamenAtestiguamiento(AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) 
 			throws DictamenNegocioException {
-		EstadoAtestiguamientoDTO estadoAtestiguamientoDTO = null;
+			System.out.println("Examen Integrator DTO\n atestiguamiento Dictamen:" + atestiguamientoDictamenDTO.getCveIdAtestigDictamen()+
+			   " patron ditactamen: "+atestiguamientoDictamenDTO.getCveIdPatronDictamen().getCveIdPatronDictamen()+
+			   " tamanio: "+atestiguamientoDictamenDTO.getNdtRubrosAtestiguamiento().size() );
 		try {
-			AtestiguamientoDictamenDTO atestiguamientoDictamenDTO= new AtestiguamientoDictamenDTO();
-			atestiguamientoDictamenDTO.setCveIdAtestiguamiento(atestiguamientoDTO);
-			atestiguamientoDictamenDTO.setCveIdPatronDictamen(patronDictamenDTO);
-			atestiguamientoDictamenDTO.setCveIdEstadoAtestiguamiento(estadoAtestiguamientoDTO);
 			AtestiguamientoDictamenTO atestiguamientoDictamenTO = TransformerIntegrationUtils.transformer(atestiguamientoDictamenDTO);
+			System.out.println("Examen Integrator TO \n atestiguamiento Dictamen:" + atestiguamientoDictamenTO.getCveIdAtestigDictamen()+
+					   " patron ditactamen: "+atestiguamientoDictamenTO.getCveIdPatronDictamen().getCveIdPatronDictamen()+
+					   " tamanio: "+atestiguamientoDictamenTO.getNdtRubrosAtestiguamiento().size());
 			examenService.saveExamenAtestiguamiento(atestiguamientoDictamenTO);
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);

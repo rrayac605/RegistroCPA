@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -71,8 +72,8 @@ public class NdtRubroAtestiguamientoDictDO implements Serializable {
     @JoinColumn(name = "CVE_ID_RUBRO", referencedColumnName = "CVE_ID_RUBRO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcRubroDO cveIdRubro;
-    @OneToMany(mappedBy = "cveIdRubroAtestigDictamen", fetch = FetchType.LAZY)
-    private List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList;
+    @OneToMany(mappedBy = "cveIdRubroAtestigDictamen", fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
+    private List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuesta;
 
     public NdtRubroAtestiguamientoDictDO() {
     }
@@ -145,12 +146,12 @@ public class NdtRubroAtestiguamientoDictDO implements Serializable {
         this.cveIdRubro = cveIdRubro;
     }
 
-    public List<NdtAtestigPreguntasRespuestDO> getNdtAtestigPreguntasRespuestDOList() {
-        return ndtAtestigPreguntasRespuestDOList;
+    public List<NdtAtestigPreguntasRespuestDO> getNdtAtestigPreguntasRespuesta() {
+        return ndtAtestigPreguntasRespuesta;
     }
 
-    public void setNdtAtestigPreguntasRespuestDOList(List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestDOList) {
-        this.ndtAtestigPreguntasRespuestDOList = ndtAtestigPreguntasRespuestDOList;
+    public void setNdtAtestigPreguntasRespuesta(List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuesta) {
+        this.ndtAtestigPreguntasRespuesta = ndtAtestigPreguntasRespuesta;
     }
 
     @Override

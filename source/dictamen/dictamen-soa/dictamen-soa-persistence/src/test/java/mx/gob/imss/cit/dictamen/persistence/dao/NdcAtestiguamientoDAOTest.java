@@ -30,5 +30,4 @@ public class NdcAtestiguamientoDAOTest extends AbstractDBTestUnit {
 		Assert.assertNotNull(ndtAtestiguamientoDO);
 	}
 	
-	
 }

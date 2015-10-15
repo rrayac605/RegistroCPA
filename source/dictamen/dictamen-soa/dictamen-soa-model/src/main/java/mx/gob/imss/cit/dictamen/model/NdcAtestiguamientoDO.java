@@ -6,9 +6,9 @@
 package mx.gob.imss.cit.dictamen.model;
 
 import java.io.Serializable;
+
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,7 +33,7 @@ import javax.validation.constraints.Size;
 @Table(name = "NDC_ATESTIGUAMIENTO")
 @NamedQueries({
     @NamedQuery(name = "NdcAtestiguamientoDO.findAll", query = "SELECT n FROM NdcAtestiguamientoDO n"),
-    @NamedQuery(name = "NdcAtestiguamientoDO.findByCveIdAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.cveIdAtestiguamiento = :cveIdAtestiguamiento"),
+    @NamedQuery(name = "NdcAtestiguamientoDO.findByCveIdAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.cveIdAtestiguamiento = :cveIdAtestiguamiento "),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByDesAtestiguamiento", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.desAtestiguamiento = :desAtestiguamiento"),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroAlta", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdcAtestiguamientoDO.findByFecRegistroActualizado", query = "SELECT n FROM NdcAtestiguamientoDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
@@ -59,7 +59,7 @@ public class NdcAtestiguamientoDO implements Serializable {
     @Column(name = "FEC_REGISTRO_BAJA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroBaja;
-    @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.EAGER)
     private List<NdtAtestiguamientoDictamenDO> ndtAtestiguamientoDictamenDOList;
     @OneToMany(mappedBy = "cveIdAtestiguamiento", fetch = FetchType.EAGER)
     private List<NdcRubroDO> ndcRubros;
