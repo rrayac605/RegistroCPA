@@ -155,7 +155,7 @@ public class NdcPreguntaDO implements Serializable {
         return ndcOpcionesPregunta;
     }
 
-    public void setNdcOpcionesPreguntas(List<NdcOpcionPreguntaDO> ndcOpcionesPregunta) {
+    public void setNdcOpcionesPregunta(List<NdcOpcionPreguntaDO> ndcOpcionesPregunta) {
         this.ndcOpcionesPregunta = ndcOpcionesPregunta;
     }
 
