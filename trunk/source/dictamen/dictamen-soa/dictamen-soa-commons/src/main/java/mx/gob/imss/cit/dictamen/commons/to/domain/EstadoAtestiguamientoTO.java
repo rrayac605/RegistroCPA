@@ -2,6 +2,7 @@ package mx.gob.imss.cit.dictamen.commons.to.domain;
 
 import java.util.Date;
 
+import mx.gob.imss.cit.dictamen.commons.enums.EstadoAtestiguamientoEnum;
 import mx.gob.imss.cit.dictamen.commons.to.base.BaseTO;
 
 public class EstadoAtestiguamientoTO extends BaseTO{
@@ -17,8 +18,8 @@ public class EstadoAtestiguamientoTO extends BaseTO{
 	public Long getCveIdEstadoAtestiguamiento() {
 		return cveIdEstadoAtestiguamiento;
 	}
-	public void setCveIdEstadoAtestiguamiento(Long cveIdEstadoAtestiguamiento) {
-		this.cveIdEstadoAtestiguamiento = cveIdEstadoAtestiguamiento;
+	public void setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum iniciado) {
+		this.cveIdEstadoAtestiguamiento = iniciado.getId(); 
 	}
 	public String getDesEstadoAtestiguamiento() {
 		return desEstadoAtestiguamiento;

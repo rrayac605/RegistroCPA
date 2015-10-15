@@ -2,7 +2,9 @@ package mx.gob.imss.cit.dictamen.persistence.dao.impl;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.dictamen.persistence.dao.AbstractBaseDAO;
@@ -26,6 +28,20 @@ public class NdcAtestiguamientoDAOImpl extends AbstractBaseDAO<NdcAtestiguamient
 	@Override
 	protected EntityManager getEntityManager() {
 		return em;
+	}
+
+	@Override
+	public NdcAtestiguamientoDO getByIdAseveracion(Object id) {
+		NdcAtestiguamientoDO rst = null;
+		Query q = null;
+		q = em.createNamedQuery("NdcAtestiguamientoDO.findByCveIdAseveracion");
+		q.setParameter("cveIdAseveracion", id);
+		try{
+			rst = (NdcAtestiguamientoDO)q.getSingleResult();
+			return rst;
+		}catch (NoResultException e){
+			return null;
+		}
 	}
 
 }

@@ -24,7 +24,7 @@ public class KeyGeneratorServiceImpl implements KeyGeneratorService  {
 			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_KEY_GENERATOR_GET_KEY);
 		}else{
 			key = keyTO.getAnioEjercicio() + "/" + keyTO.getRfcUsuario() + "/" + keyTO.getRfcPatron() + "/"
-					+ keyTO.getLayoutName() + ".txt";
+					+ keyTO.getLayoutId()+"."+keyTO.getLayoutName() + ".txt";
 			return key;
 		}
 	}

@@ -11,16 +11,18 @@ public class KeyTO {
 	private String rfcUsuario;
 	private String rfcPatron;
 	private String layoutName;
+	private String layoutId;
 	
 	public KeyTO(){
 		
 	}
 	
-	public KeyTO(String anioEjercicio, String rfcUsuario, String rfcPatron, String layoutName){
+	public KeyTO(String anioEjercicio, String rfcUsuario, String rfcPatron, String layoutName, String layoutId){
 		this.anioEjercicio = anioEjercicio;
 		this.rfcUsuario = rfcUsuario;
 		this.rfcPatron = rfcPatron;
 		this.layoutName = layoutName;
+		this.layoutId = layoutId;
 	}
 	
 	public String getAnioEjercicio() {
@@ -46,6 +48,14 @@ public class KeyTO {
 	}
 	public void setLayoutName(String layoutName) {
 		this.layoutName = layoutName;
+	}
+
+	public String getLayoutId() {
+		return layoutId;
+	}
+
+	public void setLayoutId(String layoutId) {
+		this.layoutId = layoutId;
 	}
 	
 	
