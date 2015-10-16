@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<!-- Base de datos de la 10.11.6.238 -->
+	<persistence-unit name="DictamenPU" transaction-type="JTA">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>jdbc/dictamenDS</jta-data-source>
+		<!-- jta-data-source>jdbc/dictamenDSLocal</jta-data-source-->
+
+
+		<class>mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEjercicioFiscalDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoCargaDocumentoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoCpaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcEstadoDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcFormaPagoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcPreguntaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcPrestacionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcRemuneracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcRubroDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoModeloOpinionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoPagoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdcTipoRespuestaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA1PercepTrabajadorDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA2OtraPrestOtorgadaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA3CuotaObreroPatronalDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA4PagoPersonaFisicaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA51PersonalProporcionadDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA5PrestadoraServiciosDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA61PersonalProporcionadDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA6SubcontratacionSpDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA71CeProcesoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA72CeBienDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA73CeMaquinariaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA74CeTransporteDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA75CePersonalDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA76CeActCompDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA8BalanzaComprobacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA911PersonalObraDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA91ObrasConstruccionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA921PersSubcontratadoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtA92ObrasSubcontrataDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoPreguntasDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtB1CedulaRemuneracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtB1DetFondoAhorroDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosIngXsalarioDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosPagXseparacDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtB1DetPagosOtrosEmpleadDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtB2CedulaPrestacionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtBitacoraErroresDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtCargaDocumentoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtCedulaPagosDiferenciasDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtColegioDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtCpaAcreditacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtCpaEstatusDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtCpaTramiteDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtDespachosDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtDictamenEstadosDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtDocumentoProbatorioDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtModeloOpinionDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtNotasDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtPatronAsociadoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtPatronDictamenCpaDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtR1DatosPersonalesDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtR1FormacontactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtR2DespachoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtR2FormacontactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtR3ColegioDO</class>
+		<class>mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO</class>
+
+
+
+		<properties>
+			<property name="eclipselink.logging.level" value="${eclipselink.logging.level}" />
+			<property name="eclipselink.query-results-cache" value="false" />
+			<!-- <property name="eclipselink.cache.shared.default" value="false" /> -->
+			<!-- <property name="eclipselink.cache.size.default" value="0" /> -->
+			<!-- <property name="eclipselink.cache.type.default" value="None" /> -->
+		</properties>
+	</persistence-unit>
+</persistence>
