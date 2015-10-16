@@ -34,6 +34,15 @@ import mx.gob.imss.cit.dictamen.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDictamenTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoDocumentoTO;
 import mx.gob.imss.cit.dictamen.commons.to.domain.TipoRespuestaTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPagosDiferenciasTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPrestacionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.CedulaRemuneracionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.DetFondoAhorroTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosIngXsalarioTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosPagXseparacTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.DetPagosOtrosEmpleadTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.PrestacionesTO;
+import mx.gob.imss.cit.dictamen.commons.to.domain.RemuneracionesTO;
 import mx.gob.imss.cit.dictamen.commons.util.TransformerHelper;
 import mx.gob.imss.cit.dictamen.model.NdcAseveracionesDO;
 import mx.gob.imss.cit.dictamen.model.NdcAtestiguamientoDO;
@@ -42,6 +51,8 @@ import mx.gob.imss.cit.dictamen.model.NdcEstadoAtestiguamientoDO;
 import mx.gob.imss.cit.dictamen.model.NdcEstadoCargaDocumentoDO;
 import mx.gob.imss.cit.dictamen.model.NdcOpcionPreguntaDO;
 import mx.gob.imss.cit.dictamen.model.NdcPreguntaDO;
+import mx.gob.imss.cit.dictamen.model.NdcPrestacionesDO;
+import mx.gob.imss.cit.dictamen.model.NdcRemuneracionesDO;
 import mx.gob.imss.cit.dictamen.model.NdcRubroDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdcTipoDocumentoDO;
@@ -53,6 +64,13 @@ import mx.gob.imss.cit.dictamen.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronAsociadoDO;
 import mx.gob.imss.cit.dictamen.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.dictamen.model.NdtRubroAtestiguamientoDictDO;
+import mx.gob.imss.cit.dictamen.model.NdtB1CedulaRemuneracionesDO;
+import mx.gob.imss.cit.dictamen.model.NdtB1DetFondoAhorroDO;
+import mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosIngXsalarioDO;
+import mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosPagXseparacDO;
+import mx.gob.imss.cit.dictamen.model.NdtB1DetPagosOtrosEmpleadDO;
+import mx.gob.imss.cit.dictamen.model.NdtB2CedulaPrestacionesDO;
+import mx.gob.imss.cit.dictamen.model.NdtCedulaPagosDiferenciasDO;
 import mx.gob.imss.cit.ws.commonschema.SGBDE;
 
 public class TransformerServiceUtils {
@@ -162,6 +180,25 @@ public class TransformerServiceUtils {
 				mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO.class);
 		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtAtestigPreguntasRespuestDO.class,
 				mx.gob.imss.cit.dictamen.commons.to.domain.AtestigPreguntasRespuestTO.class);
+		
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPagosDiferenciasTO.class	,mx.gob.imss.cit.dictamen.model.NdtCedulaPagosDiferenciasDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtCedulaPagosDiferenciasDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPagosDiferenciasTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPrestacionesTO.class	,mx.gob.imss.cit.dictamen.model.NdtB2CedulaPrestacionesDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtB2CedulaPrestacionesDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.CedulaPrestacionesTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.CedulaRemuneracionesTO.class	,mx.gob.imss.cit.dictamen.model.NdtB1CedulaRemuneracionesDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtB1CedulaRemuneracionesDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.CedulaRemuneracionesTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.DetFondoAhorroTO.class	,mx.gob.imss.cit.dictamen.model.NdtB1DetFondoAhorroDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtB1DetFondoAhorroDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.DetFondoAhorroTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosIngXsalarioTO.class	,mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosIngXsalarioDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosIngXsalarioDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosIngXsalarioTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosPagXseparacTO.class	,mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosPagXseparacDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtB1DetOtrosPagXseparacDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.DetOtrosPagXseparacTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.DetPagosOtrosEmpleadTO.class	,mx.gob.imss.cit.dictamen.model.NdtB1DetPagosOtrosEmpleadDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdtB1DetPagosOtrosEmpleadDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.DetPagosOtrosEmpleadTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.PrestacionesTO.class	,mx.gob.imss.cit.dictamen.model.NdcPrestacionesDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcPrestacionesDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.PrestacionesTO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.commons.to.domain.RemuneracionesTO.class	,mx.gob.imss.cit.dictamen.model.NdcRemuneracionesDO.class);
+		mapClass.put(mx.gob.imss.cit.dictamen.model.NdcRemuneracionesDO.class	,mx.gob.imss.cit.dictamen.commons.to.domain.RemuneracionesTO.class);
 	}
 
 	private TransformerServiceUtils() {
@@ -468,6 +505,62 @@ public class TransformerServiceUtils {
 			throws DictamenException {
 		return (NdtAtestigPreguntasRespuestDO) TransformerHelper.get(mapClass, object,
 				NdtAtestigPreguntasRespuestDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	
+	
+	public static CedulaRemuneracionesTO transformer (NdtB1CedulaRemuneracionesDO object) throws DictamenException {
+		return (CedulaRemuneracionesTO) TransformerHelper.get(mapClass, object, CedulaRemuneracionesTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdtB1CedulaRemuneracionesDO transformer(CedulaRemuneracionesTO object) throws DictamenException {
+		return (NdtB1CedulaRemuneracionesDO) TransformerHelper.get(mapClass, object, NdtB1CedulaRemuneracionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static DetFondoAhorroTO transformer (NdtB1DetFondoAhorroDO object) throws DictamenException {
+		return (DetFondoAhorroTO) TransformerHelper.get(mapClass, object, DetFondoAhorroTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdtB1DetFondoAhorroDO transformer(DetFondoAhorroTO object) throws DictamenException {
+		return (NdtB1DetFondoAhorroDO) TransformerHelper.get(mapClass, object, NdtB1CedulaRemuneracionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static DetOtrosIngXsalarioTO transformer(NdtB1DetOtrosIngXsalarioDO object) throws DictamenException {
+		return (DetOtrosIngXsalarioTO) TransformerHelper.get(mapClass, object, DetOtrosIngXsalarioTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdtB1DetOtrosIngXsalarioDO transformer(DetOtrosIngXsalarioTO object) throws DictamenException {
+		return (NdtB1DetOtrosIngXsalarioDO) TransformerHelper.get(mapClass, object, NdtB1DetOtrosIngXsalarioDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static DetOtrosPagXseparacTO transformer(NdtB1DetOtrosPagXseparacDO object) throws DictamenException {
+		return (DetOtrosPagXseparacTO) TransformerHelper.get(mapClass, object, DetOtrosPagXseparacTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdtB1DetOtrosPagXseparacDO transformer(DetOtrosPagXseparacTO object) throws DictamenException {
+		return (NdtB1DetOtrosPagXseparacDO) TransformerHelper.get(mapClass, object, NdtB1DetOtrosPagXseparacDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static DetPagosOtrosEmpleadTO transformer(NdtB1DetPagosOtrosEmpleadDO object) throws DictamenException {
+		return (DetPagosOtrosEmpleadTO) TransformerHelper.get(mapClass, object, DetPagosOtrosEmpleadTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdtB1DetPagosOtrosEmpleadDO transformer(DetPagosOtrosEmpleadTO object) throws DictamenException {
+		return (NdtB1DetPagosOtrosEmpleadDO) TransformerHelper.get(mapClass, object, NdtB1DetPagosOtrosEmpleadDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static CedulaPrestacionesTO transformer(NdtB2CedulaPrestacionesDO object) throws DictamenException {
+		return (CedulaPrestacionesTO) TransformerHelper.get(mapClass, object, CedulaPrestacionesTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdtB2CedulaPrestacionesDO transformer(CedulaPrestacionesTO object) throws DictamenException {
+		return (NdtB2CedulaPrestacionesDO) TransformerHelper.get(mapClass, object, NdtB2CedulaPrestacionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static CedulaPagosDiferenciasTO transformer(NdtCedulaPagosDiferenciasDO object) throws DictamenException {
+		return (CedulaPagosDiferenciasTO) TransformerHelper.get(mapClass, object, CedulaPagosDiferenciasTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdtCedulaPagosDiferenciasDO transformer(CedulaPagosDiferenciasTO object) throws DictamenException {
+		return (NdtCedulaPagosDiferenciasDO) TransformerHelper.get(mapClass, object, NdtCedulaPagosDiferenciasDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static PrestacionesTO transformer(NdcPrestacionesDO object) throws DictamenException {
+		return (PrestacionesTO) TransformerHelper.get(mapClass, object, PrestacionesTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdcPrestacionesDO transformer(PrestacionesTO object) throws DictamenException {
+		return (NdcPrestacionesDO) TransformerHelper.get(mapClass, object, NdcPrestacionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static RemuneracionesTO transformer(NdcRemuneracionesDO object) throws DictamenException {
+		return (RemuneracionesTO) TransformerHelper.get(mapClass, object, RemuneracionesTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+	public static NdcRemuneracionesDO transformer(RemuneracionesTO object) throws DictamenException {
+		return (NdcRemuneracionesDO) TransformerHelper.get(mapClass, object, NdcRemuneracionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
 	}
 
 }
