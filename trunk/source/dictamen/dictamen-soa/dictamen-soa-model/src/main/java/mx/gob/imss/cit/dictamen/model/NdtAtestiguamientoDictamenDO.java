@@ -42,10 +42,14 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroBaja", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
-    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.getDetalleExamenByAtestiguamiento",  query = "SELECT a FROM NdtAtestiguamientoDictamenDO n, NdcAtestiguamientoDO a "
-    		+ " WHERE n.cveIdAtestiguamiento.cveIdAtestiguamiento  = a.cveIdAtestiguamiento"
+    @NamedQuery(name = "NdtAtestiguamientoDictamenDO.getDetalleExamenByAtestiguamiento",  
+    query = "SELECT a FROM NdtAtestiguamientoDictamenDO n, NdcAtestiguamientoDO a, NdcRubroDO b, NdcPreguntaDO c"
+    		+ " WHERE n.cveIdAtestiguamiento.cveIdAtestiguamiento = a.cveIdAtestiguamiento"
+    		+ " and n.cveIdAtestiguamiento.cveIdAtestiguamiento = b.cveIdAtestiguamiento.cveIdAtestiguamiento"
+    		+ " and b.cveIdRubro = c.cveIdRubro.cveIdRubro"
     		+ " and n.cveIdAtestiguamiento.cveIdAtestiguamiento  = :cveIdAtestiguamiento"
-    		+ " and n.cveIdEstadoAtestiguamiento.cveIdEstadoAtestiguamiento = :cveIdEstadoAtestiguamiento ")})
+    		+ " and n.cveIdEstadoAtestiguamiento.cveIdEstadoAtestiguamiento = :cveIdEstadoAtestiguamiento "
+    		+ " ORDER BY c.indOrden ASC")})
 public class NdtAtestiguamientoDictamenDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
