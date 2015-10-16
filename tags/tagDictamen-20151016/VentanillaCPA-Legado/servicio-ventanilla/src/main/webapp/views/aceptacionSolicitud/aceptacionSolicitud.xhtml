@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:form id="formAceptacion">
+	<p:growl id="msgs" showDetail="true" />
+	<p:contextMenu for="solicitudTable" widgetVar="cMenu">
+		<p:menuitem value="Edit Cell" icon="ui-icon-search"
+			onclick="PF('cellSolicitud').showCellEditor();return false;" />
+		<p:menuitem value="Hide Menu" icon="ui-icon-close"
+			onclick="PF('cMenu').hide()" />
+	</p:contextMenu>
+
+	<p:dataTable id="solicitudTable" var="solicitud"
+		value="#{aceptacionSolicitudController.listaBandejaAceptacion}"
+		editable="true" editMode="cell" widgetVar="cellSolicitud">
+
+		<p:column headerText="#{msg['bandeja.registro.cpa']}">
+			<h:outputText
+				value="#{solicitud.ndtContadorPublicoAutDTO.numRegistroCpa}" />
+		</p:column>
+
+		<p:column headerText="#{msg['label.apellido.paterno']}">
+			<h:outputText
+				value="#{solicitud.ndtContadorPublicoAutDTO.ditPersona.nomPrimerApellido}" />
+		</p:column>
+
+		<p:column headerText="#{msg['label.apellido.materno']}">
+			<h:outputText
+				value="#{solicitud.ndtContadorPublicoAutDTO.ditPersona.nomSegundoApellido}" />
+		</p:column>
+
+		<p:column headerText="#{msg['label.nombre']}" >
+			<h:outputText
+				value="#{solicitud.ndtContadorPublicoAutDTO.ditPersona.nomNombre}" />
+			<h:outputText
+				value="#{solicitud.ndtContadorPublicoAutDTO.ditPersona.nomNombre}" />
+			<h:outputText
+				value="#{solicitud.ndtContadorPublicoAutDTO.ditPersona.nomNombre}" />
+		</p:column>
+
+		<p:column headerText="#{msg['label.observaciones']}">
+			<p:cellEditor>
+				<f:facet name="output">
+					<h:outputText value="#{solicitud.observaciones}" />
+				</f:facet>
+				<f:facet name="input">
+					<p:inputText id="observaciones" value="#{solicitud.observaciones}" />
+				</f:facet>
+			</p:cellEditor>
+		</p:column>
+
+		<p:column >
+			<p:commandButton id="dynaButton" value="#{msg['label.acciones']}" type="button"/>
+			<p:menu overlay="true" trigger="dynaButton" my="center center" at="center center">
+				<p:menuitem value="#{msg['label.aceptar']}" actionListener="#{menuView.save}"/>
+				<p:menuitem value="#{msg['label.rechazar']}" actionListener="#{menuView.update}"/>
+			</p:menu>
+		</p:column>
+	</p:dataTable>
+
+</h:form>
+</html>

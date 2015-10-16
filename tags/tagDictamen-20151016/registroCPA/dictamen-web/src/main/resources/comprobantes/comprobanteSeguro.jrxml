@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="comprobanteSeguro" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="9"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="nss" class="java.lang.String"/>
+	<parameter name="curp" class="java.lang.String"/>
+	<parameter name="fecNacimiento" class="java.lang.String"/>
+	<parameter name="edad" class="java.lang.Integer"/>
+	<parameter name="sexo" class="java.lang.String"/>
+	<parameter name="domicilio" class="java.lang.String"/>
+	<parameter name="modalidad" class="java.lang.String"/>
+	<parameter name="nrp" class="java.lang.String"/>
+	<parameter name="delegacion" class="java.lang.String"/>
+	<parameter name="subdelegacion" class="java.lang.String"/>
+	<parameter name="tipoTramite" class="java.lang.String"/>
+	<parameter name="periodo" class="java.lang.String"/>
+	<parameter name="cuota" class="java.math.BigDecimal"/>
+	<parameter name="formaPago" class="java.lang.String"/>
+	<parameter name="cuestionario" class="java.lang.Boolean"/>
+	<parameter name="origen" class="java.lang.Integer"/>
+	<parameter name="usuario" class="java.lang.String"/>
+	<parameter name="subdelegacionUsuario" class="java.lang.String"/>
+	<parameter name="rfcFirma" class="java.lang.String"/>
+	<parameter name="nombreFirma" class="java.lang.String"/>
+	<parameter name="curpFirma" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="21" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="1" width="526" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Incorporación Voluntaria al Régimen Obligatorio del Seguro Social en IMSS Digital]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="661" splitType="Stretch">
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="73" y="7" width="166" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="7" width="40" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="31" width="515" height="26"/>
+				<textElement/>
+				<text><![CDATA[Mediante el presente se hace constar la incorporación voluntaria al Régimen Obligatorio del Seguro Social en IMSS Digital  de la  correspondiente a:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="33" y="63" width="515" height="20" backcolor="#CCCCCC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos generales del Asegurado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="33" y="317" width="515" height="20" backcolor="#CCCCCC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Del aseguramiento, forma y fecha de pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="87" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="107" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NSS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="127" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CURP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="147" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Nacimiento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="167" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="187" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sexo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="207" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Domicilio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="227" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modalidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="247" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NRP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="267" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Delegación de Adscripción:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="287" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subdelegación:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="337" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de trámite]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="357" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Aseguramiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="377" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodo de Aseguramiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="397" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuota total a pagar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="417" width="139" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Forma de pago]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="87" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="107" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nss}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="127" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{curp}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="147" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{fecNacimiento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="167" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{edad}.toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="187" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{sexo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="172" y="207" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{domicilio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="227" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{modalidad}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="247" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nrp}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="267" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{delegacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="287" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{subdelegacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="337" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tipoTramite}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="377" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{periodo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="172" y="357" width="376" height="20"/>
+				<textElement/>
+				<text><![CDATA[Individual]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="397" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{cuota}.toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="172" y="417" width="376" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{formaPago}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="447" width="515" height="29">
+					<printWhenExpression><![CDATA[!$P{cuestionario}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="9" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[No aplica llenado de cuestionario, ni tiempos de espera para recibir los servicios médicos, en términos de lo establecido en el Artículo 85 del RACERF.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="448" width="515" height="28">
+					<printWhenExpression><![CDATA[$P{cuestionario}.booleanValue()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="9" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Aplican llenado de cuestionario y tiempos de espera para recibir los servicios médicos, en términos de lo establecido en los Artículos 81 y 83 del RACERF.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="486" width="231" height="20"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Beneficiarios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="33" y="507" width="515" height="27"/>
+				<textElement/>
+				<text><![CDATA[Para el caso de beneficiarios, se deberá acudir a la Unidad de Medicina Familiar, para que previo cumplimiento de los requisitos, y llenado de cuestionario, se realice el registro correspondiente.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="575" width="236" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Mismo que es firmado por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="589" width="44" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RFC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="604" width="44" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="619" width="44" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Curp]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="356" y="589" width="192" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{rfcFirma}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="356" y="603" width="192" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nombreFirma}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="356" y="619" width="192" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{curpFirma}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="600" width="206" height="20">
+					<printWhenExpression><![CDATA[$P{origen} == 1]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="616" width="206" height="20">
+					<printWhenExpression><![CDATA[$P{origen} == 1]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{subdelegacionUsuario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="586" width="206" height="20">
+					<printWhenExpression><![CDATA[$P{origen} == 1]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Usuario que llevó a cabo  el trámite]]></text>
+			</staticText>
+			<line>
+				<reportElement x="312" y="574" width="236" height="1">
+					<printWhenExpression><![CDATA[$P{origen} == 1]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="33" y="585" width="206" height="1">
+					<printWhenExpression><![CDATA[$P{origen} == 1]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="10" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="12" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="13" splitType="Stretch"/>
+	</summary>
+</jasperReport>

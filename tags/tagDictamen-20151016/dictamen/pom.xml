@@ -1,0 +1,215 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mx.gob.imss.cit.dictamen</groupId>
+	<artifactId>dictamen</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>dictamen</name>
+
+	<modules>
+		<module>dictamen-soa</module>
+		<module>dictamen-web</module>
+		<module>dictamen-ws</module>
+		<module>dictamen-batch</module>
+	</modules>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<javax.persistence.jdbc.driver>org.hsqldb.jdbcDriver</javax.persistence.jdbc.driver>
+				<javax.persistence.jdbc.url>jdbc:hsqldb:mem:testdb</javax.persistence.jdbc.url>
+				<javax.persistence.jdbc.user>sa</javax.persistence.jdbc.user>
+				<javax.persistence.jdbc.password></javax.persistence.jdbc.password>
+				<eclipselink.ddl-generation.output-mode>database</eclipselink.ddl-generation.output-mode>
+				<eclipselink.ddl-generation>create-tables</eclipselink.ddl-generation>
+				<eclipselink.logging.level>FINE</eclipselink.logging.level>
+				<db.embedida>true</db.embedida>
+				<bovedaws.endpoint>http://11.254.20.207:8011/BovedaPersonalEscritorio/Proxies/ServiceProxyDocumentoWS?wsdl</bovedaws.endpoint>
+				<bovedaws.namespace>http://documentows.ws.bp.cit.imss.gob.mx/</bovedaws.namespace>
+				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>				
+				<bdtu.endpoint>http://11.254.20.207:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl</bdtu.endpoint>
+				<bdtu.namespace>http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/</bdtu.namespace>
+				<bdtu.service>ServiciosBDTU</bdtu.service>				
+				<aws.bucket>intellegomx</aws.bucket>
+				<aws.x-amz-credential>AKIAI4H4UF5WBC7ZG45A/20150903/us-east-1/s3/aws4_request</aws.x-amz-credential>
+				<aws.url>http://intellegomx.s3.amazonaws.com/</aws.url>
+				<aws.aws_secret_key>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</aws.aws_secret_key>
+				<aws.ruta_base>Dictamen/</aws.ruta_base>
+				<aws.awsAccessKeyId>AKIAI4H4UF5WBC7ZG45A</aws.awsAccessKeyId>
+				<firma.URL_APPLET_FIEL>URLAPPLETFIEL_PRUEBA</firma.URL_APPLET_FIEL>
+				<firma.FIEL_CODEBASE>http://172.16.5.151:8083/firmaElectronicaWeb/applets/</firma.FIEL_CODEBASE>
+				<firma.FIEL_PARAM_URL_WS_FE>http://172.16.5.151:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService</firma.FIEL_PARAM_URL_WS_FE>
+				<firma.FIEL_PARAM_URL_WS_AUTH>http://172.16.5.151:8083/WsAutenticacion/WsAutenticacionService</firma.FIEL_PARAM_URL_WS_AUTH>
+				
+			</properties>
+		</profile>
+
+		<profile>
+			<id>localPersistencia</id>
+			<properties>
+				<javax.persistence.jdbc.driver>oracle.jdbc.OracleDriver</javax.persistence.jdbc.driver>
+				<javax.persistence.jdbc.url>jdbc:oracle:thin:@172.16.8.166:1630/MGPBDTU9X</javax.persistence.jdbc.url>
+				<javax.persistence.jdbc.user>MGPNDIC1</javax.persistence.jdbc.user>
+				<javax.persistence.jdbc.password>MGPnd1cI</javax.persistence.jdbc.password>
+				<eclipselink.ddl-generation.output-mode>sql-script</eclipselink.ddl-generation.output-mode>
+				<eclipselink.ddl-generation>none</eclipselink.ddl-generation>
+				<eclipselink.logging.level>FINE</eclipselink.logging.level>
+				<db.embedida>false</db.embedida>
+				<bovedaws.endpoint>http://11.254.20.207:8011/BovedaPersonalEscritorio/Proxies/ServiceProxyDocumentoWS?wsdl</bovedaws.endpoint>
+				<bovedaws.namespace>http://documentows.ws.bp.cit.imss.gob.mx/</bovedaws.namespace>
+				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>				
+				<bdtu.endpoint>http://11.254.20.207:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl</bdtu.endpoint>
+				<bdtu.namespace>http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/</bdtu.namespace>
+				<bdtu.service>ServiciosBDTU</bdtu.service>
+				<aws.bucket>intellegomx</aws.bucket>
+				<aws.x-amz-credential>AKIAI4H4UF5WBC7ZG45A/20150903/us-east-1/s3/aws4_request</aws.x-amz-credential>
+				<aws.url>http://intellegomx.s3.amazonaws.com/</aws.url>
+				<aws.aws_secret_key>hOl3xkQUgHxfr9WrIeeYmjq</aws.aws_secret_key>
+				<aws.ruta_base>Dictamen/</aws.ruta_base>
+				<aws.awsAccessKeyId>AKIAI4H4UF5WBC7ZG45A</aws.awsAccessKeyId>
+			    <firma.URL_APPLET_FIEL>URLAPPLETFIEL_PRUEBA</firma.URL_APPLET_FIEL>
+				<firma.FIEL_CODEBASE>http://172.16.5.151:8083/firmaElectronicaWeb/applets/</firma.FIEL_CODEBASE>
+				<firma.FIEL_PARAM_URL_WS_FE>http://172.16.5.151:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService</firma.FIEL_PARAM_URL_WS_FE>
+				<firma.FIEL_PARAM_URL_WS_AUTH>http://172.16.5.151:8083/WsAutenticacion/WsAutenticacionService</firma.FIEL_PARAM_URL_WS_AUTH>
+				
+			</properties>
+			
+		</profile>
+
+	</profiles>
+
+
+
+	<properties>
+
+		<java.version>1.6</java.version> 									<!-- local -->
+		<project.encoding>UTF-8</project.encoding> 							<!-- local, portal -->
+
+		<!-- Logging -->
+		<org.slf4j-version>1.5.2</org.slf4j-version>						<!-- local -->
+		<log4j.version>1.2.16</log4j.version> 								<!-- local, integration, persistence , portal, services -->
+
+		<!-- Librerías de Apache -->
+		<commons-lang.version>2.6</commons-lang.version> 					<!-- local, model , portal -->
+		<commons-collections.version>3.2.1</commons-collections.version> 	<!-- local, portal -->
+		<commons-configuration.version>1.7</commons-configuration.version>
+		<commons-email.version>1.2</commons-email.version>
+		<commons-fileupload.version>1.2.1</commons-fileupload.version> 		<!-- portal -->
+		<commons-io.version>1.3.2</commons-io.version> 						<!-- portal -->
+		<poi.version>3.8</poi.version> 										<!-- model -->
+		<apache.velocity.version>1.7</apache.velocity.version>
+		<!-- plugins -->
+		<resources-plugin.version>2.4.3</resources-plugin.version> 			<!-- portal -->
+		<maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version> 	<!-- portal -->
+		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+		<maven-ejb-plugin.version>2.3</maven-ejb-plugin.version> 			<!-- integration, persistence -->
+		<maven-antrun-plugin.version>1.7</maven-antrun-plugin.version> 		<!-- persistence -->
+		<maven-war-plugin.version>2.1.1</maven-war-plugin.version> 			<!-- portal -->
+		<maven-ear-plugin.version>2.8</maven-ear-plugin.version> 			<!-- app -->
+		<jaxws.plugin.version>2.1</jaxws.plugin.version>
+		<lifecycle-mapping.version>1.0.0</lifecycle-mapping.version> 		<!--app -->
+		<!-- Estandares Java -->
+		<servlet-api.version>2.5</servlet-api.version> 						<!-- portal -->
+		<jsp-api.version>2.1</jsp-api.version> 								<!-- portal -->
+		<java-ee.version>6.0</java-ee.version> 								<!-- commons , persistence, portal, services -->
+		<javax-mail.version>1.4</javax-mail.version>
+		<javax-validation>1.1.0.Final</javax-validation> 					<!-- model -->
+		<jsf.version>2.1.21</jsf.version>
+		<jsf-api.version>2.1.21</jsf-api.version> 							<!-- portal -->
+		<javax.persistence.version>2.0.0</javax.persistence.version> 		<!-- model -->
+		<jstl.version>1.2</jstl.version> 									<!-- portal -->
+		<javax-el-api.version>1.0</javax-el-api.version>
+		<javax-portlet-api.version>2.0</javax-portlet-api.version>
+		<el-impl.version>2.2</el-impl.version> 								<!-- portal -->
+		<xmlbeans.version>2.4.0</xmlbeans.version> 							<!-- services -->
+		<!-- Prime Faces -->
+		<prime-faces.version>3.5</prime-faces.version> 						<!-- portal -->
+		<javamelody-core.version>1.52.0</javamelody-core.version> 			<!-- portal -->
+		<prime-theme.version>1.0.10</prime-theme.version> 				<!-- portal -->
+
+
+		<eclipse-link.version>2.5.1</eclipse-link.version> 					<!-- persistence -->
+		<jtdsdriver.version>1.2.4</jtdsdriver.version>  					<!-- persistence -->
+		<persistence.api.version>1.0</persistence.api.version> 				<!-- persistence -->
+		<hsqldb.driver.version>1.8.0.10</hsqldb.driver.version>				<!-- persistence, services -->
+		<!-- Liferay -->
+		<liferay-bridge.version>3.2.4-ga5</liferay-bridge.version>
+		<liferay-portal.version>6.2.1</liferay-portal.version>
+		<jboss-el.version>2.0.0.GA</jboss-el.version>
+		<liferay-maven-plugin.version>6.2.10.6</liferay-maven-plugin.version>
+	
+		<!-- Configuracion jasper Report -->
+		<commons-collections>3.0</commons-collections>
+		<jasperreport>5.6.1</jasperreport>
+		<commons-logging-3>1.1.3</commons-logging-3>
+		<commons-logging-1>1.1.1</commons-logging-1>
+		<commons-digester>2.1</commons-digester>
+		<commons-beanutils>1.9.0</commons-beanutils>
+		<com.lowagie.text>2.1.7</com.lowagie.text>
+		<delta.framework.version>2.6-SNAPSHOT</delta.framework.version>
+	</properties>
+	
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${resources-plugin.version}</version>
+				<configuration>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+
+
+	</build>
+
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>oss.sonatype.org</id>
+			<name>OSS Sonatype Staging</name>
+			<url>https://oss.sonatype.org/content/groups/staging</url>
+		</repository>
+		<repository>
+			<id>EclipseLink Repo</id>
+			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>java.net.glassfish</id>
+			<name>Repository hosting the jee6 artifacts</name>
+			<url>http://download.java.net/maven/glassfish</url>
+		</repository>
+
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>
+	</repositories>
+
+</project>

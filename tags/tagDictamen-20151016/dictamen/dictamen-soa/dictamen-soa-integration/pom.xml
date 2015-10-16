@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>mx.gob.imss.cit.dictamen</groupId>
+		<artifactId>dictamen-soa</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<artifactId>dictamen-soa-integration</artifactId>
+	<version>${project.parent.version}</version>
+	<name>dictamen - soa - integration</name>
+	<packaging>ejb</packaging>
+
+	<dependencies>
+		
+
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamen</groupId>
+			<artifactId>dictamen-soa-integration-api</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamen</groupId>
+			<artifactId>dictamen-soa-services</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamen</groupId>
+			<artifactId>dictamen-soa-commons</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${java-ee.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>${maven-ejb-plugin.version}</version>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
+					<archive>
+						<manifest>
+							<addClasspath>false</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form id="formBandeja">
+	<h:panelGrid columns="1" cellpadding="10" width="100%">
+
+		<f:facet name="header">
+			<h:outputText value="#{msg['bandeja.busqueda.cpa']}" />
+		</f:facet>
+
+		<p:dataTable id="contadoresDataTableId" var="contador" lazy="true"
+			widgetVar="contadoresDataTable" paginator="true" rows="10"
+			paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+			value="#{bandejaConsultaContadorController.lazyDataContador}">
+
+			<f:facet name="header">
+				<p:outputPanel>
+					<h:outputText value="#{msg['bandeja.busqueda.nombre']}" />
+					<p:spacer width="15" />
+					<h:inputText id="globalFilter"
+						onkeyup="PF('contadoresDataTable').filter()" />
+				</p:outputPanel>
+			</f:facet>
+
+			<p:ajax event="rowDblselect"
+				listener="#{bandejaConsultaContadorController.onRowDblClckSelect}" />
+
+			<p:column headerText="#{msg['bandeja.registro.cpa']}">
+				<h:outputText value="#{contador.numRegistroCpa}" style="float:right"/>
+			</p:column>
+
+			<p:column headerText="#{msg['label.nombreCompleto']}">
+				<h:outputText value="#{contador.nombre}" style="float:left"/>
+			</p:column>
+
+			<p:column headerText="#{msg['label.colegio']}">
+				<h:outputText value="#{contador.nombreComercialColegio}" style="float:left"/>
+			</p:column>
+
+			<p:column headerText="#{msg['label.despacho']}">
+				<h:outputText value="#{contador.nombreComercialDespacho}" style="float:left"/>
+			</p:column>
+
+			<p:column headerText="#{msg['label.estatus']}"
+				filterOptions="#{bandejaConsultaContadorController.itemsEstatus}"
+				filterBy="#{contador.ndcEstadoCpa.desEstadoCpa}"
+				filterMatchMode="exact">
+
+				<h:outputText value="#{contador.desEstadoCpa}" style="float:left"/>
+			</p:column>
+
+			<p:column>
+				<p:commandButton id="dynaButton" value="#{msg['label.acciones']}"
+					type="button" />
+				<p:menu overlay="true" trigger="dynaButton" my="center center"
+					at="center center">
+					<p:menuitem value="#{msg['bandeja.opcion.aceptacion']}" rendered="#{contador.desEstadoCpa eq 'Solicitado'}"
+						oncomplete="PF('dialogoAceptacion').show()"
+						immediate="PF('dialogoAceptacion').update()"
+						update=":dialogForm:idDialogoAceptacion">
+						<f:setPropertyActionListener
+							target="#{bandejaConsultaContadorController.ndtContadorPublicoAutDTOSelected}"
+							value="#{contador}" />
+					</p:menuitem>
+					<p:menuitem value="#{msg['bandeja.opcion.cambioEstatus']}" />
+				</p:menu>
+			</p:column>
+		</p:dataTable>
+	</h:panelGrid>
+
+
+</h:form>
+<h:form id="dialogForm">
+	<p:dialog header="#{msg['bandeja.header.aceptacion']}"
+		id="idDialogoAceptacion" widgetVar="dialogoAceptacion" modal="true">
+		<p:panel id="panelAceptacion">
+			<p:messages id="msgs" />
+			<p:panelGrid columns="2" cellpadding="10" width="100%">
+				<h:outputText value="#{msg['bandeja.registro.cpa']}" />
+				<h:outputText
+					value="#{bandejaConsultaContadorController.ndtContadorPublicoAutDTOSelected.numRegistroCpa}" />
+
+				<h:outputText value="#{msg['label.nombre']}" />
+				<h:outputText
+					value="#{bandejaConsultaContadorController.ndtContadorPublicoAutDTOSelected.nombre}" />
+
+				<h:outputText value="#{msg['label.delegacion']}" />
+				<h:selectOneMenu id="comboDelegacion"
+					value="#{bandejaConsultaContadorController.ndtContadorPublicoAutDTOSelected.cveDeleg}"
+					required="true" requiredMessage="#{msg['bandeja.dialogo.seleccionDel']}">
+					<f:selectItem itemLabel="#{msg['label.seleccione']}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems
+						value="#{bandejaConsultaContadorController.listaDelegacion}"
+						var="valDel" itemLabel="#{valDel.descripcion}"
+						itemValue="#{valDel.clave}" />
+					<p:ajax event="change" listener="#{bandejaConsultaContadorController.cargaSubdelegacion}" update=":dialogForm:comboSubdelegacion"/>
+				</h:selectOneMenu>
+
+				<h:outputText value="#{msg['label.subDelegacion']}" />
+				<h:selectOneMenu id="comboSubdelegacion"
+					value="#{bandejaConsultaContadorController.ndtContadorPublicoAutDTOSelected.cveSubdelegacion}"
+					required="true" requiredMessage="#{msg['bandeja.dialogo.seleccionSubDel']}">
+					<f:selectItem itemLabel="#{msg['label.seleccione']}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems
+						value="#{bandejaConsultaContadorController.listaSubdelegacion}"
+						var="valSubDel" itemLabel="#{valSubDel.descripcion}"
+						itemValue="#{valSubDel.clave}" />
+				</h:selectOneMenu>
+
+				<h:outputText value="#{msg['label.observaciones']}" />
+				<p:spacer />
+				<p:inputTextarea id="txtObservaciones" widgetVar="widOb" 
+					value="#{bandejaConsultaContadorController.observaciones}" rows="6"
+					cols="40" maxlength="3000" />
+				<p:spacer />
+
+				<p:commandButton value="#{msg['label.aceptar']}"
+					actionListener="#{bandejaConsultaContadorController.aceptaSolicitud}"
+					update=":dialogConfirmForm:idDialogoConfirm, :formBandeja:contadoresDataTableId, :dialogForm:panelAceptacion" />
+				<p:commandButton value="#{msg['label.rechazar']}" immediate="true"
+					actionListener="#{bandejaConsultaContadorController.rechazaSolicitud}"
+					oncomplete="PF('dialogoAceptacion').hide()"
+					update=":formBandeja:contadoresDataTableId" />
+
+			</p:panelGrid>
+		</p:panel>
+	</p:dialog>
+</h:form>
+<h:form id="dialogConfirmForm">
+	<p:dialog header="#{msg['label.mensajeSistema']}" id="idDialogoConfirm"
+		widgetVar="dialogoConfirm" modal="true">
+
+		<p:panelGrid columns="2" cellpadding="10" width="100%">
+
+			<h:outputText value="#{msg['label.nombre']}" />
+			<h:outputText value="#{bandejaConsultaContadorController.nombre}" />
+
+			<h:outputText value="#{msg['bandeja.dialogo.numCpa']}" />
+			<h:outputText
+				value="#{bandejaConsultaContadorController.numRegistroCpa}" />
+
+			<p:commandButton value="#{msg['label.aceptar']}"
+				update=":formBandeja:contadoresDataTableId"
+				onclick="PF('dialogoConfirm').hide()" />
+		</p:panelGrid>
+	</p:dialog>
+</h:form>
+</html>
