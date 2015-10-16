@@ -69,7 +69,8 @@
 						title="#{msg['message.dictamen.dictaminar.wizard.titulo.cedulas']}"
 						disabled="#{dictamenPage.banderaOcultaTabs}">
 						<p:panel rendered="#{!dictamenPage.banderaOcultaTabs}">
-
+							<ui:include
+								src="/views/dictamen/cedula/menuCedulas.xhtml" />
 						</p:panel>
 
 					</p:tab>
