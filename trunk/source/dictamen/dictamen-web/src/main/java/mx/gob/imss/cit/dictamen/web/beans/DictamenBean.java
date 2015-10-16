@@ -9,7 +9,9 @@ import org.primefaces.event.TabChangeEvent;
 
 import mx.gob.imss.cit.dictamen.integration.api.dto.domain.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.web.constants.NavigationConstants;
 import mx.gob.imss.cit.dictamen.web.pages.DictamenPage;
+import mx.gob.imss.cit.dictamen.web.util.FacesUtils;
 
 @ManagedBean(name = "dictamenBean")
 @ViewScoped
@@ -26,24 +28,25 @@ public class DictamenBean extends BaseBean {
 	@ManagedProperty(value = "#{datosPatronalesBean}")
 	private DatosPatronalesBean datosPatronalesBean;
 
-	public String init() {
+	public void init() {
 
-		if(datosPatronalesBean.getDatosPatronalesPage().getDatosPatron()==null ||datosPatronalesBean.getDatosPatronalesPage().getDatosPatron().getCveIdPatronDictamen()==null){
-			
-			dictamenPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
-			dictamenPage.getContadorPublicoAutDTO().setCveIdCpa(778L);
-			dictamenPage.getContadorPublicoAutDTO().setRfc("GATS4812123D7");
-			dictamenPage.setIndexUltimoWizard(0);
-			dictamenPage.setIndexWizard(0);
-			
-			datosPatronalesBean.init();
+		dictamenPage.setContadorPublicoAutDTO(new ContadorPublicoAutDTO());
+		dictamenPage.getContadorPublicoAutDTO().setCveIdCpa(778L);
+		dictamenPage.getContadorPublicoAutDTO().setRfc("GATS4812123D7");
+		dictamenPage.setIndexUltimoWizard(0);
+		dictamenPage.setIndexWizard(0);
+		
+		datosPatronalesBean.init();
+	
+		dictamenPage.setBanderaOcultaTabs(true);
 
-			dictamenPage.setBanderaOcultaTabs(true);
-		}
-		
-		
-		return "";
+	    FacesUtils.getApplication().getNavigationHandler().handleNavigation(
+	    		FacesUtils.getFacesContext(), null, 
+	    		NavigationConstants.PAGE_DICTAMINACION);
+
 	}
+	
+
 
 	public void cambiarPestania(TabChangeEvent event) {
 		
