@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	
+	<groupId>mx.gob.imss.cit.dictamenelectronico.dictaminacion.dictaminacion-soa</groupId>
+	<artifactId>dictaminacion-soa-integration</artifactId>
+	<version>${project.parent.version}</version>
+	<name>dictaminacion - soa - integration</name>
+	<packaging>ejb</packaging>
+
+	<parent>
+		<groupId>mx.gob.imss.cit.dictamenelectronico.dictaminacion</groupId>
+		<artifactId>dictaminacion-soa</artifactId>
+		<version>1.0</version>
+	</parent>
+
+
+
+	<dependencies>
+		
+
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamenelectronico.dictaminacion.dictaminacion-soa</groupId>
+			<artifactId>dictaminacion-soa-integration-api</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamenelectronico.dictaminacion.dictaminacion-soa</groupId>
+			<artifactId>dictaminacion-soa-services</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamenelectronico.dictaminacion.dictaminacion-soa</groupId>
+			<artifactId>dictaminacion-soa-commons</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${java-ee.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>${maven-ejb-plugin.version}</version>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
+					<archive>
+						<manifest>
+							<addClasspath>false</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

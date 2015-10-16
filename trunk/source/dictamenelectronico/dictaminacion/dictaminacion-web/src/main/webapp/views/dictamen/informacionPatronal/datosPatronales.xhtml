@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<p:panel id="panelPatron"
+		header="#{msg['message.dictamen.dictaminar.datos.seccion']}"
+		style="margin-bottom:20px">
+
+
+		<p:panelGrid columns="1">
+		
+			<h:form id="formDatosRfc">
+			
+				<p:panelGrid columns="3">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.rfcPatron']}"
+						for="rfcPatron" />
+					<p:inputText id="rfcPatron"
+						value="#{datosPatronalesPage.datosPatron.rfc}" required="true"
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.rfcPatron']}" 
+						validatorMessage="#{msg['message.label.validacionFormato']} #{msg['message.dictamen.dictaminar.datos.rfcPatron']}">
+							<f:validateRegex pattern="#{datosPatronalesPage.validacionRfc}"/>
+					
+					</p:inputText>	
+					<p:commandButton value="#{msg['message.button.buscar']}"
+						action="#{datosPatronalesBean.buscar}"
+						ajax="true" 
+						update=":formDatosPatronales :dictaminacionWizardPanel"
+						onstart="statusDialog.show();"
+						oncomplete="statusDialog.hide();" 
+						/>
+					
+				</p:panelGrid>
+				
+				
+				
+		    </h:form>
+
+			<h:form id="formDatosPatronales">
+			
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.denominacion']}"
+						for="razonSocial" />
+					<p:inputText id="razonSocial" required="true"
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.denominacion']}"
+						value="#{datosPatronalesPage.datosPatron.razonSocialNombre}" readonly="true" maxlength="250" size="250" />
+				</p:panelGrid>
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.trabajadores']}"
+						for="trabajadores" />
+					<p:inputText id="trabajadores" required="true"
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.trabajadores']}"
+						value="#{datosPatronalesPage.datosPatron.numTrabajadoresPromedio}" >
+							<f:validateLongRange minimum="1"/>
+						   <f:ajax event="blur" listener="#{datosPatronalesBean.calcularTipoDictamen}" render="tipo"/>
+				    </p:inputText>
+				</p:panelGrid>
+
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.tipo']}" 
+						for="tipo"/>
+					<p:selectOneMenu id="tipo" value="#{datosPatronalesPage.datosPatron.cveIdTipoDictamen.cveIdTipoDictamen}"   required="true" disabled="true">
+						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
+						<f:selectItems value="#{datosPatronalesPage.listaTipoDictamen}"
+							var="tipoDic" itemLabel="#{tipoDic.desTipoDictamen}" 
+							itemValue="#{tipoDic.cveIdTipoDictamen}" />
+					</p:selectOneMenu>
+				</p:panelGrid>
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.patronales']}"
+						for="patronales" />
+					<p:inputText id="patronales" required="true"
+						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.patronales']}"
+						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" >
+						<f:validateLongRange minimum="1" />
+						<f:ajax event="blur" />
+					</p:inputText>
+				</p:panelGrid>
+
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}"
+						for="ejercicio" />
+					<p:selectOneMenu id="ejercicio"
+						value="#{datosPatronalesPage.datosPatron.cveIdEjerFiscal}" converter="ejercicioFiscalConverter" required="true" disabled="true">
+						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
+						<f:selectItems value="#{datosPatronalesPage.listaEjercicioFiscal}"
+							var="ejercicio" itemLabel="#{ejercicio.desEjerFiscal}"
+							itemValue="#{ejercicio}" />
+					</p:selectOneMenu>
+				</p:panelGrid>
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.construccion']}" for="construccion"/>
+					<p:selectOneRadio id="construccion"
+						value="#{datosPatronalesPage.datosPatron.industriaConstruccion}"
+						converter="booleanConverter" required="true">
+						 <f:ajax event="change" listener="#{datosPatronalesBean.calcularValuada}" render="dictaminado" />            
+						
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
+							itemValue="true" />
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
+							itemValue="false" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.dictaminado']}" for="dictaminado"/>
+					<p:selectOneRadio id="dictaminado"
+						value="#{datosPatronalesPage.datosPatron.actConstruccionOregObra}"
+						converter="booleanConverter" required="true" disabled="#{!datosPatronalesPage.habilitarEmpresaValuada}">
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
+							itemValue="true" />
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
+							itemValue="false" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+
+
+				<p:panelGrid columns="2">
+					<p:outputLabel
+						value="#{msg['message.dictamen.dictaminar.datos.valuada']}" for="valuada"/>
+					<p:selectOneRadio id="valuada"
+						value="#{datosPatronalesPage.datosPatron.empresaValuada}"
+						converter="booleanConverter" required="true">
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
+							itemValue="true" />
+						<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
+							itemValue="false" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+
+
+
+				<p:panelGrid columns="2">
+				
+					<p:commandButton value="#{msg['message.button.guardar']}"
+						action="#{datosPatronalesBean.guardar}" 
+						ajax="true" 
+						onstart="statusDialog.show();"
+						oncomplete="statusDialog.hide();"
+						update=":dictaminacionWizardPanel"/>
+						
+					<p:commandButton value="#{msg['message.button.limpiar']}"
+						actionListener="#{datosPatronalesBean.limpiar}" 
+						ajax="true"
+						update=":formDatosPatronales :formDatosRfc :dictaminacionWizardPanel" />
+
+				</p:panelGrid>
+			</h:form>
+			
+		</p:panelGrid>
+
+
+	</p:panel>
+
+</ui:composition>
