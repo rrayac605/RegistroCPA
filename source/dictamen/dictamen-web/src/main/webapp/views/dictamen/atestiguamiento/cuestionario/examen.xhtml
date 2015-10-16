@@ -15,19 +15,19 @@
 			<p:panelGrid columns="1">
 				<p:panelGrid columns="1">
 					<p:panel>
-						<h2>#{examenPage.atestiguamientoDTO.desAtestiguamiento}</h2>
+						<h2><p:outputLabel id = "AtestiguamientoLabel" value="#{examenPage.atestiguamientoDTO.desAtestiguamiento}"/></h2>
 						<br />
 						
 						<ui:repeat var="rubro"
 							value="#{examenPage.atestiguamientoDTO.ndcRubros}"
 							varStatus="status">
-							<h4>#{rubro.desRubro}</h4>
+							<h4><p:outputLabel id = "RubroLabel" value="#{rubro.desRubro}"/></h4>
 							<br />
 							<br />
 							<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}"
 								varStatus="status">
-								<p:outputLabel id="preguntaLabel#{pregunta.cveIdPregunta}" value="#{pregunta.desPregunta}" for="opcionRadio#{pregunta.cveIdPregunta}"/>
-								<p:selectOneRadio id="opcionRadio#{pregunta.cveIdPregunta}"
+								<p:outputLabel id="preguntaLabel" value="#{pregunta.desPregunta}" for="opcionRadio"/>
+								<p:selectOneRadio id="opcionRadio"
 									value="#{pregunta.opcionSeleccionada}" required="true"
 									requiredMessage="#{msg['message.label.views.dictamen.atestiguamiento.error']} #{pregunta.desPregunta}" >
 									<f:selectItems

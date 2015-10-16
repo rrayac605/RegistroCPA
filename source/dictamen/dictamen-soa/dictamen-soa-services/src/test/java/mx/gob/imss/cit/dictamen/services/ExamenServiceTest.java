@@ -40,7 +40,7 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 	
 	
 	@Test
-	public void testFindExamenByIdPatronDictame(){
+	public void testFindExamenByIdPatronDictamen(){
 		List<AtestiguamientoDictamenTO> atestiguamientosTOList = new ArrayList<AtestiguamientoDictamenTO>();
 		try {
 			atestiguamientosTOList = examenService.findExamenByIdPatronDictamen(63L);
