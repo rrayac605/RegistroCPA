@@ -82,7 +82,7 @@
     	</dependency>		
   </dependencies>
   <build>
-	<finalName>dictamen-batch</finalName>
+	<finalName>dictameninacion-batch</finalName>
   	<directory>target</directory>
 	<resources>
     	<resource>
@@ -133,7 +133,7 @@
 	              			</transformer>
 	              			<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 	                			<manifestEntries>
- 	                  				<Main-Class>mx.gob.imss.cit.dictamen.batch.scheduler.RunScheduler</Main-Class> <!-- main class of your app goes here -->
+ 	                  				<Main-Class>mx.gob.imss.cit.de.dictaminacion.batch.scheduler.RunScheduler</Main-Class> <!-- main class of your app goes here -->
 	                  				<Class-Path>.</Class-Path>
 	                			</manifestEntries>
 	              			</transformer>
