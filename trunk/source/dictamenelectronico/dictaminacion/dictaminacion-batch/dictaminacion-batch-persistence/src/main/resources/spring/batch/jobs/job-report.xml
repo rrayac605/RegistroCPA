@@ -17,9 +17,9 @@
     	
     <context:component-scan base-package="mx.gob.imss.cit.dictamen.batch.persistence.scheduler" />
     	
-    <bean id="txtFile" class="mx.gob.imss.cit.dictamen.batch.persistence.to.TxtFileTO" scope="prototype" />
-    <bean id="a1" class="mx.gob.imss.cit.dictamen.batch.persistence.to.A1TO" scope="prototype" />
-    <bean id="itemProcessor" class="mx.gob.imss.cit.dictamen.batch.persistence.processors.TxtFileProcessor" />
+    <bean id="txtFile" class="mx.gob.imss.cit.de.dictaminacion.batch.persistence.to.TxtFileTO" scope="prototype" />
+    <bean id="a1" class="mx.gob.imss.cit.de.dictaminacion.batch.persistence.to.A1TO" scope="prototype" />
+    <bean id="itemProcessor" class="mx.gob.imss.cit.de.dictaminacion.batch.persistence.processors.TxtFileProcessor" />
     
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
@@ -212,7 +212,7 @@
 		</property>
 	</bean>	
 	
-	<bean id="scanScheduler" class="mx.gob.imss.cit.dictamen.batch.persistence.scanner.ScanBucket" >
+	<bean id="scanScheduler" class="mx.gob.imss.cit.de.dictaminacion.batch.persistence.scanner.ScanBucket" >
 		<property name="rutaOrigen" value="${aws.ruta.origen}"/>
 		<property name="rutaDestino" value="${configuracion.ruta.destino}"/>
 		<property name="rutaProcesamiento" value="${aws.ruta.procesamiento}"/>
