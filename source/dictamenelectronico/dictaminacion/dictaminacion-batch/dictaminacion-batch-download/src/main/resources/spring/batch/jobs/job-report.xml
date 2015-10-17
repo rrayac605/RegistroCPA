@@ -12,7 +12,7 @@
 		http://www.springframework.org/schema/task
     	http://www.springframework.org/schema/task/spring-task-3.2.xsd">
     	
-    <context:component-scan base-package="mx.gob.imss.cit.dictamen.batch.scheduler" />    	
+    <context:component-scan base-package="mx.gob.imss.cit.de.dictaminacion.batch.scheduler" />    	
 	
     <bean id="transactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
 	
@@ -42,7 +42,7 @@
 		</property>
 	</bean>
 	
-	<bean id="awsReader" class="mx.gob.imss.cit.dictamen.batch.readers.AWSReader" scope="job">
+	<bean id="awsReader" class="mx.gob.imss.cit.de.dictaminacion.batch.readers.AWSReader" scope="job">
 		<property name="key" value="#{jobParameters[key]}"/>
 		<property name="destino" value="#{jobParameters[destino]}"></property>
 		<property name="bucketName" value="${aws.bucket}"></property>
@@ -56,7 +56,7 @@
 		</property>
 	</bean>			
 	
-	<bean id="scanScheduler" class="mx.gob.imss.cit.dictamen.batch.scanner.ScanBucket" >
+	<bean id="scanScheduler" class="mx.gob.imss.cit.de.dictaminacion.batch.scanner.ScanBucket" >
 		<property name="rutaOrigen" value="${aws.ruta.origen}"/>
 		<property name="rutaDestino" value="${configuracion.ruta.destino}"/>
 		<property name="rutaProcesamiento" value="${aws.ruta.procesamiento}"/>
