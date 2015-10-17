@@ -1,0 +1,25 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+  <groupId>mx.gob.imss.cit.dictamenelectronico.dictaminacion</groupId>
+  <artifactId>dictaminacion-batch</artifactId>
+  <packaging>pom</packaging>
+  <name>dictaminacion - batch</name>
+  
+  <parent>
+    <groupId>mx.gob.imss.cit.dictamenelectronico</groupId>
+    <artifactId>dictaminacion</artifactId>
+    <version>1.0</version>
+  </parent>
+
+
+	<modules>
+		<module>batch-download</module>
+		<module>batch-persistence</module>
+	    <module>batch-validation</module>
+	</modules>
+
+
+	
+</project>
