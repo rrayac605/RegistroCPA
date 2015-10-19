@@ -24,20 +24,19 @@
 	    <dependency>
 			<groupId>mx.gob.imss.ctirss.delta.gestion.individuo.service.interface</groupId>
 			<artifactId>gestionIndividuo-service-business-interface</artifactId>
-			<version>${delta.personas}</version>
+			<version>2.4-SNAPSHOT</version>
 		</dependency>
 	
 	    <dependency>
 			<groupId>weblogic</groupId>
 			<artifactId>wlfullclient</artifactId>
 			<version>10.3.4</version>
-			<scope>provided</scope>
 		</dependency>
 		
 		<dependency>
 			<groupId>mx.gob.imss.ctirss.delta.gestion.solicitud</groupId>
 			<artifactId>gestionSolicitud-interfaces-negocio</artifactId>
-			<version>${interfaz.solicitudes}</version>
+			<version>2.2-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
@@ -58,6 +57,16 @@
 			<artifactId>dictamen-registro-soa-persistence</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
+		
+		
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
+			<artifactId>dictamen-registro-soa-persistence</artifactId>
+			<type>test-jar</type>
+			<version>${project.parent.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
 <!-- 
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>

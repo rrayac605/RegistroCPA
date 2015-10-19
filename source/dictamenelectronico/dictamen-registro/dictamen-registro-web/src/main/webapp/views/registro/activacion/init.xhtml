@@ -9,6 +9,8 @@
 	</ui:define>
 	
 	<ui:define name="content">
+			<p:outputLabel value="#{activacionContadorBean.init()}" />
+	
 	
 	     <p:panelGrid style="width:100%;"
 				styleClass="table-no-border table-no-padding">
@@ -48,7 +50,7 @@
 								<p:outputLabel>Apellido Paterno</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionContadorPage.apellidoPaterno}</p:outputLabel>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.apellidoPaterno}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
@@ -56,7 +58,7 @@
 								<p:outputLabel>Apellido Materno</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionContadorPage.apellidoMaterno}</p:outputLabel>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.apellidoMaterno}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
@@ -64,7 +66,7 @@
 								<p:outputLabel>Nombre(s)</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionContadorPage.nombre}</p:outputLabel>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.nombre}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
@@ -72,7 +74,7 @@
 								<p:outputLabel>CURP</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionContadorPage.curp}</p:outputLabel>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.curp}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
@@ -80,7 +82,7 @@
 								<p:outputLabel>Registro IMSS</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionContadorPage.registroIMSS}</p:outputLabel>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.registroIMSS}</p:outputLabel>
 							</p:column>
 						</p:row>
 					</p:panelGrid>
