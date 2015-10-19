@@ -9,7 +9,9 @@ import javax.faces.component.UIViewRoot;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
-import mx.gob.imss.cit.de.dictaminacion.web.constants.DictamenWebConstants;
+
+
+import mx.gob.imss.cit.dictamen.contador.web.constants.RegistroWebConstants;
 
 import org.primefaces.context.RequestContext;
 
@@ -124,14 +126,14 @@ public final class FacesUtils {
 	public static void messageError(Integer msgCode,Object...params) {
 
         getFacesContext().addMessage(null,
-                new FacesMessage(FacesMessage.SEVERITY_ERROR, ResourceBundleUtils.getMessageNotificacionBundle(msgCode,params), DictamenWebConstants.MESSAGE_EMPTY));
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, ResourceBundleUtils.getMessageNotificacionBundle(msgCode,params), RegistroWebConstants.MESSAGE_EMPTY));
     }
 	
 	
 	public static void messageSuccess(Integer msgCode,Object...params) {
 
         getFacesContext().addMessage(null,
-                new FacesMessage(FacesMessage.SEVERITY_INFO, ResourceBundleUtils.getMessageNotificacionBundle(msgCode,params), DictamenWebConstants.MESSAGE_EMPTY));
+                new FacesMessage(FacesMessage.SEVERITY_INFO, ResourceBundleUtils.getMessageNotificacionBundle(msgCode,params), RegistroWebConstants.MESSAGE_EMPTY));
     }
 	
 	
