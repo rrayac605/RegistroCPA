@@ -5,6 +5,9 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 
+
+import mx.gob.imss.cit.dictamen.contador.web.constants.RegistroWebConstants;
+
 import org.apache.log4j.Logger;
 
 
@@ -33,7 +36,7 @@ public final class ResourceBundleUtils {
 	 */
 	public static String getMessageBundle(String message) {
 		
-		ResourceBundle msg = getResourceBundle(DictamenWebConstants.MESSAGE_BUNDLE);
+		ResourceBundle msg = getResourceBundle(RegistroWebConstants.MESSAGE_BUNDLE);
 		String description = msg.getString(message);
 		LOGGER.info( "Message  : " + description);
 		
@@ -43,12 +46,12 @@ public final class ResourceBundleUtils {
 
   public static String getMessageNotificacionBundle(Integer idMessage,Object... params){
         
-        ResourceBundle rb = getResourceBundle(DictamenWebConstants.MESSAGE_NOTIFICACION_BUNDLE);
-        String message = rb.getString(DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage);
+        ResourceBundle rb = getResourceBundle(RegistroWebConstants.MESSAGE_NOTIFICACION_BUNDLE);
+        String message = rb.getString(RegistroWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage);
         
         if(message.isEmpty()){
-        	LOGGER.info("no se encontro el mensaje: " + DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage);
-        	message=DictamenWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage;
+        	LOGGER.info("no se encontro el mensaje: " + RegistroWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage);
+        	message=RegistroWebConstants.MESSAGE_NOTIFICACION_PREFIX + idMessage;
         }else{
         	message=getString(message,params);
         }
