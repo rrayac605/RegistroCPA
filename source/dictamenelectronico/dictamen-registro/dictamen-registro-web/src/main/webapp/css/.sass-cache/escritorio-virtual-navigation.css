@@ -1,0 +1,107 @@
+.aui #navbar-clone.navbar .navbar-inner .nav > li > a {
+  padding: 0; }
+
+.aui #navbar-clone.navbar .navbar-inner {
+  min-height: inherit; }
+
+#navbar {
+  margin-bottom: 0; }
+
+.aui .navbar .nav {
+  margin: 0 0 0 10px; }
+
+#navbar .nav {
+  margin: 0 0 0 50px; }
+
+.aui .dropdown-menu {
+  padding: 0; }
+
+.aui #navbar.navbar .navbar-inner {
+  font-family: Verdana;
+  font-size: 14px;
+  background: #8a8d93;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  min-height: inherit;
+  width: 100%;
+  padding: 0; }
+
+/** -- Fijar la barra de navegacion -- */
+.stick {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 301; }
+
+#navbar-clone {
+  margin-bottom: 0; }
+
+/** ----- menus ----- */
+.aui #navbar.navbar .navbar-inner .nav > li > a {
+  color: #ffffff;
+  padding: 0 6px;
+  text-shadow: none;
+  line-height: 32px; }
+
+.aui #navbar.navbar .navbar-inner .nav > .active > a,
+.aui #navbar.navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle,
+.aui #navbar.navbar .navbar-inner .nav li.dropdown.active > .dropdown-toggle,
+.aui #navbar.navbar .navbar-inner .nav li.dropdown.open.active > .dropdown-toggle {
+  background: #8a8d93; }
+
+.aui #navbar.navbar .navbar-inner .nav > li > a:focus,
+.aui #navbar.navbar .navbar-inner .nav > li > a:hover {
+  text-decoration: underline; }
+
+.aui #navbar.navbar .nav > .active > a,
+.aui #navbar.navbar .nav > .active > a:hover,
+.aui #navbar.navbar .nav > .active > a:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+/** ----- submenus ----- */
+.aui #navbar.navbar .navbar-inner .nav li.dropdown .dropdown-menu {
+  background: #8a8d93; }
+
+.aui #navbar.navbar .navbar-inner .nav li.dropdown .dropdown-menu > li > a {
+  color: #ffffff; }
+
+.aui #navbar.navbar .navbar-inner .nav li.dropdown .dropdown-menu > li > a:focus,
+.aui #navbar.navbar .navbar-inner .nav li.dropdown .dropdown-menu > li > a:hover,
+.aui #navbar.navbar .navbar-inner .nav li.dropdown .dropdown-submenu:focus > a,
+.aui #navbar.navbar .navbar-inner .nav li.dropdown .dropdown-submenu:hover > a {
+  background: #8a8d93;
+  text-decoration: underline; }
+
+/** ----- Submenus se abren con hover ----- */
+.aui #navbar.navbar .navbar-inner .nav li.dropdown:hover > ul.dropdown-menu {
+  display: block; }
+
+.aui #navbar.navbar .navbar-inner .nav li.dropdown.open > .dropdown-toggle:after {
+  content: none; }
+
+.aui #navbar.navbar .navbar-inner .nav li.dropdown .dropdown-menu {
+  margin-top: 0px; }
+
+/** ----- Responsivo ----- */
+@media (max-width: 979px) {
+  .aui #navbar.navbar .container .btn-navbar,
+  .aui #navbar.navbar .container .btn-navbar:hover,
+  .aui #navbar.navbar .container .btn-navbar:focus {
+    color: #ffffff;
+    background: #8a8d93; }
+
+  /** ----- Para que funcione el btn-navbar ----- */
+  .aui #navbar.navbar .nav-collapse {
+    display: block; }
+
+  .aui #navbar.navbar .nav-collapse .nav > li > a:hover,
+  .aui #navbar.navbar .nav-collapse .nav > li > a:focus,
+  .aui #navbar.navbar .nav-collapse .dropdown-menu a:hover,
+  .aui #navbar.navbar .nav-collapse .dropdown-menu a:focus {
+    background: #8a8d93; } }
+

@@ -1,0 +1,131 @@
+.aui .dockbar.navbar .navbar-inner {
+  min-height: 0; }
+
+.aui .dockbar .navbar-inner,
+.aui .dockbar-split .dockbar .navbar-inner {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-bottom-width: 0; }
+
+.aui .dockbar-split .dockbar .navbar-inner .nav-account-controls {
+  border-top: medium none; }
+
+.aui .dockbar .navbar-inner .container {
+  margin-left: auto;
+  margin-right: auto; }
+
+/** ----- menus ----- */
+.aui .dockbar .navbar-inner .nav > li,
+.aui .dockbar-split .dockbar .navbar-inner .nav > li {
+  background: none;
+  font-family: Verdana;
+  font-size: 14px; }
+
+.aui .dockbar .navbar-inner .nav > li > a,
+.aui .dockbar-split .dockbar .navbar-inner .nav > li > a {
+  color: #8a8d93;
+  padding: 0 6px; }
+
+.aui .dockbar .navbar-inner .nav > li > a:focus,
+.aui .dockbar .navbar-inner .nav > li > a:hover,
+.aui .dockbar-split .dockbar .navbar-inner .nav > li > a:focus,
+.aui .dockbar-split .dockbar .navbar-inner .nav > li > a:hover {
+  background: none;
+  color: #8a8d93; }
+
+.aui .dockbar .navbar-inner .nav > li > a:focus > span,
+.aui .dockbar .navbar-inner .nav > li > a:hover > span,
+.aui .dockbar-split .dockbar .navbar-inner .nav > li > a:focus > span,
+.aui .dockbar-split .dockbar .navbar-inner .nav > li > a:hover > span {
+  text-decoration: underline; }
+
+.aui .dockbar .navbar-inner .nav > li.dropdown.open > .dropdown-toggle,
+.aui .dockbar-split .dockbar .navbar-inner .nav > li.dropdown.open > .dropdown-toggle {
+  background: none;
+  color: #8a8d93; }
+
+/** ----- barra lateral ----- */
+.aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a {
+  background: none; }
+
+.aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a:focus,
+.aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a:hover,
+.aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link,
+.aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link [class^="icon-"],
+.aui .dockbar-split .dockbar .navbar-inner .nav-add-controls > li > a.toggle-controls-link [class*=" icon-"],
+.aui .dockbar-split.controls-hidden .dockbar .navbar-inner .nav-add-controls > li.toggle-controls > .toggle-controls-link {
+  background: none;
+  color: #8a8d93; }
+
+/** ----- submenus ----- */
+.aui .dockbar .nav li.dropdown .dropdown-menu,
+.aui .dockbar .nav li.dropdown .site-administration-menu {
+  background: #8a8d93; }
+
+.aui .dockbar .nav li.dropdown .dropdown-menu > li > a,
+.aui .dockbar .nav li.dropdown .site-administration-menu > li > a {
+  color: #ffffff; }
+
+.aui .dockbar .nav li.dropdown .dropdown-menu > li > a:focus,
+.aui .dockbar .nav li.dropdown .dropdown-menu > li > a:hover,
+.aui .dockbar .nav li.dropdown .site-administration-menu > li > a:focus,
+.aui .dockbar .nav li.dropdown .site-administration-menu > li > a:hover {
+  background: none;
+  text-decoration: underline; }
+
+.aui .dockbar .nav li.dropdown .dropdown-menu li.active > a,
+.aui .dockbar .nav li.dropdown .site-administration-menu li.active > a {
+  background: none; }
+
+/** ------ cuadro notificaciones ------ */
+.dockbar-user-notifications .user-notifications-count,
+.notifications-portlet .user-notifications-count {
+  background: none;
+  border-color: #8a8d93;
+  /*     margin: 21px 0; */ }
+
+/** ------ icono administracion ------ */
+.aui .dockbar .container .btn .user-avatar-image,
+.aui .dockbar .nav li.dropdown.user-avatar .user-avatar-image {
+  -webkit-box-shadow: 0 0 0 2px #8a8d93;
+  -moz-box-shadow: 0 0 0 2px #8a8d93;
+  box-shadow: 0 0 0 2px #8a8d93; }
+
+/** ----- responsivo ----- */
+@media (max-width: 979px) {
+  .aui .dockbar-split .dockbar .navbar-inner,
+  .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav,
+  .aui .dockbar .navbar-inner .nav-collapse > .nav {
+    background: #8a8d93; }
+
+  .aui .dockbar-split .dockbar .navbar-inner .btn-navbar:hover,
+  .aui .dockbar-split .dockbar .navbar-inner .btn-navbar.open,
+  .aui .dockbar .navbar-inner .btn-navbar:hover,
+  .aui .dockbar .navbar-inner .btn-navbar.open {
+    background: none; }
+
+  .aui .dockbar .navbar-inner .container .btn-navbar,
+  .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav > li > a,
+  .aui .dockbar .navbar-inner .nav-collapse > .nav > li > a {
+    color: #ffffff;
+    border-style: solid;
+    border-width: thin;
+    padding: 3px 6px; }
+
+  .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav > li > a:focus,
+  .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav > li > a:hover,
+  .aui .dockbar .navbar-inner .nav-collapse > .nav > li > a:focus,
+  .aui .dockbar .navbar-inner .nav-collapse > .nav > li > a:hover {
+    background: none;
+    color: #ffffff; }
+
+  .aui .dockbar-split .dockbar .navbar-inner .nav-collapse > .nav > li.dropdown.open > .dropdown-toggle,
+  .aui .dockbar .navbar-inner .nav-collapse > .nav > li.dropdown.open > .dropdown-toggle {
+    color: #ffffff; }
+
+  /** ----- Se oculta boton default de navegacion ----- */
+  .aui .dockbar .navbar-inner .container .btn-navbar[id$=navSiteNavigationNavbarBtn] {
+    display: none; } }
+
