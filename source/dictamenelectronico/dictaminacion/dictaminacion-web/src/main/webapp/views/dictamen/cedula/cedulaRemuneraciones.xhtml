@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/views/comun/template/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core">
+
+
+	<ui:define name="bodyContainer">
+		<h:form>
+			<p:panelGrid columns="1">
+				<p:panelGrid style="margin-top:20px">
+					<f:facet name="header">
+						<p:row>
+							<p:column colspan="6"><h3><h:outputText
+							value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones']}" />
+							</h3></p:column>
+						</p:row>
+						<p:row>
+						
+							<p:column rowspan="2"><h4>Concepto de remuneraciones</h4></p:column>
+							<p:column colspan="2" style="font-weight: bold;">Tipo de remuneración</p:column>
+							<p:column colspan="2" style="font-weight: bold;">¿Se integra al salario base de cotización?</p:column>
+							<p:column rowspan="2"><h4>Importe pagado</h4></p:column>
+													
+						</p:row>						
+						<p:row>						
+							<p:column >Fijo</p:column>
+							<p:column >Varibale</p:column>
+							<p:column >SI</p:column>
+							<p:column >NO</p:column>						
+						</p:row>
+
+					</f:facet>
+					
+						<p:row>	
+							<p:column>Sueldos y salarios</p:column>					
+							<p:column colspan="1">							
+								<p:selectOneRadio id="sueldosRadio"  layout="custom">
+						            <f:selectItem itemLabel="Red" itemValue="Red" />
+						            <f:selectItem itemLabel="Green" itemValue="Green" />
+						        </p:selectOneRadio>
+						        
+						        <p:radioButton id="sys1" for="sueldosRadio" itemIndex="0" align="center"/>
+							</p:column>
+							
+							<p:column>
+								<p:radioButton id="sys2" for="sueldosRadio" itemIndex="1" />
+							
+							</p:column>
+							
+							<p:column>
+								<p:selectOneRadio id="sueldosOpRadio"  layout="custom">
+						            <f:selectItem itemLabel="Red" itemValue="Red" />
+						            <f:selectItem itemLabel="Green" itemValue="Green" />
+						        </p:selectOneRadio>
+						        
+						        <p:radioButton id="sysopt1" for="sueldosOpRadio" itemIndex="0" align="center"/>
+							</p:column>
+							<p:column>
+								<p:radioButton id="sysopt2" for="sueldosOpRadio" itemIndex="0" align="center"/>
+							</p:column>
+							<p:column>3830175461</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Gratificación</p:column>					
+							<p:column>Fijo</p:column>
+							<p:column>Varibale</p:column>
+							<p:column>SI</p:column>
+							<p:column>NO</p:column>
+							<p:column>3830175461</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column style="font-weight: bold;">Tiempo Extraordinario</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column style="font-weight: bold;">3830175461</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Tiempo extra integrable</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column>
+								<p:inplace id="ajax1" editor="true">
+						            <p:inputText value="0.00" required="true" label="text" />
+						        </p:inplace>
+							</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Tiempo extra no integrable</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column>
+								<p:inplace id="ajax2" editor="true">
+						            <p:inputText value="0.00" required="true" label="text" />
+						        </p:inplace>
+							</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Prima Vacacional</p:column>					
+							<p:column>Fijo</p:column>
+							<p:column>Varibale</p:column>
+							<p:column>SI</p:column>
+							<p:column>NO</p:column>
+							<p:column>3830175461</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Prima Dominical</p:column>					
+							<p:column>Fijo</p:column>
+							<p:column>Varibale</p:column>
+							<p:column>SI</p:column>
+							<p:column>NO</p:column>
+							<p:column>3830175461</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column style="font-weight: bold;">Participación de los trabajadores en las utilidades de la empresa(PTU)</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column style="font-weight: bold;">3830175461</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>               PTU integrable</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column>
+								<p:inplace id="ajax4" editor="true">
+						            <p:inputText value="0.00" required="true" label="text" />
+						        </p:inplace>
+							</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>               PTU no integrable</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column>
+								<p:inplace id="ajax3" editor="true">
+						            <p:inputText value="0.00" required="true" label="text" />
+						        </p:inplace>
+							</p:column>						
+						</p:row>
+						
+						<p:row>	
+							<p:column style="font-weight: bold;">Fondo de Ahorro</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column style="font-weight: bold;">3830175461</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Aportación patronal</p:column>					
+							<p:column colspan="1">
+								<h:outputLabel value="Porcentaje: " />
+							</p:column>
+							<p:column colspan="1">
+        						<p:inplace id="ajax12" editor="true">
+						            <p:inputText value="13" required="true" label="text" />
+						        </p:inplace>
+							</p:column>
+							<p:column colspan="2">
+								<h:outputLabel value=" % " />
+							</p:column>
+							<p:column>
+								<p:inplace id="ajax6" editor="true">
+						            <p:inputText value="0" required="true" label="text" />
+						        </p:inplace>
+							</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Aportación trabajador</p:column>					
+							<p:column colspan="1">
+								<h:outputLabel value="Porcentaje: " />
+							</p:column>
+							<p:column colspan="1">
+        						<p:inplace id="ajax11" editor="true">
+						            <p:inputText value="0.00" required="true" label="text" />
+						        </p:inplace>
+							</p:column>
+							<p:column colspan="2">
+								<h:outputLabel value="% " />
+							</p:column>
+							<p:column>
+								<p:inplace id="ajax7" editor="true">
+						            <p:inputText value="0.00" required="true" label="text" />
+						        </p:inplace>
+							</p:column>						
+						</p:row>
+						
+						<p:row>	
+							<p:column style="font-weight: bold;">Vales para despensa</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column style="font-weight: bold;">3830175461</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Vale de despensa integrable</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column>
+								<p:inplace id="ajax8" editor="true">
+						            <p:inputText value="0.00" required="true" label="text" />
+						        </p:inplace>
+							</p:column>						
+						</p:row>
+						<p:row>	
+							<p:column>Vale de despensa no integrable</p:column>					
+							<p:column colspan="4"></p:column>
+							<p:column>
+								<p:inplace id="ajax9" editor="true">
+						            <p:inputText value="0.00" required="true" label="text" />
+						        </p:inplace>
+							</p:column>						
+						</p:row>
+				</p:panelGrid>
+
+
+				<p:panelGrid columns="2" style="center">
+					<p:commandButton action="#{examenBean.guardar()}"
+						value="#{msg['message.button.views.dictamen.atestiguamiento.guardar']}">
+					</p:commandButton>
+					<p:commandButton action="#{examenBean.regresar()}"
+						value="#{msg['message.button.views.dictamen.atestiguamiento.regresar']}"
+						immediate="true"></p:commandButton>
+				</p:panelGrid>
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
