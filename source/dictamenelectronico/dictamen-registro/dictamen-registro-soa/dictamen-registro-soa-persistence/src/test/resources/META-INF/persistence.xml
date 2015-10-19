@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="DictamenContadorPUTest"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>mx.gob.imss.cit.dictamen.contador.model.DitPersonaDO</class>
+
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcAseveracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcAtestiguamientoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcEjercicioFiscalDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcEstadoAtestiguamientoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcEstadoCargaDocumentoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcEstadoCpaDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcEstadoDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcFormaPagoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcOpcionPreguntaDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcPreguntaDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcPrestacionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcRemuneracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcRubroDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcStatusCargaAseveracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcTipoDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcTipoDocumentoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcTipoModeloOpinionDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcTipoPagoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdcTipoRespuestaDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA1PercepTrabajadorDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA2OtraPrestOtorgadaDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA3CuotaObreroPatronalDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA4PagoPersonaFisicaDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA51PersonalProporcionadDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA5PrestadoraServiciosDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA61PersonalProporcionadDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA6SubcontratacionSpDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA71CeProcesoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA72CeBienDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA73CeMaquinariaDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA74CeTransporteDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA75CePersonalDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA76CeActCompDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA8BalanzaComprobacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA911PersonalObraDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA91ObrasConstruccionDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA921PersSubcontratadoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtA92ObrasSubcontrataDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtAtestigPreguntasRespuestDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtAtestiguamientoDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtAtestiguamientoPreguntasDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtB1CedulaRemuneracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtB1DetFondoAhorroDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtB1DetOtrosIngXsalarioDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtB1DetOtrosPagXseparacDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtB1DetPagosOtrosEmpleadDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtB2CedulaPrestacionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtBitacoraErroresDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtCargaAseveracionesDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtCargaDocumentoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtCedulaPagosDiferenciasDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtColegioDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtCpaAcreditacionDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtCpaEstatusDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtCpaTramiteDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtDespachosDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtDictamenEstadosDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtDocumentoProbatorioDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtModeloOpinionDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtNotasDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtPatronAsociadoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtPatronDictamenCpaDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtPatronDictamenDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtR1DatosPersonalesDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtR1FormacontactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtR2DespachoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtR2FormacontactoDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtR3ColegioDO</class>
+		<class>mx.gob.imss.cit.dictamen.contador.model.NdtRubroAtestiguamientoDictDO</class>
+
+		<properties>
+
+			<!--
+			 <property name="javax.persistence.jdbc.driver" value="${javax.persistence.jdbc.driver}" />
+		     <property name="javax.persistence.jdbc.url" value="${javax.persistence.jdbc.url}" /> 
+		     <property name="javax.persistence.jdbc.user" value="${javax.persistence.jdbc.user}"/> 
+		     <property name="javax.persistence.jdbc.password" value="${javax.persistence.jdbc.password}" />
+		     <property name="eclipselink.ddl-generation" value="${eclipselink.ddl-generation}" /> 
+		     <property name="eclipselink.ddl-generation.output-mode" value="${eclipselink.ddl-generation.output-mode}" />
+		      <property name="eclipselink.logging.level" value="${eclipselink.logging.level}"/>
+		    -->
+
+<!-- INICIO CONFIGURACIONES PARA BASE DE DATOS LOCALES -->
+      <!-- 
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/> 
+			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb"/> 
+			<property name="javax.persistence.jdbc.user" value="sa" /> 
+			<property name="javax.persistence.jdbc.password" value="" /> 
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/> 
+			<property name="eclipselink.ddlgen-terminate-statements" value="true"/>
+			<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlDictamen.sql"/> 
+			<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlDictamen.sql"/> 
+			<property name="eclipselink.ddl-generation.output-mode" value="both"/>
+			<property name="eclipselink.logging.level" value="FINE" />
+	 -->		
+ 	
+		<!-- 
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/> 
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/> 
+			<property name="javax.persistence.jdbc.user" value="MGPBDTU9X" /> 
+			<property name="javax.persistence.jdbc.password" value="MGPBDTU9X" /> 
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/> 
+			<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlDictamen.sql"/> 
+			<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlDictamen.sql"/> 
+			<property name="eclipselink.ddl-generation.output-mode" value="both"/>
+			<property name="eclipselink.logging.level" value="FINE" />
+		 -->		
+
+<!-- FIN CONFIGURACIONES PARA BASE DE DATOS LOCALES -->
+
+
+<!-- INICIO CONFIGURACIONES BASE DATOS -->
+ 
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@172.16.8.166:1630:bdtu2" />
+			<property name="javax.persistence.jdbc.user" value="MGPNDIC1" />
+			<property name="javax.persistence.jdbc.password" value="MGPnd1cI" />
+			<property name="eclipselink.logging.level" value="FINE" />
+ 
+ <!-- 
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="javax.persistence.jdbc.user" value="MGPBDTU9X" />
+			<property name="javax.persistence.jdbc.password" value="MGPBDTU9X" />
+			<property name="eclipselink.logging.level" value="FINE" />
+ 
+  -->
+ 
+<!-- FIN CONFIGURACIONES PARA BASE DE DATOS  -->
+
+
+
+		</properties>
+	</persistence-unit>
+
+</persistence>
