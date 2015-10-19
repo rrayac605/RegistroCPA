@@ -1,0 +1,37 @@
+#footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+#footer .logo-wrapper {
+	background-image: url("../images/imss_bg_footer.jpg");
+	text-align: center;
+}
+
+#footer .logo-wrapper img {
+	height: 51px;
+	margin-top: 4px;
+}
+
+#footer .aviso-legal {
+	font-family: Verdana;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding-right: 15px;
+}
+
+/** -- Web Content Display -- */
+#p_p_id_56_INSTANCE_footer_ .portlet-borderless-container {
+	margin: 0;
+	padding: 0;
+}
+
+/** -- Responsivo -- */
+@media (max-width : 45em) {
+	#footer .aviso-legal {
+		font-size: 10px;
+		padding-right: 0;
+	}
+}
