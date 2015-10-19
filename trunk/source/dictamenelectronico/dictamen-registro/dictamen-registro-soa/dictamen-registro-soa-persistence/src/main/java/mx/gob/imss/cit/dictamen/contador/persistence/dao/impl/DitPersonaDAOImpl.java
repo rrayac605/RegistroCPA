@@ -9,7 +9,6 @@ import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.contador.persistence.dao.AbstractBaseDAO;
 import mx.gob.imss.cit.dictamen.contador.persistence.dao.DitPersonaDAO;
 import mx.gob.imss.cit.dictamen.contador.persistence.util.ExceptionHandlerDAOInterceptor;
-import mx.gob.imss.cit.dictamen.registro.persistence.dao.DitPersonaDAOTest;
 
 import javax.persistence.Query;
 import javax.persistence.NoResultException;

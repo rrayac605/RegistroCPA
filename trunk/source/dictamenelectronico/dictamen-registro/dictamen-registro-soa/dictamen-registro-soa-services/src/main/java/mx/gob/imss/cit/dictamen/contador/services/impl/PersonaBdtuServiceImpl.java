@@ -33,16 +33,13 @@ public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaB
 	private static final Logger LOGGER = Logger.getLogger(BdtuServiceImpl.class);
 	
 
-	@EJB
+	
 	private CalificacionesPersonaBusinessServiceRemote calificacionesPersonaBusinessServiceRemote;
 	
-	@EJB
 	private IndividuoServiceBusinessRemote individuoServiceBusinessRemote;
 	
-	@EJB
     private PersonaBusinessRemote personaBusinessRemote;
 
-	@EJB
 	private PersonaFisicaServiceBusinessRemote personaFisicaServiceBusinessRemote;
 
 	@Override

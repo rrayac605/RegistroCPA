@@ -1,6 +1,5 @@
 package mx.gob.imss.cit.dictamen.contador.services;
 
-import java.util.List;
 
 import javax.ejb.Local;
 

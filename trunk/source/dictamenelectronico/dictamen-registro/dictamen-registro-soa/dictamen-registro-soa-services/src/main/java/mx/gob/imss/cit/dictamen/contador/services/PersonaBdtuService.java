@@ -11,6 +11,5 @@ public interface PersonaBdtuService {
 	Persona consultarPersonaFisicaIMSSPorRFC(Persona persona);
 	List<PersonaCalificacion> obtenerPersonaCalificaciones(Persona persona) throws RuntimeException;
 	Persona registroPersona(Persona persona, boolean crearSolicitud) throws RuntimeException;
-	
 	ICADatosRespuesta identificarCambiosFisica(ICADatosConsulta icaDatosConsulta);
 }

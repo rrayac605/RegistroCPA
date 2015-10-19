@@ -8,6 +8,8 @@
 </head>
 <body>
 <%
+    request.getSession().setAttribute("curp", "SAAC820312HDFNLS06");
+    request.getSession().setAttribute("rfc", "SAAC820312S96");
     String redirectURL = "faces/views/welcome.xhtml";
     response.sendRedirect(redirectURL);
 %>
