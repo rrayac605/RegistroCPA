@@ -1,12 +1,15 @@
 package mx.gob.imss.distss.dictamen.contador.integration.impl;
 
 
+
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
+
 import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
-import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoAutDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
@@ -57,7 +60,7 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 				}
 				LOGGER.info("ContadorPublicoIntegrator.antes.idPersona="+fisica.getIdPersona());
 				personaDTO.setIdPersona(fisica.getIdPersona());
-				ContadorPublicoAutDTO contadorPublicoAutDTO = new ContadorPublicoAutDTO();
+				ContadorPublicoDTO contadorPublicoAutDTO = new ContadorPublicoDTO();
 				
 				DomicilioDTO domicilioDTO = new DomicilioDTO();
 				if(fisica.getDomicilioFiscal()!=null){
@@ -84,12 +87,12 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 	}
 
 	@Override
-	public ContadorPublicoAutDTO consultarContadorPublicAut(Long idPersona) {
-		ContadorPublicoAutDTO contadorPublicoAutDTO = null;
+	public ContadorPublicoDTO consultarContadorPublicAut(Long idPersona) {
+		ContadorPublicoDTO contadorPublicoAutDTO = null;
 		LOGGER.info("consultarContadorPublicAut="+idPersona);
 		NdtContadorPublicoAutDO ndtContadorPublicoAutDO = bdtuService.obtenerContadorPorIdPersona(idPersona);
 		if(ndtContadorPublicoAutDO!=null){
-			contadorPublicoAutDTO = new ContadorPublicoAutDTO();
+			contadorPublicoAutDTO = new ContadorPublicoDTO();
 			contadorPublicoAutDTO.setNumRegistroCPA(ndtContadorPublicoAutDO.getNumRegistroCpa());
 			contadorPublicoAutDTO.setCveIdEstadoCPA(ndtContadorPublicoAutDO.getCveIdEstadoCpa().getCveIdEstadoCpa());	
 		}
