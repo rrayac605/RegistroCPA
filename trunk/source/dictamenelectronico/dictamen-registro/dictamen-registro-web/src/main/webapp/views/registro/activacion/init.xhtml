@@ -1,0 +1,106 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="../../comun/template/template.xhtml">
+	
+	<ui:define name="metadata">
+	</ui:define>
+	
+	<ui:define name="content">
+			<p:outputLabel value="#{activacionContadorBean.init()}" />
+				<p:growl id="msgs1" showDetail="true" />
+	
+	
+	     <p:panelGrid style="width:100%;"
+				styleClass="table-no-border table-no-padding">
+				<p:row>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu" />
+					</p:column>
+
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					
+				</p:row>
+			</p:panelGrid>
+							<h:form id="frmDatosContador" prependId="false">
+			
+		<p:dialog widgetVar="dlgDatosContador" resizable="false" draggable="false" visible="true">
+			<p:panel id="pnDatosContador">		
+					<p:panelGrid id="pngDatosContador">
+						<p:row>
+							<p:column colspan="2" style="text-align: center;">
+								<p:outputLabel>¿El Registro IMSS es correcto?</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>Apellido Paterno</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.apellidoPaterno}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>Apellido Materno</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.apellidoMaterno}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>Nombre(s)</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.nombre}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>CURP</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.curp}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>Registro IMSS</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.contadorPublicoAutDTO.numRegistroCPA}</p:outputLabel>
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+					<p:panelGrid id="pngSiNoValue" columns="2" style="text-align:center;">
+						<p:commandButton value="Si" ajax="false"
+						action="#{activacionContadorBean.aceptacion}" />
+						<p:commandButton value="NO"/>
+					</p:panelGrid>	
+			</p:panel>
+		</p:dialog>
+						</h:form>
+		
+		<p:dialog widgetVar="dlgNoReg" id="dlgNoRegistros" visible="true">
+			<p:panelGrid>
+				<p:outputLabel id="msgNoDatos">#{msg['message.actualizacion.no.datos']}</p:outputLabel>
+				<p:button id="btnNoDataAceptar" value="#{msg['message.button.aceptar']}" onclick="dlgNoReg.hide()"/>
+			</p:panelGrid>	
+		</p:dialog>
+	</ui:define>
+</ui:composition>
