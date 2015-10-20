@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body onload="#{solicitudRegistroBean.init()}">
+	<h:form>
+		<p:panel style="width:100%; " styleClass="table-no-border">
+			<h1>#{msg['message.contador.solicitud.titulo']}</h1>
+			<p:panelGrid style="width:100%;"
+				styleClass="table-no-border table-no-padding">
+				<p:row>
+					<p:column style="width:14%;">
+						<p:commandButton
+							value="#{msg['message.contador.solicitud.datos']}"
+							style="width:100%;" styleClass="btn-menu" />
+					</p:column>
+
+					<p:column style="width:14%;">
+						<p:commandButton
+							value="#{msg['message.contador.solicitud.despacho']}"
+							style="width:100%;" styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:14%;">
+						<p:commandButton
+							value="#{msg['message.contador.solicitud.colegio']}"
+							style="width:100%;" styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:14%;">
+						<p:commandButton
+							value="#{msg['message.contador.solicitud.documentacion']}"
+							style="width:100%;" styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:14%;">
+						<p:commandButton
+							value="#{msg['message.contador.solicitud.vista']}"
+							style="width:100%;" styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:14%;">
+						<p:commandButton
+							value="#{msg['message.contador.solicitud.protesta']}"
+							style="width:100%;" styleClass="btn-menu-disabled" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<br />
+			<br />
+			<p:panelGrid id="tableFolioSolicitud"
+				styleClass="table table-striped" style="width:100%;">
+				<p:row>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.solicitud.folio']}" />
+					</p:column>
+					<p:column>
+						<h:outputText value="#{solicitudRegistroPage.folio}" />
+					</p:column>
+					<p:column style="width:25%;">
+						<h:outputText value="" />
+					</p:column>
+					<p:column style="width:25%;">
+						<h:outputText value="" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<h3>#{msg['message.contador.datos.personales']}</h3>
+			<hr class="red" />
+			<br />
+			<p:panelGrid id="tableDatosPersonales" styleClass="table-striped">
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.curp']}" />
+					</p:column>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.curp}" />
+					</p:column>
+
+
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.nombre']}" />
+					</p:column>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.nombre}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.rfc']}" />
+					</p:column>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.rfc}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<h3>#{msg['message.contador.datos.domicilio']}</h3>
+			<hr class="red" />
+			<br />
+			<p:panelGrid id="tableDomicilio" styleClass="table table-striped">
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.calle']}" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.numExt']}" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.numInt']}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.calle}" />
+					</p:column>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.numExterior}" />
+					</p:column>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.numInterior}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.entreCalle']}" />
+					</p:column>
+
+					<p:column columnspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.yCalle']}" />
+					</p:column>
+
+					<p:column></p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.entreCalle}" />
+					</p:column>
+
+					<p:column columnspan="2">
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.yCalle}" />
+					</p:column>
+
+					<p:column></p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.colonia']}" />
+					</p:column>
+					<p:column columnspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.localidad']}" />
+					</p:column>
+
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.mpio']}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.colonia}" />
+					</p:column>
+					<p:column columnspan="2">
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.localidad}" />
+					</p:column>
+
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.municipio}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.entidad']}" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.domicilio.cp']}" />
+					</p:column>
+					<p:column></p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.entidad}" />
+					</p:column>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.codigoPostal}" />
+					</p:column>
+					<p:column></p:column>
+				</p:row>
+				<p:row>
+					<p:column columnspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.correo']}" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.telefono']}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column columnspan="2">
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.email}" />
+					</p:column>
+					<p:column>
+						<h:inputText disabled="true"
+							value="#{solicitudRegistroPage.contador.domicilio.telefono}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<h3>#{msg['message.contador.datos.contacto']}</h3>
+			<hr class="red" />
+			<br />
+			<p:panelGrid id="tableDatosContacto" styleClass="table table-striped">
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.correo']} 1" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="Confirmar #{msg['message.contador.datos.correo']} 1" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:inputText
+							value="#{solicitudRegistroPage.contador.contacto.email1}" />
+					</p:column>
+					<p:column>
+						<h:inputText value="#{solicitudRegistroPage.email1}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.correo']} 2" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="Confirmar #{msg['message.contador.datos.correo']} 2" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:inputText
+							value="#{solicitudRegistroPage.contador.contacto.email2}" />
+					</p:column>
+					<p:column>
+						<h:inputText value="#{solicitudRegistroPage.email2}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<h3>#{msg['message.contador.datos.infoProf']}</h3>
+			<hr class="red" />
+			<br />
+			<p:panelGrid id="tableInfoProf" styleClass="table table-striped">
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.infoProf.cedula']}" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.infoProf.fechaExp']}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:inputText
+							value="#{solicitudRegistroPage.contador.infoProf.cedula}" />
+					</p:column>
+					<p:column>
+						<p:calendar
+							value="#{solicitudRegistroPage.contador.infoProf.fechaExpCedula}"
+							showOn="button" pattern="dd/MM/yyyy"
+							maxdate="#{solicitudRegistroPage.fechaActual}">
+						</p:calendar>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column columnspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.infoProf.institucion']}" />
+					</p:column>
+					<p:column>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column columnspan="2">
+						<h:inputText
+							value="#{solicitudRegistroPage.contador.infoProf.institucion}" />
+					</p:column>
+					<p:column>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<br />
+			<br />
+			<p:panelGrid style="width:100%; " styleClass="table-no-border">
+				<p:row>
+					<p:column style="text-align: left; width:90%;">
+						<p:commandButton value="#{msg['message.button.cancelar']}"
+							onclick="cancelarSolicitud.show();"
+							styleClass="btn-sm btn-default" icon="ui-icon-arrowthick-1-w" />
+					</p:column>
+					<p:column style="text-align: right;">
+						<p:commandButton value="#{msg['message.button.guardar']}"
+							styleClass="btn-sm btn-primary" process="@this" immediate="true"
+							action="#{solicitudRegistroBean.guardarDatos()}"
+							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()"
+							update="dialogGeneral datosCorrectos" />
+					</p:column>
+					<p:column style="text-align: right;">
+						<p:commandButton value="#{msg['message.button.siguiente']}"
+							styleClass="btn-sm btn-primary" process="@this" immediate="true"
+							action="#{solicitudRegistroBean.redirectDespacho()}"
+							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()"
+							update="dialogGeneral datosCorrectos" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:panel>
+		<!-- dialogos -->
+		<p:dialog header="#{msg['message.button.cancelar']}" width="550px"
+			modal="true" resizable="false" id="cancelarSolicitud"
+			widgetVar="cancelarSolicitud">
+			<p:panelGrid style="width:100%; " styleClass="table-no-border">
+				<p:row>
+					<p:column colspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.solicitud.cancelar']}" />
+						<br />
+						<br />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.no']}"
+							styleClass="btn-sm btn-default"
+							oncomplete="cancelarSolicitud.hide()" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.si']}"
+							styleClass="btn-sm btn-primary"
+							action="#{solicitudRegistroBean.redirectContadores()}"
+							oncomplete="cancelarSolicitud.hide(); imagenEsperaWidget.hide();"
+							onclick="imagenEsperaWidget.show()" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:dialog>
+		<p:dialog header="#{msg['message.contador.solicitud.titulo']}"
+			width="550px" modal="true" resizable="false" id="datosCorrectos"
+			widgetVar="datosCorrectos">
+			<p:panelGrid style="width:100%; " styleClass="table-no-border">
+				<p:row>
+					<p:column colspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.solicitud.datosCorrectos']}" />
+						<br />
+						<br />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.no']}"
+							styleClass="btn-sm btn-default"
+							oncomplete="datosCorrectos.hide()" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.si']}"
+							styleClass="btn-sm btn-primary"
+							oncomplete="datosCorrectos.hide(); imagenEsperaWidget.hide();"
+							onclick="imagenEsperaWidget.show()" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:dialog>
+		<p:dialog width="550px" id="dialogGeneral" closeOnEscape="true"
+			header="#{msg[solicitudRegistroPage.headerDialog]}"
+			widgetVar="dialogGeneral" modal="true" resizable="false">
+			<br />
+			<h:outputText styleClass="SubtituloSeccion"
+				value="#{msg[solicitudRegistroPage.mensajeDialog]}" />
+			<br />
+			<br />
+			<p style="text-align: center;">
+				<p:commandButton value="#{msg['message.button.aceptar']}"
+					styleClass="btn btn-primary" oncomplete="dialogGeneral.hide();" />
+			</p>
+		</p:dialog>
+		<p:dialog id="imagenEsperaWidget" widgetVar="imagenEsperaWidget"
+			modal="true" resizable="false" closable="false" showHeader="false">
+			<img src="#{liferay.themeImagesURL}/icons/loader.gif" width="50"
+				height="50" />
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

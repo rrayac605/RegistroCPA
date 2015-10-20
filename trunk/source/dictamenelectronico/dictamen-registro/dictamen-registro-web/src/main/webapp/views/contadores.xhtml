@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body onload="#{loginBean.init()}">
+	<h:form>
+		<p:panel style="width:100%; " styleClass="table-no-border">
+			<h2>#{msg['message.contador.titulo']}</h2>
+			<p:panelGrid style="width:100%;"
+				styleClass="table-no-border table-no-padding">
+				<p:row>
+					<p:column style="width:14%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu" />
+					</p:column>
+
+					<p:column style="width:14%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:14%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:14%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:14%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:14%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<br />
+			<p:panelGrid id="tablaOpcionesContador" styleClass="table"
+				style="width:100%; margin: 0 auto; padding: 60px; ">
+				<p:row style="text-align: center;">
+					<p:column style="text-align: center;">
+						<p:commandLink action="#{contadorBean.redirectSolicitud()}"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()">
+							<p:graphicImage value="../images/icono_indice_gris.jpg" />
+						</p:commandLink>
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink 
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()">
+							<p:graphicImage value="../images/icono_indice_gris.jpg" />
+						</p:commandLink>
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink 
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()">
+							<p:graphicImage value="../images/icono_indice_gris.jpg" />
+						</p:commandLink>
+					</p:column>
+				</p:row>
+				<p:row style="text-align: center;">
+					<p:column style="text-align: center;">
+						<p:commandLink value="#{msg['message.contador.solicitud.titulo']}"
+							action="#{contadorBean.redirectSolicitud()}"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink
+							value="#{msg['message.contador.activacion.titulo']}"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink
+							value="#{msg['message.contador.reactivacion.titulo']}"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+				</p:row>
+				<p:row style="text-align: center;">
+					<p:column style="text-align: center;">
+						<p:commandLink 
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()">
+							<p:graphicImage value="../images/icono_indice_gris.jpg" />
+						</p:commandLink>
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink 
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()">
+							<p:graphicImage value="../images/icono_indice_gris.jpg" />
+						</p:commandLink>
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink 
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()">
+							<p:graphicImage value="../images/icono_indice_gris.jpg" />
+						</p:commandLink>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="text-align: center;">
+						<p:commandLink
+							value="#{msg['message.contador.acreditacion.titulo']}"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink
+							value="#{msg['message.contador.modificacion.titulo']}"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink value="#{msg['message.contador.baja.titulo']}"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:panel>
+		<p:dialog id="imagenEsperaWidget" widgetVar="imagenEsperaWidget"
+			modal="true" resizable="false" closable="false" showHeader="false">
+			<img src="#{liferay.themeImagesURL}/icons/loader.gif" width="50"
+				height="50" />
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

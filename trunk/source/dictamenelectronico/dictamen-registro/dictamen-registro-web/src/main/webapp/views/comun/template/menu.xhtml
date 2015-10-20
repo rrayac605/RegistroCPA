@@ -1,0 +1,43 @@
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+	<h:form>
+
+    
+    
+
+
+		<p:outputPanel id="menuPanel" layout="block">
+	
+	
+	
+				<p:menu   toggleable="true" style="width:213px;height:483px;border:none;font-size:small;padding:0px;"
+					ajax="false" type="sliding" backLabel="BAK">
+					<p:submenu label="Registro" icon="ui-icon ui-icon-refresh">
+						<p:menuitem value="Solicitud de Registro" url="/faces/views/registro/solicitud/solicitudRegistro.xhtml" />
+						<p:menuitem value="Activacion de Registro" url="/faces/views/registro/activacion/contador.xhtml" />
+						
+						<p:menuitem value="Actualizacion Estatus" url="/faces/views/registro/activacion/contador.xhtml" />
+						<p:menuitem value="Actualizacion Registro" url="/faces/views/registro/actualizacion/verificacionDatos.xhtml" />
+						<p:menuitem value="Reactivacion de Registro" url="/faces/views/registro/reactivacion/contador.xhtml" />
+						                                                   
+						<p:menuitem value="Modificacion de Datos" url="/faces/views/registro/activacion/contador.xhtml" />
+						<p:menuitem value="Baja" url="/faces/views/pages/page2.xhtml" />
+
+							
+					</p:submenu>
+
+		
+				</p:menu>
+		</p:outputPanel>
+
+	</h:form>
+</ui:composition>
+
+
