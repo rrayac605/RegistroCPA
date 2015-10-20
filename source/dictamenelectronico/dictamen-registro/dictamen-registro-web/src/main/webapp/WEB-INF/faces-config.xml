@@ -28,12 +28,23 @@
 			<base-name>bundles.messages_reactivacion</base-name>
 			<var>msg_reactivacion</var>
 		</resource-bundle>
-		
+				<resource-bundle>
+			<base-name>bundles.messages_template</base-name>
+			<var>msg_template</var>
+		</resource-bundle>
 	</application>
 
 
 	<navigation-rule>
 	<from-view-id>*</from-view-id>
+	
+	<navigation-case>
+			<from-outcome>activacionContadorAceptacion</from-outcome>
+			<to-view-id>/faces/views/registro/activacion/contador.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+		
 		<navigation-case>
 			<from-outcome>contadores</from-outcome>
 			<to-view-id>/views/contadores.xhtml</to-view-id>
