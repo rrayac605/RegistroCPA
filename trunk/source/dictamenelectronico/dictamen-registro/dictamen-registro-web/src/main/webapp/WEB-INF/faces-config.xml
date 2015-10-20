@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+
+	<application>
+		<message-bundle>resources.application</message-bundle>
+		<locale-config>
+			<default-locale>es</default-locale>
+		</locale-config>
+		<locale-config>
+			<default-locale>en</default-locale>
+		</locale-config>
+
+		<resource-bundle>
+			<base-name>bundles.messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+
+		<resource-bundle>
+			<base-name>bundles.messages_notificacion</base-name>
+			<var>msgNotificacion</var>
+		</resource-bundle>
+
+		<resource-bundle>
+			<base-name>bundles.messages_reactivacion</base-name>
+			<var>msg_reactivacion</var>
+		</resource-bundle>
+		
+	</application>
+
+
+	<navigation-rule>
+	<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>contadores</from-outcome>
+			<to-view-id>/views/contadores.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>solicitudRegistro</from-outcome>
+			<to-view-id>/views/registro/solicitud/solicitudRegistro.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>actualizacionRegistro</from-outcome>
+			<to-view-id>/faces/views/registro/actualizacion/actualizacionRegistro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+</faces-config>
