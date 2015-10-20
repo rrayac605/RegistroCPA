@@ -5,6 +5,20 @@ import java.io.Serializable;
 public class DomicilioDTO implements Serializable {
 	private static final long serialVersionUID = 7386311688576345323L;
 
+	private String calle;
+	private Integer numeroExterior;
+	private String letraExterior;
+	private Integer numeroInterior;
+	private String letraInterior;
+	private String entreCalle;
+	private String yCalle; 
+	private String coloniaAsentamiento;
+	private String Localidad;
+	private String municipioDelegacion;
+	private String entidadFederativa;
+	private String codigoPostal;
+
+	
 	public String getCalle() {
 		return calle;
 	}
@@ -77,18 +91,6 @@ public class DomicilioDTO implements Serializable {
 	public void setCodigoPostal(String codigoPostal) {
 		this.codigoPostal = codigoPostal;
 	}
-	private String calle;
-	private Integer numeroExterior;
-	private String letraExterior;
-	private Integer numeroInterior;
-	private String letraInterior;
-	private String entreCalle;
-	private String yCalle; 
-	private String coloniaAsentamiento;
-	private String Localidad;
-	private String municipioDelegacion;
-	private String entidadFederativa;
-	private String codigoPostal;
 
 	
 }

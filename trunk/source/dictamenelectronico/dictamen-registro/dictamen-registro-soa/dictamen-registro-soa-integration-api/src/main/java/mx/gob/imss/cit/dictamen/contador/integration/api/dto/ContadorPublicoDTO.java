@@ -2,7 +2,7 @@ package mx.gob.imss.cit.dictamen.contador.integration.api.dto;
 
 import java.io.Serializable;
 
-public class ContadorPublicoAutDTO implements Serializable {
+public class ContadorPublicoDTO implements Serializable {
 
 	private static final long serialVersionUID = -5589203476692561447L;
     

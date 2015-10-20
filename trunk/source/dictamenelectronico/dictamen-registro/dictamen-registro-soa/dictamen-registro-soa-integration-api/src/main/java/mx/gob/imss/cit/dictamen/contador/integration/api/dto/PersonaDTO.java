@@ -14,6 +14,8 @@ public class PersonaDTO implements Serializable {
 	private String correoElectronico;
 	private String telefono;
 	private Long idPersona;
+	private ContadorPublicoDTO contadorPublicoAutDTO;
+
 	
 	public Long getIdPersona() {
 		return idPersona;
@@ -21,7 +23,6 @@ public class PersonaDTO implements Serializable {
 	public void setIdPersona(Long idPersona) {
 		this.idPersona = idPersona;
 	}
-	private ContadorPublicoAutDTO contadorPublicoAutDTO;
 
 	
 	public String getNombreCompleto() {
@@ -55,10 +56,10 @@ public class PersonaDTO implements Serializable {
 	public void setCurp(String curp) {
 		this.curp = curp;
 	}
-	public ContadorPublicoAutDTO getContadorPublicoAutDTO() {
+	public ContadorPublicoDTO getContadorPublicoAutDTO() {
 		return contadorPublicoAutDTO;
 	}
-	public void setContadorPublicoAutDTO(ContadorPublicoAutDTO contadorPublicoAutDTO) {
+	public void setContadorPublicoAutDTO(ContadorPublicoDTO contadorPublicoAutDTO) {
 		this.contadorPublicoAutDTO = contadorPublicoAutDTO;
 	}
 	
