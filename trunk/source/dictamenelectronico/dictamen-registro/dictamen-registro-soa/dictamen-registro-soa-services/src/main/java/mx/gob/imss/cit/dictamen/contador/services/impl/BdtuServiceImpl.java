@@ -11,24 +11,18 @@ import javax.naming.NamingException;
 import org.apache.log4j.Logger;
 
 import mx.gob.imss.ctirss.delta.exception.individuo.PersonaFisicaNoEncontradaException;
-import mx.gob.imss.ctirss.delta.exception.individuo.PersonasNoLocalizadasException;
-import mx.gob.imss.ctirss.delta.framework.exceptions.ClienteWebserviceRenapoCurpException;
-import mx.gob.imss.ctirss.delta.framework.exceptions.ClienteWebserviceSatRfcException;
+import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
+import mx.gob.imss.cit.dictamen.contador.persistence.dao.NdtContadorPublicoAutDAO;
 import mx.gob.imss.cit.dictamen.contador.services.BaseBdtuService;
 import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
 import mx.gob.imss.cit.dictamen.contador.services.PersonaBdtuService;
-import mx.gob.imss.ctirss.delta.gestion.individuo.service.business.CalificacionesPersonaBusinessServiceRemote;
-import mx.gob.imss.ctirss.delta.gestion.individuo.service.business.IndividuoServiceBusinessRemote;
-import mx.gob.imss.ctirss.delta.gestion.individuo.service.business.PersonaFisicaServiceBusinessRemote;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.CalificacionEnum;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.ICADatosConsulta;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.ICADatosRespuesta;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.Moral;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Persona;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.PersonaCalificacion;
 import mx.gob.imss.ctirss.gestionpersonas.servicios.business.AfectarDatosPersonaBusinessRemote;
-import mx.gob.imss.ctirss.gestionpersonas.servicios.business.PersonaBusinessRemote;
 import mx.gob.imss.ctirss.gestionpersonas.servicios.publicos.ServiciosPersonaBusinessRemote;
 
 
@@ -37,16 +31,55 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 
 	private static final Logger LOGGER = Logger.getLogger(BdtuServiceImpl.class);
 
-	@EJB
+	
 	private ServiciosPersonaBusinessRemote serviciosPersonaBusinessRemote;
 
-	@EJB
+
 	private AfectarDatosPersonaBusinessRemote afectarDatosPersonaBusinessRemote;
 
 	@EJB
 	private PersonaBdtuService personaBdtuService;
 	
+	@EJB
+	private NdtContadorPublicoAutDAO ndtContadorPublicoAutDAO;
 	
+	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	public NdtContadorPublicoAutDO obtenerContadorPorIdPersona(Long idPersona) {
+		NdtContadorPublicoAutDO  ndtContadorPublicoAutDO =ndtContadorPublicoAutDAO.selectContadorPublicoAutByIdPersona(idPersona);
+		return ndtContadorPublicoAutDO;
+	}
+	
+
+	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	public Fisica obtenerFisicaPorPersona(Persona persona){
+		Fisica personaFisica = null;
+		Fisica usuarioSesion=null;
+
+		Persona personaService = personaBdtuService.consultarPersonaFisicaIMSSPorRFC(persona);
+		if (personaService.getIdPersona() != null) {
+			personaFisica = (Fisica)  personaService;
+			if(personaFisica.getCveFisica() != null){
+				
+				usuarioSesion = new Fisica();
+				usuarioSesion.setIdPersona(personaFisica.getIdPersona());
+				usuarioSesion.setCveFisica(personaFisica.getCveFisica());
+				usuarioSesion.setRfc(personaFisica.getRfc());
+				usuarioSesion.setCurp(personaFisica.getCurp());
+				usuarioSesion.setNss(personaFisica.getNss());
+				usuarioSesion.setNombre(personaFisica.getNombre());
+				usuarioSesion.setPrimerApellido(personaFisica.getPrimerApellido());
+				usuarioSesion.setSegundoApellido(personaFisica.getSegundoApellido());
+				usuarioSesion.setNombreCompleto(personaFisica.getNombreCompleto());
+				usuarioSesion.setDomicilioFiscal(personaFisica.getDomicilioFiscal());
+				usuarioSesion.setMediosContactoFiscales(personaFisica.getMediosContactoFiscales());
+				usuarioSesion.setDomicilios(personaFisica.getDomicilios());
+				
+			}
+		}
+		return usuarioSesion;
+	}
 
 
 	@Override
@@ -120,9 +153,6 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 		this.afectarDatosPersonaBusinessRemote = afectarDatosPersonaBusinessRemote;
 	}
 
-
-
-
 	public PersonaBdtuService getPersonaBdtuService() {
 		return personaBdtuService;
 	}
@@ -131,6 +161,10 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 	public void setPersonaBdtuService(PersonaBdtuService personaBdtuService) {
 		this.personaBdtuService = personaBdtuService;
 	}
+
+
+
+
 
 
 }

@@ -30,20 +30,20 @@ public class NdtContadorPublicoAutDAOImpl extends AbstractBaseDAO<NdtContadorPub
 	private EntityManager em;
 	
 	@Override
-	public NdtContadorPublicoAutDO selectContadorPublicoAutByIdEstado(
-			int cveIdCpa, int cveIdEstadoCpa) {
+	public NdtContadorPublicoAutDO selectContadorPublicoAutByIdPersona(
+			Long cveIdPersona) {
 		
-		lOGGER.debug("curp="+cveIdCpa);
+		lOGGER.debug("cveIdPersona="+cveIdPersona);
 		NdtContadorPublicoAutDO rst=null;
 	       Query query = null;
-	       query = em.createQuery("SELECT n from NdtContadorPublicoAutDO n where n.cveIdCpa = :cveIdCpa and n.cveIdEstadoCpa = :cveIdEstadoCpa");
-	       query.setParameter("cveIdCpa", cveIdCpa);
-	       query.setParameter("cveIdEstadoCpa", cveIdEstadoCpa);
+	       query = em.createQuery("SELECT n from NdtContadorPublicoAutDO n where n.cveIdPersona = :cveIdPersona");
+	       query.setParameter("cveIdPersona", cveIdPersona);
+	       //query.setParameter("cveIdEstadoCpa", cveIdEstadoCpa);
 
 			try{
 				rst = (NdtContadorPublicoAutDO)query.getSingleResult();
 			}catch (NoResultException noResultException){
-				lOGGER.debug("No hay personas con idContadorPublico="+cveIdCpa);
+				lOGGER.debug("No hay personas con cveIdPersona="+cveIdPersona);
 			}	
         return rst;
         

@@ -6,7 +6,6 @@
 	<persistence-unit name="DictamenContadorPUTest"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>mx.gob.imss.cit.dictamen.contador.model.DitPersonaDO</class>
 
 		<class>mx.gob.imss.cit.dictamen.contador.model.NdcAseveracionesDO</class>
 		<class>mx.gob.imss.cit.dictamen.contador.model.NdcAtestiguamientoDO</class>
