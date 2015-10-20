@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.dictamen.contador.integration.api.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class PersonaDTO implements Serializable {
 
@@ -14,7 +15,24 @@ public class PersonaDTO implements Serializable {
 	private String correoElectronico;
 	private String telefono;
 	private Long idPersona;
+	private Integer idSexo;
 	private ContadorPublicoDTO contadorPublicoAutDTO;
+
+	
+	public Integer getIdSexo() {
+		return idSexo;
+	}
+	public void setIdSexo(Integer idSexo) {
+		this.idSexo = idSexo;
+	}
+	private Date fechaNacimiento;
+	
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
 
 	
 	public Long getIdPersona() {
