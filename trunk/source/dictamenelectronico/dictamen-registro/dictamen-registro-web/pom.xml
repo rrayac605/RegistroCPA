@@ -12,6 +12,20 @@
   
   <dependencies>
   
+      <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.1</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+    
+    	   <dependency>
+			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
+			<artifactId>dictamen-registro-soa-integration-api</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+  
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
