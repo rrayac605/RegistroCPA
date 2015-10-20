@@ -1,132 +1,116 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>mx.gob.imss.cit.dictamen.registro</groupId>
-    <artifactId>dictamen-registro-soa</artifactId>
-    <version>1.0</version>
-  </parent>
-  <artifactId>dictamen-registro-soa-services</artifactId>
-    <name>dictamen-registro-soa-services</name>
-    <version>1.0</version>
-  
-  
-  <packaging>ejb</packaging>
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
+		<artifactId>dictamen-registro-soa</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>dictamen-registro-soa-services</artifactId>
+	<name>dictamen-registro-soa-services</name>
+	<version>1.0</version>
+	<packaging>ejb</packaging>
 	<dependencies>
-	
-	    <dependency>
-	      	<groupId>mx.gob.imss.ctirss.delta</groupId>
-	      	<artifactId>delta-modelo-negocio</artifactId>
-	      	<version>${delta.framework.version}</version>
-	      	<type>jar</type>
-	    </dependency>
-	    
-	    <dependency>
+		<dependency>
+			<groupId>mx.gob.imss.ctirss.delta</groupId>
+			<artifactId>delta-modelo-negocio</artifactId>
+			<version>${delta.framework.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
 			<groupId>mx.gob.imss.ctirss.delta.gestion.individuo.service.interface</groupId>
 			<artifactId>gestionIndividuo-service-business-interface</artifactId>
 			<version>2.4-SNAPSHOT</version>
 		</dependency>
-	
-	    <dependency>
+		<dependency>
 			<groupId>weblogic</groupId>
 			<artifactId>wlfullclient</artifactId>
 			<version>10.3.4</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>mx.gob.imss.ctirss.delta.gestion.solicitud</groupId>
 			<artifactId>gestionSolicitud-interfaces-negocio</artifactId>
 			<version>2.2-SNAPSHOT</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 			<artifactId>dictamen-registro-soa-commons</artifactId>
 			<version>${project.parent.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax</groupId>
+					<artifactId>javaee-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 			<artifactId>dictamen-registro-soa-model</artifactId>
 			<version>${project.parent.version}</version>
-			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>javax</groupId>
+					<artifactId>javaee-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 			<artifactId>dictamen-registro-soa-persistence</artifactId>
 			<version>${project.parent.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax</groupId>
+					<artifactId>javaee-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-		
-		
-		<dependency>
-			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
-			<artifactId>dictamen-registro-soa-persistence</artifactId>
-			<type>test-jar</type>
-			<version>${project.parent.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		
-<!-- 
-		<dependency>
-			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
-			<artifactId>dictamen-registro-soa-persistence</artifactId>
-			<type>test-jar</type>
-			<version>${project.parent.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		 -->
+		<!-- <dependency> <groupId>mx.gob.imss.cit.dictamen.registro</groupId> 
+			<artifactId>dictamen-registro-soa-persistence</artifactId> <type>test-jar</type> 
+			<version>${project.parent.version}</version> <scope>compile</scope> </dependency> -->
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.2.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 			<artifactId>dictamen-registro-soa-integration-api</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>${java-ee.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-
-
-<dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.2</version>
-      <type>jar</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.7.2</version>
-      <type>jar</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.2</version>
-      <type>jar</type>
-      <scope>compile</scope>
-    </dependency>
-
-    
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.2</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.7.2</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.2</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
@@ -167,7 +151,7 @@
 				<artifactId>maven-ejb-plugin</artifactId>
 				<version>${maven-ejb-plugin.version}</version>
 				<configuration>
-					<ejbVersion>3.1</ejbVersion>
+					<ejbVersion>3.0</ejbVersion>
 					<archive>
 						<manifest>
 							<addClasspath>false</addClasspath>
@@ -191,5 +175,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>

@@ -2,101 +2,242 @@ package mx.gob.imss.cit.dictamen.contador.integration.api.dto;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * @author ariverav
+ *
+ */
+
 public class DomicilioDTO implements Serializable {
+
+	/**
+	 * Serial
+	 */
 	private static final long serialVersionUID = 7386311688576345323L;
 
 	private String calle;
-	private Integer numeroExterior;
+	private String numExterior;
+	private String numInterior;
 	private String letraExterior;
-	private Integer numeroInterior;
 	private String letraInterior;
 	private String entreCalle;
-	private String yCalle; 
-	private String coloniaAsentamiento;
-	private String Localidad;
-	private String municipioDelegacion;
-	private String entidadFederativa;
+	private String yCalle;
+	private String colonia;
+	private String localidad;
+	private String municipio;
+	private String entidad;
 	private String codigoPostal;
-    private String cveEntidadFederativa; 
-	
-	public String getCveEntidadFederativa() {
-		return cveEntidadFederativa;
-	}
-	public void setCveEntidadFederativa(String cveEntidadFederativa) {
-		this.cveEntidadFederativa = cveEntidadFederativa;
-	}
+	private String email;
+	private String telefono;
+
+	/**
+	 * @return the calle
+	 */
 	public String getCalle() {
 		return calle;
 	}
+
+	/**
+	 * @param calle
+	 *            the calle to set
+	 */
 	public void setCalle(String calle) {
 		this.calle = calle;
 	}
-	public Integer getNumeroExterior() {
-		return numeroExterior;
+
+	/**
+	 * @return the numExterior
+	 */
+	public String getNumExterior() {
+		return numExterior;
 	}
-	public void setNumeroExterior(Integer numeroExterior) {
-		this.numeroExterior = numeroExterior;
+
+	/**
+	 * @param numExterior
+	 *            the numExterior to set
+	 */
+	public void setNumExterior(String numExterior) {
+		this.numExterior = numExterior;
 	}
+
+	/**
+	 * @return the numInterior
+	 */
+	public String getNumInterior() {
+		return numInterior;
+	}
+
+	/**
+	 * @param numInterior
+	 *            the numInterior to set
+	 */
+	public void setNumInterior(String numInterior) {
+		this.numInterior = numInterior;
+	}
+
+	/**
+	 * @return the letraExterior
+	 */
 	public String getLetraExterior() {
 		return letraExterior;
 	}
+
+	/**
+	 * @param letraExterior
+	 *            the letraExterior to set
+	 */
 	public void setLetraExterior(String letraExterior) {
 		this.letraExterior = letraExterior;
 	}
-	public Integer getNumeroInterior() {
-		return numeroInterior;
-	}
-	public void setNumeroInterior(Integer numeroInterior) {
-		this.numeroInterior = numeroInterior;
-	}
+
+	/**
+	 * @return the letraInterior
+	 */
 	public String getLetraInterior() {
 		return letraInterior;
 	}
+
+	/**
+	 * @param letraInterior
+	 *            the letraInterior to set
+	 */
 	public void setLetraInterior(String letraInterior) {
 		this.letraInterior = letraInterior;
 	}
+
+	/**
+	 * @return the entreCalle
+	 */
 	public String getEntreCalle() {
 		return entreCalle;
 	}
+
+	/**
+	 * @param entreCalle
+	 *            the entreCalle to set
+	 */
 	public void setEntreCalle(String entreCalle) {
 		this.entreCalle = entreCalle;
 	}
+
+	/**
+	 * @return the yCalle
+	 */
 	public String getyCalle() {
 		return yCalle;
 	}
+
+	/**
+	 * @param yCalle
+	 *            the yCalle to set
+	 */
 	public void setyCalle(String yCalle) {
 		this.yCalle = yCalle;
 	}
-	public String getColoniaAsentamiento() {
-		return coloniaAsentamiento;
+
+	/**
+	 * @return the colonia
+	 */
+	public String getColonia() {
+		return colonia;
 	}
-	public void setColoniaAsentamiento(String coloniaAsentamiento) {
-		this.coloniaAsentamiento = coloniaAsentamiento;
+
+	/**
+	 * @param colonia
+	 *            the colonia to set
+	 */
+	public void setColonia(String colonia) {
+		this.colonia = colonia;
 	}
+
+	/**
+	 * @return the localidad
+	 */
 	public String getLocalidad() {
-		return Localidad;
+		return localidad;
 	}
+
+	/**
+	 * @param localidad
+	 *            the localidad to set
+	 */
 	public void setLocalidad(String localidad) {
-		Localidad = localidad;
+		this.localidad = localidad;
 	}
-	public String getMunicipioDelegacion() {
-		return municipioDelegacion;
+
+	/**
+	 * @return the municipio
+	 */
+	public String getMunicipio() {
+		return municipio;
 	}
-	public void setMunicipioDelegacion(String municipioDelegacion) {
-		this.municipioDelegacion = municipioDelegacion;
+
+	/**
+	 * @param municipio
+	 *            the municipio to set
+	 */
+	public void setMunicipio(String municipio) {
+		this.municipio = municipio;
 	}
-	public String getEntidadFederativa() {
-		return entidadFederativa;
+
+	/**
+	 * @return the entidad
+	 */
+	public String getEntidad() {
+		return entidad;
 	}
-	public void setEntidadFederativa(String entidadFederativa) {
-		this.entidadFederativa = entidadFederativa;
+
+	/**
+	 * @param entidad
+	 *            the entidad to set
+	 */
+	public void setEntidad(String entidad) {
+		this.entidad = entidad;
 	}
+
+	/**
+	 * @return the codigoPostal
+	 */
 	public String getCodigoPostal() {
 		return codigoPostal;
 	}
+
+	/**
+	 * @param codigoPostal
+	 *            the codigoPostal to set
+	 */
 	public void setCodigoPostal(String codigoPostal) {
 		this.codigoPostal = codigoPostal;
 	}
 
-	
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email
+	 *            the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * @return the telefono
+	 */
+	public String getTelefono() {
+		return telefono;
+	}
+
+	/**
+	 * @param telefono
+	 *            the telefono to set
+	 */
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
 }

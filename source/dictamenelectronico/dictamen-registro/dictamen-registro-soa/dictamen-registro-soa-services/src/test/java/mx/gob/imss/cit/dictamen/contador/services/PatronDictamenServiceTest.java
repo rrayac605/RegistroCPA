@@ -1,7 +1,6 @@
 package mx.gob.imss.cit.dictamen.contador.services;
 
 import mx.gob.imss.cit.dictamen.contador.services.impl.PatronDictamenServiceImpl;
-import mx.gob.imss.cit.dictamen.registro.persistence.dao.base.AbstractDBTestUnit;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
