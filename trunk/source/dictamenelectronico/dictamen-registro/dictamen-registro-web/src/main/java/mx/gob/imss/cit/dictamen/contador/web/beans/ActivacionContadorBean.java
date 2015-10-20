@@ -9,7 +9,7 @@ import javax.faces.bean.ViewScoped;
 import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
-import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoAutDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.constants.RegistroWebConstants;
@@ -52,7 +52,7 @@ public class ActivacionContadorBean extends BaseBean {
         LOGGER.info("Nombre="+contadorPublicoDTOintegrator.getNombre());
         LOGGER.info("idPersona="+contadorPublicoDTOintegrator.getIdPersona());
 
-        ContadorPublicoAutDTO contadorPublicoAutDTO = contadorPublicoIntegrator.consultarContadorPublicAut(contadorPublicoDTOintegrator.getIdPersona());
+        ContadorPublicoDTO contadorPublicoAutDTO = contadorPublicoIntegrator.consultarContadorPublicAut(contadorPublicoDTOintegrator.getIdPersona());
         if(contadorPublicoAutDTO!=null){
         	activacionContadorPage.getContadorPublicoDTO().getContadorPublicoAutDTO().setNumRegistroCPA(contadorPublicoAutDTO.getNumRegistroCPA());
         }
