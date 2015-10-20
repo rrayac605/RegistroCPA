@@ -17,8 +17,14 @@ public class DomicilioDTO implements Serializable {
 	private String municipioDelegacion;
 	private String entidadFederativa;
 	private String codigoPostal;
-
+    private String cveEntidadFederativa; 
 	
+	public String getCveEntidadFederativa() {
+		return cveEntidadFederativa;
+	}
+	public void setCveEntidadFederativa(String cveEntidadFederativa) {
+		this.cveEntidadFederativa = cveEntidadFederativa;
+	}
 	public String getCalle() {
 		return calle;
 	}
