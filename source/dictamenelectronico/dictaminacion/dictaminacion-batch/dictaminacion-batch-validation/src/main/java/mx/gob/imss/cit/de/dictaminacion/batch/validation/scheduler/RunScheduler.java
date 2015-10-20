@@ -5,8 +5,11 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.RutasDAOImpl;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,6 +22,10 @@ public class RunScheduler {
 	 
 	  
 	  try{
+		  
+ 
+      
+       
 		  Properties p = new Properties();	  	  
 		  ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
 		  PropertyConfigurator.configure(p.getClass().getResource(labels.getString("configuracion.log4j.file")));
@@ -26,6 +33,8 @@ public class RunScheduler {
 		  String springConfig = "spring/batch/jobs/job-report.xml";    
 		  context = new ClassPathXmlApplicationContext(springConfig);	  
 		  context.start();
+		  RutasDAOImpl rutas =(RutasDAOImpl)context.getBean("rutasDaoImpl");
+	       rutas.obtieneRutas();
 	  }catch (Exception e){
 		  LOG.error(e.getMessage(), e);
 		  if(context!=null){
