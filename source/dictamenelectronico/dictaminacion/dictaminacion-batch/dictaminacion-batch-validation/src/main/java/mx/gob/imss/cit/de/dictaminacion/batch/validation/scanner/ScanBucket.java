@@ -12,6 +12,9 @@ import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.RutasDAOImpl;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.springframework.batch.core.Job;
