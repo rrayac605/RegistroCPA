@@ -64,14 +64,8 @@ public class ExamenIntegratorImpl implements ExamenIntegrator{
 	@Override
 	public void saveExamenAtestiguamiento(AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) 
 			throws DictamenNegocioException {
-			System.out.println("Examen Integrator DTO\n atestiguamiento Dictamen:" + atestiguamientoDictamenDTO.getCveIdAtestigDictamen()+
-			   " patron ditactamen: "+atestiguamientoDictamenDTO.getCveIdPatronDictamen().getCveIdPatronDictamen()+
-			   " tamanio: "+atestiguamientoDictamenDTO.getNdtRubrosAtestiguamiento().size() );
 		try {
 			AtestiguamientoDictamenTO atestiguamientoDictamenTO = TransformerIntegrationUtils.transformer(atestiguamientoDictamenDTO);
-			System.out.println("Examen Integrator TO \n atestiguamiento Dictamen:" + atestiguamientoDictamenTO.getCveIdAtestigDictamen()+
-					   " patron ditactamen: "+atestiguamientoDictamenTO.getCveIdPatronDictamen().getCveIdPatronDictamen()+
-					   " tamanio: "+atestiguamientoDictamenTO.getNdtRubrosAtestiguamiento().size());
 			examenService.saveExamenAtestiguamiento(atestiguamientoDictamenTO);
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);

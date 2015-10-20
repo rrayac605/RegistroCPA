@@ -76,42 +76,23 @@ public class ExamenServiceImpl implements ExamenService {
 		Date fecha = new Date();
 		Date fechaFinal = new Date();
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
-		System.out.println("Service TO \n atestiguamiento Dictamen:" + atestiguamientoDictamenTO.getCveIdAtestigDictamen()+
-				" patron ditactamen: "+atestiguamientoDictamenTO.getCveIdPatronDictamen().getCveIdPatronDictamen()+
-				" tamanio: "+atestiguamientoDictamenTO.getNdtRubrosAtestiguamiento().size());
 		try {
 			fechaFinal = sdf.parse(sdf.format(fecha));
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 			NdcEstadoAtestiguamientoDO ndcEstadoAtestiguamientoDO = new NdcEstadoAtestiguamientoDO();
 			ndcEstadoAtestiguamientoDO.setCveIdEstadoAtestiguamiento(EstadoAtestiguamientoEnum.VALIDADO.getId());
 			NdtAtestiguamientoDictamenDO atestiguamientoDictamenDO = TransformerServiceUtils.transformer(atestiguamientoDictamenTO);
-			System.out.println("Service DO\n atestiguamiento Dictamen:" + atestiguamientoDictamenDO.getCveIdAtestigDictamen()+
-					" patron ditactamen: "+atestiguamientoDictamenDO.getCveIdPatronDictamen().getCveIdPatronDictamen()+
-					" tamanio: "+atestiguamientoDictamenDO.getNdtRubrosAtestiguamiento().size());
-			
 			atestiguamientoDictamenDO.setCveIdEstadoAtestiguamiento(ndcEstadoAtestiguamientoDO);
 			atestiguamientoDictamenDO.setFecRegistroActualizado(fechaFinal);
-		
-			System.out.println("lista rubro dictamen: "+atestiguamientoDictamenDO.getNdtRubrosAtestiguamiento());
-			System.out.println("tamanio lista rubro dictamen: "+atestiguamientoDictamenDO.getNdtRubrosAtestiguamiento().size());
 			for(NdtRubroAtestiguamientoDictDO ndtRubroAtestiguamientoDictDO: atestiguamientoDictamenDO.getNdtRubrosAtestiguamiento()){
-				System.out.println("clave Atestiguamiento Dictamen "+ndtRubroAtestiguamientoDictDO.getCveIdAtestigDictamen().getCveIdAtestigDictamen());
-				System.out.println("clave rubros atestiguamiento "+ndtRubroAtestiguamientoDictDO.getCveIdAtestigDictamen().getNdtRubrosAtestiguamiento());
-				System.out.println("lista rubros "+ndtRubroAtestiguamientoDictDO.getNdtAtestigPreguntasRespuesta());
 				ndtRubroAtestiguamientoDictDO.setCveIdAtestigDictamen(atestiguamientoDictamenDO);
 				ndtRubroAtestiguamientoDictDO.setFecRegistroAlta(fechaFinal);
 				ndtRubroAtestiguamientoDictDO.setFecRegistroActualizado(fechaFinal);
-				System.out.println("lista respuestas: "+ndtRubroAtestiguamientoDictDO.getNdtAtestigPreguntasRespuesta());
-				System.out.println("tamanio lista respuestas: "+ndtRubroAtestiguamientoDictDO.getNdtAtestigPreguntasRespuesta().size());
 				for(NdtAtestigPreguntasRespuestDO ndtAtestigPreguntasRespuestDO:  ndtRubroAtestiguamientoDictDO.getNdtAtestigPreguntasRespuesta()){
-					System.out.println("clave atestiguamiento dentro de segundo for: "+ndtAtestigPreguntasRespuestDO.getCveIdAtestiguamientos());
 					ndtAtestigPreguntasRespuestDO.setCveIdRubroAtestigDictamen(ndtRubroAtestiguamientoDictDO);
 					ndtAtestigPreguntasRespuestDO.setFecRegistroAlta(fechaFinal);
 					ndtAtestigPreguntasRespuestDO.setFecRegistroActualizado(fechaFinal);
-
 				}
 			}
-			
 			ndtAtestiguamientoDictamenDAO.edit(atestiguamientoDictamenDO);
 			ndtAtestiguamientoDictamenDAO.flush();
 			

@@ -67,9 +67,7 @@ public class ExamenBean extends BaseBean {
 	
 	public void guardar(){	
 		AtestiguamientoDictamenDTO atestiguamientoDictamenDTO = examenPage.getAtestiguamientoDictamenDTOSeleccionado();
-		System.out.println("Rubro TAMANIO: "+atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getNdcRubros().size());
 		atestiguamientoDictamenDTO = convertirRubros(examenPage.getAtestiguamientoDTO(), atestiguamientoDictamenDTO);
-		System.out.println("Rubro Atestiguamiento TAMANIO: "+atestiguamientoDictamenDTO.getNdtRubrosAtestiguamiento().size());
 		try {
 			examenIntegration.saveExamenAtestiguamiento(atestiguamientoDictamenDTO);
 		} catch (Exception e) {
@@ -80,43 +78,32 @@ public class ExamenBean extends BaseBean {
 
 	private AtestiguamientoDictamenDTO convertirRubros(AtestiguamientoDTO atestiguamientoDTO, AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) {
 		if( atestiguamientoDictamenDTO.getNdtRubrosAtestiguamiento().size() == 0){
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++aqui++++++++++++++++++++++++++++++++++++++++++++++++++");
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++Inicio++++++++++++++++++++++++++++++++++++++++++++++++++");
 			List<RubroAtestiguamientoDictDTO> rubroAtestiguamientoDictDTOList = new ArrayList<RubroAtestiguamientoDictDTO>();
-			System.out.println("Inicio for rubro");
 			for(RubroDTO rubro: atestiguamientoDTO.getNdcRubros()){
+				List<AtestigPreguntasRespuestDTO> atestigPreguntasRespuestDTOList = new ArrayList<AtestigPreguntasRespuestDTO>();
 				RubroAtestiguamientoDictDTO rubroAtestiguamientoDictDTO = new RubroAtestiguamientoDictDTO();
 				rubroAtestiguamientoDictDTO.setCveIdAtestigDictamen(atestiguamientoDictamenDTO);
 				rubroAtestiguamientoDictDTO.setCveIdRubro(rubro);
-				System.out.println("Rubro id: "+rubroAtestiguamientoDictDTO.getCveIdRubro().getCveIdRubro());
-				System.out.println("Inicio for pregunta");
 				for(PreguntaDTO preguntaDTO: rubro.getNdcPreguntas()){
-					List<AtestigPreguntasRespuestDTO> atestigPreguntasRespuestDTOList = new ArrayList<AtestigPreguntasRespuestDTO>();
-					System.out.println("Pregunta id: "+preguntaDTO.getCveIdPregunta());
-					System.out.println("Inicio for opcion pregunta");
 					for(OpcionPreguntaDTO opcionPreguntaDTO: preguntaDTO.getNdcOpcionesPregunta() ){
-						System.out.println("Inicio if comparativo respuesta");
 						if (opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta().equals(preguntaDTO.getOpcionSeleccionada())){
-							System.out.println("Respuesta seleccionada id: "+preguntaDTO.getOpcionSeleccionada());
-							System.out.println("Respuesta id: "+opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
 							AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO = new AtestigPreguntasRespuestDTO();
 							atestigPreguntasRespuestDTO.setCveIdOpcionPregunta(opcionPreguntaDTO);
 							atestigPreguntasRespuestDTO.setCveIdRubroAtestigDictamen(rubroAtestiguamientoDictDTO);
 							atestigPreguntasRespuestDTO.setDesObservaciones(preguntaDTO.getObservaciones());
 							atestigPreguntasRespuestDTOList.add(atestigPreguntasRespuestDTO);
 						}
-						System.out.println("Fin if comparativo respuesta");
 					}
 					rubroAtestiguamientoDictDTO.setNdtAtestigPreguntasRespuesta(atestigPreguntasRespuestDTOList);
-					System.out.println("Fin for opcion pregunta");
 				}
-				System.out.println("Fin for  pregunta");
 				rubroAtestiguamientoDictDTOList.add(rubroAtestiguamientoDictDTO);
 			}
-			System.out.println("Fin for rubro");
 			atestiguamientoDictamenDTO.setNdtRubrosAtestiguamiento(rubroAtestiguamientoDictDTOList);
 		}else{
 			
 		}
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++Fin++++++++++++++++++++++++++++++++++++++++++++++++++");
 		return atestiguamientoDictamenDTO;
 	}
 
