@@ -11,6 +11,8 @@ public class PersonaDTO implements Serializable {
 	private String apellidoPaterno;
 	private String apellidoMaterno;
 	private String curp;
+	private String rfc;
+
 	private String nombreCompleto;
 	private String correoElectronico;
 	private String telefono;
@@ -18,6 +20,13 @@ public class PersonaDTO implements Serializable {
 	private Integer idSexo;
 	private ContadorPublicoDTO contadorPublicoAutDTO;
 
+
+	public String getRfc() {
+		return rfc;
+	}
+	public void setRfc(String rfc) {
+		this.rfc = rfc;
+	}
 	
 	public Integer getIdSexo() {
 		return idSexo;
