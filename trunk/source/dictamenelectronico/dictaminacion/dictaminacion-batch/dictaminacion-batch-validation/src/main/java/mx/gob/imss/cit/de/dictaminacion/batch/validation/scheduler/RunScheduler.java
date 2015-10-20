@@ -23,8 +23,7 @@ public class RunScheduler {
 	  
 	  try{
 		  
- 
-      
+ System.out.println("inicio"); 
        
 		  Properties p = new Properties();	  	  
 		  ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
@@ -35,6 +34,7 @@ public class RunScheduler {
 		  context.start();
 		  RutasDAOImpl rutas =(RutasDAOImpl)context.getBean("rutasDaoImpl");
 	       rutas.obtieneRutas();
+	       
 	  }catch (Exception e){
 		  LOG.error(e.getMessage(), e);
 		  if(context!=null){
