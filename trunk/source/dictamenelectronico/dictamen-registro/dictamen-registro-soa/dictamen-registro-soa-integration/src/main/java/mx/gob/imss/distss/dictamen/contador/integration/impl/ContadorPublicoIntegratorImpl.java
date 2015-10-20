@@ -51,6 +51,10 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 				personaDTO.setApellidoPaterno(fisica.getPrimerApellido());
 				personaDTO.setApellidoMaterno(fisica.getSegundoApellido());
 				personaDTO.setNombreCompleto(fisica.getNombreCompleto());
+				personaDTO.setFechaNacimiento(fisica.getFechaNacimiento());
+				personaDTO.setIdSexo(fisica.getSexo().getIdSexo());
+				personaDTO.setRfc(fisica.getRfc());
+				
 				LOGGER.info("fisica.toString="+fisica.toString());
 				if(fisica.getCorreoElectronico()!=null){
 				  personaDTO.setCorreoElectronico(fisica.getCorreoElectronico().getCorreo());
@@ -75,6 +79,8 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 				domicilioDTO.setyCalle(fisica.getDomicilioFiscal().getVialidadReferenciaSecundaria().getNombre());
 				domicilioDTO.setColoniaAsentamiento(fisica.getDomicilioFiscal().getColonia());
 				domicilioDTO.setLocalidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getNombre());
+				
+				domicilioDTO.setCveEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getClave());
 				domicilioDTO.setEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
 				domicilioDTO.setMunicipioDelegacion(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
 				domicilioDTO.setCodigoPostal(fisica.getDomicilioFiscal().getCodigoPostal().getCodigoPostal());
