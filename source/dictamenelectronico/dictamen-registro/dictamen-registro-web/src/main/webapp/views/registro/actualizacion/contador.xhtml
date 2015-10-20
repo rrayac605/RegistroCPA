@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:panelGrid id="pngDatosContador" columns="2" style="width: 100%">
+		<p:outputLabel id="lblCurpCA" for="txtCurpCA">#{msg['message.actualizacion.datoscontador.curp']}</p:outputLabel>
+		<h:outputText id="txtCurpCA" value="#{actualizacionRegistroPage.curp}" />
+
+		<p:outputLabel id="lblNombreCA" for="txtNombreCA">#{msg['message.actualizacion.datoscontador.nombre']}</p:outputLabel>
+		<h:outputText id="txtNombreCA"
+			value="#{actualizacionRegistroPage.nombre} #{actualizacionRegistroPage.apellidoPaterno} #{actualizacionRegistroPage.apellidoMaterno}"
+			style="width:70%" />
+
+		<p:outputLabel id="lblRfcCA" for="txtRfcCA">#{msg['message.actualizacion.datoscontador.rfc']}</p:outputLabel>
+		<h:outputText id="txtRfcCA" value="#{actualizacionRegistroPage.rfc}" />
+	</p:panelGrid>
+	<p:panel id="pnlDatosRubroI"
+		header="#{msg['message.actualizacion.panel.header']}"
+		style="width:100%">
+		<p:panelGrid id="pngDomicilioFiscalCA1" style="width:100%">
+			<p:row>
+				<p:column>
+					<p:outputLabel id="lblCalleCA">#{msg['message.actualizacion.datoscontador.domicilio.calleobl']}</p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:outputLabel id="lblNumExtCA">#{msg['message.actualizacion.datoscontador.domicilio.numextobl']}</p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:outputLabel id="lblNumIntCA">#{msg['message.actualizacion.datoscontador.domicilio.numint']}</p:outputLabel>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<h:outputText id="txtCalleCA" />
+				</p:column>
+				<p:column>
+					<h:outputText id="txtNumExtCA" maxlength="6" />
+				</p:column>
+				<p:column>
+					<h:outputText id="txtNumIntCA" maxlength="6" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		<p:panelGrid id="pngDomicilioFiscalCA2" style="width:100%">
+			<p:row>
+				<p:column>
+					<p:outputLabel id="lblEntreCalle">#{msg['message.actualizacion.datoscontador.domicilio.calle1']}</p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:outputLabel id="lblYCalle">#{msg['message.actualizacion.datoscontador.domicilio.calle2']}</p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:spacer />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<h:outputText id="txtEntreCalle"/>
+				</p:column>
+				<p:column>
+					<h:outputText id="txtYCalle" />
+				</p:column>
+				<p:column>
+					<p:spacer />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		<p:panelGrid id="pngDomicilioFiscalCA3" style="width:100%">
+			<p:row>
+				<p:column>
+					<p:outputLabel id="lblColonia">#{msg['message.actualizacion.datoscontador.domicilio.coloniaobl']}</p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:outputLabel id="lblLocalidad">#{msg['message.actualizacion.datoscontador.domicilio.localidadobl']}</p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:outputLabel id="lblMunicipio">#{msg['message.actualizacion.datoscontador.domicilio.municipioobl']}</p:outputLabel>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<h:outputText id="txtColonia" />
+				</p:column>
+				<p:column>
+					<h:outputText id="txtLocalidad" />
+				</p:column>
+				<p:column>
+					<h:outputText id="txtMunicipio" />
+				</p:column>
+			</p:row>
+			</p:panelGrid>
+			<p:panelGrid id="pngDomicilioFiscalCA4" style="width:100%">
+				<p:row>
+					<p:column>
+						<p:outputLabel id="lblEntidad">#{msg['message.actualizacion.datoscontador.domicilio.entidadobl']}</p:outputLabel>
+					</p:column>
+					<p:column>
+						<p:outputLabel id="lblCodigoPostal">#{msg['message.actualizacion.datoscontador.domicilio.codigoobl']}</p:outputLabel>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText id="txtEntidad" disabled="true" />
+					</p:column>
+					<p:column>
+						<h:outputText id="txtCodigoPostal" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid id="pngDomicilioFiscalCA5" style="width:100%">
+				<p:row>
+					<p:column>
+						<p:outputLabel id="lblCorreoElectronico">#{msg['message.actualizacion.datoscontador.correoelectronico']}</p:outputLabel>
+					</p:column>
+					<p:column>
+						<p:outputLabel id="lblTelefono">#{msg['message.actualizacion.datoscontador.telefono']}</p:outputLabel>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText id="txtCorreoElectronico"  />
+					</p:column>
+					<p:column>
+						<h:outputText id="txtTelefono" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+	</p:panel>
+
+	
+
+	<p:panel id="pnDatosContacto"
+		header="#{msg['message.actualizacion.datoscontacto.panel.header']}">
+		<p:panelGrid id="pngDatosContacto" columns="2" style="width:100%">
+			<p:outputLabel id="lblCorreo2">#{msg['message.actualizacion.datoscontacto.correo2']}</p:outputLabel>
+			<p:outputLabel id="lblConCorreo2">#{msg['message.actualizacion.datoscontacto.confirmarcorreo2']}</p:outputLabel>
+
+			<p:inputText id="txtCorreo2" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+			<p:inputText id="txtConfCorreo2" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+
+			<p:outputLabel id="lblCorreo3">#{msg['message.actualizacion.datoscontacto.correo3']}</p:outputLabel>
+			<p:outputLabel id="lblConCorreo3">#{msg['message.actualizacion.datoscontacto.confirmarcorreo3']}</p:outputLabel>
+
+			<p:inputText id="txtCorreo3" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+			<p:inputText id="txtConfCorreo3" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+		</p:panelGrid>
+	</p:panel>
+
+	<p:panel id="pnInfProf"
+		visible="#{actualizacionRegistroPage.habilitaDatosPersonales}"
+		style="width:100%">
+		<p:panelGrid id="pngCedula" columns="2" style="width:100%">
+			<p:outputLabel id="lblNumCedula">#{msg['message.actualizacion.datoscontador.numcedula']}</p:outputLabel>
+			<p:outputLabel id="lblFechaCed">#{msg['message.actualizacion.datoscontador.fechaexpcedula']}</p:outputLabel>
+
+			<p:inputText id="txtNumCedula" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+			<p:calendar id="dtFechaCed" showOn="button" pattern="dd-MM-yyyy" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" />
+		</p:panelGrid>
+	</p:panel>
+	
+	<p:dialog id="dlgDatosCorrectos" visible="#{not actualizacionRegistroPage.habilitaDatosPersonales}">
+		<p:panel id="pnDatosCorrecto" style="width:100%">
+			<h:panelGroup id="pngDatosCorrectos">
+				<h3>#{msg['message.actualizacion.datoscontador.domicilio.datoscorrectos']}</h3>
+			</h:panelGroup>
+			<p:panelGrid columns="2">
+				<p:commandButton id="btnSiDatosDom"
+					value="#{msg['message.button.si']}"
+					actionListener="#{actualizacionRegistroBean.habilitaPanelPersonales}"
+					update="dlgDatosCorrectos pnDatosContacto pnInfProf" styleClass="ui-priority-primary"/>
+				<p:commandButton id="btnNoDatosDom"
+					value="#{msg['message.button.no']}" styleClass="ui-priority-primary"/>
+			</p:panelGrid>
+		</p:panel>
+	</p:dialog>
+</ui:composition>
