@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+
+	<h:head>
+		<title>#{msg['message.bajavolutaria.header']}</title>
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<!--  
+            <h:outputScript library="primefaces" name="jquery/jquery.js"/>
+            <script language="javascript" type="text/javascript" src="#{request.contextPath}/js/jquery-1.7.1.min.js"></script>
+
+            <script language="javascript" type="text/javascript" src="#{request.contextPath}/js/utils.js"></script>
+            <script language="javascript" type="text/javascript" src="#{request.contextPath}/js/load.js"></script>
+            <script language="javascript" type="text/javascript" src="#{request.contextPath}/js/posicion.js"></script>
+       
+
+            <style type="text/css">.autoWidthDialog { position: fixed; width: 400; top:50px; left:400px; }</style>
+           -->
+		<script language="javascript"></script>
+
+
+		<ui:insert name="head"></ui:insert>
+	</h:head>
+
+	<h:body>
+
+		<p:panel id="pnBajaVoluntaria" header="Inicio de Sesion"
+			footer="Registro de Contadores Públicos Autorizados">
+			<h:form id="formBajaVoluntaria">
+
+				<table width="650px" cellpadding="2" border="0">
+					<tr>
+
+						<td align="left" colspan="2"><h:outputLabel value="*"
+								style="color:red" /> <p:outputLabel value=" Campos obligatorios"
+								style="color:red" /></td>
+
+					</tr>
+				</table>
+
+				<table width="630px" cellpadding="4" border="1">
+
+					<tr>
+
+						<td align="right" colspan="1"><h:outputText value="CURP: " />
+							<h:outputLabel value="*" style="color:red" /> <h:outputLabel
+								value=" " /> <p:graphicImage id="helpdocCURP"
+								style="cursor:pointer" value="/images/ayuda.jpg" /> <p:overlayPanel
+								id="imgPanelCURP" for="helpdocCURP" showEffect="blind"
+								hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
+								dismissable="false" showCloseIcon="true">CURP asignado al Contador Público Autorizado</p:overlayPanel>
+						</td>
+						<td><h:panelGrid columns="3">
+								<p:inputText id="txtCURP"  value="#{loginPage.curp}" size="13" required="true" />
+								<p:message for="txtCURP" />
+								<p:tooltip for="txtCURP" value="CURP" showEffect="fade"
+									hideEffect="fade" />
+							</h:panelGrid></td>
+
+
+
+					</tr>
+					
+
+					<tr>
+						<td align="left" colspan="1"></td>
+						<td><p:commandButton value="(1.1) Login" ajax="false"
+								process="@this,formServer" update=":tabView:pnServidor"
+								id="btnGuardar"
+								actionListener="#{loginBean.iniciarSesion}"
+								styleClass="ui-priority-primary" />  </td>
+					</tr>
+					<tr>
+						<td align="left" colspan="2"><p:messages globalOnly="true"
+								showDetail="true" autoUpdate="true" closable="true" /></td>
+					</tr>
+
+				</table>
+
+			</h:form>
+		</p:panel>
+
+	</h:body>
+
+</f:view>
+</html>
