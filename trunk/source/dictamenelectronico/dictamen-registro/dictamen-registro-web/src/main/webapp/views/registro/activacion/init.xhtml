@@ -10,6 +10,7 @@
 	
 	<ui:define name="content">
 			<p:outputLabel value="#{activacionContadorBean.init()}" />
+				<p:growl id="msgs1" showDetail="true" />
 	
 	
 	     <p:panelGrid style="width:100%;"
@@ -82,7 +83,7 @@
 								<p:outputLabel>Registro IMSS</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.registroIMSS}</p:outputLabel>
+								<p:outputLabel>#{activacionContadorPage.contadorPublicoDTO.contadorPublicoAutDTO.numRegistroCPA}</p:outputLabel>
 							</p:column>
 						</p:row>
 					</p:panelGrid>

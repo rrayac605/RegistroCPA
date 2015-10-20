@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.dictamen.contador.web.beans;
 
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
@@ -8,10 +9,13 @@ import javax.faces.bean.ViewScoped;
 import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.contador.web.constants.RegistroWebConstants;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
+import mx.gob.imss.cit.dictamen.contador.web.util.ResourceBundleUtils;
 
 @ManagedBean(name = "activacionContadorBean")
 @ViewScoped
@@ -34,7 +38,11 @@ public class ActivacionContadorBean extends BaseBean {
 	  
       String curp = (String) FacesUtils.getSessionMap().get("curp");
       String rfc = (String) FacesUtils.getSessionMap().get("rfc");
-
+      if(curp==null && rfc ==null){
+			FacesUtils.messageError(1,"Debe Iniciar Sesion");
+      
+      }else{
+      
       LOGGER.info("CURP="+curp);
       LOGGER.info("rfc="+rfc);
       LOGGER.info("conexion.contadorPublicoIntegrator");
@@ -42,8 +50,15 @@ public class ActivacionContadorBean extends BaseBean {
       if(contadorPublicoDTOintegrator!=null){
 	    activacionContadorPage.setContadorPublicoDTO(contadorPublicoDTOintegrator);
         LOGGER.info("Nombre="+contadorPublicoDTOintegrator.getNombre());
+        LOGGER.info("idPersona="+contadorPublicoDTOintegrator.getIdPersona());
+
+        ContadorPublicoAutDTO contadorPublicoAutDTO = contadorPublicoIntegrator.consultarContadorPublicAut(contadorPublicoDTOintegrator.getIdPersona());
+        if(contadorPublicoAutDTO!=null){
+        	activacionContadorPage.getContadorPublicoDTO().getContadorPublicoAutDTO().setNumRegistroCPA(contadorPublicoAutDTO.getNumRegistroCPA());
+        }
+        
       }
-      
+      }
       
 	}
 	
