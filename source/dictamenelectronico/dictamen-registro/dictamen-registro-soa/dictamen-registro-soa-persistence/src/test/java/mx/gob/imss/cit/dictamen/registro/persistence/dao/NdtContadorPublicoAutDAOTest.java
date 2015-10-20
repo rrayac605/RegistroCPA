@@ -5,11 +5,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import mx.gob.imss.cit.dictamen.contador.model.DitPersonaDO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
-import mx.gob.imss.cit.dictamen.contador.persistence.dao.DitPersonaDAO;
 import mx.gob.imss.cit.dictamen.contador.persistence.dao.NdtContadorPublicoAutDAO;
-import mx.gob.imss.cit.dictamen.contador.persistence.dao.impl.DitPersonaDAOImpl;
 import mx.gob.imss.cit.dictamen.contador.persistence.dao.impl.NdtContadorPublicoAutDAOImpl;
 import mx.gob.imss.cit.dictamen.registro.persistence.dao.base.AbstractDBTestUnit;
 
@@ -29,9 +26,9 @@ public class NdtContadorPublicoAutDAOTest extends AbstractDBTestUnit{
 	@Test
 	public void testContador() {
 		LOGGER.info("prueba");
-		NdtContadorPublicoAutDO ndtContadorPublicoAutDO = localDAO.selectContadorPublicoAutByIdEstado(1, 1);
+		NdtContadorPublicoAutDO ndtContadorPublicoAutDO = localDAO.selectContadorPublicoAutByIdPersona(37472955L);
 		
 		LOGGER.info("Lista: " + ndtContadorPublicoAutDO);
-		Assert.assertNull(ndtContadorPublicoAutDO);
+		LOGGER.info("Lista.size: " + ndtContadorPublicoAutDO.getNdtR3ColegioDOList().size());
 	}
 }

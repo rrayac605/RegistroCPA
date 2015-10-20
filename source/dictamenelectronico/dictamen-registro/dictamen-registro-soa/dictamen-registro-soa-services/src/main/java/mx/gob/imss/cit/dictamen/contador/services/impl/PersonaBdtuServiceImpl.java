@@ -31,9 +31,7 @@ import mx.gob.imss.ctirss.gestionpersonas.servicios.business.PersonaBusinessRemo
 public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaBdtuService{
 
 	private static final Logger LOGGER = Logger.getLogger(BdtuServiceImpl.class);
-	
 
-	
 	private CalificacionesPersonaBusinessServiceRemote calificacionesPersonaBusinessServiceRemote;
 	
 	private IndividuoServiceBusinessRemote individuoServiceBusinessRemote;

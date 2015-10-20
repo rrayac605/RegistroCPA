@@ -1,15 +1,15 @@
 package mx.gob.imss.cit.dictamen.contador.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -82,7 +82,9 @@ public class DitPersonaDO implements Serializable{
 	@Temporal( TemporalType.TIMESTAMP)
 	@Column(name="FEC_REGISTRO_ACTUALIZADO")
 	private Date fecRegistroActualizado;
-
+     
+	private List<NdtContadorPublicoAutDO> lstNdtContadorPublicoAutDO = new ArrayList<NdtContadorPublicoAutDO>();
+	
 	public DitPersonaDO() {
 	}
 
@@ -229,5 +231,14 @@ public class DitPersonaDO implements Serializable{
 	public void setFecRegistroActualizado(Date fecRegistroActualizado) {
 		this.fecRegistroActualizado = fecRegistroActualizado;
 	}
-	
+
+	public List<NdtContadorPublicoAutDO> getLstNdtContadorPublicoAutDO() {
+		return lstNdtContadorPublicoAutDO;
+	}
+
+	public void setLstNdtContadorPublicoAutDO(
+			List<NdtContadorPublicoAutDO> lstNdtContadorPublicoAutDO) {
+		this.lstNdtContadorPublicoAutDO = lstNdtContadorPublicoAutDO;
+	}
+
 }
