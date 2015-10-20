@@ -70,19 +70,18 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 				if(fisica.getDomicilioFiscal()!=null){
 				domicilioDTO.setCalle(fisica.getDomicilioFiscal().getCalle());
 				LOGGER.info("ContadorPublicoIntegrator.Calle="+fisica.getDomicilioFiscal().getCalle());
-				domicilioDTO.setNumeroExterior(fisica.getDomicilioFiscal().getNumExterior1());
+				domicilioDTO.setNumExterior(fisica.getDomicilioFiscal().getNumExterior1().toString());
 				domicilioDTO.setLetraExterior(fisica.getDomicilioFiscal().getNumExteriorAlf());
-				domicilioDTO.setNumeroInterior(fisica.getDomicilioFiscal().getNumInterior());
+				domicilioDTO.setNumInterior(fisica.getDomicilioFiscal().getNumInterior().toString());
 				domicilioDTO.setLetraInterior(fisica.getDomicilioFiscal().getNumInteriorAlf());
 
 				domicilioDTO.setEntreCalle(fisica.getDomicilioFiscal().getVialidadReferenciaPrimaria().getNombre());
 				domicilioDTO.setyCalle(fisica.getDomicilioFiscal().getVialidadReferenciaSecundaria().getNombre());
-				domicilioDTO.setColoniaAsentamiento(fisica.getDomicilioFiscal().getColonia());
+				domicilioDTO.setColonia(fisica.getDomicilioFiscal().getColonia());
 				domicilioDTO.setLocalidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getNombre());
 				
-				domicilioDTO.setCveEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getClave());
-				domicilioDTO.setEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
-				domicilioDTO.setMunicipioDelegacion(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
+				domicilioDTO.setEntidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
+				domicilioDTO.setMunicipio(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
 				domicilioDTO.setCodigoPostal(fisica.getDomicilioFiscal().getCodigoPostal().getCodigoPostal());
 				}
 				contadorPublicoAutDTO.setDomicilioDTO(domicilioDTO);
