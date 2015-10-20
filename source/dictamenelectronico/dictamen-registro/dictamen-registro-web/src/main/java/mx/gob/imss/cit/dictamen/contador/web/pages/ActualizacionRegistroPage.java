@@ -10,9 +10,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "actualizacionRegistroPage")
 @SessionScoped
 public class ActualizacionRegistroPage implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 8517130890030075220L;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
