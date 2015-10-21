@@ -23,7 +23,7 @@
 						<UML:TaggedValue tag="owner" value="mfonsecam"/>
 						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
 						<UML:TaggedValue tag="logxml" value="FALSE"/>
-						<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;CheckedOutTo=mfonsecam;CRC=0;"/>
+						<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;CRC=0;"/>
 						<UML:TaggedValue tag="batchsave" value="0"/>
 						<UML:TaggedValue tag="batchload" value="0"/>
 						<UML:TaggedValue tag="phase" value="1.0"/>
@@ -34,10 +34,444 @@
 						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
-					<UML:Namespace.ownedElement/>
+					<UML:Namespace.ownedElement>
+						<UML:Collaboration xmi.id="EAID_0D2F8218_4F28_44f5_BA51_131618FE589A_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement>
+								<UML:ClassifierRole name="RF-C001. Tipos de solicitud" xmi.id="EAID_009ED3B2_E0EE_45b4_AEE3_D297BD741289" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="Existen tres tipos de solicitudes que el actor Titular de la Division de Dictamen podrá revisar, los tipo son:&#xA;- Solicitud de Registro&#xA;- Solicitud reactivación de registro&#xA;- Solicitud de baja del registro "/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_0D2F8218_4F28_44f5_BA51_131618FE589A"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 11:58:02"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 11:59:04"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Caracteristicas"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="mfonsecam"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1024"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={23FE1C46-FE9A-475a-9837-848FDBC541DE}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={009ED3B2-E0EE-45b4-AEE3-D297BD741289}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="RF-C003. Funcionalidad para cerrar ventana" xmi.id="EAID_40B4F997_016A_4704_A8B4_C6FE4323B4EF" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="La ventana en la que se despliegue cada consulta, en la parte superior derecha tendrá una “X”, cuya funcionalidad será para cerrar esa ventana."/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_0D2F8218_4F28_44f5_BA51_131618FE589A"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 12:00:54"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 13:37:31"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Caracteristicas"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="mfonsecam"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1026"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={D4402306-DD58-4f75-8B51-7F11B0B1B02E}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={40B4F997-016A-4704-A8B4-C6FE4323B4EF}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="RF-C004. Estructura de folio" xmi.id="EAID_4EA26ABC_ECAC_4bfe_A6D0_F198581BE3F7" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="El folio de la solicitud, ejemplo: 123456789123456789123, estará determinado por el contador del portal IMSS Digital. (Revisión de construcción de folio e identificación independiente DNASS, propuesta de estructura CCD-CCO). La longitud del campo será de acuerdo a la definida en el portal IMSS Digital."/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_0D2F8218_4F28_44f5_BA51_131618FE589A"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 12:01:15"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 13:37:37"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Caracteristicas"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="mfonsecam"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1027"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={35585F58-80DA-4fd0-BD46-37AE6EA6B7FB}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={4EA26ABC-ECAC-4bfe-A6D0-F198581BE3F7}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="RF-C002. Detalle de Pantallas" xmi.id="EAID_7A2FDC5E_B776_486a_AC5D_607648C00686" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="Se mostrarán en pantallas los campos que se especifican asociados a este requerimiento:"/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_0D2F8218_4F28_44f5_BA51_131618FE589A"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 11:59:53"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:00:44"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Caracteristicas"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="mfonsecam"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1025"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={BC933300-E35C-4375-BA37-0AD534F934B0}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={7A2FDC5E-B776-486a-AC5D-607648C00686}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="RF-C005. Estructura de CURP" xmi.id="EAID_FA665D15_6984_4aa7_AF7E_F78DB506B52F" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.stereotype>
+										<UML:Stereotype name="Functional"/>
+									</UML:ModelElement.stereotype>
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="documentation" value="El sistema tomará de inicio de sesión como campo llave el CURP del usuario, el cual previamente ya se validó a 18 posiciones bajo la estructura que se especifica asociado a este requerimiento:"/>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_0D2F8218_4F28_44f5_BA51_131618FE589A"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 12:01:34"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 13:37:44"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Caracteristicas"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="mfonsecam"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="object_style" value="MDoc=1;"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="stereotype" value="Functional"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1028"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="difficulty" value="Medium"/>
+										<UML:TaggedValue tag="priority" value="Medium"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={A3B9E02B-8372-4a34-90AA-093C67249EAF}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={FA665D15-6984-4aa7-AF7E-F78DB506B52F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+										<UML:TaggedValue tag="modeldocument" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIANJsVUfkHW/JDjMAALnaBAAHABEAc3RyLmRhdFVUDQAHcZUnVnGVJ1ZxlSdW
+7X1Nk+O4teVeEfoPufPMxHsvSH1neGW37eiF23a89sxKERP6IKrSVmWmJVVX9zj6vw8uhAMw
+QVIiJZAApXtud0FJkRR0BFwA9wDgv5f7o0iXq9fDy3Kbid3q9dM4WaRLcXxd/2P5dZPSUZEM
+B/9eirfX43G9ky+Sp6U4fHs5HJ5+t39Z7X77qzyWymP7ty+rV5luPq/2h+w4evr7y5fs8PSX
+7NvTf9Nb6sRR2Yk//vJl/Xa60djc3LyflN5oUnaizdC07O3vVruX9f5FnTCTb7y+7J6+e/u6
+f8n2dHd1fK6P//nr5mW7evpRcvPbX38lBjZvu7e9pODpt8t9th1Np8tP+yx7pRfr3ddMpqd3
+ktPxRB1NPhybTdTBdLQoOTWdz0qOjtKPt9BH8WGFbFTceybvor7F4fjLLjt8zrKj/LKHUbLc
+iNFys06Xm8+b9fvqmD795W3/5cTi5iCLQlpx2h8ysfq6Oz79bbVffdqv3j8//UkWEbrsMFoe
+XrOfj4m+eLFcFy//+1+/e0rV2eOPZ09Kzl6Kl2S5e0kXyXL/kqhrR+raiXttxZXjmb1yrK6c
+1rxyOrFXTtSVs5pXzkf2yulwoK6d17z2ObHXztSVi5pXpkmOpLm69LnupaMcSwt1aZrUvXaS
+4+n5dG2Ka9++Hncvr9ku+ynbyTvJ/w7jkfqZxx/vdViP5G0OK5mPw8657un7bLV9ef2kS01q
+Cln+rFTfPVF3n9S+e2ruPtK/VGqKZf680en+ukhPa99/ZO5/Kn2pKbj5s8b67qcqUJ+bsbn7
+qYSmpnDnz5rk7v7S6P4Tc//p6f6mCuTPmur7N/1lp+buM3Bvqkn+vJm5/9ddow+YmQ841YfU
+1KX8WXN9+4RuT/w45fzMB8zNB+haY2pc/qyFyX+TzC/MvU+1SuYPNTJXj87n9V8b2YQed5mm
+d2QqZpVzl5X6P8llWsf5l69f1plsVZ7+/HLQTt7x8nXu8vuvu112/HAXx/uX3OWwpq+S0heX
+XuD3b9tfnv4urzhd/rEBkL/s+cvl/5MF/ftFNl2pvZluTkYfWwVZzs/fLneDMch1mofiF5IN
+7DHDr3q6xjYLs4pr/rZbvbzmvrfTHJz8nXPNj8f9Gz7BaQOSkhL+9Mcv759Xh5eDumJsy5m+
+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
+Ju6w1nfEp1VFVFdf3Glt745PCzX9aXavqkiXfKpHbk/vWxXpkk9hnrpjVJEpGb1xL360Wz5z
+qoh6bLm4Oz/aNZ+yR68olamS8MSd1fou+YQIcs+qSJd82vn26IfG9nTI29EZn5hxuyXL7UPC
+/tMXNMPplEwyrYL5Nrbfz5T4LH+n/TQZkUlGM7Li+31MhwP3SJcpHsWlBLtt8f3+pcRn+Tvd
+ptBCEwVhdn9zz4s9PfFZ9k6wdEpmmR09k5WcF2Ua0n9Wpcavqkl6xfdjTsP6TzdVYdGN9avu
++/GnsfhPpCiTKKN986Px+E/4ySQlk8dVCLp4XtxpVP5Tx57AqJJEZyXnRZxG5j+nZLLWr8lE
+72p7fP4TaTonkwzPyURvmI3HfyI1PXv40TlZ8bw406j8J1KtLxk/qqN7hfMiTOPyn0jRW1JJ
+r0afsfpPREhSBdEbRuPzn+kzmWRUbTcs2H/enCKybMZICsXzYkwj85+auWRCJuxTL3qjigTU
+O+pBz8bB3JLnLZndpyS2dDhwj8SWruZkMk3Iiu/HlVL5LH8nnnQ1IZPplKz4fkwplc/yd6JM
+9S5vWMNceD94eqrvZe9EnuonDaiE/o7Er8bvP6tS41dTsuL7YdI++E83hR+FX3XfD5n2zH/q
+FGUSZdR9P1zaO/+p/aTxm9qPFs4LlPbQf7otkV7XVDgvSNpL/xllS3RK++k/kWJ9PZ404L7f
+fdo7/4k00p59D/0nUr1LpvGjes1y4bxO0z76T6SmbOqy6r4fIu25/4yuZ99X/2laosh69D32
+n27PXvvTwnmdpr30n2iJsMYO0xsjWLUYvd7RMzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdf
+MJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCf
+fsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37B
+fPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6
+BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz
+6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kX
+zKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8yn
+XzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18w
+n37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+
+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8
++gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF
+8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPp
+F8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfM
+p18wn37BfPoF8+kXzKdfMJ9+wXz6BfPpF8ynXzCffsF8+gXz6RfMp18wn37BfPoF8+kXzKdf
+MJ9+wXz6BfPpF8ynX3TFZ5IlCunklAIpUn3811+Hg+Vu9fpplEwXy88vm89LMVlu16d093ZK
+xWGULN9Xe3nu6d/j/u3bVv77afX+eZ7IF++r7XaXJgv9UuzG+tU+d3CPg0dcIo44tDaH1nRo
+l4njf8o77457+VHyEze7n7L9cbU7ylfr/XZ/XNK/B/XvtzTRR9elR3elR/eFo/Ljd3P9gr6B
+eqG+wOnQXh862kNHfWiNy2TuN9lu9/N4mvYw17PZIjn9yNvly+txvVseDvKP1errz8nyoH4O
++efyX/9YfnvZbo47+uN9t3p5XYqESsnELUtTXZamuixNlxsxOpUneS95hD42yCeePuxUuLr7
+9Ke/df+Nn/62f/mS7VdPu+wo/91mO33k6XfvMi8v27fAnPwxICc/vW1Wuwg5+SEgJ7ac/Jh9
++vq6fWNSinXnL29f1vvsP56ynzfZ+/Hrimg6HTs8bd6+vH/NDse3Qxlh3HheaoaKjedPXz6J
+nmS+8zb0aR6gWvwp23ym+vD0l9Xm5ctL9np8+w8q99nr/1NV4f1t/yQry++WvxGpfOcHWSt+
+efrD8jfZdnXqQ/6P30n88MMf/vA/uY5cU8zK6sj+U08y330dWXRfR8rKdXef/pQ83Dd+frhv
+nD7cNx7F8Y25fbrk4ovtUx9y3X3DFGJM893bXg5T3t9eZf9Njn4/yW7Z82u2f3tafl2MRsnT
+8jfP4+/V65ReT54oO0/f69HNL/nTfiic9sPXf2TyNK4115S/Yq3hkc+Zgvz70JXnabd6+uPr
+8WW72soh0Tbbr44vP6247F9TfMrKPo9oqsth92Wfy/U1RaNYrvuQ6+4L9J+7L9BPP758+krB
+q+xp8/Z6eHtd0cv41ID/jomayESBqLipUWzYYV5yPUWHyZ3gM4UxCVABvv/rD3/97s+/+z9G
+uj1TwnerAx3hkl4sLGUlnbu8laUuQEkvK9/q0z9+7r92JR8zThap/phEf0yiP0adpedU/Toc
+/H9QSwECFwsUAAAACADSbFVH5B1vyQ4zAAC52gQABwAJAAAAAAAAAAAAAIAAAAAAc3RyLmRh
+dFVUBQAHcZUnVlBLBQYAAAAAAQABAD4AAABEMwAAAAA=</UML:TaggedValue>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+							</UML:Namespace.ownedElement>
+							<UML:Collaboration.interaction/>
+						</UML:Collaboration>
+					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
+		<UML:Diagram name="Caracteristicas" xmi.id="EAID_277301F4_A595_4155_8217_DCD4978ACF1D" diagramType="CustomDiagram" owner="EAPK_0D2F8218_4F28_44f5_BA51_131618FE589A" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="mfonsecam"/>
+				<UML:TaggedValue tag="created_date" value="2015-10-21 11:46:41"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-21 13:37:47"/>
+				<UML:TaggedValue tag="package" value="EAPK_0D2F8218_4F28_44f5_BA51_131618FE589A"/>
+				<UML:TaggedValue tag="type" value="Custom"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="93"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=AB06C605;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Requirements;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=93;Top=337;Right=203;Bottom=383;" subject="EAID_FA665D15_6984_4aa7_AF7E_F78DB506B52F" seqno="1" style="DUID=275263F3;"/>
+				<UML:DiagramElement geometry="Left=93;Top=277;Right=203;Bottom=323;" subject="EAID_4EA26ABC_ECAC_4bfe_A6D0_F198581BE3F7" seqno="2" style="DUID=7BE4B5AB;"/>
+				<UML:DiagramElement geometry="Left=93;Top=192;Right=203;Bottom=264;" subject="EAID_40B4F997_016A_4704_A8B4_C6FE4323B4EF" seqno="3" style="DUID=A6C149C5;"/>
+				<UML:DiagramElement geometry="Left=94;Top=128;Right=204;Bottom=172;" subject="EAID_7A2FDC5E_B776_486a_AC5D_607648C00686" seqno="4" style="DUID=0CFA5DB2;"/>
+				<UML:DiagramElement geometry="Left=94;Top=61;Right=204;Bottom=105;" subject="EAID_009ED3B2_E0EE_45b4_AEE3_D297BD741289" seqno="5" style="DUID=7A54CC48;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
