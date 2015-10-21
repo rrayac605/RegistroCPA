@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-10-21 14:05:26"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\Contadores\Consulta del Catálogo de Contadores Públicos Autorizados\Consultar Catálogo CPA.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-10-21 13:51:14"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-10-21 14:10:22"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-10-21 13:51:14"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -36,7 +36,94 @@
 						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
-					<UML:Namespace.ownedElement/>
+					<UML:Namespace.ownedElement>
+						<UML:UseCase name="Consultar Catálogo CPA Público General" xmi.id="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F" visibility="public" namespace="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-21 14:16:58"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 17:03:27"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Consultar Catálogo CPA"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="lfierro"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="10330"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="Deberá de existir un Catálogo de Contadores Públicos Autorizados">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="Debe existir un Catálogo de Contadores Públicos Autorizados"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El actor Públio General deberá encontrarse dentro del Módulo de consulta del Catálogo de Contadores Públicos Autorizados">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El Módulo de consulta del Catálogo de Contadores Públicos se encuentra en la sección Corrección y Dictamen"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El usuario deberá entrar a la página de Internet del IMSS">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="Para tener acceso al Catálogo de Contadores Públicos Autorizados el usuario debera entrar a la página del Instituto Mexicano del seguro social"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_F6F2E8CD_82A1_4b55_A1AF_C2C32AFD3157" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Association"/>
+								<UML:TaggedValue tag="direction" value="Unspecified"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="11462"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Público General"/>
+								<UML:TaggedValue tag="ea_targetName" value="Consultar Catálogo CPA Público General"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="10329"/>
+								<UML:TaggedValue tag="ea_targetID" value="10330"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_3ADE8D90_7ACC_475f_B386_19443EAC3795">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
@@ -45,17 +132,72 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="lfierro"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 14:03:34"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-21 14:05:43"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-21 17:20:24"/>
 				<UML:TaggedValue tag="package" value="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="820"/>
-				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=0;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="ea_localid" value="844"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=6CB1ECFA;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=243;Top=187;Right=357;Bottom=263;" subject="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F" seqno="1" style="DUID=2D2DEB97;"/>
+				<UML:DiagramElement geometry="Left=59;Top=186;Right=96;Bottom=260;" subject="EAID_3ADE8D90_7ACC_475f_B386_19443EAC3795" seqno="2" style="DUID=F8FD9966;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F6F2E8CD_82A1_4b55_A1AF_C2C32AFD3157" style="Mode=3;EOID=2D2DEB97;SOID=F8FD9966;Color=-1;LWidth=0;Hidden=0;"/>
+			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
-	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAModel.scenario>
+			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F" xmi.id="EAID_B5CAC78A_CD6C_4b71_B798_769158BE2571">
+				<EAScenarioContent>
+					<path>
+						<step name="FB01. El flujo básico comienza cuando el actor Público General realiza una consulta en el Módulo de Consulta del Catálogo de Contadores Públicos Autorizados" guid="{0233CA6D-210F-4306-AA9A-CC9AD0D4E629}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB02. El sistema muestra una ventana con los criterios de búsqueda con base al RFC-XXX donde el estatus del CPA son de acuerdo al RFC-XXX" guid="{7A55D3C8-B44E-44aa-BE4B-06F188D68ECE}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB03. El actor Público General ingresa cualquiera de los criterios de búsqueda y da clic en el botón &quot;Buscar&quot;&#xA;" guid="{CF2279E1-4692-4b7b-9C90-C539C8730F8F}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB04. El sistema valida que por lo menos exista un criterio de búsqueda con base en RFN-XXX" guid="{BD696B8A-CA95-4f8d-A469-3BD50AE33641}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="4a" guid="{B56DD2DC-CB34-48c3-8AB6-12905991E7E8}" join="End"/>
+						</step>
+						<step name="El sistema realiza la búsqueda con base en RFA-XXX de acuerdo al o los criterios definidos. Si existen coincidencias continuar con el flujo básico si no ir a FA02" guid="{F3C81F07-7F67-4344-844E-05E9B4E07467}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="5a" guid="{B82DF55F-DD7A-4d73-A40F-03209CF79416}" join="End"/>
+						</step>
+						<step name="El sistema mostrará una pantalla RFC-XX3 con las coincidencias encontradas de acuerdo a los criterios de búsqueda definidos RFA-XX1-Criterios de búsqueda" guid="{48B88D21-3CE9-4765-BCC3-E79F96B74CFE}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Público General" guid="{3ADE8D90-7ACC-475f-B386-19443EAC3795}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA01. El actor Público General no ingresó un criterio de búsqueda" type="Alternate" weight="1.00" subject="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F" xmi.id="EAID_B56DD2DC_CB34_48c3_8AB6_12905991E7E8">
+				<EAScenarioContent>
+					<path>
+						<step name="El Flujo Alterno inicia cuando el actor Público General no ingresa un criterio de búsqueda" guid="{30251D18-534E-40ec-9335-A20F57FC10E6}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema emite mensaje “Favor de ingresar al menos un criterio de búsqueda” regresar al FB03" guid="{CFCFF9D2-B43B-4a87-9DF2-D9BD43A401BC}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Fin del Flujo Alterno" guid="{D951B5F5-4A56-4854-B038-7E86807DE04B}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Público General" guid="{3ADE8D90-7ACC-475f-B386-19443EAC3795}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA02. No se encontraron coincidencias" type="Alternate" weight="2.00" subject="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F" xmi.id="EAID_B82DF55F_DD7A_4d73_A40F_03209CF79416">
+				<EAScenarioContent>
+					<path>
+						<step name="FA02.1 El flujo alterno comienza cuando el sistema no encuentra coincidencias de la búsqueda con base en RFA-XXX" guid="{361F68FD-1AC9-40a6-B931-17AC77E0F96F}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA02.2 El Sistema emite mensaje “No existen coincidencias” con botón &quot;Aceptar&quot;" guid="{6B267862-FD31-4223-A1DA-F93439E635FB}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA02.3 El actor Público General da un clic en el botón &quot;Aceptar&quot;" guid="{B9C95255-7FA1-4de3-90A0-7ED154501F22}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FA02.4 El sistema regresa al FB03" guid="{7ED52A31-E3BB-4b4d-8AEF-911867B982F5}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Fin del flujo alterno" guid="{56C5CAD4-0ADF-451c-BA54-44AE0EE65871}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Público General" guid="{3ADE8D90-7ACC-475f-B386-19443EAC3795}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+		</EAModel.scenario>
+		<EAStub xmi.id="EAID_3ADE8D90_7ACC_475f_B386_19443EAC3795" name="Público General" UMLType="Actor"/>
+		<EAModel.paramSub/>
+	</XMI.extensions>
 </XMI>
