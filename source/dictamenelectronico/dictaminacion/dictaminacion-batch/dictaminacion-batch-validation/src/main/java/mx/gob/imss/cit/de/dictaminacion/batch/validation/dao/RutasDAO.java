@@ -4,6 +4,11 @@ import java.util.List;
 
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
 
+/**
+ * 
+ * @author anhernandez
+ *
+ */
 public interface RutasDAO {
 	
 	/**
@@ -11,5 +16,17 @@ public interface RutasDAO {
 	 * 
 	 */
 	public List<RutaTO> obtieneRutas();
+	
+	/**
+	 * 
+	 * @param idBitacora
+	 */
+	public void borrarBitacora(int idBitacora);
+	
+	/**
+	 * 
+	 * @param idBitacora
+	 */
+	public void borrarTablaAseveracion(int idBitacora,int idAseveracion);
 
 }
