@@ -109,6 +109,7 @@
 		<property name="bucketName" value="${aws.bucket}"/>
 		<property name="rutaAWSCredentials" value="${aws.ruta.credentials}"/>
 		<property name="extension" value="#{'${configuracion.extensiones.permitidas}'.split(',')}"/>
+		<property name="rutasDAO" ref="rutasDaoImpl"/>
 	</bean>
 
 	<task:scheduled-tasks>

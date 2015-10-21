@@ -9,11 +9,13 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.RutasDAOImpl;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -42,7 +44,8 @@ public class ScanBucket {
     private String[] extension;
 	private String fields = "regPatronal, nomPrimerApellidoTrabajador, nomSegundoApellidoTrabajador, nomNombreTrabajador, numNssTrabajador, rfcTrabajador, curpTrabajador, impSueldosSalarios, impGratificaciones, impViaticos, impTiempoExtra, impPrimaVacacional, impPrimaDominical, impPtu, impReembolsoGm, impFondoAhorro, impCajaAhorro, impValesDespensa, impAyudaGf, impContribucionPatron, impPremioPuntualidad, impPremioAsistencia, impPrimaSeguroVida, impSeguroGmm, impValesRestaurant, impValesGasolina, impValesRopa, impAyudaRenta, impAyudaEscolar, impAyudaAnteojos, impAyudaTransporte, impCuotaSindical, impSubsidioIncapacidad, impBecaTrabajadorHijo, impOtrosIngresosXsalario, impPagoOtroEmpleador, impJubPenRetiro, impOtrosPagosXseparacion, impTotal";
 	private String prototype = "a1";
-        
+    private RutasDAO rutasDAO;    
+	
     @Autowired
     private JobLauncher jobLauncher;
 
@@ -57,6 +60,13 @@ public class ScanBucket {
 	  
     public void run() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {
     	JobParameters parameters;
+    	
+    	List<RutaTO> rutas=rutasDAO.obtieneRutas();
+    	for(int i=0;i<=rutas.size();i++){
+    		
+    		
+    	}
+    	 
     	Collection<File> files = FileUtils.listFiles(new File(rutaDestino), extension, true);
     	for(File file: files){    		
     		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
@@ -153,6 +163,14 @@ public class ScanBucket {
 
 	public void setExtension(String[] extension) {
 		this.extension = extension;
+	}
+
+	public void setRutasDAO(RutasDAO rutasDAO) {
+		this.rutasDAO = rutasDAO;
+	}
+
+	public RutasDAO getRutasDAO() {
+		return rutasDAO;
 	}
 	
 	
