@@ -39,7 +39,32 @@
 					<UML:Namespace.ownedElement>
 						<UML:Collaboration xmi.id="EAID_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11_Collaboration" name="Collaborations">
 							<UML:Namespace.ownedElement>
-								<UML:ClassifierRole name="Solicitar cambio de estado" xmi.id="EAID_463F644D_EC57_49f6_A584_B2F24B7A879C" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+								<UML:ClassifierRole name="Consultar Catálogos" xmi.id="EAID_407B42F1_229F_43ae_8AB5_7C5BFAFF1D33" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 12:36:16"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:36:16"/>
+										<UML:TaggedValue tag="gentype" value="Java"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_407B42F1_229F_43ae_8AB5_7C5BFAFF1D33"/>
+										<UML:TaggedValue tag="package_name" value="Contadores"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="lfierro"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1467"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="Solicitar Cambio de Estado" xmi.id="EAID_463F644D_EC57_49f6_A584_B2F24B7A879C" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="isAbstract" value="false"/>
 										<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -49,7 +74,7 @@
 										<UML:TaggedValue tag="isActive" value="false"/>
 										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 										<UML:TaggedValue tag="date_created" value="2015-10-21 12:03:24"/>
-										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:10:18"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:35:38"/>
 										<UML:TaggedValue tag="gentype" value="Java"/>
 										<UML:TaggedValue tag="tagged" value="0"/>
 										<UML:TaggedValue tag="package2" value="EAID_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
@@ -89,7 +114,7 @@
 										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
-								<UML:ClassifierRole name="Solicitud de Registro" xmi.id="EAID_8B68D2AF_F990_4b3d_A212_343A3C362CAE" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+								<UML:ClassifierRole name="Solicitar Registro" xmi.id="EAID_8B68D2AF_F990_4b3d_A212_343A3C362CAE" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="isAbstract" value="false"/>
 										<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -99,7 +124,7 @@
 										<UML:TaggedValue tag="isActive" value="false"/>
 										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 										<UML:TaggedValue tag="date_created" value="2015-10-21 12:22:43"/>
-										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:22:43"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:25:01"/>
 										<UML:TaggedValue tag="gentype" value="Java"/>
 										<UML:TaggedValue tag="tagged" value="0"/>
 										<UML:TaggedValue tag="package2" value="EAID_8B68D2AF_F990_4b3d_A212_343A3C362CAE"/>
@@ -114,7 +139,107 @@
 										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
-								<UML:ClassifierRole name="Cambio Estatus" xmi.id="EAID_F0677473_590E_4f51_AFC1_770FEEAA6EEF" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+								<UML:ClassifierRole name="Aceptar Solicitudes" xmi.id="EAID_96181ABA_9F53_461a_BF9F_194DC6A64573" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 12:34:04"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:34:04"/>
+										<UML:TaggedValue tag="gentype" value="Java"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_96181ABA_9F53_461a_BF9F_194DC6A64573"/>
+										<UML:TaggedValue tag="package_name" value="Contadores"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="lfierro"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1464"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="Activar Registro" xmi.id="EAID_A515772C_6A50_485c_A603_EE3BDDDC68D3" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 12:35:07"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:35:07"/>
+										<UML:TaggedValue tag="gentype" value="Java"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_A515772C_6A50_485c_A603_EE3BDDDC68D3"/>
+										<UML:TaggedValue tag="package_name" value="Contadores"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="lfierro"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1466"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="Acreditar Membresía" xmi.id="EAID_A528D8BF_DB02_4944_85F8_AEF06EB07F75" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 12:34:31"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:34:31"/>
+										<UML:TaggedValue tag="gentype" value="Java"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
+										<UML:TaggedValue tag="package_name" value="Contadores"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="lfierro"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1465"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="Modificar datos CPA" xmi.id="EAID_DC3B6642_AF60_425f_BE5D_BF54D12ACE74" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Package"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 12:33:04"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:33:04"/>
+										<UML:TaggedValue tag="gentype" value="Java"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package2" value="EAID_DC3B6642_AF60_425f_BE5D_BF54D12ACE74"/>
+										<UML:TaggedValue tag="package_name" value="Contadores"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="lfierro"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="1463"/>
+										<UML:TaggedValue tag="ea_eleType" value="package"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+								<UML:ClassifierRole name="Cambiar Estatus" xmi.id="EAID_F0677473_590E_4f51_AFC1_770FEEAA6EEF" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="isAbstract" value="false"/>
 										<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -124,7 +249,7 @@
 										<UML:TaggedValue tag="isActive" value="false"/>
 										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 										<UML:TaggedValue tag="date_created" value="2015-10-21 12:22:43"/>
-										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:22:43"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:24:40"/>
 										<UML:TaggedValue tag="gentype" value="Java"/>
 										<UML:TaggedValue tag="tagged" value="0"/>
 										<UML:TaggedValue tag="package2" value="EAID_F0677473_590E_4f51_AFC1_770FEEAA6EEF"/>
@@ -142,6 +267,60 @@
 							</UML:Namespace.ownedElement>
 							<UML:Collaboration.interaction/>
 						</UML:Collaboration>
+						<UML:Package name="Aceptar Solicitudes" xmi.id="EAPK_96181ABA_9F53_461a_BF9F_194DC6A64573" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+								<UML:TaggedValue tag="created" value="2015-10-21 12:34:04"/>
+								<UML:TaggedValue tag="modified" value="2015-10-21 12:34:04"/>
+								<UML:TaggedValue tag="iscontrolled" value="FALSE"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="lfierro"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Namespace.ownedElement/>
+						</UML:Package>
+						<UML:Package name="Acreditar Membresía" xmi.id="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+								<UML:TaggedValue tag="created" value="2015-10-21 12:34:31"/>
+								<UML:TaggedValue tag="modified" value="2015-10-21 12:34:31"/>
+								<UML:TaggedValue tag="iscontrolled" value="FALSE"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="lfierro"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Namespace.ownedElement/>
+						</UML:Package>
+						<UML:Package name="Activar Registro" xmi.id="EAPK_A515772C_6A50_485c_A603_EE3BDDDC68D3" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+								<UML:TaggedValue tag="created" value="2015-10-21 12:35:07"/>
+								<UML:TaggedValue tag="modified" value="2015-10-21 12:35:07"/>
+								<UML:TaggedValue tag="iscontrolled" value="FALSE"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="lfierro"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Namespace.ownedElement/>
+						</UML:Package>
 						<UML:Package name="Consultar Catálogo CPA" xmi.id="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
@@ -160,7 +339,43 @@
 							</UML:ModelElement.taggedValue>
 							<UML:Namespace.ownedElement/>
 						</UML:Package>
-						<UML:Package name="Solicitar cambio de estado" xmi.id="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+						<UML:Package name="Consultar Catálogos" xmi.id="EAPK_407B42F1_229F_43ae_8AB5_7C5BFAFF1D33" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+								<UML:TaggedValue tag="created" value="2015-10-21 12:36:16"/>
+								<UML:TaggedValue tag="modified" value="2015-10-21 12:36:16"/>
+								<UML:TaggedValue tag="iscontrolled" value="FALSE"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="lfierro"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Namespace.ownedElement/>
+						</UML:Package>
+						<UML:Package name="Modificar datos CPA" xmi.id="EAPK_DC3B6642_AF60_425f_BE5D_BF54D12ACE74" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
+								<UML:TaggedValue tag="created" value="2015-10-21 12:33:04"/>
+								<UML:TaggedValue tag="modified" value="2015-10-21 12:33:04"/>
+								<UML:TaggedValue tag="iscontrolled" value="FALSE"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isprotected" value="FALSE"/>
+								<UML:TaggedValue tag="usedtd" value="FALSE"/>
+								<UML:TaggedValue tag="logxml" value="FALSE"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="author" value="lfierro"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="ea_stype" value="Public"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Namespace.ownedElement/>
+						</UML:Package>
+						<UML:Package name="Solicitar Cambio de Estado" xmi.id="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 								<UML:TaggedValue tag="created" value="2015-10-21 12:03:24"/>
@@ -182,11 +397,11 @@
 							</UML:ModelElement.taggedValue>
 							<UML:Namespace.ownedElement/>
 						</UML:Package>
-						<UML:Package name="Cambio Estatus" xmi.id="EAPK_F0677473_590E_4f51_AFC1_770FEEAA6EEF" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+						<UML:Package name="Cambiar Estatus" xmi.id="EAPK_F0677473_590E_4f51_AFC1_770FEEAA6EEF" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 								<UML:TaggedValue tag="created" value="2015-10-20 18:51:53"/>
-								<UML:TaggedValue tag="modified" value="2015-10-20 18:51:53"/>
+								<UML:TaggedValue tag="modified" value="2015-10-21 12:24:40"/>
 								<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 								<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\Contadores\Cambio Estatus\Cambio Estatus.xml"/>
 								<UML:TaggedValue tag="lastloaddate" value="2015-10-21 12:22:43"/>
@@ -199,7 +414,7 @@
 								<UML:TaggedValue tag="tpos" value="0"/>
 								<UML:TaggedValue tag="batchsave" value="0"/>
 								<UML:TaggedValue tag="batchload" value="0"/>
-								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=dictamen;"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=dictamen;CheckedOutTo=lfierro;"/>
 								<UML:TaggedValue tag="savedasstub" value="true"/>
 								<UML:TaggedValue tag="phase" value="1.0"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
@@ -208,7 +423,7 @@
 								<UML:TaggedValue tag="ea_stype" value="Public"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Package>
-						<UML:Package name="Solicitud de Registro" xmi.id="EAPK_8B68D2AF_F990_4b3d_A212_343A3C362CAE" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+						<UML:Package name="Solicitar Registro" xmi.id="EAPK_8B68D2AF_F990_4b3d_A212_343A3C362CAE" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 								<UML:TaggedValue tag="created" value="2015-10-20 18:51:36"/>
@@ -225,7 +440,7 @@
 								<UML:TaggedValue tag="tpos" value="0"/>
 								<UML:TaggedValue tag="batchsave" value="0"/>
 								<UML:TaggedValue tag="batchload" value="0"/>
-								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=dictamen;"/>
+								<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=dictamen;CheckedOutTo=lfierro;"/>
 								<UML:TaggedValue tag="savedasstub" value="true"/>
 								<UML:TaggedValue tag="phase" value="1.0"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
