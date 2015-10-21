@@ -36,11 +36,633 @@
 						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
-					<UML:Namespace.ownedElement/>
+					<UML:Namespace.ownedElement>
+						<UML:Actor name="CPA" xmi.id="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB" visibility="public" namespace="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="Contador Publico Autorizado (CPA):&#xA;&#xA;El contador publico autorizado es aquel que cumple con los requisitos y registro que establece el instituto mexicano del seguro social (IMSS) con la finalidad de inscribirse en el registro de contadores publicos autorizados para llevar acabo el tramite de dictamen y obligaciones patronales en terminos del articulo 16 de la ley del seguro social."/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Actor"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-21 13:45:48"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 14:23:16"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Acreditar Membresía"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="vlopezr"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="48830"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Actor>
+						<UML:Association xmi.id="EAID_BEACBB65_AA0B_4c85_A921_DEE7F737D1E2" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="54997"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
+								<UML:TaggedValue tag="ea_targetName" value="Ver Acreditacion y Membresia"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="48830"/>
+								<UML:TaggedValue tag="ea_targetID" value="48831"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Association xmi.id="EAID_EC2FD845_636F_4326_A759_20A18F40397B" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="54999"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
+								<UML:TaggedValue tag="ea_targetName" value="Activar Registro"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="48830"/>
+								<UML:TaggedValue tag="ea_targetID" value="48836"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Collaboration xmi.id="EAID_A528D8BF_DB02_4944_85F8_AEF06EB07F75_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement>
+								<UML:ClassifierRole name="Dictamen" xmi.id="EAID_60B51267_E97A_43bd_BED4_E2F731C962B5" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="isAbstract" value="false"/>
+										<UML:TaggedValue tag="isSpecification" value="false"/>
+										<UML:TaggedValue tag="ea_stype" value="Boundary"/>
+										<UML:TaggedValue tag="ea_ntype" value="0"/>
+										<UML:TaggedValue tag="version" value="1.0"/>
+										<UML:TaggedValue tag="isActive" value="false"/>
+										<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
+										<UML:TaggedValue tag="date_created" value="2015-10-21 14:07:50"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 14:08:03"/>
+										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+										<UML:TaggedValue tag="tagged" value="0"/>
+										<UML:TaggedValue tag="package_name" value="Acreditar Membresía"/>
+										<UML:TaggedValue tag="phase" value="1.0"/>
+										<UML:TaggedValue tag="author" value="vlopezr"/>
+										<UML:TaggedValue tag="complexity" value="1"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+										<UML:TaggedValue tag="tpos" value="0"/>
+										<UML:TaggedValue tag="ea_localid" value="48832"/>
+										<UML:TaggedValue tag="ea_eleType" value="element"/>
+										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+									</UML:ModelElement.taggedValue>
+								</UML:ClassifierRole>
+							</UML:Namespace.ownedElement>
+							<UML:Collaboration.interaction/>
+						</UML:Collaboration>
+						<UML:UseCase name="Firmar Electronicamente (Fiel)" xmi.id="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" visibility="public" namespace="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="El Caso de uso describe los pasos para realizar el firmado electronico de documentos y acuses de las solicitudes del sistema"/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-21 15:38:47"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 17:45:38"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Acreditar Membresía"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="vlopezr"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="48839"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={01043D74-98A9-4d1d-BAA3-63AE44C5F334}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={671A2F36-4FE3-46b3-963B-9AA6257D4ACB}$CLT;$SUP={DE872577-FBF1-43cd-93AD-E2C59A6EC029}$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="el contador publico autorizado debe contar con su firma electronica avanzada (FIEL)">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Firmar electronicamente documentos del sistema ">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Post-condition"/>
+										<UML:TaggedValue tag="weight" value="3.00"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="La firma electronica avanzada (FIEL) debe estar vigente y validada por el SAT">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="se requiere tener conexion con el SAT">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_3E37BBF0_1BEC_4cab_9F50_4333BAEFE44F" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="55002"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Ver Acreditacion y Membresia"/>
+								<UML:TaggedValue tag="ea_targetName" value="Firmar Electronicamente (Fiel)"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="48831"/>
+								<UML:TaggedValue tag="ea_targetID" value="48839"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={5E76327B-D128-4ee5-BF20-26604AD0BE44}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={3E37BBF0-1BEC-4cab-9F50-4333BAEFE44F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Association xmi.id="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="55003"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Enviar Acuse de Tramite"/>
+								<UML:TaggedValue tag="ea_targetName" value="Firmar Electronicamente (Fiel)"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="48833"/>
+								<UML:TaggedValue tag="ea_targetID" value="48839"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={6BD6F19E-B124-4053-8C79-3D5540F6CFBF}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={40B22D22-F562-4b20-B01C-C802F467AFC2}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Association xmi.id="EAID_E8D44E1D_17F8_44fe_BADD_44841D08B480" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="55001"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
+								<UML:TaggedValue tag="ea_targetName" value="Firmar Electronicamente (Fiel)"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="48836"/>
+								<UML:TaggedValue tag="ea_targetID" value="48839"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={1CA3BACC-22DE-408b-9526-B0590D111435}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={E8D44E1D-17F8-44fe-BADD-44841D08B480}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:UseCase name="Ver Acreditacion y Membresia" xmi.id="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" visibility="public" namespace="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-21 13:45:59"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 14:07:27"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Acreditar Membresía"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="vlopezr"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="48831"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_D0549007_59C2_48cc_8B55_5DCED6892F2A" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="54998"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Ver Acreditacion y Membresia"/>
+								<UML:TaggedValue tag="ea_targetName" value="Enviar Acuse de Tramite"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="48831"/>
+								<UML:TaggedValue tag="ea_targetID" value="48833"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={E9320A33-C587-4d8c-A16F-77C293B68FE2}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={D0549007-59C2-48cc-8B55-5DCED6892F2A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:UseCase name="Enviar Acuse de Tramite" xmi.id="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" visibility="public" namespace="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="El sistema enviara el acuse del tramite a los correos registrados por el Contador Publico Autorizado (CPA) y se almacenara en la notaria electronica de manera automatica."/>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-21 14:10:26"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 17:43:14"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Acreditar Membresía"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="vlopezr"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="48833"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="ejecutar el caso de uso Firmar Electronicamente (FIEL)">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="enviar acuse de tramite en formato .pdf a los interesados ">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Post-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="realizar un tramite previo para que se genere el acuse">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Proposed"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
+						</UML:UseCase>
+						<UML:Association xmi.id="EAID_B884D43C_46DA_4003_B8D2_6C446B8DFE66" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="55000"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
+								<UML:TaggedValue tag="ea_targetName" value="Enviar Acuse de Tramite"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="48836"/>
+								<UML:TaggedValue tag="ea_targetID" value="48833"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FF3077EC-36E3-4839-B10A-D4ED205FFB18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={B884D43C-46DA-4003-B8D2-6C446B8DFE66}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
+		<UML:Diagram name="Acreditar Membresía" xmi.id="EAID_491ECE8B_9D5C_4d34_B5BB_A1D6AF8EFD0C" diagramType="UseCaseDiagram" owner="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="vlopezr"/>
+				<UML:TaggedValue tag="created_date" value="2015-10-21 13:30:25"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-21 17:55:38"/>
+				<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
+				<UML:TaggedValue tag="type" value="Use Case"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="5243"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=B1C10B87;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=606;Top=282;Right=711;Bottom=352;" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" seqno="1" style="DUID=A97CABB6;"/>
+				<UML:DiagramElement geometry="Left=615;Top=172;Right=720;Bottom=242;" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" seqno="2" style="DUID=97D9B4CC;"/>
+				<UML:DiagramElement geometry="Left=387;Top=136;Right=735;Bottom=376;" subject="EAID_60B51267_E97A_43bd_BED4_E2F731C962B5" seqno="3" style="DUID=DAD2DC30;"/>
+				<UML:DiagramElement geometry="Left=418;Top=165;Right=541;Bottom=247;" subject="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" seqno="4" style="DUID=704B1938;"/>
+				<UML:DiagramElement geometry="Left=303;Top=157;Right=349;Bottom=250;" subject="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB" seqno="5" style="DUID=C7FB6A7F;"/>
+				<UML:DiagramElement geometry="SX=-29;SY=-28;EX=-20;EY=-22;EDGE=3;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_3E37BBF0_1BEC_4cab_9F50_4333BAEFE44F" style="Mode=2;EOID=A97CABB6;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;Path=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style=";Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D0549007_59C2_48cc_8B55_5DCED6892F2A" style="Mode=3;EOID=97D9B4CC;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_BEACBB65_AA0B_4c85_A921_DEE7F737D1E2" style="Mode=3;EOID=704B1938;SOID=C7FB6A7F;Color=-1;LWidth=0;Hidden=0;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
+		<UML:DiagramElement geometry="Left=332;Top=261;Right=422;Bottom=351;" subject="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB" seqno="999999" style="DUID=E3B89479;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_A65F9E8A_D773_4103_9813_A9C84AF075E6"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="Left=332;Top=261;Right=422;Bottom=331;" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" seqno="999999" style="DUID=99CB8420;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_A65F9E8A_D773_4103_9813_A9C84AF075E6"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="Left=332;Top=261;Right=422;Bottom=331;" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" seqno="999999" style="DUID=48E5048C;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_A65F9E8A_D773_4103_9813_A9C84AF075E6"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
 	</XMI.content>
 	<XMI.difference/>
-	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAStub xmi.id="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903" name="Activar Registro" UMLType="UseCase"/>
+		<EAModel.scenario>
+			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" xmi.id="EAID_CDB2B1E7_55E8_4996_A372_FF3AEE6BFEE2">
+				<EAScenarioContent>
+					<path>
+						<step name="el actor requiere firmar electronicamente un documento para darle validez " guid="{762EB2EF-8800-406e-A51E-71690CD22812}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema solicitara la carga de los archivos .CER (boton cargar), .KEY (boton cargar) Clave privada asi como los botones confirmar, firmar, cancelar" guid="{D9E9CD50-D251-41cc-B28E-4986A7D96BE7}" level="2" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="2a" guid="{80705D0B-2FD4-4906-ACBD-351C6EBA105B}" join="End"/>
+						</step>
+						<step name="el actor debe seleccionar los botones cargar (.CER .KEY)" guid="{683B0E74-71E3-494c-9053-E66FB657F21D}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema desplegara ventana para seleccion y carga de archivo " guid="{2C227F10-ABDC-4e49-85BF-0E44A0D4ABE5}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar archivos e ingresar clave privada y seleccionar boton confirmar" guid="{69316CB8-17AB-4329-B887-561D27AFBBB6}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema validara los archivos y clave privada" guid="{97F9A7D6-DA5D-4150-9004-7E4288F5DA65}" level="6" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="6a" guid="{208B288F-9C28-4343-B494-D289775CC26B}" join="End"/>
+						</step>
+						<step name="el actor debe seleccionar boton firmar" guid="{ECABAD8B-B2EE-4d4b-A4C0-5D2839C3FA21}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema mostrara en pantalla el acuse de recibo electronico en formato .pdf" guid="{A3CEE6DC-9B0B-4521-9859-F8A83F24049D}" level="8" uses="Enviar Acuse de Tramite" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="fin de caso de uso " guid="{2FF8F9F1-FF81-48ee-9D3C-C0F1556D44A7}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context>
+							<item oldname="Ver Acreditacion y Membresia" guid="{864C612E-40AF-4c78-8A19-686E33DB2A81}"/>
+							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+							<item oldname="Activar Registro" guid="{C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA1" type="Alternate" weight="1.00" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" xmi.id="EAID_208B288F_9C28_4343_B494_D289775CC26B">
+				<EAScenarioContent>
+					<path>
+						<step name="El sistema eliminara los archivos solicitados cuando el actor seleccione el boton Cancelar." guid="{A99054E8-6E7A-4b58-8F87-65F20BF907BD}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Ver Acreditacion y Membresia" guid="{864C612E-40AF-4c78-8A19-686E33DB2A81}"/>
+							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+							<item oldname="Activar Registro" guid="{C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA2" type="Alternate" weight="2.00" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" xmi.id="EAID_80705D0B_2FD4_4906_ACBD_351C6EBA105B">
+				<EAScenarioContent>
+					<path>
+						<step name="el sistema enviara mensaje de error &quot;Los archivos o clave son incorrectos favor de verificar&quot;" guid="{5D1A4382-2570-49fc-A796-DCC9FCCE27FE}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Ver Acreditacion y Membresia" guid="{864C612E-40AF-4c78-8A19-686E33DB2A81}"/>
+							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+							<item oldname="Activar Registro" guid="{C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" xmi.id="EAID_60124D39_901A_4ba8_B0A4_F01A014AA87E">
+				<EAScenarioContent>
+					<path>
+						<step name="el actor debe realizar &lt;include&gt; Firmar Electronicamente (Fiel)" guid="{E7892498-4DDC-491a-9EFE-0BAFCA9E13F3}" level="1" uses="" useslist="" result="" state="" trigger="1" link="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+						<step name="el sistema generara el acuse respectivo y se almacenara en la notaria electronica." guid="{94039D12-9655-451d-AFF9-A38FD2DEFD23}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema enviara el acuse del tramite de manera automatica a los correos electronicos registrados por el actor." guid="{7471AA52-D0EA-43f1-BBFD-0A14460EB54D}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema desplegara en pantalla el acuse de recibo electronico en formato .pdf dando opcion de (guardar, e imprimir)" guid="{8AA1E293-D510-4975-B1E9-275F4959353B}" level="4" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="4a" guid="{FF6F809B-DC2B-4afe-B9BC-2C83C4E979B1}" join="End"/>
+							<extension level="4b" guid="{84674792-762A-4c13-A75F-3B6D27729BB0}" join="End"/>
+						</step>
+						<step name="el actor visualizara el acuse de recibo electronico en pantalla" guid="{E6720AF7-EE21-44f9-B7E2-C68ABF78DB85}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="fin de caso de uso " guid="{62DDA686-672F-4616-B8F6-89547E647FF5}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Ver Acreditacion y Membresia" guid="{864C612E-40AF-4c78-8A19-686E33DB2A81}"/>
+							<item oldname="Activar Registro" guid="{C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}"/>
+							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA1" type="Alternate" weight="1.00" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" xmi.id="EAID_FF6F809B_DC2B_4afe_B9BC_2C83C4E979B1">
+				<EAScenarioContent>
+					<path>
+						<step name="El actor debe seleccionar la opcion Guardar" guid="{DF587B73-187B-4b40-9800-40B3451D59C9}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema desplegara pantalla emergente para seleccionar la ruta del guardado del acuse" guid="{715A68C9-3E17-4d4d-BAA2-0B202524C31F}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar la ruta donde guardar el acuse" guid="{075CE2FA-C89C-4c00-AE7D-53C34D242DF5}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema guarda el acuse en la ruta seleccionada " guid="{92CF2DA1-DED6-41e2-92B4-F96B78F5939F}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="fin de flujo alterno" guid="{0548F100-3C9F-460f-A053-E541215451CB}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context>
+							<item oldname="Ver Acreditacion y Membresia" guid="{864C612E-40AF-4c78-8A19-686E33DB2A81}"/>
+							<item oldname="Activar Registro" guid="{C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}"/>
+							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA2" type="Alternate" weight="2.00" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" xmi.id="EAID_84674792_762A_4c13_A75F_3B6D27729BB0">
+				<EAScenarioContent>
+					<path>
+						<step name="El actor debe seleccionar la opcion Imprimir" guid="{82BFC90C-97DF-4b1a-A38B-DC1D7890FA2C}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema desplegara pantalla emergente para seleccionar la impresora " guid="{CAB923BA-6A8E-4366-95C8-09A197BFE81D}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar la impresora y el boton imprimir" guid="{04AB3A27-3E5E-4d17-87F3-038C6D609E4A}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="fin de flujo alterno " guid="{607FF530-2438-43d4-9233-9D5A53E7F848}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Ver Acreditacion y Membresia" guid="{864C612E-40AF-4c78-8A19-686E33DB2A81}"/>
+							<item oldname="Activar Registro" guid="{C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}"/>
+							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+		</EAModel.scenario>
+	</XMI.extensions>
 </XMI>
