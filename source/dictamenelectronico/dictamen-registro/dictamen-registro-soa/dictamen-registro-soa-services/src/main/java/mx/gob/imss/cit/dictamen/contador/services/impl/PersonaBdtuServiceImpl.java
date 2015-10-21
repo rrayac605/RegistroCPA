@@ -47,6 +47,7 @@ public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaB
 			init();
 			individuoServiceBusinessRemote = (IndividuoServiceBusinessRemote)locate("service.interface.individuo");
 			persona = individuoServiceBusinessRemote.consultarPersonaFisicaIMSSPorRFC(persona);
+			LOGGER.info("PersonaBdtuServiceImpl.persona="+persona.toString());
 		} catch (NamingException ex) {
 			LOGGER.error("ERROR: No se pudo inicializar el InitialContext del Servicio Componente EJB de Pensiones BDTU.", ex);
 		} catch (ClienteWebserviceRenapoCurpException ex) {

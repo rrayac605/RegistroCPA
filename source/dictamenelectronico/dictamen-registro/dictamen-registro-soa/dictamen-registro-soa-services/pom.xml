@@ -22,11 +22,18 @@
 			<artifactId>gestionIndividuo-service-business-interface</artifactId>
 			<version>2.4-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>weblogic</groupId>
-			<artifactId>wlfullclient</artifactId>
-			<version>10.3.4</version>
+	    <dependency>
+			<groupId>mx.gob.imss.ctirss.clienteswebservices.sat.consulta.rfc</groupId>
+			<artifactId>ClientesWebservices-sat-consulta-rfc</artifactId>
+			<version>2.2</version>
+		</dependency>		
+				<dependency>
+			<groupId>soap</groupId>
+			<artifactId>soap</artifactId>
+			<version>2.1</version>
 		</dependency>
+		 -->
+		 
 		<dependency>
 			<groupId>mx.gob.imss.ctirss.delta.gestion.solicitud</groupId>
 			<artifactId>gestionSolicitud-interfaces-negocio</artifactId>
