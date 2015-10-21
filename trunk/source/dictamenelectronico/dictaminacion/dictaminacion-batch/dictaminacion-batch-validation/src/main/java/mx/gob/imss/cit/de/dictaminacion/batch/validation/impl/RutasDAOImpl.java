@@ -7,11 +7,13 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasMapper;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.enums.TablasEnum;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.scanner.ScanBucket;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
 
 /**
@@ -20,9 +22,10 @@ import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
  *
  */
 public class RutasDAOImpl implements RutasDAO{
-
-	 private DataSource dataSource;
-	  private JdbcTemplate jdbcTemplateObject;   
+	
+	private Logger LOG=Logger.getLogger(ScanBucket.class);
+	private DataSource dataSource;
+	private JdbcTemplate jdbcTemplateObject;   
 	  
 	  public void setDataSource(DataSource dataSource) {
 		  this.dataSource = dataSource;
@@ -31,7 +34,7 @@ public class RutasDAOImpl implements RutasDAO{
 	  
 	@Override
 	public List<RutaTO> obtieneRutas() {
-		System.out.println("Obteniendo rutas.....");
+		LOG.info("Obteniendo rutas.....");
 		String SQL = "select EF.des_ejer_fiscal as ANIO_FISCAL,PF.rfc as RFC_CONTADOR,PD.des_rfc as RFC_PATRON," +
 				"CD.cve_id_patron_dictamen as ID_DICTAMEN,CD.cve_id_aseveracion as ID_ASEVERACION," +
 				"CD.cve_id_bitacora_carga_asev as ID_BITACORA,A.des_tipo_aseveracion as DES_ASEVERACION " +
@@ -45,21 +48,23 @@ public class RutasDAOImpl implements RutasDAO{
 				"where cd.cve_id_estado_cargo_doc=2";
 	       List<RutaTO> rutas = jdbcTemplateObject.query(SQL, new RutasMapper());
 	      
-			System.out.println("Rutas: "+rutas.size());
-					//+"\nRuta1:"+rutas.get(0).getRuta());
+	       LOG.info("Rutas econtradas: "+rutas.size());
+
 		
 		return rutas;
 	}
 	
 	@Override
 	public void borrarBitacora(int idBitacora){
+		System.out.println("Borrando ditacora");
 		String SQL = "delete from NDT_BITACORA_ERRORES where cve_id_bitacora_carga_asev = ?";
 	       jdbcTemplateObject.update(SQL, idBitacora);
-	       System.out.println("Registro eliminado ID = " + idBitacora );
+	       LOG.info("Bitacora eliminada ID = " + idBitacora );
 	}
 	
 	@Override
 	public void borrarTablaAseveracion(int idPatronDictamen,int idAseveracion){
+		LOG.info("Borrando tabla de aseveracion correspondiente");
 		String tabla = "";
 		
 		for (TablasEnum tmp: TablasEnum.values() ) {
@@ -67,11 +72,10 @@ public class RutasDAOImpl implements RutasDAO{
 				tabla=tmp.getTabla();
 			}
 		}
-            System.out.println ("Nombre Tabla: "+tabla);
-        
+                    
 		String SQL = "delete from "+ tabla +" where cve_id_patron_dictamen = ?";
 	       jdbcTemplateObject.update(SQL, idPatronDictamen);
-	       System.out.println("Registro eliminado ID = " + idPatronDictamen );
+	       LOG.info("Registro eliminado en tabla = " + tabla );
 	}
 	
 	/**
@@ -81,9 +85,9 @@ public class RutasDAOImpl implements RutasDAO{
 	 * @param idAseveracion
 	 */
 	public void actualizaStatus(int status,int idPatronDictamen,int idAseveracion){
-		String SQL = "update NDT_CARGA_DOCUMENTO set cve_id_estado_cargo_doc = ? where cve_id_estado_cargo_doc = ? and cve_id_aseveracion = ?";
+		String SQL = "update NDT_CARGA_DOCUMENTO set cve_id_estado_cargo_doc = ? where cve_id_patron_dictamen = ? and cve_id_aseveracion = ?";
 	       jdbcTemplateObject.update(SQL,status, idPatronDictamen,idAseveracion);
-	       System.out.println("Status actualiza a = " + status);
+	       LOG.info("Status actualiza a = " + status +" de idPatronDictamen: "+idPatronDictamen+" y esev: "+idAseveracion);
 	}
 
 }
