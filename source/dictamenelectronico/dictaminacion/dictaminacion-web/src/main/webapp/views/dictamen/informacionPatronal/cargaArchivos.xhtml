@@ -19,8 +19,8 @@
 	 <p:accordionPanel value="#{cargaArchivosPage.listaParentLayout}" var="parentLayout" multiple="true" activeIndex="0,1,2,3,4,5">
 					        <p:tab title="#{parentLayout.name}">
 					            <p:panel>         							                   
-									   <p:carousel  value="#{parentLayout.listaLayout}" var="layout" itemStyle="text-align:center" 
-									   style="width:100%" numVisible="4" > 					   
+									   <p:dataGrid  value="#{parentLayout.listaLayout}" var="layout"
+									   columns="4" > 					   
 									        <p:panel columns="1" style="width:250px;height:300px;margin:10px 0px" layout="grid" >									            
 									 			<p:outputLabel value="#{layout.name}" /> 									            									 
 												<form  action="http://intellegomx.s3.amazonaws.com/" id="drop#{layout.idLayout}" method="post" class="dropzone dz-clickable" enctype="multipart/form-data" style="width:100%;height:100% " >
@@ -74,7 +74,7 @@
 													</h:outputScript>
 												</h:form>
 											</p:panel>
-									    </p:carousel>					 	
+									    </p:dataGrid>					 	
 					 	        </p:panel>
 					        </p:tab>
 					    </p:accordionPanel>					    
