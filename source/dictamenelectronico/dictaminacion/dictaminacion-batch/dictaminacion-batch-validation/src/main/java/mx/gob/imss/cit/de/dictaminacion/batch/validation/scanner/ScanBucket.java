@@ -62,13 +62,13 @@ public class ScanBucket {
     	JobParameters parameters;
     	
     	List<RutaTO> rutas=rutasDAO.obtieneRutas();
-    	for(int i=0;i<=rutas.size();i++){
-
+    	for(int i=0;i<rutas.size();i++){
+    		
     		rutasDAO.borrarBitacora(rutas.get(i).getIdBitacora());
     		rutasDAO.borrarTablaAseveracion(rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
     		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
 
-    		/*
+    		
     		File file = new File(rutas.get(i).getRuta());
     		
     		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
@@ -82,23 +82,23 @@ public class ScanBucket {
 			parameters = parametersBuilder.toJobParameters();
 			JobExecution execution = jobLauncher.run(job, parameters);
 			LOG.info("Exit Status : " + execution.getStatus());
-			*/
+			
     	}
     	 
-    	Collection<File> files = FileUtils.listFiles(new File(rutaDestino), extension, true);
-    	for(File file: files){    		
-    		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
-    		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
-			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
-			parametersBuilder.addString("destino", processFile.getAbsolutePath().replaceFirst("DictamenProceso", "DictamenDestino")).toJobParameters();
-			parametersBuilder.addString("date", new Date().toString());
-			parametersBuilder.addString("delay", delay);
-			parametersBuilder.addString("fields", this.fields);
-			parametersBuilder.addString("prototype", this.prototype);
-			parameters = parametersBuilder.toJobParameters();
-			JobExecution execution = jobLauncher.run(job, parameters);
-			LOG.info("Exit Status : " + execution.getStatus());
-    	}
+//    	Collection<File> files = FileUtils.listFiles(new File(rutaDestino), extension, true);
+//    	for(File file: files){    		
+//    		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
+//    		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
+//			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
+//			parametersBuilder.addString("destino", processFile.getAbsolutePath().replaceFirst("DictamenProceso", "DictamenDestino")).toJobParameters();
+//			parametersBuilder.addString("date", new Date().toString());
+//			parametersBuilder.addString("delay", delay);
+//			parametersBuilder.addString("fields", this.fields);
+//			parametersBuilder.addString("prototype", this.prototype);
+//			parameters = parametersBuilder.toJobParameters();
+//			JobExecution execution = jobLauncher.run(job, parameters);
+//			LOG.info("Exit Status : " + execution.getStatus());
+//    	}
 
 	  LOG.debug("The time is now " + dateFormat.format(new Date()));
     }
