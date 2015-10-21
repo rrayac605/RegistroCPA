@@ -39,7 +39,7 @@
 					<UML:Namespace.ownedElement>
 						<UML:Collaboration xmi.id="EAID_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11_Collaboration" name="Collaborations">
 							<UML:Namespace.ownedElement>
-								<UML:ClassifierRole name="Solicitud de cambio de estado" xmi.id="EAID_463F644D_EC57_49f6_A584_B2F24B7A879C" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+								<UML:ClassifierRole name="Solicitar cambio de estado" xmi.id="EAID_463F644D_EC57_49f6_A584_B2F24B7A879C" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="isAbstract" value="false"/>
 										<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -49,7 +49,7 @@
 										<UML:TaggedValue tag="isActive" value="false"/>
 										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 										<UML:TaggedValue tag="date_created" value="2015-10-21 12:03:24"/>
-										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:03:24"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:10:18"/>
 										<UML:TaggedValue tag="gentype" value="Java"/>
 										<UML:TaggedValue tag="tagged" value="0"/>
 										<UML:TaggedValue tag="package2" value="EAID_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
@@ -64,7 +64,7 @@
 										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
-								<UML:ClassifierRole name="Consulta de Catálogo CPA" xmi.id="EAID_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
+								<UML:ClassifierRole name="Consultar Catálogo CPA" xmi.id="EAID_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="isAbstract" value="false"/>
 										<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -74,7 +74,7 @@
 										<UML:TaggedValue tag="isActive" value="false"/>
 										<UML:TaggedValue tag="package" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 										<UML:TaggedValue tag="date_created" value="2015-10-21 12:05:22"/>
-										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:05:22"/>
+										<UML:TaggedValue tag="date_modified" value="2015-10-21 12:08:34"/>
 										<UML:TaggedValue tag="gentype" value="Java"/>
 										<UML:TaggedValue tag="tagged" value="0"/>
 										<UML:TaggedValue tag="package2" value="EAID_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC"/>
@@ -142,11 +142,11 @@
 							</UML:Namespace.ownedElement>
 							<UML:Collaboration.interaction/>
 						</UML:Collaboration>
-						<UML:Package name="Consulta de Catálogo CPA" xmi.id="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+						<UML:Package name="Consultar Catálogo CPA" xmi.id="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 								<UML:TaggedValue tag="created" value="2015-10-21 12:05:22"/>
-								<UML:TaggedValue tag="modified" value="2015-10-21 12:05:22"/>
+								<UML:TaggedValue tag="modified" value="2015-10-21 12:08:34"/>
 								<UML:TaggedValue tag="iscontrolled" value="FALSE"/>
 								<UML:TaggedValue tag="version" value="1.0"/>
 								<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -160,11 +160,11 @@
 							</UML:ModelElement.taggedValue>
 							<UML:Namespace.ownedElement/>
 						</UML:Package>
-						<UML:Package name="Solicitud de cambio de estado" xmi.id="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+						<UML:Package name="Solicitar cambio de estado" xmi.id="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 								<UML:TaggedValue tag="created" value="2015-10-21 12:03:24"/>
-								<UML:TaggedValue tag="modified" value="2015-10-21 12:03:24"/>
+								<UML:TaggedValue tag="modified" value="2015-10-21 12:10:18"/>
 								<UML:TaggedValue tag="iscontrolled" value="FALSE"/>
 								<UML:TaggedValue tag="lastloaddate" value="2015-10-21 12:03:54"/>
 								<UML:TaggedValue tag="lastsavedate" value="2015-10-21 12:03:54"/>
