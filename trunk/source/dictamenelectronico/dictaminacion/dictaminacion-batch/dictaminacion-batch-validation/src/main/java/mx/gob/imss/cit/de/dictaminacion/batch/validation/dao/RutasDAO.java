@@ -27,6 +27,14 @@ public interface RutasDAO {
 	 * 
 	 * @param idBitacora
 	 */
-	public void borrarTablaAseveracion(int idBitacora,int idAseveracion);
+	public void borrarTablaAseveracion(int idPatronDictamen,int idAseveracion);
+	
+	/**
+	 * 
+	 * @param status
+	 * @param idPatronDictamen
+	 * @param idAseveracion
+	 */
+	public void actualizaStatus(int status,int idPatronDictamen,int idAseveracion);
 
 }

@@ -22,9 +22,7 @@ public class RunScheduler {
 	 
 	  
 	  try{
-		  
-		  System.out.println("inicio"); 
-       
+
 		  Properties p = new Properties();	  	  
 		  ResourceBundle labels = ResourceBundle.getBundle("spring/batch/properties/configuration");
 		  PropertyConfigurator.configure(p.getClass().getResource(labels.getString("configuracion.log4j.file")));
