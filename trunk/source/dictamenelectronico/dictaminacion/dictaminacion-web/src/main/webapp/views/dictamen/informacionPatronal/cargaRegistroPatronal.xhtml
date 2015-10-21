@@ -15,17 +15,90 @@
 		rel="stylesheet" type="text/css" />
 	<script type="text/javascript"
 		src="#{facesContext.externalContext.requestContextPath}/js/dropzone.js" />
-	<script type="text/javascript"
-		src="#{facesContext.externalContext.requestContextPath}/js/loadFile.js" />
 
-	<h:form enctype="multipart/form-data">
+	<p:outputLabel value="#{cargaRegistroPatronalBean.init()}" />
+	<p:panelGrid id="panelGridRP" columns="2" style="height:300px">
 
-	
-		<p:fileUpload fileUploadListener="#{cargaRegistroPatronalBean.upload}"
-			mode="advanced" dragDropSupport="true" sizeLimit="100000"
-			allowTypes="/(\.|\/)(gif|jpe?g|png)$/" showButtons="false"
-			 />
+		<p:panel id="panelCargaRpArchivo" style="width:250px;height:300px">
 
-	</h:form>
+			<form
+				action="#{facesContext.externalContext.requestContextPath}/UploadFileDropZoneServlet"
+				id="dropRegistroPatronal" method="post"
+				class="dropzone dz-clickable" enctype="multipart/form-data"
+				style="width: 100%; height: 100%">
+
+				<div class="dz-message" style="width: 95%">
+					#{msg['message.dictamen.patronal.carga.layout.atarrastar']}<br />
+					#{msg['message.dictamen.patronal.carga.layout.documento']}<br />
+					<p:graphicImage id="cuadernilloGI"
+						style="width: 30px; height: 30px; margin: 0 5px 0 2px;"
+						value="/images/upload.png" />
+					<span class="note">#{msg['message.dictamen.patronal.carga.layout.seleccionar']}</span>
+				</div>
+				<h:outputScript>
+						Dropzone.autoDiscover = false;
+						$(function() {
+						  var myDropzone = new Dropzone("#dropRegistroPatronal",{
+						  	accept: function(file, done){validateFile(file, done);},
+						  	maxFilesize: 500,
+						  	addRemoveLinks: true,
+						  	dictRemoveFile:"Eliminar archivo",
+						  	maxFiles:1,
+						  	dictMaxFilesExceeded:"Sólo se permite un archivo"});
+						  myDropzone.on("success", function(file,responseText) {
+						  		document.getElementById("#{p:component('hiddenAction')}").click();
+						  });
+						  function validateFile(file, done){
+						  	var allowed_extensions = new Array("txt");						  							  	
+						  	
+						  	var file_extension = file.name.split('.').pop();
+						  	for(i = 0;  allowed_extensions.length > i ; i++){
+						  		if(allowed_extensions[i]==file_extension){
+						  			done();
+						  			return true;
+						  			}
+						  		}
+						  	done("Tipo de archivo no permitido.");
+						  	return false;											  	
+						  }
+						});
+				</h:outputScript>
+			</form>
+
+			<h:form id="formOcultoRp">
+				<p:commandButton id="hiddenAction" process="@this"
+					action="#{cargaRegistroPatronalBean.cargarRegistrosPatronales}"
+					type="submit" immediate="true" style="display:none" ajax="true"
+					update=":#{p:component('dataListRegistrosPatronales')}" />
+			</h:form>
+
+
+
+		</p:panel>
+
+		<p:panel id="panelRpLista" style="width:300px;height:150px">
+			<p:dataTable id="dataListRegistrosPatronales"
+				value="#{cargaRegistroPatronalPage.listaRegistrosPatronales}"
+				var="registroPatronal" paginator="true" rows="5"
+				paginatorPosition="top" paginatorAlwaysVisible="true" emptyMessage="">
+
+				 <p:column headerText="Registro Patronal">
+						<h:outputText value="#{registroPatronal.desRfcPatron}" />
+				</p:column>
+				
+				<p:column headerText="Estatus">
+						<h:outputText value="Correcto" />
+				</p:column>
+
+			</p:dataTable>
+
+		</p:panel>
+
+
+	</p:panelGrid>
+
+
+
+
 
 </ui:composition>

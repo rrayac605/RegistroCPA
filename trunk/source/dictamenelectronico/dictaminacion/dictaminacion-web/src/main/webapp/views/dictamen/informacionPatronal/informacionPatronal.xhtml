@@ -11,7 +11,7 @@
 		<p:panel id="informacionPatronalPanel">
 
 		<h:outputLabel value="#{informacionPatronalBean.init()}" />
-		<p:dataTable var="aseveracion" value="#{informacionPatronalPage.listadoAseveraciones}" >
+		<p:dataTable var="aseveracion" value="#{informacionPatronalPage.listadoAseveraciones}" emptyMessage="">
 			<p:column
 				headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.categoria']}">
 				<p:outputLabel value="#{aseveracion.cveIdAseveracion.desTipoAseveracion}"/>

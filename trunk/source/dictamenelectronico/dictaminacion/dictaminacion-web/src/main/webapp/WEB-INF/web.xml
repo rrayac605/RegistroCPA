@@ -9,6 +9,14 @@
     <param-name>javax.faces.PROJECT_STAGE</param-name>
     <param-value>Production</param-value>
   </context-param>
+  <context-param>
+    <param-name>facelets.SKIP_COMMENTS</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>primefaces.UPLOADER</param-name>
+    <param-value>auto</param-value>
+  </context-param>
   <filter>
     <filter-name>PrimeFaces FileUpload Filter</filter-name>
     <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
@@ -174,4 +182,5 @@
       <taglib-location>/WEB-INF/tld/liferay-util.tld</taglib-location>
     </taglib>
   </jsp-config>
+ 
 </web-app>
