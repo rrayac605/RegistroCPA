@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-10-07 11:51:27"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloDePruebas\CasosDePrueba\ModuloInformacionPatronal\ModuloInformaciónPatronal.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-10-20 10:45:13"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-10-21 13:21:15"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-10-07 20:28:31"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -59,7 +59,7 @@
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="stereotype" value="testcase"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="15679"/>
+								<UML:TaggedValue tag="ea_localid" value="16287"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={E28ED1D9-EB4D-4f66-B478-8F9FA5D83639}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testcase;GUID={8C2415CB-82E7-4854-94B4-933B233B5247};@ENDSTEREO;$DES;$CLT={2259240F-2D26-43f6-9D71-CE25C78356C0}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -81,13 +81,13 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="conditional" value=" &#xA;«trace»"/>
-								<UML:TaggedValue tag="ea_localid" value="16306"/>
+								<UML:TaggedValue tag="ea_localid" value="17377"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU04 - Reemplazar información patronal_TestCase1"/>
 								<UML:TaggedValue tag="ea_targetName" value="CU04 - Reemplazar información patronal"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="15679"/>
-								<UML:TaggedValue tag="ea_targetID" value="15662"/>
+								<UML:TaggedValue tag="ea_sourceID" value="16287"/>
+								<UML:TaggedValue tag="ea_targetID" value="16640"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -111,7 +111,6 @@
 						</UML:Dependency>
 						<UML:Comment xmi.id="EAID_3B30C65D_4392_417d_8963_61E6301A38F2" visibility="public" namespace="EAPK_EDFA60D0_B5F1_46b9_B10C_B60140601673">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="&lt;b&gt;&lt;u&gt;Basic Path&lt;/u&gt;&lt;/b&gt;&#xA;FB. Procesar archivo:&#xA;&lt;sup&gt;1&lt;/sup&gt; FB1. El sistema recibe el archivo de acuerdo a la categoría a la que pertenece lo renombra y almacena de acuerdo al RF-C033 Estructura de almacenaje. &lt;sup&gt;2&lt;/sup&gt; FB2. Al terminar la carga de un archivo, el servidor de almacenamiento Amazon  envía una respuesta de finalización de carga. &lt;sup&gt;3&lt;/sup&gt; FB3. El sistema recibe la respuesta de carga completa y almacena en BD los datos del archivo de acuerdo al FR-A024 Almacenar  aseveraciones   con estatus de aseveración de &quot;Cargado&quot;. &lt;sup&gt;4&lt;/sup&gt; FB4. El sistema ejecuta el proceso de translado de archivos a un servidor interno y a su vez  el translado de archivos a la estructura de procesados, de acuerdo al RF-C033 Estructura de almacenaje. &lt;sup&gt;5&lt;/sup&gt; FB5. Dentro del servidor interno, el sistema consulta los archivos en estado de &quot;Cargado&quot; y  ejecuta el proceso de validaciones. &lt;sup&gt;6&lt;/sup&gt;  FB6. El sistema realiza las validaciones de estructura del archivo (Orden de encabezado, tipo de dato y longitud) de acuerdo a FR-N013 - Detalle de validaciones de estructura. &lt;sup&gt;7&lt;/sup&gt; FB7. El sistema rrealiza las validaciones  lógicas de acuerdo a   FR-N014 - Detalle de validaciones lógicas. &lt;sup&gt;8&lt;/sup&gt; FB8. Si el archivo cumple con todas la validaciones, los datos son almacenado en la BD, de acuerdo a FR-A024 Almacenar  aseveraciones y el estado del archivo es actualizado a Correcto . En caso de presentarse algun error el sistema llama al EX1. Error en carga de BD.En caso de no cumplir con alguna validación el sitema llama al FA1. Escribir bitacora. &lt;sup&gt;9&lt;/sup&gt; FIn de caso de uso.&#xA;&#xA;&lt;b&gt;&lt;u&gt;Alternate Paths&lt;/u&gt;&lt;/b&gt;&#xA;FA1. Escribir bitacora:&#xA;(at &lt;sup&gt;8&lt;/sup&gt;)&#xA;FA1.1 En caso de presentarse algun error al validar la estructura y lógica del archivo, el sistema escribirá  la bitacora el error, de acuerdo a FR-N013 - Detalle de validaciones de estructura y FR-N014 - Detalle de validaciones lógicas. FA1.2 El sistema escribe los errores de la bitacora, de acuerdo a RF-A025 Escribir bitácora. FA1.3 El sistema actualiza en BD el estado del archivo a Incorrecto..&#xA;&#xA;&lt;b&gt;&lt;u&gt;Exceptions&lt;/u&gt;&lt;/b&gt;&#xA;EX1. Error en carga de BD:&#xA;(at &lt;sup&gt;8&lt;/sup&gt;)&#xA;EX1. Si ocurre algún error al cargar el archivo en la BD, el sistema deberá de escribir en el log de la aplicación el detalle del error."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="Note"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -129,10 +128,10 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="15680"/>
+								<UML:TaggedValue tag="ea_localid" value="16288"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=EAID_D081B462_D240_4dc0_A15A_8D3B312B7A0E;&lt;P3&gt;=;"/>
+								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=;&lt;P3&gt;=;"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Comment>
 						<UML:UseCase name="CU06 - Procesamiento de layout_TestCase1" xmi.id="EAID_7208EDDF_C56F_424c_ADE6_49AEFF71E03B" visibility="public" namespace="EAPK_EDFA60D0_B5F1_46b9_B10C_B60140601673" isRoot="false" isLeaf="false" isAbstract="false">
@@ -157,7 +156,7 @@
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="stereotype" value="testcase"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="15681"/>
+								<UML:TaggedValue tag="ea_localid" value="16289"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={3BB4EC47-45E6-4a25-9399-8955D0B3AE3A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testcase;GUID={8C2415CB-82E7-4854-94B4-933B233B5247};@ENDSTEREO;$DES;$CLT={7208EDDF-C56F-424c-ADE6-49AEFF71E03B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -179,13 +178,13 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="conditional" value=" &#xA;«trace»"/>
-								<UML:TaggedValue tag="ea_localid" value="16305"/>
+								<UML:TaggedValue tag="ea_localid" value="17369"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU06 - Procesamiento de layout_TestCase1"/>
 								<UML:TaggedValue tag="ea_targetName" value="CU06 - Procesamiento de layout"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="15681"/>
-								<UML:TaggedValue tag="ea_targetID" value="15664"/>
+								<UML:TaggedValue tag="ea_sourceID" value="16289"/>
+								<UML:TaggedValue tag="ea_targetID" value="16642"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -229,7 +228,7 @@
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="stereotype" value="testcase"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="15682"/>
+								<UML:TaggedValue tag="ea_localid" value="16290"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={90D13127-A839-49df-9054-46D62AB8C0B0}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testcase;GUID={8C2415CB-82E7-4854-94B4-933B233B5247};@ENDSTEREO;$DES;$CLT={7D5C3487-6815-4b57-97DC-70EA95794265}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -251,13 +250,13 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="conditional" value=" &#xA;«trace»"/>
-								<UML:TaggedValue tag="ea_localid" value="16304"/>
+								<UML:TaggedValue tag="ea_localid" value="17356"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU02 - Cargar información patronal_TestCase1"/>
 								<UML:TaggedValue tag="ea_targetName" value="CU02 - Cargar información patronal"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="15682"/>
-								<UML:TaggedValue tag="ea_targetID" value="15665"/>
+								<UML:TaggedValue tag="ea_sourceID" value="16290"/>
+								<UML:TaggedValue tag="ea_targetID" value="16643"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -281,7 +280,6 @@
 						</UML:Dependency>
 						<UML:Comment xmi.id="EAID_9348FAE4_84B1_4eb5_AEB6_626CD075E4D5" visibility="public" namespace="EAPK_EDFA60D0_B5F1_46b9_B10C_B60140601673">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="&lt;b&gt;&lt;u&gt;Basic Path&lt;/u&gt;&lt;/b&gt;&#xA;FB- Reemplazar aseveración:&#xA;&lt;sup&gt;1&lt;/sup&gt; FB1. El CU inicia cuando el actor (CPA) ingresa al módulo de Formulación y presentación del dictamen. &lt;sup&gt;2&lt;/sup&gt; FB2. El sistema carga la información previamente capturada por el actor (CPA). &lt;sup&gt;3&lt;/sup&gt; FB3.El actor (CPA) ingresa a la pestaña Adjuntar Aseveraciones y Cédula. &lt;sup&gt;4&lt;/sup&gt; FB4. El sistema muestra los archivos previamente cargados de acuerdo a sus categorias. El sistema consulta lo cargado de acuerdo a RF-A023 Consulta aseveraciones. &lt;sup&gt;5&lt;/sup&gt; FB5. El sistema permite al usuario reemplazar los archivos existentes de acuerdo a   RF-N015 - Condiciones eliminar/ reemplazar adjuntos. &lt;sup&gt;6&lt;/sup&gt; Si el usuario arrastra un archivo nuevo para reemplazar un archivo en estado &quot;Incorrecto&quot; continua en el siguiente paso, Si el arhivo se encuentra en estatus &quot;En validación&quot; continua en el FA1 Archivo en estado &quot;En validación&quot;. Si el archivo se en cuentra en estado Correcto continua en FA2 Archivo en estado &quot;Correcto&quot;. Si el archivo se encuentra en estado en validación continua en FA3 Archivo en estado &quot;Cargado&quot;. &lt;sup&gt;7&lt;/sup&gt; El sistema muestra el mensaje de confirmación Msj. 36 de acuerdo al RF-C018 - Mensajes de notificación al usuario. &lt;sup&gt;8&lt;/sup&gt; Si el usuario elige Sí el archivo será reemplazado; si el usuario elige No, el sistema no realiza ninguna acción. &lt;sup&gt;9&lt;/sup&gt; Fin de caso de uso.&#xA;&#xA;&lt;b&gt;&lt;u&gt;Alternate Paths&lt;/u&gt;&lt;/b&gt;&#xA;FA1 Archivo en estado &quot;En validación&quot;:&#xA;(at &lt;sup&gt;6&lt;/sup&gt;)&#xA;FA1.1 El usuario arrastra un archivo para reemplazar un existente en estado &quot;En validación&quot;. FA1.2 El sistema muestra el mensaje Msj.37 de acuerdo a RF-C018 - Mensajes de notificación al usuario. FA1.3 El actor (CPA) persiona Aceptar y regresa a pantalla anterior. FA1.4 Continua en el paso 4 del FB Reemplazar aseveración. &#xA;&#xA;FA2 Archivo en estado &quot;Correcto&quot;:&#xA;(at &lt;sup&gt;6&lt;/sup&gt;)&#xA;FA2.1 El usuario arrastra un archivo para reemplazar un existente en estado &quot;Correcto&quot;. FA2.2 El sistema muestra el siguiente mensaje &quot;Al reemplazar un archivo correcto, la información contenida en elatestiguamiento relacionado tambien será eliminada. ¿Desea continua?. FA2.3 Si el usuario elige Sí, el sistema reemplazará el archivo y eliminara el contenido del atestiguamiento relacionado. Si el usuario selecciona No, el sistema no ejecutará ninguna acción.. &#xA;&#xA;FA3 Archivo en estado &quot;Cargado&quot;:&#xA;(at &lt;sup&gt;6&lt;/sup&gt;)&#xA;FA1.1 El usuario arrastra un archivo para reemplazar un existente en estado &quot;Cargado&quot;. El sistema muestra el siguiente mensaje de confirmación: &quot;Esta seguro que desea reemplazar el archivo?&quot;. Si el usuario elige Sí el archivo será reemplazado; si el usuario elige No, el sistema no realiza ninguna acción.."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="Note"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -299,15 +297,14 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="15683"/>
+								<UML:TaggedValue tag="ea_localid" value="16291"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=EAID_98C4D56E_01A1_478d_9183_4580C7C17232;&lt;P3&gt;=;"/>
+								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=;&lt;P3&gt;=;"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Comment>
 						<UML:Comment xmi.id="EAID_CFAE1F7B_45C7_4bd7_9172_ADB78D13B7F0" visibility="public" namespace="EAPK_EDFA60D0_B5F1_46b9_B10C_B60140601673">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="&lt;b&gt;&lt;u&gt;Basic Path&lt;/u&gt;&lt;/b&gt;&#xA;FB. Carga de archivos:&#xA;&lt;sup&gt;1&lt;/sup&gt; FB1. El caso de uso inicia cuando el actor (CPA) ingresa al modulo de Formulacion y presentación de dictamen. &lt;sup&gt;2&lt;/sup&gt; FB2. El sistema mostrará la pantalla de Formulación y presentación de dictamen, Donde podrá visualizar la sección Datos del patrón a dictaminar de acuerdo al  RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;. &lt;sup&gt;3&lt;/sup&gt; FB3. El actor (CPA) ingresa a la pestaña Adjuntar Aseveraciones y Cédulas. &lt;sup&gt;4&lt;/sup&gt; FB4. El sistema mostrará la sección de Adjuntar aseveraciones y cédula con el listado de los conceptos, de acuerdo a RF-C003 - Estructura layouts aseveraciones y a FR-C016 - Detalle sección adjuntar aseveraciones y cédulas. El sistema consultará el listado de conceptos en la DB, de acuerdo al RF-A022 Consulta lista de aseveraciones en BD. &lt;sup&gt;5&lt;/sup&gt; FB5. El actor (CPA) agrega los adjuntos obligatorios y/o deseados de acuerdo a  RF-N001 - Layouts Obligatorios. &lt;sup&gt;6&lt;/sup&gt; FB6.  El sistema permite al actor (CPA) agregar los adjuntos en las categorias correspondientes. En caso de ocurirr algún error el sistema llama al EX1. Error al adjuntar archivo. &lt;sup&gt;7&lt;/sup&gt; FB7. El sistema realiza la validaciones fisicas del archivo de acuerdo al RF-C005 - Caracteristicas físicas layouts. En caso de presentarse algun error el sistema llama a la FA1. Validaciones físicas. De lo contrario muestra el porcentaje de carga. &lt;sup&gt;8&lt;/sup&gt; FB8. El actor (CPA) ingresa a la pestaña de Información patronal para verficar el estado del archivo cargado. &lt;sup&gt;9&lt;/sup&gt; FB11. El sistema muestra la sección de Información patronal de acuerdo a RF-C017 - Detalle de sección Información patronal. El sistema consulta en la BD el estado de las aseveraciones de acuerdo a RF-A023 Consulta aseveraciones. Si estado de alguno de los archivos es &quot;Incorrecto&quot; el sistema habilitara el ícono de &quot;Eliminar&quot;.  (&lt;extend&gt; CU06 - Procesamiento de layout). &lt;sup&gt;10&lt;/sup&gt; Si el actor consulta un archivo en estado Incorrecto, continua en el FA3. Consultar bitacora. &lt;sup&gt;11&lt;/sup&gt; FB12. El sistema permite al actor (CPA)  realizar la acciones de eliminar el archivo de acuerdo a RF-N015 - Condiciones eliminar/ reemplazar adjuntos. Si el actor (CPA) da clic en el icono eliminar el sistema llama al FA2. Eliminar archivo. &lt;sup&gt;12&lt;/sup&gt; FB13. Fin de caso de uso.&#xA;&#xA;&lt;b&gt;&lt;u&gt;Alternate Paths&lt;/u&gt;&lt;/b&gt;&#xA;FA1. Validación física:&#xA;(at &lt;sup&gt;7&lt;/sup&gt;)&#xA;FA1.1 El sistema valida que el  tipo de archivo adjunto sea .csv, en caso de que el archivo no sea de este tipo, el sistema no permitirá adjuntarlo y mostrará mensaje de advertencia  Msg. 28 de acuerdo al RF-C018 - Mensajes de notificación al usuario. FA1.2 El sistema valida que el peso del archivo sea menor de 500 Mb, en caso que el archivos supere el peso permitido el sistema mostrará el mensage de advertencia  Msg.29 de acuerdo al RF-C018 - Mensajes de notificación al usuario. FA1.3 Continua en el paso 5 del FB. Carga de archivos. &#xA;&#xA;FA2. Eliminar archivo:&#xA;(at &lt;sup&gt;11&lt;/sup&gt;)&#xA;FA2.1 El sistema permite al actor (CPA) eliminar los archivos de acuerdo a RF-N015 - Condiciones eliminar/ reemplazar adjuntos. FA2.2 Al dar clic en el icono Eliminar el sistema mostrará el mensaje de advertencia MSG 30 de acuerdo al  RF-C018 - Mensajes de notificación al usuario. FA2.3 Si el actor presiona el botón Aceptar, el archivo será eliminado, y presiona Cancelar el sistema no realizará ninguna acción.. FA2.4 Continua en el paso 11 del FB. Carga de archivos. &#xA;&#xA;FA3. Consultar bitacora:&#xA;(at &lt;sup&gt;10&lt;/sup&gt;)&#xA;FA3.2  El sistema habilitará el icono de bitácora con los errores encontrados en el archivo.. FA3.3 El usuario da clic en icono bitácora para consultar los errores encontrados  en el archivo. FA3.4 El sistema muestra la bitacora en una ventana emergente de acuerdo al RF-C032 Características Bitácora. FA3.5 El actor cierra la ventana. FA3.6 Continua en el paso 11 del FB. Carga de archivos.&#xA;&#xA;&lt;b&gt;&lt;u&gt;Exceptions&lt;/u&gt;&lt;/b&gt;&#xA;EX1. Error al adjuntar archivo:&#xA;(at &lt;sup&gt;6&lt;/sup&gt;)&#xA;EX1.1 En caso de ocurrir algún error al intentar adjuntar un archivo el sistema mostrara el mensaje MSG 31 de acuerdo al RF-C018 - Mensajes de notificación al usuario."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="Note"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -325,15 +322,14 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="15684"/>
+								<UML:TaggedValue tag="ea_localid" value="16292"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=EAID_E041F09B_720D_4718_94C3_E8907CC31B52;&lt;P3&gt;=;"/>
+								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=;&lt;P3&gt;=;"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Comment>
 						<UML:Comment xmi.id="EAID_E7DAA8FC_FA02_4e7b_85EF_88F7821B88D0" visibility="public" namespace="EAPK_EDFA60D0_B5F1_46b9_B10C_B60140601673">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="&lt;b&gt;&lt;u&gt;Basic Path&lt;/u&gt;&lt;/b&gt;&#xA;Basic Path:&#xA;&lt;sup&gt;1&lt;/sup&gt; El CU inicia cuando el actor (CPA) ingresa al módulo de Formualción y presentación del dictamen. &lt;sup&gt;2&lt;/sup&gt; El sistema carga la información previamente capturada por el actor (CPA). &lt;sup&gt;3&lt;/sup&gt; El actor (CPA) ingresa a la pestaña Información patronal. &lt;sup&gt;4&lt;/sup&gt; El sistema muestra los archivos previamente cargados de acuerdo a sus categorias. El sistema consulta en la BD de acuerdo a RF-A023 Consulta aseveraciones. &lt;sup&gt;5&lt;/sup&gt; El sistema permite al usuario eliminar los archivos existentes de acuerdo a  RF-N015 - Condiciones eliminar/ reemplazar adjuntos. &lt;sup&gt;6&lt;/sup&gt; Si el usuario presiona el icono Eliminar de un archivo en estado &quot;Incorrecto&quot; continua en el siguiente paso, Si el archivo se en cuentra en estado Correcto continua en FA2 Archivo en estado &quot;Correcto&quot;. Si el archivo se encuentra en estado en validación continua en FA3 Archivo en estado &quot;Cargado&quot;. &lt;sup&gt;7&lt;/sup&gt; El sistema muestra el siguiente mensaje de confirmación: &quot;Esta seguro que desea eliminar el archivo?&quot;. Con las opciones Sí o No. &lt;sup&gt;8&lt;/sup&gt; Si el usuario elige Sí el archivo será eliminado, de acuerdo a la RF-N; si el usuario elige No, el sistema no realiza ninguna acción. &lt;sup&gt;9&lt;/sup&gt; Fin de caso de uso.&#xA;&#xA;&lt;b&gt;&lt;u&gt;Alternate Paths&lt;/u&gt;&lt;/b&gt;&#xA;FA2 Archivo en estado &quot;Correcto&quot;:&#xA;(at &lt;sup&gt;6&lt;/sup&gt;)&#xA;FA2.1 Si el usuario presiona el icono Eliminar de un archivo en estado estado &quot;Correcto&quot;. FA2.2 El sistema muestra el siguiente mensaje &quot;Al eliminar un archivo correcto, la información contenida en el atestiguamiento relacionado tambien será eliminada. ¿Desea continua?. FA2.3 Si el usuario elige Sí, el sistema elimina el archivo y eliminara el contenido del atestiguamiento relacionado. Si el usuario selecciona No, el sistema no ejecutará ninguna acción.. &#xA;&#xA;FA3 Archivo en estado &quot;Cargado&quot;:&#xA;(at &lt;sup&gt;6&lt;/sup&gt;)&#xA;FA1.1 Si el usuario presiona el icono Eliminar de un archivo en estado estado &quot;Cargado&quot;. El sistema muestra el siguiente mensaje de confirmación: &quot;Esta seguro que desea eliminar el archivo?&quot;. Si el usuario elige Sí el archivo será eliminado; si el usuario elige No, el sistema no realiza ninguna acción.."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="Note"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -351,10 +347,10 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="15685"/>
+								<UML:TaggedValue tag="ea_localid" value="16293"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=EAID_B4FF9D9A_A2FA_4c6f_BDBE_EA540CFB9E7A;&lt;P3&gt;=;"/>
+								<UML:TaggedValue tag="linkedFeature" value="&lt;P1&gt;=Structured Scenarios;&lt;P2&gt;=;&lt;P3&gt;=;"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Comment>
 						<UML:UseCase name="CU03 - Borrar información patronal_TestCase1" xmi.id="EAID_F015F891_38E7_4c2a_A927_B74C2D315625" visibility="public" namespace="EAPK_EDFA60D0_B5F1_46b9_B10C_B60140601673" isRoot="false" isLeaf="false" isAbstract="false">
@@ -379,7 +375,7 @@
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="stereotype" value="testcase"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="15686"/>
+								<UML:TaggedValue tag="ea_localid" value="16294"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={1398D9FB-6E70-40dc-95C4-96E585E83EBA}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testcase;GUID={8C2415CB-82E7-4854-94B4-933B233B5247};@ENDSTEREO;$DES;$CLT={F015F891-38E7-4c2a-A927-B74C2D315625}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
@@ -401,13 +397,13 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="conditional" value=" &#xA;«trace»"/>
-								<UML:TaggedValue tag="ea_localid" value="16303"/>
+								<UML:TaggedValue tag="ea_localid" value="17374"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CU03 - Borrar información patronal_TestCase1"/>
 								<UML:TaggedValue tag="ea_targetName" value="CU03 - Borrar información patronal"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="15686"/>
-								<UML:TaggedValue tag="ea_targetID" value="15663"/>
+								<UML:TaggedValue tag="ea_sourceID" value="16294"/>
+								<UML:TaggedValue tag="ea_targetID" value="16641"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -443,9 +439,9 @@
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="1324"/>
+				<UML:TaggedValue tag="ea_localid" value="1382"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=507DEE28;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Test Domain;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=8C4988BA;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Test Domain;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=461;Top=300;Right=566;Bottom=370;" subject="EAID_7208EDDF_C56F_424c_ADE6_49AEFF71E03B" seqno="1" style="DUID=A626F067;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
@@ -464,10 +460,10 @@
 				<UML:TaggedValue tag="type" value="Custom"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="1325"/>
+				<UML:TaggedValue tag="ea_localid" value="1383"/>
 				<UML:TaggedValue tag="parent" value="EAID_7D5C3487_6815_4b57_97DC_70EA95794265"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=1;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=3E6685A1;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=F1F3BA2C;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=600;Top=100;Right=911;Bottom=333;" subject="EAID_7D5C3487_6815_4b57_97DC_70EA95794265" seqno="1" style="DUID=347531EB;UCRect=1;"/>
@@ -487,10 +483,10 @@
 				<UML:TaggedValue tag="type" value="Custom"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="1326"/>
+				<UML:TaggedValue tag="ea_localid" value="1384"/>
 				<UML:TaggedValue tag="parent" value="EAID_7208EDDF_C56F_424c_ADE6_49AEFF71E03B"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=2;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=1;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=03F9FD52;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=B917A48A;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=600;Top=100;Right=835;Bottom=229;" subject="EAID_7208EDDF_C56F_424c_ADE6_49AEFF71E03B" seqno="1" style="DUID=CC317695;UCRect=1;"/>
@@ -510,10 +506,10 @@
 				<UML:TaggedValue tag="type" value="Custom"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="1327"/>
+				<UML:TaggedValue tag="ea_localid" value="1385"/>
 				<UML:TaggedValue tag="parent" value="EAID_2259240F_2D26_43f6_9D71_CE25C78356C0"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=2;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=1;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=753C6218;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=A1DFFEBC;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=600;Top=100;Right=970;Bottom=268;" subject="EAID_2259240F_2D26_43f6_9D71_CE25C78356C0" seqno="1" style="DUID=706A7727;UCRect=1;"/>
@@ -533,10 +529,10 @@
 				<UML:TaggedValue tag="type" value="Custom"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="1328"/>
+				<UML:TaggedValue tag="ea_localid" value="1386"/>
 				<UML:TaggedValue tag="parent" value="EAID_F015F891_38E7_4c2a_A927_B74C2D315625"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=2;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=1;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=207E3E05;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=E5D902C4;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=1;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=600;Top=100;Right=945;Bottom=242;" subject="EAID_F015F891_38E7_4c2a_A927_B74C2D315625" seqno="1" style="DUID=BB7786FD;UCRect=1;"/>
