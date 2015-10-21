@@ -73,5 +73,17 @@ public class RutasDAOImpl implements RutasDAO{
 	       jdbcTemplateObject.update(SQL, idPatronDictamen);
 	       System.out.println("Registro eliminado ID = " + idPatronDictamen );
 	}
+	
+	/**
+	 * 
+	 * @param status
+	 * @param idPatronDictamen
+	 * @param idAseveracion
+	 */
+	public void actualizaStatus(int status,int idPatronDictamen,int idAseveracion){
+		String SQL = "update NDT_CARGA_DOCUMENTO set cve_id_estado_cargo_doc = ? where cve_id_estado_cargo_doc = ? and cve_id_aseveracion = ?";
+	       jdbcTemplateObject.update(SQL,status, idPatronDictamen,idAseveracion);
+	       System.out.println("Status actualiza a = " + status);
+	}
 
 }
