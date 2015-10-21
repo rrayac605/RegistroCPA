@@ -9,7 +9,6 @@ import javax.ejb.Stateless;
 
 import org.apache.log4j.Logger;
 
-import mx.gob.imss.cit.de.dictaminacion.commons.enums.EstadoAtestiguamientoEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.AtestigPreguntasRespuestDTO;
@@ -62,8 +61,7 @@ public class ExamenIntegratorImpl implements ExamenIntegrator {
 			}
 			System.out.println(
 					"++++++++++++++++++++++++++++++++++++++++++++++++++++++Fin Prueba examen+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			if (atestiguamientoDictamenDTO.getCveIdEstadoAtestiguamiento().getCveIdEstadoAtestiguamiento().equals( 
-					EstadoAtestiguamientoEnum.VALIDADO)) {
+			if (atestiguamientoDictamenDTO.getCveIdEstadoAtestiguamiento().getCveIdEstadoAtestiguamiento()==2l) {
 				System.out.println(
 						"++++++++++++++++++++++++++++++++++++++++++++++++++++++Inicio Prueba respuesta y Observaciones+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 				System.out.println("Atestiguamiento id : " + atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
@@ -76,19 +74,14 @@ public class ExamenIntegratorImpl implements ExamenIntegrator {
 						System.out.println("pregunta  : " + pregunta.getDesPregunta());
 						for (OpcionPreguntaDTO opcionPreguntaDTO : pregunta.getNdcOpcionesPregunta()) {
 							System.out.println("Opcion Pregunta id : " + opcionPreguntaDTO.getCveIdOpcionPregunta());
-							System.out.println("clave id Pregunta  : " + opcionPreguntaDTO.getCveIdPregunta().getCveIdPregunta());
-							System.out.println("clave id Respuesta  : " + opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
 							for (AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO : opcionPreguntaDTO
 									.getNdtAtestigPreguntasRespuestas()) {
 								System.out.println("clave id Atestiguamientos  : " +atestigPreguntasRespuestDTO.getCveIdAtestiguamientos());
-								if (atestigPreguntasRespuestDTO.getCveIdOpcionPregunta().getCveIdOpcionPregunta()
-										.equals(opcionPreguntaDTO.getCveIdOpcionPregunta())) {
 									System.out.println("Opcion respuesta: "
-											+ opcionPreguntaDTO.getCveIdPregunta().getCveIdPregunta());
+											+ opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
 									pregunta.setOpcionSeleccionada(
-											opcionPreguntaDTO.getCveIdPregunta().getCveIdPregunta());
+											opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
 									pregunta.setObservaciones(atestigPreguntasRespuestDTO.getDesObservaciones());
-								}
 							}
 						}
 					}
