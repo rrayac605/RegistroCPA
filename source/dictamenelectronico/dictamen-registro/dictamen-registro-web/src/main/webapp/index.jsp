@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-request.getSession().setAttribute("curp", "DUSL821218HDFRLC09");
+request.getSession().setAttribute("curp", "DUSL821218HDFRLCO9");
 request.getSession().setAttribute("rfc", "DUSL821218LN8");
 String redirectURL = "faces/views/welcome.xhtml";
 response.sendRedirect(redirectURL);

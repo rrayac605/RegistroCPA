@@ -12,6 +12,5 @@ public class ActivacionRegistroColegioBean implements Serializable {
 	private static final long serialVersionUID = -943027260269379465L;
 	
 	
-	
 
 }
