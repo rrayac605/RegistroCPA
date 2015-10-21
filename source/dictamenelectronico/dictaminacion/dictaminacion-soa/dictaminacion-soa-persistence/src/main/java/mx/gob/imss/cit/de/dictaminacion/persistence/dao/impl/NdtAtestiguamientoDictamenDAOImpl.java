@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import mx.gob.imss.cit.de.dictaminacion.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtAtestiguamientoDictamenDO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.AbstractBaseDAO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtAtestiguamientoDictamenDAO;
@@ -40,16 +39,16 @@ public class NdtAtestiguamientoDictamenDAOImpl extends AbstractBaseDAO<NdtAtesti
 	 }
 
 	@Override
-	public  NdcAtestiguamientoDO getDetalleExamenByAtestiguamiento(Long cveIdEstadoAtestiguamiento, Long cveIdAtestiguamiento) {
-		NdcAtestiguamientoDO ndcAtestiguamientoDO = null;
-       Query q = null;
+	public  NdtAtestiguamientoDictamenDO getDetalleExamenByAtestiguamiento(NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO) {
+	   Query q = null;
        
        q = em.createNamedQuery("NdtAtestiguamientoDictamenDO.getDetalleExamenByAtestiguamiento");
-       q.setParameter("cveIdAtestiguamiento", cveIdAtestiguamiento);
-       q.setParameter("cveIdEstadoAtestiguamiento", cveIdEstadoAtestiguamiento);
-       ndcAtestiguamientoDO =(NdcAtestiguamientoDO) q.getResultList().get(0);
+       q.setParameter("cveIdAtestiguamiento", ndtAtestiguamientoDictamenDO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
+       q.setParameter("cveIdEstadoAtestiguamiento", ndtAtestiguamientoDictamenDO.getCveIdEstadoAtestiguamiento().getCveIdEstadoAtestiguamiento());
+       q.setParameter("cveIdPatronDictamen", ndtAtestiguamientoDictamenDO.getCveIdPatronDictamen().getCveIdPatronDictamen());
+       ndtAtestiguamientoDictamenDO =(NdtAtestiguamientoDictamenDO) q.getResultList().get(0);
        
-       return ndcAtestiguamientoDO;
+       return ndtAtestiguamientoDictamenDO;
 	}
 	
 	@Override

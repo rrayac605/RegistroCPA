@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.de.dictaminacion.commons.to.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import mx.gob.imss.cit.de.dictaminacion.commons.to.base.BaseTO;
 
@@ -11,23 +12,18 @@ public class OpcionPreguntaTO extends BaseTO{
 	 */
 	private static final long serialVersionUID = 3308710887108580782L;
 	private Long cveIdOpcionPregunta;
-    private String desOpcionPregunta;
     private Date fecAltaRegistro;
     private Date fecBajaRegistro;
     private TipoRespuestaTO cveIdRespuesta;
     private PreguntaTO cveIdPregunta;
+    private List<AtestigPreguntasRespuestTO> ndtAtestigPreguntasRespuestas;
+
     
 	public Long getCveIdOpcionPregunta() {
 		return cveIdOpcionPregunta;
 	}
 	public void setCveIdOpcionPregunta(Long cveIdOpcionPregunta) {
 		this.cveIdOpcionPregunta = cveIdOpcionPregunta;
-	}
-	public String getDesOpcionPregunta() {
-		return desOpcionPregunta;
-	}
-	public void setDesOpcionPregunta(String desOpcionPregunta) {
-		this.desOpcionPregunta = desOpcionPregunta;
 	}
 	public Date getFecAltaRegistro() {
 		return fecAltaRegistro;
@@ -53,6 +49,11 @@ public class OpcionPreguntaTO extends BaseTO{
 	public void setCveIdPregunta(PreguntaTO cveIdPregunta) {
 		this.cveIdPregunta = cveIdPregunta;
 	}
-    
+	public List<AtestigPreguntasRespuestTO> getNdtAtestigPreguntasRespuestas() {
+		return ndtAtestigPreguntasRespuestas;
+	}
+	public void setNdtAtestigPreguntasRespuestas(List<AtestigPreguntasRespuestTO> ndtAtestigPreguntasRespuestas) {
+		this.ndtAtestigPreguntasRespuestas = ndtAtestigPreguntasRespuestas;
+	}
 	
 }

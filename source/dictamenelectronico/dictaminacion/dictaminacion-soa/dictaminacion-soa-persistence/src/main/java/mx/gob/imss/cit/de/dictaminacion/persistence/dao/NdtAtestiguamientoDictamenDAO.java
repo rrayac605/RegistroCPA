@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import mx.gob.imss.cit.de.dictaminacion.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtAtestiguamientoDictamenDO;
 @Local
 public interface NdtAtestiguamientoDictamenDAO {
@@ -49,7 +48,7 @@ public interface NdtAtestiguamientoDictamenDAO {
 	 *
 	 * @return the list
 	 */
-	NdcAtestiguamientoDO getDetalleExamenByAtestiguamiento(Long cveIdEstadoAtestiguamiento, Long cveIdAtestiguamiento);
+	NdtAtestiguamientoDictamenDO getDetalleExamenByAtestiguamiento(NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO);
 	
 	
 	

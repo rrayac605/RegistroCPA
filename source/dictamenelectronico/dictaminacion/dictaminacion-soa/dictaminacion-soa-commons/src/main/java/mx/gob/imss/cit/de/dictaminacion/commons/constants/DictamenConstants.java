@@ -54,7 +54,7 @@ public final class DictamenConstants {
 	
 	public static final String SEPARADOR_PARAM_ARCHIVO="#";
 	public static final String SEPARADOR_PARAM_CLAVE="-";
-	public static final int PROFUNDIDAD_MAPEO=4;
+	public static final int PROFUNDIDAD_MAPEO=5;
 	public static final String ENCODING_UTF8="UTF-8";
 	public static final String ALGORITHM_HMACSHA1="HmacSHA1";
 	

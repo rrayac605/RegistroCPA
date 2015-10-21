@@ -20,7 +20,7 @@ public class ExamenPage extends BasePage{
 	
 	private AtestiguamientoDTO atestiguamientoDTO;
 	
-	private AtestiguamientoDictamenDTO AtestiguamientoDictamenDTOSeleccionado;
+	private AtestiguamientoDictamenDTO atestiguamientoDictamenDTOSeleccionado;
 
 	public AtestiguamientoDTO getAtestiguamientoDTO() {
 		return atestiguamientoDTO;
@@ -31,12 +31,12 @@ public class ExamenPage extends BasePage{
 	}
 
 	public AtestiguamientoDictamenDTO getAtestiguamientoDictamenDTOSeleccionado() {
-		return AtestiguamientoDictamenDTOSeleccionado;
+		return atestiguamientoDictamenDTOSeleccionado;
 	}
 
 	public void setAtestiguamientoDictamenDTOSeleccionado(
 			AtestiguamientoDictamenDTO atestiguamientoDictamenDTOSeleccionado) {
-		AtestiguamientoDictamenDTOSeleccionado = atestiguamientoDictamenDTOSeleccionado;
+		this.atestiguamientoDictamenDTOSeleccionado = atestiguamientoDictamenDTOSeleccionado;
 	}
 
 }

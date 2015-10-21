@@ -1,29 +1,24 @@
 package mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.base.BaseDTO;
 
 public class OpcionPreguntaDTO extends BaseDTO {
 	private static final long serialVersionUID = -5663789493709186799L;
 	private Long cveIdOpcionPregunta;
-    private String desOpcionPregunta;
     private Date fecAltaRegistro;
     private Date fecBajaRegistro;
     private TipoRespuestaDTO cveIdRespuesta;
     private PreguntaDTO cveIdPregunta;
+    private List<AtestigPreguntasRespuestDTO> ndtAtestigPreguntasRespuestas;
     
 	public Long getCveIdOpcionPregunta() {
 		return cveIdOpcionPregunta;
 	}
 	public void setCveIdOpcionPregunta(Long cveIdOpcionPregunta) {
 		this.cveIdOpcionPregunta = cveIdOpcionPregunta;
-	}
-	public String getDesOpcionPregunta() {
-		return desOpcionPregunta;
-	}
-	public void setDesOpcionPregunta(String desOpcionPregunta) {
-		this.desOpcionPregunta = desOpcionPregunta;
 	}
 	public Date getFecAltaRegistro() {
 		return fecAltaRegistro;
@@ -49,6 +44,12 @@ public class OpcionPreguntaDTO extends BaseDTO {
 	public void setCveIdPregunta(PreguntaDTO cveIdPregunta) {
 		this.cveIdPregunta = cveIdPregunta;
 	}
+	public List<AtestigPreguntasRespuestDTO> getNdtAtestigPreguntasRespuestas() {
+		return ndtAtestigPreguntasRespuestas;
+	}
+	public void setNdtAtestigPreguntasRespuestas(List<AtestigPreguntasRespuestDTO> ndtAtestigPreguntasRespuestas) {
+		this.ndtAtestigPreguntasRespuestas = ndtAtestigPreguntasRespuestas;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -56,9 +57,10 @@ public class OpcionPreguntaDTO extends BaseDTO {
 		result = prime * result + ((cveIdOpcionPregunta == null) ? 0 : cveIdOpcionPregunta.hashCode());
 		result = prime * result + ((cveIdPregunta == null) ? 0 : cveIdPregunta.hashCode());
 		result = prime * result + ((cveIdRespuesta == null) ? 0 : cveIdRespuesta.hashCode());
-		result = prime * result + ((desOpcionPregunta == null) ? 0 : desOpcionPregunta.hashCode());
 		result = prime * result + ((fecAltaRegistro == null) ? 0 : fecAltaRegistro.hashCode());
 		result = prime * result + ((fecBajaRegistro == null) ? 0 : fecBajaRegistro.hashCode());
+		result = prime * result
+				+ ((ndtAtestigPreguntasRespuestas == null) ? 0 : ndtAtestigPreguntasRespuestas.hashCode());
 		return result;
 	}
 	@Override
@@ -85,11 +87,6 @@ public class OpcionPreguntaDTO extends BaseDTO {
 				return false;
 		} else if (!cveIdRespuesta.equals(other.cveIdRespuesta))
 			return false;
-		if (desOpcionPregunta == null) {
-			if (other.desOpcionPregunta != null)
-				return false;
-		} else if (!desOpcionPregunta.equals(other.desOpcionPregunta))
-			return false;
 		if (fecAltaRegistro == null) {
 			if (other.fecAltaRegistro != null)
 				return false;
@@ -100,9 +97,12 @@ public class OpcionPreguntaDTO extends BaseDTO {
 				return false;
 		} else if (!fecBajaRegistro.equals(other.fecBajaRegistro))
 			return false;
+		if (ndtAtestigPreguntasRespuestas == null) {
+			if (other.ndtAtestigPreguntasRespuestas != null)
+				return false;
+		} else if (!ndtAtestigPreguntasRespuestas.equals(other.ndtAtestigPreguntasRespuestas))
+			return false;
 		return true;
 	}
-    
-    
 	
 }
