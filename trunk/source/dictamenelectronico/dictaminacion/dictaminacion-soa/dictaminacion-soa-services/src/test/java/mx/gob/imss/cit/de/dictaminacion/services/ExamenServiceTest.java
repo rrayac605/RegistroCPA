@@ -40,7 +40,7 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 	}
 	
 	
-	/*@Test
+	@Test
 	public void testFindExamenByIdPatronDictamen(){
 		List<AtestiguamientoDictamenTO> atestiguamientosTOList = new ArrayList<AtestiguamientoDictamenTO>();
 		try {
@@ -49,22 +49,30 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 			LOG.error(e.getMessage(),e);
 		}
 		Assert.assertNotNull(atestiguamientosTOList);
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void testGetDetalleExamenByAtestiguamiento(){
-		AtestiguamientoTO atestiguamientoTO  = null;
+		AtestiguamientoDictamenTO atestiguamientoDictamenTO = new AtestiguamientoDictamenTO();
+		AtestiguamientoTO atestiguamientoTO = new AtestiguamientoTO();
+		EstadoAtestiguamientoTO estadoAtestiguamientoTO = new EstadoAtestiguamientoTO();
+		PatronDictamenTO patronDictamenTO = new PatronDictamenTO();
+		atestiguamientoTO.setCveIdAtestiguamiento(10L);
+		estadoAtestiguamientoTO.setCveIdEstadoAtestiguamiento(2L);
+		patronDictamenTO.setCveIdPatronDictamen(63L);	
+		atestiguamientoDictamenTO.setCveIdAtestiguamiento(atestiguamientoTO);
+		atestiguamientoDictamenTO.setCveIdEstadoAtestiguamiento(estadoAtestiguamientoTO);
+		atestiguamientoDictamenTO.setCveIdPatronDictamen(patronDictamenTO);
 		try {
-		 atestiguamientoTO = examenService.getDetalleExamenByAtestiguamiento(2L, 10L);
-				
+			atestiguamientoDictamenTO = examenService.getDetalleExamenByAtestiguamiento(atestiguamientoDictamenTO);	
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 		}
 		Assert.assertNotNull(atestiguamientoTO);
-	}*/
+	}
 	
 	
-/*	@Test
+	@Test
 	public void testSaveByExamenAtestiguamiento_Error(){
 		AtestiguamientoDictamenTO atestiguamientoDictamenTO = new AtestiguamientoDictamenTO();
 		Boolean error = false;
@@ -72,13 +80,13 @@ private Logger LOG=Logger.getLogger(ExamenServiceTest.class);
 			examenService.saveExamenAtestiguamiento(atestiguamientoDictamenTO);
 		} catch(DictamenException de){
 			error = true;
-			LOG.error(de.getMessage(),de);
+			Assert.assertTrue(error);
 		}catch (Exception e) {
 			error = true;
-			LOG.error(e.getMessage(),e);
+			Assert.assertTrue(error);
 		}
 		Assert.assertTrue(error);
-	}*/
+	}
 	
 	@Test
 	public void testSaveByExamenAtestiguamiento_Ok(){

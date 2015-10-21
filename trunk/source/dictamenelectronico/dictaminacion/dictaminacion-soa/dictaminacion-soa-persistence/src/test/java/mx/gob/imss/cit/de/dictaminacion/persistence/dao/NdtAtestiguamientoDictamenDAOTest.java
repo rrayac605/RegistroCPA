@@ -14,7 +14,6 @@ import mx.gob.imss.cit.de.dictaminacion.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdcEstadoAtestiguamientoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtAtestiguamientoDictamenDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtPatronDictamenDO;
-import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtAtestiguamientoDictamenDAO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.base.AbstractDBTestUnit;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtAtestiguamientoDictamenDAOImpl;
 
@@ -100,9 +99,19 @@ public class NdtAtestiguamientoDictamenDAOTest extends AbstractDBTestUnit {
 	@Test
 	public void testGetDetalleExamenByAtestiguamiento() {
 		LOG.info("prueba");
-		NdcAtestiguamientoDO resultList  = localDAO.getDetalleExamenByAtestiguamiento(2L, 10L);
-		LOG.info(resultList.getDesAtestiguamiento());
-		Assert.assertNotNull(resultList);
+		NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO = new NdtAtestiguamientoDictamenDO();
+		NdcAtestiguamientoDO ndcAtestiguamientoDAO = new NdcAtestiguamientoDO();
+		NdcEstadoAtestiguamientoDO ndcEstadoAtestiguamientoDO = new NdcEstadoAtestiguamientoDO();
+		NdtPatronDictamenDO ndtPatronDictamenDO = new NdtPatronDictamenDO();
+		ndcAtestiguamientoDAO.setCveIdAtestiguamiento(10L);
+		ndcEstadoAtestiguamientoDO.setCveIdEstadoAtestiguamiento(2L);
+		ndtPatronDictamenDO.setCveIdPatronDictamen(63L);	
+		ndtAtestiguamientoDictamenDO.setCveIdAtestiguamiento(ndcAtestiguamientoDAO);
+		ndtAtestiguamientoDictamenDO.setCveIdEstadoAtestiguamiento(ndcEstadoAtestiguamientoDO);
+		ndtAtestiguamientoDictamenDO.setCveIdPatronDictamen(ndtPatronDictamenDO);
+		ndtAtestiguamientoDictamenDO  = localDAO.getDetalleExamenByAtestiguamiento(ndtAtestiguamientoDictamenDO);
+		LOG.info(ndtAtestiguamientoDictamenDO.getCveIdAtestiguamiento().getDesAtestiguamiento());
+		Assert.assertNotNull(ndtAtestiguamientoDictamenDO);
 	}
 
 }

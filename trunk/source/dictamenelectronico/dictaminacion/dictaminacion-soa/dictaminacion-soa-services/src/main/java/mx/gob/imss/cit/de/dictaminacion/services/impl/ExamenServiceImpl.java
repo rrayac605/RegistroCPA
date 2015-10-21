@@ -13,8 +13,6 @@ import mx.gob.imss.cit.de.dictaminacion.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.enums.EstadoAtestiguamientoEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.exception.DictamenException;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.AtestiguamientoDictamenTO;
-import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.AtestiguamientoTO;
-import mx.gob.imss.cit.de.dictaminacion.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdcEstadoAtestiguamientoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtAtestigPreguntasRespuestDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtAtestiguamientoDictamenDO;
@@ -58,16 +56,16 @@ public class ExamenServiceImpl implements ExamenService {
 	}
 
 	@Override
-	public AtestiguamientoTO getDetalleExamenByAtestiguamiento(Long cveIdEstadoAtestiguamiento, Long cveIdAtestiguamiento)
+	public AtestiguamientoDictamenTO getDetalleExamenByAtestiguamiento(AtestiguamientoDictamenTO atestiguamientoDictamenTO)
 			throws DictamenException {
-		AtestiguamientoTO atestiguamientoTO = new AtestiguamientoTO();
 		try {
-			NdcAtestiguamientoDO ndcAtestiguamientoDO = ndtAtestiguamientoDictamenDAO.getDetalleExamenByAtestiguamiento(cveIdEstadoAtestiguamiento, cveIdAtestiguamiento);
-			atestiguamientoTO = TransformerServiceUtils.transformer(ndcAtestiguamientoDO);
+			NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO = TransformerServiceUtils.transformer(atestiguamientoDictamenTO);
+			ndtAtestiguamientoDictamenDO = ndtAtestiguamientoDictamenDAO.getDetalleExamenByAtestiguamiento(ndtAtestiguamientoDictamenDO);
+			atestiguamientoDictamenTO = TransformerServiceUtils.transformer(ndtAtestiguamientoDictamenDO);
 		} catch (Exception e) {
 			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_CONSULTA_EXAMENES,e);
 		}
-		return atestiguamientoTO;
+		return atestiguamientoDictamenTO;
 	}
 
 	@Override

@@ -8,34 +8,28 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:c="http://java.sun.com/jstl/core">
-
-
 	<ui:define name="bodyContainer">
 		<h:form>
 			<p:panelGrid columns="1">
 				<p:panelGrid columns="1">
 					<p:panel>
-						<h2><p:outputLabel id = "AtestiguamientoLabel" value="#{examenPage.atestiguamientoDTO.desAtestiguamiento}"/></h2>
+						<h2><p:outputLabel id = "AtestiguamientoLabel"
+						 value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.desAtestiguamiento}"/></h2>
 						<br />
-						
 						<ui:repeat var="rubro"
-							value="#{examenPage.atestiguamientoDTO.ndcRubros}"
+							value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.ndcRubros}"
 							varStatus="status">
 							<h4><p:outputLabel id = "RubroLabel" value="#{rubro.desRubro}"/></h4>
 							<br />
 							<br />
-							<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}"
-								varStatus="status">
+							<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}" varStatus="status">
 								<p:outputLabel id="preguntaLabel" value="#{pregunta.desPregunta}" for="opcionRadio"/>
-								<p:selectOneRadio id="opcionRadio"
-									value="#{pregunta.opcionSeleccionada}" required="true"
+							 	<p:selectOneRadio id="opcionRadio"  value="#{pregunta.opcionSeleccionada}" required="true" 
 									requiredMessage="#{msg['message.label.views.dictamen.atestiguamiento.error']} #{pregunta.desPregunta}" >
-									<f:selectItems
+							 		<f:selectItems var="respuesta" value="#{pregunta.ndcOpcionesPregunta}"    
 										itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}"
-										var="respuesta"
-										itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}"
-										value="#{pregunta.ndcOpcionesPregunta}" />
-								</p:selectOneRadio>
+										itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}"  />
+								</p:selectOneRadio> 
 								<br />
 								<br />
 							</ui:repeat>

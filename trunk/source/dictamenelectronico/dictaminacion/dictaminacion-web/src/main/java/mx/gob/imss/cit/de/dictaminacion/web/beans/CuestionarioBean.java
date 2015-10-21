@@ -54,12 +54,12 @@ public class CuestionarioBean extends BaseBean {
 	}
 	
 	
-	public String editar(AtestiguamientoDictamenDTO examen){
-		examenBean.init(examen);	
+	public String editar(AtestiguamientoDictamenDTO atestiguamientoDictamenDTO){
+		examenBean.init(atestiguamientoDictamenDTO);	
 		return NavigationConstants.PAGE_EXAMEN;
 	}
 	
-	public String borrar(AtestiguamientoDictamenDTO examen){
+	public String borrar(AtestiguamientoDictamenDTO atestiguamientoDictamenDTO){
 		return "";
 	}
 

@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.de.dictaminacion.integration.api.ExamenIntegrator;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.AtestigPreguntasRespuestDTO;
-import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.AtestiguamientoDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.AtestiguamientoDictamenDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.OpcionPreguntaDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PreguntaDTO;
@@ -49,12 +48,11 @@ public class ExamenBean extends BaseBean {
 	private DatosPatronalesPage datosPatronalesPage;
 	
 	
-	public	String init(AtestiguamientoDictamenDTO examenDTO) {
+	public	String init(AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) {
 		CleanBeanUtil.cleanFields(examenPage);
-		examenPage.setAtestiguamientoDictamenDTOSeleccionado(examenDTO);
+		examenPage.setAtestiguamientoDictamenDTOSeleccionado(atestiguamientoDictamenDTO);
 		try {
-			examenPage.setAtestiguamientoDTO(examenIntegration.getDetalleExamenByAtestiguamiento(examenDTO.getCveIdEstadoAtestiguamiento().getCveIdEstadoAtestiguamiento(),
-					examenDTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento()));
+			examenPage.setAtestiguamientoDictamenDTOSeleccionado(examenIntegration.getDetalleExamenByAtestiguamiento(atestiguamientoDictamenDTO));
 		} catch (Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_DET_EXAMEN.getCode());
 		}
@@ -67,7 +65,7 @@ public class ExamenBean extends BaseBean {
 	
 	public void guardar(){	
 		AtestiguamientoDictamenDTO atestiguamientoDictamenDTO = examenPage.getAtestiguamientoDictamenDTOSeleccionado();
-		atestiguamientoDictamenDTO = convertirRubros(examenPage.getAtestiguamientoDTO(), atestiguamientoDictamenDTO);
+		atestiguamientoDictamenDTO = convertirRubros(atestiguamientoDictamenDTO);
 		try {
 			examenIntegration.saveExamenAtestiguamiento(atestiguamientoDictamenDTO);
 		} catch (Exception e) {
@@ -76,18 +74,29 @@ public class ExamenBean extends BaseBean {
 		}
 	}
 
-	private AtestiguamientoDictamenDTO convertirRubros(AtestiguamientoDTO atestiguamientoDTO, AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) {
+	private AtestiguamientoDictamenDTO convertirRubros( AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) {
 		if( atestiguamientoDictamenDTO.getNdtRubrosAtestiguamiento().size() == 0){
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++Inicio++++++++++++++++++++++++++++++++++++++++++++++++++");
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++Inicio Guardar++++++++++++++++++++++++++++++++++++++++++++++++++");
+			System.out.println("Patron Atestiguamiento: "+atestiguamientoDictamenDTO.getCveIdPatronDictamen().getCveIdPatronDictamen());
+			System.out.println("Estado Atetsiguamiento: "+atestiguamientoDictamenDTO.getCveIdEstadoAtestiguamiento().getDesEstadoAtestiguamiento());
+			System.out.println("Atetsiguamiento id : "+atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
+			System.out.println("Atetsiguamiento  : "+atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
 			List<RubroAtestiguamientoDictDTO> rubroAtestiguamientoDictDTOList = new ArrayList<RubroAtestiguamientoDictDTO>();
-			for(RubroDTO rubro: atestiguamientoDTO.getNdcRubros()){
+			for(RubroDTO rubro: atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getNdcRubros()){
+				System.out.println("Rubro id : "+rubro.getCveIdRubro());
+				System.out.println("Rubro  : "+rubro.getDesRubro());
 				List<AtestigPreguntasRespuestDTO> atestigPreguntasRespuestDTOList = new ArrayList<AtestigPreguntasRespuestDTO>();
 				RubroAtestiguamientoDictDTO rubroAtestiguamientoDictDTO = new RubroAtestiguamientoDictDTO();
 				rubroAtestiguamientoDictDTO.setCveIdAtestigDictamen(atestiguamientoDictamenDTO);
 				rubroAtestiguamientoDictDTO.setCveIdRubro(rubro);
 				for(PreguntaDTO preguntaDTO: rubro.getNdcPreguntas()){
+					System.out.println("Pregunta id : "+preguntaDTO.getCveIdPregunta());
+					System.out.println("pregunta  : "+preguntaDTO.getDesPregunta());
 					for(OpcionPreguntaDTO opcionPreguntaDTO: preguntaDTO.getNdcOpcionesPregunta() ){
+						System.out.println("Respuesta id : "+opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
+						System.out.println("Respuesta  : "+opcionPreguntaDTO.getCveIdRespuesta().getDesTipoRespuesta());
 						if (opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta().equals(preguntaDTO.getOpcionSeleccionada())){
+							System.out.println("Opcion Seleccionada: "+preguntaDTO.getOpcionSeleccionada());
 							AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO = new AtestigPreguntasRespuestDTO();
 							atestigPreguntasRespuestDTO.setCveIdOpcionPregunta(opcionPreguntaDTO);
 							atestigPreguntasRespuestDTO.setCveIdRubroAtestigDictamen(rubroAtestiguamientoDictDTO);
@@ -103,7 +112,7 @@ public class ExamenBean extends BaseBean {
 		}else{
 			
 		}
-		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++Fin++++++++++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++Fin Guardar++++++++++++++++++++++++++++++++++++++++++++++++++");
 		return atestiguamientoDictamenDTO;
 	}
 
