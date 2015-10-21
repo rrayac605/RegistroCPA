@@ -46,7 +46,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 14:16:58"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-21 17:03:27"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 17:35:23"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Consultar Catálogo CPA"/>
@@ -163,7 +163,8 @@
 						<step name="El sistema realiza la búsqueda con base en RFA-XXX de acuerdo al o los criterios definidos. Si existen coincidencias continuar con el flujo básico si no ir a FA02" guid="{F3C81F07-7F67-4344-844E-05E9B4E07467}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="5a" guid="{B82DF55F-DD7A-4d73-A40F-03209CF79416}" join="End"/>
 						</step>
-						<step name="El sistema mostrará una pantalla RFC-XX3 con las coincidencias encontradas de acuerdo a los criterios de búsqueda definidos RFA-XX1-Criterios de búsqueda" guid="{48B88D21-3CE9-4765-BCC3-E79F96B74CFE}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema mostrará una tabla RFC-XX3 con las coincidencias encontradas de acuerdo a los criterios de búsqueda definidos RFA-XX1-Criterios de búsqueda y no serán editables RFN-XX2" guid="{48B88D21-3CE9-4765-BCC3-E79F96B74CFE}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Fin del caso de uso" guid="{9317EEC9-AB4B-4ed9-A997-E024A3712EB0}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="Público General" guid="{3ADE8D90-7ACC-475f-B386-19443EAC3795}"/>
 						</context>
