@@ -55,13 +55,14 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public Fisica obtenerFisicaPorPersona(Persona persona){
 		Fisica personaFisica = null;
-		Fisica usuarioSesion=null;
 
 		Persona personaService = personaBdtuService.consultarPersonaFisicaIMSSPorRFC(persona);
+		LOGGER.info("BdtuServiceImpl.personaService="+personaService.toString());
 		if (personaService.getIdPersona() != null) {
 			personaFisica = (Fisica)  personaService;
 			if(personaFisica.getCveFisica() != null){
-				
+				return personaFisica;
+				/*
 				usuarioSesion = new Fisica();
 				usuarioSesion.setIdPersona(personaFisica.getIdPersona());
 				usuarioSesion.setCveFisica(personaFisica.getCveFisica());
@@ -75,10 +76,10 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 				usuarioSesion.setDomicilioFiscal(personaFisica.getDomicilioFiscal());
 				usuarioSesion.setMediosContactoFiscales(personaFisica.getMediosContactoFiscales());
 				usuarioSesion.setDomicilios(personaFisica.getDomicilios());
-				
+				*/
 			}
 		}
-		return usuarioSesion;
+		return null;
 	}
 
 
