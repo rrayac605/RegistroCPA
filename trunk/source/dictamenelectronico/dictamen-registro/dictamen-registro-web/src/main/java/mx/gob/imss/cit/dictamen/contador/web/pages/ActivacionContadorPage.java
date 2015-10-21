@@ -14,14 +14,16 @@ public class ActivacionContadorPage implements Serializable {
 
 	private static final long serialVersionUID = -8976265295241536809L;
 	
-	private PersonaDTO contadorPublicoDTO;
+	private PersonaDTO personaDTO;
 
-	public PersonaDTO getContadorPublicoDTO() {
-		return contadorPublicoDTO;
+	public PersonaDTO getPersonaDTO() {
+		return personaDTO;
 	}
 
-	public void setContadorPublicoDTO(PersonaDTO contadorPublicoDTO) {
-		this.contadorPublicoDTO = contadorPublicoDTO;
+	public void setPersonaDTO(PersonaDTO personaDTO) {
+		this.personaDTO = personaDTO;
 	}
+
+
 
 }
