@@ -1,10 +1,16 @@
 package mx.gob.imss.cit.dictamen.contador.web.pages;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 
 
+
+
+
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.FirmaElectronicaDTO;
 import mx.gob.imss.cit.dictamen.contador.web.util.annotations.Reset;
 
 
@@ -15,7 +21,7 @@ import mx.gob.imss.cit.dictamen.contador.web.util.annotations.Reset;
  */
 @ManagedBean(name = "firmaElectronicaPage")
 @SessionScoped
-public class FirmaElectronicaPage {
+public class FirmaElectronicaPage implements Serializable{
 
 	/**
 	 * UID
@@ -23,7 +29,7 @@ public class FirmaElectronicaPage {
 	private static final long serialVersionUID = 1L;
 	
 	@Reset
-	private String firmaElectronicaDTO;
+	private FirmaElectronicaDTO firmaElectronicaDTO;
 	
 	@Reset
 	private boolean mostrarDialogFirma;
@@ -32,14 +38,14 @@ public class FirmaElectronicaPage {
 	/**
 	 * @return the firmaElectronicaDTO
 	 */
-	public String getFirmaElectronicaDTO() {
+	public FirmaElectronicaDTO getFirmaElectronicaDTO() {
 		return firmaElectronicaDTO;
 	}
 
 	/**
 	 * @param firmaElectronicaDTO the firmaElectronicaDTO to set
 	 */
-	public void setFirmaElectronicaDTO(String firmaElectronicaDTO) {
+	public void setFirmaElectronicaDTO(FirmaElectronicaDTO firmaElectronicaDTO) {
 		this.firmaElectronicaDTO = firmaElectronicaDTO;
 	}
 
