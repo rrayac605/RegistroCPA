@@ -70,6 +70,12 @@
 			<to-view-id>/views/dictamen/dictamen.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>cedulaRemuneraciones</from-outcome>
+			<to-view-id>/views/dictamen/cedula/cedulaRemuneraciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
 
 	</navigation-rule>
 </faces-config>
