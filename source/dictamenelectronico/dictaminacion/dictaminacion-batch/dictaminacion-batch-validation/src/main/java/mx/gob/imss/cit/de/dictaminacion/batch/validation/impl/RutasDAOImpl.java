@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
-import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasMapper;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.mapper.RutasMapper;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.enums.TablasEnum;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.scanner.ScanBucket;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;

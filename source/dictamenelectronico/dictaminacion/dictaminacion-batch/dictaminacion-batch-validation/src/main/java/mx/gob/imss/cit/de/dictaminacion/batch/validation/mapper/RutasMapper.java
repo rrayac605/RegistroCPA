@@ -1,4 +1,5 @@
-package mx.gob.imss.cit.de.dictaminacion.batch.validation.dao;
+package mx.gob.imss.cit.de.dictaminacion.batch.validation.mapper;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
