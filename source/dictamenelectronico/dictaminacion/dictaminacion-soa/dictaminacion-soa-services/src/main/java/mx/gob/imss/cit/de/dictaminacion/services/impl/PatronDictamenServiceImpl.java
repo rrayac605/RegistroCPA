@@ -6,14 +6,17 @@ package mx.gob.imss.cit.de.dictaminacion.services.impl;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import org.apache.log4j.Logger;
 
+import mx.gob.imss.cit.de.dictaminacion.commons.constants.DictamenConstants;
 import mx.gob.imss.cit.de.dictaminacion.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.enums.EstadoDictamenEnum;
+import mx.gob.imss.cit.de.dictaminacion.commons.enums.EstadoPatronAsociadoEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.exception.DictamenException;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.PatronAsociadoTO;
@@ -184,9 +187,20 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 				NdtPatronAsociadoDO patronAsociadoDO=TransformerServiceUtils.transformer(patronAsociadoTO);
 				patronAsociadoDO.setFecRegistroAlta(new Date());
 				patronAsociadoDO.setFecRegistroActualizado(new Date());
-				ndtPatronAsociadoDAO.create(patronAsociadoDO);
+												
+				boolean val = Pattern.matches(DictamenConstants.EXPRESION_REGULAR_REGISTRO_PATRONAL,patronAsociadoTO.getRegPatronAsociado());
+				if(val){
+					ndtPatronAsociadoDAO.create(patronAsociadoDO);
+					PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
+					to.setEstadoValidacion(EstadoPatronAsociadoEnum.CORRECTO.getDescripcion());
+					res.add(to);
+				}else{
+					PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
+					patronAsociadoTO.setEstadoValidacion(EstadoPatronAsociadoEnum.INCORRECTO.getDescripcion());
+					res.add(to);
+				}
+			
 				
-				res.add(TransformerServiceUtils.transformer(patronAsociadoDO));
 			}
 		
 		}catch (Exception e) {
@@ -206,7 +220,9 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 			List<NdtPatronAsociadoDO> ndtPatronAsociadoDOs=ndtPatronAsociadoDAO.findByIdPatronDictamen(patronDictamenTO.getCveIdPatronDictamen());
 			
 			for (NdtPatronAsociadoDO ndtPatronAsociadoDO : ndtPatronAsociadoDOs) {
-				res.add(TransformerServiceUtils.transformer(ndtPatronAsociadoDO));
+				PatronAsociadoTO to=TransformerServiceUtils.transformer(ndtPatronAsociadoDO);
+				to.setEstadoValidacion(EstadoPatronAsociadoEnum.CORRECTO.getDescripcion());
+				res.add(to);
 			}
 		
 		}catch (Exception e) {

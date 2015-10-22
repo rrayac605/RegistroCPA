@@ -48,8 +48,8 @@ public class NdcAseveracionesDO implements Serializable {
     @NotNull
     @Column(name = "CVE_ID_ASEVERACION", nullable = false, precision = 22, scale = 0)
     private Long cveIdAseveracion;
-    @Size(max = 50)
-    @Column(name = "DES_TIPO_ASEVERACION", length = 50)
+    @Size(max = 100)
+    @Column(name = "DES_TIPO_ASEVERACION", length = 100)
     private String desTipoAseveracion;
     @Column(name = "FEC_REGISTRO_ALTA")
     @Temporal(TemporalType.TIMESTAMP)
