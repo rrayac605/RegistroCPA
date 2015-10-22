@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="../../comun/template/template.xhtml">
+	
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+
+					<h:form id="formAcreditacionMembresiaProbatorio">
+					<p:panel id="pnAcreditacionMembresia"  styleClass="table-no-border">
+							<h1>Acreditacion y Membresia</h1>
+					
+			<p:panelGrid style="width:100%;"
+				styleClass="table-no-border table-no-padding">
+				<p:row>
+					<p:column style="width:25%;">
+						<p:commandButton value="1" style="width:100%;"
+							styleClass="btn-menu" />
+					</p:column>
+
+					<p:column style="width:25%;">
+						<p:commandButton value="1" style="width:100%;"
+							styleClass="btn-menu" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value="2" style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value="3" style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			
+			<h3>Documentación Probatoria</h3>
+			<hr class="red" />
+			<br />
+			
+			<p:panelGrid id="tableDatosPersonales"
+				styleClass="table table-striped">
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="Membresia y Acreditacion" />
+					</p:column>
+		
+<p:column></p:column>
+				</p:row>
+				<p:row>
+
+					<p:column>
+		<p:inputText id="iptMembresia" size="30" />
+    <p:fileUpload  mode="simple" skinSimple="true"/>
+					</p:column>
+		
+	<p:column>
+	<p:splitButton value="Acciones" >
+	
+        <p:menuitem value="Guardar Tramite" ajax="false" />
+        <p:menuitem value="Salir" ajax="false"/>
+
+    </p:splitButton>
+    </p:column>
+				</p:row>
+				
+
+			</p:panelGrid>
+			
+	
+	
+		</p:panel>
+     </h:form>
+	</ui:define>
+</ui:composition>
