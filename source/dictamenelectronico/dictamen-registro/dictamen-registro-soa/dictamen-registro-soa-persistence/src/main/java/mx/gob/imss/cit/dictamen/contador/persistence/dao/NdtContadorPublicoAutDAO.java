@@ -7,4 +7,5 @@ import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
 @Local
 public interface NdtContadorPublicoAutDAO {
 	NdtContadorPublicoAutDO selectContadorPublicoAutByIdPersona(Long idPersona);
+	NdtContadorPublicoAutDO selectContadorPublicoAutByNumRegistro(Integer numRegistroCPA);
 }

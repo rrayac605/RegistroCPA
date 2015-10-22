@@ -49,6 +49,26 @@ public class NdtContadorPublicoAutDAOImpl extends AbstractBaseDAO<NdtContadorPub
         
 	}
 
+
+	@Override
+	public NdtContadorPublicoAutDO selectContadorPublicoAutByNumRegistro(
+			Integer numRegistroCPA) {
+		lOGGER.debug("numRegistroCPA="+numRegistroCPA);
+		NdtContadorPublicoAutDO rst=null;
+	       Query query = null;
+	       query = em.createQuery("SELECT n from NdtContadorPublicoAutDO n where n.numRegistroCpa = :numRegistroCpa");
+	       query.setParameter("numRegistroCpa", numRegistroCPA);
+	       //query.setParameter("cveIdEstadoCpa", cveIdEstadoCpa);
+			try{
+				rst = (NdtContadorPublicoAutDO)query.getSingleResult();
+			}catch (NoResultException noResultException){
+				lOGGER.debug("No hay personas con numRegistroCPA="+numRegistroCPA);
+			}	
+        return rst;
+        
+	}
+
+	
 	@Override
 	protected EntityManager getEntityManager() {
 		return em;
