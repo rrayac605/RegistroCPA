@@ -1,7 +1,6 @@
 package mx.gob.imss.cit.de.dictaminacion.batch.validation.util;
 
 import java.util.Date;
-import java.util.Random;
 
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.enums.BatchMensajesEnum;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.enums.BatchValidationsEnum;
@@ -19,8 +18,6 @@ public class ValidatorTO {
 		BitacoraErroresTO bitacoraErroresTO = new BitacoraErroresTO();
 		String desErrores = "";
 		bitacoraErroresTO = new BitacoraErroresTO();		
-		bitacoraErroresTO.setCveIdBitacoraCargaAsev(243L);			
-		bitacoraErroresTO.setCveIdBitErrores(new Random().nextLong());
 		bitacoraErroresTO.setFecRegistroActualizado(new Date());
 		bitacoraErroresTO.setFecRegistroAlta(new Date());
 		
@@ -29,11 +26,11 @@ public class ValidatorTO {
 		}
 		
 		if(!Validator.validate(BatchValidationsEnum.VALIDACION_2, a1TO.getRegPatronal())){
-			desErrores=desErrores.concat(Mensajes.getMensaje(BatchMensajesEnum.MENSAJE_1, a1TO.getLineNumber(), "RegPatronal"));
+			desErrores=desErrores.concat(Mensajes.getMensaje(BatchMensajesEnum.MENSAJE_1, a1TO.getLineNumber(), "RegPatronal",11));
 		}
 		
 		if(!Validator.validate(BatchValidationsEnum.VALIDACION_3, a1TO.getRegPatronal())){
-			desErrores=desErrores.concat(Mensajes.getMensaje(BatchMensajesEnum.MENSAJE_5, a1TO.getLineNumber(), "RegPatronal", 11));
+			desErrores=desErrores.concat(Mensajes.getMensaje(BatchMensajesEnum.MENSAJE_5, a1TO.getLineNumber(), "RegPatronal"));
 		}
 		
 		if(!Validator.validate(BatchValidationsEnum.VALIDACION_1, a1TO.getNomPrimerApellidoTrabajador())){
@@ -339,7 +336,9 @@ public class ValidatorTO {
 		if(!Validator.validate(BatchValidationsEnum.VALIDACION_11, a1TO.getImpTotal())){
 			desErrores=desErrores.concat(Mensajes.getMensaje(BatchMensajesEnum.MENSAJE_2, a1TO.getLineNumber(), "ImpTotal"));
 		}
-		
+		if(desErrores.length()>=3000){
+			desErrores = desErrores.substring(0, 2999);
+		}
 		bitacoraErroresTO.setDesErrores(desErrores);
 		return bitacoraErroresTO;	
 	}

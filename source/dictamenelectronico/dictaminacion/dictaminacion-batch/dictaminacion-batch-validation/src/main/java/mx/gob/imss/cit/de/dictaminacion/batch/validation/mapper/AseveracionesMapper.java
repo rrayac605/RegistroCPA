@@ -7,6 +7,7 @@ import org.springframework.util.Assert;
 
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.enums.BatchAseveracionesEnum;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.A1TO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.BitacoraErroresTO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.util.ValidatorTO;
 
 /**
@@ -17,7 +18,9 @@ import mx.gob.imss.cit.de.dictaminacion.batch.validation.util.ValidatorTO;
  */
 public class AseveracionesMapper implements LineMapper<Object>{
     private LineTokenizer tokenizer;	
-	private int idAseveracion;	
+	private int idAseveracion;
+	private int cveIdBitacoraCargaAsev;
+	private int cveIdPatronDictamen;
 	private ResourceFieldSetMapper fieldSetMapper;
 	
 	@Override
@@ -28,7 +31,11 @@ public class AseveracionesMapper implements LineMapper<Object>{
 			switch (idAseveracion){
 			case 1:
 				A1TO a1TO = (A1TO)fieldSetMapper.mapFieldSet(tokenizer.tokenize(paramString), BatchAseveracionesEnum.A1, paramInt);
-				a1TO.setBitacoraErroresTO(ValidatorTO.validateA1((a1TO)));
+				a1TO.setCveIdPatronDictamen(cveIdPatronDictamen);
+				a1TO.setCveIdAseveracion(idAseveracion);
+				BitacoraErroresTO bitacoraErroresTO = ValidatorTO.validateA1((a1TO));
+				bitacoraErroresTO.setCveIdBitacoraCargaAsev(Long.valueOf(cveIdBitacoraCargaAsev));
+				a1TO.setBitacoraErroresTO(bitacoraErroresTO);				
 				return a1TO;
 			case 2:
 				r = fieldSetMapper.mapFieldSet(tokenizer.tokenize(paramString), BatchAseveracionesEnum.A2, paramInt);
@@ -62,6 +69,22 @@ public class AseveracionesMapper implements LineMapper<Object>{
     public void afterPropertiesSet() {
         Assert.notNull(tokenizer, "The LineTokenizer must be set");
         Assert.notNull(fieldSetMapper, "The FieldSetMapper must be set");
-    }	
+    }
+
+	public int getCveIdBitacoraCargaAsev() {
+		return cveIdBitacoraCargaAsev;
+	}
+
+	public void setCveIdBitacoraCargaAsev(int cveIdBitacoraCargaAsev) {
+		this.cveIdBitacoraCargaAsev = cveIdBitacoraCargaAsev;
+	}
+
+	public int getCveIdPatronDictamen() {
+		return cveIdPatronDictamen;
+	}
+
+	public void setCveIdPatronDictamen(int cveIdPatronDictamen) {
+		this.cveIdPatronDictamen = cveIdPatronDictamen;
+	}
 }
 

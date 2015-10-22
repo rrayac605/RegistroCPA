@@ -10,7 +10,8 @@ import java.util.Date;
  */
 public class A1TO {
 	private String cveIdA1PercepTrab;
-	private String cveIdPatronDictamen;
+	private int cveIdPatronDictamen;
+	private int cveIdAseveracion;
 	private String regPatronal;
 	private String nomPrimerApellidoTrabajador;
 	private String nomSegundoApellidoTrabajador;
@@ -292,10 +293,10 @@ public class A1TO {
 	public void setImpPrimaDominical(String impPrimaDominical) {
 		this.impPrimaDominical = impPrimaDominical;
 	}
-	public String getCveIdPatronDictamen() {
+	public int getCveIdPatronDictamen() {
 		return cveIdPatronDictamen;
 	}
-	public void setCveIdPatronDictamen(String cveIdPatronDictamen) {
+	public void setCveIdPatronDictamen(int cveIdPatronDictamen) {
 		this.cveIdPatronDictamen = cveIdPatronDictamen;
 	}
 	public String getCveIdA1PercepTrab() {
@@ -345,6 +346,12 @@ public class A1TO {
 	}
 	public void setBitacoraErroresTO(BitacoraErroresTO bitacoraErroresTO) {
 		this.bitacoraErroresTO = bitacoraErroresTO;
+	}
+	public int getCveIdAseveracion() {
+		return cveIdAseveracion;
+	}
+	public void setCveIdAseveracion(int cveIdAseveracion) {
+		this.cveIdAseveracion = cveIdAseveracion;
 	}
 	
 }
