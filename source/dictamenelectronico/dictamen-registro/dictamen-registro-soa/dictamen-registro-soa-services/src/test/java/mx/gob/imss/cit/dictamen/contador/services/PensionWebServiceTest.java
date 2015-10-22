@@ -1,11 +1,17 @@
 package mx.gob.imss.cit.dictamen.contador.services;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.xml.namespace.QName;
+
 import gob.imss.webservice.sat.rfc.implementacion.ClienteWebserviceRfc;
 import mx.gob.imss.cit.dictamen.contador.services.impl.SatServiceImpl;
-import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.consultaspensiones.consultaspensionesservice.ConsultasPensionesService;
-import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.consultaspensiones.consultaspensionesservice.ConsultasPensionesServiceWS;
-import mx.gob.imss.ctirss.delta.framework.exceptions.ClienteWebserviceSatRfcException;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.ConsultaPersonaFisica;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.ConsultaPersonaFisicaInput;
+import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.ConsultaMediosDeContactoInput;
+import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.ServiciosBDTU_Service;
+
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -17,13 +23,14 @@ public class PensionWebServiceTest {
 
 	
 	@Test
-	public void TestConexion(){
-		Fisica personaFisica = null;
+	public void TestConexion() throws MalformedURLException{
+	    URL url = new URL("http://11.254.20.226:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl" );
+		ServiciosBDTU_Service service = new ServiciosBDTU_Service(url, new QName("http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/", "ServiciosBDTU"));
+		ConsultaMediosDeContactoInput consultaMediosDeContactoInput= new ConsultaMediosDeContactoInput();
+		consultaMediosDeContactoInput.setIdPersona(37472955L);
+		service.getServiciosBDTUSOAP().consultaMediosDeContacto(consultaMediosDeContactoInput);
+	
    
-		ConsultasPensionesService consultasPensionesService = new ConsultasPensionesService();
-		LOGGER.info("cliente.creacion");
-ConsultasPensionesServiceWS consultasPensionesServiceWS = consultasPensionesService.getConsultasPensionesServiceWSPort();
-
 
 
 	}
