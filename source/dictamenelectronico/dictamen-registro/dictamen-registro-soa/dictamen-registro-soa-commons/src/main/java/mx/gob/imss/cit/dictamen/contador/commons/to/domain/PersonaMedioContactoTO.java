@@ -13,8 +13,9 @@ public class PersonaMedioContactoTO implements Serializable {
     private Date fechaAlta;
     private String descripcion;
     private Long idMedioContacto;
+    private Long idPersona;
     
-    public Long getIdPersonafContacto() {
+	public Long getIdPersonafContacto() {
 		return idPersonafContacto;
 	}
 	public void setIdPersonafContacto(Long idPersonafContacto) {
@@ -44,5 +45,11 @@ public class PersonaMedioContactoTO implements Serializable {
 	public void setIdMedioContacto(Long idMedioContacto) {
 		this.idMedioContacto = idMedioContacto;
 	}
-    
+
+    public Long getIdPersona() {
+		return idPersona;
+	}
+	public void setIdPersona(Long idPersona) {
+		this.idPersona = idPersona;
+	}
 }
