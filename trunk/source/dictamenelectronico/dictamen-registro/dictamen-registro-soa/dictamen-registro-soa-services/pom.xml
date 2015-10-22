@@ -35,6 +35,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>mx.gob.imss.cit</groupId>
+			<artifactId>imss-ws-si-clientes</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>soap</groupId>
 			<artifactId>soap</artifactId>
 			<version>2.1</version>
@@ -82,7 +88,6 @@
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 			<artifactId>dictamen-registro-soa-persistence</artifactId>
-			<type>test-jar</type>
 			<version>${project.parent.version}</version>
 			<scope>compile</scope>
 		</dependency>
