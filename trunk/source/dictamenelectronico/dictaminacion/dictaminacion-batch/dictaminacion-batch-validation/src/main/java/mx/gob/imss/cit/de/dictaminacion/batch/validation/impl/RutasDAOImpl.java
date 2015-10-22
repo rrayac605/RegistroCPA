@@ -2,7 +2,6 @@ package mx.gob.imss.cit.de.dictaminacion.batch.validation.impl;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;

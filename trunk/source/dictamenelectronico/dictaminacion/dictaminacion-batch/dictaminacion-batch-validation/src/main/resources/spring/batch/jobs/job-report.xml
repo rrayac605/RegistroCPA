@@ -34,6 +34,7 @@
 
     <bean id="itemProcessor2" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.processors.TxtFileProcessor2" >
     	<property name="linesTO" ref="linesTO"></property>
+    	<property name="rutasDAO" ref="rutasDaoImpl"/>   	
     </bean>
                 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -97,6 +98,8 @@
 					<bean class="mx.gob.imss.cit.de.dictaminacion.batch.validation.mapper.ResourceFieldSetMapper"/>
 				</property>
 				<property name="idAseveracion" value="#{jobParameters[idAseveracion]}"/>
+				<property name="cveIdBitacoraCargaAsev" value="#{jobParameters[cveIdBitacoraCargaAsev]}"/>
+				<property name="cveIdPatronDictamen" value="#{jobParameters[cveIdPatronDictamen]}"></property>
 			</bean>
 		</property>
 	

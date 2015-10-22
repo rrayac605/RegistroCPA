@@ -10,9 +10,10 @@ import mx.gob.imss.cit.de.dictaminacion.batch.validation.enums.BatchParametrosMe
  * 
  */
 public class Mensajes {
-	public static String getMensaje(BatchMensajesEnum mensaje, int lineNumber, String field){		
-		return mensaje.getMensaje().replaceAll(BatchParametrosMensajesEnum.NOMBRE_CAMPO.getCampo(), field)
-				.replaceAll(BatchParametrosMensajesEnum.NUMERO_LINEA.getCampo(), String.valueOf(lineNumber));		
+	public static String getMensaje(BatchMensajesEnum mensaje, int lineNumber, String field){				
+		String respuesta = mensaje.getMensaje().replaceAll(BatchParametrosMensajesEnum.NOMBRE_CAMPO.getCampo(), field);
+			respuesta = respuesta.replaceAll(BatchParametrosMensajesEnum.NUMERO_LINEA.getCampo(), String.valueOf(lineNumber));
+		return respuesta;
 	}
 	
 	public static String getMensaje(BatchMensajesEnum mensaje, int lineNumber, String field, int numeroCaracteres){

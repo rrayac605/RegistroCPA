@@ -41,7 +41,6 @@ public class ScanBucket {
     private String[] extension;
 	private String fields = "regPatronal, nomPrimerApellidoTrabajador, nomSegundoApellidoTrabajador, nomNombreTrabajador, numNssTrabajador, rfcTrabajador, curpTrabajador, impSueldosSalarios, impGratificaciones, impViaticos, impTiempoExtra, impPrimaVacacional, impPrimaDominical, impPtu, impReembolsoGm, impFondoAhorro, impCajaAhorro, impValesDespensa, impAyudaGf, impContribucionPatron, impPremioPuntualidad, impPremioAsistencia, impPrimaSeguroVida, impSeguroGmm, impValesRestaurant, impValesGasolina, impValesRopa, impAyudaRenta, impAyudaEscolar, impAyudaAnteojos, impAyudaTransporte, impCuotaSindical, impSubsidioIncapacidad, impBecaTrabajadorHijo, impOtrosIngresosXsalario, impPagoOtroEmpleador, impJubPenRetiro, impOtrosPagosXseparacion, impTotal";
 	private String prototype = "a1";
-//	private Long idAseveracion=1L;
     private RutasDAO rutasDAO;    
 	
     @Autowired
@@ -60,43 +59,28 @@ public class ScanBucket {
     	JobParameters parameters;
     	
     	List<RutaTO> rutas=rutasDAO.obtieneRutas();
-    	for(int i=0;i<rutas.size();i++){
-    		
-    		rutasDAO.borrarBitacora(rutas.get(i).getIdBitacora());
-    		rutasDAO.borrarTablaAseveracion(rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
-    		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
-
-    		
+    	for(int i=0;i<rutas.size();i++){    		    		
     		File file = new File(rutas.get(i).getRuta());
-    		System.out.println(file.exists());
-    		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
-    		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
-			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
-			parametersBuilder.addString("destino", processFile.getAbsolutePath().replaceFirst("DictamenProceso", "DictamenDestino")).toJobParameters();
-			parametersBuilder.addString("date", new Date().toString());
-			parametersBuilder.addString("delay", delay);
-			parametersBuilder.addString("fields", this.fields);
-			parametersBuilder.addString("prototype", this.prototype);
-			parametersBuilder.addLong("idAseveracion", Long.valueOf(rutas.get(i).getCveIdAseveracion()));
-			parameters = parametersBuilder.toJobParameters();
-			JobExecution execution = jobLauncher.run(job, parameters);
-			LOG.info("Exit Status : " + execution.getStatus());
-    	}
-    	 
-//    	Collection<File> files = FileUtils.listFiles(new File(rutaDestino), extension, true);
-//    	for(File file: files){    		
-//    		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
-//    		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
-//			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
-//			parametersBuilder.addString("destino", processFile.getAbsolutePath().replaceFirst("DictamenProceso", "DictamenDestino")).toJobParameters();
-//			parametersBuilder.addString("date", new Date().toString());
-//			parametersBuilder.addString("delay", delay);
-//			parametersBuilder.addString("fields", this.fields);
-//			parametersBuilder.addString("prototype", this.prototype);
-//			parameters = parametersBuilder.toJobParameters();
-//			JobExecution execution = jobLauncher.run(job, parameters);
-//			LOG.info("Exit Status : " + execution.getStatus());
-//    	}
+    		if (file.exists()){
+        		rutasDAO.borrarBitacora(rutas.get(i).getIdBitacora());
+        		rutasDAO.borrarTablaAseveracion(rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
+        		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());    			
+        		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
+        		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
+    			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
+    			parametersBuilder.addString("destino", processFile.getAbsolutePath().replaceFirst("DictamenProceso", "DictamenDestino")).toJobParameters();
+    			parametersBuilder.addString("date", new Date().toString());
+    			parametersBuilder.addString("delay", delay);
+    			parametersBuilder.addString("fields", this.fields);
+    			parametersBuilder.addString("prototype", this.prototype);
+    			parametersBuilder.addLong("idAseveracion", Long.valueOf(rutas.get(i).getCveIdAseveracion()));
+    			parametersBuilder.addLong("cveIdBitacoraCargaAsev", Long.valueOf(rutas.get(i).getIdBitacora()));
+    			parametersBuilder.addLong("cveIdPatronDictamen", Long.valueOf(rutas.get(i).getCveIdPatronDictamen()));
+    			parameters = parametersBuilder.toJobParameters();
+    			JobExecution execution = jobLauncher.run(job, parameters);
+    			LOG.info("Exit Status : " + execution.getStatus());    			
+    		}
+    	}    	 
 
 	  LOG.debug("The time is now " + dateFormat.format(new Date()));
     }
