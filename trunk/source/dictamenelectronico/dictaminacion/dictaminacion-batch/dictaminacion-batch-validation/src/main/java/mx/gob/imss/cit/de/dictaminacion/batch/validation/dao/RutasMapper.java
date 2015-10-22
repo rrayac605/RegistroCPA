@@ -14,6 +14,7 @@ import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
  */
 public class RutasMapper implements RowMapper<RutaTO>{
 
+	@Override
 	public RutaTO mapRow(ResultSet rs, int arg1) throws SQLException {
 		RutaTO datosRuta = new RutaTO();
 			datosRuta.setAnioFiscal(rs.getString("ANIO_FISCAL"));
@@ -23,8 +24,8 @@ public class RutasMapper implements RowMapper<RutaTO>{
 			datosRuta.setCveIdPatronDictamen(rs.getInt("ID_DICTAMEN"));
 			datosRuta.setIdBitacora(rs.getInt("ID_BITACORA"));
 			datosRuta.setDesAseveracion(rs.getString("DES_ASEVERACION"));
-			datosRuta.setRuta("Dictamenfiles/proceso/"+datosRuta.getAnioFiscal()+"/"
-					+datosRuta.getRfcContador()+"/"+datosRuta.getRfcPatron()+"/"
+			datosRuta.setRuta("C:\\DictamenFiles\\Proceso\\"+datosRuta.getAnioFiscal()+"\\"
+					+datosRuta.getRfcContador()+"\\"+datosRuta.getRfcPatron()+"\\"
 					+datosRuta.getCveIdAseveracion()+"."+datosRuta.getDesAseveracion()+".txt");      
 		  return datosRuta;
 		  
