@@ -37,15 +37,15 @@
 							value="#{msg['message.dictamen.cedulas.titulo.estatus.habilitado']}" />
 					</p:column>
 					<p:column>
-						<p:commandLink id="linkEditarC1" action="#{menuCedulasBean.editarCedulaRemuneraciones()}"
-								onstart="statusDialog.show();"
+						<p:commandLink action="#{menuCedulasBean.editarCedulaRemuneraciones()}"
+									onstart="statusDialog.show();"
 							oncomplete="statusDialog.hide();">
 							<h:graphicImage
 								style="width: 20px; height: 20px; margin: 0 5px 0 2px"
-								value="/images/editar.png" alt="Editar"/>
+								value="/images/editar.png" />
 						</p:commandLink>
 						
-						 <p:tooltip id="toolTipEditarC1" for="linkEditarC1" value="Capturar"/>
+<!-- 						 <p:tooltip id="toolTipEditarC1" for="linkEditarC1" value="Capturar"/> -->
 					</p:column>
 				</p:row>
 				<p:row>
