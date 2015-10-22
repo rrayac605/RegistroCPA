@@ -50,6 +50,13 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 		return ndtContadorPublicoAutDO;
 	}
 	
+	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	public NdtContadorPublicoAutDO obtenerContadorPorNumRegistro(Integer NumRegistro) {
+		NdtContadorPublicoAutDO  ndtContadorPublicoAutDO =ndtContadorPublicoAutDAO.selectContadorPublicoAutByNumRegistro(NumRegistro);
+		return ndtContadorPublicoAutDO;
+	}
+	
 
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
