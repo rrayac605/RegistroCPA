@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head />
+<h:body>
+	<p:panel>
+
+		<h:form id="formEjemplo">
+			<p:commandButton action="#{firmaElectronicaBean.initDialog}"
+				value="Abrir Dialogo FIrma Digital" update=":formFirmaElectronica" oncomplete="dialogFirmaElectronica.show();"/>
+		</h:form>
+
+		<h:form id="formFirmaElectronica">
+
+
+	<p:dialog widgetVar="dialogFirmaElectronica" id="dialogFirmaElectronica" modal="true" resizable="false" width="80%" height="480" dynamic="true">
+		<p:ajax event="close" update="dialogFirmaElectronica" listener="#{firmaElectronicaBean.cerrarDialog}" />
+    	<p:panel id="panelFirmaElectronica" widgetVar="panelFirmaElectronica" rendered="#{firmaElectronicaPage.mostrarDialogFirma}">
+	        <applet width="100%" height="460" 
+	            archive="#{firmaElectronicaPage.firmaElectronicaDTO.fielArchive}" 
+				code="#{firmaElectronicaPage.firmaElectronicaDTO.fielCode}" 
+				codebase="#{firmaElectronicaPage.firmaElectronicaDTO.fielCodebase}">
+                <param value="16" name="fontSize"></param>
+                <param value="all-permissions" name="permissions"></param>
+                <param name="json" value="#{firmaElectronicaPage.firmaElectronicaDTO.fielParamOption}" />
+                <param value="#{firmaElectronicaPage.firmaElectronicaDTO.fielParamUrlWsFe}" name="urlWsFE"></param>
+                <param value="#{firmaElectronicaPage.firmaElectronicaDTO.fielParamUrlWsAuth}" name="urlWsAuth"></param>
+                <param value="S" name="debug"></param>
+                <param value="false" name="codebase_lookup"></param>
+            </applet>
+			<br/>
+		</p:panel>
+	</p:dialog>
+	
+	
+	
+		</h:form>
+
+	</p:panel>
+</h:body>
+</html>
