@@ -72,7 +72,7 @@ public class NdtRubroAtestiguamientoDictDO implements Serializable {
     @JoinColumn(name = "CVE_ID_RUBRO", referencedColumnName = "CVE_ID_RUBRO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcRubroDO cveIdRubro;
-    @OneToMany(mappedBy = "cveIdRubroAtestigDictamen", fetch = FetchType.EAGER,cascade=CascadeType.PERSIST)
+    @OneToMany(mappedBy = "cveIdRubroAtestigDictamen", fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
     private List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuesta;
 
     public NdtRubroAtestiguamientoDictDO() {

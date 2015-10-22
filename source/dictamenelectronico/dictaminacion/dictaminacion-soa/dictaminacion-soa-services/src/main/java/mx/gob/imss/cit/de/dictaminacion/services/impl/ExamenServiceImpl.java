@@ -93,7 +93,6 @@ public class ExamenServiceImpl implements ExamenService {
 			}
 			ndtAtestiguamientoDictamenDAO.edit(atestiguamientoDictamenDO);
 			ndtAtestiguamientoDictamenDAO.flush();
-			
 		} catch (Exception e) {
 			System.out.println("error al guardar"+e);
 			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_GUARDAR_EXAMEN_ATESTIGUAMIENTO,e);			
