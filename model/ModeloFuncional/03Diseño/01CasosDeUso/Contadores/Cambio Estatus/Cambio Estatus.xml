@@ -131,7 +131,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_F0677473_590E_4f51_AFC1_770FEEAA6EEF"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 11:06:25"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-21 18:51:09"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 20:10:58"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Cambiar Estatus"/>
@@ -155,6 +155,43 @@
 								</UML:Constraint>
 							</UML:ModelElement.constraint>
 						</UML:UseCase>
+						<UML:Dependency client="EAID_D0E93E20_291A_49fb_9835_FE096A9B54B6" supplier="EAID_D4752E26_7EB2_4bdb_B845_8F119D721ED1" xmi.id="EAID_255908AA_6F9A_4e89_AB47_A81345541C94" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="2503"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Cambio de Estatus"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-N015. Validar que exista un criterio de búsqueda"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2138"/>
+								<UML:TaggedValue tag="ea_targetID" value="2413"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -164,18 +201,21 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="msanchez"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 11:04:44"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-21 19:24:38"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-21 20:11:34"/>
 				<UML:TaggedValue tag="package" value="EAPK_F0677473_590E_4f51_AFC1_770FEEAA6EEF"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="192"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=F80009C5;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=2A841102;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=88;Top=178;Right=123;Bottom=248;" subject="EAID_CFDD6605_46CD_4ca0_91FD_49A42BD9BFF8" seqno="1" style="DUID=D04D791A;"/>
-				<UML:DiagramElement geometry="Left=200;Top=178;Right=305;Bottom=248;" subject="EAID_D0E93E20_291A_49fb_9835_FE096A9B54B6" seqno="2" style="DUID=B6C1793F;"/>
+				<UML:DiagramElement geometry="Left=422;Top=234;Right=582;Bottom=267;" subject="EAID_88FAA243_8F89_4342_9DC1_9FBC8B49D8EE" seqno="1" style="DUID=E8F2792A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=418;Top=59;Right=578;Bottom=92;" subject="EAID_D4752E26_7EB2_4bdb_B845_8F119D721ED1" seqno="2" style="DUID=835E95FF;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=88;Top=178;Right=123;Bottom=248;" subject="EAID_CFDD6605_46CD_4ca0_91FD_49A42BD9BFF8" seqno="3" style="DUID=D04D791A;"/>
+				<UML:DiagramElement geometry="Left=200;Top=178;Right=305;Bottom=248;" subject="EAID_D0E93E20_291A_49fb_9835_FE096A9B54B6" seqno="4" style="DUID=B6C1793F;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_255908AA_6F9A_4e89_AB47_A81345541C94" style="Mode=3;EOID=835E95FF;SOID=B6C1793F;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_646E8BC7_1AF9_445b_9CDC_D6DC480E1245" style="Mode=3;EOID=B6C1793F;SOID=D04D791A;Color=-1;LWidth=0;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
@@ -187,9 +227,9 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El usuario Nivel Central debe seleccionar la opción Actualización de Estatus" guid="{7502D6AE-596B-45f8-88EF-0BA81BF586A1}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema deberá mostrar la ventana donde el usuario de Nivel Central realizará una consulta para la obtencion de información del CPA bajo los siguientes  criterios(RF Criterios):  Nombre, Apellido Paterno, Apellido Materno, CURP, Número de Registro, Estatus del CPA. Del mismo modo deberá presentar un check box con la etiqueta CPA's que no han dictaminado en mas de 5 años (RF Checkbox). Mostrará una Tabla de Resultados 1 (RFTR 1)que de inicio deberá mostrar todos los CPA que existan en la BDTU, mostrando los siguientes campos: Nombre, Apellido Paterno, Apellido Materno, CURP, Número de Registro y Estatus. Se habilitarán los botones(RFBoton): Buscar, Limpiar, Salir." guid="{34F7D5C5-BC06-456f-BFF9-F89F91387DC8}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema deberá mostrar la ventana donde el usuario de Nivel Central realizará una consulta para la obtencion de información del CPA bajo los siguientes  criterios:  Nombre, Apellido Paterno, Apellido Materno, CURP, Número de Registro, Estatus del CPA RF-N015. Del mismo modo deberá presentar un check box con la etiqueta CPA's que no han dictaminado en mas de 5 años RF-N014 RF Checkbox. Mostrará una Tabla de Resultados 1 (RFTR 1)que de inicio deberá mostrar todos los CPA que existan en la BDTU, mostrando los siguientes campos: Nombre, Apellido Paterno, Apellido Materno, CURP, Número de Registro y Estatus. Se habilitarán los botones(RFBoton): Buscar, Limpiar, Salir." guid="{34F7D5C5-BC06-456f-BFF9-F89F91387DC8}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El usuario Nivel Central deberá ingresar,  un dato por lo menos en uno de los  criterios de busqueda o bien, el usurio puede seleccionar la opción de CPA's que no han dictaminado en mas de 5 años (FA 01) y en seguida seleccionar la opción Buscar." guid="{B9311084-A319-4391-8A99-605E24EB7F93}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema deberá realizar la busqueda de acuerdo al o los criterios colocados por el usuario y mostrar los resultados en la Tabla de Resultados 1. En caso de no encontrar resultados de acuerdo a los criterios colocados por el usuario, el sitema amitirá un mensaje emergente. (ME1)" guid="{31872FB8-0A1C-434b-A285-C5F8FAAB06B3}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema realiza la busqueda de acuerdo al o los criterios colocados por el usuario y mostrar los resultados en la Tabla de Resultados 1. En caso de no encontrar resultados de acuerdo a los criterios colocados por el usuario, el sitema amitirá un mensaje emergente. (ME1) RF-N016, RF-N0" guid="{31872FB8-0A1C-434b-A285-C5F8FAAB06B3}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="Una vez localizado el CPA el usuario deberá seleccionar dando click sobre alguno de los campos marcados de la Tabla de Resultados 1. " guid="{97A4EBBE-F00F-4cf7-AC2D-8457D1CD2C68}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema mostrará en una nueva ventana la Tabla de resultados 1 con los datos del CPA seleccionado mostrando los campos deshabilitados y agregando los campos de: Cambio de Estatus (RF_CambioEstatus), Delegación y Subdelegación. Dentro del campo Cambio de Estatus de la Tabla de Resultados 1, se habilitará un boton. En la misma ventana el sistema mostrará un frame con las siguientes pestañas: Datos Personales(RF DP), Datos del Despacho(RF D), Datos Colegios y Asociación (RF CA), Acreditación y Membresía (RF AM), Documentos del CPA (RF DCPA), Estatus (RF EP) y Dictámenes(RF D), en cada una de las pestañas el sistema deberá mostrar su información correspondiente. El sistema deberá habilitar el botón Regresar(RF R)." guid="{DDFE102D-8864-439f-B30E-2AB1BB6518B8}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El usuario selecciona el boton Cambio de Estatus. El usuario pra seleccionar el Botón Regresar y el sistema deberá regresar al punto 2 de Flujo Base. " guid="{DDAD33E1-5C2C-4fa8-9CEA-B9CDA4F7C413}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
@@ -202,11 +242,14 @@
 						<step name="El sistema actualizará el campo Estatus en la tabla NDT_CPA_ESTATUS del campo CVE_ID_ESTADO_CPA:INTEGER, DES_COMENTARIOS:VACHAR2(1000), e inserta el documento PDF en la Boveda Personal. El sistema cierra la ventana de Cambio de Estatus y regresa a la ventana del paso 6 del Flujo Base, Mostrando los cambios realizados en la pestaña Estatus de Frame de Pestañas." guid="{25EE66B9-C3FD-4e18-BD45-74A65459D98D}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="Fin del caso de uso." guid="{DF1A9A3F-460A-4cfe-BC24-E0BBF5580670}" level="15" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
+							<item oldname="RF-N015. Validar que exista un criterio de búsqueda" guid="{D4752E26-7EB2-4bdb-B845-8F119D721ED1}"/>
 							<item oldname="Nivel Central" guid="{CFDD6605-46CD-4ca0-91FD-49A42BD9BFF8}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
 		</EAModel.scenario>
+		<EAStub xmi.id="EAID_D4752E26_7EB2_4bdb_B845_8F119D721ED1" name="RF-N015. Validar que exista un criterio de búsqueda" UMLType="Requirement"/>
+		<EAModel.paramSub/>
 	</XMI.extensions>
 </XMI>
