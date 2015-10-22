@@ -13,13 +13,21 @@
 			<p:panelGrid columns="1">
 				<p:panelGrid columns="1">
 					<p:panel>
+						<p:outputLabel id= "contestarLabel" value="#{message.label.views.dictamen.atestiguamiento.contestar}"/>
 						<h2><p:outputLabel id = "AtestiguamientoLabel"
 						 value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.desAtestiguamiento}"/></h2>
 						<br />
 						<ui:repeat var="rubro"
 							value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.ndcRubros}"
 							varStatus="status">
-							<h4><p:outputLabel id = "RubroLabel" value="#{rubro.desRubro}"/></h4>
+							<h4>
+								 <p:outputLabel id = "RubroLabel" value="#{rubro.desRubro}"/>
+					
+								<!--	<h:outputText value="#{rubro.desRubro}" />
+									<p:selectBooleanCheckbox value="#{rubro.indAplica}" />
+									</p:selectBooleanCheckbox>-->
+								
+							</h4>
 							<br />
 							<br />
 							<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}" varStatus="status">

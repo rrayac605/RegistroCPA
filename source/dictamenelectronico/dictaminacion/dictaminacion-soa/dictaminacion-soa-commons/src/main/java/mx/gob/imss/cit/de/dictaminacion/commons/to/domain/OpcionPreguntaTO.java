@@ -17,6 +17,7 @@ public class OpcionPreguntaTO extends BaseTO{
     private TipoRespuestaTO cveIdRespuesta;
     private PreguntaTO cveIdPregunta;
     private List<AtestigPreguntasRespuestTO> ndtAtestigPreguntasRespuestas;
+    private Integer indOrden;
 
     
 	public Long getCveIdOpcionPregunta() {
@@ -55,5 +56,12 @@ public class OpcionPreguntaTO extends BaseTO{
 	public void setNdtAtestigPreguntasRespuestas(List<AtestigPreguntasRespuestTO> ndtAtestigPreguntasRespuestas) {
 		this.ndtAtestigPreguntasRespuestas = ndtAtestigPreguntasRespuestas;
 	}
+	public Integer getIndOrden() {
+		return indOrden;
+	}
+	public void setIndOrden(Integer indOrden) {
+		this.indOrden = indOrden;
+	}
+	
 	
 }

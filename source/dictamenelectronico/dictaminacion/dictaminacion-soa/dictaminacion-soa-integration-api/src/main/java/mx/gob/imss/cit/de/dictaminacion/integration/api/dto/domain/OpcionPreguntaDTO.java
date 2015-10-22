@@ -13,6 +13,7 @@ public class OpcionPreguntaDTO extends BaseDTO {
     private TipoRespuestaDTO cveIdRespuesta;
     private PreguntaDTO cveIdPregunta;
     private List<AtestigPreguntasRespuestDTO> ndtAtestigPreguntasRespuestas;
+    private Integer indOrden;
     
 	public Long getCveIdOpcionPregunta() {
 		return cveIdOpcionPregunta;
@@ -50,6 +51,12 @@ public class OpcionPreguntaDTO extends BaseDTO {
 	public void setNdtAtestigPreguntasRespuestas(List<AtestigPreguntasRespuestDTO> ndtAtestigPreguntasRespuestas) {
 		this.ndtAtestigPreguntasRespuestas = ndtAtestigPreguntasRespuestas;
 	}
+	public Integer getIndOrden() {
+		return indOrden;
+	}
+	public void setIndOrden(Integer indOrden) {
+		this.indOrden = indOrden;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -59,6 +66,7 @@ public class OpcionPreguntaDTO extends BaseDTO {
 		result = prime * result + ((cveIdRespuesta == null) ? 0 : cveIdRespuesta.hashCode());
 		result = prime * result + ((fecAltaRegistro == null) ? 0 : fecAltaRegistro.hashCode());
 		result = prime * result + ((fecBajaRegistro == null) ? 0 : fecBajaRegistro.hashCode());
+		result = prime * result + ((indOrden == null) ? 0 : indOrden.hashCode());
 		result = prime * result
 				+ ((ndtAtestigPreguntasRespuestas == null) ? 0 : ndtAtestigPreguntasRespuestas.hashCode());
 		return result;
@@ -97,6 +105,11 @@ public class OpcionPreguntaDTO extends BaseDTO {
 				return false;
 		} else if (!fecBajaRegistro.equals(other.fecBajaRegistro))
 			return false;
+		if (indOrden == null) {
+			if (other.indOrden != null)
+				return false;
+		} else if (!indOrden.equals(other.indOrden))
+			return false;
 		if (ndtAtestigPreguntasRespuestas == null) {
 			if (other.ndtAtestigPreguntasRespuestas != null)
 				return false;
@@ -104,5 +117,7 @@ public class OpcionPreguntaDTO extends BaseDTO {
 			return false;
 		return true;
 	}
+	
+	
 	
 }

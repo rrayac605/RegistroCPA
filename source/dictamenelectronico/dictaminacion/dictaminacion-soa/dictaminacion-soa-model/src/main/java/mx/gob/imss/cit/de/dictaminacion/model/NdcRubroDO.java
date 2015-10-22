@@ -62,6 +62,8 @@ public class NdcRubroDO implements Serializable {
     private Date fecBajaRegistro;
     @Column(name = "IND_ORDEN")
     private Integer indOrden;
+    @Column(name = "IND_APLICA")
+    private Integer indAplica;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cveIdRubro", fetch = FetchType.EAGER)
     private List<NdcPreguntaDO> ndcPreguntas;
     @OneToMany(mappedBy = "cveIdRubro", fetch = FetchType.EAGER)
@@ -148,8 +150,15 @@ public class NdcRubroDO implements Serializable {
     public void setCveIdAtestiguamiento(NdcAtestiguamientoDO cveIdAtestiguamiento) {
         this.cveIdAtestiguamiento = cveIdAtestiguamiento;
     }
+    public Integer getIndAplica() {
+		return indAplica;
+	}
 
-    @Override
+	public void setIndAplica(Integer indAplica) {
+		this.indAplica = indAplica;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (cveIdRubro != null ? cveIdRubro.hashCode() : 0);

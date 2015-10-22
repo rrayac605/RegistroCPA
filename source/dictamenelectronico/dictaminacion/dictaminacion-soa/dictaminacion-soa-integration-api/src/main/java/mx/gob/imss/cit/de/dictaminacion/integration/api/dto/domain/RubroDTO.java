@@ -17,6 +17,7 @@ public class RubroDTO extends BaseDTO{
     private Date fecActualizadoRegistro;
     private Date fecBajaRegistro;
     private Integer indOrden;
+    private Integer indAplica;
     private AtestiguamientoDTO cveIdAtestiguamiento;
     private List<PreguntaDTO> ndcPreguntas;
     private List<RubroAtestiguamientoDictDTO> ndtRubrosAtestiguamientoDict;
@@ -76,6 +77,12 @@ public class RubroDTO extends BaseDTO{
 	public void setCveIdAtestiguamiento(AtestiguamientoDTO cveIdAtestiguamiento) {
 		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
 	}
+	public Integer getIndAplica() {
+		return indAplica;
+	}
+	public void setIndAplica(Integer indAplica) {
+		this.indAplica = indAplica;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -86,6 +93,7 @@ public class RubroDTO extends BaseDTO{
 		result = prime * result + ((fecActualizadoRegistro == null) ? 0 : fecActualizadoRegistro.hashCode());
 		result = prime * result + ((fecAltaRegistro == null) ? 0 : fecAltaRegistro.hashCode());
 		result = prime * result + ((fecBajaRegistro == null) ? 0 : fecBajaRegistro.hashCode());
+		result = prime * result + ((indAplica == null) ? 0 : indAplica.hashCode());
 		result = prime * result + ((indOrden == null) ? 0 : indOrden.hashCode());
 		result = prime * result + ((ndcPreguntas == null) ? 0 : ndcPreguntas.hashCode());
 		result = prime * result
@@ -130,6 +138,11 @@ public class RubroDTO extends BaseDTO{
 			if (other.fecBajaRegistro != null)
 				return false;
 		} else if (!fecBajaRegistro.equals(other.fecBajaRegistro))
+			return false;
+		if (indAplica == null) {
+			if (other.indAplica != null)
+				return false;
+		} else if (!indAplica.equals(other.indAplica))
 			return false;
 		if (indOrden == null) {
 			if (other.indOrden != null)
