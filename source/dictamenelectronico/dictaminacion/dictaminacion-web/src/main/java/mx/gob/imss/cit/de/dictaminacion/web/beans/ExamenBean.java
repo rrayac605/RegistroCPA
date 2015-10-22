@@ -66,6 +66,8 @@ public class ExamenBean extends BaseBean {
 		atestiguamientoDictamenDTO = convertirRubros(atestiguamientoDictamenDTO);
 		try {
 			examenIntegration.saveExamenAtestiguamiento(atestiguamientoDictamenDTO);
+			
+			FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_GUARDAR_EL_ATESTIGUAMIENTO.getCode(),atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_GUARDAR_EL_ATESTIGUAMIENTO.getCode());
