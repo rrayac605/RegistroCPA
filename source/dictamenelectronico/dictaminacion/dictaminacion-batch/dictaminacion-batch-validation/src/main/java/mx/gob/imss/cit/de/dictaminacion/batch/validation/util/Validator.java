@@ -34,6 +34,32 @@ public class Validator {
 			return isNotEmpty(cadenaAEvaluar);
 		case RFC:
 			return Pattern.matches(BatchValidationsEnum.RFC.getRegExp(), cadenaAEvaluar);
+		case LONGITUD_50:
+			return validateLimit(0, 50, cadenaAEvaluar);
+		case VALIDACION_1:
+			return isNotEmpty(cadenaAEvaluar);
+		case VALIDACION_10:
+			return validateLengt(18, cadenaAEvaluar);
+		case VALIDACION_11:
+			return validateLimit(0, 50, cadenaAEvaluar);
+		case VALIDACION_12:
+			return Pattern.matches(BatchValidationsEnum.VALIDACION_12.getRegExp(), cadenaAEvaluar);
+		case VALIDACION_2:
+			return validateLengt(11, cadenaAEvaluar);
+		case VALIDACION_3:
+			return Pattern.matches(BatchValidationsEnum.VALIDACION_3.getRegExp(), cadenaAEvaluar);
+		case VALIDACION_4:
+			return validateLimit(0, 50, cadenaAEvaluar);
+		case VALIDACION_5:
+			return Pattern.matches(BatchValidationsEnum.VALIDACION_5.getRegExp(), cadenaAEvaluar);
+		case VALIDACION_6:
+			return (validateLengt(10, cadenaAEvaluar) || validateLengt(11, cadenaAEvaluar) ? true:false);
+		case VALIDACION_7:
+			return Pattern.matches(BatchValidationsEnum.VALIDACION_7.getRegExp(), cadenaAEvaluar);
+		case VALIDACION_8:
+			return validateLengt(13, cadenaAEvaluar);
+		case VALIDACION_9:
+			return Pattern.matches(BatchValidationsEnum.VALIDACION_9.getRegExp(), cadenaAEvaluar);
 		default:
 			return false;
 		}			
@@ -58,5 +84,13 @@ public class Validator {
 			return false;
 		}		
 	}
+	
+	public static boolean validateLimit(int min, int max, String cadenaAEvaluar){
+		if(cadenaAEvaluar.length() <= max && cadenaAEvaluar.length() >= min){
+			return true;
+		}else{
+			return false;
+		}		
+	}	
 }
 

@@ -1,5 +1,7 @@
 package mx.gob.imss.cit.de.dictaminacion.batch.validation.to;
 
+import java.util.Date;
+
 /**
  * 
  * 
@@ -49,10 +51,12 @@ public class A1TO {
 	private String impOtrosPagosXseparacion;
 	private String impTotal;
 	private String cveIdUsuario;
-	private String fecRegistroAlta;
-	private String fecRegistroBaja;
-	private String fecRegistroActualizado;
+	private Date fecRegistroAlta;
+	private Date fecRegistroBaja;
+	private Date fecRegistroActualizado;
 	private String cveIdPatronAsociado;
+	private int lineNumber;
+	private BitacoraErroresTO bitacoraErroresTO;
 	
 	public String getRegPatronal() {
 		return regPatronal;
@@ -306,22 +310,22 @@ public class A1TO {
 	public void setCveIdUsuario(String cveIdUsuario) {
 		this.cveIdUsuario = cveIdUsuario;
 	}
-	public String getFecRegistroAlta() {
+	public Date getFecRegistroAlta() {
 		return fecRegistroAlta;
 	}
-	public void setFecRegistroAlta(String fecRegistroAlta) {
+	public void setFecRegistroAlta(Date fecRegistroAlta) {
 		this.fecRegistroAlta = fecRegistroAlta;
 	}
-	public String getFecRegistroActualizado() {
+	public Date getFecRegistroActualizado() {
 		return fecRegistroActualizado;
 	}
-	public void setFecRegistroActualizado(String fecRegistroActualizado) {
+	public void setFecRegistroActualizado(Date fecRegistroActualizado) {
 		this.fecRegistroActualizado = fecRegistroActualizado;
 	}
-	public String getFecRegistroBaja() {
+	public Date getFecRegistroBaja() {
 		return fecRegistroBaja;
 	}
-	public void setFecRegistroBaja(String fecRegistroBaja) {
+	public void setFecRegistroBaja(Date fecRegistroBaja) {
 		this.fecRegistroBaja = fecRegistroBaja;
 	}
 	public String getCveIdPatronAsociado() {
@@ -329,6 +333,19 @@ public class A1TO {
 	}
 	public void setCveIdPatronAsociado(String cveIdPatronAsociado) {
 		this.cveIdPatronAsociado = cveIdPatronAsociado;
-	}		
+	}
+	public int getLineNumber() {
+		return lineNumber;
+	}
+	public void setLineNumber(int lineNumber) {
+		this.lineNumber = lineNumber;
+	}
+	public BitacoraErroresTO getBitacoraErroresTO() {
+		return bitacoraErroresTO;
+	}
+	public void setBitacoraErroresTO(BitacoraErroresTO bitacoraErroresTO) {
+		this.bitacoraErroresTO = bitacoraErroresTO;
+	}
+	
 }
 

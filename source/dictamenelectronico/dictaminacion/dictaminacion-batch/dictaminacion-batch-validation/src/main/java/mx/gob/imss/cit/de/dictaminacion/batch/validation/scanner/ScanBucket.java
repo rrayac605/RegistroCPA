@@ -7,17 +7,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
-import mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.RutasDAOImpl;
-import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
-
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
@@ -30,6 +24,9 @@ import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteExcep
 import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
 
 @Component
 public class ScanBucket {
@@ -44,6 +41,7 @@ public class ScanBucket {
     private String[] extension;
 	private String fields = "regPatronal, nomPrimerApellidoTrabajador, nomSegundoApellidoTrabajador, nomNombreTrabajador, numNssTrabajador, rfcTrabajador, curpTrabajador, impSueldosSalarios, impGratificaciones, impViaticos, impTiempoExtra, impPrimaVacacional, impPrimaDominical, impPtu, impReembolsoGm, impFondoAhorro, impCajaAhorro, impValesDespensa, impAyudaGf, impContribucionPatron, impPremioPuntualidad, impPremioAsistencia, impPrimaSeguroVida, impSeguroGmm, impValesRestaurant, impValesGasolina, impValesRopa, impAyudaRenta, impAyudaEscolar, impAyudaAnteojos, impAyudaTransporte, impCuotaSindical, impSubsidioIncapacidad, impBecaTrabajadorHijo, impOtrosIngresosXsalario, impPagoOtroEmpleador, impJubPenRetiro, impOtrosPagosXseparacion, impTotal";
 	private String prototype = "a1";
+//	private Long idAseveracion=1L;
     private RutasDAO rutasDAO;    
 	
     @Autowired
@@ -70,7 +68,7 @@ public class ScanBucket {
 
     		
     		File file = new File(rutas.get(i).getRuta());
-    		
+    		System.out.println(file.exists());
     		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
     		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
 			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
@@ -79,10 +77,10 @@ public class ScanBucket {
 			parametersBuilder.addString("delay", delay);
 			parametersBuilder.addString("fields", this.fields);
 			parametersBuilder.addString("prototype", this.prototype);
+			parametersBuilder.addLong("idAseveracion", Long.valueOf(rutas.get(i).getCveIdAseveracion()));
 			parameters = parametersBuilder.toJobParameters();
 			JobExecution execution = jobLauncher.run(job, parameters);
 			LOG.info("Exit Status : " + execution.getStatus());
-			
     	}
     	 
 //    	Collection<File> files = FileUtils.listFiles(new File(rutaDestino), extension, true);
