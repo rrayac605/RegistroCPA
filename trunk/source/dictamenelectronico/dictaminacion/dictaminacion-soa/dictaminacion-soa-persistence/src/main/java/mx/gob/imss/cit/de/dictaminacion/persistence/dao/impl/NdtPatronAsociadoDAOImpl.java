@@ -46,6 +46,13 @@ public class NdtPatronAsociadoDAOImpl extends
 		return lst;
 	}
 
+	@Override
+	public void removeByPatronDictamen(Long idPatronDictamen) {
+		Query q = em.createNamedQuery("NdtPatronAsociadoDO.deleteByPatronDictamen");
+		q.setParameter("cveIdPatronDictamen", idPatronDictamen);
+		q.executeUpdate();
+	}
+
 
 
 }

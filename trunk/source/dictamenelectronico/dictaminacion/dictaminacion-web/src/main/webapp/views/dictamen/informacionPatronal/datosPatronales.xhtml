@@ -83,7 +83,7 @@
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.patronales']}"
 						for="patronales" />
-					<p:inputText id="patronales" required="true"
+					<p:inputText id="patronales" readonly="true"
 						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.patronales']}"
 						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" >
 						<f:validateLongRange minimum="1" />
@@ -168,9 +168,9 @@
 						update=":formDatosPatronales :formDatosRfc :dictaminacionWizardPanel" />
 						
 						<p:commandButton value="Registrar nuevo dictamen"
-						actionListener="#{datosPatronalesBean.limpiar}" 
-						ajax="true"
-						update=":formDatosPatronales :formDatosRfc :dictaminacionWizardPanel" />
+						action="#{dictamenBean.init}" 
+						immediate="true"
+						 />
 						
 
 				</p:panelGrid>

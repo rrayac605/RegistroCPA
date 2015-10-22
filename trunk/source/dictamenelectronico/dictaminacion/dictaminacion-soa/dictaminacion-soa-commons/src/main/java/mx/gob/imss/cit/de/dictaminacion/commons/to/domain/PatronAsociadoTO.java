@@ -42,6 +42,7 @@ public class PatronAsociadoTO  extends BaseTO {
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
+    private String regPatronAsociado;
   
 
     public PatronAsociadoTO() {
@@ -277,5 +278,15 @@ public class PatronAsociadoTO  extends BaseTO {
     public String toString() {
         return "PatronAsociadoTO[ cveIdPatronAsociado=" + cveIdPatronAsociado + " ]";
     }
+
+
+	public String getRegPatronAsociado() {
+		return regPatronAsociado;
+	}
+
+
+	public void setRegPatronAsociado(String regPatronAsociado) {
+		this.regPatronAsociado = regPatronAsociado;
+	}
     
 }

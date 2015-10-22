@@ -176,6 +176,9 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 		
 		List<PatronAsociadoTO> res=new ArrayList<PatronAsociadoTO>();
 		try{
+			 PatronDictamenTO patron=listPatronAsociadoTO.get(0).getCveIdPatronDictamen();
+			 
+			ndtPatronAsociadoDAO.removeByPatronDictamen(patron.getCveIdPatronDictamen());
 			
 			for (PatronAsociadoTO patronAsociadoTO : listPatronAsociadoTO) {
 				NdtPatronAsociadoDO patronAsociadoDO=TransformerServiceUtils.transformer(patronAsociadoTO);
