@@ -10,8 +10,11 @@
 	<ui:define name="content">
 	
 				<h:form id="formActivacionRegistro">
-				<p:outputLabel value="#{activacionContadorBean.init()}" />
+				       <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();"  />
+				       
 	
+			
+<p:messages id="msgFormActivacionRegistro" autoUpdate="true"  showDetail="true" showSummary="true" />
 	
 		  <p:panelGrid style="width:100%;"
 				styleClass="table-no-border table-no-padding">
@@ -40,14 +43,9 @@
 		<p:panel id="pnActivacionRegistro" header="Activación de Registro"
 			footer="Activación de Registro de Contadores Públicos Autorizados">
 			
-
-			
-			<p:growl id="msgs" showDetail="true" />
-			
-			
-			    
 			<p:fieldset legend="Datos del Contador Publico" toggleable="true" toggleSpeed="500">
-             <p:ajax event="toggle" listener="#{activacionRegistroBean.handleToggle}" update="msgs" />
+
+<p:ajax event="toggle"  update="msgFormActivacionRegistro" />
     
 		
 			
@@ -58,7 +56,7 @@
 						<h:outputText styleClass="SubtituloSeccion" value="RFC" />
 					</p:column>
 					<p:column>
-<p:inputText id="txtRFC" size="25" value="#{activacionContadorPage.personaDTO.rfc}" readonly="true" disabled="true" />
+<p:inputText id="txtRFC" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.rfc}" readonly="true" disabled="true" />
 					</p:column>
 
 				</p:row>
@@ -67,7 +65,7 @@
 					<h:outputText styleClass="SubtituloSeccion" value="Nombre " />	
 					</p:column>
 					<p:column>
-<p:inputText id="txtNombre" size="45"  value="#{activacionContadorPage.personaDTO.nombreCompleto}" readonly="true" disabled="true"/>
+<p:inputText id="txtNombre" size="45"  value="#{activacionContadorBean.activacionContadorPage.personaDTO.nombreCompleto}" readonly="true" disabled="true"/>
 					</p:column>
 				</p:row>
 				<p:row>
@@ -75,7 +73,7 @@
 					<h:outputText styleClass="SubtituloSeccion" value="CURP " />	
 					</p:column>
 					<p:column>
-<p:inputText id="txtCURP" size="30"  value="#{activacionContadorPage.personaDTO.curp}" readonly="true" disabled="true" />
+<p:inputText id="txtCURP" size="30"  value="#{activacionContadorBean.activacionContadorPage.personaDTO.curp}" readonly="true" disabled="true" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>
@@ -98,19 +96,19 @@
 						
 						<p:row>
 							<p:column  rowspan="3">
-									<p:inputText id="txtCalle" size="35" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.calle}" readonly="true" disabled="true" />
+									<p:inputText id="txtCalle" size="35" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
 									<p:message for="txtCalle" />
 									<p:tooltip for="txtCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column>
-									<p:inputText id="txtNumeroExterior" size="25" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.numeroExterior}" readonly="true" disabled="true" />
+									<p:inputText id="txtNumeroExterior" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroExterior" />
 									<p:tooltip for="txtNumeroExterior" value="Numero Exterior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column>
-									<p:inputText id="txtLetraExterior" size="25" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.letraExterior}" readonly="true" disabled="true" />
+									<p:inputText id="txtLetraExterior" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraExterior" />
 									<p:tooltip for="txtLetraExterior" value="Letra Exterior"
 										showEffect="fade" hideEffect="fade" />
@@ -131,13 +129,13 @@
 						
 						<p:row>
 							<p:column>
-									<p:inputText id="txtNumeroInterior" size="25" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.numeroInterior}" readonly="true" disabled="true" />
+									<p:inputText id="txtNumeroInterior" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroInterior" />
 									<p:tooltip for="txtNumeroInterior" value="Numero Interior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtLetraInterior" size="25" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.letraInterior}" readonly="true" disabled="true" />
+									<p:inputText id="txtLetraInterior" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraInterior" />
 									<p:tooltip for="txtLetraInterior" value="Letra Interior"
 										showEffect="fade" hideEffect="fade" />
@@ -157,13 +155,13 @@
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtEntreCalle" size="25" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.entreCalle}" readonly="true" disabled="true" />
+									<p:inputText id="txtEntreCalle" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
 									<p:message for="txtEntreCalle" />
 									<p:tooltip for="txtEntreCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtYCalle" size="45" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.yCalle}" readonly="true" disabled="true" />
+									<p:inputText id="txtYCalle" size="45" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
 									<p:message for="txtYCalle" />
 									<p:tooltip for="txtYCalle" value="Calle Adyacente"
 										showEffect="fade" hideEffect="fade" />
@@ -182,13 +180,13 @@
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtColonia" size="25" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
+									<p:inputText id="txtColonia" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
 									<p:message for="txtColonia" />
 									<p:tooltip for="txtColonia" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtLocalidad" size="25" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.localidad}" readonly="true" disabled="true" />
+									<p:inputText id="txtLocalidad" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
 									<p:message for="txtLocalidad" />
 									<p:tooltip for="txtLocalidad" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -204,14 +202,15 @@
 						</p:row>
 						<p:row>
 							<p:column align="left">
-									<p:inputText id="txtMunDel" size="35" value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.municipioDelegacion}" readonly="true" disabled="true" />
+									<p:inputText id="txtMunDel" size="35" 
+									value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
 									<p:message for="txtMunDel" />
 									<p:tooltip for="txtMunDel" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2" align="left">
 									<p:inputText id="txtEntidadFederativa" size="35"
-										value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.entidadFederativa}" readonly="true" disabled="true" />
+										value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
 									<p:message for="txtEntidadFederativa" />
 									<p:tooltip for="txtEntidadFederativa" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -227,7 +226,7 @@
 						<p:row>
 							<p:column align="left" colspan="3">
 									<p:inputText id="txtCodigoPostal" size="25" 
-									value="#{activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioDTO.codigoPostal}" 
+									value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.codigoPostal}" 
 									readonly="true" disabled="true" />
 									<p:message for="txtCodigoPostal" />
 									<p:tooltip for="txtCodigoPostal" value="Calle"
@@ -244,7 +243,8 @@
 							<p:column align="left" colspan="3">
 									<p:inputText id="txtCorreoElectronico" 
 									    size="35"
-										required="false" />
+									    value="#{activacionContadorBean.activacionContadorPage.personaDTO.correoElectronico}"
+										readonly="true" disabled="true" />
 									<p:message for="txtCorreoElectronico" />
 									<p:tooltip for="txtCorreoElectronico" value="Calle"
 										showEffect="fade" hideEffect="fade" />
@@ -258,7 +258,10 @@
 						</p:row>
 						<p:row>
 							<p:column  align="left" colspan="3">
-									<p:inputText id="txtTelefono" size="25" required="false" />
+									<p:inputText id="txtTelefono" 
+									size="25" 
+									readonly="true" disabled="true"
+									value="#{activacionContadorPage.personaDTO.telefono}" />
 									<p:message for="txtTelefono" />
 									<p:tooltip for="txtTelefono" value="Calle" showEffect="fade"
 										hideEffect="fade" />
@@ -274,19 +277,19 @@
     <p:panelGrid style="margin-top:20px">
 
 						<p:row>
-							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 1</p:column>
 							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 2</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 3</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtCorreoElectronico1" size="13"
+									<p:inputText id="txtCorreoElectronico1" size="35"
 										required="false" />
 									<p:message for="txtCorreoElectronico1" />
 									<p:tooltip for="txtCorreoElectronico1" value="Calle"
 										showEffect="fade" hideEffect="fade" />
 							</p:column>
 							<p:column>
-									<p:inputText id="txtCorreoElectronico2" size="13"
+									<p:inputText id="txtCorreoElectronico2" size="35"
 										required="false" />
 									<p:message for="txtCorreoElectronico2" />
 									<p:tooltip for="txtCorreoElectronico2" value="Calle"
@@ -294,20 +297,20 @@
 							</p:column>
 						</p:row>
 
-<p:row>
-							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 3</p:column>
-							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 4</p:column>
+   <p:row>
+							<p:column styleClass="ui-widget-header" colspan="1">Confirmar Correo Electronico 2</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">Confirmar Correo Electronico 3</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtCorreoElectronico3" size="13"
+									<p:inputText id="txtCorreoElectronico3" size="35"
 										required="false" />
 									<p:message for="txtCorreoElectronico3" />
 									<p:tooltip for="txtCorreoElectronico3" value="Calle"
 										showEffect="fade" hideEffect="fade" />
 							</p:column>
 							<p:column>
-									<p:inputText id="txtCorreoElectronico4" size="13"
+									<p:inputText id="txtCorreoElectronico4" size="35"
 										required="false" />
 									<p:message for="txtCorreoElectronico4" />
 									<p:tooltip for="txtCorreoElectronico4" value="Calle"
@@ -330,8 +333,8 @@
 						
 						<p:row>
 							<p:column>
-									<p:inputText id="txtCedulaProfesional" size="13"
-										required="false" />
+									<p:inputText id="txtCedulaProfesional" size="25"
+										readonly="true" disabled="true" value="#{activacionContadorBean.activacionContadorPage.datosPersonalesDTO.numeroCedula}" />
 									<p:message for="txtCedulaProfesional" />
 									<p:tooltip for="txtCedulaProfesional" value="Calle"
 										showEffect="fade" hideEffect="fade" />
@@ -339,7 +342,7 @@
 							<p:column>
 								<h:panelGrid columns="3">
 	
-        <p:calendar id="cldFechaExpCedula" showOn="button" />
+        <p:calendar id="cldFechaExpCedula" showOn="button" value="#{activacionContadorBean.activacionContadorPage.datosPersonalesDTO.fechaExpedicionCedula}" />
 								</h:panelGrid>
 							</p:column>
 						</p:row>
@@ -350,8 +353,9 @@
 						
 <p:row>
 							<p:column>
-									<p:inputText id="txtInstitucionCedula" size="13"
-										required="false" />
+									<p:inputText id="txtInstitucionCedula" 
+									 value="#{activacionContadorBean.activacionContadorPage.datosPersonalesDTO.institucionCedula}" size="35"
+										readonly="true" disabled="true" />
 									<p:message for="txtInstitucionCedula" />
 									<p:tooltip for="txtInstitucionCedula" value="Calle"
 										showEffect="fade" hideEffect="fade" />
@@ -372,14 +376,13 @@
 						<p:commandButton
 								value="(1.2) Siguiente" 
 								ajax="false" process="@this,formServer"
-								actionListener="#{activacionRegistroBean.initActivacionDespacho}" 
-								
+								action="#{activacionContadorBean.siguiente}"
 								update=":tabView:pnServidor" id="btnSalir"
 								styleClass="ui-priority-primary" /></td>
 					</tr>
 					<tr>
-						<td align="left" colspan="2"><p:messages globalOnly="true"
-								showDetail="true" autoUpdate="true" closable="true" /></td>
+						<td align="left" colspan="2">
+						</td>
 					</tr>
 
 				</table>
@@ -387,7 +390,8 @@
 		</p:panel>
 
 				</h:form>
-	
+
+
 	</ui:define>
 </ui:composition>
 

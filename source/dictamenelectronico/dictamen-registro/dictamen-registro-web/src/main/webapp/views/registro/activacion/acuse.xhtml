@@ -9,7 +9,7 @@
 	</ui:define>
 	<ui:define name="content">
           
-						          <h:form id="frmDatosContador4">
+   <h:form id="frmDatosContador4">
 			
        <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="frmDatosContador4"  />
           
@@ -39,66 +39,9 @@
 				</p:row>
 			</p:panelGrid>
 			</h:form>
-			          <h:form id="frmDatosContador1">
-			
-			<p:dialog widgetVar="dlgValidarRegIMSS" resizable="false" draggable="false" visible="#{activacionSolicitudBean.activarValidarRegistroIMSS}">
-			<p:panel id="pnValidarRegIMSS" header="Mensaje del Sistema">	
-				<p:panelGrid id="pngValidarRegIMSS">
-				  <p:row>
-				  <p:column>
-				  	<p:outputLabel>Registro IMSS:</p:outputLabel>
-				  	</p:column>
-				  	 <p:column>
-                      <p:inputText id="txtRegistroIMSS" value="#{activacionSolicitudBean.registroIMSS}" size="25" />
-									<p:message for="txtRegistroIMSS" />
-									<p:tooltip for="txtRegistroIMSS" value="Numero de Registro IMSS"
-										showEffect="fade" hideEffect="fade" />
-				  	</p:column>
-				  </p:row>
-				  <p:row>
-				  <p:column colspan="2">
-				  	  	<p:commandButton id="btnAtrasValidarRegIMSS" 
-				  	  	value="Atrás" 
-				  	  	ajax="false"
-						action="#{activacionSolicitudBean.accionAtrasRegistroIMSS}" 
-						process="@this,frmDatosContador" 
-						update=":frmDatosContador" />
-						
-				  	    <p:commandButton id="btnAceptarValidarRegIMSS" value="Consultar" ajax="false"
-						action="#{activacionSolicitudBean.accionBuscarRegistroIMSS}" />
-				
-						 <p:commandButton id="btnSiguiente" value="Siguiente" 
-						 disabled="#{activacionSolicitudBean.activarSiguienteRegIMSS}" ajax="false"
-						action="#{activacionSolicitudBean.actionContadorNoAutorizado}" />
-						</p:column>
-				  </p:row>
-				</p:panelGrid>
-			  </p:panel>
-			</p:dialog>
-			
-			</h:form>
-						          <h:form id="frmDatosContador2">
-			
-			<p:dialog widgetVar="dlgContNoAut" resizable="false" draggable="false" visible="#{activacionSolicitudBean.activarContadorNoAutorizado}">
-			<p:panel id="pnContNoAut" header="Mensaje del Sistema">	
-				<p:panelGrid id="pngContNoAutr">
-				  <p:row>
-				  <p:column>
-				  	<p:outputLabel>Usted no cuenta con un Registro IMSS de Contador Público Autorizado</p:outputLabel>
-				  	</p:column>
-				  </p:row>
-				  <p:row>
-				  <p:column>
-				  	<p:commandButton id="btnAceptarNoAut" value="Aceptar" ajax="false"
-						action="#{activacionSolicitudBean.actionContadorNoAutorizado}" />
-						</p:column>
-				  </p:row>
-				</p:panelGrid>
-			  </p:panel>
-			</p:dialog>
-			
-			</h:form>
-						          <h:form id="frmDatosContador3">
+			     
+						  
+	 <h:form id="frmDatosContador3">
 			
 		<p:dialog widgetVar="dlgDatosContador" resizable="false" draggable="false" 
 		visible="#{activacionSolicitudBean.activarContadorAutorizado}">
