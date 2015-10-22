@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_8B68D2AF_F990_4b3d_A212_343A3C362CAE"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 11:08:34"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-21 22:27:10"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-22 12:30:58"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Solicitar Registro"/>
@@ -139,8 +139,13 @@
 						</step>
 						<step name="El sistema habilita los campos:&#xA;- Cargo que desempeña el CP&#xA;- RFC del despacho" guid="{99913DDF-D05C-4320-85B9-5B6CC3851C26}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El usuario registra el RFC del despacho" guid="{8DC5ED2D-EDBE-4e7b-9781-2D5EBB04740B}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema valida el RFC de acuerdo al RF-A010 - Validar RFC. En caso de existir el RFC, muestra en pantalla la razón social y el domicilio fiscal es almacenado de acuerdo al RF Almacenar domicilio fiscal.&#xA;En caso de no existir el RFC, se muestra en pantalla el MSG 4 RF Catálogo de mensajes.&#xA;El sistema valida que se cumpla la completitud de campos obligatorios.  RF-A011. Validar campos obligatorios." guid="{1738BC84-864C-4fa0-B794-3D4BE904A8C9}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El sistema valida que se cumpla la completitud de campos obligatorios.  RF-A011. Validar campos obligatorios" guid="{53587EF4-7EAA-4c9b-84EF-17CA206E4CC2}" level="15" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida el RFC de acuerdo al RF-A010 - Validar RFC. En caso de existir el RFC, muestra en pantalla la razón social y el domicilio fiscal es almacenado de acuerdo al RF Almacenar domicilio fiscal.&#xA;En caso de no existir el RFC, se muestra en pantalla el MSG 4 RF Catálogo de mensajes.&#xA;" guid="{1738BC84-864C-4fa0-B794-3D4BE904A8C9}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario da clin en el boton siguiente" guid="{8A077243-45FD-4664-9FCB-E6F0EBE97DC3}" level="15" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida que se cumpla la completitud de campos obligatorios de la sección.  RF-A011. Validar campos obligatorios. En caso de encontrarse datos sin completar, se muestra el mensaje se muestra en pantalla el MSG 5 RF Catálogo de mensajes. y no se permite avance de sección." guid="{0CC7F128-474B-4228-ACDB-515DC6F09762}" level="16" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario captura el RFC del colegio de contadores públicos" guid="{53587EF4-7EAA-4c9b-84EF-17CA206E4CC2}" level="17" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida el RFC de acuerdo al RF-A010 - Validar RFC. En caso de existir el RFC, muestra en pantalla la razón social y el domicilio fiscal es almacenado de acuerdo al RF Almacenar domicilio fiscal.&#xA;En caso de no existir el RFC, se muestra en pantalla el MSG 4 RF Catálogo de mensajes.&#xA;" guid="{32813CA8-9DBA-417e-9286-AAC4D2305179}" level="18" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario da clic en el boton siguiente" guid="{E65B99F0-8684-4343-B3D6-15580CB9AC49}" level="19" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida que se cumpla la completitud de campos obligatorios de la sección.  RF-A011. Validar campos obligatorios. En caso de encontrarse datos sin completar, se muestra el mensaje se muestra en pantalla el MSG 5 RF Catálogo de mensajes. y no se permite avance de sección." guid="{6700B2A4-F438-4d96-B1A1-112E9A3A69FF}" level="20" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context/>
 					</path>
 				</EAScenarioContent>
