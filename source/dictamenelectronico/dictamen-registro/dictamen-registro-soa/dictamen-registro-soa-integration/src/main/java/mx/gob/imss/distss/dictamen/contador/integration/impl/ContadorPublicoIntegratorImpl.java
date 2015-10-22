@@ -105,9 +105,10 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 		
 		Fisica fisica  = satService.buscarPersonaFisicaPorRfc(rfc);
 		
-		DomicilioFiscalDTO domicilioDTO = new DomicilioFiscalDTO();
-		if(fisica.getDomicilioFiscal()!=null){
-		
+		DomicilioFiscalDTO domicilioDTO = null;
+
+		if(fisica!=null && fisica.getDomicilioFiscal()!=null){
+			domicilioDTO = new DomicilioFiscalDTO();
 			domicilioDTO.setCalle(fisica.getDomicilioFiscal().getCalle());
 		    LOGGER.info("ContadorPublicoIntegrator.Calle="+fisica.getDomicilioFiscal().getCalle());
 		    domicilioDTO.setNumeroExterior(fisica.getDomicilioFiscal().getNumExterior1());
@@ -120,11 +121,12 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 		    domicilioDTO.setColoniaAsentamiento(fisica.getDomicilioFiscal().getColonia());
 		    domicilioDTO.setLocalidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getNombre());
 		
-		domicilioDTO.setCveEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getClave());
-		domicilioDTO.setEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
-		domicilioDTO.setMunicipioDelegacion(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
-		domicilioDTO.setCodigoPostal(fisica.getDomicilioFiscal().getCodigoPostal().getCodigoPostal());
+		    domicilioDTO.setCveEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getClave());
+		    domicilioDTO.setEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
+		    domicilioDTO.setMunicipioDelegacion(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
+		    domicilioDTO.setCodigoPostal(fisica.getDomicilioFiscal().getCodigoPostal().getCodigoPostal());
 		}
+		
 		return domicilioDTO;
 	}
 	
