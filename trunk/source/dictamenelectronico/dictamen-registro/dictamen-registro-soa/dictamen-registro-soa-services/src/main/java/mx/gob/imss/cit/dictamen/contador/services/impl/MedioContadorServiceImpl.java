@@ -18,6 +18,8 @@ import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.Consul
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.InsertarMediosContactoInput;
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.ServiciosBDTU_Service;
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.consultamediosdecontactoschema.PersonaMedioContacto;
+import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.insertarpersonaschema.MedioContactoPersona;
+import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.insertarpersonaschema.TipoMedioContacto;
 
 @Stateless(name = "bdtuService", mappedName = "bdtuService")
 public class MedioContadorServiceImpl implements MedioContadorService {
@@ -89,6 +91,11 @@ public class MedioContadorServiceImpl implements MedioContadorService {
 			ConsultaMediosDeContactoInput consultaMediosDeContactoInput = new ConsultaMediosDeContactoInput();
 			consultaMediosDeContactoInput.setIdPersona(37472955L);
 InsertarMediosContactoInput insertarMediosContactoInput = new InsertarMediosContactoInput();
+insertarMediosContactoInput.setIdPersona(personaMedioContactoTO.getIdPersona());
+MedioContactoPersona medioContactoPersona = new MedioContactoPersona();
+TipoMedioContacto tipoMedioContacto = new TipoMedioContacto();
+medioContactoPersona.setTipoMedioContacto(tipoMedioContacto);
+insertarMediosContactoInput.setMedioContacto(medioContactoPersona);
 service.getServiciosBDTUSOAP().insertarAsociarMediosContacto(insertarMediosContactoInput);
 
 			
