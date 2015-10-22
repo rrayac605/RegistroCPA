@@ -145,7 +145,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_A515772C_6A50_485c_A603_EE3BDDDC68D3"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 14:29:33"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 13:03:18"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-22 14:34:57"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Activar Registro"/>
@@ -157,7 +157,7 @@
 								<UML:TaggedValue tag="ea_localid" value="49212"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={C73197C9-7214-4bf9-BCA9-721F882B5F7E}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={FBEAA0E4-30C2-4d5a-B210-F34F43008D39}$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={C73197C9-7214-4bf9-BCA9-721F882B5F7E}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={FBEAA0E4-30C2-4d5a-B210-F34F43008D39}$SUP;$ENDXREF;$XREFPROP=$XID={46745CAA-9D3A-40e6-B5AD-D0EE7500938C}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={2DA4C805-6DCC-4dc7-A3BE-5F582D33015C}$SUP;$ENDXREF;$XREFPROP=$XID={A6B7551A-F40F-488e-90C4-E949783607AB}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={0FBF102C-EDDC-4c76-8B27-6B893ABA051C}$SUP;$ENDXREF;$XREFPROP=$XID={AA21A7DC-D87A-4474-A0C0-E481707B254D}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={2EFCF1C5-E34C-4821-9EAB-6C825508FA31}$SUP;$ENDXREF;$XREFPROP=$XID={31D58E60-5509-4ce8-9F14-69CA22B95BF3}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={64269386-7D9D-4a4b-8BBF-3B9041710EE3}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
 								<UML:Constraint name="El CPA debe contar con FIEL ">
@@ -381,12 +381,31 @@
 						<step name="el actor debe seleccionar el boton &quot;siguiente&quot;" guid="{65BFA1F4-AE4D-4eb9-848C-7A471A1CFABA}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="el sistema mostrara pantalla con los siguientes campos: ver anexo RF-C008.CU_Activar_reg_P8  boton &quot;siguiente&quot;" guid="{69D785EF-81E7-4ce3-AF1A-13BF52FFE08C}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="el actor debe seleccionar el boton &quot;siguiente&quot; " guid="{F6F65538-363F-4b79-A9C8-3EB3EB38B4E7}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema agregara un numero de folio a la solicitud " guid="{883C5D4C-BF87-4b9b-BBBD-AF3704AF28B5}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema agregara un numero de folio a la solicitud " guid="{883C5D4C-BF87-4b9b-BBBD-AF3704AF28B5}" level="10" uses="Generar Folio" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema desplegara los siguientes datos solo de consulta (1.-registro IMSS, 2.-apellido paterno, 3.-apellido materno, 4.-nombre, 5.-delegacion, 6.-subdelegacion), " guid="{3B312450-7160-4635-B0D5-0AF130DA8522}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor puede consultar la informacion que se despliega " guid="{448BEBC8-3275-43e9-83CA-26B3AE70A3FF}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema mostrara mesjae de advertencia &quot;Los datos son correctos&quot; botones SI - NO" guid="{14794663-E91D-4fbe-8F4E-21B9DF7BD932}" level="13" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="13a" guid="{E43BEC64-33E0-47ee-9660-64D5654851CC}" join="End"/>
+						</step>
+						<step name="El actor debe seleccionar boton SI " guid="{FEA607ED-EEA4-4da6-B257-32AC6BA4D9AA}" level="14" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema cambiara de pantalla mostrando los siguientes campos de captura RF-C009.CU_Activar_Reg_P15 boton &quot;guardar&quot;" guid="{72C25439-4300-4e0d-A61E-387FDC42190E}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor debe capturar los datos de RF-C009.CU_Activar_Reg_P15  y seleccionar boton &quot;guardar&quot;" guid="{7CDF9AB0-A4B6-4c5d-8973-4F2B25AD3A12}" level="16" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema validara los campos capturados RF-A007. Validar correo electrónico " guid="{30DD881C-1BFA-4f58-9289-72E32D368DBC}" level="17" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="17a" guid="{BE59A83C-912F-4332-8AA1-6228AAB7D252}" join="End"/>
+						</step>
+						<step name="el actor debe seleccionar boton &quot;guardar&quot; " guid="{69A33291-301B-4816-988E-6C6FD5D6FC92}" level="18" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema almacenara en la base de datos transaccional unica &quot;BDTU&quot; en la tabla de contadores los datos capturados y mostrara &quot;Datos del Despacho&quot;  RF-C010.CU_Activacion_Reg_P19" guid="{CC47B101-2A93-4276-A365-462793113F4E}" level="19" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor puede seleccionar la lista desplegable forma parte de un despacho o es profesional independiente" guid="{6899D6F3-527F-4e88-BF5F-F4BBCC71E7FE}" level="20" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema desplegara el catalogo con las siguientes opciones (despcho - independiente)" guid="{0147D032-BDA9-4f7e-A00C-1757E3530D67}" level="21" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
 							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
 							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
 							<item oldname="RF-C008.CU_Activar_reg_P8" guid="{FBEAA0E4-30C2-4d5a-B210-F34F43008D39}"/>
+							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
+							<item oldname="Generar Folio" guid="{2DA4C805-6DCC-4dc7-A3BE-5F582D33015C}"/>
+							<item oldname="RF-C009.CU_Activar_Reg_P15" guid="{0FBF102C-EDDC-4c76-8B27-6B893ABA051C}"/>
+							<item oldname="RF-C010.CU_Activacion_Reg_P19" guid="{64269386-7D9D-4a4b-8BBF-3B9041710EE3}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -400,6 +419,37 @@
 							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
 							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
 							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA2" type="Alternate" weight="2.00" subject="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903" xmi.id="EAID_E43BEC64_33E0_47ee_9660_64D5654851CC">
+				<EAScenarioContent>
+					<path>
+						<step name="El actor puede seleccionar boton &quot;NO&quot;" guid="{95908ED3-F546-4703-A455-B7B134B67D37}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema desplegara mensaje AG &quot;favor de llevar a cabo la actualizacion del domicilio fiscal en el modulo de modificacion de datos&quot;" guid="{DC1CDE77-233C-4615-8B40-EFD1A154B835}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
+							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+							<item oldname="RF-C008.CU_Activar_reg_P8" guid="{FBEAA0E4-30C2-4d5a-B210-F34F43008D39}"/>
+							<item oldname="Generar Folio" guid="{2DA4C805-6DCC-4dc7-A3BE-5F582D33015C}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA3" type="Alternate" weight="3.00" subject="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903" xmi.id="EAID_BE59A83C_912F_4332_8AA1_6228AAB7D252">
+				<EAScenarioContent>
+					<path>
+						<step name="El sistema mostrara mensaje de AG &quot;favor de ingresar una direccion de correo electronica valida&quot;" guid="{09F2EBB2-E11E-4f91-9A62-1410880BAFB9}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
+							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+							<item oldname="RF-C008.CU_Activar_reg_P8" guid="{FBEAA0E4-30C2-4d5a-B210-F34F43008D39}"/>
+							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
+							<item oldname="Generar Folio" guid="{2DA4C805-6DCC-4dc7-A3BE-5F582D33015C}"/>
+							<item oldname="RF-C009.CU_Activar_Reg_P15" guid="{0FBF102C-EDDC-4c76-8B27-6B893ABA051C}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
