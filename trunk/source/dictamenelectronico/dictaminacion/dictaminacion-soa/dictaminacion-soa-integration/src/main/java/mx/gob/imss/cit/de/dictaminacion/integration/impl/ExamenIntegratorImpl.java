@@ -15,6 +15,7 @@ import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.AtestigPregun
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.AtestiguamientoDictamenDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.OpcionPreguntaDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PreguntaDTO;
+import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.RubroAtestiguamientoDictDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.RubroDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.de.dictaminacion.integration.transformer.TransformerIntegrationUtils;
@@ -74,14 +75,17 @@ public class ExamenIntegratorImpl implements ExamenIntegrator {
 						System.out.println("pregunta  : " + pregunta.getDesPregunta());
 						for (OpcionPreguntaDTO opcionPreguntaDTO : pregunta.getNdcOpcionesPregunta()) {
 							System.out.println("Opcion Pregunta id : " + opcionPreguntaDTO.getCveIdOpcionPregunta());
-							for (AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO : opcionPreguntaDTO
-									.getNdtAtestigPreguntasRespuestas()) {
-								System.out.println("clave id Atestiguamientos  : " +atestigPreguntasRespuestDTO.getCveIdAtestiguamientos());
-									System.out.println("Opcion respuesta: "
-											+ opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
-									pregunta.setOpcionSeleccionada(
-											opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
-									pregunta.setObservaciones(atestigPreguntasRespuestDTO.getDesObservaciones());
+							for (AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO : opcionPreguntaDTO.getNdtAtestigPreguntasRespuestas()) {
+								for (RubroAtestiguamientoDictDTO rubroAtestiguamientoDictDTO : rubro.getNdtRubrosAtestiguamientoDict()) {
+									for(AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO1 : rubroAtestiguamientoDictDTO.getNdtAtestigPreguntasRespuesta()){
+										if(atestigPreguntasRespuestDTO1.getCveIdAtestiguamientos().equals(atestigPreguntasRespuestDTO.getCveIdAtestiguamientos())){
+											System.out.println("Atestiguamientos: "+atestigPreguntasRespuestDTO1.getCveIdAtestiguamientos());
+											System.out.println("dentro Opcion Pregunta id : " + opcionPreguntaDTO.getCveIdOpcionPregunta());
+											System.out.println("dentro respuesta : " + opcionPreguntaDTO.getCveIdRespuesta().getDesTipoRespuesta());
+											pregunta.setOpcionSeleccionada( opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
+										}
+									}
+								}
 							}
 						}
 					}
