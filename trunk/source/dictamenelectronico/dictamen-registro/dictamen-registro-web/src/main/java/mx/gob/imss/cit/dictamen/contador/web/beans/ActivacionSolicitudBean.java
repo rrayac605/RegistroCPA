@@ -8,6 +8,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.component.UIComponent;
 
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
@@ -15,15 +17,12 @@ import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 @ManagedBean(name = "activacionSolicitudBean")
 @ViewScoped
 public class ActivacionSolicitudBean extends BaseBean {
 
 	private static final long serialVersionUID = -6717550265551435161L;
-	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionSolicitudBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ActivacionSolicitudBean.class);
 
 	
 	@ManagedProperty(value = "#{activacionContadorPage}")

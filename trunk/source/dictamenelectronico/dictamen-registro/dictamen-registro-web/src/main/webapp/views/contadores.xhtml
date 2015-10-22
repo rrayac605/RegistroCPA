@@ -49,22 +49,20 @@
 				style="width:100%; margin: 0 auto; padding: 60px; ">
 				<p:row style="text-align: center;">
 					<p:column style="text-align: center;">
-						<p:commandLink action="#{contadorBean.redirectSolicitud()}"
+						<p:commandLink action="#{contadorBean.enviarToSolicitud()}"
 							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" update="dialogGeneral">
+							<p:graphicImage value="../images/icono_indice_gris.jpg" />
+						</p:commandLink>
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandLink onclick="imagenEsperaWidget.show()"
 							oncomplete="imagenEsperaWidget.hide()">
 							<p:graphicImage value="../images/icono_indice_gris.jpg" />
 						</p:commandLink>
 					</p:column>
 					<p:column style="text-align: center;">
-						<p:commandLink 
-							onclick="imagenEsperaWidget.show()"
-							oncomplete="imagenEsperaWidget.hide()">
-							<p:graphicImage value="../images/icono_indice_gris.jpg" />
-						</p:commandLink>
-					</p:column>
-					<p:column style="text-align: center;">
-						<p:commandLink 
-							onclick="imagenEsperaWidget.show()"
+						<p:commandLink onclick="imagenEsperaWidget.show()"
 							oncomplete="imagenEsperaWidget.hide()">
 							<p:graphicImage value="../images/icono_indice_gris.jpg" />
 						</p:commandLink>
@@ -73,9 +71,9 @@
 				<p:row style="text-align: center;">
 					<p:column style="text-align: center;">
 						<p:commandLink value="#{msg['message.contador.solicitud.titulo']}"
-							action="#{contadorBean.redirectSolicitud()}"
+							action="#{contadorBean.enviarToSolicitud()}"
 							onclick="imagenEsperaWidget.show()"
-							oncomplete="imagenEsperaWidget.hide()" />
+							oncomplete="imagenEsperaWidget.hide()" update="dialogGeneral" />
 					</p:column>
 					<p:column style="text-align: center;">
 						<p:commandLink
@@ -92,22 +90,19 @@
 				</p:row>
 				<p:row style="text-align: center;">
 					<p:column style="text-align: center;">
-						<p:commandLink 
-							onclick="imagenEsperaWidget.show()"
+						<p:commandLink onclick="imagenEsperaWidget.show()"
 							oncomplete="imagenEsperaWidget.hide()">
 							<p:graphicImage value="../images/icono_indice_gris.jpg" />
 						</p:commandLink>
 					</p:column>
 					<p:column style="text-align: center;">
-						<p:commandLink 
-							onclick="imagenEsperaWidget.show()"
+						<p:commandLink onclick="imagenEsperaWidget.show()"
 							oncomplete="imagenEsperaWidget.hide()">
 							<p:graphicImage value="../images/icono_indice_gris.jpg" />
 						</p:commandLink>
 					</p:column>
 					<p:column style="text-align: center;">
-						<p:commandLink 
-							onclick="imagenEsperaWidget.show()"
+						<p:commandLink onclick="imagenEsperaWidget.show()"
 							oncomplete="imagenEsperaWidget.hide()">
 							<p:graphicImage value="../images/icono_indice_gris.jpg" />
 						</p:commandLink>
@@ -133,11 +128,45 @@
 					</p:column>
 				</p:row>
 			</p:panelGrid>
+			<br />
+			<p:panelGrid id="tablarfcr"
+				style="width:50%; margin: 0 auto; padding: 60px; ">
+				<p:row style="text-align: center;">
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.rfc']}" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<h:inputText label="RFC" value="#{loginPage.rfc}" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.curp']}" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<h:inputText label="CURP" value="#{loginPage.curp}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
 		</p:panel>
+		<!-- 		dialogos -->
 		<p:dialog id="imagenEsperaWidget" widgetVar="imagenEsperaWidget"
 			modal="true" resizable="false" closable="false" showHeader="false">
 			<img src="#{liferay.themeImagesURL}/icons/loader.gif" width="50"
 				height="50" />
+		</p:dialog>
+		<p:dialog width="550px" id="dialogGeneral" closeOnEscape="true"
+			header="#{msg[solicitudRegistroPage.headerDialog]}"
+			widgetVar="dialogGeneral" modal="true" resizable="false">
+			<br />
+			<h:outputText styleClass="SubtituloSeccion"
+				value="#{msg[solicitudRegistroPage.mensajeDialog]}" />
+			<br />
+			<br />
+			<p style="text-align: center;">
+				<p:commandButton value="#{msg['message.button.aceptar']}"
+					styleClass="btn-sm btn-primary" oncomplete="dialogGeneral.hide();" />
+			</p>
 		</p:dialog>
 	</h:form>
 </h:body>

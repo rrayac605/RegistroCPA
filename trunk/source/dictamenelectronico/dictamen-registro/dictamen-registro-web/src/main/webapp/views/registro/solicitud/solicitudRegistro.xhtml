@@ -10,8 +10,8 @@
 
 <h:head>
 </h:head>
-<h:body onload="#{solicitudRegistroBean.init()}">
-	<h:form id="frmSolicitudRegistro">
+<h:body>
+	<h:form>
 		<p:panel style="width:100%; " styleClass="table-no-border">
 			<h1>#{msg['message.contador.solicitud.titulo']}</h1>
 			<p:panelGrid style="width:100%;"
@@ -76,18 +76,17 @@
 			<h3>#{msg['message.contador.datos.personales']}</h3>
 			<hr class="red" />
 			<br />
-			<p:panelGrid id="tableDatosPersonales" styleClass="table-striped">
+			<p:panelGrid id="tableDatosPersonales" style="width:100%;"
+				styleClass="table">
 				<p:row>
 					<p:column>
 						<h:outputText styleClass="SubtituloSeccion"
 							value="#{msg['message.contador.datos.curp']}" />
 					</p:column>
 					<p:column>
-						<h:inputText disabled="true"
+						<h:outputText disabled="true"
 							value="#{solicitudRegistroPage.contador.curp}" />
 					</p:column>
-
-
 				</p:row>
 				<p:row>
 					<p:column>
@@ -95,7 +94,7 @@
 							value="#{msg['message.contador.datos.nombre']}" />
 					</p:column>
 					<p:column>
-						<h:inputText disabled="true"
+						<h:outputText disabled="true"
 							value="#{solicitudRegistroPage.contador.nombre}" />
 					</p:column>
 				</p:row>
@@ -105,7 +104,7 @@
 							value="#{msg['message.contador.datos.rfc']}" />
 					</p:column>
 					<p:column>
-						<h:inputText disabled="true"
+						<h:outputText disabled="true"
 							value="#{solicitudRegistroPage.contador.rfc}" />
 					</p:column>
 				</p:row>
@@ -339,19 +338,17 @@
 					</p:column>
 					<p:column style="text-align: right;">
 						<p:commandButton value="#{msg['message.button.guardar']}"
-							styleClass="btn-sm btn-primary" process="@this" immediate="true"
+							styleClass="btn-sm btn-primary"
 							action="#{solicitudRegistroBean.guardarDatos()}"
-							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
-							oncomplete="imagenEsperaWidget.hide()"
-							update="dialogGeneral datosCorrectos" />
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" update="dialogGeneral" />
 					</p:column>
 					<p:column style="text-align: right;">
 						<p:commandButton value="#{msg['message.button.siguiente']}"
-							styleClass="btn-sm btn-primary" process="@this" immediate="true"
-							action="#{solicitudRegistroBean.redirectDespacho()}"
+							styleClass="btn-sm btn-primary"
+							action="#{solicitudRegistroBean.redireccionarToDespacho()}"
 							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
-							oncomplete="imagenEsperaWidget.hide()"
-							update="dialogGeneral datosCorrectos" />
+							oncomplete="imagenEsperaWidget.hide()" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>
@@ -378,7 +375,7 @@
 					<p:column style="text-align: center;">
 						<p:commandButton value="#{msg['message.button.si']}"
 							styleClass="btn-sm btn-primary"
-							action="#{solicitudRegistroBean.redirectContadores()}"
+							action="#{solicitudRegistroBean.regresarContadores()}"
 							oncomplete="cancelarSolicitud.hide(); imagenEsperaWidget.hide();"
 							onclick="imagenEsperaWidget.show()" />
 					</p:column>
@@ -401,7 +398,7 @@
 					<p:column style="text-align: center;">
 						<p:commandButton value="#{msg['message.button.no']}"
 							styleClass="btn-sm btn-default"
-							oncomplete="datosCorrectos.hide()" />
+							onclick="datosCorrectos.hide(); datosIncorrectos.show();" />
 					</p:column>
 					<p:column style="text-align: center;">
 						<p:commandButton value="#{msg['message.button.si']}"
@@ -422,13 +419,36 @@
 			<br />
 			<p style="text-align: center;">
 				<p:commandButton value="#{msg['message.button.aceptar']}"
-					styleClass="btn btn-primary" oncomplete="dialogGeneral.hide();" />
+					styleClass="btn-sm btn-primary" oncomplete="dialogGeneral.hide();" />
 			</p>
 		</p:dialog>
 		<p:dialog id="imagenEsperaWidget" widgetVar="imagenEsperaWidget"
 			modal="true" resizable="false" closable="false" showHeader="false">
 			<img src="#{liferay.themeImagesURL}/icons/loader.gif" width="50"
 				height="50" />
+		</p:dialog>
+		<p:dialog header="#{msg['message.contador.solicitud.titulo']}"
+			width="550px" modal="true" resizable="false" id="datosIncorrectos"
+			widgetVar="datosIncorrectos">
+			<p:panelGrid style="width:100%; " styleClass="table-no-border">
+				<p:row>
+					<p:column colspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.datos.incorrectos']}" />
+						<br />
+						<br />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.aceptar']}"
+							styleClass="btn-sm btn-primary"
+							action="#{solicitudRegistroBean.regresarContadores()}"
+							oncomplete="cancelarSolicitud.hide(); imagenEsperaWidget.hide();"
+							onclick="imagenEsperaWidget.show()" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
 		</p:dialog>
 	</h:form>
 </h:body>
