@@ -37,13 +37,15 @@
 							value="#{msg['message.dictamen.cedulas.titulo.estatus.habilitado']}" />
 					</p:column>
 					<p:column>
-						<p:commandLink action="#{menuCedulasBean.editarCedulaRemuneraciones()}"
+						<p:commandLink id="linkEditarC1" action="#{menuCedulasBean.editarCedulaRemuneraciones()}"
 								onstart="statusDialog.show();"
 							oncomplete="statusDialog.hide();">
 							<h:graphicImage
 								style="width: 20px; height: 20px; margin: 0 5px 0 2px"
-								value="/images/editar.png" />
+								value="/images/editar.png" alt="Editar"/>
 						</p:commandLink>
+						
+						 <p:tooltip id="toolTipEditarC1" for="linkEditarC1" value="Capturar"/>
 					</p:column>
 				</p:row>
 				<p:row>
@@ -56,12 +58,13 @@
 							value="#{msg['message.dictamen.cedulas.titulo.estatus.habilitado']}" />
 					</p:column>
 					<p:column>
-						<p:commandLink onstart="statusDialog.show();"
+						<p:commandLink id="linkEditarC2" onstart="statusDialog.show();"
 							oncomplete="statusDialog.hide();">
 							<h:graphicImage
 								style="width: 20px; height: 20px; margin: 0 5px 0 2px"
 								value="/images/editar.png" />
 						</p:commandLink>
+						 <p:tooltip id="toolTipEditarC2" for="linkEditarC2" value="Capturar"/>
 					</p:column>
 				</p:row>
 				<p:row>
@@ -74,18 +77,13 @@
 							value="#{msg['message.dictamen.cedulas.titulo.estatus.habilitado']}" />
 					</p:column>
 					<p:column>
-						<p:commandLink onstart="statusDialog.show();"
+						<p:commandLink  id="linkEditarC3" onstart="statusDialog.show();"
 							oncomplete="statusDialog.hide();">
 							<h:graphicImage
 								style="width: 20px; height: 20px; margin: 0 5px 0 2px"
 								value="/images/editar.png" />
 						</p:commandLink>
-						<p:commandLink onstart="statusDialog.show();"
-							oncomplete="statusDialog.hide();">
-							<h:graphicImage
-								style="width: 20px; height: 20px; margin: 0 5px 0 2px;"
-								value="/images/eliminar.png" />
-						</p:commandLink>
+						<p:tooltip id="toolTipEditarC3" for="linkEditarC3" value="Capturar"/>
 					</p:column>
 				</p:row>
 
