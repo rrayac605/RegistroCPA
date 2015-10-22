@@ -57,6 +57,8 @@ public class NdcOpcionPreguntaDO implements Serializable {
     private NdcPreguntaDO cveIdPregunta;
     @OneToMany(mappedBy = "cveIdOpcionPregunta", fetch = FetchType.EAGER)
     private List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestas;
+    @Column(name = "IND_ORDEN")
+    private Integer indOrden;
 
     public NdcOpcionPreguntaDO() {
     }
@@ -111,6 +113,14 @@ public class NdcOpcionPreguntaDO implements Serializable {
 
     public void setNdtAtestigPreguntasRespuestas(List<NdtAtestigPreguntasRespuestDO> ndtAtestigPreguntasRespuestas) {
         this.ndtAtestigPreguntasRespuestas = ndtAtestigPreguntasRespuestas;
+    }
+    
+    public Integer getIndOrden() {
+        return indOrden;
+    }
+
+    public void setIndOrden(Integer indOrden) {
+        this.indOrden = indOrden;
     }
 
     @Override

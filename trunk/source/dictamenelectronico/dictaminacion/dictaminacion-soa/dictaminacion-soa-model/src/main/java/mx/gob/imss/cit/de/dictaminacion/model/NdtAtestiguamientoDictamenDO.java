@@ -43,14 +43,16 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.findByCveIdUsuario", query = "SELECT n FROM NdtAtestiguamientoDictamenDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
     @NamedQuery(name = "NdtAtestiguamientoDictamenDO.getDetalleExamenByAtestiguamiento",  
-    query = "SELECT n FROM NdtAtestiguamientoDictamenDO n, NdcAtestiguamientoDO a, NdcRubroDO b, NdcPreguntaDO c"
+    query = "SELECT n FROM NdtAtestiguamientoDictamenDO n, NdcAtestiguamientoDO a, NdcRubroDO b, NdcPreguntaDO c, NdcOpcionPreguntaDO d, NdcTipoRespuestaDO e"
     		+ " WHERE n.cveIdAtestiguamiento.cveIdAtestiguamiento = a.cveIdAtestiguamiento"
     		+ " and n.cveIdAtestiguamiento.cveIdAtestiguamiento = b.cveIdAtestiguamiento.cveIdAtestiguamiento"
     		+ " and b.cveIdRubro = c.cveIdRubro.cveIdRubro"
+    		+ " and c.cveIdPregunta = d.cveIdPregunta.cveIdPregunta"
+    		+ " and d.cveIdRespuesta.cveIdRespuesta = e.cveIdRespuesta "
     		+ " and n.cveIdAtestiguamiento.cveIdAtestiguamiento  = :cveIdAtestiguamiento"
     		+ " and n.cveIdEstadoAtestiguamiento.cveIdEstadoAtestiguamiento = :cveIdEstadoAtestiguamiento"
     		+ " and n.cveIdPatronDictamen.cveIdPatronDictamen = :cveIdPatronDictamen"
-    		+ " ORDER BY b.indOrden ASC, c.indOrden ASC")})
+    		+ " ORDER BY b.indOrden ASC, c.indOrden ASC, d.indOrden ASC , e.cveIdRespuesta ASC")})
 public class NdtAtestiguamientoDictamenDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
