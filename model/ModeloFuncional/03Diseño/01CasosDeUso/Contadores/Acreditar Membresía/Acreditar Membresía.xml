@@ -390,7 +390,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 13:45:59"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-21 18:54:42"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 19:21:32"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Acreditar Membresía"/>
@@ -402,6 +402,7 @@
 								<UML:TaggedValue tag="ea_localid" value="48831"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={CAD0E078-92DA-41f5-A2FD-7EB0E88BC945}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={864C612E-40AF-4c78-8A19-686E33DB2A81}$CLT;$SUP={671A2F36-4FE3-46b3-963B-9AA6257D4ACB}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
 								<UML:Constraint name="El CPA debe contar con FIEL ">
@@ -736,7 +737,7 @@
 						<step name="el actor debe entrar a la zona personal y elegir la seccion de tramites digitales" guid="{FC08057A-7650-4d9b-B86B-358ABDC3A43D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="el sistema mostrara en pantalla el actor autenticado, las instrucciones del modulo de contadores publicos y las siguientes opciones: (solicitud de registro, activacion de registro, reactivacion de registro, acreditacion y membresia, modificacion de datos, baja, salir)." guid="{788F5211-41EF-4432-9732-D741F111A147}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="el actor debe seleccionar la opcion de acreditacion y membresia." guid="{B7B0102D-6E47-4a4d-8957-506374D85671}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema validara el CURP, registrado con el catalogo de contadores publicos autorizados con la finalidad de ver el numero de registro IMSS" guid="{FD7D1DA2-400C-4047-8220-66EDACC9A524}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema validara el CURP, registrado con el catalogo de contadores publicos autorizados con la finalidad de ver el numero de registro IMSS " guid="{FD7D1DA2-400C-4047-8220-66EDACC9A524}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="el actor debe contar con numero de registro IMSS y mostrar en pantalla emergente los datos del CPA (Apellido paterno, materno, nombre, CURP, Registro IMSS)" guid="{BC1074E2-BE35-461e-AEF7-19D2880B62AB}" level="5" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="5a" guid="{CD6EF0B7-DB48-442b-95AF-8275F4506869}" join="End"/>
 						</step>
