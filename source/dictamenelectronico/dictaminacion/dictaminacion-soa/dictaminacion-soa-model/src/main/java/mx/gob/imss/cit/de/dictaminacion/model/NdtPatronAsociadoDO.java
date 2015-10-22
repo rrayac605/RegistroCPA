@@ -35,6 +35,7 @@ import javax.validation.constraints.Size;
 @Table(name = "NDT_PATRON_ASOCIADO")
 @NamedQueries({
     @NamedQuery(name = "NdtPatronAsociadoDO.findAll", query = "SELECT n FROM NdtPatronAsociadoDO n"),
+    @NamedQuery(name = "NdtPatronAsociadoDO.deleteByPatronDictamen", query = "delete  FROM NdtPatronAsociadoDO n where n.cveIdPatronDictamen.cveIdPatronDictamen= :cveIdPatronDictamen"),
     @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdPatronAsociado", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdPatronAsociado = :cveIdPatronAsociado"),
     @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdPatronSujetoObligado", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdPatronSujetoObligado = :cveIdPatronSujetoObligado"),
     @NamedQuery(name = "NdtPatronAsociadoDO.findByCveIdSubdelegacion", query = "SELECT n FROM NdtPatronAsociadoDO n WHERE n.cveIdSubdelegacion = :cveIdSubdelegacion"),
@@ -135,6 +136,11 @@ public class NdtPatronAsociadoDO implements Serializable {
     @Column(name = "FEC_REGISTRO_ACTUALIZADO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
+    @Size(max = 11)
+    @Column(name = "REG_PATRON_ASOCIADO", length = 11)
+    private String regPatronAsociado;
+    
+    
     @OneToMany(mappedBy = "cveIdPatronAsociado", fetch = FetchType.LAZY)
     private List<NdtA51PersonalProporcionadDO> ndtA51PersonalProporcionadDOList;
     @OneToMany(mappedBy = "cveIdPatronAsociado", fetch = FetchType.LAZY)
@@ -570,5 +576,13 @@ public class NdtPatronAsociadoDO implements Serializable {
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdtPatronAsociadoDO[ cveIdPatronAsociado=" + cveIdPatronAsociado + " ]";
     }
+
+	public String getRegPatronAsociado() {
+		return regPatronAsociado;
+	}
+
+	public void setRegPatronAsociado(String regPatronAsociado) {
+		this.regPatronAsociado = regPatronAsociado;
+	}
     
 }

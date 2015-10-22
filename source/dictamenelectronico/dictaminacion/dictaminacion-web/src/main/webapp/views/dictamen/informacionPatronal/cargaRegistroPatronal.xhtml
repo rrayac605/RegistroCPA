@@ -46,7 +46,7 @@
 						  	maxFiles:1,
 						  	dictMaxFilesExceeded:"Sólo se permite un archivo"});
 						  myDropzone.on("success", function(file,responseText) {
-						  		document.getElementById("#{p:component('hiddenAction')}").click();
+						  		document.getElementById("#{p:component('hiddenActionRp')}").click();
 						  });
 						  function validateFile(file, done){
 						  	var allowed_extensions = new Array("txt");						  							  	
@@ -65,11 +65,11 @@
 				</h:outputScript>
 			</form>
 
-			<h:form id="formOcultoRp">
-				<p:commandButton id="hiddenAction" process="@this"
+			<h:form id="formOculto">
+				<p:commandButton id="hiddenActionRp" process="@this"
 					action="#{cargaRegistroPatronalBean.cargarRegistrosPatronales}"
 					type="submit" immediate="true" style="display:none" ajax="true"
-					update=":#{p:component('dataListRegistrosPatronales')}" />
+					update=":#{p:component('dataListRegistrosPatronales')} :#{p:component('panelPatron')}" />
 			</h:form>
 
 
@@ -83,11 +83,11 @@
 				paginatorPosition="top" paginatorAlwaysVisible="true" emptyMessage="">
 
 				 <p:column headerText="Registro Patronal">
-						<h:outputText value="#{registroPatronal.desRfcPatron}" />
+						<h:outputText value="#{registroPatronal.regPatronAsociado}" />
 				</p:column>
 				
 				<p:column headerText="Estatus">
-						<h:outputText value="Correcto" />
+						<h:outputText value="#{registroPatronal.estadoValidacion}" />
 				</p:column>
 
 			</p:dataTable>

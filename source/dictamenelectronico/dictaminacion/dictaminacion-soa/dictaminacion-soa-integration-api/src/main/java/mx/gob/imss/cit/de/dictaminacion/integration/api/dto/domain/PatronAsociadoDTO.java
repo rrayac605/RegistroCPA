@@ -42,6 +42,8 @@ public class PatronAsociadoDTO extends BaseDTO {
     private Date fecRegistroAlta;
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
+    private String regPatronAsociado;
+    private String estadoValidacion;
   
 
     public PatronAsociadoDTO() {
@@ -277,5 +279,25 @@ public class PatronAsociadoDTO extends BaseDTO {
     public String toString() {
         return "PatronDictamenDTO[ cveIdPatronAsociado=" + cveIdPatronAsociado + " ]";
     }
+
+
+	public String getRegPatronAsociado() {
+		return regPatronAsociado;
+	}
+
+
+	public void setRegPatronAsociado(String regPatronAsociado) {
+		this.regPatronAsociado = regPatronAsociado;
+	}
+
+
+	public String getEstadoValidacion() {
+		return estadoValidacion;
+	}
+
+
+	public void setEstadoValidacion(String estadoValidacion) {
+		this.estadoValidacion = estadoValidacion;
+	}
     
 }

@@ -42,6 +42,9 @@ public interface NdtPatronAsociadoDAO {
 	
 	List<NdtPatronAsociadoDO> findByIdPatronDictamen(Long idPatronDictamen);
 	
+	void removeByPatronDictamen(Long idPatronDictamen);
+	
+	
 	
 	void flush();
 
