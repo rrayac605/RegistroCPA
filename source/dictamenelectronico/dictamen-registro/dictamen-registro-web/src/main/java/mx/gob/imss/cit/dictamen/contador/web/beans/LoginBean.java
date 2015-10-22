@@ -22,8 +22,10 @@ public class LoginBean extends BaseBean {
     
 	public void init(){
 		loginPage.setCurp("RIVA890228HVZVLS08");
+		loginPage.setRfc("RIVA890228RN4");
 		LOGGER.info("LoginBean");
 		LOGGER.info("CURP:"+loginPage.getCurp());
+		LOGGER.info("RFC:"+loginPage.getRfc());
 
 	}
 	public LoginPage getLoginPage() {

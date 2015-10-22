@@ -7,6 +7,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoAutDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosContactoDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.InfoProfesional;
 
 /**
  * 
@@ -30,6 +33,13 @@ public class SolicitudRegistroPage implements Serializable {
 	private Date fechaActual;
 	private String headerDialog;
 	private String mensajeDialog;
+
+	public SolicitudRegistroPage() {
+		contador = new ContadorPublicoAutDTO();
+		contador.setContacto(new DatosContactoDTO());
+		contador.setDomicilio(new DomicilioDTO());
+		contador.setInfoProf(new InfoProfesional());
+	}
 
 	/**
 	 * @return the folio

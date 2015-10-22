@@ -5,14 +5,15 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
+
 import javax.annotation.PostConstruct;
+
+import org.apache.log4j.Logger;
 
 @ManagedBean(name = "activacionContadorBean")
 @ViewScoped
@@ -20,7 +21,7 @@ public class ActivacionContadorBean extends BaseBean {
 	
 	private static final long serialVersionUID = 6140756713835351053L;
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionContadorBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ActivacionContadorBean.class);
 
 	
 	@ManagedProperty(value = "#{activacionContadorPage}")
@@ -36,8 +37,8 @@ public class ActivacionContadorBean extends BaseBean {
     	
     	LOGGER.info("activacionContadorBean.init(");
        	String rfc = activacionContadorPage.getPersonaDTO().getRfc();
-    	DomicilioDTO domicilioDTO = contadorPublicoIntegrator.consultarDomicilioPorRFC(rfc);
-    	activacionContadorPage.getPersonaDTO().getContadorPublicoAutDTO().setDomicilioDTO(domicilioDTO);
+    	DomicilioFiscalDTO domicilioDTO = contadorPublicoIntegrator.consultarDomicilioPorRFC(rfc);
+    	activacionContadorPage.getPersonaDTO().getContadorPublicoAutDTO().setDomicilioFiscalDTO(domicilioDTO);
     
     }
     

@@ -34,8 +34,8 @@ public final class SolicitudFiscalUtil {
      folioSolicitudFiscalDTO.setFechaNacimiento(format(personaDTO.getFechaNacimiento()));
      folioSolicitudFiscalDTO.setGenero(sexo(personaDTO.getIdSexo()));
      if(personaDTO.getContadorPublicoAutDTO()!=null){
-    	  if(personaDTO.getContadorPublicoAutDTO().getDomicilioDTO()!=null){
-   folioSolicitudFiscalDTO.setEntidadFederativa(trim(personaDTO.getContadorPublicoAutDTO().getDomicilioDTO().getEntidad()));
+    	  if(personaDTO.getContadorPublicoAutDTO().getDomicilioFiscalDTO()!=null){
+   folioSolicitudFiscalDTO.setEntidadFederativa(trim(personaDTO.getContadorPublicoAutDTO().getDomicilioFiscalDTO().getEntidadFederativa()));
     	  }
      }
      
