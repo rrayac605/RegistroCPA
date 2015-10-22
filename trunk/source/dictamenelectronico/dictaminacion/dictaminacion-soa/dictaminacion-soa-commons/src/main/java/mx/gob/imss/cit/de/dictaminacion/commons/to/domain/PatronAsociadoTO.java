@@ -43,6 +43,7 @@ public class PatronAsociadoTO  extends BaseTO {
     private Date fecRegistroBaja;
     private Date fecRegistroActualizado;
     private String regPatronAsociado;
+    private String estadoValidacion;
   
 
     public PatronAsociadoTO() {
@@ -287,6 +288,16 @@ public class PatronAsociadoTO  extends BaseTO {
 
 	public void setRegPatronAsociado(String regPatronAsociado) {
 		this.regPatronAsociado = regPatronAsociado;
+	}
+
+
+	public String getEstadoValidacion() {
+		return estadoValidacion;
+	}
+
+
+	public void setEstadoValidacion(String estadoValidacion) {
+		this.estadoValidacion = estadoValidacion;
 	}
     
 }

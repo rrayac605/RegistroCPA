@@ -61,8 +61,7 @@ public final class DictamenConstants {
 	public static final String ESTADO_ACTIVO="1";
 	public static final String ESTADO_INACTIVO="2";
 	
-	
-	
-	
+    public static final String EXPRESION_REGULAR_REGISTRO_PATRONAL="^[a-zA-Z0-9]{3}[0-9]{8}";
+
 	
 }

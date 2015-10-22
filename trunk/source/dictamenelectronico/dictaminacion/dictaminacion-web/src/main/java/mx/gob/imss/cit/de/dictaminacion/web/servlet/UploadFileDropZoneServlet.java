@@ -3,7 +3,6 @@ package mx.gob.imss.cit.de.dictaminacion.web.servlet;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,41 +15,38 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.log4j.Logger;
 
-import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PatronAsociadoDTO;
+import mx.gob.imss.cit.de.dictaminacion.web.constants.DictamenWebConstants;
 
 /**
  * Servlet implementation class UploadFileDropZoneServlet
  */
 @WebServlet("/UploadFileDropZoneServlet")
 public class UploadFileDropZoneServlet extends HttpServlet  {
+	
 	private static final long serialVersionUID = 1L;
        
- 
-    public UploadFileDropZoneServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
+	private Logger LOG=Logger.getLogger(UploadFileDropZoneServlet.class) ;
 
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
 		  if (!ServletFileUpload.isMultipartContent(request)) {
-		         throw new IllegalArgumentException("Request is not multipart, please 'multipart/form-data' enctype for your form.");
+		         throw new IllegalArgumentException("El request no soporta archivos");
 		     }
 
 		     ServletFileUpload uploadHandler = new ServletFileUpload(new DiskFileItemFactory());
 		     PrintWriter writer = response.getWriter();
 		   
-		     System.out.println(request.getServletContext().getRealPath("/"));
+		     LOG.info(request.getServletContext().getRealPath("/"));
 		     try {
 		         List<FileItem> items = uploadHandler.parseRequest(request);
 		         
 		         for (FileItem item : items) {
 		             if (!item.isFormField()) {
-	                     File file = new File(request.getServletContext().getRealPath("/"), "registroPatronal.txt");
+	                     File file = new File(request.getServletContext().getRealPath("/"),DictamenWebConstants.NOMBREA_BASE_ARCHIVO_RP);
 	                     item.write(file);
 	
 		             }
@@ -72,7 +68,7 @@ public class UploadFileDropZoneServlet extends HttpServlet  {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 	
