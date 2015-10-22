@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-10-20 18:51:36"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\Contadores\Solicitud de Registro\Solicitud de Registro.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-10-21 13:06:01"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-10-21 14:26:17"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-10-21 10:51:32"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -37,8 +37,9 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:UseCase name="Use Case1" xmi.id="EAID_2F61C353_A0CC_4801_B55C_EC160BD135FB" visibility="public" namespace="EAPK_8B68D2AF_F990_4b3d_A212_343A3C362CAE" isRoot="false" isLeaf="false" isAbstract="false">
+						<UML:UseCase name="Solicitar registro de Contador público autorizado" xmi.id="EAID_2F61C353_A0CC_4801_B55C_EC160BD135FB" visibility="public" namespace="EAPK_8B68D2AF_F990_4b3d_A212_343A3C362CAE" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="En este caso de uso, el contador público se realiza la captura de los datos de la solicitud de registro para ser un Contador público autorizado"/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -46,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_8B68D2AF_F990_4b3d_A212_343A3C362CAE"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 11:08:34"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-21 11:20:06"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 22:27:10"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Solicitar Registro"/>
@@ -55,16 +56,32 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="3977"/>
+								<UML:TaggedValue tag="ea_localid" value="7046"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
-								<UML:Constraint name="El usuario debe estar registrado en el protal">
+								<UML:Constraint name="El usuario debe estar registrado en el portal IMSS">
 									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="description" value="El usuario, Contador público debe estar registrado en el portal digital "/>
+										<UML:TaggedValue tag="description" value="El usuario, Contador público debe estar registrado en el portal digital y haber iniciado sesión."/>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
 										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Estado Cancelado">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El contador público no debe de tener estado de cancelado."/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="3.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Registro IMSS">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El contador público no debe tener un registro IMSS"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
 										<UML:TaggedValue tag="status" value="Approved"/>
 									</UML:ModelElement.taggedValue>
 								</UML:Constraint>
@@ -87,17 +104,17 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="nsoria"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 11:07:00"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-21 11:46:47"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-21 21:14:08"/>
 				<UML:TaggedValue tag="package" value="EAPK_8B68D2AF_F990_4b3d_A212_343A3C362CAE"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="328"/>
+				<UML:TaggedValue tag="ea_localid" value="620"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=799;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=B9BB7865;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=44941F38;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=284;Top=130;Right=389;Bottom=200;" subject="EAID_2F61C353_A0CC_4801_B55C_EC160BD135FB" seqno="1" style="DUID=37C36814;"/>
+				<UML:DiagramElement geometry="Left=285;Top=128;Right=390;Bottom=198;" subject="EAID_2F61C353_A0CC_4801_B55C_EC160BD135FB" seqno="1" style="DUID=37C36814;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -107,7 +124,37 @@
 			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_2F61C353_A0CC_4801_B55C_EC160BD135FB" xmi.id="EAID_86E18B50_4D41_41d5_B546_B1571BA2DC71">
 				<EAScenarioContent>
 					<path>
-						<step name="El contador selecciona l" guid="{AF292051-E8C1-47c9-A6B3-BCCFE23BAA7A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El usuario selecciona la opción Contadores públicos de trámites digitales." guid="{AF292051-E8C1-47c9-A6B3-BCCFE23BAA7A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra en pantalla las opciones del detalle 1 del RF-C002. Detalle de Pantallas" guid="{04C5CFFB-C23F-4624-A898-0A60A7F48A07}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario selecciona la opción Solicitud de registro" guid="{6869002A-6B58-4431-A71A-6FB2ACCAE370}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra en pantalla los datos del detalle RF-C002. Detalle de Pantallas que contiene el nombre de acuerdo al CURP y los datos fiscales de acuerdo al RFC , datos con los que inicia sesión el el portal digital. RF Datos de CURP y RF Datos de  RFC.&#xA;Los datos mostrados son de consulta de acuerdo al RF-A013. Inhabilitar campos de consulta." guid="{AF212980-9738-4ff4-8C37-48E5AFC5ABED}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Si el usuario responde la pregunta de datos correctos como Si, continúa en el paso 7. &#xA;En caso que la respuesta sea No, visualiza el MSG 1 del RF Catálogo de mensajes. Continua en el paso" guid="{441527D0-426E-4a78-A79B-1A17911F37D5}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema habilita los campos de medios de contacto y datos profesionales." guid="{BFA5D914-1C9C-4416-A6E9-EF2CC556AFAF}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario captura al menos un correo electrónico como medio de contacto." guid="{4C3389A0-B6AF-40e0-B318-C87FDB2FD704}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida se cumpla el RF-A007. Validar correo electrónico,  RF-A008 . Validar correo electrónico coincidente. En caso de encontrar que no cumpla las validaciones, se muestra en pantalla el MSG 2 del RF Catálogo de mensajes." guid="{5392AA5E-BC0E-4cf0-A7C6-A9F23EDBDA5C}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario captura el número de cédula profesional y la fecha de expedición." guid="{8723224C-68D7-4538-9C41-831152150188}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida la captura de los datos profesionales obligatorios de acuerdo al RF Validación de datos profesionales.&#xA;En caso de cumplir la validación se habililita la sección &quot;datos del despacho&quot;.&#xA;En caso de no cumplir con la validación de datos el sistema muestra el MSG 3 del RF Catálogo de mensajes.&#xA;En caso de cumplir las validaciones, el sistema habilita la sección &quot;datos del despacho&quot; de acuerdo al  detalle 2 RF-C002. Detalle de Pantallas" guid="{2C3474B1-5B0C-4249-8507-F200D4E4A1B7}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario selecciona la opción de Despacho a la pregunta ¿Forma parte de un despacho o es Profesional Independiente? &#xA;Para la respuesta independiente, se llama al FA1 Contador público independiente" guid="{A37A30EA-3ADD-404c-9752-D72B09269FDC}" level="11" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="11a" guid="{14B712EE-6A37-4ccf-8EAE-44BE892B1FB1}" join="End"/>
+						</step>
+						<step name="El sistema habilita los campos:&#xA;- Cargo que desempeña el CP&#xA;- RFC del despacho" guid="{99913DDF-D05C-4320-85B9-5B6CC3851C26}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario registra el RFC del despacho" guid="{8DC5ED2D-EDBE-4e7b-9781-2D5EBB04740B}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida el RFC de acuerdo al RF-A010 - Validar RFC. En caso de existir el RFC, muestra en pantalla la razón social y el domicilio fiscal es almacenado de acuerdo al RF Almacenar domicilio fiscal.&#xA;En caso de no existir el RFC, se muestra en pantalla el MSG 4 RF Catálogo de mensajes.&#xA;El sistema valida que se cumpla la completitud de campos obligatorios.  RF-A011. Validar campos obligatorios." guid="{1738BC84-864C-4fa0-B794-3D4BE904A8C9}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema valida que se cumpla la completitud de campos obligatorios.  RF-A011. Validar campos obligatorios" guid="{53587EF4-7EAA-4c9b-84EF-17CA206E4CC2}" level="15" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context/>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA1 Contador público independiente" type="Alternate" weight="1.00" subject="EAID_2F61C353_A0CC_4801_B55C_EC160BD135FB" xmi.id="EAID_14B712EE_6A37_4ccf_8EAE_44BE892B1FB1">
+				<EAScenarioContent>
+					<path>
+						<step name="El usuario selecciona la opción independiente." guid="{89549B81-2265-404c-9B1E-F1C4008F83E1}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema habilita la pregunta ¿Cuenta con trabajadores a su cargo? con opciones de respuesta: &#xA;- Si&#xA;- No" guid="{FFD415BF-9C7A-4584-85F6-992EC6BB6FF6}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario selecciona una opción de respiesta" guid="{BAE97E2D-E2B7-43a1-B407-550CAA36907D}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Si la opción seleccionada es Si, el sistema habilita los campos número de trabajadores.&#xA;En caso de seleccionarse no, continúa en la actividad 7" guid="{BA3B9E58-B7B0-4efb-8E08-6006695A13AC}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario captura el número de trabajadores." guid="{E7593E92-C55A-4235-8B29-A9D9F1DB2557}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida se cumpla el RF-A009. Validar número de trabajadores. En caso de no cumplirse se muestra el MSG 6 del RF Catálogo de mensajes." guid="{20E4C14B-C120-4c39-B495-C2051A8EA56A}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Continúa " guid="{CD4140C3-70F5-4e72-92ED-65195A7372EC}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context/>
 					</path>
 				</EAScenarioContent>
