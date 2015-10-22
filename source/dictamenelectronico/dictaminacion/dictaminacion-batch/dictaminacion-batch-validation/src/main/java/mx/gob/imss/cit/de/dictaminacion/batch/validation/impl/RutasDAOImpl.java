@@ -23,7 +23,7 @@ import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
  */
 public class RutasDAOImpl implements RutasDAO{
 	
-	private Logger LOG=Logger.getLogger(ScanBucket.class);
+	private Logger LOG=Logger.getLogger(RutasDAOImpl.class);
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;   
 	  
