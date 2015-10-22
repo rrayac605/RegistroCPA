@@ -2,6 +2,9 @@ package mx.gob.imss.distss.dictamen.contador.integration.impl;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -10,9 +13,12 @@ import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
+import mx.gob.imss.cit.dictamen.contador.model.NdtR1DatosPersonalesDO;
 import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
 import mx.gob.imss.cit.dictamen.contador.services.SatService;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
@@ -21,7 +27,7 @@ import mx.gob.imss.ctirss.delta.model.gestion.individuo.Persona;
  * Session Bean implementation class ContadorPublicoServiceBusiness
  */
 @Stateless(name = "contadorPublicoIntegrator", mappedName = "contadorPublicoIntegrator")
-@Remote(ContadorPublicoIntegrator.class)
+@Remote({ContadorPublicoIntegrator.class})
 public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator {
 	private static final Logger LOGGER=Logger.getLogger(ContadorPublicoIntegratorImpl.class);
 
@@ -70,36 +76,36 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 				personaDTO.setIdPersona(fisica.getIdPersona());
 				ContadorPublicoDTO contadorPublicoAutDTO = new ContadorPublicoDTO();
 				
-				DomicilioDTO domicilioDTO = new DomicilioDTO();
+				DomicilioFiscalDTO domicilioDTO = new DomicilioFiscalDTO();
 				if(fisica.getDomicilioFiscal()!=null){
 				domicilioDTO.setCalle(fisica.getDomicilioFiscal().getCalle());
 				LOGGER.info("ContadorPublicoIntegrator.Calle="+fisica.getDomicilioFiscal().getCalle());
-				domicilioDTO.setNumExterior(fisica.getDomicilioFiscal().getNumExterior1().toString());
+				domicilioDTO.setNumeroExterior(fisica.getDomicilioFiscal().getNumExterior1());
 				domicilioDTO.setLetraExterior(fisica.getDomicilioFiscal().getNumExteriorAlf());
-				domicilioDTO.setNumInterior(fisica.getDomicilioFiscal().getNumInterior().toString());
+				domicilioDTO.setNumeroInterior(fisica.getDomicilioFiscal().getNumInterior());
 				domicilioDTO.setLetraInterior(fisica.getDomicilioFiscal().getNumInteriorAlf());
 
 				domicilioDTO.setEntreCalle(fisica.getDomicilioFiscal().getVialidadReferenciaPrimaria().getNombre());
 				domicilioDTO.setyCalle(fisica.getDomicilioFiscal().getVialidadReferenciaSecundaria().getNombre());
-				domicilioDTO.setColonia(fisica.getDomicilioFiscal().getColonia());
+				domicilioDTO.setColoniaAsentamiento(fisica.getDomicilioFiscal().getColonia());
 				domicilioDTO.setLocalidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getNombre());
 				
-				domicilioDTO.setEntidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
-				domicilioDTO.setMunicipio(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
+				domicilioDTO.setEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
+				domicilioDTO.setMunicipioDelegacion(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
 				domicilioDTO.setCodigoPostal(fisica.getDomicilioFiscal().getCodigoPostal().getCodigoPostal());
 				}
-				contadorPublicoAutDTO.setDomicilioDTO(domicilioDTO);
+				contadorPublicoAutDTO.setDomicilioFiscalDTO(domicilioDTO);
 				personaDTO.setContadorPublicoAutDTO(contadorPublicoAutDTO);
 			}
 		}
 		return personaDTO;
 	}
 
-	public DomicilioDTO consultarDomicilioPorRFC(String rfc){
+	public DomicilioFiscalDTO consultarDomicilioPorRFC(String rfc){
 		
 		Fisica fisica  = satService.buscarPersonaFisicaPorRfc(rfc);
 		
-		DomicilioDTO domicilioDTO = new DomicilioDTO();
+		DomicilioFiscalDTO domicilioDTO = new DomicilioFiscalDTO();
 		if(fisica.getDomicilioFiscal()!=null){
 		
 			domicilioDTO.setCalle(fisica.getDomicilioFiscal().getCalle());
@@ -121,6 +127,7 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 		}
 		return domicilioDTO;
 	}
+	
 	@Override
 	public ContadorPublicoDTO consultarContadorPublicAut(Long idPersona) {
 		ContadorPublicoDTO contadorPublicoAutDTO = null;
@@ -130,10 +137,28 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 			contadorPublicoAutDTO = new ContadorPublicoDTO();
 			contadorPublicoAutDTO.setNumRegistroCPA(ndtContadorPublicoAutDO.getNumRegistroCpa());
 			contadorPublicoAutDTO.setCveIdEstadoCPA(ndtContadorPublicoAutDO.getCveIdEstadoCpa().getCveIdEstadoCpa());	
+		
 		}
 		return contadorPublicoAutDTO;
 	}
-
+	@Override
+	public List<DatosPersonalesDTO> consultarDatosPersonales(Long idPersona){
+		List<DatosPersonalesDTO> lstNdtContadorPublicoAutDO = new ArrayList<DatosPersonalesDTO>();
+		NdtContadorPublicoAutDO ndtContadorPublicoAutDO = bdtuService.obtenerContadorPorIdPersona(idPersona);
+		List<NdtR1DatosPersonalesDO> lstDatosPersonales = ndtContadorPublicoAutDO.getNdtR1DatosPersonalesDOList();
+		
+		LOGGER.info("Integrator.ndtContadorPublicoAutDO="+ndtContadorPublicoAutDO.getNdtR1DatosPersonalesDOList().size());
+		
+		for(NdtR1DatosPersonalesDO ndtR1DatosPersonalesDO : lstDatosPersonales){
+			DatosPersonalesDTO datosPersonalesDTO = new DatosPersonalesDTO();
+			datosPersonalesDTO.setFechaExpedicionCedula(ndtR1DatosPersonalesDO.getFecExpedicionCedprof());
+			datosPersonalesDTO.setInstitucionCedula(ndtR1DatosPersonalesDO.getDesTituloExpedidoPor());
+			datosPersonalesDTO.setNumeroCedula(ndtR1DatosPersonalesDO.getCedulaProfesional());
+			lstNdtContadorPublicoAutDO.add(datosPersonalesDTO);
+		}
+		
+        return lstNdtContadorPublicoAutDO;
+	}
 	@Override
 	public PersonaDTO consultarFisicaPorRFC(String rfc) {
 		Fisica fisica2 = satService.buscarPersonaFisicaPorRfc(rfc);
