@@ -12,6 +12,7 @@ public class PersonaDTO implements Serializable {
 	private String apellidoMaterno;
 	private String curp;
 	private String rfc;
+    private String folioSolicitud;
 
 	private String nombreCompleto;
 	private String correoElectronico;
@@ -101,5 +102,11 @@ public class PersonaDTO implements Serializable {
 	}
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+	public String getFolioSolicitud() {
+		return folioSolicitud;
+	}
+	public void setFolioSolicitud(String folioSolicitud) {
+		this.folioSolicitud = folioSolicitud;
 	}
 }

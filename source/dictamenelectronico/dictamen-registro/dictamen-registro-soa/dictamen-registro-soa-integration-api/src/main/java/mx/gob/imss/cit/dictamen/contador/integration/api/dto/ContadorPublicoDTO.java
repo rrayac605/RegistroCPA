@@ -8,15 +8,16 @@ public class ContadorPublicoDTO implements Serializable {
     
 	private Integer numRegistroCPA;
 	private Long cveIdEstadoCPA;
-    private DomicilioDTO domicilioDTO;
+    private DomicilioFiscalDTO domicilioFiscalDTO;
+    
 
 
-	public DomicilioDTO getDomicilioDTO() {
-		return domicilioDTO;
+	public DomicilioFiscalDTO getDomicilioFiscalDTO() {
+		return domicilioFiscalDTO;
 	}
 
-	public void setDomicilioDTO(DomicilioDTO domicilioDTO) {
-		this.domicilioDTO = domicilioDTO;
+	public void setDomicilioFiscalDTO(DomicilioFiscalDTO domicilioFiscalDTO) {
+		this.domicilioFiscalDTO = domicilioFiscalDTO;
 	}
 
 	public Long getCveIdEstadoCPA() {
