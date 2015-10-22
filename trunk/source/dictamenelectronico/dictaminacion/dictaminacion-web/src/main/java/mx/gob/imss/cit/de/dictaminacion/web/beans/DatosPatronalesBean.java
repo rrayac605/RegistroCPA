@@ -53,9 +53,7 @@ public class DatosPatronalesBean extends BaseBean {
 		
 	
 		try {
-			
-			
-			
+					
 			CleanBeanUtil.cleanFields(datosPatronalesPage);
 			
 			//se obtienen catalogos
@@ -64,9 +62,7 @@ public class DatosPatronalesBean extends BaseBean {
 						
 			inicializarPatron();
 			inicializarEjercicioFiscal();
-			
-			dictamenPage.setIndexUltimoWizard(0);
-			dictamenPage.setIndexWizard(0);
+
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
 			inhabilitaOpciones();

@@ -71,7 +71,7 @@
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.tipo']}" 
 						for="tipo"/>
-					<p:selectOneMenu id="tipo" value="#{datosPatronalesPage.datosPatron.cveIdTipoDictamen.cveIdTipoDictamen}"   required="true" disabled="true">
+					<p:selectOneMenu id="tipo" value="#{datosPatronalesPage.datosPatron.cveIdTipoDictamen.cveIdTipoDictamen}"  disabled="true">
 						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
 						<f:selectItems value="#{datosPatronalesPage.listaTipoDictamen}"
 							var="tipoDic" itemLabel="#{tipoDic.desTipoDictamen}" 
@@ -83,7 +83,7 @@
 					<p:outputLabel
 						value="#{msg['message.dictamen.dictaminar.datos.patronales']}"
 						for="patronales" />
-					<p:inputText id="patronales" readonly="true"
+					<p:inputText id="patronales" required="true"
 						requiredMessage="#{msg['message.label.validacionObligatoria']} #{msg['message.dictamen.dictaminar.datos.patronales']}"
 						value="#{datosPatronalesPage.datosPatron.numRegistroPatronales}" >
 						<f:validateLongRange minimum="1" />
@@ -97,7 +97,7 @@
 						value="#{msg['message.dictamen.dictaminar.datos.ejercicio']}"
 						for="ejercicio" />
 					<p:selectOneMenu id="ejercicio"
-						value="#{datosPatronalesPage.datosPatron.cveIdEjerFiscal}" converter="ejercicioFiscalConverter" required="true" disabled="true">
+						value="#{datosPatronalesPage.datosPatron.cveIdEjerFiscal}" converter="ejercicioFiscalConverter"  disabled="true">
 						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
 						<f:selectItems value="#{datosPatronalesPage.listaEjercicioFiscal}"
 							var="ejercicio" itemLabel="#{ejercicio.desEjerFiscal}"
@@ -163,7 +163,7 @@
 						update=":dictaminacionWizardPanel"/>
 						
 					<p:commandButton value="#{msg['message.button.limpiar']}"
-						actionListener="#{datosPatronalesBean.limpiar}" 
+						actionListener="#{dictamenBean.init}" 
 						ajax="true"
 						update=":formDatosPatronales :formDatosRfc :dictaminacionWizardPanel" />
 						

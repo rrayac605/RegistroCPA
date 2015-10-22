@@ -196,7 +196,7 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 					res.add(to);
 				}else{
 					PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
-					patronAsociadoTO.setEstadoValidacion(EstadoPatronAsociadoEnum.INCORRECTO.getDescripcion());
+					to.setEstadoValidacion(EstadoPatronAsociadoEnum.INCORRECTO.getDescripcion());
 					res.add(to);
 				}
 			

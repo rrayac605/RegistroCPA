@@ -41,16 +41,43 @@ public class CargaRegistroPatronalBean extends BaseBean {
 	private PatronDictamenIntegrator patronDictamenIntegrator;
 	
 
+	private String calcularMensaje(int numRegistroPatronal, int numeroCargaRegistroPatronal){
+		
+		String mensaje="";
+		if(numeroCargaRegistroPatronal==numRegistroPatronal){
+			mensaje="El número de registros patronales capturados coincide con los cargados en el archivo";
+		}else if(numeroCargaRegistroPatronal<numRegistroPatronal){
+			
+			mensaje="El número de registros patronales capturados ("+numRegistroPatronal+") no coincide con los cargados en el archivo ("+numeroCargaRegistroPatronal+
+					"). Faltan: "+(numRegistroPatronal-numeroCargaRegistroPatronal);
+		}else{
+			mensaje="El número de registros patronales capturados ("+numRegistroPatronal+") no coincide con los cargados en el archivo ("+numeroCargaRegistroPatronal+
+					"). Sobran: "+(numeroCargaRegistroPatronal-numRegistroPatronal);
+		}
+		
+		return mensaje;
+
+	}
+	
 
 	public String init(){
 		 List<PatronAsociadoDTO> lista;
+		 int totalExitosos=0;
 		try {
 			lista = patronDictamenIntegrator.findPatronesAsociados(datosPatronalesPage.getDatosPatron());
 			if(lista==null){
 				lista=new ArrayList<PatronAsociadoDTO>();
 			}
-			cargaRegistroPatronalPage.setListaRegistrosPatronales(lista);
 			
+			for (PatronAsociadoDTO patronAsociadoDTO : lista) {
+				if(DictamenWebConstants.ESTADO_RP_CORRECTO.equals(patronAsociadoDTO.getEstadoValidacion())){
+					totalExitosos++;
+				}
+			}
+			
+			
+			cargaRegistroPatronalPage.setListaRegistrosPatronales(lista);
+			cargaRegistroPatronalPage.setMensajeRegistroPatronal(calcularMensaje(datosPatronalesPage.getDatosPatron().getNumRegistroPatronales(),totalExitosos));
 		} catch( Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_REGISTROS_PATRONALES.getCode());
 		}
@@ -93,11 +120,11 @@ public class CargaRegistroPatronalBean extends BaseBean {
 				}
 			 }
 		
-			 datosPatronalesPage.getDatosPatron().setNumRegistroPatronales(totalExitosos);			 
+	 
 			 cargaRegistroPatronalPage.setListaRegistrosPatronales(lista);
-			 
+			cargaRegistroPatronalPage.setMensajeRegistroPatronal(calcularMensaje(datosPatronalesPage.getDatosPatron().getNumRegistroPatronales(),totalExitosos));
 
-		     FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_REGISTROS_PATRONALES.getCode());
+		     FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_REGISTROS_PATRONALES.getCode(),totalExitosos);
 		    
 		} catch (Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_REGISTROS_PATRONALES.getCode());

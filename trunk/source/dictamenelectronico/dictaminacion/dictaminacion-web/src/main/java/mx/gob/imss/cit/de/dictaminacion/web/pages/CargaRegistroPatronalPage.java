@@ -18,6 +18,9 @@ public class CargaRegistroPatronalPage extends BasePage {
 		
 	
 	private List<PatronAsociadoDTO> listaRegistrosPatronales;
+	
+	private String mensajeRegistroPatronal;
+	
 
 	public List<PatronAsociadoDTO> getListaRegistrosPatronales() {
 		return listaRegistrosPatronales;
@@ -25,6 +28,14 @@ public class CargaRegistroPatronalPage extends BasePage {
 
 	public void setListaRegistrosPatronales(List<PatronAsociadoDTO> listaRegistrosPatronales) {
 		this.listaRegistrosPatronales = listaRegistrosPatronales;
+	}
+
+	public String getMensajeRegistroPatronal() {
+		return mensajeRegistroPatronal;
+	}
+
+	public void setMensajeRegistroPatronal(String mensajeRegistroPatronal) {
+		this.mensajeRegistroPatronal = mensajeRegistroPatronal;
 	}
 
 
