@@ -27,6 +27,7 @@ public enum MensajesNotificacionesEnum {
 	MSG_EXITO_SAT(16),
 	MSG_EXITO_REGISTROS_PATRONALES(17),
 	MSG_ERROR_REGISTROS_PATRONALES(18),
+	MSG_EXITO_GUARDAR_EL_ATESTIGUAMIENTO(19),
     ;
 
 	private int code;

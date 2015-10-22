@@ -38,11 +38,12 @@
 				</p:panelGrid>
 				<p:panelGrid columns="2" style="center">
 					<p:commandButton action="#{examenBean.guardar()}" 
-						value="#{msg['message.button.views.dictamen.atestiguamiento.finalizar']}">
-					</p:commandButton>
+						value="#{msg['message.button.views.dictamen.atestiguamiento.finalizar']}" onstart="statusDialog.show();"
+						          oncomplete="statusDialog.hide();"/>
+						          
 					<p:commandButton action="#{examenBean.regresar()}" 
 						value="#{msg['message.button.views.dictamen.atestiguamiento.cancelar']}"
-						immediate="true"></p:commandButton>
+						immediate="true" onstart="statusDialog.show();" oncomplete="statusDialog.hide();"/>
 				</p:panelGrid>
 			</p:panelGrid>
 		</h:form>
