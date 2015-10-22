@@ -44,6 +44,9 @@ public class ExamenBean extends BaseBean {
 
 	@ManagedProperty(value = "#{datosPatronalesPage}")
 	private DatosPatronalesPage datosPatronalesPage;
+	
+	@ManagedProperty(value = "#{datosPatronalesBean}")
+	private DatosPatronalesBean datosPatronalesBean;
 
 	public String init(AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) {
 		CleanBeanUtil.cleanFields(examenPage);
@@ -57,7 +60,9 @@ public class ExamenBean extends BaseBean {
 		return "";
 	}
 
+	
 	public String regresar() {
+		datosPatronalesBean.initExamen();
 		return NavigationConstants.PAGE_EXAMEN_REGRESAR;
 	}
 
@@ -220,6 +225,11 @@ public class ExamenBean extends BaseBean {
 
 	public void setCuestinarioPage(CuestionarioPage cuestinarioPage) {
 		this.cuestinarioPage = cuestinarioPage;
+	}
+
+
+	public void setDatosPatronalesBean(DatosPatronalesBean datosPatronalesBean) {
+		this.datosPatronalesBean = datosPatronalesBean;
 	}
 
 }

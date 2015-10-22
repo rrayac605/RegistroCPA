@@ -47,7 +47,6 @@ public class DictamenBean extends BaseBean {
 	}
 	
 
-
 	public void cambiarPestania(TabChangeEvent event) {
 		
 		TabView tabView = (TabView) event.getComponent();	     
