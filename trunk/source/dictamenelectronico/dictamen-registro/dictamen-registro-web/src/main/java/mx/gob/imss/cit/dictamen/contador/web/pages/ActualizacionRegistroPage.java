@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
+
 
 
 @ManagedBean(name = "actualizacionRegistroPage")
@@ -28,18 +30,19 @@ public class ActualizacionRegistroPage implements Serializable {
 	private boolean modalBusquedaVisible;
 	private boolean existeRegistroImss;
 	private String mensajesPrevios;
+	private DomicilioFiscalDTO domicilioFiscal;
 	
 	public ActualizacionRegistroPage(){
-		this.apellidoPaterno = "RAMIREZ";
-		this.apellidoMaterno = "DE LA ROSA";
-		this.nombre = "LUIS";
-		this.curp = "RARL860522HDF00SS0";
-		this.rfc = "RARL860522EDF";
-		this.registroImss = "ABCD1234EFG5678";
+//		this.apellidoPaterno = "RAMIREZ";
+//		this.apellidoMaterno = "DE LA ROSA";
+//		this.nombre = "LUIS";
+//		this.curp = "RARL860522HDF00SS0";
+//		this.rfc = "RARL860522EDF";
+//		this.registroImss = "ABCD1234EFG5678";
 		this.habilitaDatosPersonales = Boolean.FALSE;
 		this.habiliatrBotonesAccion=Boolean.TRUE;
 		this.modalBusquedaVisible = Boolean.TRUE;
-		this.tieneRegistro = Boolean.TRUE;
+//		this.tieneRegistro = Boolean.TRUE;
 		this.existeRegistroImss = Boolean.FALSE;
 	}
 	
@@ -209,5 +212,19 @@ public class ActualizacionRegistroPage implements Serializable {
 	 */
 	public void setMensajesPrevios(String mensajesPrevios) {
 		this.mensajesPrevios = mensajesPrevios;
+	}
+
+	/**
+	 * @return the domicilioFiscal
+	 */
+	public DomicilioFiscalDTO getDomicilioFiscal() {
+		return domicilioFiscal;
+	}
+
+	/**
+	 * @param domicilioFiscal the domicilioFiscal to set
+	 */
+	public void setDomicilioFiscal(DomicilioFiscalDTO domicilioFiscal) {
+		this.domicilioFiscal = domicilioFiscal;
 	}
 }

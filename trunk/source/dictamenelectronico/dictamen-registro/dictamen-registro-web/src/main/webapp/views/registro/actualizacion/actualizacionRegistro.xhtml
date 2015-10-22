@@ -17,6 +17,9 @@
 				<p:tab title="#{msg['message.actualizacion.datos.despacho']}">
 					<ui:include src="despacho.xhtml" />
 				</p:tab>
+				<p:tab title="#{msg['message.actualizacion.colegio.title']}">
+					<ui:include src="colegio.xhtml" />
+				</p:tab>
 			</p:tabView>
 			<h:panelGroup id="pngBotones" style="width:100%; ">
 				<p:panelGrid id="pgBotones" columns="2" style="text-align:right;">
@@ -30,7 +33,33 @@
 						styleClass="ui-priority-primary"/>
 				</p:panelGrid>
 			</h:panelGroup>
-		
 			
+			<p:dialog id="diaMensajesAct" widgetVar="dialogMensajesAct">
+				<p:panelGrid id="pngMensajesPrevios" columns="1">
+					<p:outputLabel id="lblMensajeAlerts"
+						value="#{actualizacionRegistroPage.mensajesPrevios}" />
+					<p:commandButton id="btnSalir"
+						value="#{msg['message.button.salir']}"
+						onclick="dialogMensajes.hide()" styleClass="ui-priority-primary" />
+				</p:panelGrid>
+			</p:dialog>
+			
+			<p:dialog id="dlgDatosCorrectos" visible="#{not actualizacionRegistroPage.habilitaDatosPersonales}">
+				<p:panel id="pnDatosCorrecto" style="width:100%">
+					<h:panelGroup id="pngDatosCorrectos">
+						<h3>#{msg['message.actualizacion.datoscontador.domicilio.datoscorrectos']}</h3>
+					</h:panelGroup>
+					<p:panelGrid columns="2">
+						<p:commandButton id="btnSiDatosDom"
+							value="#{msg['message.button.si']}"
+							actionListener="#{actualizacionRegistroBean.habilitaPanelPersonales}"
+							update="dlgDatosCorrectos pnDatosContacto pnInfProf" styleClass="ui-priority-primary"/>
+						<p:commandButton id="btnNoDatosDom"
+							value="#{msg['message.button.no']}"
+							styleClass="ui-priority-primary"
+							actionListener="#{actualizacionRegistroBean.mostrarMensajeError}"/>
+					</p:panelGrid>
+				</p:panel>
+			</p:dialog>			
 	</ui:define>
 </ui:composition>
