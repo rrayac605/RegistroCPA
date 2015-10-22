@@ -34,13 +34,13 @@
 			</p:row>
 			<p:row>
 				<p:column>
-					<h:outputText id="txtCalleCA" />
+					<h:outputText id="txtCalleCA" value="#{actualizacionRegistroPage.domicilioFiscal.calle}"/>
 				</p:column>
 				<p:column>
-					<h:outputText id="txtNumExtCA" maxlength="6" />
+					<h:outputText id="txtNumExtCA" maxlength="6" value="#{actualizacionRegistroPage.domicilioFiscal.numeroExterior}"/>
 				</p:column>
 				<p:column>
-					<h:outputText id="txtNumIntCA" maxlength="6" />
+					<h:outputText id="txtNumIntCA" maxlength="6" value="#{actualizacionRegistroPage.domicilioFiscal.numeroInterior}"/>
 				</p:column>
 			</p:row>
 		</p:panelGrid>
@@ -49,22 +49,16 @@
 				<p:column>
 					<p:outputLabel id="lblEntreCalle">#{msg['message.actualizacion.datoscontador.domicilio.calle1']}</p:outputLabel>
 				</p:column>
-				<p:column>
+				<p:column colspan="2">
 					<p:outputLabel id="lblYCalle">#{msg['message.actualizacion.datoscontador.domicilio.calle2']}</p:outputLabel>
-				</p:column>
-				<p:column>
-					<p:spacer />
 				</p:column>
 			</p:row>
 			<p:row>
 				<p:column>
-					<h:outputText id="txtEntreCalle"/>
+					<h:outputText id="txtEntreCalle" value="#{actualizacionRegistroPage.domicilioFiscal.entreCalle}"/>
 				</p:column>
-				<p:column>
-					<h:outputText id="txtYCalle" />
-				</p:column>
-				<p:column>
-					<p:spacer />
+				<p:column colspan="2">
+					<h:outputText id="txtYCalle" value="#{actualizacionRegistroPage.domicilioFiscal.yCalle}"/>
 				</p:column>
 			</p:row>
 		</p:panelGrid>
@@ -82,13 +76,13 @@
 			</p:row>
 			<p:row>
 				<p:column>
-					<h:outputText id="txtColonia" />
+					<h:outputText id="txtColonia" value="#{actualizacionRegistroPage.domicilioFiscal.coloniaAsentamiento}"/>
 				</p:column>
 				<p:column>
-					<h:outputText id="txtLocalidad" />
+					<h:outputText id="txtLocalidad" value="#{actualizacionRegistroPage.domicilioFiscal.localidad}"/>
 				</p:column>
 				<p:column>
-					<h:outputText id="txtMunicipio" />
+					<h:outputText id="txtMunicipio" value="#{actualizacionRegistroPage.domicilioFiscal.municipioDelegacion}"/>
 				</p:column>
 			</p:row>
 			</p:panelGrid>
@@ -103,10 +97,10 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputText id="txtEntidad" disabled="true" />
+						<h:outputText id="txtEntidad" disabled="true" value="#{actualizacionRegistroPage.domicilioFiscal.entidadFederativa}"/>
 					</p:column>
 					<p:column>
-						<h:outputText id="txtCodigoPostal" />
+						<h:outputText id="txtCodigoPostal" value="#{actualizacionRegistroPage.domicilioFiscal.codigoPostal}"/>
 					</p:column>
 				</p:row>
 			</p:panelGrid>
@@ -161,19 +155,5 @@
 		</p:panelGrid>
 	</p:panel>
 	
-	<p:dialog id="dlgDatosCorrectos" visible="#{not actualizacionRegistroPage.habilitaDatosPersonales}">
-		<p:panel id="pnDatosCorrecto" style="width:100%">
-			<h:panelGroup id="pngDatosCorrectos">
-				<h3>#{msg['message.actualizacion.datoscontador.domicilio.datoscorrectos']}</h3>
-			</h:panelGroup>
-			<p:panelGrid columns="2">
-				<p:commandButton id="btnSiDatosDom"
-					value="#{msg['message.button.si']}"
-					actionListener="#{actualizacionRegistroBean.habilitaPanelPersonales}"
-					update="dlgDatosCorrectos pnDatosContacto pnInfProf" styleClass="ui-priority-primary"/>
-				<p:commandButton id="btnNoDatosDom"
-					value="#{msg['message.button.no']}" styleClass="ui-priority-primary"/>
-			</p:panelGrid>
-		</p:panel>
-	</p:dialog>
+	
 </ui:composition>

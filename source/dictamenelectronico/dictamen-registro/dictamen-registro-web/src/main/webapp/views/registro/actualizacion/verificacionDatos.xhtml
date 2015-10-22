@@ -9,53 +9,52 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<p:dialog widgetVar="iniData"
-			visible="#{actualizacionRegistroPage.tieneRegistro}">
+		<p:dialog widgetVar="iniData" id="dlDatosIniciales" visible="#{actualizacionRegistroBean.actualizacionRegistroPage.tieneRegistro}">
 			<p:panel id="pnValidaDatos">
 				<p:panelGrid id="pngDatosContador">
 					<p:row>
 						<p:column colspan="2" style="text-align: center;">
-							<p:outputLabel>#{msg['message.actualizacion.datos.correctos']}</p:outputLabel>
+							<p:outputLabel id="lblDatoCorrecto">#{msg['message.actualizacion.datos.correctos']}</p:outputLabel>
 						</p:column>
 					</p:row>
 					<p:row>
 						<p:column>
-							<p:outputLabel>Apellido Paterno</p:outputLabel>
+							<p:outputLabel id="lblApPaterno">Apellido Paterno</p:outputLabel>
 						</p:column>
 						<p:column>
-							<p:outputLabel>#{actualizacionRegistroPage.apellidoPaterno}</p:outputLabel>
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:outputLabel>Apellido Materno</p:outputLabel>
-						</p:column>
-						<p:column>
-							<p:outputLabel>#{actualizacionRegistroPage.apellidoMaterno}</p:outputLabel>
+							<p:outputLabel id="lblApPaternoData">#{actualizacionRegistroBean.actualizacionRegistroPage.apellidoPaterno}</p:outputLabel>
 						</p:column>
 					</p:row>
 					<p:row>
 						<p:column>
-							<p:outputLabel>Nombre(s)</p:outputLabel>
+							<p:outputLabel id="lblApMaterno">Apellido Materno</p:outputLabel>
 						</p:column>
 						<p:column>
-							<p:outputLabel>#{actualizacionRegistroPage.nombre}</p:outputLabel>
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:outputLabel>CURP</p:outputLabel>
-						</p:column>
-						<p:column>
-							<p:outputLabel>#{loginPage.curp}</p:outputLabel>
+							<p:outputLabel id="lblApMaternoData">#{actualizacionRegistroBean.actualizacionRegistroPage.apellidoMaterno}</p:outputLabel>
 						</p:column>
 					</p:row>
 					<p:row>
 						<p:column>
-							<p:outputLabel>Registro IMSS</p:outputLabel>
+							<p:outputLabel id="lblNombre">Nombre(s)</p:outputLabel>
 						</p:column>
 						<p:column>
-							<p:outputLabel>#{actualizacionRegistroPage.registroImss}</p:outputLabel>
+							<p:outputLabel id="lblNombreData">#{actualizacionRegistroBean.actualizacionRegistroPage.nombre}</p:outputLabel>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel id="lblCurp">CURP</p:outputLabel>
+						</p:column>
+						<p:column>
+							<p:outputLabel id="lblCurpData">#{actualizacionRegistroBean.actualizacionRegistroPage.curp}</p:outputLabel>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel id="lblRegistroImss">Registro IMSS</p:outputLabel>
+						</p:column>
+						<p:column>
+							<p:outputLabel id="lblRegistroImssData">#{actualizacionRegistroBean.actualizacionRegistroPage.registroImss}</p:outputLabel>
 						</p:column>
 					</p:row>
 				</p:panelGrid>
@@ -72,7 +71,7 @@
 
 		<p:dialog widgetVar="dlgNoReg" id="dlgNoRegistros"
 			visible="#{not actualizacionRegistroPage.tieneRegistro}">
-			<p:panelGrid>
+			<p:panelGrid id="pngSinRegistros">
 				<p:outputLabel id="msgNoDatos"
 					value="#{msg['message.actualizacion.no.datos']}"></p:outputLabel>
 				<p:button id="btnNoDataAceptar"
