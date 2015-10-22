@@ -39,6 +39,7 @@
 					<UML:Namespace.ownedElement>
 						<UML:UseCase name="Consultar Catálogo CPA Público General" xmi.id="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F" visibility="public" namespace="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="El presente caso de uso describe la funcionalidad de la publicación al público en general del módulo de consulta del catálogo de contadores públicos autorizados ante el IMSS. "/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -46,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 14:16:58"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-21 19:46:57"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-21 19:58:41"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Consultar Catálogo CPA Público General"/>
@@ -351,34 +352,35 @@
 		</UML:Model>
 		<UML:Diagram name="Consultar Catálogo CPA Público General" xmi.id="EAID_692DA5CB_79AD_423c_876A_C0C30C148F1B" diagramType="UseCaseDiagram" owner="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC" toolName="Enterprise Architect 2.5">
 			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="documentation" value="El presente Caso de uso tiene como Objetivo Describir el grupo de instancias de un caso de uso, incluyendo su flujo básico y los diferentes flujos alternos o instancias del caso de uso así como las precondiciones o poscondiciones de ejecución del caso de uso."/>
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="lfierro"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 14:03:34"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-21 19:47:20"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-21 19:54:53"/>
 				<UML:TaggedValue tag="package" value="EAPK_7FC3F7D0_52B7_4378_B3C7_E7899FC90EEC"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="1022"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=5103032B;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=9A434E8E;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=494;Top=441;Right=654;Bottom=474;" subject="EAID_184B7001_5603_4c37_91A1_8F7BBB436F80" seqno="1" style="DUID=11E39463;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=492;Top=373;Right=652;Bottom=403;" subject="EAID_474EB9EF_7E0A_4bce_8626_9BF9072701B6" seqno="2" style="DUID=4F5457C2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=487;Top=283;Right=647;Bottom=334;" subject="EAID_860133C9_3F9E_4382_BB81_8E684901EBB2" seqno="3" style="DUID=9FFCCED4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=482;Top=215;Right=642;Bottom=248;" subject="EAID_D4752E26_7EB2_4bdb_B845_8F119D721ED1" seqno="4" style="DUID=8FCBD65B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=475;Top=136;Right=635;Bottom=169;" subject="EAID_57693AB9_5B0C_4a6d_AE84_E3E18F01B7DC" seqno="5" style="DUID=12D2FF31;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=471;Top=42;Right=631;Bottom=75;" subject="EAID_3FE1B4AD_9FB5_4798_B939_72B356E3402A" seqno="6" style="DUID=BE80C403;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=494;Top=373;Right=654;Bottom=403;" subject="EAID_474EB9EF_7E0A_4bce_8626_9BF9072701B6" seqno="2" style="DUID=4F5457C2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=494;Top=283;Right=654;Bottom=334;" subject="EAID_860133C9_3F9E_4382_BB81_8E684901EBB2" seqno="3" style="DUID=9FFCCED4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=494;Top=208;Right=654;Bottom=241;" subject="EAID_D4752E26_7EB2_4bdb_B845_8F119D721ED1" seqno="4" style="DUID=8FCBD65B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=494;Top=136;Right=654;Bottom=169;" subject="EAID_57693AB9_5B0C_4a6d_AE84_E3E18F01B7DC" seqno="5" style="DUID=12D2FF31;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=494;Top=42;Right=654;Bottom=75;" subject="EAID_3FE1B4AD_9FB5_4798_B939_72B356E3402A" seqno="6" style="DUID=BE80C403;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="Left=243;Top=187;Right=357;Bottom=263;" subject="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F" seqno="7" style="DUID=2D2DEB97;"/>
 				<UML:DiagramElement geometry="Left=59;Top=186;Right=96;Bottom=260;" subject="EAID_3ADE8D90_7ACC_475f_B386_19443EAC3795" seqno="8" style="DUID=F8FD9966;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F6F2E8CD_82A1_4b55_A1AF_C2C32AFD3157" style="Mode=3;EOID=2D2DEB97;SOID=F8FD9966;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_2E0395A9_B861_4ea3_B30F_8DD0D9668335" style="Mode=3;EOID=11E39463;SOID=2D2DEB97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_FC538A95_43D4_47ae_A08C_9E7737916788" style="Mode=3;EOID=4F5457C2;SOID=2D2DEB97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_233568DA_DE71_4876_9B17_2F0F4DBB56AA" style="Mode=3;EOID=9FFCCED4;SOID=2D2DEB97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=4;SX=13;SY=-38;EX=-39;EY=-16;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-460$;" subject="EAID_2E0395A9_B861_4ea3_B30F_8DD0D9668335" style="Mode=3;EOID=11E39463;SOID=2D2DEB97;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=3;EX=-2;EY=-5;SX=27;SY=-26;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-390$;" subject="EAID_FC538A95_43D4_47ae_A08C_9E7737916788" style="Mode=3;EOID=4F5457C2;SOID=2D2DEB97;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=3;EX=2;EY=-23;SX=-54;SY=-1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=299:-313$;" subject="EAID_233568DA_DE71_4876_9B17_2F0F4DBB56AA" style="Mode=3;EOID=9FFCCED4;SOID=2D2DEB97;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_63C0E03C_C131_42a3_98E9_334F0B4345D4" style="Mode=3;EOID=8FCBD65B;SOID=2D2DEB97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_79C4A8B0_44AA_4631_B4B0_8565313D66B9" style="Mode=3;EOID=12D2FF31;SOID=2D2DEB97;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_BD80DEC1_581C_445a_8800_73C52ED155FA" style="Mode=3;EOID=BE80C403;SOID=2D2DEB97;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=1;SX=-23;SY=22;EX=-68;EY=12;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=297:-151$;" subject="EAID_79C4A8B0_44AA_4631_B4B0_8565313D66B9" style="Mode=3;EOID=12D2FF31;SOID=2D2DEB97;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=1;SX=-3;SY=27;EX=-61;EY=-3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=297:-58$;" subject="EAID_BD80DEC1_581C_445a_8800_73C52ED155FA" style="Mode=3;EOID=BE80C403;SOID=2D2DEB97;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -394,11 +396,11 @@
 						<step name="FB04. El sistema valida que por lo menos exista un criterio de búsqueda con base en RF-N015. Validar que exista un criterio de búsqueda" guid="{BD696B8A-CA95-4f8d-A469-3BD50AE33641}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="4a" guid="{B56DD2DC-CB34-48c3-8AB6-12905991E7E8}" join="End"/>
 						</step>
-						<step name="El sistema realiza la búsqueda con base en RF-A025. Buscar Coincidencias de acuerdo al o los criterios definidos. Si existen coincidencias continuar con el flujo básico si no ir a FA02" guid="{F3C81F07-7F67-4344-844E-05E9B4E07467}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name="FB05. El sistema realiza la búsqueda con base en RF-A025. Buscar Coincidencias de acuerdo al o los criterios definidos. Si existen coincidencias continuar con el flujo básico si no ir a FA02" guid="{F3C81F07-7F67-4344-844E-05E9B4E07467}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="5a" guid="{B82DF55F-DD7A-4d73-A40F-03209CF79416}" join="End"/>
 						</step>
-						<step name="El sistema mostrará una tabla RF-C007. Tabla de resultado de búsqueda con las coincidencias encontradas de acuerdo a los criterios de búsqueda definidos RF-A024. Mostrar criterios de búsqueda y no serán editables RF-N016. Mostrar información solo para consulta" guid="{48B88D21-3CE9-4765-BCC3-E79F96B74CFE}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="Fin del caso de uso" guid="{9317EEC9-AB4B-4ed9-A997-E024A3712EB0}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB06. El sistema mostrará una tabla RF-C007. Tabla de resultado de búsqueda con las coincidencias encontradas de acuerdo a los criterios de búsqueda definidos RF-A024. Mostrar criterios de búsqueda y no serán editables RF-N016. Mostrar información solo para consulta" guid="{48B88D21-3CE9-4765-BCC3-E79F96B74CFE}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB07. Fin del caso de uso" guid="{9317EEC9-AB4B-4ed9-A997-E024A3712EB0}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="RF-A024. Mostrar criterios de búsqueda" guid="{3FE1B4AD-9FB5-4798-B939-72B356E3402A}"/>
 							<item oldname="Público General" guid="{3ADE8D90-7ACC-475f-B386-19443EAC3795}"/>
@@ -414,11 +416,17 @@
 			<EAScenario name="FA01. El actor Público General no ingresó un criterio de búsqueda" type="Alternate" weight="1.00" subject="EAID_389ABCE0_D5D2_4d48_9E6F_BEF14024966F" xmi.id="EAID_B56DD2DC_CB34_48c3_8AB6_12905991E7E8">
 				<EAScenarioContent>
 					<path>
-						<step name="El Flujo Alterno inicia cuando el actor Público General no ingresa un criterio de búsqueda" guid="{30251D18-534E-40ec-9335-A20F57FC10E6}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema emite mensaje “Favor de ingresar al menos un criterio de búsqueda” regresar al FB03" guid="{CFCFF9D2-B43B-4a87-9DF2-D9BD43A401BC}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="Fin del Flujo Alterno" guid="{D951B5F5-4A56-4854-B038-7E86807DE04B}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA01.1. El Flujo Alterno inicia cuando el actor Público General no ingresa un criterio de búsqueda" guid="{30251D18-534E-40ec-9335-A20F57FC10E6}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FA01.2. El sistema emite mensaje “Favor de ingresar al menos un criterio de búsqueda” regresar al FB03" guid="{CFCFF9D2-B43B-4a87-9DF2-D9BD43A401BC}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA01.3. Fin del Flujo Alterno" guid="{D951B5F5-4A56-4854-B038-7E86807DE04B}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
+							<item oldname="RF-A024. Mostrar criterios de búsqueda" guid="{3FE1B4AD-9FB5-4798-B939-72B356E3402A}"/>
 							<item oldname="Público General" guid="{3ADE8D90-7ACC-475f-B386-19443EAC3795}"/>
+							<item oldname="RF-A025. Buscar Coincidencias" guid="{57693AB9-5B0C-4a6d-AE84-E3E18F01B7DC}"/>
+							<item oldname="RF-N015. Validar que exista un criterio de búsqueda" guid="{D4752E26-7EB2-4bdb-B845-8F119D721ED1}"/>
+							<item oldname="RF-N016. Mostrar información solo para consulta" guid="{860133C9-3F9E-4382-BB81-8E684901EBB2}"/>
+							<item oldname="RF-C006. Estatus del CPA." guid="{474EB9EF-7E0A-4bce-8626-9BF9072701B6}"/>
+							<item oldname="RF-C007. Tabla de resultado de búsqueda" guid="{184B7001-5603-4c37-91A1-8F7BBB436F80}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -430,9 +438,15 @@
 						<step name="FA02.2 El Sistema emite mensaje “No existen coincidencias” con botón &quot;Aceptar&quot;" guid="{6B267862-FD31-4223-A1DA-F93439E635FB}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FA02.3 El actor Público General da un clic en el botón &quot;Aceptar&quot;" guid="{B9C95255-7FA1-4de3-90A0-7ED154501F22}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="FA02.4 El sistema regresa al FB03" guid="{7ED52A31-E3BB-4b4d-8AEF-911867B982F5}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="Fin del flujo alterno" guid="{56C5CAD4-0ADF-451c-BA54-44AE0EE65871}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA02.5 Fin del flujo alterno" guid="{56C5CAD4-0ADF-451c-BA54-44AE0EE65871}" level="5" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
+							<item oldname="RF-A024. Mostrar criterios de búsqueda" guid="{3FE1B4AD-9FB5-4798-B939-72B356E3402A}"/>
 							<item oldname="Público General" guid="{3ADE8D90-7ACC-475f-B386-19443EAC3795}"/>
+							<item oldname="RF-A025. Buscar Coincidencias" guid="{57693AB9-5B0C-4a6d-AE84-E3E18F01B7DC}"/>
+							<item oldname="RF-N015. Validar que exista un criterio de búsqueda" guid="{D4752E26-7EB2-4bdb-B845-8F119D721ED1}"/>
+							<item oldname="RF-N016. Mostrar información solo para consulta" guid="{860133C9-3F9E-4382-BB81-8E684901EBB2}"/>
+							<item oldname="RF-C006. Estatus del CPA." guid="{474EB9EF-7E0A-4bce-8626-9BF9072701B6}"/>
+							<item oldname="RF-C007. Tabla de resultado de búsqueda" guid="{184B7001-5603-4c37-91A1-8F7BBB436F80}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
