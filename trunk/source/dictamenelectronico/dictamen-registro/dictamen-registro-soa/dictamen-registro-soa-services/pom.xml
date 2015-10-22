@@ -22,18 +22,31 @@
 			<artifactId>gestionIndividuo-service-business-interface</artifactId>
 			<version>2.4-SNAPSHOT</version>
 		</dependency>
-	    <dependency>
+		<dependency>
 			<groupId>mx.gob.imss.ctirss.clienteswebservices.sat.consulta.rfc</groupId>
 			<artifactId>ClientesWebservices-sat-consulta-rfc</artifactId>
 			<version>2.2</version>
-		</dependency>		
-				<dependency>
+		</dependency>
+
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamen.servicios.ws</groupId>
+			<artifactId>imss-ws-clientes</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws</groupId>
+			<artifactId>imss-ws-clientes-pensiones</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>soap</groupId>
 			<artifactId>soap</artifactId>
 			<version>2.1</version>
 		</dependency>
-		 
-		 
+
+
 		<dependency>
 			<groupId>mx.gob.imss.ctirss.delta.gestion.solicitud</groupId>
 			<artifactId>gestionSolicitud-interfaces-negocio</artifactId>
@@ -72,9 +85,13 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- <dependency> <groupId>mx.gob.imss.cit.dictamen.registro</groupId> 
-			<artifactId>dictamen-registro-soa-persistence</artifactId> <type>test-jar</type> 
-			<version>${project.parent.version}</version> <scope>compile</scope> </dependency> -->
+		<dependency>
+			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
+			<artifactId>dictamen-registro-soa-persistence</artifactId>
+			<type>test-jar</type>
+			<version>${project.parent.version}</version>
+			<scope>compile</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>

@@ -13,5 +13,5 @@ public interface BdtuService {
     Persona obtenerRegistroPersonaFisicaPorRFC(Persona persona);
     Fisica obtenerFisicaPorPersona(Persona persona);
     NdtContadorPublicoAutDO obtenerContadorPorIdPersona(Long idPersona);
-	
+    NdtContadorPublicoAutDO obtenerContadorPorNumRegistro(Integer NumRegistro);
 }
