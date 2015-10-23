@@ -19,6 +19,7 @@
 			<artifactId>dictamen-registro-soa-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
+			<scope>compile</scope>
 		</dependency>
 		
 		<dependency>
@@ -26,6 +27,8 @@
 			<artifactId>dictamen-registro-soa-services</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
+			<scope>compile</scope>
+
 			<exclusions>
 				<exclusion>
 					<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
@@ -39,6 +42,7 @@
 			<artifactId>dictamen-registro-soa-integration</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
+			<scope>compile</scope>
 			<exclusions>
 				<exclusion>
 					<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
