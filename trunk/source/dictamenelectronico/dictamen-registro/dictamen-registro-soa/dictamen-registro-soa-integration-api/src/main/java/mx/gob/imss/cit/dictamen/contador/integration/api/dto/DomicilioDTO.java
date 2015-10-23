@@ -14,7 +14,7 @@ public class DomicilioDTO implements Serializable {
 	 * Serial
 	 */
 	private static final long serialVersionUID = 7386311688576345323L;
-
+   
 	private String calle;
 	private String numExterior;
 	private String numInterior;
