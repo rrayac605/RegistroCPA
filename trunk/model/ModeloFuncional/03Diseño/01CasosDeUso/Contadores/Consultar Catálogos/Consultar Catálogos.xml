@@ -46,7 +46,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_407B42F1_229F_43ae_8AB5_7C5BFAFF1D33"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-23 13:07:05"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-23 14:21:30"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-23 15:46:38"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Consultar Catálogos"/>
@@ -131,6 +131,76 @@
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Actor>
+						<UML:Association xmi.id="EAID_481772E1_FCA5_4de8_BD5F_118734E2011C" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="3060"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Nivel Central"/>
+								<UML:TaggedValue tag="ea_targetName" value="Catálogo de D y CA"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="2910"/>
+								<UML:TaggedValue tag="ea_targetID" value="3137"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_664C1EFF_F19C_4b54_8D00_DC4892A635AB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_DC24398B_EFB5_4b4c_9755_AF950C83E384">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:UseCase name="Catálogo de D y CA" xmi.id="EAID_DC24398B_EFB5_4b4c_9755_AF950C83E384" visibility="public" namespace="EAPK_407B42F1_229F_43ae_8AB5_7C5BFAFF1D33" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_407B42F1_229F_43ae_8AB5_7C5BFAFF1D33"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-23 15:42:37"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-23 16:58:41"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Consultar Catálogos"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="msanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="3137"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="Autentificación">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El usuario deberá estar registrado como usuario dentro del Portal IMSS del lado de Ventanilla"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
+						</UML:UseCase>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -140,19 +210,21 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="msanchez"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-23 13:06:53"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-23 14:39:20"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-23 17:00:46"/>
 				<UML:TaggedValue tag="package" value="EAPK_407B42F1_229F_43ae_8AB5_7C5BFAFF1D33"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="257"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=5DEF0C63;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=13D70079;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=97;Top=193;Right=142;Bottom=283;" subject="EAID_664C1EFF_F19C_4b54_8D00_DC4892A635AB" seqno="1" style="DUID=79814A7A;"/>
-				<UML:DiagramElement geometry="Left=205;Top=204;Right=310;Bottom=274;" subject="EAID_2C3C876F_EE7B_46cd_8766_8258939466E5" seqno="2" style="DUID=C18C9453;"/>
+				<UML:DiagramElement geometry="Left=205;Top=367;Right=310;Bottom=437;" subject="EAID_DC24398B_EFB5_4b4c_9755_AF950C83E384" seqno="1" style="DUID=EAF4A063;"/>
+				<UML:DiagramElement geometry="Left=97;Top=193;Right=142;Bottom=283;" subject="EAID_664C1EFF_F19C_4b54_8D00_DC4892A635AB" seqno="2" style="DUID=79814A7A;"/>
+				<UML:DiagramElement geometry="Left=205;Top=204;Right=310;Bottom=274;" subject="EAID_2C3C876F_EE7B_46cd_8766_8258939466E5" seqno="3" style="DUID=C18C9453;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_DCE948D2_E025_4e5a_A2E7_02E03F99D7EF" style="Mode=3;EOID=C18C9453;SOID=79814A7A;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_481772E1_FCA5_4de8_BD5F_118734E2011C" style="Mode=3;EOID=EAF4A063;SOID=79814A7A;Color=-1;LWidth=0;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -162,7 +234,7 @@
 			<EAScenario name="Flujo Básico Catalogo CPA IMSS" type="Basic Path" weight="0.00" subject="EAID_2C3C876F_EE7B_46cd_8766_8258939466E5" xmi.id="EAID_FC73218B_F52D_49a4_9C9A_356E232B61F4">
 				<EAScenarioContent>
 					<path>
-						<step name="El usuario Nivel Central debe seleccionar la opción Actualización de Estatus" guid="{5836092A-FCA3-42ad-8C9F-85EC30E4396E}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El usuario Nivel Central debe seleccionar la opción Catálogo CPA " guid="{5836092A-FCA3-42ad-8C9F-85EC30E4396E}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema deberá mostrar la ventana donde el usuario Nivel Central realizará una consulta para la obtencion de información del CPA bajo los siguientes  criterios:  Nombre, Apellido Paterno, Apellido Materno, CURP, Número de Registro, Estatus del CPA RF-N015. Validar que exista un criterio de búsqueda. Mostrará una Tabla de Resultados 1 que de inicio deberá mostrar todos los CPA que existan en la BDTU, mostrando los siguientes campos: Nombre, Apellido Paterno, Apellido Materno, CURP, Número de Registro y Estatus RF-A031 Consultar Tabla de Resultados 1 Cambio de Estatus.. Se habilitarán los botones: Buscar, Limpiar, " guid="{B3AAF87E-D527-4c5d-A269-F3686B976ED8}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El usuario Nivel Central deberá ingresar,  un dato por lo menos en uno de los  criterios de busqueda  RF-N015. Validar que exista un criterio de búsqueda y en seguida seleccionar la opción Buscar." guid="{814FB9A7-BAC4-4df8-8D58-9828A3D9EB95}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema realiza la busqueda de acuerdo al o los criterios colocados por el usuario una vez que haya seleccionado el boton Buscar y muestra los resultados en la Tabla de Resultados 1. 	El sistema deberá permitir seleccionar el CPA localizado en la Tabla de Resultados 1 dando click en el Nombre o Apellido Paterno o Apellido Materno o CURP o Número de Registro para continuar con el proceso.  RF-N016. Mostrar información solo para consulta" guid="{6DA8738A-00AA-4fbb-BC8A-9C8AE616BDD2}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
@@ -183,7 +255,28 @@
 							<item oldname="RF-N016. Mostrar información solo para consulta" guid="{860133C9-3F9E-4382-BB81-8E684901EBB2}"/>
 							<item oldname="RN-A033 Mostrar Información Datos del Despacho" guid="{B67D0B20-B2A3-41d7-8F88-11851F4778B7}"/>
 							<item oldname="RN-A037 Mostrar Información Estatus." guid="{BCE18052-97F4-4025-A3BB-C299E89DD2FD}"/>
+							<item oldname="Nivel Central" guid="{664C1EFF-F19C-4b54-8D00-DC4892A635AB}"/>
 							<item oldname="RF-N015. Validar que exista un criterio de búsqueda" guid="{D4752E26-7EB2-4bdb-B845-8F119D721ED1}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_DC24398B_EFB5_4b4c_9755_AF950C83E384" xmi.id="EAID_CEBD9E21_B529_404a_A9DD_2ED8D87E4996">
+				<EAScenarioContent>
+					<path>
+						<step name="El usuario Nivel Central debe seleccionar la opción Catlogos D y CA" guid="{45CF8B4D-9A3A-469a-AA78-2B2C64A0820A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema presenta una ventana habilitando el campos Catálogo (Lista desplegable con las opciones Despachos y  Colegio y Asociados), Buscar,  Limpiar, Salir  y presenta los campos inhabilitados de  RFC, Razon Social.  y boton de  exportar a Excel.  " guid="{C9BF4420-0A61-4776-AA6A-C499A68CA0E6}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario Nivel Central elige de la lista desplegable la opción requerida. " guid="{36DECF06-77D7-43e1-8B8B-8EB12126A079}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema habilita los campos RFC, la lista desplegable de Razón Social y exportar a Excel" guid="{17C80DC0-B1DE-4f8a-9F68-8B614E186B8A}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario Nivel Central captura el RFC ó elige de la lista desplegable del campo Razón Social RN-N  la opción deseada y presiona el botón Buscar RN-N" guid="{7EC97FEE-38AE-4572-9C30-0EC36C191439}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra los datos correspondientes a su elección RN-A" guid="{9EC85C82-6BAC-4ebe-9072-33D48AC02469}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El suario Nivel Central elige la opción exportar a Excel" guid="{826C55A1-32E2-4062-97DF-CEA720E7A67B}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema envía todos los datos del catálogo a formato excel." guid="{C324309F-9B46-4c5a-9FFE-E394C3A4E3BD}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario Nivel Central elige la opción Salir" guid="{CCC27E26-21EC-434b-8A97-87472ECBCA82}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema regresa ala ventanilla IMSS" guid="{EE09CF42-BDB1-4585-9204-42C773C6EB09}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Fin de caso de Uso" guid="{A1D8A49C-1FA7-4bdb-A220-F5A76BB1DA02}" level="11" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<context>
+							<item oldname="Nivel Central" guid="{664C1EFF-F19C-4b54-8D00-DC4892A635AB}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
