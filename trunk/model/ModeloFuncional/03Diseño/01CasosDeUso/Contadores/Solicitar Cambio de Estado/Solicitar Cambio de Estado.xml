@@ -39,6 +39,7 @@
 					<UML:Namespace.ownedElement>
 						<UML:UseCase name="Solicitar Baja Voluntaria" xmi.id="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" visibility="public" namespace="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="El siguiente caso se uso describe la funcionalidad requerida a fin de que el Contador Público Autorizado,  voluntariamente solicite la baja de su registro ante el IMSS."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -46,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 15:53:44"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-23 14:02:54"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-23 14:32:45"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Solicitar Cambio de Estado"/>
@@ -60,6 +61,40 @@
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FDBFB343-3893-4bda-A796-531DDBC0DF76}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={671A2F36-4FE3-46b3-963B-9AA6257D4ACB}$SUP;$ENDXREF;$XREFPROP=$XID={BBE7B4F3-29F4-494a-9B3B-BC28F52B4F2C}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={DE872577-FBF1-43cd-93AD-E2C59A6EC029}$SUP;$ENDXREF;$XREFPROP=$XID={C029459E-0287-43dc-A5F0-4C47C3229855}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={E20D83EE-F8E2-413d-BC94-C6CBB88350F0}$SUP;$ENDXREF;$XREFPROP=$XID={BBE6FF1B-83E5-4ea6-B4A4-28B19E1CBCBF}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}$SUP;$ENDXREF;$XREFPROP=$XID={10CF85F5-3229-4d5f-8980-C971DD2B14FF}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={0495C340-C8A3-47ed-A621-442F87E8F593}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="Estatus del CPA">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El CPA no debe tener un estatus &quot;Cancelado&quot;"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="3.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Firma Fiel">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="EL CPA deberá contar con los ceritifcados (FIEL) propocionados por el SAT"/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Registro en Catálogo de Contadores Públicos Autorizados">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El CPA deberá estar registrado en el catálogo de Contadores Públicos Autorizados. "/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="Registro IMSS">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="description" value="El CPA deberá estar registrado en el IMSS y autentificarse "/>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
 						</UML:UseCase>
 						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_3967B9A6_5867_4e24_B6B3_56457A22F826" xmi.id="EAID_1F081DB5_84B9_409c_B07D_93FB112116D8" visibility="public">
 							<UML:ModelElement.taggedValue>
@@ -366,14 +401,14 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="bhernandezj"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 15:39:58"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-23 13:55:10"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-23 14:40:54"/>
 				<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="1004"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=803;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=F51E7E3A;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=48254510;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=327;Top=21;Right=487;Bottom=54;" subject="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" seqno="1" style="DUID=581E1181;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
@@ -392,7 +427,7 @@
 				<UML:DiagramElement geometry="SX=29;SY=9;EX=-79;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=212:-125$;" subject="EAID_841F21D9_5206_4544_908C_B1081A57923D" style="Mode=3;EOID=58FEB30E;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=33;SY=-35;EX=-26;EY=-4;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=215:-418$;" subject="EAID_85EEBC83_7D31_434d_9797_844639F5DC1F" style="Mode=3;EOID=05DD10FA;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=27;SY=33;EX=-35;EY=14;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=212:-29$;" subject="EAID_686E95B9_983C_490d_BFED_71E87E842AA7" style="Mode=3;EOID=581E1181;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-12;SY=-25;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=325:-236$;" subject="EAID_1F081DB5_84B9_409c_B07D_93FB112116D8" style="Mode=3;EOID=4A8BD5AD;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-37;SY=-27;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=215:-263$;" subject="EAID_1F081DB5_84B9_409c_B07D_93FB112116D8" style="Mode=3;EOID=4A8BD5AD;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-47;SY=35;EX=-30;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=212:-71$;" subject="EAID_7D6C5CE2_26A0_4008_AB8E_2BDADC031BBF" style="Mode=3;EOID=FB0CA0A8;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
@@ -513,7 +548,7 @@
 			<EAScenario name="Solicitar cambio de estado" type="Basic Path" weight="0.00" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" xmi.id="EAID_3AA9FD5B_6D08_44e3_A3C9_93957F98E147">
 				<EAScenarioContent>
 					<path>
-						<step name="El caso de uso inicia cuando el CPA ingresa a Contadores Publicos y selecciona Baja Voluntaria" guid="{B0CC104C-DA2A-479e-9EB0-03C37CA924B9}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El caso de uso inicia cuando el CPA ingresa a Contadores Publicos y selecciona Baja " guid="{B0CC104C-DA2A-479e-9EB0-03C37CA924B9}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema valida el registro IMSS del CPA  de acuerdo a  RF-A046 Validar si cuenta con Registro IMSS y deberá mostrar en una pantalla emergente  los siguientes datos del CPA: * Apellido Paterno * Apellido Materno * Nombre (S) * CURP * Registro IMSS y mostrar  el mensaje IdMsg 1 de acuerdo a RF-C011 Catálogo de mensajes Contadores ; si el CPA  no cuenta con Registro IMSS continua en  FA1 No cuenta con registro IMSS  " guid="{11021940-9833-449f-A8BA-5EA8680441C4}" level="2" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="2a" guid="{7658ED08-7BF5-401d-AA7C-E53D624827DE}" join="{BA31DDA1-7FEB-472f-9F56-50A312BBA795}"/>
 						</step>
