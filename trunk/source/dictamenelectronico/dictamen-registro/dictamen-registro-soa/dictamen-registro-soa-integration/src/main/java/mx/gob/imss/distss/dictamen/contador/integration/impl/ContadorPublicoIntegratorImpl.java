@@ -17,11 +17,13 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtR1DatosPersonalesDO;
 import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
 import mx.gob.imss.cit.dictamen.contador.services.SatService;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
+import mx.gob.imss.ctirss.delta.model.gestion.individuo.Moral;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Persona;
 /**
  * Session Bean implementation class ContadorPublicoServiceBusiness
@@ -38,67 +40,40 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 	@EJB(name="satService", mappedName="satService")
 	private SatService satService;
 
- 
 
-	@Override
-	public PersonaDTO verificarContadorPublico(String curp, String rfc) {
+    public PersonaMoralDTO consultarPersonaMoralPorRFC(String rfc){
+	PersonaMoralDTO personaMoralDTO = null;
+		Moral moral  = satService.buscarPersonaMoralPorRfc(rfc);
 		
-		LOGGER.info("Integrator.curp="+curp);
-		LOGGER.info("Integrator.rfc="+rfc);
+		DomicilioFiscalDTO domicilioDTO = null;
 
-		PersonaDTO personaDTO = null;
-		Fisica personaFisica = new Fisica();
-		personaFisica.setRfc(rfc);
-		personaFisica.setCurp(curp);
-		Persona persona  = bdtuService.obtenerFisicaPorPersona(personaFisica);
-		if (persona.getIdPersona() != null) {
-			Fisica fisica = (Fisica)persona;
-			if( fisica.getCveFisica() != null){
-				
-				personaDTO = new PersonaDTO();
-				personaDTO.setCurp(fisica.getCurp());
-				personaDTO.setNombre(fisica.getNombre());
-				personaDTO.setApellidoPaterno(fisica.getPrimerApellido());
-				personaDTO.setApellidoMaterno(fisica.getSegundoApellido());
-				personaDTO.setNombreCompleto(fisica.getNombreCompleto());
-				personaDTO.setFechaNacimiento(fisica.getFechaNacimiento());
-				personaDTO.setIdSexo(fisica.getSexo().getIdSexo());
-				personaDTO.setRfc(fisica.getRfc());
-				
-				LOGGER.info("fisica.toString="+fisica.toString());
-				if(fisica.getCorreoElectronico()!=null){
-				  personaDTO.setCorreoElectronico(fisica.getCorreoElectronico().getCorreo());
-				}
-				if(fisica.getTelefonoFijo()!=null){
-				  personaDTO.setTelefono(fisica.getTelefonoFijo().getNumero());
-				}
-				LOGGER.info("ContadorPublicoIntegrator.antes.idPersona="+fisica.getIdPersona());
-				personaDTO.setIdPersona(fisica.getIdPersona());
-				ContadorPublicoDTO contadorPublicoAutDTO = new ContadorPublicoDTO();
-				
-				DomicilioFiscalDTO domicilioDTO = new DomicilioFiscalDTO();
-				if(fisica.getDomicilioFiscal()!=null){
-				domicilioDTO.setCalle(fisica.getDomicilioFiscal().getCalle());
-				LOGGER.info("ContadorPublicoIntegrator.Calle="+fisica.getDomicilioFiscal().getCalle());
-				domicilioDTO.setNumeroExterior(fisica.getDomicilioFiscal().getNumExterior1());
-				domicilioDTO.setLetraExterior(fisica.getDomicilioFiscal().getNumExteriorAlf());
-				domicilioDTO.setNumeroInterior(fisica.getDomicilioFiscal().getNumInterior());
-				domicilioDTO.setLetraInterior(fisica.getDomicilioFiscal().getNumInteriorAlf());
+		if(moral!=null && moral.getDomicilioFiscal()!=null){
+			personaMoralDTO = new PersonaMoralDTO();
+			domicilioDTO = new DomicilioFiscalDTO();
+			domicilioDTO.setCalle(moral.getDomicilioFiscal().getCalle());
+		    LOGGER.info("ContadorPublicoIntegrator.Calle="+moral.getDomicilioFiscal().getCalle());
+		    domicilioDTO.setNumeroExterior(moral.getDomicilioFiscal().getNumExterior1());
+		    domicilioDTO.setLetraExterior(moral.getDomicilioFiscal().getNumExteriorAlf());
+		    domicilioDTO.setNumeroInterior(moral.getDomicilioFiscal().getNumInterior());
+		    domicilioDTO.setLetraInterior(moral.getDomicilioFiscal().getNumInteriorAlf());
 
-				domicilioDTO.setEntreCalle(fisica.getDomicilioFiscal().getVialidadReferenciaPrimaria().getNombre());
-				domicilioDTO.setyCalle(fisica.getDomicilioFiscal().getVialidadReferenciaSecundaria().getNombre());
-				domicilioDTO.setColoniaAsentamiento(fisica.getDomicilioFiscal().getColonia());
-				domicilioDTO.setLocalidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getNombre());
-				
-				domicilioDTO.setEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
-				domicilioDTO.setMunicipioDelegacion(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
-				domicilioDTO.setCodigoPostal(fisica.getDomicilioFiscal().getCodigoPostal().getCodigoPostal());
-				}
-				contadorPublicoAutDTO.setDomicilioFiscalDTO(domicilioDTO);
-				personaDTO.setContadorPublicoAutDTO(contadorPublicoAutDTO);
-			}
+		    domicilioDTO.setEntreCalle(moral.getDomicilioFiscal().getVialidadReferenciaPrimaria().getNombre());
+		    domicilioDTO.setyCalle(moral.getDomicilioFiscal().getVialidadReferenciaSecundaria().getNombre());
+		    domicilioDTO.setColoniaAsentamiento(moral.getDomicilioFiscal().getColonia());
+		    domicilioDTO.setLocalidad(moral.getDomicilioFiscal().getAsentamiento().getLocalidad().getNombre());
+		
+		    domicilioDTO.setCveEntidadFederativa(moral.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getClave());
+		    domicilioDTO.setEntidadFederativa(moral.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
+		    domicilioDTO.setMunicipioDelegacion(moral.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
+		    domicilioDTO.setCodigoPostal(moral.getDomicilioFiscal().getCodigoPostal().getCodigoPostal());
+		    
+		    personaMoralDTO.setRfc(moral.getRfc());
+		    personaMoralDTO.setRazonSocial(moral.getRazonSocial());
+
+		    personaMoralDTO.setDomicilioFiscalDTO(domicilioDTO);  
 		}
-		return personaDTO;
+		
+		return personaMoralDTO;
 	}
 
 	public DomicilioFiscalDTO consultarDomicilioPorRFC(String rfc){
@@ -161,16 +136,7 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 		
         return lstNdtContadorPublicoAutDO;
 	}
-	@Override
-	public PersonaDTO consultarFisicaPorRFC(String rfc) {
-		Fisica fisica2 = satService.buscarPersonaFisicaPorRfc(rfc);
-		Fisica fisica1 = satService.obtenerDatosFiscalesFisicaPorRFC(rfc);
 
-		LOGGER.info("servicioweb.consultarFisicaPorRFC.fisica2= "+fisica2.toString());
-		LOGGER.info("servicioweb.consultarFisicaPorRFC.fisica1= "+fisica1.toString());
-
-		return null;
-	}
 	
 	public ContadorPublicoIntegratorImpl() {
 	}
@@ -195,3 +161,67 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 		this.satService = satService;
 	}
 }
+
+/*
+
+	@Override
+	public PersonaDTO verificarContadorPublico(String curp, String rfc) {
+		
+		LOGGER.info("Integrator.curp="+curp);
+		LOGGER.info("Integrator.rfc="+rfc);
+
+		PersonaDTO personaDTO = null;
+		Fisica personaFisica = new Fisica();
+		personaFisica.setRfc(rfc);
+		personaFisica.setCurp(curp);
+		Persona persona  = bdtuService.obtenerFisicaPorPersona(personaFisica);
+		if (persona.getIdPersona() != null) {
+			Fisica fisica = (Fisica)persona;
+			if( fisica.getCveFisica() != null){
+				
+				personaDTO = new PersonaDTO();
+				personaDTO.setCurp(fisica.getCurp());
+				personaDTO.setNombre(fisica.getNombre());
+				personaDTO.setApellidoPaterno(fisica.getPrimerApellido());
+				personaDTO.setApellidoMaterno(fisica.getSegundoApellido());
+				personaDTO.setNombreCompleto(fisica.getNombreCompleto());
+				personaDTO.setFechaNacimiento(fisica.getFechaNacimiento());
+				personaDTO.setIdSexo(fisica.getSexo().getIdSexo());
+				personaDTO.setRfc(fisica.getRfc());
+				
+				LOGGER.info("fisica.toString="+fisica.toString());
+				if(fisica.getCorreoElectronico()!=null){
+				  personaDTO.setCorreoElectronico(fisica.getCorreoElectronico().getCorreo());
+				}
+				if(fisica.getTelefonoFijo()!=null){
+				  personaDTO.setTelefono(fisica.getTelefonoFijo().getNumero());
+				}
+				LOGGER.info("ContadorPublicoIntegrator.antes.idPersona="+fisica.getIdPersona());
+				personaDTO.setIdPersona(fisica.getIdPersona());
+				ContadorPublicoDTO contadorPublicoAutDTO = new ContadorPublicoDTO();
+				
+				DomicilioFiscalDTO domicilioDTO = new DomicilioFiscalDTO();
+				if(fisica.getDomicilioFiscal()!=null){
+				domicilioDTO.setCalle(fisica.getDomicilioFiscal().getCalle());
+				LOGGER.info("ContadorPublicoIntegrator.Calle="+fisica.getDomicilioFiscal().getCalle());
+				domicilioDTO.setNumeroExterior(fisica.getDomicilioFiscal().getNumExterior1());
+				domicilioDTO.setLetraExterior(fisica.getDomicilioFiscal().getNumExteriorAlf());
+				domicilioDTO.setNumeroInterior(fisica.getDomicilioFiscal().getNumInterior());
+				domicilioDTO.setLetraInterior(fisica.getDomicilioFiscal().getNumInteriorAlf());
+
+				domicilioDTO.setEntreCalle(fisica.getDomicilioFiscal().getVialidadReferenciaPrimaria().getNombre());
+				domicilioDTO.setyCalle(fisica.getDomicilioFiscal().getVialidadReferenciaSecundaria().getNombre());
+				domicilioDTO.setColoniaAsentamiento(fisica.getDomicilioFiscal().getColonia());
+				domicilioDTO.setLocalidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getNombre());
+				
+				domicilioDTO.setEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getNombre());
+				domicilioDTO.setMunicipioDelegacion(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getNombre());
+				domicilioDTO.setCodigoPostal(fisica.getDomicilioFiscal().getCodigoPostal().getCodigoPostal());
+				}
+				contadorPublicoAutDTO.setDomicilioFiscalDTO(domicilioDTO);
+				personaDTO.setContadorPublicoAutDTO(contadorPublicoAutDTO);
+			}
+		}
+		return personaDTO;
+	}
+	*/
