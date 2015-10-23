@@ -21,10 +21,11 @@ public class RutasMapper implements RowMapper<RutaTO>{
 			datosRuta.setAnioFiscal(rs.getString("ANIO_FISCAL"));
 			datosRuta.setRfcContador(rs.getString("RFC_CONTADOR"));
 			datosRuta.setRfcPatron(rs.getString("RFC_PATRON"));
-			datosRuta.setCveIdAseveracion(rs.getInt("ID_ASEVERACION"));
-			datosRuta.setCveIdPatronDictamen(rs.getInt("ID_DICTAMEN"));
-			datosRuta.setIdBitacora(rs.getInt("ID_BITACORA"));
+			datosRuta.setCveIdAseveracion(rs.getLong("ID_ASEVERACION"));
+			datosRuta.setCveIdPatronDictamen(rs.getLong("ID_DICTAMEN"));
+			datosRuta.setIdBitacora(rs.getLong("ID_BITACORA"));
 			datosRuta.setDesAseveracion(rs.getString("DES_ASEVERACION"));
+			datosRuta.setIdAseveracionPadre(rs.getLong("PADRE"));
 			datosRuta.setRuta("C:\\DictamenFiles\\Proceso\\"+datosRuta.getAnioFiscal()+"\\"
 					+datosRuta.getRfcContador()+"\\"+datosRuta.getRfcPatron()+"\\"
 					+datosRuta.getCveIdAseveracion()+"."+datosRuta.getDesAseveracion()+".txt");      

@@ -26,7 +26,7 @@ public class TxtFileProcessor2 implements ItemProcessor<A1TO, A1TO> {
 		System.out.println("Linea actual: "+paramI.getLineNumber());
 		List<Integer> invalidLines = linesTO.getInvalidLines();
 		if(invalidLines.size()>0){
-			rutasDAO.actualizaStatus(4, paramI.getCveIdPatronDictamen(), paramI.getCveIdAseveracion());
+			rutasDAO.actualizaStatus(4, new Long(paramI.getCveIdPatronDictamen()), new Long(paramI.getCveIdAseveracion()));
 			if(linesTO.getProcessedLines()+1==paramI.getLineNumber()){
 				linesTO = new LinesTO();
 			}
@@ -37,7 +37,7 @@ public class TxtFileProcessor2 implements ItemProcessor<A1TO, A1TO> {
 			  paramI.setFecRegistroAlta(new Date());
 		      paramI.setCveIdUsuario("MASC870401GQ8");		   
 			  if(invalidLines.size()==0){
-				  rutasDAO.actualizaStatus(1, paramI.getCveIdPatronDictamen(), paramI.getCveIdAseveracion());
+				  rutasDAO.actualizaStatus(1, new Long(paramI.getCveIdPatronDictamen()), new Long(paramI.getCveIdAseveracion()));
 			  }
 			return paramI;
 		}

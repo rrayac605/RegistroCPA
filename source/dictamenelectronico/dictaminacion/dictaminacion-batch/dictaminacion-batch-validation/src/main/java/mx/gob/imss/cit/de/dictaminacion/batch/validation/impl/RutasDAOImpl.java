@@ -36,7 +36,7 @@ public class RutasDAOImpl implements RutasDAO{
 		LOG.info("Obteniendo rutas.....");
 		String SQL = "select EF.des_ejer_fiscal as ANIO_FISCAL,PF.rfc as RFC_CONTADOR,PD.des_rfc as RFC_PATRON," +
 				"CD.cve_id_patron_dictamen as ID_DICTAMEN,CD.cve_id_aseveracion as ID_ASEVERACION," +
-				"CD.cve_id_bitacora_carga_asev as ID_BITACORA,A.des_tipo_aseveracion as DES_ASEVERACION " +
+				"CD.cve_id_bitacora_carga_asev as ID_BITACORA,A.des_tipo_aseveracion as DES_ASEVERACION,A.cve_id_aseveracion_padre as PADRE " +
 				"from NDT_PATRON_DICTAMEN PD " +
 				"inner join NDT_CARGA_DOCUMENTO CD on CD.cve_id_patron_dictamen=PD.cve_id_patron_dictamen " +
 				"inner join NDC_ASEVERACIONES A on CD.cve_id_aseveracion=A.cve_id_aseveracion " +
@@ -54,7 +54,7 @@ public class RutasDAOImpl implements RutasDAO{
 	}
 	
 	@Override
-	public void borrarBitacora(int idBitacora){
+	public void borrarBitacora(Long idBitacora){
 		System.out.println("Borrando ditacora");
 		String SQL = "delete from NDT_BITACORA_ERRORES where cve_id_bitacora_carga_asev = ?";
 	       jdbcTemplateObject.update(SQL, idBitacora);
@@ -62,7 +62,7 @@ public class RutasDAOImpl implements RutasDAO{
 	}
 	
 	@Override
-	public void borrarTablaAseveracion(int idPatronDictamen,int idAseveracion){
+	public void borrarTablaAseveracion(Long idPatronDictamen,Long idAseveracion){
 		LOG.info("Borrando tabla de aseveracion correspondiente");
 		String tabla = "";
 		
@@ -83,7 +83,7 @@ public class RutasDAOImpl implements RutasDAO{
 	 * @param idPatronDictamen
 	 * @param idAseveracion
 	 */
-	public void actualizaStatus(int status,int idPatronDictamen,int idAseveracion){
+	public void actualizaStatus(int status,Long idPatronDictamen,Long idAseveracion){
 		String SQL = "update NDT_CARGA_DOCUMENTO set cve_id_estado_cargo_doc = ? where cve_id_patron_dictamen = ? and cve_id_aseveracion = ?";
 	       jdbcTemplateObject.update(SQL,status, idPatronDictamen,idAseveracion);
 	       LOG.info("Status actualiza a = " + status +" de idPatronDictamen: "+idPatronDictamen+" y esev: "+idAseveracion);

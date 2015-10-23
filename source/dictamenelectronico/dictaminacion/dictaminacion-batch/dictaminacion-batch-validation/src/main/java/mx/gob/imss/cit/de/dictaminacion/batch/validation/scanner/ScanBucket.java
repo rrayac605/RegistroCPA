@@ -25,7 +25,9 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.AtestiguamientoDAO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoTO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
 
 @Component
@@ -41,7 +43,8 @@ public class ScanBucket {
     private String[] extension;
 	private String fields = "regPatronal, nomPrimerApellidoTrabajador, nomSegundoApellidoTrabajador, nomNombreTrabajador, numNssTrabajador, rfcTrabajador, curpTrabajador, impSueldosSalarios, impGratificaciones, impViaticos, impTiempoExtra, impPrimaVacacional, impPrimaDominical, impPtu, impReembolsoGm, impFondoAhorro, impCajaAhorro, impValesDespensa, impAyudaGf, impContribucionPatron, impPremioPuntualidad, impPremioAsistencia, impPrimaSeguroVida, impSeguroGmm, impValesRestaurant, impValesGasolina, impValesRopa, impAyudaRenta, impAyudaEscolar, impAyudaAnteojos, impAyudaTransporte, impCuotaSindical, impSubsidioIncapacidad, impBecaTrabajadorHijo, impOtrosIngresosXsalario, impPagoOtroEmpleador, impJubPenRetiro, impOtrosPagosXseparacion, impTotal";
 	private String prototype = "a1";
-    private RutasDAO rutasDAO;    
+    private RutasDAO rutasDAO; 
+    private AtestiguamientoDAO atestiguamientoDAO;
 	
     @Autowired
     private JobLauncher jobLauncher;
@@ -64,7 +67,12 @@ public class ScanBucket {
     		if (file.exists()){
         		rutasDAO.borrarBitacora(rutas.get(i).getIdBitacora());
         		rutasDAO.borrarTablaAseveracion(rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
-        		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());    			
+        		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
+        		AtestiguamientoTO atestiguamiento=atestiguamientoDAO.obtieneAtestiguamiento(rutas.get(i).getIdAseveracionPadre()!=0 
+        				? rutas.get(i).getIdAseveracionPadre():rutas.get(i).getCveIdAseveracion());
+        		
+        		System.out.println("AtestiguamientoID"+atestiguamiento.getIdAtestiguamiento());
+        		
         		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
         		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
     			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
@@ -171,6 +179,14 @@ public class ScanBucket {
 
 	public RutasDAO getRutasDAO() {
 		return rutasDAO;
+	}
+
+	public AtestiguamientoDAO getAtestiguamientoDAO() {
+		return atestiguamientoDAO;
+	}
+
+	public void setAtestiguamientoDAO(AtestiguamientoDAO atestiguamientoDAO) {
+		this.atestiguamientoDAO = atestiguamientoDAO;
 	}
 	
 	
