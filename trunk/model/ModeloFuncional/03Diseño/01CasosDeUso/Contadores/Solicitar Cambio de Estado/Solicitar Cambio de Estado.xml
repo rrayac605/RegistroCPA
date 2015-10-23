@@ -10,7 +10,7 @@
 		<UML:Model name="EA Model" xmi.id="MX_EAID_463F644D_EC57_49f6_A584_B2F24B7A879C">
 			<UML:Namespace.ownedElement>
 				<UML:Class name="EARootClass" xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" isRoot="true" isLeaf="false" isAbstract="false"/>
-				<UML:Package name="Solicitar Cambio de Estado" xmi.id="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+				<UML:Package name="Solicitar Baja Voluntaria" xmi.id="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 					<UML:ModelElement.taggedValue>
 						<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 						<UML:TaggedValue tag="created" value="2015-10-21 12:03:24"/>
@@ -37,7 +37,7 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:UseCase name="Solicitar Cambio de Estado" xmi.id="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" visibility="public" namespace="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false">
+						<UML:UseCase name="Solicitar Baja Voluntaria" xmi.id="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" visibility="public" namespace="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
@@ -46,10 +46,10 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 15:53:44"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 21:21:04"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-23 11:35:37"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="package_name" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="phase" value="1.0"/>
 								<UML:TaggedValue tag="author" value="bhernandezj"/>
 								<UML:TaggedValue tag="complexity" value="1"/>
@@ -72,7 +72,7 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="8302"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A029 Mostar información Baja"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
@@ -110,7 +110,7 @@
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="7878"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
-								<UML:TaggedValue tag="ea_targetName" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="ea_targetName" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_sourceID" value="7686"/>
@@ -146,7 +146,7 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="8305"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-C015  Captura motivos de baja"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
@@ -183,7 +183,7 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="8299"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A026. Validar solicitud de Baja"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
@@ -220,7 +220,7 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="8300"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A027 Validar solicitudes para dictaminar "/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
@@ -257,7 +257,7 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="8306"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A041 Validar campo Motivo de Baja"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
@@ -294,7 +294,7 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="8301"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A028 Validar dictamenes en proceso"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
@@ -331,7 +331,7 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="8303"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A040 Habilitar campo observaciones baja"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
@@ -360,12 +360,12 @@
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
-		<UML:Diagram name="Solicitar Cambio de Estado" xmi.id="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7" diagramType="UseCaseDiagram" owner="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" toolName="Enterprise Architect 2.5">
+		<UML:Diagram name="Solicitar Baja Voluntaria" xmi.id="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7" diagramType="UseCaseDiagram" owner="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" toolName="Enterprise Architect 2.5">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="bhernandezj"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 15:39:58"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-23 11:33:27"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-23 11:35:44"/>
 				<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
@@ -468,11 +468,11 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El caso de uso inicia cuando el CPA ingresa a Contadores Publicos y selecciona Baja" guid="{B0CC104C-DA2A-479e-9EB0-03C37CA924B9}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema valida que el CPA cuente con un registro IMSS de acuerdo a RF-N006. Usuario debe contar con número de registro IMSS  si el CPA cuenta con registro IMSS deberá mostrar en una pantalla emergente  los siguientes datos del CPA: * Apellido Paterno * Apellido Materno * Nombre (S) * CURP * Registro IMSS y muestra el mensaje 1 de acuerdo a ; si el CPA  no cuenta con Registro IMSS continua en  FA1 No cuenta con registro IMSS  " guid="{11021940-9833-449f-A8BA-5EA8680441C4}" level="2" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name="El sistema valida que el CPA cuente con un registro IMSS de acuerdo a  si el CPA cuenta con registro IMSS deberá mostrar en una pantalla emergente  los siguientes datos del CPA: * Apellido Paterno * Apellido Materno * Nombre (S) * CURP * Registro IMSS y muestra el mensaje 1 de acuerdo a ; si el CPA  no cuenta con Registro IMSS continua en  FA1 No cuenta con registro IMSS  " guid="{11021940-9833-449f-A8BA-5EA8680441C4}" level="2" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="2a" guid="{7658ED08-7BF5-401d-AA7C-E53D624827DE}" join="End"/>
 						</step>
 						<step name="El CPA selecciona sí al mensaje de confirmación de datos" guid="{19E3EE50-ED4E-47cd-8ECC-06761B9D2CEE}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name=" El sistema debera mostra el mensaje 6 de acuerdo a  y realizar validaciones de acuerdo a RF-A026. Validar solicitud de Baja  y  RF-A027 Validar solicitudes para dictaminar  RF-A028 Validar dictamenes en proceso  si existe una solicitud de baja continúa en flujo alterno FA2 Solicitud de baja en proceso , si el CPA tiene solicitudes para dictaminar continua en FA3 Solicitudes a dictaminar asignadas si el CPA tiene dictamenes en proceso continua en FA4 Dictamenes en proceso, si todas las validaciones son aprobadas deberá mostrar una ventana con la información de acuerdo a RF-A029 Mostar información Baja y deberá habilitar el campo de observaciones de acuerdo a RF-A040 Habilitar campo observaciones baja RF-C016  Captura motivos de baja" guid="{9020D42F-9CAE-4588-8BE1-E5B90F47AFEE}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name=" El sistema debera mostra el mensaje 6 de acuerdo a  y realizar validaciones de acuerdo a RF-A026. Validar solicitud de Baja  y  RF-A027 Validar solicitudes para dictaminar  RF-A028 Validar dictamenes en proceso  si existe una solicitud de baja continúa en flujo alterno FA2 Solicitud de baja en proceso , si el CPA tiene solicitudes para dictaminar continua en FA3 Solicitudes a dictaminar asignadas si el CPA tiene dictamenes en proceso continua en FA4 Dictamenes en proceso, si todas las validaciones son aprobadas deberá mostrar una ventana con la información de acuerdo a RF-A029 Mostar información Baja y deberá habilitar el campo de observaciones de acuerdo a RF-A040 Habilitar campo observaciones baja RF-C015  Captura motivos de baja" guid="{9020D42F-9CAE-4588-8BE1-E5B90F47AFEE}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="4a" guid="{9D9CBDC7-E146-40f0-93F4-746D41FDD995}" join="End"/>
 							<extension level="4b" guid="{D9B7ADFF-5145-42b5-A315-B734894C8F8C}" join="End"/>
 							<extension level="4c" guid="{64CD5CAF-EC77-49f2-A418-D684CD3D2A9B}" join="End"/>
@@ -488,14 +488,14 @@
 						<step name="El CPA selecciona el  botón Enviar Trámite" guid="{5A55618C-A953-463d-921E-E4943D07A674}" level="11" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema  envía la solicitud y genera acuse respectivo  de acuerdo a " guid="{551E9B9E-F454-46dd-8C6B-6D980A4B1AEC}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
-							<item oldname="RF-A040 Habilitar campo observaciones baja" guid="{F96D794C-CF1D-4889-B35C-C281BCBFFC22}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF-A026. Validar solicitud de Baja" guid="{2E3F424F-7927-4c15-8E9E-C50A49CD6EE5}"/>
 							<item oldname="RF-A029 Mostar información Baja" guid="{3967B9A6-5867-4e24-B6B3-56457A22F826}"/>
-							<item oldname="RF-N006. Usuario debe contar con número de registro IMSS " guid="{39CDD49E-D11C-4fdd-A67D-CDB253D2569B}"/>
-							<item oldname="RF-A027 Validar solicitudes para dictaminar " guid="{9DE60D6E-33BF-4b02-B92E-B932CF7A4590}"/>
-							<item oldname="RF-A028 Validar dictamenes en proceso" guid="{FDD17DE1-9FD7-4e63-9DA2-44D5131F8DB1}"/>
-							<item oldname="RF-C016  Captura motivos de baja" guid="{DE9251A5-E7CE-471c-ABBB-0C8B52FA8613}"/>
 							<item oldname="RF-A041 Validar campo Motivo de Baja" guid="{87654B7F-1DA0-4f67-AA51-B9CF294496D1}"/>
+							<item oldname="RF-A027 Validar solicitudes para dictaminar " guid="{9DE60D6E-33BF-4b02-B92E-B932CF7A4590}"/>
+							<item oldname="RF-A040 Habilitar campo observaciones baja" guid="{F96D794C-CF1D-4889-B35C-C281BCBFFC22}"/>
+							<item oldname="RF-A028 Validar dictamenes en proceso" guid="{FDD17DE1-9FD7-4e63-9DA2-44D5131F8DB1}"/>
+							<item oldname="RF-C015  Captura motivos de baja" guid="{DE9251A5-E7CE-471c-ABBB-0C8B52FA8613}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
