@@ -24,6 +24,10 @@
     <bean id="atestiguamientoDaoImpl" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.AtestiguamientoDAOImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    
+    <bean id="atestiguamientoDictamenDaoImpl" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.AtestiguamientoDictamenDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
        	
     <bean id="txtFile" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.to.TxtFileTO" scope="prototype" />
     <bean id="a1" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.to.A1TO" scope="prototype" />
@@ -286,6 +290,7 @@
 		<property name="extension" value="#{'${configuracion.extensiones.permitidas}'.split(',')}"/>
 		<property name="rutasDAO" ref="rutasDaoImpl"/>
 		<property name="atestiguamientoDAO" ref="atestiguamientoDaoImpl"/>
+		<property name="atestiguamientoDictamenDAO" ref="atestiguamientoDictamenDaoImpl"/>
 	</bean>
 
 	<task:scheduled-tasks>

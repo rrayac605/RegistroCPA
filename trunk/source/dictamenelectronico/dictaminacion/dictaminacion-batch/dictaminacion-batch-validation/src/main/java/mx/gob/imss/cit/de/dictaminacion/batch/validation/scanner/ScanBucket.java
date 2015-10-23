@@ -26,7 +26,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.AtestiguamientoDAO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.AtestiguamientoDictamenDAO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoTO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
 
@@ -45,6 +47,7 @@ public class ScanBucket {
 	private String prototype = "a1";
     private RutasDAO rutasDAO; 
     private AtestiguamientoDAO atestiguamientoDAO;
+    private AtestiguamientoDictamenDAO atestiguamientoDictamenDAO;
 	
     @Autowired
     private JobLauncher jobLauncher;
@@ -62,14 +65,34 @@ public class ScanBucket {
     	JobParameters parameters;
     	
     	List<RutaTO> rutas=rutasDAO.obtieneRutas();
-    	for(int i=0;i<rutas.size();i++){    		    		
+    	for(int i=0;i<rutas.size();i++){
     		File file = new File(rutas.get(i).getRuta());
     		if (file.exists()){
+    			
         		rutasDAO.borrarBitacora(rutas.get(i).getIdBitacora());
         		rutasDAO.borrarTablaAseveracion(rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
         		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
         		AtestiguamientoTO atestiguamiento=atestiguamientoDAO.obtieneAtestiguamiento(rutas.get(i).getIdAseveracionPadre()!=0 
         				? rutas.get(i).getIdAseveracionPadre():rutas.get(i).getCveIdAseveracion());
+        		
+        		List<AtestiguamientoDictamenTO> atestiguamientosDictamen=atestiguamientoDictamenDAO
+        			.validaAtesDictamenByPatronDictamen(rutas.get(i).getCveIdPatronDictamen(), atestiguamiento.getIdAtestiguamiento());
+        		
+        		if(atestiguamientosDictamen.size()>0){
+        			
+        			atestiguamientoDictamenDAO.actualizaEstatus(1L, rutas.get(i).getCveIdPatronDictamen(),atestiguamiento.getIdAtestiguamiento());
+        			
+        		}else{
+        			AtestiguamientoDictamenTO atestiguamientoDictamenTO=new AtestiguamientoDictamenTO();
+        			
+        			atestiguamientoDictamenTO.setIdPatronDictamen(rutas.get(i).getCveIdPatronDictamen());
+        			atestiguamientoDictamenTO.setIdAtestiguamiento(atestiguamiento.getIdAtestiguamiento());
+        			atestiguamientoDictamenTO.setRegistroAlta(new Date());
+        			atestiguamientoDictamenTO.setIdUsuario("11111");
+        			atestiguamientoDictamenTO.setIdEstadoAtestiguamiento(1L);
+        			
+        			atestiguamientoDictamenDAO.insertaAtestiguamientoDictamen(atestiguamientoDictamenTO);
+        		}
         		
         		System.out.println("AtestiguamientoID"+atestiguamiento.getIdAtestiguamiento());
         		
@@ -187,6 +210,15 @@ public class ScanBucket {
 
 	public void setAtestiguamientoDAO(AtestiguamientoDAO atestiguamientoDAO) {
 		this.atestiguamientoDAO = atestiguamientoDAO;
+	}
+
+	public AtestiguamientoDictamenDAO getAtestiguamientoDictamenDAO() {
+		return atestiguamientoDictamenDAO;
+	}
+
+	public void setAtestiguamientoDictamenDAO(
+			AtestiguamientoDictamenDAO atestiguamientoDictamenDAO) {
+		this.atestiguamientoDictamenDAO = atestiguamientoDictamenDAO;
 	}
 	
 	
