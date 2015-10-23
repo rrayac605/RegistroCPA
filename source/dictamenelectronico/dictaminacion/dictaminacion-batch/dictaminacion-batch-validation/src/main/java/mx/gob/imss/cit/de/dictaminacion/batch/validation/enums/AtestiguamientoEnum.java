@@ -2,7 +2,7 @@ package mx.gob.imss.cit.de.dictaminacion.batch.validation.enums;
 
 public enum AtestiguamientoEnum {
 
-	B10(20L),
+	B10(10L),
 	;
 	
 	private Long idAtestiguamiento;

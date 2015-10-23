@@ -36,13 +36,13 @@ public class AtestiguamientoDAOImpl implements AtestiguamientoDAO {
 	   */
 	@Override
 	public AtestiguamientoTO obtieneAtestiguamiento(Long idAseveracion) {
-		LOG.info("obtienendo Atestiguamientos.....");
-		String SQL = "selct * from NDC_ATESTIGUAMIENTO " +
+		LOG.info("obtienendo Atestiguamientos..... con idAseveracion= "+idAseveracion);
+		String SQL = "select * from NDC_ATESTIGUAMIENTO " +
 				"where cve_id_aseveracion = ?";
 		AtestiguamientoTO atestiguamientoTO = jdbcTemplateObject.queryForObject(SQL, 
                    new Object[]{idAseveracion}, new AtestiguamientoMapper());
 	      
-	       LOG.info("Atestiguamiento econtrad: "+atestiguamientoTO);
+	       LOG.info("Atestiguamiento econtrado: "+atestiguamientoTO.getIdAtestiguamiento());
 		return atestiguamientoTO;
 	}
 	
