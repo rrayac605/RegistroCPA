@@ -20,9 +20,9 @@ public class FirmaElectronicaServiceImpl   implements FirmaElectronicaService{
 			firmaElectronicaTO.setFiel("");
 			firmaElectronicaTO.setFielArchive("MtsAppletFielWidget.IMSS.jar");
 			firmaElectronicaTO.setFielCode("mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class");
-			firmaElectronicaTO.setFielCodebase("${firma.FIEL_CODEBASE}");
+			firmaElectronicaTO.setFielCodebase("http://172.16.5.151:8083/firmaElectronicaWeb/applets/");
 			firmaElectronicaTO.setFielParamOption("{'operacion':'autentica','salida':'rfc,curp,serie_cert'}");
-			firmaElectronicaTO.setFielParamUrlWsFe("${firma.FIEL_PARAM_URL_WS_FE}");
+			firmaElectronicaTO.setFielParamUrlWsFe("http://172.16.5.151:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService");
 
 				
 		return firmaElectronicaTO;
