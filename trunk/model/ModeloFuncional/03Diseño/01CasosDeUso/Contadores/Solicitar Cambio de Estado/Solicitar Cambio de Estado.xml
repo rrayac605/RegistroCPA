@@ -37,7 +37,7 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:UseCase name="Solicitar Baja Voluntaria" xmi.id="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" visibility="public" namespace="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false">
+						<UML:UseCase name="Solicitar Baja " xmi.id="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" visibility="public" namespace="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="documentation" value="El siguiente caso se uso describe la funcionalidad requerida a fin de que el Contador Público Autorizado, voluntariamente solicite la baja de su registro ante el IMSS."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 15:53:44"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-23 16:31:34"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-23 16:32:57"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Solicitar Baja"/>
@@ -96,10 +96,10 @@
 								</UML:Constraint>
 							</UML:ModelElement.constraint>
 						</UML:UseCase>
-						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_3967B9A6_5867_4e24_B6B3_56457A22F826" xmi.id="EAID_1F081DB5_84B9_409c_B07D_93FB112116D8" visibility="public">
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_F96D794C_CF1D_4889_B35C_C281BCBFFC22" xmi.id="EAID_0261AF96_EC14_45f7_A3B4_F9A13F6E084A" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
 								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
 								<UML:TaggedValue tag="linemode" value="3"/>
 								<UML:TaggedValue tag="linecolor" value="-1"/>
@@ -107,13 +107,87 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="14698"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
+								<UML:TaggedValue tag="ea_localid" value="14826"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A040 Habilitar campo observaciones baja y registro IMSS"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
+								<UML:TaggedValue tag="ea_targetID" value="14059"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_3967B9A6_5867_4e24_B6B3_56457A22F826" xmi.id="EAID_483431E7_1EEE_48ba_81EB_2E89BC2CAC76" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="14825"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-A029 Mostrar información Baja"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
 								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
 								<UML:TaggedValue tag="ea_targetID" value="14024"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_2E3F424F_7927_4c15_8E9E_C50A49CD6EE5" xmi.id="EAID_49388F48_1DCE_419e_B3DB_1D2AA2ACC7FF" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="14822"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A026. Validar solicitud de Baja"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
+								<UML:TaggedValue tag="ea_targetID" value="14019"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -146,7 +220,7 @@
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="14366"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
-								<UML:TaggedValue tag="ea_targetName" value="Solicitar Baja Voluntaria"/>
+								<UML:TaggedValue tag="ea_targetName" value="Solicitar Baja "/>
 								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_sourceID" value="13807"/>
@@ -170,10 +244,10 @@
 								</UML:AssociationEnd>
 							</UML:Association.connection>
 						</UML:Association>
-						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_2E3F424F_7927_4c15_8E9E_C50A49CD6EE5" xmi.id="EAID_7D6C5CE2_26A0_4008_AB8E_2BDADC031BBF" visibility="public">
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_F02302E3_6D03_4245_849D_AF7F9E7DB863" xmi.id="EAID_5AB83C59_FDAA_4f72_ADB7_14FADE35B3CE" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
 								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
 								<UML:TaggedValue tag="linemode" value="3"/>
 								<UML:TaggedValue tag="linecolor" value="-1"/>
@@ -181,13 +255,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="14703"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-A026. Validar solicitud de Baja"/>
+								<UML:TaggedValue tag="ea_localid" value="14829"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-C019 Captura de Registro IMSS"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
 								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
-								<UML:TaggedValue tag="ea_targetID" value="14019"/>
+								<UML:TaggedValue tag="ea_targetID" value="14207"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -207,7 +281,200 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_9DE60D6E_33BF_4b02_B92E_B932CF7A4590" xmi.id="EAID_841F21D9_5206_4544_908C_B1081A57923D" visibility="public">
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" xmi.id="EAID_72A848A4_7C96_4807_99E1_0EAC3BFEE1CD" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="14821"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A046 Validar si cuenta con Registro IMSS"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
+								<UML:TaggedValue tag="ea_targetID" value="14028"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_DE9251A5_E7CE_471c_ABBB_0C8B52FA8613" xmi.id="EAID_907A7981_6514_4ed2_8440_81023E567395" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="14827"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-C015  Captura motivos de baja"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
+								<UML:TaggedValue tag="ea_targetID" value="14205"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_9DE60D6E_33BF_4b02_B92E_B932CF7A4590" xmi.id="EAID_BDF32A75_9B94_40cd_87A6_24EEF23C036F" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="14823"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A027 Validar solicitudes para dictaminar "/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
+								<UML:TaggedValue tag="ea_targetID" value="14048"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_FDD17DE1_9FD7_4e63_9DA2_44D5131F8DB1" xmi.id="EAID_DE707D69_2C1E_4046_BCE1_E7B838DB7372" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="14824"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A028 Validar dictamenes en proceso"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
+								<UML:TaggedValue tag="ea_targetID" value="14061"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_87654B7F_1DA0_4f67_AA51_B9CF294496D1" xmi.id="EAID_FD1BDFBF_895A_4804_967C_4BFF54893AB3" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="14828"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A041 Validar campo Motivo de Baja"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
+								<UML:TaggedValue tag="ea_targetID" value="14041"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Collaboration xmi.id="EAID_782354C2_8BD3_4354_8DFF_4D93E54892A1_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement/>
+							<UML:Collaboration.interaction>
+								<UML:Interaction>
+									<UML:Interaction.message/>
+								</UML:Interaction>
+							</UML:Collaboration.interaction>
+						</UML:Collaboration>
+						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_2E3F424F_7927_4c15_8E9E_C50A49CD6EE5" xmi.id="EAID_7D6C5CE2_26A0_4008_AB8E_2BDADC031BBF" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
 								<UML:TaggedValue tag="ea_type" value="Dependency"/>
@@ -218,13 +485,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="14688"/>
+								<UML:TaggedValue tag="ea_localid" value="14703"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-A027 Validar solicitudes para dictaminar "/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A026. Validar solicitud de Baja"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
 								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
-								<UML:TaggedValue tag="ea_targetID" value="14048"/>
+								<UML:TaggedValue tag="ea_targetID" value="14019"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -281,43 +548,6 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_FDD17DE1_9FD7_4e63_9DA2_44D5131F8DB1" xmi.id="EAID_89B667EA_1496_4506_B6C2_E0BB70633CCF" visibility="public">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="Dependency"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="14683"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-A028 Validar dictamenes en proceso"/>
-								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
-								<UML:TaggedValue tag="ea_targetID" value="14061"/>
-								<UML:TaggedValue tag="src_visibility" value="Public"/>
-								<UML:TaggedValue tag="src_aggregation" value="0"/>
-								<UML:TaggedValue tag="src_isOrdered" value="false"/>
-								<UML:TaggedValue tag="src_targetScope" value="instance"/>
-								<UML:TaggedValue tag="src_changeable" value="none"/>
-								<UML:TaggedValue tag="src_isNavigable" value="false"/>
-								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
-								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
-								<UML:TaggedValue tag="dst_visibility" value="Public"/>
-								<UML:TaggedValue tag="dst_aggregation" value="0"/>
-								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
-								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
-								<UML:TaggedValue tag="dst_changeable" value="none"/>
-								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
-								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
-								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-							</UML:ModelElement.taggedValue>
-						</UML:Dependency>
 						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" xmi.id="EAID_93F52FE8_9BEA_4f42_965B_7FA86FC46340" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
@@ -355,60 +585,23 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Dependency client="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" supplier="EAID_F96D794C_CF1D_4889_B35C_C281BCBFFC22" xmi.id="EAID_A2EEDCDA_7725_4b88_9634_F8C20A76D830" visibility="public">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="Dependency"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="14685"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-A040 Habilitar campo observaciones baja y registro IMSS"/>
-								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
-								<UML:TaggedValue tag="ea_targetID" value="14059"/>
-								<UML:TaggedValue tag="src_visibility" value="Public"/>
-								<UML:TaggedValue tag="src_aggregation" value="0"/>
-								<UML:TaggedValue tag="src_isOrdered" value="false"/>
-								<UML:TaggedValue tag="src_targetScope" value="instance"/>
-								<UML:TaggedValue tag="src_changeable" value="none"/>
-								<UML:TaggedValue tag="src_isNavigable" value="false"/>
-								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
-								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
-								<UML:TaggedValue tag="dst_visibility" value="Public"/>
-								<UML:TaggedValue tag="dst_aggregation" value="0"/>
-								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
-								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
-								<UML:TaggedValue tag="dst_changeable" value="none"/>
-								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
-								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
-								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-							</UML:ModelElement.taggedValue>
-						</UML:Dependency>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
-		<UML:Diagram name="Solicitar Baja Voluntaria" xmi.id="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7" diagramType="UseCaseDiagram" owner="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" toolName="Enterprise Architect 2.5">
+		<UML:Diagram name="Solicitar Baja " xmi.id="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7" diagramType="UseCaseDiagram" owner="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" toolName="Enterprise Architect 2.5">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="bhernandezj"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 15:39:58"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-23 16:31:56"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-23 16:34:43"/>
 				<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="1208"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=803;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=86343D44;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=57505A95;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=316;Top=506;Right=476;Bottom=539;" subject="EAID_F02302E3_6D03_4245_849D_AF7F9E7DB863" seqno="1" style="DUID=E5865BBB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
@@ -423,13 +616,18 @@
 				<UML:DiagramElement geometry="Left=125;Top=196;Right=230;Bottom=266;" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" seqno="10" style="DUID=5700629D;"/>
 				<UML:DiagramElement geometry="Left=22;Top=186;Right=67;Bottom=276;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="11" style="DUID=9F850B58;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_4B5C5CA7_02B9_48ae_BBEB_E75994D1DD49" style="Mode=3;EOID=5700629D;SOID=9F850B58;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_5AB83C59_FDAA_4f72_ADB7_14FADE35B3CE" style="Mode=3;EOID=E5865BBB;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_49388F48_1DCE_419e_B3DB_1D2AA2ACC7FF" style="Mode=3;EOID=FB0CA0A8;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_72A848A4_7C96_4807_99E1_0EAC3BFEE1CD" style="Mode=3;EOID=581E1181;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_907A7981_6514_4ed2_8440_81023E567395" style="Mode=3;EOID=ED77F7DF;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_BDF32A75_9B94_40cd_87A6_24EEF23C036F" style="Mode=3;EOID=58FEB30E;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_DE707D69_2C1E_4046_BCE1_E7B838DB7372" style="Mode=3;EOID=1851D3B1;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_483431E7_1EEE_48ba_81EB_2E89BC2CAC76" style="Mode=3;EOID=4A8BD5AD;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_FD1BDFBF_895A_4804_967C_4BFF54893AB3" style="Mode=3;EOID=05DD10FA;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0261AF96_EC14_45f7_A3B4_F9A13F6E084A" style="Mode=3;EOID=0D859602;SOID=5700629D;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-47;SY=35;EX=-30;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=212:-103$;" subject="EAID_7D6C5CE2_26A0_4008_AB8E_2BDADC031BBF" style="Mode=3;EOID=FB0CA0A8;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=33;SY=32;EX=-77;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=212:-56$;" subject="EAID_93F52FE8_9BEA_4f42_965B_7FA86FC46340" style="Mode=3;EOID=581E1181;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=29;SY=9;EX=-79;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=212:-157$;" subject="EAID_841F21D9_5206_4544_908C_B1081A57923D" style="Mode=3;EOID=58FEB30E;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-21;SY=7;EX=-48;EY=-16;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_89B667EA_1496_4506_B6C2_E0BB70633CCF" style="Mode=3;EOID=1851D3B1;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-37;SY=-27;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=215:-273$;" subject="EAID_1F081DB5_84B9_409c_B07D_93FB112116D8" style="Mode=3;EOID=4A8BD5AD;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=33;SY=-35;EX=-26;EY=-4;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=215:-450$;" subject="EAID_85EEBC83_7D31_434d_9797_844639F5DC1F" style="Mode=3;EOID=05DD10FA;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=34;SY=-32;EX=-18;EY=-16;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=215:-341$;" subject="EAID_A2EEDCDA_7725_4b88_9634_F8C20A76D830" style="Mode=3;EOID=0D859602;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -630,13 +828,16 @@
 				</EAScenarioContent>
 			</EAScenario>
 		</EAModel.scenario>
-		<EAStub xmi.id="EAID_3967B9A6_5867_4e24_B6B3_56457A22F826" name="RF-A029 Mostrar información Baja" UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" name="CPA" UMLType="Actor"/>
-		<EAStub xmi.id="EAID_2E3F424F_7927_4c15_8E9E_C50A49CD6EE5" name="RF-A026. Validar solicitud de Baja" UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_9DE60D6E_33BF_4b02_B92E_B932CF7A4590" name="RF-A027 Validar solicitudes para dictaminar " UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_87654B7F_1DA0_4f67_AA51_B9CF294496D1" name="RF-A041 Validar campo Motivo de Baja" UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_FDD17DE1_9FD7_4e63_9DA2_44D5131F8DB1" name="RF-A028 Validar dictamenes en proceso" UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" name="RF-A046 Validar si cuenta con Registro IMSS" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_F96D794C_CF1D_4889_B35C_C281BCBFFC22" name="RF-A040 Habilitar campo observaciones baja y registro IMSS" UMLType="Requirement"/>
+		<EAModel.paramSub/>
+		<EAStub xmi.id="EAID_3967B9A6_5867_4e24_B6B3_56457A22F826" name="RF-A029 Mostrar información Baja" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_2E3F424F_7927_4c15_8E9E_C50A49CD6EE5" name="RF-A026. Validar solicitud de Baja" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" name="CPA" UMLType="Actor"/>
+		<EAStub xmi.id="EAID_F02302E3_6D03_4245_849D_AF7F9E7DB863" name="RF-C019 Captura de Registro IMSS" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" name="RF-A046 Validar si cuenta con Registro IMSS" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_DE9251A5_E7CE_471c_ABBB_0C8B52FA8613" name="RF-C015  Captura motivos de baja" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_9DE60D6E_33BF_4b02_B92E_B932CF7A4590" name="RF-A027 Validar solicitudes para dictaminar " UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_FDD17DE1_9FD7_4e63_9DA2_44D5131F8DB1" name="RF-A028 Validar dictamenes en proceso" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_87654B7F_1DA0_4f67_AA51_B9CF294496D1" name="RF-A041 Validar campo Motivo de Baja" UMLType="Requirement"/>
 	</XMI.extensions>
 </XMI>
