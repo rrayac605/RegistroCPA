@@ -28,6 +28,7 @@ import org.springframework.stereotype.Component;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.AtestiguamientoDAO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.AtestiguamientoDictamenDAO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.enums.AtestiguamientoEnum;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoTO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
@@ -92,6 +93,11 @@ public class ScanBucket {
         			atestiguamientoDictamenTO.setIdEstadoAtestiguamiento(1L);
         			
         			atestiguamientoDictamenDAO.insertaAtestiguamientoDictamen(atestiguamientoDictamenTO);
+        			
+        			atestiguamientoDictamenTO.setIdAtestiguamiento(AtestiguamientoEnum.B10.getIdAtestiguamiento());
+        			atestiguamientoDictamenDAO.insertaAtestiguamientoDictamen(atestiguamientoDictamenTO);
+        			
+        			
         		}
         		
         		System.out.println("AtestiguamientoID"+atestiguamiento.getIdAtestiguamiento());
