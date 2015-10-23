@@ -67,12 +67,14 @@ public class ScanBucket {
     	
     	List<RutaTO> rutas=rutasDAO.obtieneRutas();
     	for(int i=0;i<rutas.size();i++){
+    		System.out.println("Rutas: "+rutas.get(i).getRuta());
     		File file = new File(rutas.get(i).getRuta());
     		if (file.exists()){
     			
         		rutasDAO.borrarBitacora(rutas.get(i).getIdBitacora());
         		rutasDAO.borrarTablaAseveracion(rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
         		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
+        		
         		AtestiguamientoTO atestiguamiento=atestiguamientoDAO.obtieneAtestiguamiento(rutas.get(i).getIdAseveracionPadre()!=0 
         				? rutas.get(i).getIdAseveracionPadre():rutas.get(i).getCveIdAseveracion());
         		
@@ -94,14 +96,20 @@ public class ScanBucket {
         			
         			atestiguamientoDictamenDAO.insertaAtestiguamientoDictamen(atestiguamientoDictamenTO);
         			
-        			atestiguamientoDictamenTO.setIdAtestiguamiento(AtestiguamientoEnum.B10.getIdAtestiguamiento());
-        			atestiguamientoDictamenDAO.insertaAtestiguamientoDictamen(atestiguamientoDictamenTO);
+        			List<AtestiguamientoDictamenTO> atesDicB10=atestiguamientoDictamenDAO
+        			.validaAtesDictamenByPatronDictamen(rutas.get(i).getCveIdPatronDictamen(), AtestiguamientoEnum.B10.getIdAtestiguamiento());
+        			
+        			if(atesDicB10.size()==0){
+        				atestiguamientoDictamenTO.setIdAtestiguamiento(AtestiguamientoEnum.B10.getIdAtestiguamiento());
+            			
+            			atestiguamientoDictamenDAO.insertaAtestiguamientoDictamen(atestiguamientoDictamenTO);
+        			}
+        			
         			
         			
         		}
         		
-        		System.out.println("AtestiguamientoID"+atestiguamiento.getIdAtestiguamiento());
-        		
+        		        		
         		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
         		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
     			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
