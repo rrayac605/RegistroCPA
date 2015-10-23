@@ -6,11 +6,11 @@ public class RutaTO {
 	String anioFiscal;
 	String rfcContador;
 	String rfcPatron;
-	int cveIdPatronDictamen;
-	int cveIdAseveracion;
-	int idBitacora;
+	Long cveIdPatronDictamen;
+	Long cveIdAseveracion;
+	Long idBitacora;
 	String desAseveracion;
-	
+	Long idAseveracionPadre;
 	public String getRuta() {
 		return ruta;
 	}
@@ -35,22 +35,22 @@ public class RutaTO {
 	public void setRfcPatron(String rfcPatron) {
 		this.rfcPatron = rfcPatron;
 	}
-	public int getCveIdPatronDictamen() {
+	public Long getCveIdPatronDictamen() {
 		return cveIdPatronDictamen;
 	}
-	public void setCveIdPatronDictamen(int cveIdPatronDictamen) {
+	public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
 		this.cveIdPatronDictamen = cveIdPatronDictamen;
 	}
-	public int getCveIdAseveracion() {
+	public Long getCveIdAseveracion() {
 		return cveIdAseveracion;
 	}
-	public void setCveIdAseveracion(int cveIdAseveracion) {
+	public void setCveIdAseveracion(Long cveIdAseveracion) {
 		this.cveIdAseveracion = cveIdAseveracion;
 	}
-	public int getIdBitacora() {
+	public Long getIdBitacora() {
 		return idBitacora;
 	}
-	public void setIdBitacora(int idBitacora) {
+	public void setIdBitacora(Long idBitacora) {
 		this.idBitacora = idBitacora;
 	}
 	public String getDesAseveracion() {
@@ -59,8 +59,12 @@ public class RutaTO {
 	public void setDesAseveracion(String desAseveracion) {
 		this.desAseveracion = desAseveracion;
 	}
-
+	public Long getIdAseveracionPadre() {
+		return idAseveracionPadre;
+	}
+	public void setIdAseveracionPadre(Long idAseveracionPadre) {
+		this.idAseveracionPadre = idAseveracionPadre;
+	}
 	
 	
-
 }

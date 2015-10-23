@@ -21,13 +21,13 @@ public interface RutasDAO {
 	 * 
 	 * @param idBitacora
 	 */
-	public void borrarBitacora(int idBitacora);
+	public void borrarBitacora(Long idBitacora);
 	
 	/**
 	 * 
 	 * @param idBitacora
 	 */
-	public void borrarTablaAseveracion(int idPatronDictamen,int idAseveracion);
+	public void borrarTablaAseveracion(Long idPatronDictamen,Long idAseveracion);
 	
 	/**
 	 * 
@@ -35,6 +35,6 @@ public interface RutasDAO {
 	 * @param idPatronDictamen
 	 * @param idAseveracion
 	 */
-	public void actualizaStatus(int status,int idPatronDictamen,int idAseveracion);
+	public void actualizaStatus(int status,Long idPatronDictamen,Long idAseveracion);
 
 }
