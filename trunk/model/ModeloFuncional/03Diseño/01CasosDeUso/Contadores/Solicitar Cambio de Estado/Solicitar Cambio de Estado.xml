@@ -10,7 +10,7 @@
 		<UML:Model name="EA Model" xmi.id="MX_EAID_463F644D_EC57_49f6_A584_B2F24B7A879C">
 			<UML:Namespace.ownedElement>
 				<UML:Class name="EARootClass" xmi.id="EAID_11111111_5487_4080_A7F4_41526CB0AA00" isRoot="true" isLeaf="false" isAbstract="false"/>
-				<UML:Package name="Solicitar Baja Voluntaria" xmi.id="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
+				<UML:Package name="Solicitar Baja" xmi.id="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C" isRoot="false" isLeaf="false" isAbstract="false" visibility="public">
 					<UML:ModelElement.taggedValue>
 						<UML:TaggedValue tag="parent" value="EAPK_F4C0AB05_B32C_4f0d_AFE8_79ECDE853E11"/>
 						<UML:TaggedValue tag="created" value="2015-10-21 12:03:24"/>
@@ -47,10 +47,10 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 15:53:44"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-23 16:00:44"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-23 16:31:34"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Solicitar Cambio de Estado"/>
+								<UML:TaggedValue tag="package_name" value="Solicitar Baja"/>
 								<UML:TaggedValue tag="phase" value="1.0"/>
 								<UML:TaggedValue tag="author" value="bhernandezj"/>
 								<UML:TaggedValue tag="complexity" value="1"/>
@@ -59,7 +59,7 @@
 								<UML:TaggedValue tag="ea_localid" value="13610"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FDBFB343-3893-4bda-A796-531DDBC0DF76}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={671A2F36-4FE3-46b3-963B-9AA6257D4ACB}$SUP;$ENDXREF;$XREFPROP=$XID={BBE7B4F3-29F4-494a-9B3B-BC28F52B4F2C}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={DE872577-FBF1-43cd-93AD-E2C59A6EC029}$SUP;$ENDXREF;$XREFPROP=$XID={C029459E-0287-43dc-A5F0-4C47C3229855}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={E20D83EE-F8E2-413d-BC94-C6CBB88350F0}$SUP;$ENDXREF;$XREFPROP=$XID={D58C052A-FF7D-4eeb-BDB4-C90BA2855E9D}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={0495C340-C8A3-47ed-A621-442F87E8F593}$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FDBFB343-3893-4bda-A796-531DDBC0DF76}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={671A2F36-4FE3-46b3-963B-9AA6257D4ACB}$SUP;$ENDXREF;$XREFPROP=$XID={BBE7B4F3-29F4-494a-9B3B-BC28F52B4F2C}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={DE872577-FBF1-43cd-93AD-E2C59A6EC029}$SUP;$ENDXREF;$XREFPROP=$XID={C029459E-0287-43dc-A5F0-4C47C3229855}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={E20D83EE-F8E2-413d-BC94-C6CBB88350F0}$SUP;$ENDXREF;$XREFPROP=$XID={D58C052A-FF7D-4eeb-BDB4-C90BA2855E9D}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={0495C340-C8A3-47ed-A621-442F87E8F593}$SUP;$ENDXREF;$XREFPROP=$XID={00C45A12-E2F2-4314-A37C-527EC14D3210}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={F02302E3-6D03-4245-849D-AF7F9E7DB863}$SUP;$ENDXREF;$XREFPROP=$XID={FB6971C5-ED35-40f0-841D-251FF7595BC0}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={F96D794C-CF1D-4889-B35C-C281BCBFFC22}$SUP;$ENDXREF;$XREFPROP=$XID={704B88EE-2D11-47c3-8F20-1965F8030F01}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={D987692F-D58D-4c0e-B92C-86A6FA03047B}$SUP;$ENDXREF;$XREFPROP=$XID={242CAC71-146A-473f-9B62-F6FF1589547F}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={1211E1A4-5908-412f-A8B5-825325C9DC4A}$CLT;$SUP={7A2FDC5E-B776-486a-AC5D-607648C00686}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
 								<UML:Constraint name="Estatus del CPA">
@@ -368,7 +368,7 @@
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="ea_localid" value="14685"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja Voluntaria"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-A040 Habilitar campo observaciones baja"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A040 Habilitar campo observaciones baja y registro IMSS"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
 								<UML:TaggedValue tag="ea_sourceID" value="13610"/>
@@ -401,26 +401,27 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="bhernandezj"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 15:39:58"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-23 16:01:26"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-23 16:31:56"/>
 				<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="1208"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=803;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=91F528E2;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=86343D44;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=321;Top=341;Right=481;Bottom=374;" subject="EAID_F96D794C_CF1D_4889_B35C_C281BCBFFC22" seqno="1" style="DUID=0D859602;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=317;Top=450;Right=477;Bottom=483;" subject="EAID_87654B7F_1DA0_4f67_AA51_B9CF294496D1" seqno="2" style="DUID=05DD10FA;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=316;Top=273;Right=476;Bottom=306;" subject="EAID_3967B9A6_5867_4e24_B6B3_56457A22F826" seqno="3" style="DUID=4A8BD5AD;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=317;Top=215;Right=477;Bottom=248;" subject="EAID_FDD17DE1_9FD7_4e63_9DA2_44D5131F8DB1" seqno="4" style="DUID=1851D3B1;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=317;Top=157;Right=477;Bottom=190;" subject="EAID_9DE60D6E_33BF_4b02_B92E_B932CF7A4590" seqno="5" style="DUID=58FEB30E;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=315;Top=391;Right=475;Bottom=424;" subject="EAID_DE9251A5_E7CE_471c_ABBB_0C8B52FA8613" seqno="6" style="DUID=ED77F7DF;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=324;Top=46;Right=484;Bottom=79;" subject="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" seqno="7" style="DUID=581E1181;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=319;Top=103;Right=479;Bottom=136;" subject="EAID_2E3F424F_7927_4c15_8E9E_C50A49CD6EE5" seqno="8" style="DUID=FB0CA0A8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=125;Top=196;Right=230;Bottom=266;" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" seqno="9" style="DUID=5700629D;"/>
-				<UML:DiagramElement geometry="Left=22;Top=186;Right=67;Bottom=276;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="10" style="DUID=9F850B58;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=316;Top=506;Right=476;Bottom=539;" subject="EAID_F02302E3_6D03_4245_849D_AF7F9E7DB863" seqno="1" style="DUID=E5865BBB;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=324;Top=320;Right=484;Bottom=379;" subject="EAID_F96D794C_CF1D_4889_B35C_C281BCBFFC22" seqno="2" style="DUID=0D859602;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=317;Top=450;Right=477;Bottom=483;" subject="EAID_87654B7F_1DA0_4f67_AA51_B9CF294496D1" seqno="3" style="DUID=05DD10FA;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=316;Top=273;Right=476;Bottom=306;" subject="EAID_3967B9A6_5867_4e24_B6B3_56457A22F826" seqno="4" style="DUID=4A8BD5AD;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=317;Top=215;Right=477;Bottom=248;" subject="EAID_FDD17DE1_9FD7_4e63_9DA2_44D5131F8DB1" seqno="5" style="DUID=1851D3B1;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=317;Top=157;Right=477;Bottom=190;" subject="EAID_9DE60D6E_33BF_4b02_B92E_B932CF7A4590" seqno="6" style="DUID=58FEB30E;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=321;Top=397;Right=481;Bottom=430;" subject="EAID_DE9251A5_E7CE_471c_ABBB_0C8B52FA8613" seqno="7" style="DUID=ED77F7DF;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=324;Top=46;Right=484;Bottom=79;" subject="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" seqno="8" style="DUID=581E1181;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=319;Top=103;Right=479;Bottom=136;" subject="EAID_2E3F424F_7927_4c15_8E9E_C50A49CD6EE5" seqno="9" style="DUID=FB0CA0A8;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=125;Top=196;Right=230;Bottom=266;" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" seqno="10" style="DUID=5700629D;"/>
+				<UML:DiagramElement geometry="Left=22;Top=186;Right=67;Bottom=276;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="11" style="DUID=9F850B58;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_4B5C5CA7_02B9_48ae_BBEB_E75994D1DD49" style="Mode=3;EOID=5700629D;SOID=9F850B58;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-47;SY=35;EX=-30;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=212:-103$;" subject="EAID_7D6C5CE2_26A0_4008_AB8E_2BDADC031BBF" style="Mode=3;EOID=FB0CA0A8;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=33;SY=32;EX=-77;EY=16;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=212:-56$;" subject="EAID_93F52FE8_9BEA_4f42_965B_7FA86FC46340" style="Mode=3;EOID=581E1181;SOID=5700629D;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
@@ -545,15 +546,42 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
+			<EAScenario name="FA6  Registro IMSS incorrecto" type="Alternate" weight="7.00" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" xmi.id="EAID_411386AD_617D_4d8f_B83A_E2DAC8D4E440">
+				<EAScenarioContent>
+					<path>
+						<step name="El sistema habilita un campo de captura de acuerdo a RF-A040 Habilitar campo observaciones baja y registro IMSS  RF-C019 Captura de Registro IMSS" guid="{A78BAA73-A4CC-4310-A274-E381E3AFCBE1}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA captura el registro IMSS " guid="{3F2F3467-E6FE-4bc7-9A4D-90CF0104678C}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema debera validar  el registro capturado de acuerdo a  RF-A021. Validar  Registro de contadores públicos autorizados. si el registro IMSS es  valido habilita el botón Siguiente si, el campo capturado es incorrecto muestra el mensaje IdMsg 15 de acuerdo a  RF-C011 Catálogo de mensajes Contadores" guid="{B3E37739-D96D-44cc-BDE6-4BD8531A5CFB}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Aceptar Solicitudes" guid="{E20D83EE-F8E2-413d-BC94-C6CBB88350F0}"/>
+							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+							<item oldname="RF-A026. Validar solicitud de Baja" guid="{2E3F424F-7927-4c15-8E9E-C50A49CD6EE5}"/>
+							<item oldname="RF-A029 Mostrar información Baja" guid="{3967B9A6-5867-4e24-B6B3-56457A22F826}"/>
+							<item oldname="RF-A046 Validar si cuenta con Registro IMSS" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A041 Validar campo Motivo de Baja" guid="{87654B7F-1DA0-4f67-AA51-B9CF294496D1}"/>
+							<item oldname="RF-A040 Habilitar campo observaciones baja y registro IMSS" guid="{F96D794C-CF1D-4889-B35C-C281BCBFFC22}"/>
+							<item oldname="RF-A027 Validar solicitudes para dictaminar " guid="{9DE60D6E-33BF-4b02-B92E-B932CF7A4590}"/>
+							<item oldname="RF-A021. Validar  Registro de contadores públicos autorizados." guid="{D987692F-D58D-4c0e-B92C-86A6FA03047B}"/>
+							<item oldname="RF-A028 Validar dictamenes en proceso" guid="{FDD17DE1-9FD7-4e63-9DA2-44D5131F8DB1}"/>
+							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
+							<item oldname="RF-C019 Captura de Registro IMSS" guid="{F02302E3-6D03-4245-849D-AF7F9E7DB863}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
 			<EAScenario name="Solicitar cambio de estado" type="Basic Path" weight="0.00" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" xmi.id="EAID_3AA9FD5B_6D08_44e3_A3C9_93957F98E147">
 				<EAScenarioContent>
 					<path>
-						<step name="El caso de uso inicia cuando el CPA ingresa a Contadores Publicos y selecciona Baja " guid="{B0CC104C-DA2A-479e-9EB0-03C37CA924B9}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El caso de uso inicia cuando el CPA ingresa a  Contadores Publicos y selecciona Baja RF-C002. Detalle de Pantallas" guid="{B0CC104C-DA2A-479e-9EB0-03C37CA924B9}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema valida el registro IMSS del CPA  de acuerdo a  RF-A046 Validar si cuenta con Registro IMSS y deberá mostrar en una pantalla emergente  los siguientes datos del CPA: * Apellido Paterno * Apellido Materno * Nombre (S) * CURP * Registro IMSS y mostrar  el mensaje IdMsg 8 de acuerdo a RF-C011 Catálogo de mensajes Contadores; si el CPA  no cuenta con Registro IMSS continua en  FA1 No cuenta con registro IMSS  " guid="{11021940-9833-449f-A8BA-5EA8680441C4}" level="2" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="2a" guid="{7658ED08-7BF5-401d-AA7C-E53D624827DE}" join="{BA31DDA1-7FEB-472f-9F56-50A312BBA795}"/>
 						</step>
-						<step name="El CPA selecciona sí al mensaje de confirmación de Registro IMSS" guid="{19E3EE50-ED4E-47cd-8ECC-06761B9D2CEE}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name=" El sistema deberá mostrar el mensaje IdMsg13 de acuerdo a  RF-C011 Catálogo de mensajes Contadores   y realizar validaciones de acuerdo a RF-A026. Validar solicitud de Baja  RF-A027 Validar solicitudes para dictaminar  RF-A028 Validar dictamenes en proceso  si el CPA tiene una solicitud de baja en proceso continúa en flujo alterno FA2 Solicitud de baja en proceso , si el CPA tiene solicitudes para dictaminar continúa en FA3 Solicitudes a dictaminar asignadas si el CPA tiene dictamenes en proceso continua en FA4 Dictamenes en proceso, si todas las validaciones son aprobadas deberá mostrar una ventana con la información de acuerdo a RF-A029 Mostrar información Baja y deberá habilitar el campo de observaciones de acuerdo a RF-A040 Habilitar campo observaciones baja" guid="{9020D42F-9CAE-4588-8BE1-E5B90F47AFEE}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name="El CPA selecciona sí al mensaje de confirmación de Registro IMSS, si el CPA selecciona NO continúa en el FA6  Registro IMSS incorrecto" guid="{19E3EE50-ED4E-47cd-8ECC-06761B9D2CEE}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="3a" guid="{411386AD-617D-4d8f-B83A-E2DAC8D4E440}" join="End"/>
+						</step>
+						<step name=" El sistema deberá mostrar  el mensaje IdMsg13 de acuerdo a  RF-C011 Catálogo de mensajes Contadores   y realizar validaciones de acuerdo a RF-A026. Validar solicitud de Baja  RF-A027 Validar solicitudes para dictaminar  RF-A028 Validar dictamenes en proceso  si el CPA tiene una solicitud de baja en proceso continúa en flujo alterno FA2 Solicitud de baja en proceso , si el CPA tiene solicitudes para dictaminar continúa en FA3 Solicitudes a dictaminar asignadas si el CPA tiene dictamenes en proceso continua en FA4 Dictamenes en proceso, si todas las validaciones son aprobadas deberá mostrar una ventana con la información de acuerdo a RF-A029 Mostrar información Baja y deberá habilitar el campo de observaciones de acuerdo a RF-A040 Habilitar campo observaciones baja y registro IMSS" guid="{9020D42F-9CAE-4588-8BE1-E5B90F47AFEE}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="4a" guid="{9D9CBDC7-E146-40f0-93F4-746D41FDD995}" join="{BA31DDA1-7FEB-472f-9F56-50A312BBA795}"/>
 							<extension level="4b" guid="{D9B7ADFF-5145-42b5-A315-B734894C8F8C}" join="{BA31DDA1-7FEB-472f-9F56-50A312BBA795}"/>
 							<extension level="4c" guid="{64CD5CAF-EC77-49f2-A418-D684CD3D2A9B}" join="{BA31DDA1-7FEB-472f-9F56-50A312BBA795}"/>
@@ -577,10 +605,13 @@
 							<item oldname="RF-A029 Mostrar información Baja" guid="{3967B9A6-5867-4e24-B6B3-56457A22F826}"/>
 							<item oldname="RF-A046 Validar si cuenta con Registro IMSS" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
 							<item oldname="RF-A041 Validar campo Motivo de Baja" guid="{87654B7F-1DA0-4f67-AA51-B9CF294496D1}"/>
-							<item oldname="RF-A040 Habilitar campo observaciones baja" guid="{F96D794C-CF1D-4889-B35C-C281BCBFFC22}"/>
+							<item oldname="RF-A040 Habilitar campo observaciones baja y registro IMSS" guid="{F96D794C-CF1D-4889-B35C-C281BCBFFC22}"/>
 							<item oldname="RF-A027 Validar solicitudes para dictaminar " guid="{9DE60D6E-33BF-4b02-B92E-B932CF7A4590}"/>
+							<item oldname="RF-A021. Validar  Registro de contadores públicos autorizados." guid="{D987692F-D58D-4c0e-B92C-86A6FA03047B}"/>
 							<item oldname="RF-A028 Validar dictamenes en proceso" guid="{FDD17DE1-9FD7-4e63-9DA2-44D5131F8DB1}"/>
 							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
+							<item oldname="RF-C002. Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-C019 Captura de Registro IMSS" guid="{F02302E3-6D03-4245-849D-AF7F9E7DB863}"/>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 						</context>
 					</path>
@@ -606,6 +637,6 @@
 		<EAStub xmi.id="EAID_87654B7F_1DA0_4f67_AA51_B9CF294496D1" name="RF-A041 Validar campo Motivo de Baja" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_FDD17DE1_9FD7_4e63_9DA2_44D5131F8DB1" name="RF-A028 Validar dictamenes en proceso" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" name="RF-A046 Validar si cuenta con Registro IMSS" UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_F96D794C_CF1D_4889_B35C_C281BCBFFC22" name="RF-A040 Habilitar campo observaciones baja" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_F96D794C_CF1D_4889_B35C_C281BCBFFC22" name="RF-A040 Habilitar campo observaciones baja y registro IMSS" UMLType="Requirement"/>
 	</XMI.extensions>
 </XMI>
