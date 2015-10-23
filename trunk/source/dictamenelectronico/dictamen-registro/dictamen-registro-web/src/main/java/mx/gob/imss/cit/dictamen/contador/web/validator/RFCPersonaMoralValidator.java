@@ -10,7 +10,7 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 
-public class RFCPersonalMoralValidator extends BaseValidator implements Validator {
+public class RFCPersonaMoralValidator extends BaseValidator implements Validator {
 
     public static final String PM_RFC_PATTERN =
             "^([A-ZÑ&amp;]{3}\\d{2}(((0[1-9&&[^2]]|1[012])(0[1-9]|[12]\\d|3[01]))|02(0[1-9]|1\\d|2[0-9]))[A-Z[0-9]]{2}[\\dA])?$";
@@ -51,7 +51,7 @@ public class RFCPersonalMoralValidator extends BaseValidator implements Validato
      * @param rfc RFC a validar.
      * */
     private void validarTamanioRFC(String rfc) {
-        if ( rfc.length() != RFCPersonalMoralValidator.TAM_RFC ) {
+        if ( rfc.length() != RFCPersonaMoralValidator.TAM_RFC ) {
             throw new ValidatorException(this.armarMensaje("El RFC debe ser de 12 posiciones", "INFO", FacesMessage.SEVERITY_ERROR));
         }
     }
@@ -61,11 +61,11 @@ public class RFCPersonalMoralValidator extends BaseValidator implements Validato
      * @param sRFC RFC a validar
      * */
     private void validarBloque1(String sRFC) {
-        pattern = Pattern.compile(RFCPersonalMoralValidator.PM_RFC_PATTERN_1BLOQUE);
+        pattern = Pattern.compile(RFCPersonaMoralValidator.PM_RFC_PATTERN_1BLOQUE);
         matcher = pattern.matcher(sRFC);
         
         if ( !matcher.matches() ) {
-            throw new ValidatorException(this.armarMensaje("Las primeras 3 posiciones deben ser letras o el carácter &", RFCPersonalMoralValidator.INFO, FacesMessage.SEVERITY_ERROR));
+            throw new ValidatorException(this.armarMensaje("Las primeras 3 posiciones deben ser letras o el carácter &", RFCPersonaMoralValidator.INFO, FacesMessage.SEVERITY_ERROR));
         } 
     }
     
@@ -74,11 +74,11 @@ public class RFCPersonalMoralValidator extends BaseValidator implements Validato
      * @param sRFC RFC a validar
      * */
     private void validarBloque2(String sRFC) {
-        pattern = Pattern.compile(RFCPersonalMoralValidator.PM_RFC_PATTERN_2BLOQUE);
+        pattern = Pattern.compile(RFCPersonaMoralValidator.PM_RFC_PATTERN_2BLOQUE);
         matcher = pattern.matcher(sRFC);
             
         if ( !matcher.matches() ) {
-            throw new ValidatorException(this.armarMensaje("Año-Mes-Dia deben ser válidos y numéricos", RFCPersonalMoralValidator.INFO, FacesMessage.SEVERITY_ERROR));
+            throw new ValidatorException(this.armarMensaje("Año-Mes-Dia deben ser válidos y numéricos", RFCPersonaMoralValidator.INFO, FacesMessage.SEVERITY_ERROR));
         }
     }
     
@@ -87,11 +87,11 @@ public class RFCPersonalMoralValidator extends BaseValidator implements Validato
      * @param sRFC RFC a validar
      * */
     private void validarBloque3(String sRFC) {
-        pattern = Pattern.compile(RFCPersonalMoralValidator.PM_RFC_PATTERN_3BLOQUE);
+        pattern = Pattern.compile(RFCPersonaMoralValidator.PM_RFC_PATTERN_3BLOQUE);
         matcher = pattern.matcher(sRFC);
         
         if ( !matcher.matches() ) {
-            throw new ValidatorException(this.armarMensaje("El RFC no debe contener caracteres especiales excepto el &", RFCPersonalMoralValidator.INFO, FacesMessage.SEVERITY_ERROR));
+            throw new ValidatorException(this.armarMensaje("El RFC no debe contener caracteres especiales excepto el &", RFCPersonaMoralValidator.INFO, FacesMessage.SEVERITY_ERROR));
         } 
     }
     
@@ -100,11 +100,11 @@ public class RFCPersonalMoralValidator extends BaseValidator implements Validato
      * @param sRFC RFC a validar
      * */
     private void validarBloque4(String sRFC) {
-        pattern = Pattern.compile(RFCPersonalMoralValidator.PM_RFC_PATTERN_4BLOQUE);
+        pattern = Pattern.compile(RFCPersonaMoralValidator.PM_RFC_PATTERN_4BLOQUE);
         matcher = pattern.matcher(sRFC);
                     
         if ( !matcher.matches() ) {
-            throw new ValidatorException(this.armarMensaje("El último dígito debe ser numérico o la letra A.", RFCPersonalMoralValidator.INFO, FacesMessage.SEVERITY_ERROR));
+            throw new ValidatorException(this.armarMensaje("El último dígito debe ser numérico o la letra A.", RFCPersonaMoralValidator.INFO, FacesMessage.SEVERITY_ERROR));
         }
     }
 
