@@ -5,6 +5,13 @@ import java.io.Serializable;
 public class PersonaMoralDTO implements Serializable {
 
 	private static final long serialVersionUID = 3213395911637001655L;
+	
+	private String rfc;
+    private String razonSocial;
+    private String telefono;
+	private DomicilioFiscalDTO domicilioFiscalDTO;
+
+	
 	public String getRfc() {
 		return rfc;
 	}
@@ -29,10 +36,7 @@ public class PersonaMoralDTO implements Serializable {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	private String rfc;
-    private String razonSocial;
-    private String telefono;
 
-	private DomicilioFiscalDTO domicilioFiscalDTO;
+
 
 }
