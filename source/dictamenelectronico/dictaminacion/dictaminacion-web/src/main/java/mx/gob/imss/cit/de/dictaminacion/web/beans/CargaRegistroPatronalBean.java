@@ -69,13 +69,8 @@ public class CargaRegistroPatronalBean extends BaseBean {
 				lista=new ArrayList<PatronAsociadoDTO>();
 			}
 			
-			for (PatronAsociadoDTO patronAsociadoDTO : lista) {
-				if(DictamenWebConstants.ESTADO_RP_CORRECTO.equals(patronAsociadoDTO.getEstadoValidacion())){
-					totalExitosos++;
-				}
-			}
-			
-			
+			totalExitosos = contarCorrectos(lista);
+	
 			cargaRegistroPatronalPage.setListaRegistrosPatronales(lista);
 			cargaRegistroPatronalPage.setMensajeRegistroPatronal(calcularMensaje(datosPatronalesPage.getDatosPatron().getNumRegistroPatronales(),totalExitosos));
 		} catch( Exception e) {
@@ -86,6 +81,17 @@ public class CargaRegistroPatronalBean extends BaseBean {
 		
 		return "";
 		
+	}
+
+
+	private int contarCorrectos(List<PatronAsociadoDTO> lista) {
+		int totalExitosos=0;
+		for (PatronAsociadoDTO patronAsociadoDTO : lista) {
+			if(DictamenWebConstants.ESTADO_RP_CORRECTO.equals(patronAsociadoDTO.getEstadoValidacion())){
+				totalExitosos++;
+			}
+		}
+		return totalExitosos;
 	}
 	
 	 public void cargarRegistrosPatronales() {
@@ -113,11 +119,7 @@ public class CargaRegistroPatronalBean extends BaseBean {
 
 			 lista= patronDictamenIntegrator.savePatronesAsociados(lista);	
 			 if(lista!=null){
-				 for (PatronAsociadoDTO patronAsociadoDTO : lista) {
-					if(DictamenWebConstants.ESTADO_RP_CORRECTO.equals(patronAsociadoDTO.getEstadoValidacion())){
-						totalExitosos++;
-					}
-				}
+				 totalExitosos = contarCorrectos(lista);
 			 }
 		
 	 
