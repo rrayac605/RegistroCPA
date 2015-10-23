@@ -3,6 +3,8 @@
  */
 package mx.gob.imss.cit.de.dictaminacion.batch.validation.impl;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.apache.log4j.Logger;
@@ -34,29 +36,44 @@ public class AtestiguamientoDictamenDAOImpl implements
 	   * 
 	   */
 	@Override
-	public AtestiguamientoDictamenTO validaAtesDictamenByPatronDictamen(Long idPatronDictamen, Long idAtestiguamiento) {
+	public List<AtestiguamientoDictamenTO> validaAtesDictamenByPatronDictamen(Long idPatronDictamen, Long idAtestiguamiento) {
 		LOG.info("obtienendo Atestiguamientos.....");
 		String SQL = "selct * from NDT_ATESTIGUAMIENTO_DICTAMEN " +
 				"where CVE_ID_PATRON_DICTAMEN =? and CVE_ID_ATESTIGUAMIENTO =?";
 		
-		AtestiguamientoDictamenTO atestiguamientoDictamenTO = jdbcTemplateObject.queryForObject(SQL, 
+		List<AtestiguamientoDictamenTO> atestiguamientoDictamenTO = (List<AtestiguamientoDictamenTO>) jdbcTemplateObject.queryForObject(SQL, 
                    new Object[]{idPatronDictamen,idAtestiguamiento}, new AtestiguamientoDictamenMapper());
 	      
 	       LOG.info("AtestiguamientoDictamen econtrado: "+atestiguamientoDictamenTO);
 		return atestiguamientoDictamenTO;
 	}
-
+	
+	/**
+	 * Actualiza estatus
+	 */
 	@Override
-	public void actualizaEstatus(Long idEstatus) {
-		// TODO Auto-generated method stub
+	public void actualizaEstatus(Long idEstatus,Long idPatronDictamen,Long idAtestiguamiento) {
+		String SQL = "update NDT_ATESTIGUAMIENTO_DICTAMEN set cve_id_estado_atestiguamiento = ? where CVE_ID_PATRON_DICTAMEN = ? and CVE_ID_ATESTIGUAMIENTO = ?";
+	       jdbcTemplateObject.update(SQL,idEstatus, idPatronDictamen,idAtestiguamiento);
+	       LOG.info("Status actualiza a = " + idEstatus +" de idPatronDictamen: "+idPatronDictamen+" y CVE_ID_ATESTIGUAMIENTO: "+idAtestiguamiento);
 		
 	}
-
+	
+	/**
+	 * Inserta atestiguamiento
+	 */
 	@Override
 	public void insertaAtestiguamientoDictamen(
-			AtestiguamientoDictamenTO atestiguamientoDictamenTO) {
-		// TODO Auto-generated method stub
+			AtestiguamientoDictamenTO atsDictamen) {
+		String SQL = "insert into NDT_ATESTIGUAMIENTO_DICTAMEN(cve_id_atestig_dictamen,cve_id_patron_dictamen,cve_id_atestiguamiento,fec_registro_alta," +
+				"cve_id_usuario,cve_id_estado_atestiguamiento)  " +
+				"values(SEQ_NDTATESTIGUAMIENTODICTAMEN.nextVal,?,?,?,?,?,)";
+	       jdbcTemplateObject.update(SQL,atsDictamen.getIdPatronDictamen(), atsDictamen.getIdAtestiguamiento(),atsDictamen.getRegistroAlta(),atsDictamen.getRegistroBaja(),
+	    		   atsDictamen.getRegistroActualizado(),atsDictamen.getIdUsuario(),atsDictamen.getIdEstadoAtestiguamiento());
+	       
+	       LOG.info("Inseratndo Registro = " );
 		
 	}
+
 
 }

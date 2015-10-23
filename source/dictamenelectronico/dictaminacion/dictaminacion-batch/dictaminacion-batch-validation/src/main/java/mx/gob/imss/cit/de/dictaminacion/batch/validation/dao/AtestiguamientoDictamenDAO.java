@@ -3,6 +3,8 @@
  */
 package mx.gob.imss.cit.de.dictaminacion.batch.validation.dao;
 
+import java.util.List;
+
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoDictamenTO;
 
 /**
@@ -17,17 +19,20 @@ public interface AtestiguamientoDictamenDAO {
 	 * @param idAtestiguamiento
 	 * @return
 	 */
-	public AtestiguamientoDictamenTO validaAtesDictamenByPatronDictamen(Long idPatronDictamen,Long idAtestiguamiento); 
-	
-	/**
-	 * 
-	 * @param idEstatus
-	 */
-	public void actualizaEstatus(Long idEstatus);
+	public List<AtestiguamientoDictamenTO> validaAtesDictamenByPatronDictamen(Long idPatronDictamen,Long idAtestiguamiento); 
 	
 	/**
 	 * 
 	 * @param atestiguamientoDictamenTO
 	 */
 	public void insertaAtestiguamientoDictamen(AtestiguamientoDictamenTO atestiguamientoDictamenTO);
+
+	/**
+	 * 
+	 * @param idEstatus
+	 * @param idPatronDictamen
+	 * @param idAtestiguamiento
+	 */
+	void actualizaEstatus(Long idEstatus, Long idPatronDictamen,
+			Long idAtestiguamiento);
 }
