@@ -49,7 +49,7 @@
     
 		
 			
-				<p:panelGrid id="tableDatosPersonales"
+		   <p:panelGrid id="tableDatosPersonales"
 				style="width:650px;">
 				<p:row>
 					<p:column>
@@ -76,6 +76,7 @@
 <p:inputText id="txtCURP" size="30"  value="#{activacionContadorBean.activacionContadorPage.personaDTO.curp}" readonly="true" disabled="true" />
 					</p:column>
 				</p:row>
+				
 			</p:panelGrid>
 			
 				<br />
@@ -278,19 +279,31 @@
 
 						<p:row>
 							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 2</p:column>
-							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 3</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">Confirmar Correo Electronico 2</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtCorreoElectronico1" size="35"
-										required="false" />
+									<p:inputText 
+									    id="txtCorreoElectronico1" 
+									    size="35"
+										required="true"
+										maxlength="30"
+										requiredMessage="Correo Electronico 2 es requerido." 
+										value="#{activacionContadorBean.activacionContadorPage.contactoDTO.correoElectronico2}"
+									
+										validator="correoElectronicoValidator"/>
 									<p:message for="txtCorreoElectronico1" />
 									<p:tooltip for="txtCorreoElectronico1" value="Calle"
 										showEffect="fade" hideEffect="fade" />
 							</p:column>
 							<p:column>
-									<p:inputText id="txtCorreoElectronico2" size="35"
-										required="false" />
+									<p:inputText id="txtCorreoElectronico2" 
+									    size="35"
+										maxlength="30"
+										requiredMessage="Confirmar Correo Electronico 2 es requerido."
+										required="true"
+										value="#{activacionContadorBean.activacionContadorPage.contactoDTO.correoElectronico2Conf}"
+										validator="correoElectronicoValidator" />
 									<p:message for="txtCorreoElectronico2" />
 									<p:tooltip for="txtCorreoElectronico2" value="Calle"
 										showEffect="fade" hideEffect="fade" />
@@ -298,20 +311,26 @@
 						</p:row>
 
    <p:row>
-							<p:column styleClass="ui-widget-header" colspan="1">Confirmar Correo Electronico 2</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 3</p:column>
 							<p:column styleClass="ui-widget-header" colspan="1">Confirmar Correo Electronico 3</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
 									<p:inputText id="txtCorreoElectronico3" size="35"
-										required="false" />
+									    maxlength="30"
+										required="false" 
+										value="#{activacionContadorBean.activacionContadorPage.contactoDTO.correoElectronico3}"
+										validator="correoElectronicoValidator"  />
 									<p:message for="txtCorreoElectronico3" />
 									<p:tooltip for="txtCorreoElectronico3" value="Calle"
 										showEffect="fade" hideEffect="fade" />
 							</p:column>
 							<p:column>
 									<p:inputText id="txtCorreoElectronico4" size="35"
-										required="false" />
+									    maxlength="30"
+										required="false"
+										value="#{activacionContadorBean.activacionContadorPage.contactoDTO.correoElectronico3Conf}"
+										validator="correoElectronicoValidator"  />
 									<p:message for="txtCorreoElectronico4" />
 									<p:tooltip for="txtCorreoElectronico4" value="Calle"
 										showEffect="fade" hideEffect="fade" />
@@ -367,23 +386,24 @@
         </p:panelGrid>
     </p:fieldset>
     
-    <table width="650px" cellpadding="2" border="1">
+    <table width="650px" cellpadding="2" border="0">
 					<tr>
-						<td align="left" colspan="1"></td>
-						<td><p:commandButton value="(1.1) Guardar" ajax="false"
-								process="@this,formServer" update=":tabView:pnServidor"
-								id="btnGuardar" styleClass="ui-priority-primary" /> 
+					
+						<td align="right" colspan="2"><p:commandButton value="(1.1) Guardar" 
+						        ajax="false"
+								process="@this,formActivacionRegistro" update=":formActivacionRegistro"
+								id="btnGuardar" 
+								action="#{activacionContadorBean.accionGuardar}"
+								styleClass="ui-priority-primary" /> 
 						<p:commandButton
 								value="(1.2) Siguiente" 
-								ajax="false" process="@this,formServer"
-								action="#{activacionContadorBean.siguiente}"
-								update=":tabView:pnServidor" id="btnSalir"
+								ajax="false" 
+								process="@this,formActivacionRegistro"
+								action="#{activacionContadorBean.accionSiguiente}"
+								update=":formActivacionRegistro" id="btnSalir"
 								styleClass="ui-priority-primary" /></td>
 					</tr>
-					<tr>
-						<td align="left" colspan="2">
-						</td>
-					</tr>
+			
 
 				</table>
 				

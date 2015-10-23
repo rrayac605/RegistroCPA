@@ -9,9 +9,11 @@
 	</ui:define>
 	<ui:define name="content">
 
-		<p:panel id="pnReactivacionRegistro"
+		<p:panel id="pnReactivacionDespacho"
 			header="#{msg_reactivacion['dictamen.reactivacion.form.panel.header']}"
 			footer="#{msg_reactivacion['dictamen.reactivacion.form.panel.footer']}">
+
+<p:messages id="msgFormActivacionDespacho" autoUpdate="true"  showDetail="true" showSummary="true" />
 
 
 			<h:form id="formReactivacionRegistro">
@@ -22,33 +24,30 @@
 					legend="Datos del Despacho"
 					toggleable="true" toggleSpeed="500">
 					<p:ajax event="toggle"
-						listener="#{activacionRegistroBean.handleToggle}" update="msgs" />
+						listener="#{activacionSolicitudBean.handleToggle}" update="msgs" />
 
 
 
-					<table width="850px" cellpadding="4" border="0">
+					<table width="750px" cellpadding="2" border="0">
 
 <tr>
-							<td align="right"><h:outputText value="¿Formas parte de un despacho o eres profesional independiente?" />
-								<p:graphicImage id="helpdocForDes" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelForDes" for="helpdocForDes" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">
+							<td align="right" width="200px">
+							<h:outputText value="¿Formas parte de un despacho o eres profesional independiente?" />
+						
 						 
-						</p:overlayPanel></td  >
-							<td colspan="3"><h:panelGrid columns="3">
+						    </td  >
+							<td colspan="3">
+							<h:panelGrid columns="3" >
 
-<p:selectOneMenu id="txtForDes" style="width:180px">
-            <f:selectItem itemLabel="Eliga Opción" itemValue="" />
-            <f:selectItem itemLabel="Despacho" itemValue="Despacho" />
-            <f:selectItem itemLabel="Independiente" itemValue="Independiente" />
+        <p:selectOneMenu id="txtForDes" style="width:180px" value="#{activacionDespachoBean.selectedTipoProfesion}">
+                     <f:selectItem itemLabel="Elija Opción" itemValue="0" />  
+            <f:selectItems value="#{activacionDespachoBean.mapTipoProfesion}" />
+             <p:ajax update=":formReactivacionRegistro" listener="#{activacionDespachoBean.selectTipoProfesion()}"/>
+
         </p:selectOneMenu>
-        
-									<p:message for="txtForDes" />
-									<p:tooltip for="txtForDes" value="Nombre" showEffect="fade"
-										hideEffect="fade" />
-								</h:panelGrid></td>
+								
+								</h:panelGrid>
+					</td>
 								
 
 
@@ -56,42 +55,41 @@
 		
 		
 		<tr>
-							<td align="right"><h:outputText value="¿Cuentas con trabajadores a tu cargo?" />
-								<p:graphicImage id="helpdocTraCar" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelTraCar" for="helpdocTraCar" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">
-						 
-						</p:overlayPanel></td  >
-							<td colspan="3"><h:panelGrid columns="3">
+							<td align="right">
+							<h:outputText value="¿Cuentas con trabajadores a tu cargo?"  rendered="#{activacionDespachoBean.activarTieneTrabajador}" />
+					          </td>
+							<td colspan="3">
+				<h:panelGrid columns="3" rendered="#{activacionDespachoBean.activarTieneTrabajador}" >
 
-<p:selectOneMenu id="txtTraCar" style="width:180px">
-            <f:selectItem itemLabel="Eliga Opción" itemValue="" />
-            <f:selectItem itemLabel="Si" itemValue="Despacho" />
-            <f:selectItem itemLabel="No" itemValue="Independiente" />
-        </p:selectOneMenu>
         
-									<p:message for="txtTraCar" />
-									<p:tooltip for="txtTraCar" value="Nombre" showEffect="fade"
-										hideEffect="fade" />
-								</h:panelGrid></td>
+          <p:selectOneMenu id="txtTraCar" style="width:180px" 
+          value="#{activacionDespachoBean.selectedTieneTrabajador}"
+          effect="fade" 
+          process="@this">
+             <f:selectItem itemLabel="Elija Opción" itemValue="0" />  
+          
+            <f:selectItems value="#{activacionDespachoBean.mapTieneTrabajador}" />
+                 <p:ajax update=":formReactivacionRegistro" listener="#{activacionDespachoBean.selectTrabajadorCargo()}"/>
+    
+        </p:selectOneMenu>
 								
-
-
+				</h:panelGrid>
+				</td>
+							
 						</tr>
 						
 								<tr>
-							<td align="right"><h:outputText value="Indica número de trabajadores" />
-								<p:graphicImage id="helpdocNumTra" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelNumTra" for="helpdocNumTra" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">
-						 
-						</p:overlayPanel></td  >
-							<td colspan="3"><h:panelGrid columns="3">
-				<p:inputText id="txtNumTra" size="13" required="true" />
+							<td align="right"><h:outputText  
+							rendered="#{activacionDespachoBean.activarNumTrabajador}" 
+							value="Indica número de trabajadores" />
+								
+							 </td  >
+							<td colspan="3"><h:panelGrid columns="3"  rendered="#{activacionDespachoBean.activarNumTrabajador}">
+				<p:inputText id="txtNumTra" size="20"
+					maxlength="18"  
+									required="true"
+									requiredMessage="Número de Trabajadores es requerido."
+				 />
 
         
 									<p:message for="txtNumTra" />
@@ -104,108 +102,96 @@
 						</tr>
 										
 						<tr>
-								<td align="right" colspan="1"><h:outputText value="RP " />
-								<p:graphicImage id="helpdocRP" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel id="imgPanelRP"
-									for="helpdocRP" showEffect="blind" hideEffect="fade"
-									showEvent="mouseover" hideEvent="mouseout" dismissable="false"
-									showCloseIcon="true">
-					Registro Federal de Contribuyentes del Contador Público
-								</p:overlayPanel></td>
-							<td colspan="3"><h:panelGrid columns="3">
-									<p:inputText id="txtRP" size="13" required="true" />
-									<p:message for="txtRP" />
-									<p:tooltip for="txtRP" value="RFC" showEffect="fade"
-										hideEffect="fade" />
-								</h:panelGrid></td>
+
+
 								
-														<td align="right" colspan="1"><h:outputText value="RFC " />
-								<p:graphicImage id="helpdocRFC" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel id="imgPanelRFC"
-									for="helpdocRFC" showEffect="blind" hideEffect="fade"
-									showEvent="mouseover" hideEvent="mouseout" dismissable="false"
-									showCloseIcon="true">
-					Registro Federal de Contribuyentes del Contador Público
-								</p:overlayPanel></td>
-							<td colspan="3"><h:panelGrid columns="3">
-									<p:inputText id="txtRFC" size="13" required="true" />
+								<td align="right" colspan="1"><h:outputText rendered="#{activacionDespachoBean.activarDatoDespacho}" value="RFC " /></td>
+							    <td colspan="3"><h:panelGrid rendered="#{activacionDespachoBean.activarDatoDespacho}" columns="1">
+									<p:inputText id="txtRFC" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.rfc}" 
+									size="20" 
+								    maxlength="12"
+								    requiredMessage="RFC es requerido"
+									required="true" 
+									readonly="#{activacionDespachoBean.activarContadorValido}"
+									disabled="#{activacionDespachoBean.activarContadorValido}"
+									
+									validator="rfcPersonaMoralValidator"/>
 									<p:message for="txtRFC" />
 									<p:tooltip for="txtRFC" value="RFC" showEffect="fade"
 										hideEffect="fade" />
 								</h:panelGrid></td>
 						</tr>
 						<tr>
-							<td align="right"><h:outputText value="RAZON SOCIAL " />
-								<p:graphicImage id="helpdocNombre" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelNombre" for="helpdocNombre" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">
-						 
-						</p:overlayPanel></td  >
-							<td colspan="3"><h:panelGrid columns="3">
-									<p:inputText id="txtNombre" size="35" required="true" />
-									<p:message for="txtNombre" />
-									<p:tooltip for="txtNombre" value="Nombre" showEffect="fade"
+							<td align="right"><h:outputText value="Razon Social " 
+							rendered="#{activacionDespachoBean.activarContadorValido}" />
+								
+									</td  >
+							<td colspan="3"><h:panelGrid columns="3" 
+							rendered="#{activacionDespachoBean.activarContadorValido}">
+									<p:inputText id="txtRazonSocial" size="35" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.razonSocial}" 
+									readonly="true"
+									disabled="true"
+									required="false" />
+									<p:message for="txtRazonSocial" />
+									<p:tooltip for="txtRazonSocial" value="Nombre" showEffect="fade"
 										hideEffect="fade" />
 								</h:panelGrid></td>
 								
 
 
 						</tr>
+						<tr align="right">
+						<td colspan="6">
+                                <p:commandButton rendered="#{ activacionDespachoBean.activarDatoDespacho }"
+								value="(1.1) Buscar"
+								disabled="#{activacionDespachoBean.activarContadorValido}"
+								ajax="false" process="@this,formReactivacionRegistro"
+								action="#{activacionDespachoBean.accionBuscarCPA()}"
+								update=":formReactivacionRegistro" id="btnBuscarCPA"
+								styleClass="ui-priority-primary" />
+						</td>
+						</tr>
 					</table>
+					
+
 
 					<br />
-					<p:panelGrid style="margin-top:20px">
+
+
+
+				<p:panelGrid style="margin-top:20px" rendered="#{activacionDespachoBean.activarContadorValido}">
 						<p:row>
 							<p:column styleClass="ui-widget-header" colspan="1">
-								<h:outputText value="Calle: " />
-								<p:graphicImage id="helpdocCalle" style="cursor:pointer"
-									value="/images/ayuda.jpg" />
-								<p:overlayPanel id="imgPanelCalle" for="helpdocCalle"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
-
+								<h:outputText value="*Calle: " />
 							</p:column>
 							<p:column styleClass="ui-widget-header" colspan="1">
-								<h:outputText value="Numero Exterior " />
-								<p:graphicImage id="helpdocNumeroExterior"
-									style="cursor:pointer" value="/images/ayuda.jpg" />
-								<p:overlayPanel id="imgPanelNumeroExterior"
-									for="helpdocNumeroExterior" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+								<h:outputText value="*Numero Exterior " />
 							</p:column>
 							<p:column styleClass="ui-widget-header" colspan="1">
-
 								<h:outputText value="Letra Exterior " />
-								<p:graphicImage id="helpdocLetraExterior" style="cursor:pointer"
-									value="/images/ayuda.jpg" />
-								<p:overlayPanel id="imgPanelLetraExterior"
-									for="helpdocLetraExterior" showEffect="blind" hideEffect="fade"
-									showEvent="mouseover" hideEvent="mouseout" dismissable="false"
-									showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
 							</p:column>
 						</p:row>
 						
 						<p:row>
 							<p:column  rowspan="3">
-									<p:inputText id="txtCalle" size="35" required="false" />
+									<p:inputText id="txtCalle" size="35" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
 									<p:message for="txtCalle" />
 									<p:tooltip for="txtCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column>
-									<p:inputText id="txtNumeroExterior" size="25" required="false" />
+									<p:inputText id="txtNumeroExterior" size="25" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroExterior" />
 									<p:tooltip for="txtNumeroExterior" value="Numero Exterior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column>
-									<p:inputText id="txtLetraExterior" size="25" required="false" />
+									<p:inputText id="txtLetraExterior" size="25" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraExterior" />
 									<p:tooltip for="txtLetraExterior" value="Letra Exterior"
 										showEffect="fade" hideEffect="fade" />
@@ -215,34 +201,26 @@
 						</p:row>
 						
 						<p:row>
-							<p:column  styleClass="ui-widget-header" colspan="1"><h:outputText value="Numero Interior " /> <p:graphicImage
-									id="helpdocNumeroInterior" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelNumeroInterior" for="helpdocNumeroInterior"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column  styleClass="ui-widget-header" colspan="1">
+							<h:outputText value="Numero Interior " /> 
 
 							</p:column>
-							<p:column  styleClass="ui-widget-header" colspan="1"><h:outputText value="Letra Interior " /> <p:graphicImage
-									id="helpdocLetraInterior" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelLetraInterior" for="helpdocLetraInterior"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+							<p:column  styleClass="ui-widget-header" colspan="1"><h:outputText value="Letra Interior " /> 
 							</p:column>
 
 						</p:row>
 						
 						<p:row>
 							<p:column>
-									<p:inputText id="txtNumeroInterior" size="25" required="false" />
+									<p:inputText id="txtNumeroInterior" size="25" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroInterior" />
 									<p:tooltip for="txtNumeroInterior" value="Numero Interior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtLetraInterior" size="25" required="false" />
+									<p:inputText id="txtLetraInterior" size="25" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraInterior" />
 									<p:tooltip for="txtLetraInterior" value="Letra Interior"
 										showEffect="fade" hideEffect="fade" />
@@ -253,32 +231,24 @@
 
 
 						<p:row>
-							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="Entre la Calle " /> <p:graphicImage
-									id="helpdocEntreCalle" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelEntreCalle" for="helpdocEntreCalle"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="Entre la Calle " /> 
 
 							</p:column>
-							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="y la Calle " /> <p:graphicImage
-									id="helpdocYCalle" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelYCalle" for="helpdocYCalle" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="y la Calle " /> 
 
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtEntreCalle" size="25" required="false" />
+									<p:inputText id="txtEntreCalle" size="25" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
 									<p:message for="txtEntreCalle" />
 									<p:tooltip for="txtEntreCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtYCalle" size="45" required="false" />
+									<p:inputText id="txtYCalle" size="45" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
 									<p:message for="txtYCalle" />
 									<p:tooltip for="txtYCalle" value="Calle Adyacente"
 										showEffect="fade" hideEffect="fade" />
@@ -288,32 +258,24 @@
 
 
 						<p:row>
-							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="Colonia(Asentamiento) " /> <p:graphicImage
-									id="helpdocColonia" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelColonia" for="helpdocColonia" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="p:rowue">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="*Colonia(Asentamiento) " />
 
 							</p:column>
-							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="Localidad " /> <p:graphicImage
-									id="helpdocLocalidad" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelLocalidad" for="helpdocLocalidad"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="*Localidad " />
 
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtColonia" size="13" required="false" />
+									<p:inputText id="txtColonia" size="25" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
 									<p:message for="txtColonia" />
 									<p:tooltip for="txtColonia" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtLocalidad" size="13" required="false" />
+									<p:inputText id="txtLocalidad" size="25" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
 									<p:message for="txtLocalidad" />
 									<p:tooltip for="txtLocalidad" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -321,34 +283,23 @@
 						</p:row>
 						<p:row>
 							<p:column align="left" styleClass="ui-widget-header" colspan="1"><h:outputText
-									value="Municipio o Delegación " /> <p:graphicImage
-									id="helpdocMunDel" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelMunDel" for="helpdocMunDel" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="p:rowue">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+									value="*Municipio o Delegación " />
 							</p:column>
 							<p:column styleClass="ui-widget-header" colspan="2" align="left"><h:outputText
-									value="Entidad Federativa " /> <p:graphicImage
-									id="helpdocEntidadFederativa" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelEntidadFederativa" for="helpdocEntidadFederativa"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+									value="*Entidad Federativa " /> 
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column align="left">
-									<p:inputText id="txtMunDel" size="35" required="false" />
+									<p:inputText id="txtMunDel" size="35" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
 									<p:message for="txtMunDel" />
 									<p:tooltip for="txtMunDel" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2" align="left">
 									<p:inputText id="txtEntidadFederativa" size="35"
-										required="false" />
+										value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
 									<p:message for="txtEntidadFederativa" />
 									<p:tooltip for="txtEntidadFederativa" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -357,84 +308,78 @@
 						
 					<p:row>
 							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText
-									value="Código Postal " /> <p:graphicImage
-									id="helpdocCodigoPostal" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelCodigoPostal" for="helpdocCodigoPostal"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+									value="*Código Postal " /> 
 							</p:column>
 
 						</p:row>
 						<p:row>
 							<p:column align="left" colspan="3">
-									<p:inputText id="txtCodigoPostal" size="25" required="false" />
+									<p:inputText id="txtCodigoPostal" size="25" 
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.codigoPostal}" 
+									readonly="true" disabled="true" />
 									<p:message for="txtCodigoPostal" />
 									<p:tooltip for="txtCodigoPostal" value="Calle"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 						</p:row>
-						
-						    <p:row>
-						<p:column  styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText
-								value="Puesto que Desempeña CPA " /> <p:graphicImage
-								id="helpdocPuestoCPA" style="cursor:pointer"
-								value="/images/ayuda.jpg" /> <p:overlayPanel
-								id="imgPanelPuestoCPA" for="helpdocPuestoCPA"
-								showEffect="blind" hideEffect="fade" showEvent="mouseover"
-								hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
 
+
+						<p:row>
+						<p:column  styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText
+								value="Puesto que Desempeña CPA " /> 
+								
 						</p:column>
 
 					</p:row>
 					<p:row>
 						<p:column align="left" colspan="3">
 						
-	<p:selectOneListbox id="txtPuestoCPA" required="true">
-            <f:selectItem itemLabel="Director" itemValue="1" />
-            <f:selectItem itemLabel="Socio" itemValue="2" />
-            <f:selectItem itemLabel="Gerente" itemValue="3" />
-            <f:selectItem itemLabel="Auditor" itemValue="3" />
+				
+	<p:selectOneListbox id="txtPuestoCPA"  style="height:400px;width:600px" value="#{activacionDespachoBean.selectedPuestoCPA}">
+
+                 <f:selectItems value="#{activacionDespachoBean.mapPuestoCPA}" />
      
         </p:selectOneListbox>
+
 								
-								<p:message for="txtPuestoCPA" />
-								<p:tooltip for="txtPuestoCPA" value="Calle"
-									showEffect="fade" hideEffect="fade" />
 							</p:column>
 					</p:row>
 					
 						<p:row>
-							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText value="Telefono " />
-								<p:graphicImage id="helpdocTelefono" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelTelefono" for="helpdocTelefono" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="p:rowue">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+							<p:column styleClass="ui-widget-header"  align="left" colspan="3">
+							<h:outputText value="Telefono " />
+							
 							</p:column>
 
 						</p:row>
 						<p:row>
 							<p:column  align="left" colspan="3">
-									<p:inputText id="txtTelefono" size="25" required="false" />
+									<p:inputText id="txtTelefono" 
+									size="25" 
+									
+									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.telefono}" />
 									<p:message for="txtTelefono" />
 									<p:tooltip for="txtTelefono" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 						</p:row>
+					
+						
+					
 					</p:panelGrid>
-					<br/>
-				</p:fieldset>
-				<br />
-
-              <table width="100%"  border="0">
+						<br/>				
+<p:panelGrid>
+						<p:row>
+													<p:column  align="left" colspan="3">
+						
+						 <table width="100%"  border="0">
 					<tr align="right">
-						<td><p:commandButton value="(1.1) Guardar" ajax="false"
+						<td><p:commandButton value="(1.1) Guardar" 
+						disabled="#{activacionDespachoBean.activarProcesar}" ajax="false"
 								process="@this,formServer" update=":tabView:pnServidor"
 								id="btnGuardar" styleClass="ui-priority-primary" /> 
 						<p:commandButton
+						disabled="#{activacionDespachoBean.activarProcesar}"
 								value="(1.2) Siguiente" ajax="false" process="@this,formServer"
 								action="#{activacionDespachoBean.siguiente()}"
 								update=":tabView:pnServidor" id="btnSiguientes"
@@ -443,6 +388,14 @@
 
 
 				</table>
+				</p:column>
+				
+						</p:row>
+					</p:panelGrid>
+
+					<br/>
+				</p:fieldset>
+
 
 			</h:form>
 		</p:panel>

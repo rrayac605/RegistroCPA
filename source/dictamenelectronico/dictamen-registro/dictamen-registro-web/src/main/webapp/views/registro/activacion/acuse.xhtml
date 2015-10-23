@@ -11,7 +11,7 @@
           
    <h:form id="frmDatosContador4">
 			
-       <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="frmDatosContador4"  />
+     <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="frmDatosContador4"  />
           
       <p:messages autoUpdate="true" id="msgs" showDetail="true" showSummary="true" />
             	
@@ -44,79 +44,16 @@
 	 <h:form id="frmDatosContador3">
 			
 		<p:dialog widgetVar="dlgDatosContador" resizable="false" draggable="false" 
-		visible="#{activacionSolicitudBean.activarContadorAutorizado}">
+		visible="true">
 			<p:panel id="pnDatosContador" header="Mensaje del Sistema">		
-					<p:panelGrid id="pngDatosContador">
-						<p:row>
-							<p:column colspan="2" style="text-align: center;">
-								<p:outputLabel>¿El Registro IMSS es correcto?</p:outputLabel>
-							</p:column>
-						</p:row>
-						<p:row>
-							<p:column>
-								<p:outputLabel>Apellido Paterno</p:outputLabel>
-							</p:column>
-							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionContadorPage.personaDTO.apellidoPaterno}</p:outputLabel>
-							</p:column>
-						</p:row>
-						<p:row>
-							<p:column>
-								<p:outputLabel>Apellido Materno</p:outputLabel>
-							</p:column>
-							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionContadorPage.personaDTO.apellidoMaterno}</p:outputLabel>
-							</p:column>
-						</p:row>
-						<p:row>
-							<p:column>
-								<p:outputLabel>Nombre(s)</p:outputLabel>
-							</p:column>
-							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionContadorPage.personaDTO.nombre}</p:outputLabel>
-							</p:column>
-						</p:row>
-						<p:row>
-							<p:column>
-								<p:outputLabel>CURP</p:outputLabel>
-							</p:column>
-							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionContadorPage.personaDTO.curp}</p:outputLabel>
-							</p:column>
-						</p:row>
-						<p:row>
-							<p:column>
-								<p:outputLabel>Registro IMSS</p:outputLabel>
-							</p:column>
-							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.numRegistroCPA}</p:outputLabel>
-							</p:column>
-						</p:row>
-						<p:row>
-				
-							<p:column colspan="2">
-								
-						<p:commandButton id="btnSi" value="Si" ajax="false"
-						action="#{activacionSolicitudBean.aceptacion}" />
-						<p:commandButton id="btnNo" 
-						process="@this,frmDatosContador" 
-						update=":frmDatosContador:pnDatosContador" 
-						value="No" inmediate="true" ajax="false"
-						actionListener="#{activacionSolicitudBean.accionValidarRegistroImss()}" />
-						
-							</p:column>
-						</p:row>
-					</p:panelGrid>
+
+<p:media value="#{activacionAcuseBean.stream}" width="100%" height="400px" player="pdf">
+</p:media>
 
 			</p:panel>
 		</p:dialog>
 		
-		<p:dialog widgetVar="dlgNoReg" id="dlgNoRegistros" visible="false">
-			<p:panelGrid>
-				<p:outputLabel id="msgNoDatos">#{msg['message.actualizacion.no.datos']}</p:outputLabel>
-				<p:button id="btnNoDataAceptar" value="#{msg['message.button.aceptar']}" onclick="dlgNoReg.hide()"/>
-			</p:panelGrid>	
-		</p:dialog>
+
 		
 	</h:form>
 	
