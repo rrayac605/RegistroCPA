@@ -69,13 +69,6 @@ public class NdtContadorPublicoAutTO implements Serializable {
 		this.numeroCedulaProfesional = numeroCedulaProfesional;
 	}
 
-	public String getCadenaOriginal() {
-		return cadenaOriginal;
-	}
-
-	public void setCadenaOriginal(String cadenaOriginal) {
-		this.cadenaOriginal = cadenaOriginal;
-	}
 
 	public String getSelloDigitalIMSS() {
 		return selloDigitalIMSS;
@@ -83,6 +76,14 @@ public class NdtContadorPublicoAutTO implements Serializable {
 
 	public void setSelloDigitalIMSS(String selloDigitalIMSS) {
 		this.selloDigitalIMSS = selloDigitalIMSS;
+	}
+
+	public String getCadenaOriginal() {
+		return cadenaOriginal;
+	}
+
+	public void setCadenaOriginal(String cadenaOriginal) {
+		this.cadenaOriginal = cadenaOriginal;
 	}
 	
 	private String numTramiteNotaria;
@@ -93,6 +94,8 @@ public class NdtContadorPublicoAutTO implements Serializable {
 	private String nombreCompleto;
 	private String numeroCedulaProfesional;
 	private String cadenaOriginal;
+
+
 	private String selloDigitalIMSS;
 	private DomicilioTO domicilioTO;
 }
