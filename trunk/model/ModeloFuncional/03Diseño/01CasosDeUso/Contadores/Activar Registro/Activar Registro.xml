@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-10-21 12:35:07"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\Contadores\Activar Registro\Activar Registro.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-10-21 19:23:15"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-10-22 14:38:21"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-10-21 13:19:38"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -58,25 +58,29 @@
 										<UML:TaggedValue tag="complexity" value="1"/>
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="49213"/>
+										<UML:TaggedValue tag="ea_localid" value="50292"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
 							</UML:Namespace.ownedElement>
-							<UML:Collaboration.interaction/>
+							<UML:Collaboration.interaction>
+								<UML:Interaction>
+									<UML:Interaction.message/>
+								</UML:Interaction>
+							</UML:Collaboration.interaction>
 						</UML:Collaboration>
-						<UML:UseCase name="Generar Folio" xmi.id="EAID_2DA4C805_6DCC_4dc7_A3BE_5F582D33015C" visibility="public" namespace="EAPK_A515772C_6A50_485c_A603_EE3BDDDC68D3" isRoot="false" isLeaf="false" isAbstract="false">
+						<UML:UseCase name="Activar Registro" xmi.id="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903" visibility="public" namespace="EAPK_A515772C_6A50_485c_A603_EE3BDDDC68D3" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="El siguiente caso de uso define la generacion y creacion del numero de folio que se le asignara a una solicitud, por medio del sistema IMSS Digital."/>
+								<UML:TaggedValue tag="documentation" value="El presente caso de uso describe el grupo de funcionalidades requerida a fin de que el contador publico autorizado con un autorizacion vigente active su registro dentro del portal IMSS Digital."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
 								<UML:TaggedValue tag="version" value="1.0"/>
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_A515772C_6A50_485c_A603_EE3BDDDC68D3"/>
-								<UML:TaggedValue tag="date_created" value="2015-10-22 13:03:34"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 13:32:47"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-21 14:29:33"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-22 19:39:15"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Activar Registro"/>
@@ -85,11 +89,183 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="49953"/>
+								<UML:TaggedValue tag="ea_localid" value="50291"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={C73197C9-7214-4bf9-BCA9-721F882B5F7E}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={FBEAA0E4-30C2-4d5a-B210-F34F43008D39}$SUP;$ENDXREF;$XREFPROP=$XID={A6B7551A-F40F-488e-90C4-E949783607AB}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={0FBF102C-EDDC-4c76-8B27-6B893ABA051C}$SUP;$ENDXREF;$XREFPROP=$XID={AA21A7DC-D87A-4474-A0C0-E481707B254D}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={2EFCF1C5-E34C-4821-9EAB-6C825508FA31}$SUP;$ENDXREF;$XREFPROP=$XID={31D58E60-5509-4ce8-9F14-69CA22B95BF3}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={64269386-7D9D-4a4b-8BBF-3B9041710EE3}$SUP;$ENDXREF;$XREFPROP=$XID={5E6F6318-DA1A-4867-B1EB-0AD2C7244E80}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={671A2F36-4FE3-46b3-963B-9AA6257D4ACB}$SUP;$ENDXREF;$XREFPROP=$XID={72FF1375-BD12-440c-9C30-AA64041DFCF8}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={DE872577-FBF1-43cd-93AD-E2C59A6EC029}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
+							<UML:ModelElement.constraint>
+								<UML:Constraint name="El CPA debe contar con FIEL ">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El CPA debe estar registado en el catalogo de contadores publicos autorizados ">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El registro IMSS no debe tener un estatus &quot;CANCELADO&quot;.">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="3.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="el usuario debe estar registrado dentro del portal IMSS y autenticarse en el sistema">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="la firma electronica avanzada se debe almacenar en la notaria electronica del portal IMSS Digital">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="4.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="la firma electronica avanzada se debe almacenar en la notaria electronica del portal IMSS Digital">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Post-condition"/>
+										<UML:TaggedValue tag="weight" value="5.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+							</UML:ModelElement.constraint>
 						</UML:UseCase>
+						<UML:Association xmi.id="EAID_B884D43C_46DA_4003_B8D2_6C446B8DFE66" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="56471"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
+								<UML:TaggedValue tag="ea_targetName" value="Enviar Acuse de Tramite"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="50291"/>
+								<UML:TaggedValue tag="ea_targetID" value="50286"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FF3077EC-36E3-4839-B10A-D4ED205FFB18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={B884D43C-46DA-4003-B8D2-6C446B8DFE66}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Association xmi.id="EAID_E8D44E1D_17F8_44fe_BADD_44841D08B480" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="56470"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
+								<UML:TaggedValue tag="ea_targetName" value="Firmar Electronicamente (Fiel)"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="50291"/>
+								<UML:TaggedValue tag="ea_targetID" value="50284"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={1CA3BACC-22DE-408b-9526-B0590D111435}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={E8D44E1D-17F8-44fe-BADD-44841D08B480}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Association xmi.id="EAID_EC2FD845_636F_4326_A759_20A18F40397B" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="56466"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
+								<UML:TaggedValue tag="ea_targetName" value="Activar Registro"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="50283"/>
+								<UML:TaggedValue tag="ea_targetID" value="50291"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
 						<UML:Association xmi.id="EAID_AFA8931D_C2D3_4f82_834B_76EB029102C6" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.stereotype>
 								<UML:Stereotype name="include"/>
@@ -135,202 +311,6 @@
 								</UML:AssociationEnd>
 							</UML:Association.connection>
 						</UML:Association>
-						<UML:UseCase name="Activar Registro" xmi.id="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903" visibility="public" namespace="EAPK_A515772C_6A50_485c_A603_EE3BDDDC68D3" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="El presente caso de uso describe el grupo de funcionalidades requerida a fin de que el contador publico autorizado con un autorizacion vigente active su registro dentro del portal IMSS Digital."/>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_A515772C_6A50_485c_A603_EE3BDDDC68D3"/>
-								<UML:TaggedValue tag="date_created" value="2015-10-21 14:29:33"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 14:34:57"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Activar Registro"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="vlopezr"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="49212"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={C73197C9-7214-4bf9-BCA9-721F882B5F7E}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={FBEAA0E4-30C2-4d5a-B210-F34F43008D39}$SUP;$ENDXREF;$XREFPROP=$XID={46745CAA-9D3A-40e6-B5AD-D0EE7500938C}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={2DA4C805-6DCC-4dc7-A3BE-5F582D33015C}$SUP;$ENDXREF;$XREFPROP=$XID={A6B7551A-F40F-488e-90C4-E949783607AB}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={0FBF102C-EDDC-4c76-8B27-6B893ABA051C}$SUP;$ENDXREF;$XREFPROP=$XID={AA21A7DC-D87A-4474-A0C0-E481707B254D}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={2EFCF1C5-E34C-4821-9EAB-6C825508FA31}$SUP;$ENDXREF;$XREFPROP=$XID={31D58E60-5509-4ce8-9F14-69CA22B95BF3}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={C1E58AA7-4345-40ca-9D16-EF0DAE6F7903}$CLT;$SUP={64269386-7D9D-4a4b-8BBF-3B9041710EE3}$SUP;$ENDXREF;"/>
-							</UML:ModelElement.taggedValue>
-							<UML:ModelElement.constraint>
-								<UML:Constraint name="El CPA debe contar con FIEL ">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="1.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-								<UML:Constraint name="El CPA debe estar registado en el catalogo de contadores publicos autorizados ">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="2.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-								<UML:Constraint name="El registro IMSS no debe tener un estatus &quot;CANCELADO&quot;.">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="3.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-								<UML:Constraint name="el usuario debe estar registrado dentro del portal IMSS y autenticarse en el sistema">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="0.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-								<UML:Constraint name="la firma electronica avanzada se debe almacenar en la notaria electronica del portal IMSS Digital">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Post-condition"/>
-										<UML:TaggedValue tag="weight" value="5.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-								<UML:Constraint name="la firma electronica avanzada se debe almacenar en la notaria electronica del portal IMSS Digital">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="4.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-							</UML:ModelElement.constraint>
-						</UML:UseCase>
-						<UML:Association xmi.id="EAID_B884D43C_46DA_4003_B8D2_6C446B8DFE66" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="include"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="UseCase"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="subtype" value="Includes"/>
-								<UML:TaggedValue tag="stereotype" value="include"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
-								<UML:TaggedValue tag="ea_localid" value="55263"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
-								<UML:TaggedValue tag="ea_targetName" value="Enviar Acuse de Tramite"/>
-								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="49212"/>
-								<UML:TaggedValue tag="ea_targetID" value="49208"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FF3077EC-36E3-4839-B10A-D4ED205FFB18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={B884D43C-46DA-4003-B8D2-6C446B8DFE66}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
-							</UML:ModelElement.taggedValue>
-							<UML:Association.connection>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="source"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="target"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-							</UML:Association.connection>
-						</UML:Association>
-						<UML:Association xmi.id="EAID_E8D44E1D_17F8_44fe_BADD_44841D08B480" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="include"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="UseCase"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="subtype" value="Includes"/>
-								<UML:TaggedValue tag="stereotype" value="include"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
-								<UML:TaggedValue tag="ea_localid" value="55262"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
-								<UML:TaggedValue tag="ea_targetName" value="Firmar Electronicamente (Fiel)"/>
-								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="49212"/>
-								<UML:TaggedValue tag="ea_targetID" value="49206"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={1CA3BACC-22DE-408b-9526-B0590D111435}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={E8D44E1D-17F8-44fe-BADD-44841D08B480}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
-							</UML:ModelElement.taggedValue>
-							<UML:Association.connection>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="source"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="target"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-							</UML:Association.connection>
-						</UML:Association>
-						<UML:Association xmi.id="EAID_EC2FD845_636F_4326_A759_20A18F40397B" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="UseCase"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="55258"/>
-								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
-								<UML:TaggedValue tag="ea_targetName" value="Activar Registro"/>
-								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
-								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="49205"/>
-								<UML:TaggedValue tag="ea_targetID" value="49212"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-							</UML:ModelElement.taggedValue>
-							<UML:Association.connection>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="source"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="target"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-							</UML:Association.connection>
-						</UML:Association>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
@@ -340,27 +320,27 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="vlopezr"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 13:32:05"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-22 13:36:33"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-22 19:32:40"/>
 				<UML:TaggedValue tag="package" value="EAPK_A515772C_6A50_485c_A603_EE3BDDDC68D3"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="5282"/>
+				<UML:TaggedValue tag="ea_localid" value="5383"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=A668BC72;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=065E1A1C;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=456;Top=383;Right=561;Bottom=453;" subject="EAID_2DA4C805_6DCC_4dc7_A3BE_5F582D33015C" seqno="1" style="DUID=83AC4AAF;"/>
-				<UML:DiagramElement geometry="Left=491;Top=103;Right=596;Bottom=173;" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" seqno="2" style="DUID=99CB8420;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=252;Top=105;Right=357;Bottom=175;" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" seqno="3" style="DUID=48E5048C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=224;Top=76;Right=611;Bottom=473;" subject="EAID_27B660E0_7BB1_47d3_97DE_B4C1A8BE5AA5" seqno="4" style="DUID=1FEF5993;"/>
-				<UML:DiagramElement geometry="Left=241;Top=310;Right=346;Bottom=380;" subject="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903" seqno="5" style="DUID=1B9267D7;"/>
-				<UML:DiagramElement geometry="Left=119;Top=299;Right=164;Bottom=389;" subject="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB" seqno="6" style="DUID=E3B89479;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="SX=-52;SY=-16;EX=-52;EY=-16;EDGE=3;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AFA8931D_C2D3_4f82_834B_76EB029102C6" style="Mode=2;EOID=83AC4AAF;SOID=1B9267D7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="Left=491;Top=103;Right=596;Bottom=173;" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" seqno="1" style="DUID=99CB8420;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=252;Top=105;Right=357;Bottom=175;" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" seqno="2" style="DUID=48E5048C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=224;Top=76;Right=611;Bottom=413;" subject="EAID_27B660E0_7BB1_47d3_97DE_B4C1A8BE5AA5" seqno="3" style="DUID=1FEF5993;"/>
+				<UML:DiagramElement geometry="Left=241;Top=310;Right=346;Bottom=380;" subject="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903" seqno="4" style="DUID=1B9267D7;"/>
+				<UML:DiagramElement geometry="Left=119;Top=299;Right=164;Bottom=389;" subject="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB" seqno="5" style="DUID=E3B89479;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_EC2FD845_636F_4326_A759_20A18F40397B" style="Mode=3;EOID=1B9267D7;SOID=E3B89479;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="EDGE=1;SX=-2;SY=23;EX=-2;EY=23;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B884D43C_46DA_4003_B8D2_6C446B8DFE66" style="Mode=2;EOID=48E5048C;SOID=1B9267D7;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=2;EOID=99CB8420;SOID=48E5048C;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=4;SY=-30;EX=4;EY=-30;EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E8D44E1D_17F8_44fe_BADD_44841D08B480" style="Mode=2;EOID=99CB8420;SOID=1B9267D7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=2;EOID=99CB8420;SOID=48E5048C;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="Left=456;Top=383;Right=561;Bottom=453;" subject="EAID_2DA4C805_6DCC_4dc7_A3BE_5F582D33015C" seqno="1" style="DUID=83AC4AAF;"/>
+				<UML:DiagramElement geometry="SX=-52;SY=-16;EX=-52;EY=-16;EDGE=3;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AFA8931D_C2D3_4f82_834B_76EB029102C6" style="Mode=2;EOID=83AC4AAF;SOID=1B9267D7;Color=-1;LWidth=0;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -371,41 +351,61 @@
 				<EAScenarioContent>
 					<path>
 						<step name="el actor debe entrar a la zona personal y elegir la seccion de tramites digitales" guid="{6EA26706-7EFE-40e7-9432-8C82B2792DF9}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema mostrara en pantalla el actor autenticado, las instrucciones del modulo de contadores publicos y las siguientes opciones: (solicitud de registro, activacion de registro, reactivacion de registro, acreditacion y membresia, modificacion de datos, baja, salir)." guid="{6FE10D4A-F0A0-40cb-BB94-760ABA87A55F}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema mostrara en pantalla el actor autenticado, las instrucciones del modulo de contadores publicos y las siguientes opciones: (solicitud de registro, activacion de registro, reactivacion de registro, acreditacion y membresia, modificacion de datos, baja, salir). " guid="{6FE10D4A-F0A0-40cb-BB94-760ABA87A55F}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="el actor debe seleccionar la opcion de activacion de registro" guid="{44735448-DF8C-490f-8C7F-278B1471D39C}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema mostrara el campo de captura  Registro IMSS de tipo numerico 5 posiciones de tipo entero." guid="{4BBA1C64-4184-447e-B11C-EFA4B97CD0EF}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor debe capturar si registro IMSS" guid="{AC7EE404-2194-4030-A5B4-D8EF9F5CEAD1}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema validara el registro IMSS y el CURP, registrado con el catalogo de contadores publicos autorizados con la finalidad de ver el numero de registro IMSS, y mostrara el boton &quot;siguiente&quot;" guid="{A643C092-EA2A-4cc4-9EC7-FAD80E3C2C66}" level="6" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="6a" guid="{A454449D-7069-4c16-9010-1381016741D6}" join="End"/>
+						<step name="el sistema validara el registro IMSS y el CURP, registrado con el catalogo de contadores publicos autorizados con la finalidad de ver el numero de registro IMSS, y mostrara el boton &quot;siguiente&quot;" guid="{A643C092-EA2A-4cc4-9EC7-FAD80E3C2C66}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="4a" guid="{A454449D-7069-4c16-9010-1381016741D6}" join="End"/>
 						</step>
-						<step name="el actor debe seleccionar el boton &quot;siguiente&quot;" guid="{65BFA1F4-AE4D-4eb9-848C-7A471A1CFABA}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema mostrara pantalla con los siguientes campos: ver anexo RF-C008.CU_Activar_reg_P8  boton &quot;siguiente&quot;" guid="{69D785EF-81E7-4ce3-AF1A-13BF52FFE08C}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor debe seleccionar el boton &quot;siguiente&quot; " guid="{F6F65538-363F-4b79-A9C8-3EB3EB38B4E7}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema agregara un numero de folio a la solicitud " guid="{883C5D4C-BF87-4b9b-BBBD-AF3704AF28B5}" level="10" uses="Generar Folio" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el sistema desplegara los siguientes datos solo de consulta (1.-registro IMSS, 2.-apellido paterno, 3.-apellido materno, 4.-nombre, 5.-delegacion, 6.-subdelegacion), " guid="{3B312450-7160-4635-B0D5-0AF130DA8522}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor puede consultar la informacion que se despliega " guid="{448BEBC8-3275-43e9-83CA-26B3AE70A3FF}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema mostrara mesjae de advertencia &quot;Los datos son correctos&quot; botones SI - NO" guid="{14794663-E91D-4fbe-8F4E-21B9DF7BD932}" level="13" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="13a" guid="{E43BEC64-33E0-47ee-9660-64D5654851CC}" join="End"/>
+						<step name="el actor debe seleccionar el boton &quot;siguiente&quot;" guid="{65BFA1F4-AE4D-4eb9-848C-7A471A1CFABA}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema mostrara pantalla con los siguientes campos: ver anexo RF-C008.CU_Activar_reg_P8  boton &quot;siguiente&quot;" guid="{69D785EF-81E7-4ce3-AF1A-13BF52FFE08C}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar el boton &quot;siguiente&quot; " guid="{F6F65538-363F-4b79-A9C8-3EB3EB38B4E7}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema desplegara los siguientes datos solo de consulta (1.-apellido paterno, 2.-apellido materno, 3.-nombre, 4.-delegacion, 5.-subdelegacion), " guid="{3B312450-7160-4635-B0D5-0AF130DA8522}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor puede consultar la informacion que se despliega " guid="{448BEBC8-3275-43e9-83CA-26B3AE70A3FF}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema mostrara mensaje de advertencia &quot;Los datos son correctos&quot; botones SI - NO" guid="{14794663-E91D-4fbe-8F4E-21B9DF7BD932}" level="10" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="10a" guid="{E43BEC64-33E0-47ee-9660-64D5654851CC}" join="End"/>
 						</step>
-						<step name="El actor debe seleccionar boton SI " guid="{FEA607ED-EEA4-4da6-B257-32AC6BA4D9AA}" level="14" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema cambiara de pantalla mostrando los siguientes campos de captura RF-C009.CU_Activar_Reg_P15 boton &quot;guardar&quot;" guid="{72C25439-4300-4e0d-A61E-387FDC42190E}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El actor debe capturar los datos de RF-C009.CU_Activar_Reg_P15  y seleccionar boton &quot;guardar&quot;" guid="{7CDF9AB0-A4B6-4c5d-8973-4F2B25AD3A12}" level="16" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema validara los campos capturados RF-A007. Validar correo electrónico " guid="{30DD881C-1BFA-4f58-9289-72E32D368DBC}" level="17" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="17a" guid="{BE59A83C-912F-4332-8AA1-6228AAB7D252}" join="End"/>
+						<step name="El actor debe seleccionar boton SI " guid="{FEA607ED-EEA4-4da6-B257-32AC6BA4D9AA}" level="11" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema cambiara de pantalla mostrando los siguientes campos de captura RF-C009.CU_Activar_Reg_P15 boton &quot;guardar&quot;" guid="{72C25439-4300-4e0d-A61E-387FDC42190E}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor debe capturar los datos de RF-C009.CU_Activar_Reg_P15  y seleccionar boton &quot;guardar&quot;" guid="{7CDF9AB0-A4B6-4c5d-8973-4F2B25AD3A12}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema validara los campos capturados RF-A007. Validar correo electrónico " guid="{30DD881C-1BFA-4f58-9289-72E32D368DBC}" level="14" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="14a" guid="{BE59A83C-912F-4332-8AA1-6228AAB7D252}" join="End"/>
 						</step>
-						<step name="el actor debe seleccionar boton &quot;guardar&quot; " guid="{69A33291-301B-4816-988E-6C6FD5D6FC92}" level="18" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema almacenara en la base de datos transaccional unica &quot;BDTU&quot; en la tabla de contadores los datos capturados y mostrara &quot;Datos del Despacho&quot;  RF-C010.CU_Activacion_Reg_P19" guid="{CC47B101-2A93-4276-A365-462793113F4E}" level="19" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor puede seleccionar la lista desplegable forma parte de un despacho o es profesional independiente" guid="{6899D6F3-527F-4e88-BF5F-F4BBCC71E7FE}" level="20" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema desplegara el catalogo con las siguientes opciones (despcho - independiente)" guid="{0147D032-BDA9-4f7e-A00C-1757E3530D67}" level="21" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar boton &quot;guardar&quot; " guid="{69A33291-301B-4816-988E-6C6FD5D6FC92}" level="15" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema almacenara en la base de datos transaccional unica &quot;BDTU&quot; en la tabla de contadores los datos capturados y mostrara &quot;Datos del Despacho&quot;  RF-C010.CU_Activacion_Reg_P19" guid="{CC47B101-2A93-4276-A365-462793113F4E}" level="16" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor puede seleccionar la lista desplegable forma parte de un despacho o es profesional independiente" guid="{6899D6F3-527F-4e88-BF5F-F4BBCC71E7FE}" level="17" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema desplegara el catalogo con las siguientes opciones (despacho - independiente)" guid="{0147D032-BDA9-4f7e-A00C-1757E3530D67}" level="18" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor puede seleccionar la opcion despacho " guid="{17D9EF3A-330B-4a42-A918-C719B92E38D4}" level="19" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema mostrara los siguientes campos de captura, RFC con una longitud de 12 a 13 posiciones." guid="{DAF97E33-D331-4389-80E0-7C1191C479AD}" level="20" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="20a" guid="{18C0C9B5-D4C3-42a6-BBB5-81244C36F40C}" join="End"/>
+						</step>
+						<step name="el actor debe seleccionar la opcion independiente, y seleccionar la lista desplegable &quot;cuenta con trabajadores a su cargo&quot;" guid="{AA5BDDE8-1917-42a4-B15D-D5390974019E}" level="21" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema desplegara catalogo con las siguientes botones  (SI) (NO)" guid="{EE3D19F2-A175-4e41-8122-29DFDECEDBE5}" level="22" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar boton SI" guid="{1042004A-96F5-4889-A416-0DAFB7DAE710}" level="23" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema mostrara el campo de captura  numero de trabajadores (de tipo entero a 4 posiciones) boton &quot;aceptar&quot;" guid="{9FCB5A7D-151A-40ce-94C2-77BCB9BAACDB}" level="24" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe capturar el numero de trabajadores con el que cuentan y seleccionar boton &quot;aceptar&quot;" guid="{29033491-B31F-4f1a-B030-5ADFA8405572}" level="25" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema mostrara campo de captura RFC " guid="{249B0F73-83D3-404c-BFF8-F9B10831A8A5}" level="26" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe capturar su RFC" guid="{FC5DAAF3-A73B-46c2-82B4-5B111B689ED9}" level="27" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema realizara una busqueda por medio del RFC con el web service del SAT, obteniendo, almacenando y mostrando el nombre, razon social, y domicilio fiscal, en la BDTU. " guid="{2A3955F4-5610-427a-943E-642CEC080F24}" level="28" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema mostrara para consulta  los siguientes datos: RFC, Razon social; y habilitara en pantalla la lista desplegable &quot;cargo que desempeña el CPA&quot;: (director, socio, gerente, auditor) telefono fijo a 12 posiciones y el boton &quot;siguiente&quot;. " guid="{8BA32FF6-AA4D-4a64-8597-C5185C68314C}" level="29" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar opcion de lista desplegable, captura el telefono fijo y selecciona el boton &quot;siguiente&quot; " guid="{0984361C-0C4D-4a13-BE4B-ABDA3D60DCAD}" level="30" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema mostrara la seccion de &quot;datos del colegio o asociacion profesional de contadores publicos&quot; y mostrara filtros RFC y Razon Social boton &quot;Buscar&quot;." guid="{648FD4D6-AD34-49e7-8053-0938DAA21F9E}" level="31" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe capturar campo RFC y Razon Social y seleccionar boton &quot;Buscar&quot;" guid="{E74729FF-4146-4d6f-8879-E48F404D5FAF}" level="32" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema reralizara la busqueda por RFC al web service del SAT obteniendo y almacenando en la BDTU los datos del RFC, razon social, y domicilio fiscal." guid="{DAEDF663-8B1D-4d6f-A326-25739DB3244F}" level="33" uses="almacenados domicilio fiscal" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema mostrara los datos para consulta RFC y Razon social habilitara boton &quot;Actcivar Registro IMSS&quot;" guid="{9FD204F6-3A5F-437c-9D82-D75A8099F8F1}" level="34" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el actor debe seleccionar el boton &quot;Activar Registro IMSS&quot;." guid="{D009B863-20BA-4979-9219-E887204DF2D5}" level="35" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema mostrara mensaje de exito &quot;su registro a sido activado&quot; y boton finalizar." guid="{D59F65B5-1F17-4e5d-B00D-EA404DB20DD6}" level="36" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar boton &quot;Finalizar&quot; " guid="{5CD725DB-43E3-4a6c-A252-2C6FFC6629E6}" level="37" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Firmar Electronicamente (Fiel)" guid="{F86CCEEC-FDCD-479f-9C7B-3C77A0C8513E}" level="38" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Enviar Acuse de Tramite" guid="{A7259959-F3AA-45fd-947D-95CA9AB4FB9C}" level="39" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Fin de caso de uso " guid="{D65EE15A-CC11-4491-8BC7-96B7045EEAB4}" level="40" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
 							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
 							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
-							<item oldname="RF-C008.CU_Activar_reg_P8" guid="{FBEAA0E4-30C2-4d5a-B210-F34F43008D39}"/>
 							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
-							<item oldname="Generar Folio" guid="{2DA4C805-6DCC-4dc7-A3BE-5F582D33015C}"/>
 							<item oldname="RF-C009.CU_Activar_Reg_P15" guid="{0FBF102C-EDDC-4c76-8B27-6B893ABA051C}"/>
 							<item oldname="RF-C010.CU_Activacion_Reg_P19" guid="{64269386-7D9D-4a4b-8BBF-3B9041710EE3}"/>
+							<item oldname="RF-C008.CU_Activar_reg_P8" guid="{FBEAA0E4-30C2-4d5a-B210-F34F43008D39}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -450,6 +450,27 @@
 							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
 							<item oldname="Generar Folio" guid="{2DA4C805-6DCC-4dc7-A3BE-5F582D33015C}"/>
 							<item oldname="RF-C009.CU_Activar_Reg_P15" guid="{0FBF102C-EDDC-4c76-8B27-6B893ABA051C}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA4" type="Alternate" weight="4.00" subject="EAID_C1E58AA7_4345_40ca_9D16_EF0DAE6F7903" xmi.id="EAID_18C0C9B5_D4C3_42a6_BBB5_81244C36F40C">
+				<EAScenarioContent>
+					<path>
+						<step name="El sistema mostrara los campos de captura RFC." guid="{9D6F8B8D-169E-4532-BD47-178D84A1D07B}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe capturar su RFC" guid="{535DD4AE-5EB6-4408-9171-AE1BCF9CFD7D}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema realizara una busqueda por medio del RFC con el web service del SAT, obteniendo, almacenando y mostrando el nombre, razon social, y domicilio fiscal, en la BDTU. " guid="{20E88E6D-ACC6-449a-929B-56B07FCE92D3}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el sistema mostrara para consulta  los siguientes datos: RFC, Razon social; y habilitara en pantalla la lista desplegable &quot;cargo que desempeña el CPA&quot;: (director, socio, gerente, auditor) telefono fijo a 12 posiciones y el boton &quot;siguiente&quot;. " guid="{5BCF378A-AA7A-493a-96F6-7E54DEB56DAF}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="el actor debe seleccionar opcion de lista desplegable, captura el telefono fijo y selecciona el boton &quot;siguiente&quot;." guid="{C9272FA0-76AE-4a37-977C-B7880C9C535B}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="el sistema validara los campos de caracter obligatorio y debe seleccionar boton &quot;aceptar&quot; de lo contrario mostrara mensaje &quot;favor de capturar los campos obligatorios&quot;." guid="{0E5C5A3E-CAF3-4a9a-A29A-F546956CE3D2}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
+							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
+							<item oldname="RF-C009.CU_Activar_Reg_P15" guid="{0FBF102C-EDDC-4c76-8B27-6B893ABA051C}"/>
+							<item oldname="RF-C010.CU_Activacion_Reg_P19" guid="{64269386-7D9D-4a4b-8BBF-3B9041710EE3}"/>
+							<item oldname="RF-C008.CU_Activar_reg_P8" guid="{FBEAA0E4-30C2-4d5a-B210-F34F43008D39}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
