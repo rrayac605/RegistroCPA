@@ -163,9 +163,8 @@
 						update=":dictaminacionWizardPanel"/>
 						
 					<p:commandButton value="#{msg['message.button.limpiar']}"
-						actionListener="#{dictamenBean.init}" 
-						ajax="true"
-						update=":formDatosPatronales :formDatosRfc :dictaminacionWizardPanel" />
+						action="#{dictamenBean.init}" 
+						immediate="true"/>
 						
 						<p:commandButton value="Registrar nuevo dictamen"
 						action="#{dictamenBean.init}" 

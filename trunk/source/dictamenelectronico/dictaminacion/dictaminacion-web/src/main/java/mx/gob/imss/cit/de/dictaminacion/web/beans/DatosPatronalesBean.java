@@ -229,6 +229,7 @@ public class DatosPatronalesBean extends BaseBean {
 			}
 			
 			habilitaOpciones();
+			dictamenPage.setIndexWizard(dictamenPage.getIndexUltimoWizard());
 			FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_DATOS_PATRONALES.getCode());
 		} catch (Exception e) {
 			LOG.error(e.getMessage(),e);
