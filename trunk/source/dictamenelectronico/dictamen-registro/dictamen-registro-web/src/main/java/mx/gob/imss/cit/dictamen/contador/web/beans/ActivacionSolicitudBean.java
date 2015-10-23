@@ -6,9 +6,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.component.UIComponent;
-
-import org.apache.log4j.Logger;
+import javax.faces.context.FacesContext;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
@@ -17,12 +15,16 @@ import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
+import org.primefaces.event.ToggleEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @ManagedBean(name = "activacionSolicitudBean")
 @ViewScoped
 public class ActivacionSolicitudBean extends BaseBean {
 
 	private static final long serialVersionUID = -6717550265551435161L;
-	private static final Logger LOGGER = Logger.getLogger(ActivacionSolicitudBean.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionSolicitudBean.class);
 
 	
 	@ManagedProperty(value = "#{activacionContadorPage}")
@@ -31,8 +33,19 @@ public class ActivacionSolicitudBean extends BaseBean {
 	@EJB(mappedName="contadorPublicoIntegrator", name="contadorPublicoIntegrator")
 	private ContadorPublicoIntegrator contadorPublicoIntegrator;
 	
+    private boolean activarContadorAutorizado = false;
+	private boolean activarContadorNoAutorizado = false;
+    private boolean activarValidarRegistroIMSS = false;
+    
+    private String registroIMSS;
+    private boolean activarSiguienteRegIMSS = true;
 
-
+	public void handleToggle(ToggleEvent event) {
+		
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Toggled", "Visibility:" + event.getVisibility());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+	
 	@PostConstruct
     public void init() {
 		LOGGER.info("Cargar datos de sesion");
@@ -45,16 +58,33 @@ public class ActivacionSolicitudBean extends BaseBean {
 	   personaDTO.setCurp("DUSL821218HDFRLC09");
 	   personaDTO.setIdPersona(37472955L);
 	   personaDTO.setNombreCompleto("LUCIO SILVA DURAN");
+	   personaDTO.setFolioSolicitud("123456789123456789123");
+	   
 	   activacionContadorPage.setPersonaDTO(personaDTO);
 	   
 	   Long idPersona = activacionContadorPage.getPersonaDTO().getIdPersona();
        ContadorPublicoDTO contadorPublicoDTO = contadorPublicoIntegrator.consultarContadorPublicAut(idPersona);
         
        if(contadorPublicoDTO!=null){
+    	   
+    	   if(contadorPublicoDTO.getCveIdEstadoCPA() == 14){
+    		   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activacion:","Su Registro IMSS:"+contadorPublicoDTO.getNumRegistroCPA()+" se encuentra Cancelado"));
+    	   }else{
+    		   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Activacion:","Su Registro IMSS:"+contadorPublicoDTO.getNumRegistroCPA()+" valido"));
+    	   }
+    	   
            activacionContadorPage.getPersonaDTO().setContadorPublicoAutDTO(contadorPublicoDTO);
+           this.setActivarContadorNoAutorizado(false);
+           this.setActivarContadorAutorizado(true);
+           
+
+       }else{
+           this.setActivarContadorNoAutorizado(true);
+           this.setActivarContadorAutorizado(false);
+
        }
        
-       FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"X","abcdde"));
+       //FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"X","abcdde"));
 
         
     	
@@ -90,12 +120,44 @@ public class ActivacionSolicitudBean extends BaseBean {
       }*/
       LOGGER.info("FIN INIT ");
 	}
-
-
 	
 	public String aceptacion(){
 	  LOGGER.info("Redirect=activacionContadorAceptacion");
-	  return "activacionContadorAceptacion";
+	  return "activacion_contador";
+	}
+	
+	public void accionValidarRegistroImss(){
+		LOGGER.info("registroimss.accionValidarRegistroImss");
+        this.setActivarValidarRegistroIMSS(true);
+        this.setActivarContadorNoAutorizado(false);
+        this.setActivarContadorAutorizado(false);      
+	
+	}
+	public void accionAtrasRegistroIMSS(){
+        this.setActivarValidarRegistroIMSS(false);
+        this.setActivarContadorNoAutorizado(false);
+        this.setActivarContadorAutorizado(true); 
+	}
+	public void accionBuscarRegistroIMSS(){
+		
+	   LOGGER.info("registroIMSS="+registroIMSS);
+	   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Activación:","No se encontró registro IMSS:"+registroIMSS));
+
+	}
+	
+	
+	public boolean isActivarValidarRegistroIMSS() {
+		return activarValidarRegistroIMSS;
+	}
+
+
+
+	public void setActivarValidarRegistroIMSS(boolean activarValidarRegistroIMSS) {
+		this.activarValidarRegistroIMSS = activarValidarRegistroIMSS;
+	}
+
+	public String actionContadorNoAutorizado(){
+		  return "ventanillaunica";
 	}
 	public ActivacionContadorPage getActivacionContadorPage() {
 		return activacionContadorPage;
@@ -105,7 +167,14 @@ public class ActivacionSolicitudBean extends BaseBean {
 			ActivacionContadorPage activacionContadorPage) {
 		this.activacionContadorPage = activacionContadorPage;
 	}
-	
+
+	public boolean isActivarSiguienteRegIMSS() {
+		return activarSiguienteRegIMSS;
+	}
+
+	public void setActivarSiguienteRegIMSS(boolean activarSiguienteRegIMSS) {
+		this.activarSiguienteRegIMSS = activarSiguienteRegIMSS;
+	}
 	public ContadorPublicoIntegrator getContadorPublicoIntegrator() {
 		return contadorPublicoIntegrator;
 	}
@@ -113,5 +182,35 @@ public class ActivacionSolicitudBean extends BaseBean {
 	public void setContadorPublicoIntegrator(
 			ContadorPublicoIntegrator contadorPublicoIntegrator) {
 		this.contadorPublicoIntegrator = contadorPublicoIntegrator;
+	}
+	
+
+	public boolean isActivarContadorNoAutorizado() {
+		return activarContadorNoAutorizado;
+	}
+
+
+    public boolean isActivarContadorAutorizado() {
+		return activarContadorAutorizado;
+	}
+
+	public void setActivarContadorAutorizado(boolean activarContadorAutorizado) {
+		this.activarContadorAutorizado = activarContadorAutorizado;
+	}
+	
+	public void setActivarContadorNoAutorizado(boolean activarContadorNoAutorizado) {
+		this.activarContadorNoAutorizado = activarContadorNoAutorizado;
+	}
+	
+
+
+
+
+	public String getRegistroIMSS() {
+		return registroIMSS;
+	}
+
+	public void setRegistroIMSS(String registroIMSS) {
+		this.registroIMSS = registroIMSS;
 	}
 }
