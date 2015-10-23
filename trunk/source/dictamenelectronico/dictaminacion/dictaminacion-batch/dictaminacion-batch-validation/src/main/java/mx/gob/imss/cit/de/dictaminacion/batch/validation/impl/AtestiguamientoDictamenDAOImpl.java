@@ -23,7 +23,7 @@ import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoTO;
 public class AtestiguamientoDictamenDAOImpl implements
 		AtestiguamientoDictamenDAO {
 
-	private Logger LOG=Logger.getLogger(RutasDAOImpl.class);
+	private Logger LOG=Logger.getLogger(AtestiguamientoDictamenDAOImpl.class);
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;   
 	  
@@ -69,7 +69,7 @@ public class AtestiguamientoDictamenDAOImpl implements
 		String SQL = "insert into NDT_ATESTIGUAMIENTO_DICTAMEN(cve_id_atestig_dictamen,cve_id_patron_dictamen,cve_id_atestiguamiento,fec_registro_alta," +
 				"cve_id_usuario,cve_id_estado_atestiguamiento)  " +
 				"values(SEQ_NDTATESTIGUAMIENTODICTAMEN.nextVal,?,?,?,?,?)";
-	       jdbcTemplateObject.update(SQL,atsDictamen.getIdPatronDictamen(), atsDictamen.getIdAtestiguamiento(),atsDictamen.getRegistroAlta(),
+	       		jdbcTemplateObject.update(SQL,atsDictamen.getIdPatronDictamen(), atsDictamen.getIdAtestiguamiento(),atsDictamen.getRegistroAlta(),
 	    		  atsDictamen.getIdUsuario(),atsDictamen.getIdEstadoAtestiguamiento());
 	       
 	       LOG.info("Insertando Registro en NDT_ATESTIGUAMIENTO_DICTAMEN con idAtestiguamiento= "+atsDictamen.getIdAtestiguamiento());
