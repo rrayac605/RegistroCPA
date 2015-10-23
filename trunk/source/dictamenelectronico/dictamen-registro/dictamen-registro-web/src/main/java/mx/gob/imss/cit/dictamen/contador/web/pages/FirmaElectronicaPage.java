@@ -32,7 +32,7 @@ public class FirmaElectronicaPage implements Serializable{
 	private FirmaElectronicaDTO firmaElectronicaDTO;
 	
 	@Reset
-	private boolean mostrarDialogFirma;
+	private boolean mostrarDialogFirma =true;
 	
 
 	/**
