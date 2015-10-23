@@ -16,7 +16,17 @@
     	http://www.springframework.org/schema/util/spring-util-2.5.xsd">
     	
     <context:component-scan base-package="mx.gob.imss.cit.de.dictaminacion.batch.validation.scheduler" />
-    
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>spring/batch/properties/configuration.properties</value>
+		</property>
+	</bean>	
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>	
     <bean id="rutasDaoImpl" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.RutasDAOImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
@@ -44,14 +54,7 @@
     <bean id="itemProcessor2" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.processors.TxtFileProcessor2" >
     	<property name="linesTO" ref="linesTO"></property>
     	<property name="rutasDAO" ref="rutasDaoImpl"/>   	
-    </bean>
-                
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${jdbc.driverClassName}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-    </bean>
+    </bean>                
     
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"/>		
@@ -273,13 +276,7 @@
 			<bean
 				class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
 		</property>
-	</bean>	
-	
-  	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location">
-			<value>spring/batch/properties/configuration.properties</value>
-		</property>
-	</bean>	
+	</bean>		
 	
 	<bean id="scanScheduler" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.scanner.ScanBucket" >
 		<property name="rutaOrigen" value="${aws.ruta.origen}"/>
