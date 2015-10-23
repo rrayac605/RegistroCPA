@@ -177,7 +177,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_407B42F1_229F_43ae_8AB5_7C5BFAFF1D33"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-23 15:42:37"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-23 16:58:41"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-23 17:55:03"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Consultar Catálogos"/>
@@ -189,6 +189,7 @@
 								<UML:TaggedValue tag="ea_localid" value="3137"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={EE81D6CA-5567-4851-BD48-4C13FC64B31E}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={DC24398B-EFB5-4b4c-9755-AF950C83E384}$CLT;$SUP={E7ADF8EB-AE44-4824-B1F0-F910EC1CD48B}$SUP;$ENDXREF;$XREFPROP=$XID={FB54EEC8-477D-4374-A7D0-CA4ADCB1D61B}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={DC24398B-EFB5-4b4c-9755-AF950C83E384}$CLT;$SUP={BEDCD3D3-6C19-467f-98CD-EE20DA15E23E}$SUP;$ENDXREF;$XREFPROP=$XID={5069AC6D-2FC0-4c70-8F7D-3A4F33463D49}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={DC24398B-EFB5-4b4c-9755-AF950C83E384}$CLT;$SUP={DA9025C1-B24A-4406-9C96-1B1956817EF1}$SUP;$ENDXREF;$XREFPROP=$XID={6F1B9B31-827A-4fc4-B3B8-BA2871686B6D}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={DC24398B-EFB5-4b4c-9755-AF950C83E384}$CLT;$SUP={0495C340-C8A3-47ed-A621-442F87E8F593}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
 								<UML:Constraint name="Autentificación">
@@ -266,17 +267,21 @@
 					<path>
 						<step name="El usuario Nivel Central debe seleccionar la opción Catlogos D y CA" guid="{45CF8B4D-9A3A-469a-AA78-2B2C64A0820A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema presenta una ventana habilitando el campos Catálogo (Lista desplegable con las opciones Despachos y  Colegio y Asociados), Buscar,  Limpiar, Salir  y presenta los campos inhabilitados de  RFC, Razon Social.  y boton de  exportar a Excel.  " guid="{C9BF4420-0A61-4776-AA6A-C499A68CA0E6}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El usuario Nivel Central elige de la lista desplegable la opción requerida. " guid="{36DECF06-77D7-43e1-8B8B-8EB12126A079}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El usuario Nivel Central elige de la lista desplegable la opción requerida. (Despachos o Colegios y Asociados)" guid="{36DECF06-77D7-43e1-8B8B-8EB12126A079}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema habilita los campos RFC, la lista desplegable de Razón Social y exportar a Excel" guid="{17C80DC0-B1DE-4f8a-9F68-8B614E186B8A}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El usuario Nivel Central captura el RFC ó elige de la lista desplegable del campo Razón Social RN-N  la opción deseada y presiona el botón Buscar RN-N" guid="{7EC97FEE-38AE-4572-9C30-0EC36C191439}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema muestra los datos correspondientes a su elección RN-A" guid="{9EC85C82-6BAC-4ebe-9072-33D48AC02469}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario Nivel Central captura el RFC ó elige de la lista desplegable del campo Razón Social RN-N021 Consulta de la Lista desplegable del campo Razón Social  la opción deseada y presiona el botón Buscar RF-C020 Consulta de Catálogo de Despachos y Colegios y Asociados RF-C011 Catálogo de mensajes Contadores" guid="{7EC97FEE-38AE-4572-9C30-0EC36C191439}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra los datos correspondientes a su elección RN-A RF-A48 Consulta de campos de información de Despachos, Colegios y Asociados " guid="{9EC85C82-6BAC-4ebe-9072-33D48AC02469}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El suario Nivel Central elige la opción exportar a Excel" guid="{826C55A1-32E2-4062-97DF-CEA720E7A67B}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema envía todos los datos del catálogo a formato excel." guid="{C324309F-9B46-4c5a-9FFE-E394C3A4E3BD}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El usuario Nivel Central elige la opción Salir" guid="{CCC27E26-21EC-434b-8A97-87472ECBCA82}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema regresa ala ventanilla IMSS" guid="{EE09CF42-BDB1-4585-9204-42C773C6EB09}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema regresa a la ventanilla IMSS" guid="{EE09CF42-BDB1-4585-9204-42C773C6EB09}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="Fin de caso de Uso" guid="{A1D8A49C-1FA7-4bdb-A220-F5A76BB1DA02}" level="11" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
+							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
+							<item oldname="RF-C020 Consulta de Catálogo de Despachos y Colegios y Asociados" guid="{BEDCD3D3-6C19-467f-98CD-EE20DA15E23E}"/>
 							<item oldname="Nivel Central" guid="{664C1EFF-F19C-4b54-8D00-DC4892A635AB}"/>
+							<item oldname="RN-N021 Consulta de la Lista desplegable del campo Razón Social" guid="{E7ADF8EB-AE44-4824-B1F0-F910EC1CD48B}"/>
+							<item oldname="RF-A48 Consulta de campos de información de Despachos, Colegios y Asociados " guid="{DA9025C1-B24A-4406-9C96-1B1956817EF1}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
