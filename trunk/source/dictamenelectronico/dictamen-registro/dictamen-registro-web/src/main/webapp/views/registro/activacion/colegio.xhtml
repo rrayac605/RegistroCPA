@@ -9,9 +9,9 @@
 	</ui:define>
 	<ui:define name="content">
 
-		<p:panel id="pnReactivacionRegistro"
-			header="#{msg_reactivacion['dictamen.reactivacion.form.panel.header']}"
-			footer="#{msg_reactivacion['dictamen.reactivacion.form.panel.footer']}">
+		<p:panel id="pnActivacionRegistro"
+			header="Activacion de Registro"
+			footer="Activacion de Registro de Contadores Públicos Autorizados">
 
 
 			<h:form id="formReactivacionRegistro">
@@ -22,7 +22,7 @@
 					legend="Datos del Colegio o Asociación"
 					toggleable="true" toggleSpeed="500">
 					<p:ajax event="toggle"
-						listener="#{activacionRegistroBean.handleToggle}" update="msgs" />
+						listener="#{activacionSolicitudBean.handleToggle}" update="msgs" />
 
 
 
@@ -30,91 +30,84 @@
 
 						<tr>
 								<td align="right" colspan="1"><h:outputText value="RFC " />
-								<p:graphicImage id="helpdocRFC" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel id="imgPanelRFC"
-									for="helpdocRFC" showEffect="blind" hideEffect="fade"
-									showEvent="mouseover" hideEvent="mouseout" dismissable="false"
-									showCloseIcon="true">
-					Registro Federal de Contribuyentes del Contador Público
-								</p:overlayPanel></td>
-							<td colspan="3"><h:panelGrid columns="3">
-									<p:inputText id="txtRFC" size="13" required="true" />
+								</td>
+							<td colspan="1"><h:panelGrid columns="3">
+									<p:inputText id="txtRFC" 
+									size="12"
+									maxlength="12"
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.rfc}"
+									required="true" />
 									<p:message for="txtRFC" />
 									<p:tooltip for="txtRFC" value="RFC" showEffect="fade"
 										hideEffect="fade" />
 								</h:panelGrid></td>
 								</tr><tr>
 							<td align="right" colspan="1"><h:outputText value="RAZON SOCIAL " />
-								<p:graphicImage id="helpdocNombre" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelNombre" for="helpdocNombre" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">
+								
 						 
-						</p:overlayPanel></td>
-							<td colspan="3"><h:panelGrid columns="3">
-									<p:inputText id="txtNombre" size="35" required="true" />
-									<p:message for="txtNombre" />
-									<p:tooltip for="txtNombre" value="Nombre" showEffect="fade"
+						</td>
+							<td colspan="1"><h:panelGrid columns="3">
+									<p:inputText id="txtRazonSocial" 
+									size="35" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.razonSocial}"
+									readonly="true"
+									disabled="true"
+									maxlength="35" />
+									<p:message for="txtRazonSocial" />
+									<p:tooltip for="txtRazonSocial" value="Razon Social" showEffect="fade"
 										hideEffect="fade" />
 								</h:panelGrid></td>
 								
 
 
 						</tr>
+						<tr>
+						<td colspan="2">
+						 <p:commandButton
+								value="(1.1) Buscar"
+								disabled="#{activacionColegioBean.activarColegioValido}"
+								ajax="false" process="@this,formReactivacionRegistro"
+								action="#{activacionColegioBean.accionBuscarPersonaMoral()}"
+								update=":formReactivacionRegistro" id="btnBuscarCPA"
+								styleClass="ui-priority-primary" />
+								
+						</td>
+						</tr>
 					</table>
 
-					<br />
-					<p:panelGrid style="margin-top:20px">
+
+
+				<p:panelGrid style="margin-top:20px" rendered="#{activacionColegioBean.activarColegioValido}">
 						<p:row>
 							<p:column styleClass="ui-widget-header" colspan="1">
-								<h:outputText value="Calle: " />
-								<p:graphicImage id="helpdocCalle" style="cursor:pointer"
-									value="/images/ayuda.jpg" />
-								<p:overlayPanel id="imgPanelCalle" for="helpdocCalle"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
-
+								<h:outputText value="*Calle: " />
 							</p:column>
 							<p:column styleClass="ui-widget-header" colspan="1">
-								<h:outputText value="Numero Exterior " />
-								<p:graphicImage id="helpdocNumeroExterior"
-									style="cursor:pointer" value="/images/ayuda.jpg" />
-								<p:overlayPanel id="imgPanelNumeroExterior"
-									for="helpdocNumeroExterior" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+								<h:outputText value="*Numero Exterior " />
 							</p:column>
 							<p:column styleClass="ui-widget-header" colspan="1">
-
 								<h:outputText value="Letra Exterior " />
-								<p:graphicImage id="helpdocLetraExterior" style="cursor:pointer"
-									value="/images/ayuda.jpg" />
-								<p:overlayPanel id="imgPanelLetraExterior"
-									for="helpdocLetraExterior" showEffect="blind" hideEffect="fade"
-									showEvent="mouseover" hideEvent="mouseout" dismissable="false"
-									showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
 							</p:column>
 						</p:row>
 						
 						<p:row>
 							<p:column  rowspan="3">
-									<p:inputText id="txtCalle" size="35" required="false" />
+									<p:inputText id="txtCalle" size="35" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
 									<p:message for="txtCalle" />
 									<p:tooltip for="txtCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column>
-									<p:inputText id="txtNumeroExterior" size="25" required="false" />
+									<p:inputText id="txtNumeroExterior" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroExterior" />
 									<p:tooltip for="txtNumeroExterior" value="Numero Exterior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column>
-									<p:inputText id="txtLetraExterior" size="25" required="false" />
+									<p:inputText id="txtLetraExterior" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraExterior" />
 									<p:tooltip for="txtLetraExterior" value="Letra Exterior"
 										showEffect="fade" hideEffect="fade" />
@@ -124,34 +117,26 @@
 						</p:row>
 						
 						<p:row>
-							<p:column  styleClass="ui-widget-header" colspan="1"><h:outputText value="Numero Interior " /> <p:graphicImage
-									id="helpdocNumeroInterior" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelNumeroInterior" for="helpdocNumeroInterior"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column  styleClass="ui-widget-header" colspan="1">
+							<h:outputText value="Numero Interior " /> 
 
 							</p:column>
-							<p:column  styleClass="ui-widget-header" colspan="1"><h:outputText value="Letra Interior " /> <p:graphicImage
-									id="helpdocLetraInterior" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelLetraInterior" for="helpdocLetraInterior"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+							<p:column  styleClass="ui-widget-header" colspan="1"><h:outputText value="Letra Interior " /> 
 							</p:column>
 
 						</p:row>
 						
 						<p:row>
 							<p:column>
-									<p:inputText id="txtNumeroInterior" size="25" required="false" />
+									<p:inputText id="txtNumeroInterior" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroInterior" />
 									<p:tooltip for="txtNumeroInterior" value="Numero Interior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtLetraInterior" size="25" required="false" />
+									<p:inputText id="txtLetraInterior" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraInterior" />
 									<p:tooltip for="txtLetraInterior" value="Letra Interior"
 										showEffect="fade" hideEffect="fade" />
@@ -162,32 +147,24 @@
 
 
 						<p:row>
-							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="Entre la Calle " /> <p:graphicImage
-									id="helpdocEntreCalle" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelEntreCalle" for="helpdocEntreCalle"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="Entre la Calle " /> 
 
 							</p:column>
-							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="y la Calle " /> <p:graphicImage
-									id="helpdocYCalle" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelYCalle" for="helpdocYCalle" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="y la Calle " /> 
 
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtEntreCalle" size="25" required="false" />
+									<p:inputText id="txtEntreCalle" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
 									<p:message for="txtEntreCalle" />
 									<p:tooltip for="txtEntreCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtYCalle" size="45" required="false" />
+									<p:inputText id="txtYCalle" size="45" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
 									<p:message for="txtYCalle" />
 									<p:tooltip for="txtYCalle" value="Calle Adyacente"
 										showEffect="fade" hideEffect="fade" />
@@ -197,32 +174,24 @@
 
 
 						<p:row>
-							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="Colonia(Asentamiento) " /> <p:graphicImage
-									id="helpdocColonia" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelColonia" for="helpdocColonia" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="p:rowue">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="*Colonia(Asentamiento) " />
 
 							</p:column>
-							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="Localidad " /> <p:graphicImage
-									id="helpdocLocalidad" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelLocalidad" for="helpdocLocalidad"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="*Localidad " />
 
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtColonia" size="13" required="false" />
+									<p:inputText id="txtColonia" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
 									<p:message for="txtColonia" />
 									<p:tooltip for="txtColonia" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtLocalidad" size="13" required="false" />
+									<p:inputText id="txtLocalidad" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
 									<p:message for="txtLocalidad" />
 									<p:tooltip for="txtLocalidad" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -230,34 +199,23 @@
 						</p:row>
 						<p:row>
 							<p:column align="left" styleClass="ui-widget-header" colspan="1"><h:outputText
-									value="Municipio o Delegación " /> <p:graphicImage
-									id="helpdocMunDel" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelMunDel" for="helpdocMunDel" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="p:rowue">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+									value="*Municipio o Delegación " />
 							</p:column>
 							<p:column styleClass="ui-widget-header" colspan="2" align="left"><h:outputText
-									value="Entidad Federativa " /> <p:graphicImage
-									id="helpdocEntidadFederativa" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelEntidadFederativa" for="helpdocEntidadFederativa"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+									value="*Entidad Federativa " /> 
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column align="left">
-									<p:inputText id="txtMunDel" size="35" required="false" />
+									<p:inputText id="txtMunDel" size="35" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
 									<p:message for="txtMunDel" />
 									<p:tooltip for="txtMunDel" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2" align="left">
 									<p:inputText id="txtEntidadFederativa" size="35"
-										required="false" />
+										value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
 									<p:message for="txtEntidadFederativa" />
 									<p:tooltip for="txtEntidadFederativa" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -266,65 +224,29 @@
 						
 					<p:row>
 							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText
-									value="Código Postal " /> <p:graphicImage
-									id="helpdocCodigoPostal" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelCodigoPostal" for="helpdocCodigoPostal"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
-
+									value="*Código Postal " /> 
 							</p:column>
 
 						</p:row>
 						<p:row>
 							<p:column align="left" colspan="3">
-									<p:inputText id="txtCodigoPostal" size="25" required="false" />
+									<p:inputText id="txtCodigoPostal" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.codigoPostal}" 
+									readonly="true" disabled="true" />
 									<p:message for="txtCodigoPostal" />
 									<p:tooltip for="txtCodigoPostal" value="Calle"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 						</p:row>
-						<p:row>
-							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText
-									value="Correo Electronico " /> <p:graphicImage
-									id="helpdocCorreoElectronico" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelCorreoElectronico" for="helpdocCorreoElectronico"
-									showEffect="blind" hideEffect="fade" showEvent="mouseover"
-									hideEvent="mouseout" dismissable="false" showCloseIcon="true">Descripción donde radica el servicio HTTP,</p:overlayPanel>
 
-							</p:column>
 
-						</p:row>
-						<p:row>
-							<p:column align="left" colspan="3">
-									<p:inputText id="txtCorreoElectronico" size="35"
-										required="false" />
-									<p:message for="txtCorreoElectronico" />
-									<p:tooltip for="txtCorreoElectronico" value="Calle"
-										showEffect="fade" hideEffect="fade" />
-								</p:column>
-						</p:row>
-						<p:row>
-							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText value="Telefono " />
-								<p:graphicImage id="helpdocTelefono" style="cursor:pointer"
-									value="/images/ayuda.jpg" /> <p:overlayPanel
-									id="imgPanelTelefono" for="helpdocTelefono" showEffect="blind"
-									hideEffect="fade" showEvent="mouseover" hideEvent="mouseout"
-									dismissable="false" showCloseIcon="p:rowue">Descripción donde radica el servicio HTTP,</p:overlayPanel>
+						
+					
 
-							</p:column>
-
-						</p:row>
-						<p:row>
-							<p:column  align="left" colspan="3">
-									<p:inputText id="txtTelefono" size="25" required="false" />
-									<p:message for="txtTelefono" />
-									<p:tooltip for="txtTelefono" value="Calle" showEffect="fade"
-										hideEffect="fade" />
-								</p:column>
-						</p:row>
+						
+					
 					</p:panelGrid>
+					
 					<br/>
 				</p:fieldset>
 				<br />
@@ -335,11 +257,11 @@
 						
 						
 						
-    <p:splitButton  value="      Acciones     "  icon="ui-icon-disk">
-        <p:menuitem value="Finalizar Trámite" icon="ui-icon-arrowrefresh-1-w" />
-        <p:menuitem value="Guardar Trámite" ajax="false" action="#{activacionColegioBean.siguiente}" icon="ui-icon-close" />
-        <p:menuitem value="Guardar y Cerrar Trámite" ajax="false" icon="ui-icon-close" />
-         <p:menuitem value="Cancelar Trámite" ajax="false" icon="ui-icon-close" />
+    <p:splitButton  value="      Acciones     " >
+        <p:menuitem value="Activar Registro IMSS"  ajax="false"  action="#{activacionColegioBean.siguiente}" />
+        <p:menuitem value="Guardar Trámite" ajax="false" action="#{activacionColegioBean.siguiente}"  />
+        <p:menuitem value="Guardar y Cerrar Trámite" ajax="false"  />
+         <p:menuitem value="Cancelar Trámite" ajax="false"/>
     </p:splitButton>						
 						</td>
 					</tr>
