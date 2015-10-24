@@ -1,12 +1,11 @@
 package mx.gob.imss.cit.de.dictaminacion.batch.validation.processors;
 
-import java.util.Date;
+import java.lang.reflect.Field;
 import java.util.List;
 
 import org.springframework.batch.item.ItemProcessor;
 
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
-import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.A1TO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.LinesTO;
 
 /**
@@ -15,29 +14,43 @@ import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.LinesTO;
  * @author cmarmolejo
  * 
  */
-public class TxtFileProcessor2 implements ItemProcessor<A1TO, A1TO> {
+public class TxtFileProcessor2 implements ItemProcessor<Object, Object> {
 	private LinesTO linesTO;
 	private RutasDAO rutasDAO;
+	private Long cveIdPatronDictamen;
+	private Long cveIdAseveracion;
 	
 	@Override
-	public A1TO process(A1TO paramI) throws Exception {
+	public Object process(Object paramI) throws Exception {
+		int lineNumber = 0;
+		
+		Object someObject = paramI;
+		for (Field field : someObject.getClass().getDeclaredFields()) {
+		    field.setAccessible(true); // You might want to set modifier to public first.
+		    Object value = field.get(someObject); 
+		    if (value != null) {
+		    	if (field.getName().compareTo("lineNumber")==0){
+		    		lineNumber=(Integer) value;
+		    	}
+		        System.out.println(field.getName() + "=" + value);
+		    }
+		}
+
 		System.out.println("Lineas procesadas: "+linesTO.getProcessedLines());
 		System.out.println("Lineas invalidas: "+linesTO.getInvalidLines());
-		System.out.println("Linea actual: "+paramI.getLineNumber());
+		System.out.println("Linea actual: "+lineNumber);
+		
 		List<Integer> invalidLines = linesTO.getInvalidLines();
 		if(invalidLines.size()>0){
-			rutasDAO.actualizaStatus(4, new Long(paramI.getCveIdPatronDictamen()), new Long(paramI.getCveIdAseveracion()));
-			if(linesTO.getProcessedLines()+1==paramI.getLineNumber()){
+			rutasDAO.actualizaStatus(4, cveIdPatronDictamen, cveIdAseveracion);
+			if(linesTO.getProcessedLines()+1==lineNumber){
 				linesTO = new LinesTO();
 			}
 			return null;
 		}
-		else {
-			  paramI.setFecRegistroActualizado(new Date());
-			  paramI.setFecRegistroAlta(new Date());
-		      paramI.setCveIdUsuario("MASC870401GQ8");		   
+		else {	  
 			  if(invalidLines.size()==0){
-				  rutasDAO.actualizaStatus(1, new Long(paramI.getCveIdPatronDictamen()), new Long(paramI.getCveIdAseveracion()));
+				  rutasDAO.actualizaStatus(1, cveIdPatronDictamen, cveIdAseveracion);
 			  }
 			return paramI;
 		}
@@ -58,6 +71,22 @@ public class TxtFileProcessor2 implements ItemProcessor<A1TO, A1TO> {
 
 	public void setRutasDAO(RutasDAO rutasDAO) {
 		this.rutasDAO = rutasDAO;
+	}
+
+	public Long getCveIdPatronDictamen() {
+		return cveIdPatronDictamen;
+	}
+
+	public void setCveIdPatronDictamen(Long cveIdPatronDictamen) {
+		this.cveIdPatronDictamen = cveIdPatronDictamen;
+	}
+
+	public Long getCveIdAseveracion() {
+		return cveIdAseveracion;
+	}
+
+	public void setCveIdAseveracion(Long cveIdAseveracion) {
+		this.cveIdAseveracion = cveIdAseveracion;
 	}
 
 
