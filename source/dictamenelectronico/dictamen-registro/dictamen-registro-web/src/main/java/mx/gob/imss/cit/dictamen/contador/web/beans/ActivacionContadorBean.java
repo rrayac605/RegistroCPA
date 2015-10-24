@@ -16,10 +16,10 @@ import org.slf4j.LoggerFactory;
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
-import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import javax.annotation.PostConstruct;
@@ -37,6 +37,11 @@ public class ActivacionContadorBean extends BaseBean {
 	@ManagedProperty(value = "#{activacionContadorPage}")
 	private ActivacionContadorPage activacionContadorPage;
 
+	@ManagedProperty(value = "#{activacionSolicitudPage}")
+	private ActivacionSolicitudPage activacionSolicitudPage;
+	
+
+
 
 	@EJB(mappedName="contadorPublicoIntegrator", name="contadorPublicoIntegrator")
 	private ContadorPublicoIntegrator contadorPublicoIntegrator;
@@ -46,16 +51,17 @@ public class ActivacionContadorBean extends BaseBean {
     public void init() {
     	
     	LOGGER.info("activacionContadorBean.init(");
-       	String rfc = activacionContadorPage.getPersonaDTO().getRfc();
-       	Long idPersona = activacionContadorPage.getPersonaDTO().getIdPersona();
+    	if(!activacionContadorPage.isValido()){
+       	String rfc = activacionSolicitudPage.getPersonaDTO().getRfc();
+       	Long idPersona = activacionSolicitudPage.getPersonaDTO().getIdPersona();
 
     	DomicilioFiscalDTO domicilioDTO = contadorPublicoIntegrator.consultarDomicilioPorRFC(rfc);
-    	String folioSolicitud = activacionContadorPage.getPersonaDTO().getFolioSolicitud();
+    	String folioSolicitud = activacionSolicitudPage.getPersonaDTO().getFolioSolicitud();
     	if(domicilioDTO!=null){
     		List<DatosPersonalesDTO> lstDatosPersonalesDTO =  contadorPublicoIntegrator.consultarDatosPersonales(idPersona);
     		LOGGER.info("lstDatosPersonalesDTO.size="+lstDatosPersonalesDTO.size());
     		FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Activación:","El folio de solicitud es:"+folioSolicitud));
-    	    activacionContadorPage.getPersonaDTO().getContadorPublicoAutDTO().setDomicilioFiscalDTO(domicilioDTO);
+    		activacionSolicitudPage.getPersonaDTO().getContadorPublicoAutDTO().setDomicilioFiscalDTO(domicilioDTO);
     	    if(!lstDatosPersonalesDTO.isEmpty()){
         	    activacionContadorPage.setDatosPersonalesDTO(lstDatosPersonalesDTO.get(0));
         	    LOGGER.info("cedula.getInstitucionCedula="+activacionContadorPage.getDatosPersonalesDTO().getInstitucionCedula());
@@ -66,7 +72,7 @@ public class ActivacionContadorBean extends BaseBean {
     	    ContactoDTO contactoDTO = new ContactoDTO();
     	    activacionContadorPage.setContactoDTO(contactoDTO);
     	}
-    
+    	}
     }
     
 	public boolean validarCorreoElectronico(){
@@ -94,13 +100,16 @@ public class ActivacionContadorBean extends BaseBean {
 		  return validacion;
 	} 
 	
-	public void accionGuardar(){
-		validarCorreoElectronico();
-          
+	public String accionAtras(){
+		    this.getActivacionContadorPage().setValido(false);
+		    return "activacion_solicitud";
+		 
 	}
 	
 	public String accionSiguiente(){
 		  if(validarCorreoElectronico()){
+			    this.getActivacionContadorPage().setValido(true);
+
 		     return "activacion_despacho";
 		  } 
 		  return "";
@@ -136,5 +145,16 @@ public class ActivacionContadorBean extends BaseBean {
 			ContadorPublicoIntegrator contadorPublicoIntegrator) {
 		this.contadorPublicoIntegrator = contadorPublicoIntegrator;
 	}
+	
+
+	public ActivacionSolicitudPage getActivacionSolicitudPage() {
+		return activacionSolicitudPage;
+	}
+
+	public void setActivacionSolicitudPage(
+			ActivacionSolicitudPage activacionSolicitudPage) {
+		this.activacionSolicitudPage = activacionSolicitudPage;
+	}
+
 
 }

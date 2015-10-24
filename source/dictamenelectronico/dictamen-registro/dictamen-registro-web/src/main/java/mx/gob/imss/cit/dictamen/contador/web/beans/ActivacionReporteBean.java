@@ -1,7 +1,7 @@
 package mx.gob.imss.cit.dictamen.contador.web.beans;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
+
+import java.util.Date;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -11,95 +11,160 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletResponse;
 
-import org.primefaces.model.DefaultStreamedContent;
-import org.primefaces.model.StreamedContent;
+import org.apache.commons.lang.StringUtils;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorReporteIntegrator;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.NdtContadorPublicoAutDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import javax.annotation.PostConstruct;
 
 @ManagedBean(name = "activacionReporteBean")
 @ViewScoped
-public class ActivacionReporteBean extends BaseBean {
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ActivacionReporteBean.class);
+public class ActivacionReporteBean  extends BaseBean{
+	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionReporteBean.class);
 
 	private static final long serialVersionUID = -1700645583010439518L;
-
-	@EJB(mappedName = "contadorReporteIntegrator", name = "contadorReporteIntegrator")
+   
+	@EJB(mappedName="contadorReporteIntegrator", name="contadorReporteIntegrator")
 	private ContadorReporteIntegrator contadorReporteIntegrator;
+    
+	@ManagedProperty(value = "#{activacionContadorPage}")
+	private ActivacionContadorPage activacionContadorPage;
+	
+	@ManagedProperty(value = "#{activacionSolicitudPage}")
+	private ActivacionSolicitudPage activacionSolicitudPage;
+	
 
-	private String cargar;
+	private String lblLoader ="msg";
+	
+
+	   public static String format(Date fechaNacimiento){
+		     DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy");
+		     if(fechaNacimiento ==  null){
+				 return StringUtils.EMPTY;
+		     }
+		    return formatter.print(new DateTime(fechaNacimiento));
+	   }
+
+	   public static String formatTime(Date fechaNacimiento){
+		     DateTimeFormatter formatter = DateTimeFormat.forPattern("ddMMyyyy");
+		     if(fechaNacimiento ==  null){
+				 return StringUtils.EMPTY;
+		     }
+		    return formatter.print(new DateTime(fechaNacimiento));
+	   }
+	   
+	@PostConstruct
+	public void init(){
+
+		if(activacionSolicitudPage.getPersonaDTO()==null){
+ 		   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activacion:","No se Registro un Contador publico"));
+
+		}else{
+			PersonaDTO personaDTO =activacionSolicitudPage.getPersonaDTO();
+		NdtContadorPublicoAutDTO ndtContadorPublicoAutDTO = new NdtContadorPublicoAutDTO();
+		ndtContadorPublicoAutDTO.setCadenaOriginal("");
+		ndtContadorPublicoAutDTO.setCurp(personaDTO.getCurp());
+		ndtContadorPublicoAutDTO.setFecha(format(new Date()));
+		ndtContadorPublicoAutDTO.setNombreCompleto(activacionSolicitudPage.getPersonaDTO().getNombreCompleto());
+		ndtContadorPublicoAutDTO.setNumeroCedulaProfesional(activacionContadorPage.getDatosPersonalesDTO().getNumeroCedula());
+		ndtContadorPublicoAutDTO.setNumRegistroCpa(activacionSolicitudPage.getPersonaDTO().getContadorPublicoAutDTO().getNumRegistroCPA());
+		LOGGER.info("numRegistroCPA="+ndtContadorPublicoAutDTO.getNumRegistroCpa());
+		ndtContadorPublicoAutDTO.setNumTramiteNotaria("");
+		ndtContadorPublicoAutDTO.setRfc(activacionSolicitudPage.getPersonaDTO().getRfc());
+		ndtContadorPublicoAutDTO.setSelloDigitalIMSS("");
+		DomicilioFiscalDTO domicilioFiscalDTO =activacionSolicitudPage.getPersonaDTO().getContadorPublicoAutDTO().getDomicilioFiscalDTO();
+		if(domicilioFiscalDTO!=null){
+		domicilioFiscalDTO.setCalle(domicilioFiscalDTO.getCalle());
+		domicilioFiscalDTO.setCodigoPostal(domicilioFiscalDTO.getCodigoPostal());
+		domicilioFiscalDTO.setColoniaAsentamiento(domicilioFiscalDTO.getColoniaAsentamiento());
+		domicilioFiscalDTO.setEntidadFederativa(domicilioFiscalDTO.getCveEntidadFederativa());
+		domicilioFiscalDTO.setCveEntidadFederativa(domicilioFiscalDTO.getCveEntidadFederativa());
+		domicilioFiscalDTO.setEntreCalle(domicilioFiscalDTO.getEntreCalle());
+		domicilioFiscalDTO.setLetraExterior(domicilioFiscalDTO.getLetraExterior());
+		domicilioFiscalDTO.setLetraInterior(domicilioFiscalDTO.getLetraInterior());
+		domicilioFiscalDTO.setLocalidad(domicilioFiscalDTO.getLocalidad());
+		domicilioFiscalDTO.setMunicipioDelegacion(domicilioFiscalDTO.getMunicipioDelegacion());
+		domicilioFiscalDTO.setNumeroExterior(domicilioFiscalDTO.getNumeroExterior());
+		domicilioFiscalDTO.setNumeroInterior(domicilioFiscalDTO.getNumeroInterior());
+		domicilioFiscalDTO.setyCalle(domicilioFiscalDTO.getyCalle());
+		
+		ndtContadorPublicoAutDTO.setDomicilioFiscalDTO(domicilioFiscalDTO);
+		}
+		byte[] reporte = contadorReporteIntegrator.generarReportePreliminar(ndtContadorPublicoAutDTO, 1);
+		
+		LOGGER.info("size1="+reporte.length);
+        StringBuilder sb = new StringBuilder();
+        sb.append(REPORTE_NOMBRE);
+        sb.append("-");
+        sb.append(formatTime(new Date()));
+        
+        try {
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            HttpServletResponse respuestaServlet =
+                (HttpServletResponse)facesContext.getExternalContext().getResponse();
+            respuestaServlet.setContentType(CONTENTTYPE_PDF);
+            respuestaServlet.setContentLength(reporte.length);
+            respuestaServlet.setHeader(HEADERCONTENT_PDF, "inline; filename=\""+sb.toString()+".pdf\"");
+            respuestaServlet.setContentLength(reporte.length);
+            respuestaServlet.getOutputStream().write(reporte);
+            respuestaServlet.setStatus(HttpServletResponse.SC_OK);
+            respuestaServlet.flushBuffer();
+            respuestaServlet.getOutputStream().close();
+            facesContext.responseComplete();
+        } catch (RuntimeException e) {
+            LOGGER.info(e.getMessage(),e);
+        } catch (Exception e) {
+            LOGGER.info( e.getMessage(),e);
+        }
+		}
+	}
+    
+	public static final String CONTENTTYPE_PDF="application/pdf";
+	public static final String HEADERCONTENT_PDF="Content-Disposition";
+    public static final String REPORTE_NOMBRE="SolicitudActivacionContador";
+    
+    
+
+	public ActivacionSolicitudPage getActivacionSolicitudPage() {
+		return activacionSolicitudPage;
+	}
+
+	public void setActivacionSolicitudPage(
+			ActivacionSolicitudPage activacionSolicitudPage) {
+		this.activacionSolicitudPage = activacionSolicitudPage;
+	}
+	public ActivacionContadorPage getActivacionContadorPage() {
+		return activacionContadorPage;
+	}
 
 
 
-	public final static Integer TIPO_REPORTE = 1;
+	public void setActivacionContadorPage(
+			ActivacionContadorPage activacionContadorPage) {
+		this.activacionContadorPage = activacionContadorPage;
+	}
+	public String getLblLoader() {
+		return lblLoader;
+	}
 
-	public final static String PDF_FILENAME = "SolicitudActivacionContador";
+
+	public void setLblLoader(String lblLoader) {
+		this.lblLoader = lblLoader;
+	}
 
 	
-	@PostConstruct
-	public void init() {
-		//NdtContadorPublicoAutDTO ndtContadorPublicoAutDTO = build();
-		//if (ndtContadorPublicoAutDTO != null) {
-		NdtContadorPublicoAutDTO to = new NdtContadorPublicoAutDTO();
-		to.setCadenaOriginal("abc");
-		to.setCurp("abc");
-		to.setFecha("test");
-		to.setNombreCompleto("test");
-		to.setNumeroCedulaProfesional("test");
-		to.setNumRegistroCpa(1);
-		to.setNumTramiteNotaria("test");
-		to.setNumTramiteNotaria("twes");
-		to.setRfc("test");
-		to.setSelloDigitalIMSS("test");
-			byte[] reporte = contadorReporteIntegrator.generarReportePreliminar(to,1);
-
-			LOGGER.info("size2=" + reporte.length);
-
-			//ByteArrayInputStream breporte = new ByteArrayInputStream(reporte);
-			//breporte.mark(0);
-try{
-             FacesContext facesContext = FacesContext.getCurrentInstance();
-             HttpServletResponse respuestaServlet =
-                 (HttpServletResponse)facesContext.getExternalContext().getResponse();
-             respuestaServlet.setContentType("application/pdf");
-             respuestaServlet.setHeader("Content-Disposition", "inline; filename=\"ReporteDeclaracionProvisional.pdf\"");
-             respuestaServlet.getOutputStream().write(new byte[10]);
-             respuestaServlet.setStatus(HttpServletResponse.SC_OK);
-             respuestaServlet.flushBuffer();
-             respuestaServlet.getOutputStream().close();
-             facesContext.responseComplete();
-         } catch (RuntimeException e) {
-             LOGGER.info(e.getMessage(),e);
-
-         } catch (Exception e) {
-             LOGGER.info(e.getMessage(),e);
-         }
-         
-		//} else {
-			
-      		//FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activación:","No hay registro de datos del Contador Previamente."));
-
-		//}
-		
-	}
-
-
-	public String getCargar() {
-		return cargar;
-	}
-
-	public void setCargar(String cargar) {
-		this.cargar = cargar;
-	}
-
 	public ContadorReporteIntegrator getContadorReporteIntegrator() {
 		return contadorReporteIntegrator;
 	}
@@ -108,5 +173,5 @@ try{
 			ContadorReporteIntegrator contadorReporteIntegrator) {
 		this.contadorReporteIntegrator = contadorReporteIntegrator;
 	}
-
+	
 }

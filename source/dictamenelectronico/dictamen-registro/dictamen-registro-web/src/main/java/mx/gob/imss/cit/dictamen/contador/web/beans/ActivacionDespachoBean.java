@@ -16,8 +16,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
+import mx.gob.imss.cit.dictamen.contador.integration.api.DictamenIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralBDTUDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenContadorNegocioException;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionDespachoPage;
@@ -55,6 +58,8 @@ public class ActivacionDespachoBean extends BaseBean {
 	@EJB(mappedName="contadorPublicoIntegrator", name="contadorPublicoIntegrator")
 	private ContadorPublicoIntegrator contadorPublicoIntegrator;
 	
+	@EJB(mappedName="dictamenIntegrator", name="dictamenIntegrator")
+	private DictamenIntegrator dictamenIntegrator;
 
 	@PostConstruct
 	public void init(){
@@ -72,11 +77,12 @@ public class ActivacionDespachoBean extends BaseBean {
 		mapPuestoCPA.put("Gerente", 2);
 		mapPuestoCPA.put("Auditor", 3);
 
-		PersonaMoralDTO personaMoralDTO = new PersonaMoralDTO();
-		DomicilioFiscalDTO domicilioFiscalDTO = new DomicilioFiscalDTO();
-		personaMoralDTO.setDomicilioFiscalDTO(domicilioFiscalDTO);
-		activacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);
-
+	    if(!this.activacionDespachoPage.isValido()){
+			PersonaMoralDTO personaMoralDTO = new PersonaMoralDTO();
+			DomicilioFiscalDTO domicilioFiscalDTO = new DomicilioFiscalDTO();
+			personaMoralDTO.setDomicilioFiscalDTO(domicilioFiscalDTO);
+			activacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);
+	    }
 	}
 	public void accionBuscarCPA(){
        String rfc = activacionDespachoPage.getPersonaMoralDTO().getRfc();
@@ -84,14 +90,33 @@ public class ActivacionDespachoBean extends BaseBean {
 	   PersonaMoralDTO personaMoralDTO = contadorPublicoIntegrator.consultarPersonaMoralPorRFC(rfc);
 	   
 	   if(personaMoralDTO!=null){
-		   activacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);;
-		   this.setActivarContadorValido(true);
-    	   this.setActivarProcesar(false);
+		   
+		   try {
+			   LOGGER.info("despacho.consultado.bdtu.rfc="+rfc);
+			   PersonaMoralBDTUDTO personaMoralBDTUDTO = dictamenIntegrator.consultarPersonaMoralPorRFC(rfc);
+			   if(personaMoralBDTUDTO!=null){
+				   LOGGER.info("accionBuscarCPA.despacho.idPersona="+personaMoralBDTUDTO.getIdPersona());
+				   activacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);;
+				   this.setActivarContadorValido(true);
+		    	   this.setActivarProcesar(false);
+		    	   
+		    	   activacionDespachoPage.setPersonaMoralBDTUDTO(personaMoralBDTUDTO);
+			   }else{
+				   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activacion:"," No se encontraron coincidencias en BDTU con el RFC proporcionado:"+rfc+". Favor de verificarlo con el Despacho al que pertenece e intente nuevamente"));
+				   this.setActivarContadorValido(false);
 
-
+			   }
+	
+		} catch (DictamenContadorNegocioException e) {
+			LOGGER.info(e.getMessage(),e);
+		}
+		   
+    
 	   }else{
-		   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activacion:"," No se encontraron coincidencias con el RFC proporcionado:"+rfc+". Favor de verificarlo con el Despacho al que pertenece e intente nuevamente"));
+		   
+		   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activacion:"," No se encontraron coincidencias en SAT con el RFC proporcionado:"+rfc+". Favor de verificarlo con el Despacho al que pertenece e intente nuevamente"));
 		   this.setActivarContadorValido(false);
+	   
 	   }
 	   
 	}
@@ -126,6 +151,11 @@ public class ActivacionDespachoBean extends BaseBean {
 	    LOGGER.info("selectedTieneTrabajador.ActivarNumTrabajador="+activarNumTrabajador);
 	    
 	}
+	public String accionAtras(){
+		this.activacionDespachoPage.setValido(false);
+	    return "activacion_contador";
+	}
+	
 	public void selectTipoProfesion(){
 	    LOGGER.info("selectTipoProfesion="+selectedTipoProfesion);
 	    switch(selectedTipoProfesion){
@@ -167,6 +197,8 @@ public class ActivacionDespachoBean extends BaseBean {
 	}
 	
 	public String siguiente(){
+		  this.activacionDespachoPage.setValido(true);
+
 		  LOGGER.info("Redirect=activacion_colegio");
 		  return "activacion_colegio";
 	}
@@ -263,5 +295,11 @@ public class ActivacionDespachoBean extends BaseBean {
 	public void setActivarProcesar(boolean activarProcesar) {
 		this.activarProcesar = activarProcesar;
 	}
-	
+
+	public DictamenIntegrator getDictamenIntegrator() {
+		return dictamenIntegrator;
+	}
+	public void setDictamenIntegrator(DictamenIntegrator dictamenIntegrator) {
+		this.dictamenIntegrator = dictamenIntegrator;
+	}
 }

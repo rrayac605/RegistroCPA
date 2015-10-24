@@ -13,6 +13,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import org.primefaces.event.ToggleEvent;
@@ -27,8 +28,8 @@ public class ActivacionSolicitudBean extends BaseBean {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionSolicitudBean.class);
 
 	
-	@ManagedProperty(value = "#{activacionContadorPage}")
-	private ActivacionContadorPage activacionContadorPage;
+	@ManagedProperty(value = "#{activacionSolicitudPage}")
+	private ActivacionSolicitudPage activacionSolicitudPage;
 
 	@EJB(mappedName="contadorPublicoIntegrator", name="contadorPublicoIntegrator")
 	private ContadorPublicoIntegrator contadorPublicoIntegrator;
@@ -60,9 +61,9 @@ public class ActivacionSolicitudBean extends BaseBean {
 	   personaDTO.setNombreCompleto("LUCIO SILVA DURAN");
 	   personaDTO.setFolioSolicitud("123456789123456789123");
 	   
-	   activacionContadorPage.setPersonaDTO(personaDTO);
+	   activacionSolicitudPage.setPersonaDTO(personaDTO);
 	   
-	   Long idPersona = activacionContadorPage.getPersonaDTO().getIdPersona();
+	   Long idPersona = activacionSolicitudPage.getPersonaDTO().getIdPersona();
        ContadorPublicoDTO contadorPublicoDTO = contadorPublicoIntegrator.consultarContadorPublicAut(idPersona);
         
        if(contadorPublicoDTO!=null){
@@ -73,7 +74,7 @@ public class ActivacionSolicitudBean extends BaseBean {
     		   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Activacion:","Su Registro IMSS:"+contadorPublicoDTO.getNumRegistroCPA()+" valido"));
     	   }
     	   
-           activacionContadorPage.getPersonaDTO().setContadorPublicoAutDTO(contadorPublicoDTO);
+    	   activacionSolicitudPage.getPersonaDTO().setContadorPublicoAutDTO(contadorPublicoDTO);
            this.setActivarContadorNoAutorizado(false);
            this.setActivarContadorAutorizado(true);
            
@@ -159,14 +160,7 @@ public class ActivacionSolicitudBean extends BaseBean {
 	public String actionContadorNoAutorizado(){
 		  return "ventanillaunica";
 	}
-	public ActivacionContadorPage getActivacionContadorPage() {
-		return activacionContadorPage;
-	}
 
-	public void setActivacionContadorPage(
-			ActivacionContadorPage activacionContadorPage) {
-		this.activacionContadorPage = activacionContadorPage;
-	}
 
 	public boolean isActivarSiguienteRegIMSS() {
 		return activarSiguienteRegIMSS;
@@ -204,6 +198,15 @@ public class ActivacionSolicitudBean extends BaseBean {
 	
 
 
+
+	public ActivacionSolicitudPage getActivacionSolicitudPage() {
+		return activacionSolicitudPage;
+	}
+
+	public void setActivacionSolicitudPage(
+			ActivacionSolicitudPage activacionSolicitudPage) {
+		this.activacionSolicitudPage = activacionSolicitudPage;
+	}
 
 
 	public String getRegistroIMSS() {
