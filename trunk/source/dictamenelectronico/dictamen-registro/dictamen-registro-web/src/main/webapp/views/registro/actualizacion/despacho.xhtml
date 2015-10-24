@@ -4,38 +4,81 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	
+
 	<p:panelGrid id="pngDespacho" columns="2">
-		<p:outputLabel id="lblFormaDespacho" value="#{msg['message.actualizacion.despacho.formadespacho']}"/>
-		<p:selectOneMenu id="cmbFormaDespacho"></p:selectOneMenu>
+		<p:outputLabel id="lblFormaDespacho"
+			value="#{msg['message.actualizacion.despacho.formadespacho']}" />
+		<p:selectOneMenu id="cmbFormaDespacho"
+			disabled="#{not actualizacionRegistroPage.habilitaDatosDespacho}"
+			value="#{actualizacionRegistroPage.tipoDespacho}">
+			<p:ajax
+				listener="#{actualizacionRegistroBean.seleccionTipoDespacho()}"
+				update="pngTrabajadores" />
+			<f:selectItem itemLabel="Despacho" itemValue="D" />
+			<f:selectItem itemLabel="Independiente" itemValue="I" />
+		</p:selectOneMenu>
 	</p:panelGrid>
-	<p:panelGrid id="pngTrabajadores" columns="3">
-		<p:outputLabel id="lblCuentaTrab" value="#{msg['message.actualizacion.despacho.trabajadores']}"/>
-		<p:selectOneRadio id="rbCuentaTrab" layout="grid" columns="2">
-			<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"/>
-			<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"/>
+	<p:panelGrid id="pngTrabajadores" columns="3" style="width:100%;"
+		rendered="#{actualizacionRegistroPage.habilitarTrabajadoresDespacho}">
+		<p:outputLabel id="lblCuentaTrab"
+			value="#{msg['message.actualizacion.despacho.trabajadores']}" />
+		<p:selectOneRadio id="rbCuentaTrab" layout="grid" columns="2"
+			disabled="#{not actualizacionRegistroPage.habilitaDatosDespacho and not actualizacionRegistroPage.habilitarTrabajadoresDespacho}"
+			value="#{actualizacionRegistroPage.cuentaConTrabajadores}">
+			<f:selectItem itemLabel="#{msg['message.label.itemLabel.si']}"
+				itemValue="#{msg['message.label.itemLabel.si']}" />
+			<f:selectItem itemLabel="#{msg['message.label.itemLabel.no']}"
+				itemValue="#{msg['message.label.itemLabel.no']}" />
+			<p:ajax update="pgNumeroTrabajadores" listener="#{actualizacionRegistroBean.habilitarNumeroTrabajadores()}"/>
 		</p:selectOneRadio>
-		<p:inputText id="txtCuentaTrab" maxlength="4"/>
-		<h:panelGroup id="pgRFCDesp">
-			<p:outputLabel id="lblRFCDesp" value="#{msg['message.actualizacion.despacho.rfc']}"/>
-			<p:inputText id="txtRFCDesp"/>
+		<h:panelGroup id="pgNumeroTrabajadores"
+			rendered="#{actualizacionRegistroPage.habilitaDatosDespacho and actualizacionRegistroPage.habilitaNumeroTrabajadores}">
+			<p:outputLabel id="lblCuentaTrabNum"
+				value="#{msg['message.actualizacion.despacho.numerotrabajadores']}" />
+			<p:inputText id="txtCuentaTrab" maxlength="4"
+				disabled="#{not actualizacionRegistroPage.habilitaDatosDespacho}"
+				style="width:10%" />
 		</h:panelGroup>
-		<p:spacer/>
-		<h:panelGroup id="pgRegPatr">
-			<p:outputLabel id="lblRegPatr" value="#{msg['message.actualizacion.despacho.registropatronal']}"/>
-			<p:inputText id="txtRegPatr"/>
+		<h:panelGroup id="pgRFCDesp">
+			<p:outputLabel id="lblRFCDesp"
+				value="#{msg['message.actualizacion.despacho.rfc']}" />
+			<p:inputText id="txtRFCDesp" />
 		</h:panelGroup>
 	</p:panelGrid>
 	<p:panelGrid id="pngRazonSocial">
-		<p:outputLabel id="lblRazonSocial" value="#{msg['message.actualizacion.despacho.nombre']}"/>
-		<p:inputText id="txtRazonSocial"/>
+		<p:outputLabel id="lblRazonSocial"
+			value="#{msg['message.actualizacion.despacho.nombre']}" />
+		<p:inputText id="txtRazonSocial" disabled="true" />
 		<h:panelGroup id="pgCargo">
-			<p:outputLabel id="lblCargo" value="#{msg['message.actualizacion.despacho.cargo']}"/>
-			<p:selectOneMenu id="somCargo">
+			<p:outputLabel id="lblCargo"
+				value="#{msg['message.actualizacion.despacho.cargo']}" />
+			<p:selectOneMenu id="somCargo" disabled="true">
 			</p:selectOneMenu>
 		</h:panelGroup>
 		<h:panelGroup id="pgTelefonoFijo">
-			<p:outputLabel id="lblTelefonoFijo" value="#{msg['message.actualizacion.despacho.telefonofijo']}"/>
+			<p:outputLabel id="lblTelefonoFijo"
+				value="#{msg['message.actualizacion.despacho.telefonofijo']}" />
+			<p:inputText id="txtTelefonoDespacho" disabled="true" />
 		</h:panelGroup>
 	</p:panelGrid>
+
+	<p:dialog id="dlgDatosDespCorrectos"
+		visible="#{not actualizacionRegistroPage.habilitaDatosDespacho}">
+		<p:panel id="pnDatosDespCorrecto" style="width:100%">
+			<h:panelGroup id="pngDatosDespCorrectos">
+				<h3>#{msg['message.actualizacion.despacho.datoscorrectos']}</h3>
+			</h:panelGroup>
+			<p:panelGrid columns="2" id="pgDespButtons">
+				<p:commandButton id="btnSiDatosDesp"
+					value="#{msg['message.button.si']}"
+					actionListener="#{actualizacionRegistroBean.habilitaPanelDespacho()}"
+					update="dlgDatosDespCorrectos pngDespacho pngTrabajadores pngRazonSocial"
+					styleClass="ui-priority-primary" />
+				<p:commandButton id="btnNoDatosDesp"
+					value="#{msg['message.button.no']}"
+					styleClass="ui-priority-primary"
+					actionListener="#{actualizacionRegistroBean.mostrarMensajeError()}" />
+			</p:panelGrid>
+		</p:panel>
+	</p:dialog>
 </ui:composition>

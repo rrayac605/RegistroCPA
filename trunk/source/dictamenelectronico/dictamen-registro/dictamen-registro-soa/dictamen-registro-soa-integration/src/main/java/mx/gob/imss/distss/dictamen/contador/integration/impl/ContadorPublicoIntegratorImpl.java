@@ -11,16 +11,18 @@ import javax.ejb.Stateless;
 
 import org.apache.log4j.Logger;
 
+import mx.gob.imss.cit.dictamen.contador.commons.to.domain.PersonaMedioContactoTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
-import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtR1DatosPersonalesDO;
-import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
+import mx.gob.imss.cit.dictamen.contador.services.MedioContadorService;
+//import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
 import mx.gob.imss.cit.dictamen.contador.services.SatService;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Moral;
@@ -34,11 +36,14 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 	private static final Logger LOGGER=Logger.getLogger(ContadorPublicoIntegratorImpl.class);
 
 
-	@EJB
-	private BdtuService bdtuService;
+//	@EJB
+//	private BdtuService bdtuService;
 	
 	@EJB(name="satService", mappedName="satService")
 	private SatService satService;
+	
+	@EJB(name="bdtuService", mappedName="bdtuService")
+	private MedioContadorService medioContadorService;
 
 
     public PersonaMoralDTO consultarPersonaMoralPorRFC(String rfc){
@@ -86,14 +91,14 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 			domicilioDTO = new DomicilioFiscalDTO();
 			domicilioDTO.setCalle(fisica.getDomicilioFiscal().getCalle());
 		    LOGGER.info("ContadorPublicoIntegrator.Calle="+fisica.getDomicilioFiscal().getCalle());
-		    domicilioDTO.setNumeroExterior(fisica.getDomicilioFiscal().getNumExterior1());
+//		    domicilioDTO.setNumeroExterior(fisica.getDomicilioFiscal().getNumExterior1());
 		    domicilioDTO.setLetraExterior(fisica.getDomicilioFiscal().getNumExteriorAlf());
-		    domicilioDTO.setNumeroInterior(fisica.getDomicilioFiscal().getNumInterior());
+//		    domicilioDTO.setNumeroInterior(fisica.getDomicilioFiscal().getNumInterior());
 		    domicilioDTO.setLetraInterior(fisica.getDomicilioFiscal().getNumInteriorAlf());
 
 		    domicilioDTO.setEntreCalle(fisica.getDomicilioFiscal().getVialidadReferenciaPrimaria().getNombre());
 		    domicilioDTO.setyCalle(fisica.getDomicilioFiscal().getVialidadReferenciaSecundaria().getNombre());
-		    domicilioDTO.setColoniaAsentamiento(fisica.getDomicilioFiscal().getColonia());
+//		    domicilioDTO.setColoniaAsentamiento(fisica.getDomicilioFiscal().getColonia());
 		    domicilioDTO.setLocalidad(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getNombre());
 		
 		    domicilioDTO.setCveEntidadFederativa(fisica.getDomicilioFiscal().getAsentamiento().getLocalidad().getMunicipio().getEntidadFederativa().getClave());
@@ -107,36 +112,56 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 	
 	@Override
 	public ContadorPublicoDTO consultarContadorPublicAut(Long idPersona) {
-		ContadorPublicoDTO contadorPublicoAutDTO = null;
-		LOGGER.info("consultarContadorPublicAut="+idPersona);
-		NdtContadorPublicoAutDO ndtContadorPublicoAutDO = bdtuService.obtenerContadorPorIdPersona(idPersona);
-		if(ndtContadorPublicoAutDO!=null){
-			contadorPublicoAutDTO = new ContadorPublicoDTO();
-			contadorPublicoAutDTO.setNumRegistroCPA(ndtContadorPublicoAutDO.getNumRegistroCpa());
-			contadorPublicoAutDTO.setCveIdEstadoCPA(ndtContadorPublicoAutDO.getCveIdEstadoCpa().getCveIdEstadoCpa());	
-		
-		}
-		return contadorPublicoAutDTO;
+//		ContadorPublicoDTO contadorPublicoAutDTO = null;
+//		LOGGER.info("consultarContadorPublicAut="+idPersona);
+//		NdtContadorPublicoAutDO ndtContadorPublicoAutDO = bdtuService.obtenerContadorPorIdPersona(idPersona);
+//		if(ndtContadorPublicoAutDO!=null){
+//			contadorPublicoAutDTO = new ContadorPublicoDTO();
+//			contadorPublicoAutDTO.setNumRegistroCPA(ndtContadorPublicoAutDO.getNumRegistroCpa());
+//			contadorPublicoAutDTO.setCveIdEstadoCPA(ndtContadorPublicoAutDO.getCveIdEstadoCpa().getCveIdEstadoCpa());	
+//		
+//		}
+		return null;
 	}
 	@Override
 	public List<DatosPersonalesDTO> consultarDatosPersonales(Long idPersona){
-		List<DatosPersonalesDTO> lstNdtContadorPublicoAutDO = new ArrayList<DatosPersonalesDTO>();
-		NdtContadorPublicoAutDO ndtContadorPublicoAutDO = bdtuService.obtenerContadorPorIdPersona(idPersona);
-		List<NdtR1DatosPersonalesDO> lstDatosPersonales = ndtContadorPublicoAutDO.getNdtR1DatosPersonalesDOList();
-		
-		LOGGER.info("Integrator.ndtContadorPublicoAutDO="+ndtContadorPublicoAutDO.getNdtR1DatosPersonalesDOList().size());
-		
-		for(NdtR1DatosPersonalesDO ndtR1DatosPersonalesDO : lstDatosPersonales){
-			DatosPersonalesDTO datosPersonalesDTO = new DatosPersonalesDTO();
-			datosPersonalesDTO.setFechaExpedicionCedula(ndtR1DatosPersonalesDO.getFecExpedicionCedprof());
-			datosPersonalesDTO.setInstitucionCedula(ndtR1DatosPersonalesDO.getDesTituloExpedidoPor());
-			datosPersonalesDTO.setNumeroCedula(ndtR1DatosPersonalesDO.getCedulaProfesional());
-			lstNdtContadorPublicoAutDO.add(datosPersonalesDTO);
-		}
-		
-        return lstNdtContadorPublicoAutDO;
+//		List<DatosPersonalesDTO> lstNdtContadorPublicoAutDO = new ArrayList<DatosPersonalesDTO>();
+//		NdtContadorPublicoAutDO ndtContadorPublicoAutDO = bdtuService.obtenerContadorPorIdPersona(idPersona);
+//		List<NdtR1DatosPersonalesDO> lstDatosPersonales = ndtContadorPublicoAutDO.getNdtR1DatosPersonalesDOList();
+//		
+//		LOGGER.info("Integrator.ndtContadorPublicoAutDO="+ndtContadorPublicoAutDO.getNdtR1DatosPersonalesDOList().size());
+//		
+//		for(NdtR1DatosPersonalesDO ndtR1DatosPersonalesDO : lstDatosPersonales){
+//			DatosPersonalesDTO datosPersonalesDTO = new DatosPersonalesDTO();
+//			datosPersonalesDTO.setFechaExpedicionCedula(ndtR1DatosPersonalesDO.getFecExpedicionCedprof());
+//			datosPersonalesDTO.setInstitucionCedula(ndtR1DatosPersonalesDO.getDesTituloExpedidoPor());
+//			datosPersonalesDTO.setNumeroCedula(ndtR1DatosPersonalesDO.getCedulaProfesional());
+//			lstNdtContadorPublicoAutDO.add(datosPersonalesDTO);
+//		}
+//		
+//        return lstNdtContadorPublicoAutDO;
+		return null;
 	}
 
+	
+	public List<MediosContactoDTO> obtenerMediosContactoPorIdPersona(Long idPersona){
+		List<PersonaMedioContactoTO> contactos = medioContadorService.consultarMedioContacto(idPersona);
+		List<MediosContactoDTO> mediosContacto = new ArrayList<MediosContactoDTO>();
+		if(contactos != null && !contactos.isEmpty()){
+			for(PersonaMedioContactoTO contacto:contactos){
+				MediosContactoDTO medioContacto = new MediosContactoDTO();
+				medioContacto.setDescripcion(contacto.getDescripcion());
+				medioContacto.setFechaAlta(contacto.getFechaAlta());
+				medioContacto.setIdPersonaFContacto(contacto.getIdPersonafContacto());
+				medioContacto.setMedioContacto(contacto.getIdMedioContacto());
+				mediosContacto.add(medioContacto);
+				medioContacto = null;
+			}
+		}
+		return mediosContacto;
+	}
+	
+	
 	
 	public ContadorPublicoIntegratorImpl() {
 	}
@@ -144,13 +169,13 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 
 	
 
-	public BdtuService getBdtuService() {
-		return bdtuService;
-	}
-
-	public void setBdtuService(BdtuService bdtuService) {
-		this.bdtuService = bdtuService;
-	}
+//	public BdtuService getBdtuService() {
+//		return bdtuService;
+//	}
+//
+//	public void setBdtuService(BdtuService bdtuService) {
+//		this.bdtuService = bdtuService;
+//	}
 
 
 	public SatService getSatService() {
@@ -159,6 +184,20 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 
 	public void setSatService(SatService satService) {
 		this.satService = satService;
+	}
+
+	/**
+	 * @return the medioContadorService
+	 */
+	public MedioContadorService getMedioContadorService() {
+		return medioContadorService;
+	}
+
+	/**
+	 * @param medioContadorService the medioContadorService to set
+	 */
+	public void setMedioContadorService(MedioContadorService medioContadorService) {
+		this.medioContadorService = medioContadorService;
 	}
 }
 
