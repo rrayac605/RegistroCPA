@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_FC9B9877_1627_4b9c_B414_E101B7999B36"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-23 16:46:01"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-23 22:04:42"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-23 22:24:55"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Reactivar Registro"/>
@@ -255,7 +255,7 @@
 			<EAScenario name="Reactivación de Registro" type="Basic Path" weight="0.00" subject="EAID_CABEABA1_DEF6_4ba5_BAAD_6F801CF01073" xmi.id="EAID_CCDFC3EA_55AC_4e66_B504_B0548FFE8E7D">
 				<EAScenarioContent>
 					<path>
-						<step name="El caso de uso inicia cuando el CPA ingresa a  Contadores Publicos y selecciona Reactivación de Registro de acuerdo a RF-C002. Detalle de Pantallas" guid="{A454E346-DBB1-48bd-B13D-54A70DBEA20A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El caso de uso inicia cuando el CPA ingresa a  Contadores Públicos y selecciona Reactivación de Registro de acuerdo a RF-C002. Detalle de Pantallas" guid="{A454E346-DBB1-48bd-B13D-54A70DBEA20A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="2 El sistema valida el registro IMSS del CPA  de acuerdo a  RF-A046 Validar si cuenta con Registro IMSS   y deberá mostrar en una pantalla emergente  los siguientes datos del CPA: *Nombre  * CURP *Registro IMSS y mostrar  el mensaje IdMsg 8 de acuerdo a RF-C011 Catálogo de mensajes Contadores; si el CPA  no cuenta con Registro IMSS continua en  FA1 No cuenta con registro IMSS " guid="{B4974AA6-6A0E-4322-BB1E-F055C3392C1C}" level="2" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="2a" guid="{5CE408B3-A77E-4762-BB4B-3165F664BF00}" join="End"/>
 						</step>
