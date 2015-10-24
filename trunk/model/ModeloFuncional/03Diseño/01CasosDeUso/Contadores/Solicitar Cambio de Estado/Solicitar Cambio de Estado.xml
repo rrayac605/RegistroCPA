@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_463F644D_EC57_49f6_A584_B2F24B7A879C"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 15:53:44"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-24 10:27:56"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-24 10:58:04"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Solicitar Cambio de Estado"/>
@@ -1048,6 +1048,36 @@
 	<XMI.difference/>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
 		<EAModel.scenario>
+			<EAScenario name="FA1  Registro IMSS incorrecto" type="Alternate" weight="7.00" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" xmi.id="EAID_411386AD_617D_4d8f_B83A_E2DAC8D4E440">
+				<EAScenarioContent>
+					<path>
+						<step name="El sistema habilita campo captura  RF-A040 Habilitar campo observaciones baja y registro IMSS  RF-C019 Captura de Registro IMSS" guid="{A78BAA73-A4CC-4310-A274-E381E3AFCBE1}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA captura el registro IMSS " guid="{3F2F3467-E6FE-4bc7-9A4D-90CF0104678C}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema deberá validar el registro capturado  RF-A021. Validar  Registro de contadores públicos autorizados. si el registro IMSS es valido habilita el botón Siguiente si, el campo capturado es incorrecto muestra el mensaje IdMsg 15   RF-C011 Catálogo de mensajes Contadores" guid="{B3E37739-D96D-44cc-BDE6-4BD8531A5CFB}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="Aceptar Solicitudes" guid="{E20D83EE-F8E2-413d-BC94-C6CBB88350F0}"/>
+							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
+							<item oldname="RF-A001. Ajustar consecutivo de solicitudes" guid="{1188418F-C32D-471e-A1CC-8F683C027696}"/>
+							<item oldname="RF-A026. Validar solicitud de Baja" guid="{2E3F424F-7927-4c15-8E9E-C50A49CD6EE5}"/>
+							<item oldname="RF-A029 Mostrar información Baja" guid="{3967B9A6-5867-4e24-B6B3-56457A22F826}"/>
+							<item oldname="RF-A046 Validar si cuenta con Registro IMSS" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A041 Validar campo Motivo de Baja" guid="{87654B7F-1DA0-4f67-AA51-B9CF294496D1}"/>
+							<item oldname="RF-A027 Validar solicitudes para dictaminar " guid="{9DE60D6E-33BF-4b02-B92E-B932CF7A4590}"/>
+							<item oldname="RF-A021. Validar  Registro de contadores públicos autorizados." guid="{D987692F-D58D-4c0e-B92C-86A6FA03047B}"/>
+							<item oldname="RF-A040 Habilitar campo observaciones baja y registro IMSS" guid="{F96D794C-CF1D-4889-B35C-C281BCBFFC22}"/>
+							<item oldname="RF-A028 Validar dictamenes en proceso" guid="{FDD17DE1-9FD7-4e63-9DA2-44D5131F8DB1}"/>
+							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
+							<item oldname="RF-C003. Funcionalidad para cerrar ventana" guid="{40B4F997-016A-4704-A8B4-C6FE4323B4EF}"/>
+							<item oldname="RF-C018 Captura de observaciones" guid="{61C82799-9FC6-4723-94C8-62C0DC0D371F}"/>
+							<item oldname="RF-C002. Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-C015  Captura motivos de baja" guid="{DE9251A5-E7CE-471c-ABBB-0C8B52FA8613}"/>
+							<item oldname="RF-C019 Captura de Registro IMSS" guid="{F02302E3-6D03-4245-849D-AF7F9E7DB863}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
 			<EAScenario name="FA1 No cuenta con Registro IMSS" type="Alternate" weight="1.00" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" xmi.id="EAID_7658ED08_7BF5_401d_AA7C_E53D624827DE">
 				<EAScenarioContent>
 					<path>
@@ -1164,31 +1194,6 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
-			<EAScenario name="FA6  Registro IMSS incorrecto" type="Alternate" weight="7.00" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" xmi.id="EAID_411386AD_617D_4d8f_B83A_E2DAC8D4E440">
-				<EAScenarioContent>
-					<path>
-						<step name="El sistema habilita un campo de captura de acuerdo a RF-A040 Habilitar campo observaciones baja y registro IMSS  RF-C019 Captura de Registro IMSS" guid="{A78BAA73-A4CC-4310-A274-E381E3AFCBE1}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA captura el registro IMSS " guid="{3F2F3467-E6FE-4bc7-9A4D-90CF0104678C}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema debera validar  el registro capturado de acuerdo a  RF-A021. Validar  Registro de contadores públicos autorizados. si el registro IMSS es  valido habilita el botón Siguiente si, el campo capturado es incorrecto muestra el mensaje IdMsg 15 de acuerdo a  RF-C011 Catálogo de mensajes Contadores" guid="{B3E37739-D96D-44cc-BDE6-4BD8531A5CFB}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<context>
-							<item oldname="Aceptar Solicitudes" guid="{E20D83EE-F8E2-413d-BC94-C6CBB88350F0}"/>
-							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
-							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
-							<item oldname="RF-A026. Validar solicitud de Baja" guid="{2E3F424F-7927-4c15-8E9E-C50A49CD6EE5}"/>
-							<item oldname="RF-A029 Mostrar información Baja" guid="{3967B9A6-5867-4e24-B6B3-56457A22F826}"/>
-							<item oldname="RF-A046 Validar si cuenta con Registro IMSS" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
-							<item oldname="RF-A041 Validar campo Motivo de Baja" guid="{87654B7F-1DA0-4f67-AA51-B9CF294496D1}"/>
-							<item oldname="RF-A040 Habilitar campo observaciones baja y registro IMSS" guid="{F96D794C-CF1D-4889-B35C-C281BCBFFC22}"/>
-							<item oldname="RF-A027 Validar solicitudes para dictaminar " guid="{9DE60D6E-33BF-4b02-B92E-B932CF7A4590}"/>
-							<item oldname="RF-A021. Validar  Registro de contadores públicos autorizados." guid="{D987692F-D58D-4c0e-B92C-86A6FA03047B}"/>
-							<item oldname="RF-A028 Validar dictamenes en proceso" guid="{FDD17DE1-9FD7-4e63-9DA2-44D5131F8DB1}"/>
-							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
-							<item oldname="RF-C019 Captura de Registro IMSS" guid="{F02302E3-6D03-4245-849D-AF7F9E7DB863}"/>
-							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
-						</context>
-					</path>
-				</EAScenarioContent>
-			</EAScenario>
 			<EAScenario name="FA7 Regresar a ventana anterior" type="Alternate" weight="2.00" subject="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" xmi.id="EAID_3ADD31BE_06EA_42b5_9111_967D306382D6">
 				<EAScenarioContent>
 					<path>
@@ -1219,11 +1224,11 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El caso de uso inicia cuando el CPA ingresa a Contadores Públicos y de acuerdo a RF-C002. Detalle de Pantallas Id detalle de Pantalla 1 , y  selecciona baja" guid="{B0CC104C-DA2A-479e-9EB0-03C37CA924B9}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema valida el registro IMSS del CPA  de acuerdo a RF-A046 Validar si cuenta con Registro IMSS  y  deberá mostrar en una pantalla emergente  los siguientes datos del CPA:  * Nombre * CURP * Registro IMSS  y mostrar  el mensaje IdMsg 8 de acuerdo a RF-C011 Catálogo de mensajes Contadores; si el CPA  no cuenta con Registro IMSS ,el sistema muestra el mensaje IdMsg 9 de acuerdo a   RF-C011 Catálogo de mensajes Contadores " guid="{11021940-9833-449f-A8BA-5EA8680441C4}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA selecciona sí al mensaje de confirmación de Registro IMSS, si el CPA selecciona NO continúa en el FA6  Registro IMSS incorrecto" guid="{19E3EE50-ED4E-47cd-8ECC-06761B9D2CEE}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
+						<step name="El sistema valida el registro IMSS del CPA  RF-A046 Validar si cuenta con Registro IMSS  y  deberá mostrar una pantalla emergente de acuerdo a  RF-C002. Detalle de Pantallas Id detalle de pantalla 11, y  mostrar  el mensaje IdMsg 8  RF-C011 Catálogo de mensajes Contadores;  si el CPA  no cuenta con Registro IMSS ,el sistema muestra el mensaje IdMsg 9  RF-C011 Catálogo de mensajes Contadores" guid="{11021940-9833-449f-A8BA-5EA8680441C4}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA selecciona sí al mensaje de confirmación de Registro IMSS, si el CPA selecciona NO continúa en el FA1  Registro IMSS incorrecto" guid="{19E3EE50-ED4E-47cd-8ECC-06761B9D2CEE}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="3a" guid="{411386AD-617D-4d8f-B83A-E2DAC8D4E440}" join="End"/>
 						</step>
-						<step name=" El sistema deberá mostrar  el mensaje IdMsg13 de acuerdo a RF-C011 Catálogo de mensajes Contadores   y realizar validaciones de acuerdo a RF-A046 Validar si cuenta con Registro IMSS    si el CPA tiene una solicitud de baja en proceso, el sistema muestra el  mensaje IdMsg 10 de acuerdo a  RF-C011 Catálogo de mensajes Contadores continúa en flujo alterno FA2 Solicitud de baja en proceso , si el CPA tiene solicitudes para dictaminar continúa en FA3 Solicitudes a dictaminar asignadas si el CPA tiene dictamenes en proceso continua en FA4 Dictamenes en proceso, si todas las validaciones son aprobadas deberá mostrar una ventana con la información de acuerdo a  y RF-C003. Funcionalidad para cerrar ventana  y deberá habilitar el campo de observaciones de acuerdo a RF-A040 Habilitar campo observaciones baja y registro IMSS " guid="{9020D42F-9CAE-4588-8BE1-E5B90F47AFEE}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name=" El sistema deberá mostrar  el mensaje IdMsg13  RF-C011 Catálogo de mensajes Contadores   y realizar validaciones de acuerdo a RF-A046 Validar si cuenta con Registro IMSS    si el CPA tiene una solicitud de baja en proceso, el sistema muestra el  mensaje IdMsg 10 de acuerdo a  RF-C011 Catálogo de mensajes Contadores continúa en flujo alterno FA2 Solicitud de baja en proceso , si el CPA tiene solicitudes para dictaminar continúa en FA3 Solicitudes a dictaminar asignadas si el CPA tiene dictamenes en proceso continua en FA4 Dictamenes en proceso, si todas las validaciones son aprobadas deberá mostrar una ventana con la información de acuerdo a  y RF-C003. Funcionalidad para cerrar ventana  y deberá habilitar el campo de observaciones de acuerdo a RF-A040 Habilitar campo observaciones baja y registro IMSS " guid="{9020D42F-9CAE-4588-8BE1-E5B90F47AFEE}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="4a" guid="{9D9CBDC7-E146-40f0-93F4-746D41FDD995}" join="{BA31DDA1-7FEB-472f-9F56-50A312BBA795}"/>
 							<extension level="4b" guid="{D9B7ADFF-5145-42b5-A315-B734894C8F8C}" join="{BA31DDA1-7FEB-472f-9F56-50A312BBA795}"/>
 							<extension level="4c" guid="{64CD5CAF-EC77-49f2-A418-D684CD3D2A9B}" join="{BA31DDA1-7FEB-472f-9F56-50A312BBA795}"/>
