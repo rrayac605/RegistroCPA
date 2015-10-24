@@ -1,5 +1,7 @@
 package mx.gob.imss.cit.de.dictaminacion.batch.validation.to;
 
+import java.util.Date;
+
 /**
  * 
  * 
@@ -18,6 +20,14 @@ public class A2TO {
 	private String impOtrasPrestaciones;
 	private String impTotal;
 	private int lineNumber;
+	private BitacoraErroresTO bitacoraErroresTO;
+	private int cveIdPatronDictamen;
+	private int cveIdAseveracion;
+	private Date fecRegistroActualizado;
+	private Date fecRegistroAlta;
+	private Date fecRegistroBaja;
+	private String cveIdUsuario;
+	private String cveIdPatronAsociado;
 	
 	public String getImpInstrumentosTrabajo() {
 		return impInstrumentosTrabajo;
@@ -84,6 +94,54 @@ public class A2TO {
 	}
 	public void setLineNumber(int lineNumber) {
 		this.lineNumber = lineNumber;
+	}
+	public BitacoraErroresTO getBitacoraErroresTO() {
+		return bitacoraErroresTO;
+	}
+	public void setBitacoraErroresTO(BitacoraErroresTO bitacoraErroresTO) {
+		this.bitacoraErroresTO = bitacoraErroresTO;
+	}
+	public int getCveIdPatronDictamen() {
+		return cveIdPatronDictamen;
+	}
+	public void setCveIdPatronDictamen(int cveIdPatronDictamen) {
+		this.cveIdPatronDictamen = cveIdPatronDictamen;
+	}
+	public int getCveIdAseveracion() {
+		return cveIdAseveracion;
+	}
+	public void setCveIdAseveracion(int cveIdAseveracion) {
+		this.cveIdAseveracion = cveIdAseveracion;
+	}
+	public Date getFecRegistroActualizado() {
+		return fecRegistroActualizado;
+	}
+	public void setFecRegistroActualizado(Date fecRegistroActualizado) {
+		this.fecRegistroActualizado = fecRegistroActualizado;
+	}
+	public Date getFecRegistroAlta() {
+		return fecRegistroAlta;
+	}
+	public void setFecRegistroAlta(Date fecRegistroAlta) {
+		this.fecRegistroAlta = fecRegistroAlta;
+	}
+	public String getCveIdUsuario() {
+		return cveIdUsuario;
+	}
+	public void setCveIdUsuario(String cveIdUsuario) {
+		this.cveIdUsuario = cveIdUsuario;
+	}
+	public Date getFecRegistroBaja() {
+		return fecRegistroBaja;
+	}
+	public void setFecRegistroBaja(Date fecRegistroBaja) {
+		this.fecRegistroBaja = fecRegistroBaja;
+	}
+	public String getCveIdPatronAsociado() {
+		return cveIdPatronAsociado;
+	}
+	public void setCveIdPatronAsociado(String cveIdPatronAsociado) {
+		this.cveIdPatronAsociado = cveIdPatronAsociado;
 	}		
 }
 

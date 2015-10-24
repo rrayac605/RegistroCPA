@@ -19,6 +19,8 @@ public class ResourceFieldSetMapper {
 			return mapFieldSetToA1(fieldSet, paramInt);
 		case A2:
 			return mapFieldSetToA2(fieldSet, paramInt);
+		default:
+			break;
 		}
 		return fieldSet;		
 	}
@@ -81,7 +83,7 @@ public class ResourceFieldSetMapper {
 		a2TO.setImpOtrasPrestaciones(fieldSet.readString("impOtrasPrestaciones"));
 		a2TO.setImpTotal(fieldSet.readString("impTotal"));
 		a2TO.setLineNumber(paramInt);
-		return null;	
+		return a2TO;
 	}
 
 }

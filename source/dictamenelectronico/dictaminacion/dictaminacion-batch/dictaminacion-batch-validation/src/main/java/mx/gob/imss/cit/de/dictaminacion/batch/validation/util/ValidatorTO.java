@@ -17,7 +17,7 @@ public class ValidatorTO {
 	public static BitacoraErroresTO validateA1(A1TO a1TO){
 		BitacoraErroresTO bitacoraErroresTO = new BitacoraErroresTO();
 		String desErrores = "";
-		bitacoraErroresTO = new BitacoraErroresTO();		
+		bitacoraErroresTO = new BitacoraErroresTO();
 		bitacoraErroresTO.setFecRegistroActualizado(new Date());
 		bitacoraErroresTO.setFecRegistroAlta(new Date());
 		
