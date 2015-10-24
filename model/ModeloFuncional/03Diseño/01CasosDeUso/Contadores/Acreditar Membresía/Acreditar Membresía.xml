@@ -978,51 +978,6 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Association xmi.id="EAID_988EFE36_249C_4f60_BE1D_7774C6C06F5F" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="include"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="UseCase"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="subtype" value="Includes"/>
-								<UML:TaggedValue tag="stereotype" value="include"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
-								<UML:TaggedValue tag="ea_localid" value="29359"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Enviar Acuse de Tramite"/>
-								<UML:TaggedValue tag="ea_targetName" value="Solicitar Baja "/>
-								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="26432"/>
-								<UML:TaggedValue tag="ea_targetID" value="26502"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={EB7EC261-5D15-4782-844E-32D31EA73E6C}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={3B55FE5C-CDB6-4e45-BF9A-E740F8A58F05};@ENDSTEREO;$DES;$CLT={988EFE36-249C-4f60-BE1D-7774C6C06F5F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
-							</UML:ModelElement.taggedValue>
-							<UML:Association.connection>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="source"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="containment" value="Unspecified"/>
-										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-										<UML:TaggedValue tag="ea_end" value="target"/>
-									</UML:ModelElement.taggedValue>
-								</UML:AssociationEnd>
-							</UML:Association.connection>
-						</UML:Association>
 						<UML:Association xmi.id="EAID_B884D43C_46DA_4003_B8D2_6C446B8DFE66" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.stereotype>
 								<UML:Stereotype name="include"/>
@@ -1163,6 +1118,11 @@
 				<UML:TaggedValue tag="diagram_guid" value="EAID_A65F9E8A_D773_4103_9813_A9C84AF075E6"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
+		<UML:DiagramElement geometry="Left=256;Top=66;Right=346;Bottom=136;" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" seqno="999999" style="DUID=D6C6AD77;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
 		<UML:DiagramElement geometry="Left=415;Top=253;Right=520;Bottom=323;" subject="EAID_671A2F36_4FE3_46b3_963B_9AA6257D4ACB" seqno="29" style="DUID=99CB8420;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_A65F9E8A_D773_4103_9813_A9C84AF075E6"/>
@@ -1178,7 +1138,7 @@
 				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
-		<UML:DiagramElement geometry="Left=250;Top=30;Right=355;Bottom=100;" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" seqno="1" style="DUID=C0E33245;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
+		<UML:DiagramElement geometry="Left=256;Top=66;Right=346;Bottom=136;" subject="EAID_DE872577_FBF1_43cd_93AD_E2C59A6EC029" seqno="999999" style="DUID=A83217BE;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7"/>
 			</UML:ModelElement.taggedValue>
@@ -1645,7 +1605,6 @@
 		<EAStub xmi.id="EAID_380B937B_796E_4156_8AD4_AFFACBF1C8B4" name="RF-A035 Mostrar Información Acreditación y Membresía" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_9173F5B4_88BC_4890_A0A4_D2B4115AC990" name="RF-A011. Validar campos obligatorios" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_2EFCF1C5_E34C_4821_9EAB_6C825508FA31" name="RF-A007. Validar correo electrónico" UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_1211E1A4_5908_412f_A8B5_825325C9DC4A" name="Solicitar Baja " UMLType="UseCase"/>
 		<EAStub xmi.id="EAID_4EA26ABC_ECAC_4bfe_A6D0_F198581BE3F7" name="RF-C004. Estructura de folio" UMLType="Requirement"/>
 	</XMI.extensions>
 </XMI>
