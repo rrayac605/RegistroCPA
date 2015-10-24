@@ -1,6 +1,10 @@
 package mx.gob.imss.cit.dictamen.contador.services.impl;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +21,7 @@ public class ContadorReporteUnitTest {
 		System.out.println("test="+inputStream.toString());
 
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 	//	ContadorReporteUnitTest test = new ContadorReporteUnitTest();
 	//	test.test();
 		
@@ -28,12 +32,15 @@ public class ContadorReporteUnitTest {
 		to.setFecha("test");
 		to.setNombreCompleto("test");
 		to.setNumeroCedulaProfesional("test");
-		to.setNumRegistroCpa("test");
+		to.setNumRegistroCpa(1);
 		to.setNumTramiteNotaria("test");
 		to.setNumTramiteNotaria("twes");
 		to.setRfc("test");
 		to.setSelloDigitalIMSS("test");
 		byte[] reporte =  crs.generarReportePreliminar(crs.generaParametrosActualizacionVoluntariaContador(to), 1);
+		OutputStream out = new FileOutputStream("c://code//out.pdf");
+		out.write(reporte);
+		out.close();
 		System.out.println("size="+reporte.length);
 	}
 
