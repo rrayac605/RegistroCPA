@@ -23,7 +23,7 @@ public class ContadorReporteIntegratorImpl implements ContadorReporteIntegrator 
 
 	@Override
 	public byte[] generarReportePreliminar( NdtContadorPublicoAutDTO ndtContadorPublicoAutDTO, Integer tipoReporte) {
-		
+	
 		NdtContadorPublicoAutTO ndtContadorPublicoAutTO = new NdtContadorPublicoAutTO();
 	
 		ndtContadorPublicoAutTO.setCadenaOriginal(ndtContadorPublicoAutDTO.getCadenaOriginal());
@@ -61,6 +61,49 @@ public class ContadorReporteIntegratorImpl implements ContadorReporteIntegrator 
 		byte[] reporte = contadorReporteService.generarReportePreliminar(mapParam, tipoReporte);
 		
 		return reporte;
+	}
+	
+	public byte[] generarReporteFinal( NdtContadorPublicoAutDTO ndtContadorPublicoAutDTO, Integer tipoReporte) {
+		byte[] reporte = null;
+		
+
+		NdtContadorPublicoAutTO ndtContadorPublicoAutTO = new NdtContadorPublicoAutTO();
+	
+		ndtContadorPublicoAutTO.setCadenaOriginal(ndtContadorPublicoAutDTO.getCadenaOriginal());
+		ndtContadorPublicoAutTO.setCurp(ndtContadorPublicoAutDTO.getCurp());
+		ndtContadorPublicoAutTO.setFecha(ndtContadorPublicoAutDTO.getFecha());
+		ndtContadorPublicoAutTO.setNombreCompleto(ndtContadorPublicoAutDTO.getNombreCompleto());
+		ndtContadorPublicoAutTO.setNumeroCedulaProfesional(ndtContadorPublicoAutDTO.getNumeroCedulaProfesional());
+		ndtContadorPublicoAutTO.setNumRegistroCpa(ndtContadorPublicoAutDTO.getNumRegistroCpa());
+		ndtContadorPublicoAutTO.setNumTramiteNotaria(ndtContadorPublicoAutDTO.getNumTramiteNotaria());
+		ndtContadorPublicoAutTO.setRfc(ndtContadorPublicoAutDTO.getRfc());
+		ndtContadorPublicoAutTO.setCadenaOriginal(ndtContadorPublicoAutDTO.getCadenaOriginal());
+		ndtContadorPublicoAutTO.setSelloDigitalIMSS(ndtContadorPublicoAutDTO.getSelloDigitalIMSS());
+		DomicilioFiscalDTO domicilio = ndtContadorPublicoAutDTO.getDomicilioFiscalDTO();
+		if(domicilio!=null){
+		   DomicilioTO domicilioTO = new DomicilioTO();
+		   domicilioTO.setCalle(domicilio.getCalle());
+		   domicilioTO.setCodigoPostal(domicilio.getCodigoPostal());
+		   domicilioTO.setColoniaAsentamiento(domicilio.getColoniaAsentamiento());
+		   domicilioTO.setCveEntidadFederativa(domicilio.getCveEntidadFederativa());
+		   domicilioTO.setEntidadFederativa(domicilio.getEntidadFederativa());
+		   domicilioTO.setEntreCalle(domicilio.getEntreCalle());
+		   domicilioTO.setLetraExterior(domicilio.getLetraExterior());
+		   domicilioTO.setLetraInterior(domicilio.getLetraInterior());
+		   domicilioTO.setLocalidad(domicilio.getLocalidad());
+		   domicilioTO.setMunicipioDelegacion(domicilio.getMunicipioDelegacion());
+		   domicilioTO.setyCalle(domicilio.getyCalle());
+		   domicilioTO.setLocalidad(domicilio.getLocalidad());
+		   domicilioTO.setNumeroExterior(domicilio.getNumeroExterior());
+		   domicilioTO.setNumeroInterior(domicilio.getNumeroInterior());
+
+		   ndtContadorPublicoAutTO.setDomicilioTO(domicilioTO);
+		}
+		Map<String, Object> mapParam =  contadorReporteService.generaParametrosActualizacionVoluntariaContador(ndtContadorPublicoAutTO);
+		
+		
+		return reporte;
+		
 	}
 	
 
