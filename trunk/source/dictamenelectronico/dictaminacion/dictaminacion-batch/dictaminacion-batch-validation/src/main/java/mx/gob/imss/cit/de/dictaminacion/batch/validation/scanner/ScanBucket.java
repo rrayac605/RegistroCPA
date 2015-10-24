@@ -16,7 +16,6 @@ import org.apache.log4j.Logger;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobParameters;
-import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.core.JobParametersInvalidException;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
@@ -31,7 +30,9 @@ import mx.gob.imss.cit.de.dictaminacion.batch.validation.dao.RutasDAO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.enums.AtestiguamientoEnum;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.AtestiguamientoTO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.JobParametersTO;
 import mx.gob.imss.cit.de.dictaminacion.batch.validation.to.RutaTO;
+import mx.gob.imss.cit.de.dictaminacion.batch.validation.util.JobParameterBuilderUtil;
 
 @Component
 public class ScanBucket {
@@ -49,6 +50,7 @@ public class ScanBucket {
     private RutasDAO rutasDAO; 
     private AtestiguamientoDAO atestiguamientoDAO;
     private AtestiguamientoDictamenDAO atestiguamientoDictamenDAO;
+    private JobParametersTO jobParametersTO;
 	
     @Autowired
     private JobLauncher jobLauncher;
@@ -64,17 +66,16 @@ public class ScanBucket {
 	  
     public void run() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {
     	JobParameters parameters;
+    	jobParametersTO = new JobParametersTO();
     	
     	List<RutaTO> rutas=rutasDAO.obtieneRutas();
     	for(int i=0;i<rutas.size();i++){
-    		System.out.println("Rutas: "+rutas.get(i).getRuta());
     		File file = new File(rutas.get(i).getRuta());
     		if (file.exists()){
     			
         		rutasDAO.borrarBitacora(rutas.get(i).getIdBitacora());
         		rutasDAO.borrarTablaAseveracion(rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
         		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
-        		
         		AtestiguamientoTO atestiguamiento=atestiguamientoDAO.obtieneAtestiguamiento(rutas.get(i).getIdAseveracionPadre()!=0 
         				? rutas.get(i).getIdAseveracionPadre():rutas.get(i).getCveIdAseveracion());
         		
@@ -109,19 +110,28 @@ public class ScanBucket {
         			
         		}
         		
-        		        		
-        		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));    		    		
-        		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
-    			parametersBuilder.addString("origen", processFile.getAbsolutePath()).toJobParameters();
-    			parametersBuilder.addString("destino", processFile.getAbsolutePath().replaceFirst("DictamenProceso", "DictamenDestino")).toJobParameters();
-    			parametersBuilder.addString("date", new Date().toString());
-    			parametersBuilder.addString("delay", delay);
-    			parametersBuilder.addString("fields", this.fields);
-    			parametersBuilder.addString("prototype", this.prototype);
-    			parametersBuilder.addLong("idAseveracion", Long.valueOf(rutas.get(i).getCveIdAseveracion()));
-    			parametersBuilder.addLong("cveIdBitacoraCargaAsev", Long.valueOf(rutas.get(i).getIdBitacora()));
-    			parametersBuilder.addLong("cveIdPatronDictamen", Long.valueOf(rutas.get(i).getCveIdPatronDictamen()));
-    			parameters = parametersBuilder.toJobParameters();
+        		System.out.println("AtestiguamientoID"+atestiguamiento.getIdAtestiguamiento());
+        		
+        		File processFile = this.moveFile(file, file.getAbsolutePath().replaceFirst("DictamenFiles", "DictamenProceso"), file.getParent().replaceFirst("DictamenFiles", "DictamenProceso"));
+        		
+        		jobParametersTO.setOrigen(processFile.getAbsolutePath());
+        		jobParametersTO.setDestino(processFile.getAbsolutePath().replaceFirst("DictamenProceso", "DictamenDestino"));       		
+        		jobParametersTO.setDelay(delay);
+        		jobParametersTO.setIdAseveracion(Long.valueOf(rutas.get(i).getCveIdAseveracion()));
+        		jobParametersTO.setCveIdBitacoraCargaAsev(Long.valueOf(rutas.get(i).getIdBitacora()));
+        		jobParametersTO.setCveIdPatronDictamen(Long.valueOf(rutas.get(i).getCveIdPatronDictamen()));
+        		
+//        		JobParametersBuilder parametersBuilder = new JobParametersBuilder();
+//    			parametersBuilder.addString("origen", processFile.getAbsolutePath());
+//    			parametersBuilder.addString("destino", processFile.getAbsolutePath().replaceFirst("DictamenProceso", "DictamenDestino")).toJobParameters();
+//    			parametersBuilder.addString("date", new Date().toString());
+//    			parametersBuilder.addString("delay", delay);
+//    			parametersBuilder.addString("fields", this.fields);
+//    			parametersBuilder.addString("prototype", this.prototype);
+//    			parametersBuilder.addLong("idAseveracion", Long.valueOf(rutas.get(i).getCveIdAseveracion()));
+//    			parametersBuilder.addLong("cveIdBitacoraCargaAsev", Long.valueOf(rutas.get(i).getIdBitacora()));
+//    			parametersBuilder.addLong("cveIdPatronDictamen", Long.valueOf(rutas.get(i).getCveIdPatronDictamen()));
+    			parameters = JobParameterBuilderUtil.buildJobParameters(jobParametersTO);
     			JobExecution execution = jobLauncher.run(job, parameters);
     			LOG.info("Exit Status : " + execution.getStatus());    			
     		}
