@@ -51,10 +51,12 @@
     	<property name="linesTO" ref="linesTO"></property>
     </bean>
 
-    <bean id="itemProcessor2" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.processors.TxtFileProcessor2" >
+    <bean id="itemProcessor2" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.processors.TxtFileProcessor2" scope="step">
     	<property name="linesTO" ref="linesTO"></property>
-    	<property name="rutasDAO" ref="rutasDaoImpl"/>   	
-    </bean>                
+    	<property name="rutasDAO" ref="rutasDaoImpl"/>
+    	<property name="cveIdPatronDictamen" value="#{jobParameters[cveIdPatronDictamen]}"></property>
+    	<property name="cveIdAseveracion" value="#{jobParameters[cveIdAseveracion]}"></property>
+    </bean>              
     
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"/>		
@@ -131,7 +133,7 @@
 		</property>
 	</bean>
 	
-	<bean id="oracleItemWriter" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+	<bean id="oracleItemWriter" class="org.springframework.batch.item.database.JdbcBatchItemWriter" scope="step">
 		<property name="dataSource" ref="dataSource" />
 		<property name="sql">
 			<value>
@@ -165,112 +167,9 @@
 		</property>
 	</bean>
 	
-	<bean id="oracleItemWriter2" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+	<bean id="oracleItemWriter2" class="org.springframework.batch.item.database.JdbcBatchItemWriter" scope="step">
 		<property name="dataSource" ref="dataSource" />
-		<property name="sql">
-			<value>
-            <![CDATA[
-				INSERT INTO NDT_A1_PERCEP_TRABAJADOR
-            		(
-					CVE_ID_A1_PERCEPTRAB,
-					CVE_ID_PATRON_DICTAMEN,
-					REG_PATRONAL,
-					NOM_PRIMER_APELLIDO_TRABAJADOR,
-					NOM_SEGUNDO_AELLIDO_TRABAJADOR,
-					NOM_NOMBRE_TRABAJADOR,
-					NUM_NSS_TRABAJADOR,
-					RFC_TRABAJADOR,
-					CURP_TRABAJADOR,
-					IMP_SUELDOS_SALARIOS,
-					IMP_GRATIFICACIONES,
-					IMP_VIATICOS,
-					IMP_TIEMPO_EXTRA,
-					IMP_PRIMA_VACACIONAL,
-					IMP_PRIMA_DOMINICAL,
-					IMP_PTU,
-					IMP_REEMBOLSO_GM,
-					IMP_FONDO_AHORRO,
-					IMP_CAJA_AHORRO,
-					IMP_VALES_DESPENSA,
-					IMP_AYUDA_GF,
-					IMP_CONTRIBUCION_PATRON,
-					IMP_PREMIO_PUNTUALIDAD,
-					IMP_PREMIO_ASISTENCIA,
-					IMP_PRIMA_SEGURO_VIDA,
-					IMP_SEGURO_GMM,
-					IMP_VALES_RESTAURANT,
-					IMP_VALES_GASOLINA,
-					IMP_VALES_ROPA,
-					IMP_AYUDA_RENTA,
-					IMP_AYUDA_ESCOLAR,
-					IMP_AYUDA_ANTEOJOS,
-					IMP_AYUDA_TRANSPORTE,
-					IMP_CUOTA_SINDICAL,
-					IMP_SUBSIDIO_INCAPACIDAD,
-					IMP_BECA_TRABAJADOR_HIJO,
-					IMP_OTROS_INGRESOS_XSALARIO,
-					IMP_PAGO_OTRO_EMPLEADOR,
-					IMP_JUB_PEN_RETIRO,
-					IMP_OTROS_PAGOS_XSEPARACION,
-					IMP_TOTAL,
-					CVE_ID_USUARIO,
-					FEC_REGISTRO_ALTA,
-					FEC_REGISTRO_BAJA,
-					FEC_REGISTRO_ACTUALIZADO,
-					CVE_ID_PATRON_ASOCIADO
-			        )
-			        VALUES
-			        (
-			        SEQ_NDTA1PERCEPTRABAJADOR.nextVal,
-					:cveIdPatronDictamen,
-					:regPatronal,
-					:nomPrimerApellidoTrabajador,
-					:nomSegundoApellidoTrabajador,
-					:nomNombreTrabajador,
-					:numNssTrabajador,
-					:rfcTrabajador,
-					:curpTrabajador,
-					:impSueldosSalarios,
-					:impGratificaciones,
-					:impViaticos,
-					:impTiempoExtra,
-					:impPrimaVacacional,
-					:impPrimaDominical,
-					:impPtu,
-					:impReembolsoGm,
-					:impFondoAhorro,
-					:impCajaAhorro,
-					:impValesDespensa,
-					:impAyudaGf,
-					:impContribucionPatron,
-					:impPremioPuntualidad,
-					:impPremioAsistencia,
-					:impPrimaSeguroVida,
-					:impSeguroGmm,
-					:impValesRestaurant,
-					:impValesGasolina,
-					:impValesRopa,
-					:impAyudaRenta,
-					:impAyudaEscolar,
-					:impAyudaAnteojos,
-					:impAyudaTransporte,
-					:impCuotaSindical,
-					:impSubsidioIncapacidad,
-					:impBecaTrabajadorHijo,
-					:impOtrosIngresosXsalario,
-					:impPagoOtroEmpleador,
-					:impJubPenRetiro,
-					:impOtrosPagosXseparacion,
-					:impTotal,
-					:cveIdUsuario,
-					:fecRegistroAlta,
-					:fecRegistroBaja,
-					:fecRegistroActualizado,
-					:cveIdPatronAsociado
-			        )
-            ]]>
-			</value>
-		</property>
+		<property name="sql" value="#{jobParameters[query]}"/>
 		<!-- It will take care matching between object property and sql name parameter -->
 		<property name="itemSqlParameterSourceProvider">
 			<bean
