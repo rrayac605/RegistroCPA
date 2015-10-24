@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_FC9B9877_1627_4b9c_B414_E101B7999B36"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-23 16:46:01"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-24 00:14:43"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-24 00:21:02"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Reactivar Registro"/>
@@ -130,6 +130,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -167,6 +168,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=3;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -204,6 +206,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -241,6 +244,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=3;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -278,6 +282,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -315,6 +320,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -352,6 +358,7 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -373,6 +380,7 @@
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_sourceID" value="20251"/>
 								<UML:TaggedValue tag="ea_targetID" value="19938"/>
+								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 							<UML:Association.connection>
@@ -581,9 +589,7 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El caso de uso inicia cuando el CPA ingresa a  Contadores Públicos y selecciona Reactivación de Registro de acuerdo a RF-C002. Detalle de Pantallas" guid="{A454E346-DBB1-48bd-B13D-54A70DBEA20A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="2 El sistema valida el registro IMSS del CPA  de acuerdo a  RF-A046 Validar si cuenta con Registro IMSS   y deberá mostrar en una pantalla emergente  los siguientes datos del CPA: *Nombre  * CURP *Registro IMSS y mostrar  el mensaje IdMsg 8 de acuerdo a RF-C011 Catálogo de mensajes Contadores; si el CPA  no cuenta con Registro IMSS continua en  FA1 No cuenta con registro IMSS " guid="{B4974AA6-6A0E-4322-BB1E-F055C3392C1C}" level="2" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="2a" guid="{5CE408B3-A77E-4762-BB4B-3165F664BF00}" join="End"/>
-						</step>
+						<step name="2 El sistema valida el registro IMSS del CPA  de acuerdo a  RF-A046 Validar si cuenta con Registro IMSS   y deberá mostrar en una pantalla emergente  los siguientes datos del CPA: *Nombre  * CURP *Registro IMSS y mostrar  el mensaje IdMsg 8 de acuerdo a RF-C011 Catálogo de mensajes Contadores; si el CPA  no cuenta con Registro IMSS continua en  FA1 No cuenta con registro IMSS " guid="{B4974AA6-6A0E-4322-BB1E-F055C3392C1C}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="3 El CPA selecciona sí al mensaje de confirmación de Registro IMSS, si el CPA selecciona NO continúa en el FA2  Registro IMSS incorrecto " guid="{19AB6BA9-D280-4ec7-BBD7-0B6EF8473B7A}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="3a" guid="{DD48191C-C43A-448e-8B10-A7E5E83A05C6}" join="End"/>
 						</step>
