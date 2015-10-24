@@ -60,9 +60,9 @@
 				</p:panelGrid>
 				<p:panelGrid id="pngSiNoValue" columns="2"
 					style="text-align:center;">
-					<p:commandButton value="#{msg['message.button.si']}"
+					<p:button value="#{msg['message.button.si']}"
 						styleClass="ui-priority-primary"
-						action="actualizacionRegistro" ajax="false" />
+						outcome="actualizacionRegistro"/>
 					<p:commandButton value="#{msg['message.button.no']}" 
 						onclick="iniData.hide();dialogBusqueda.show();"/>
 				</p:panelGrid>

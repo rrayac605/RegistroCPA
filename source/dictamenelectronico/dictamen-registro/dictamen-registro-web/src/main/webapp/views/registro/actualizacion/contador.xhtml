@@ -115,10 +115,10 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputText id="txtCorreoElectronico"  />
+						<h:outputText id="txtCorreoElectronico" value="#{actualizacionRegistroPage.email}" />
 					</p:column>
 					<p:column>
-						<h:outputText id="txtTelefono" />
+						<h:outputText id="txtTelefono" value="#{actualizacionRegistroPage.telefono}"/>
 					</p:column>
 				</p:row>
 			</p:panelGrid>
@@ -132,13 +132,13 @@
 			<p:outputLabel id="lblCorreo2">#{msg['message.actualizacion.datoscontacto.correo2']}</p:outputLabel>
 			<p:outputLabel id="lblConCorreo2">#{msg['message.actualizacion.datoscontacto.confirmarcorreo2']}</p:outputLabel>
 
-			<p:inputText id="txtCorreo2" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+			<p:inputText id="txtCorreo2" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" value="#{actualizacionRegistroPage.emailsOp[0]}"/>
 			<p:inputText id="txtConfCorreo2" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
 
 			<p:outputLabel id="lblCorreo3">#{msg['message.actualizacion.datoscontacto.correo3']}</p:outputLabel>
 			<p:outputLabel id="lblConCorreo3">#{msg['message.actualizacion.datoscontacto.confirmarcorreo3']}</p:outputLabel>
 
-			<p:inputText id="txtCorreo3" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+			<p:inputText id="txtCorreo3" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" value="#{actualizacionRegistroPage.emailsOp[1]}"/>
 			<p:inputText id="txtConfCorreo3" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
 		</p:panelGrid>
 	</p:panel>
@@ -155,5 +155,22 @@
 		</p:panelGrid>
 	</p:panel>
 	
+	<p:dialog id="dlgDatosCorrectos" visible="#{not actualizacionRegistroPage.habilitaDatosPersonales}">
+		<p:panel id="pnDatosCorrecto" style="width:100%">
+			<h:panelGroup id="pngDatosCorrectos">
+				<h3>#{msg['message.actualizacion.datoscontador.domicilio.datoscorrectos']}</h3>
+			</h:panelGroup>
+			<p:panelGrid columns="2">
+				<p:commandButton id="btnSiDatosDom"
+					value="#{msg['message.button.si']}"
+					actionListener="#{actualizacionRegistroBean.habilitaPanelPersonales()}"
+					update="dlgDatosCorrectos pnDatosContacto pnInfProf" styleClass="ui-priority-primary"/>
+				<p:commandButton id="btnNoDatosDom"
+					value="#{msg['message.button.no']}"
+					styleClass="ui-priority-primary"
+					actionListener="#{actualizacionRegistroBean.mostrarMensajeError}"/>
+			</p:panelGrid>
+		</p:panel>
+	</p:dialog>
 	
 </ui:composition>

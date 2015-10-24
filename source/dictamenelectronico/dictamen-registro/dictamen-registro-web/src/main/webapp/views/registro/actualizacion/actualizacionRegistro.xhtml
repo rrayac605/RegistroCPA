@@ -10,7 +10,8 @@
 	</ui:define>
 
 	<ui:define name="content">
-			<p:tabView id="tvActualizacion">
+			<p:tabView id="tvActualizacion" activeIndex="#{actualizacionRegistroPage.indiceTabActivo}">
+				<p:ajax event="tabChange" actionListener="#{actualizacionRegistroBean.onTabChange}"/>
 				<p:tab title="#{msg['message.actualizacion.datos.personales']}">
 					<ui:include src="contador.xhtml" />
 				</p:tab>
@@ -43,23 +44,6 @@
 						onclick="dialogMensajes.hide()" styleClass="ui-priority-primary" />
 				</p:panelGrid>
 			</p:dialog>
-			
-			<p:dialog id="dlgDatosCorrectos" visible="#{not actualizacionRegistroPage.habilitaDatosPersonales}">
-				<p:panel id="pnDatosCorrecto" style="width:100%">
-					<h:panelGroup id="pngDatosCorrectos">
-						<h3>#{msg['message.actualizacion.datoscontador.domicilio.datoscorrectos']}</h3>
-					</h:panelGroup>
-					<p:panelGrid columns="2">
-						<p:commandButton id="btnSiDatosDom"
-							value="#{msg['message.button.si']}"
-							actionListener="#{actualizacionRegistroBean.habilitaPanelPersonales}"
-							update="dlgDatosCorrectos pnDatosContacto pnInfProf" styleClass="ui-priority-primary"/>
-						<p:commandButton id="btnNoDatosDom"
-							value="#{msg['message.button.no']}"
-							styleClass="ui-priority-primary"
-							actionListener="#{actualizacionRegistroBean.mostrarMensajeError}"/>
-					</p:panelGrid>
-				</p:panel>
-			</p:dialog>			
+						
 	</ui:define>
 </ui:composition>

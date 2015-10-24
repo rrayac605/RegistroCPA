@@ -31,19 +31,25 @@ public class ActualizacionRegistroPage implements Serializable {
 	private boolean existeRegistroImss;
 	private String mensajesPrevios;
 	private DomicilioFiscalDTO domicilioFiscal;
+	private String email;
+	private String telefono;
+	private String[] emailsOp;
+	private boolean habilitaDatosDespacho;
+	private int indiceTabActivo;
+	private String tipoDespacho;
+	private boolean habilitarTrabajadoresDespacho;
+	private boolean habilitaNumeroTrabajadores;
+	private String cuentaConTrabajadores;
 	
 	public ActualizacionRegistroPage(){
-//		this.apellidoPaterno = "RAMIREZ";
-//		this.apellidoMaterno = "DE LA ROSA";
-//		this.nombre = "LUIS";
-//		this.curp = "RARL860522HDF00SS0";
-//		this.rfc = "RARL860522EDF";
-//		this.registroImss = "ABCD1234EFG5678";
 		this.habilitaDatosPersonales = Boolean.FALSE;
 		this.habiliatrBotonesAccion=Boolean.TRUE;
 		this.modalBusquedaVisible = Boolean.TRUE;
 //		this.tieneRegistro = Boolean.TRUE;
 		this.existeRegistroImss = Boolean.FALSE;
+		this.habilitaDatosDespacho = Boolean.FALSE;
+		this.habilitarTrabajadoresDespacho = Boolean.FALSE;
+		this.habilitaNumeroTrabajadores = Boolean.FALSE;
 	}
 	
 	/**
@@ -226,5 +232,135 @@ public class ActualizacionRegistroPage implements Serializable {
 	 */
 	public void setDomicilioFiscal(DomicilioFiscalDTO domicilioFiscal) {
 		this.domicilioFiscal = domicilioFiscal;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * @return the telefono
+	 */
+	public String getTelefono() {
+		return telefono;
+	}
+
+	/**
+	 * @param telefono the telefono to set
+	 */
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	/**
+	 * @return the emailsOp
+	 */
+	public String[] getEmailsOp() {
+		if(emailsOp == null){
+			emailsOp = new String[2];
+		}
+		return emailsOp;
+	}
+
+	/**
+	 * @param emailsOp the emailsOp to set
+	 */
+	public void setEmailsOp(String[] emailsOp) {
+		this.emailsOp = emailsOp;
+	}
+
+	/**
+	 * @return the habilitaDatosDespacho
+	 */
+	public boolean isHabilitaDatosDespacho() {
+		return habilitaDatosDespacho;
+	}
+
+	/**
+	 * @param habilitaDatosDespacho the habilitaDatosDespacho to set
+	 */
+	public void setHabilitaDatosDespacho(boolean habilitaDatosDespacho) {
+		this.habilitaDatosDespacho = habilitaDatosDespacho;
+	}
+
+	/**
+	 * @return the indiceTabActivo
+	 */
+	public int getIndiceTabActivo() {
+		return indiceTabActivo;
+	}
+
+	/**
+	 * @param indiceTabActivo the indiceTabActivo to set
+	 */
+	public void setIndiceTabActivo(int indiceTabActivo) {
+		this.indiceTabActivo = indiceTabActivo;
+	}
+
+	/**
+	 * @return the tipoDespacho
+	 */
+	public String getTipoDespacho() {
+		return tipoDespacho;
+	}
+
+	/**
+	 * @param tipoDespacho the tipoDespacho to set
+	 */
+	public void setTipoDespacho(String tipoDespacho) {
+		this.tipoDespacho = tipoDespacho;
+	}
+
+	/**
+	 * @return the habilitarTrabajadoresDespacho
+	 */
+	public boolean isHabilitarTrabajadoresDespacho() {
+		return habilitarTrabajadoresDespacho;
+	}
+
+	/**
+	 * @param habilitarTrabajadoresDespacho the habilitarTrabajadoresDespacho to set
+	 */
+	public void setHabilitarTrabajadoresDespacho(
+			boolean habilitarTrabajadoresDespacho) {
+		this.habilitarTrabajadoresDespacho = habilitarTrabajadoresDespacho;
+	}
+
+	/**
+	 * @return the habilitaNumeroTrabajadores
+	 */
+	public boolean isHabilitaNumeroTrabajadores() {
+		return habilitaNumeroTrabajadores;
+	}
+
+	/**
+	 * @param habilitaNumeroTrabajadores the habilitaNumeroTrabajadores to set
+	 */
+	public void setHabilitaNumeroTrabajadores(boolean habilitaNumeroTrabajadores) {
+		this.habilitaNumeroTrabajadores = habilitaNumeroTrabajadores;
+	}
+
+	/**
+	 * @return the cuentaConTrabajadores
+	 */
+	public String getCuentaConTrabajadores() {
+		return cuentaConTrabajadores;
+	}
+
+	/**
+	 * @param cuentaConTrabajadores the cuentaConTrabajadores to set
+	 */
+	public void setCuentaConTrabajadores(String cuentaConTrabajadores) {
+		this.cuentaConTrabajadores = cuentaConTrabajadores;
 	}
 }
