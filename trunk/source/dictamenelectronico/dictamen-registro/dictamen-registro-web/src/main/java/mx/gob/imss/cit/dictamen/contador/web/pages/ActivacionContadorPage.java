@@ -4,10 +4,8 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
-import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 
 
 @ManagedBean(name = "activacionContadorPage")
@@ -16,10 +14,12 @@ public class ActivacionContadorPage implements Serializable {
 
 	private static final long serialVersionUID = -8976265295241536809L;
 	
-	private PersonaDTO personaDTO;
     private DatosPersonalesDTO datosPersonalesDTO;
     private ContactoDTO contactoDTO;
+    private boolean valido=false;
     
+
+
 	public ContactoDTO getContactoDTO() {
 		return contactoDTO;
 	}
@@ -36,14 +36,13 @@ public class ActivacionContadorPage implements Serializable {
 		this.datosPersonalesDTO = datosPersonalesDTO;
 	}
 
-	public PersonaDTO getPersonaDTO() {
-		return personaDTO;
+
+	public boolean isValido() {
+		return valido;
 	}
 
-	public void setPersonaDTO(PersonaDTO personaDTO) {
-		this.personaDTO = personaDTO;
+	public void setValido(boolean valido) {
+		this.valido = valido;
 	}
-
-
 
 }
