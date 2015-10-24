@@ -38,11 +38,11 @@ public class NdtContadorPublicoAutTO implements Serializable {
 		this.domicilioTO = domicilioTO;
 	}
 
-	public String getNumRegistroCpa() {
+	public Integer getNumRegistroCpa() {
 		return numRegistroCpa;
 	}
 
-	public void setNumRegistroCpa(String numRegistroCpa) {
+	public void setNumRegistroCpa(Integer numRegistroCpa) {
 		this.numRegistroCpa = numRegistroCpa;
 	}
 
@@ -88,7 +88,7 @@ public class NdtContadorPublicoAutTO implements Serializable {
 	
 	private String numTramiteNotaria;
 	private String fecha;
-	private String numRegistroCpa;
+	private Integer numRegistroCpa;
 	private String rfc;
 	private String curp;
 	private String nombreCompleto;
