@@ -4,4 +4,5 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.NdtContadorPublicoA
 
 public interface ContadorReporteIntegrator {
 	byte[] generarReportePreliminar(NdtContadorPublicoAutDTO ndtContadorPublicoAutDTO, Integer tipoReporte);
+	byte[] generarReporteFinal( NdtContadorPublicoAutDTO ndtContadorPublicoAutDTO, Integer tipoReporte);
 }
