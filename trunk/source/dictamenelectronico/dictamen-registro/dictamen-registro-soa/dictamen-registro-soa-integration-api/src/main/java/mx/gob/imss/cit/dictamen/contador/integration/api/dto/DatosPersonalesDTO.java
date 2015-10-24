@@ -8,7 +8,6 @@ public class DatosPersonalesDTO implements Serializable {
 	private static final long serialVersionUID = 2009177760699640353L;
    
 	private Date fechaExpedicionCedula;
-
 	private String institucionCedula;
 	private String numeroCedula;
 	
