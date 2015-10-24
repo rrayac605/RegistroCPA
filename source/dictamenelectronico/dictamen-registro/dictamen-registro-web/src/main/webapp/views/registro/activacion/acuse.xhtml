@@ -10,6 +10,10 @@
 	<ui:define name="content">
           
    <h:form id="frmDatosContador4">
+				<p:panel id="pnActivacionRegistro"
+			header="Activacion de Registro"
+			footer="Activacion de Registro de Contadores Públicos Autorizados">
+
 			
      <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="frmDatosContador4"  />
           
@@ -43,21 +47,57 @@
 						  
 	 <h:form id="frmDatosContador3">
 			
-		<p:dialog widgetVar="dlgDatosContador" resizable="false" draggable="false" 
-		visible="true">
-			<p:panel id="pnDatosContador" header="Mensaje del Sistema">		
+				<p:fieldset
+					legend="Datos del Colegio o Asociación"
+					toggleable="true" toggleSpeed="500">
+					<p:ajax event="toggle"
+						listener="#{activacionSolicitudBean.handleToggle}" update="msgs" />
 
-<p:media value="#{activacionAcuseBean.stream}" width="100%" height="400px" player="pdf">
+			
+						<p:panel header="Mensaje del Sistema">		
+			
+			
+	
+
+<p:media value="/faces/views/registro/activacion/reporte.xhtml" width="100%" height="400px" player="pdf">
 </p:media>
 
+
+    <table width="700px" cellpadding="1" border="0">
+					<tr>
+					
+					<td>
+					<p:commandButton
+								value="Atras" 
+								ajax="false" 
+								process="@this,formActivacionRegistro"
+								action="#{activacionAcuseBean.accionAtras}"
+								update=":formActivacionRegistro" id="btnAtras"
+								styleClass="ui-priority-primary" />
+						<p:commandButton
+								value="Siguiente" 
+								ajax="false" 
+								process="@this,formActivacionRegistro"
+								action="#{activacionAcuseBean.accionSiguiente}"
+								update=":formActivacionRegistro" id="btnSiguiente"
+								styleClass="ui-priority-primary" />
+						</td>
+					</tr>
+			
+
+				</table>
+			
+			
+			
+			
 			</p:panel>
-		</p:dialog>
-		
+	
+	</p:fieldset>
 
 		
 	</h:form>
 	
-
+</p:panel>
 
 	</ui:define>
 </ui:composition>
