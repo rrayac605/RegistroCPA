@@ -21,5 +21,6 @@ public class DictamenWebServiceTest  {
 		consultaPersonaFisicaInput.setRfc("DUSL821218LN8");
 		persona.setArg0(consultaPersonaFisicaInput);
 		service.getServiciosBDTUPort().consultaPersonaFisica(persona);
+		
 	}
 }
