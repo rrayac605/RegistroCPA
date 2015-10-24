@@ -47,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_FC9B9877_1627_4b9c_B414_E101B7999B36"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-23 16:46:01"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-24 00:21:02"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-24 13:33:55"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Reactivar Registro"/>
@@ -130,7 +130,6 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -168,7 +167,6 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=3;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -206,7 +204,6 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -244,7 +241,6 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=3;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -282,7 +278,6 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -320,7 +315,6 @@
 								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
 								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
 								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
@@ -342,7 +336,6 @@
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_sourceID" value="26634"/>
 								<UML:TaggedValue tag="ea_targetID" value="26369"/>
-								<UML:TaggedValue tag="privatedata5" value="SX=0;SY=0;EX=0;EY=0;EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 							<UML:Association.connection>
@@ -414,18 +407,57 @@
 					</path>
 				</EAScenarioContent>
 			</EAScenario>
-			<EAScenario name="FA2 Registro IMSS incorrecto" type="Alternate" weight="2.00" subject="EAID_CABEABA1_DEF6_4ba5_BAAD_6F801CF01073" xmi.id="EAID_DD48191C_C43A_448e_8B10_A7E5E83A05C6"/>
+			<EAScenario name="FA1 Registro IMSS incorrecto" type="Alternate" weight="2.00" subject="EAID_CABEABA1_DEF6_4ba5_BAAD_6F801CF01073" xmi.id="EAID_DD48191C_C43A_448e_8B10_A7E5E83A05C6">
+				<EAScenarioContent>
+					<path>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
+							<item oldname="RF-A047 Validar solicitud Pendiente" guid="{3065B8F8-6D86-4457-ACED-463ED6F95836}"/>
+							<item oldname="RF-A046 Validar si cuenta con Registro IMSS" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A008. Validar correo electronico coincidente" guid="{4A125D29-98A8-43f0-8F4D-788C5FD62112}"/>
+							<item oldname="RF-A013. Inhabilitar campos de consulta" guid="{4FC634FF-D2FE-43b7-9880-F4D5399A371E}"/>
+							<item oldname="RF-A043 Validar RFC persona moral" guid="{82AD1305-2E40-46e0-951B-E51553C6439A}"/>
+							<item oldname="RF-A011. Validar campos obligatorios" guid="{9173F5B4-88BC-4890-A0A4-D2B4115AC990}"/>
+							<item oldname="RF-A050 Validar estatus Baja" guid="{A125C3B8-0808-45bc-B7A8-4EE757B81280}"/>
+							<item oldname="RF-A009. Validar número de trabajadores" guid="{BD37F413-5642-4200-AD6C-459655C6EA1D}"/>
+							<item oldname="RF-A010. Validar longitud de Registro Patronal" guid="{D63EFA30-125A-4f5a-BD44-259334A83291}"/>
+							<item oldname="RF-A053 Realizar búsqueda del RFC y almacenar" guid="{E85B3F6D-F1A2-4394-8E41-0DC67A7E16FE}"/>
+							<item oldname="RF-A051 Mostrar Información Reactivación" guid="{ED8C2427-8FBD-4efd-A143-C0CA986D1FB2}"/>
+							<item oldname="RF-C003. Funcionalidad para cerrar ventana" guid="{40B4F997-016A-4704-A8B4-C6FE4323B4EF}"/>
+							<item oldname="RF-C004. Estructura de folio" guid="{4EA26ABC-ECAC-4bfe-A6D0-F198581BE3F7}"/>
+							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
+							<item oldname="RF-C002. Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-N007. Captura de RFC" guid="{D1F9DA6A-1E98-4673-8A1E-619C0E387CB3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA2 No cumple validaciones" type="Alternate" weight="9.00" subject="EAID_CABEABA1_DEF6_4ba5_BAAD_6F801CF01073" xmi.id="EAID_FA9CD637_0B88_4e03_AF88_24275753904A"/>
 			<EAScenario name="FA3 Solicitud de Reactivación en Proceso" type="Alternate" weight="3.00" subject="EAID_CABEABA1_DEF6_4ba5_BAAD_6F801CF01073" xmi.id="EAID_7779CB69_9840_42e6_8647_B220118FAB31">
 				<EAScenarioContent>
 					<path>
 						<step name="El sistema deberá mostrar el IdMsg10 de acuerdo a RF-C011 Catálogo de mensajes Contadores" guid="{C2E4590B-722A-4394-B81E-CD566AC88684}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El CPA selecciona Aceptar" guid="{21507DE1-A0AD-4c3d-B80E-88C9E2BF7B48}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
-							<item oldname="RF-C002. Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
-							<item oldname="RF-A047 Validar solicitud Pendiente" guid="{3065B8F8-6D86-4457-ACED-463ED6F95836}"/>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
+							<item oldname="RF-A047 Validar solicitud Pendiente" guid="{3065B8F8-6D86-4457-ACED-463ED6F95836}"/>
 							<item oldname="RF-A046 Validar si cuenta con Registro IMSS" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A008. Validar correo electronico coincidente" guid="{4A125D29-98A8-43f0-8F4D-788C5FD62112}"/>
+							<item oldname="RF-A013. Inhabilitar campos de consulta" guid="{4FC634FF-D2FE-43b7-9880-F4D5399A371E}"/>
+							<item oldname="RF-A043 Validar RFC persona moral" guid="{82AD1305-2E40-46e0-951B-E51553C6439A}"/>
+							<item oldname="RF-A011. Validar campos obligatorios" guid="{9173F5B4-88BC-4890-A0A4-D2B4115AC990}"/>
+							<item oldname="RF-A050 Validar estatus Baja" guid="{A125C3B8-0808-45bc-B7A8-4EE757B81280}"/>
+							<item oldname="RF-A009. Validar número de trabajadores" guid="{BD37F413-5642-4200-AD6C-459655C6EA1D}"/>
+							<item oldname="RF-A010. Validar longitud de Registro Patronal" guid="{D63EFA30-125A-4f5a-BD44-259334A83291}"/>
+							<item oldname="RF-A053 Realizar búsqueda del RFC y almacenar" guid="{E85B3F6D-F1A2-4394-8E41-0DC67A7E16FE}"/>
+							<item oldname="RF-A051 Mostrar Información Reactivación" guid="{ED8C2427-8FBD-4efd-A143-C0CA986D1FB2}"/>
+							<item oldname="RF-C003. Funcionalidad para cerrar ventana" guid="{40B4F997-016A-4704-A8B4-C6FE4323B4EF}"/>
+							<item oldname="RF-C004. Estructura de folio" guid="{4EA26ABC-ECAC-4bfe-A6D0-F198581BE3F7}"/>
 							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
+							<item oldname="RF-C002. Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-N007. Captura de RFC" guid="{D1F9DA6A-1E98-4673-8A1E-619C0E387CB3}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -436,12 +468,24 @@
 						<step name="El sistema deberá mostrar el IdMsg20 de acuerdo a RF-C011 Catálogo de mensajes Contadores" guid="{A64AB4CF-DC05-4e98-8738-D700C68B3203}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El CPA selecciona Aceptar" guid="{F22B6BF2-974E-495b-A178-13333ADD7BED}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
-							<item oldname="RF-A050 Validar estatus Baja" guid="{A125C3B8-0808-45bc-B7A8-4EE757B81280}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
 							<item oldname="RF-A047 Validar solicitud Pendiente" guid="{3065B8F8-6D86-4457-ACED-463ED6F95836}"/>
 							<item oldname="RF-A046 Validar si cuenta con Registro IMSS" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A008. Validar correo electronico coincidente" guid="{4A125D29-98A8-43f0-8F4D-788C5FD62112}"/>
+							<item oldname="RF-A013. Inhabilitar campos de consulta" guid="{4FC634FF-D2FE-43b7-9880-F4D5399A371E}"/>
+							<item oldname="RF-A043 Validar RFC persona moral" guid="{82AD1305-2E40-46e0-951B-E51553C6439A}"/>
+							<item oldname="RF-A011. Validar campos obligatorios" guid="{9173F5B4-88BC-4890-A0A4-D2B4115AC990}"/>
+							<item oldname="RF-A050 Validar estatus Baja" guid="{A125C3B8-0808-45bc-B7A8-4EE757B81280}"/>
+							<item oldname="RF-A009. Validar número de trabajadores" guid="{BD37F413-5642-4200-AD6C-459655C6EA1D}"/>
+							<item oldname="RF-A010. Validar longitud de Registro Patronal" guid="{D63EFA30-125A-4f5a-BD44-259334A83291}"/>
+							<item oldname="RF-A053 Realizar búsqueda del RFC y almacenar" guid="{E85B3F6D-F1A2-4394-8E41-0DC67A7E16FE}"/>
+							<item oldname="RF-A051 Mostrar Información Reactivación" guid="{ED8C2427-8FBD-4efd-A143-C0CA986D1FB2}"/>
+							<item oldname="RF-C003. Funcionalidad para cerrar ventana" guid="{40B4F997-016A-4704-A8B4-C6FE4323B4EF}"/>
+							<item oldname="RF-C004. Estructura de folio" guid="{4EA26ABC-ECAC-4bfe-A6D0-F198581BE3F7}"/>
 							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
 							<item oldname="RF-C002. Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
-							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF-N007. Captura de RFC" guid="{D1F9DA6A-1E98-4673-8A1E-619C0E387CB3}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -549,51 +593,36 @@
 			<EAScenario name="Reactivación de Registro" type="Basic Path" weight="0.00" subject="EAID_CABEABA1_DEF6_4ba5_BAAD_6F801CF01073" xmi.id="EAID_CCDFC3EA_55AC_4e66_B504_B0548FFE8E7D">
 				<EAScenarioContent>
 					<path>
-						<step name="El caso de uso inicia cuando el CPA ingresa a  Contadores Públicos y selecciona Reactivación de Registro de acuerdo a RF-C002. Detalle de Pantallas" guid="{A454E346-DBB1-48bd-B13D-54A70DBEA20A}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="2 El sistema valida el registro IMSS del CPA  de acuerdo a  RF-A046 Validar si cuenta con Registro IMSS   y deberá mostrar en una pantalla emergente  los siguientes datos del CPA: *Nombre  * CURP *Registro IMSS y mostrar  el mensaje IdMsg 8 de acuerdo a RF-C011 Catálogo de mensajes Contadores; si el CPA  no cuenta con Registro IMSS continua en  FA1 No cuenta con registro IMSS " guid="{B4974AA6-6A0E-4322-BB1E-F055C3392C1C}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="3 El CPA selecciona sí al mensaje de confirmación de Registro IMSS, si el CPA selecciona NO continúa en el FA2  Registro IMSS incorrecto " guid="{19AB6BA9-D280-4ec7-BBD7-0B6EF8473B7A}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="3a" guid="{DD48191C-C43A-448e-8B10-A7E5E83A05C6}" join="End"/>
+						<step name="El CPA selecciona la opción Contadores públicos de trámites digitales" guid="{E4BF81A7-139B-454a-A232-C3937502D23B}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema muestra en pantalla las opciones del detalle 1 del  RF-C002. Detalle de Pantallas" guid="{C750E6B6-F3F0-4ae2-BC24-B12374BE62D4}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA selecciona Reactivación de Registro" guid="{E601A951-073B-42a6-8AB2-C0CD1DCA97C6}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="2 El sistema valida el registro IMSS del CPA  RF-A046 Validar si cuenta con Registro IMSS  y  deberá mostrar una pantalla emergente de acuerdo a  RF-C002. Detalle de Pantallas Id detalle de pantalla 11, y  mostrar  el mensaje IdMsg 8  RF-C011 Catálogo de mensajes Contadores;  si el CPA  no cuenta con Registro IMSS ,el sistema muestra el mensaje IdMsg 9  RF-C011 Catálogo de mensajes Contadores" guid="{B4974AA6-6A0E-4322-BB1E-F055C3392C1C}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="3 El CPA selecciona sí al mensaje de confirmación de Registro IMSS, si el CPA selecciona NO continúa en el FA1  Registro IMSS incorrecto " guid="{19AB6BA9-D280-4ec7-BBD7-0B6EF8473B7A}" level="5" uses="" useslist="" result="" state="" trigger="1" link="">
+							<extension level="5a" guid="{DD48191C-C43A-448e-8B10-A7E5E83A05C6}" join="End"/>
 						</step>
-						<step name="El sistema deberá mostrar  el mensaje IdMsg13 de acuerdo a  RF-C011 Catálogo de mensajes Contadores   y realizar validaciones de acuerdo a  RF-A047 Validar solicitud Pendiente  RF-A050 Validar estatus Baja    si el CPA tiene una solicitud de reactivación en proceso continúa en FA3 Solicitud de reactivación en proceso, si el CPA no tiene un estatus baja continúa en FA4 Estatus no corresponde a Baja, si todas las validaciones son aprobadas deberá mostrar una ventana con la información  RF-A051 Mostrar Información Reactivación y deberá mostrar el mensaje IdMsg 21 de acuerdo a  RF-C011 Catálogo de mensajes Contadores y  generar el Folio de acuerdo a RF-C004. Estructura de folio y " guid="{B448BD83-869A-4147-85CE-45783C728BA4}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="4a" guid="{7779CB69-9840-42e6-8647-B220118FAB31}" join="End"/>
-							<extension level="4b" guid="{DABAC1C3-8687-446f-9C8B-CB192DFB5727}" join="End"/>
+						<step name="El sistema deberá mostrar  el mensaje IdMsg13 de acuerdo a  RF-C011 Catálogo de mensajes Contadores   y realizar validaciones de acuerdo a  RF-A047 Validar solicitud Pendiente  RF-A050 Validar estatus Baja , si el CPA tiene solicitudes en proceso continúa en FA 2 No cumple validaciones , si todas las validaciones son aprobadas deberá mostrar una ventana con la información  RF-A051 Mostrar Información Reactivación y deberá mostrar el mensaje IdMsg 21 de acuerdo a  RF-C011 Catálogo de mensajes Contadores y  generar el Folio de acuerdo a RF-C004. Estructura de folio " guid="{B448BD83-869A-4147-85CE-45783C728BA4}" level="6" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="6a" guid="{FA9CD637-0B88-4e03-AF88-24275753904A}" join="End"/>
 						</step>
-						<step name="El CPA  selecciona Sí al mensaje de confirmación " guid="{665BCBA7-4479-49a7-961D-55E4D1A643A2}" level="5" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="5a" guid="{33A22D8D-53FB-421c-BEFF-6F8A80BB2F2E}" join="End"/>
-						</step>
-						<step name="El sistema  muestra los siguientes campos para captura: *Correo electrónico 1 - Confirmación de correo electrónico 1 - Correo electrónico 2 -  Confirmación de correo electrónico 2  - Número de cédula Profesional  -Fecha de expedición de Cedula Profesional " guid="{5B6D7565-702F-4125-B10A-47E4309993B0}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA captura los campos del paso 6 " guid="{0B2D7083-A55A-4c9f-BA77-BC1BFF340D43}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema valida los datos capturados de acuerdo a RF-A007. Validar correo electrónico RF-A008. Validar correo electronico coincidente si la captura es incorrecta continúa en FA6 Error en  captura de correo electrónico" guid="{8B845EDE-28D7-406e-A380-6C925EEE724C}" level="8" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="8a" guid="{416215BF-E335-45b4-AD9C-DFD195F4E432}" join="End"/>
-						</step>
-						<step name="EL CPA Selecciona Siguiente " guid="{5A8AA040-93BA-4aa3-8983-6323411A4099}" level="9" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema guarda la información Capturada y muestra del  RF-C002. Detalle de Pantallas  el ID de pantalla 3 y los botones anterior y siguiente RF-A013. Inhabilitar campos de consulta" guid="{0006AB9F-A882-4905-8D67-C8A999139196}" level="10" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA  da clic sobre la lista desplegable de la pregunta: ¿Forma parte de un despacho o es Profesional Independiente?  y selecciona Despacho, si selecciona independiente continúa en el FA7 Independiente&#xA;" guid="{4F108383-075F-479e-AB81-68E5903F6CFF}" level="11" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="11a" guid="{D2436249-2F85-47f1-99E8-F6F7E9097D11}" join="End"/>
-							<extension level="11b" guid="{C0354402-A32E-428b-8A42-90E9F61D081D}" join="End"/>
-						</step>
-						<step name="El sistema muestra el campo de captura RFC RF-N007. Captura de RFC" guid="{B2A9C2BE-6AE7-4843-AACE-AB5C0822B7E1}" level="12" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El CPA captura el RFC" guid="{05F211FB-B900-42bd-B6C9-FEE5CADB138B}" level="13" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema valida la captura del RFC RF-A043 Validar RFC persona moral y realiza la búsqueda del CPA de acuerdo a RF-A053 Realizar búsqueda del RFC y almacenar, si el sistema no encuentra coincidencias con el RFC continúa en el FA" guid="{BD575E4D-4786-4dad-A40C-4136B8B425D1}" level="14" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA  selecciona Sí al mensaje de confirmación de datos" guid="{665BCBA7-4479-49a7-961D-55E4D1A643A2}" level="7" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF-A007. Validar correo electrónico" guid="{2EFCF1C5-E34C-4821-9EAB-6C825508FA31}"/>
 							<item oldname="RF-A047 Validar solicitud Pendiente" guid="{3065B8F8-6D86-4457-ACED-463ED6F95836}"/>
 							<item oldname="RF-A046 Validar si cuenta con Registro IMSS" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
 							<item oldname="RF-A008. Validar correo electronico coincidente" guid="{4A125D29-98A8-43f0-8F4D-788C5FD62112}"/>
 							<item oldname="RF-A013. Inhabilitar campos de consulta" guid="{4FC634FF-D2FE-43b7-9880-F4D5399A371E}"/>
-							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
-							<item oldname="RF-C003. Funcionalidad para cerrar ventana" guid="{40B4F997-016A-4704-A8B4-C6FE4323B4EF}"/>
-							<item oldname="RF-C004. Estructura de folio" guid="{4EA26ABC-ECAC-4bfe-A6D0-F198581BE3F7}"/>
-							<item oldname="RF-C002. Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
-							<item oldname="RF-N007. Captura de RFC" guid="{D1F9DA6A-1E98-4673-8A1E-619C0E387CB3}"/>
 							<item oldname="RF-A043 Validar RFC persona moral" guid="{82AD1305-2E40-46e0-951B-E51553C6439A}"/>
 							<item oldname="RF-A011. Validar campos obligatorios" guid="{9173F5B4-88BC-4890-A0A4-D2B4115AC990}"/>
 							<item oldname="RF-A050 Validar estatus Baja" guid="{A125C3B8-0808-45bc-B7A8-4EE757B81280}"/>
 							<item oldname="RF-A009. Validar número de trabajadores" guid="{BD37F413-5642-4200-AD6C-459655C6EA1D}"/>
 							<item oldname="RF-A010. Validar longitud de Registro Patronal" guid="{D63EFA30-125A-4f5a-BD44-259334A83291}"/>
-							<item oldname="RF-A051 Mostrar Información Reactivación" guid="{ED8C2427-8FBD-4efd-A143-C0CA986D1FB2}"/>
 							<item oldname="RF-A053 Realizar búsqueda del RFC y almacenar" guid="{E85B3F6D-F1A2-4394-8E41-0DC67A7E16FE}"/>
-							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF-A051 Mostrar Información Reactivación" guid="{ED8C2427-8FBD-4efd-A143-C0CA986D1FB2}"/>
+							<item oldname="RF-C003. Funcionalidad para cerrar ventana" guid="{40B4F997-016A-4704-A8B4-C6FE4323B4EF}"/>
+							<item oldname="RF-C004. Estructura de folio" guid="{4EA26ABC-ECAC-4bfe-A6D0-F198581BE3F7}"/>
+							<item oldname="RF-C011 Catálogo de mensajes Contadores" guid="{0495C340-C8A3-47ed-A621-442F87E8F593}"/>
+							<item oldname="RF-C002. Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-N007. Captura de RFC" guid="{D1F9DA6A-1E98-4673-8A1E-619C0E387CB3}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
