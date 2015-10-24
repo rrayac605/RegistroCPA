@@ -56,7 +56,7 @@
 						<h:outputText styleClass="SubtituloSeccion" value="RFC" />
 					</p:column>
 					<p:column>
-<p:inputText id="txtRFC" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.rfc}" readonly="true" disabled="true" />
+<p:inputText id="txtRFC" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.rfc}" readonly="true" disabled="true" />
 					</p:column>
 
 				</p:row>
@@ -65,7 +65,7 @@
 					<h:outputText styleClass="SubtituloSeccion" value="Nombre " />	
 					</p:column>
 					<p:column>
-<p:inputText id="txtNombre" size="45"  value="#{activacionContadorBean.activacionContadorPage.personaDTO.nombreCompleto}" readonly="true" disabled="true"/>
+<p:inputText id="txtNombre" size="45"  value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.nombreCompleto}" readonly="true" disabled="true"/>
 					</p:column>
 				</p:row>
 				<p:row>
@@ -73,7 +73,7 @@
 					<h:outputText styleClass="SubtituloSeccion" value="CURP " />	
 					</p:column>
 					<p:column>
-<p:inputText id="txtCURP" size="30"  value="#{activacionContadorBean.activacionContadorPage.personaDTO.curp}" readonly="true" disabled="true" />
+<p:inputText id="txtCURP" size="30"  value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.curp}" readonly="true" disabled="true" />
 					</p:column>
 				</p:row>
 				
@@ -97,19 +97,19 @@
 						
 						<p:row>
 							<p:column  rowspan="3">
-									<p:inputText id="txtCalle" size="35" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
+									<p:inputText id="txtCalle" size="35" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
 									<p:message for="txtCalle" />
 									<p:tooltip for="txtCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column>
-									<p:inputText id="txtNumeroExterior" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
+									<p:inputText id="txtNumeroExterior" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroExterior" />
 									<p:tooltip for="txtNumeroExterior" value="Numero Exterior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column>
-									<p:inputText id="txtLetraExterior" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
+									<p:inputText id="txtLetraExterior" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraExterior" />
 									<p:tooltip for="txtLetraExterior" value="Letra Exterior"
 										showEffect="fade" hideEffect="fade" />
@@ -130,13 +130,13 @@
 						
 						<p:row>
 							<p:column>
-									<p:inputText id="txtNumeroInterior" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
+									<p:inputText id="txtNumeroInterior" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroInterior" />
 									<p:tooltip for="txtNumeroInterior" value="Numero Interior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtLetraInterior" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
+									<p:inputText id="txtLetraInterior" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraInterior" />
 									<p:tooltip for="txtLetraInterior" value="Letra Interior"
 										showEffect="fade" hideEffect="fade" />
@@ -156,13 +156,13 @@
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtEntreCalle" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
+									<p:inputText id="txtEntreCalle" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
 									<p:message for="txtEntreCalle" />
 									<p:tooltip for="txtEntreCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtYCalle" size="45" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
+									<p:inputText id="txtYCalle" size="45" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
 									<p:message for="txtYCalle" />
 									<p:tooltip for="txtYCalle" value="Calle Adyacente"
 										showEffect="fade" hideEffect="fade" />
@@ -181,13 +181,13 @@
 						</p:row>
 						<p:row>
 							<p:column>
-									<p:inputText id="txtColonia" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
+									<p:inputText id="txtColonia" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
 									<p:message for="txtColonia" />
 									<p:tooltip for="txtColonia" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
-									<p:inputText id="txtLocalidad" size="25" value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
+									<p:inputText id="txtLocalidad" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
 									<p:message for="txtLocalidad" />
 									<p:tooltip for="txtLocalidad" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -204,14 +204,14 @@
 						<p:row>
 							<p:column align="left">
 									<p:inputText id="txtMunDel" size="35" 
-									value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
+									value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
 									<p:message for="txtMunDel" />
 									<p:tooltip for="txtMunDel" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2" align="left">
 									<p:inputText id="txtEntidadFederativa" size="35"
-										value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
+										value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
 									<p:message for="txtEntidadFederativa" />
 									<p:tooltip for="txtEntidadFederativa" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -227,11 +227,10 @@
 						<p:row>
 							<p:column align="left" colspan="3">
 									<p:inputText id="txtCodigoPostal" size="25" 
-									value="#{activacionContadorBean.activacionContadorPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.codigoPostal}" 
+									value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.codigoPostal}" 
 									readonly="true" disabled="true" />
 									<p:message for="txtCodigoPostal" />
-									<p:tooltip for="txtCodigoPostal" value="Calle"
-										showEffect="fade" hideEffect="fade" />
+
 								</p:column>
 						</p:row>
 						<p:row>
@@ -244,7 +243,7 @@
 							<p:column align="left" colspan="3">
 									<p:inputText id="txtCorreoElectronico" 
 									    size="35"
-									    value="#{activacionContadorBean.activacionContadorPage.personaDTO.correoElectronico}"
+									    value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.correoElectronico}"
 										readonly="true" disabled="true" />
 									<p:message for="txtCorreoElectronico" />
 									<p:tooltip for="txtCorreoElectronico" value="Calle"
@@ -262,7 +261,7 @@
 									<p:inputText id="txtTelefono" 
 									size="25" 
 									readonly="true" disabled="true"
-									value="#{activacionContadorPage.personaDTO.telefono}" />
+									value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.telefono}" />
 									<p:message for="txtTelefono" />
 									<p:tooltip for="txtTelefono" value="Calle" showEffect="fade"
 										hideEffect="fade" />
@@ -386,22 +385,27 @@
         </p:panelGrid>
     </p:fieldset>
     
-    <table width="650px" cellpadding="2" border="0">
+    <table width="700px" cellpadding="1" border="0">
 					<tr>
 					
-						<td align="right" colspan="2"><p:commandButton value="(1.1) Guardar" 
-						        ajax="false"
-								process="@this,formActivacionRegistro" update=":formActivacionRegistro"
-								id="btnGuardar" 
-								action="#{activacionContadorBean.accionGuardar}"
-								styleClass="ui-priority-primary" /> 
+					<td align="right">
 						<p:commandButton
-								value="(1.2) Siguiente" 
+								value="Atras" 
+								ajax="false"
+								immediate="true"
+								process="@this,formActivacionRegistro"
+								action="#{activacionContadorBean.accionAtras}"
+								update=":formActivacionRegistro" id="btnAtras"
+								styleClass="ui-priority-primary" />
+						<p:commandButton
+								value="Siguiente" 
 								ajax="false" 
 								process="@this,formActivacionRegistro"
 								action="#{activacionContadorBean.accionSiguiente}"
-								update=":formActivacionRegistro" id="btnSalir"
-								styleClass="ui-priority-primary" /></td>
+								update=":formActivacionRegistro" id="btnSiguiente"
+								styleClass="ui-priority-primary" />
+					
+					</td>
 					</tr>
 			
 

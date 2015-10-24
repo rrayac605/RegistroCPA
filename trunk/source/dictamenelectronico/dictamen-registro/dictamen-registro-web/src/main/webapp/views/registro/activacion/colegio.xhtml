@@ -34,7 +34,7 @@
 							<td colspan="1"><h:panelGrid columns="3">
 									<p:inputText id="txtRFC" 
 									size="12"
-									maxlength="12"
+									maxlength="25"
 									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.rfc}"
 									required="true" />
 									<p:message for="txtRFC" />
@@ -64,7 +64,7 @@
 						<tr>
 						<td colspan="2">
 						 <p:commandButton
-								value="(1.1) Buscar"
+								value="Buscar"
 								disabled="#{activacionColegioBean.activarColegioValido}"
 								ajax="false" process="@this,formReactivacionRegistro"
 								action="#{activacionColegioBean.accionBuscarPersonaMoral()}"
@@ -259,9 +259,7 @@
 						
     <p:splitButton  value="      Acciones     " >
         <p:menuitem value="Activar Registro IMSS"  ajax="false"  action="#{activacionColegioBean.siguiente}" />
-        <p:menuitem value="Guardar Trámite" ajax="false" action="#{activacionColegioBean.siguiente}"  />
-        <p:menuitem value="Guardar y Cerrar Trámite" ajax="false"  />
-         <p:menuitem value="Cancelar Trámite" ajax="false"/>
+         <p:menuitem value="Atras" ajax="false" immediate="true" action="#{activacionColegioBean.accionAtras}" />
     </p:splitButton>						
 						</td>
 					</tr>

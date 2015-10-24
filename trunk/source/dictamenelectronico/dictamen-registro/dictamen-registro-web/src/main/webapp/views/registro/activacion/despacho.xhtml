@@ -374,16 +374,20 @@
 						
 						 <table width="100%"  border="0">
 					<tr align="right">
-						<td><p:commandButton value="(1.1) Guardar" 
-						disabled="#{activacionDespachoBean.activarProcesar}" ajax="false"
-								process="@this,formServer" update=":tabView:pnServidor"
-								id="btnGuardar" styleClass="ui-priority-primary" /> 
+						<td> 
+								<p:commandButton
+						action="#{activacionDespachoBean.accionAtras}"
+								value="Atras" ajax="false" process="@this,formServer"
+								update=":tabView:pnServidor" id="btnAtras"
+								styleClass="ui-priority-primary" immediate="true" />
 						<p:commandButton
 						disabled="#{activacionDespachoBean.activarProcesar}"
-								value="(1.2) Siguiente" ajax="false" process="@this,formServer"
+								value="Siguiente" ajax="false" process="@this,formServer"
 								action="#{activacionDespachoBean.siguiente()}"
-								update=":tabView:pnServidor" id="btnSiguientes"
-								styleClass="ui-priority-primary" /></td>
+								update=":tabView:pnServidor" id="btnSiguiente"
+								styleClass="ui-priority-primary" />
+								
+								</td>
 					</tr>
 
 
