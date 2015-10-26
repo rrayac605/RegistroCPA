@@ -22,8 +22,8 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralBDTUDTO
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenContadorNegocioException;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
-import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
-import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionDespachoPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionContadorPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionDespachoPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import javax.annotation.PostConstruct;

@@ -23,8 +23,8 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.NdtContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
-import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionContadorPage;
-import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionSolicitudPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionContadorPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import javax.annotation.PostConstruct;
