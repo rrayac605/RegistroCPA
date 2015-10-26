@@ -1,4 +1,4 @@
-package mx.gob.imss.cit.dictamen.contador.web.beans;
+package mx.gob.imss.cit.dictamen.contador.web.beans.activacion;
 
 import java.util.HashMap;
 import java.util.List;
