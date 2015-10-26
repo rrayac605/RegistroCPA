@@ -3,6 +3,7 @@
  */
 package mx.gob.imss.cit.de.dictaminacion.services.impl;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.regex.Pattern;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.xml.namespace.QName;
 
 import org.apache.log4j.Logger;
 
@@ -17,6 +19,7 @@ import mx.gob.imss.cit.de.dictaminacion.commons.constants.DictamenConstants;
 import mx.gob.imss.cit.de.dictaminacion.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.enums.EstadoDictamenEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.enums.EstadoPatronAsociadoEnum;
+import mx.gob.imss.cit.de.dictaminacion.commons.enums.TipoTramiteEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.exception.DictamenException;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.ContadorPublicoAutTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.PatronAsociadoTO;
@@ -33,6 +36,13 @@ import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtPatronDictamenDAO;
 import mx.gob.imss.cit.de.dictaminacion.services.PatronDictamenService;
 import mx.gob.imss.cit.de.dictaminacion.services.transformer.TransformerServiceUtils;
 import mx.gob.imss.cit.de.dictaminacion.services.util.DictamenExceptionBuilder;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.ConsultaPersonaMoral;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.ConsultaPersonaMoralInput;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.ConsultaPersonaMoralOutput;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.ConsultaPersonaMoralResponse;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.GovernanceHeaderRequest;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.ServiciosBDTU;
+import mx.gob.imss.cit.dictamen.servicios.ws.serviciosbdtu.ServiciosBDTU_Service;
 
 /**
  * @author ajfuentes
@@ -69,12 +79,31 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 
 			NdtContadorPublicoAutDO ndtContadorPublicoAutDO = TransformerServiceUtils
 					.transformer(contador);
+			
+			
+			//se llama al webservice de bdtu
+			URL wsdl=new URL("http://11.254.20.226:8011/DictamenEJB/Proxies/ServiciosBDTU_Dictamen?wsdl");
+			QName name=new QName("http://servicios.dictamen.cit.imss.gob.mx/ws/ServiciosBDTU/","ServiciosBDTU");
+			ServiciosBDTU_Service serviciosBDTUService=new  ServiciosBDTU_Service(wsdl,name);
+			ServiciosBDTU serviciosBDTU=serviciosBDTUService.getServiciosBDTUPort();			
+			GovernanceHeaderRequest governanceHeaderRequest=new GovernanceHeaderRequest();
+			ConsultaPersonaMoralInput input=new ConsultaPersonaMoralInput();
+			input.setRfc(dictamen.getDesRfc());
+			ConsultaPersonaMoral consultaPersonaMoral=new ConsultaPersonaMoral();
+			consultaPersonaMoral.setGovernanceHeaderRequest(governanceHeaderRequest);
+			consultaPersonaMoral.setArg0(input);
+			ConsultaPersonaMoralResponse response=serviciosBDTU.consultaPersonaMoral(consultaPersonaMoral);			
+			ConsultaPersonaMoralOutput output=response.getReturn();
+			
+			dictamen.setCveIdPersonaMoral(output.getPersonaMoral().getCveMoral());
+		
 			NdtPatronDictamenDO ndtPatronDictamenDO = TransformerServiceUtils
 					.transformer(dictamen);
 			ndtPatronDictamenDO.setFecRegistroAlta(new Date());			
 			NdcEstadoDictamenDO ndcEstadoDictamenDO = new NdcEstadoDictamenDO();
 			ndcEstadoDictamenDO.setCveIdEstadoDictamen(EstadoDictamenEnum.EN_PROCESO.getId());
 			ndtPatronDictamenDO.setCveIdEstadoDictamen(ndcEstadoDictamenDO);
+			ndtPatronDictamenDO.setCveIdTramite(TipoTramiteEnum.TRAMITE_DICTAMEN.getId());
 			// se inserta en patron dictamen
 			ndtPatronDictamenDAO.create(ndtPatronDictamenDO);
 			ndtPatronDictamenDAO.flush();
@@ -178,29 +207,30 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 			throws DictamenException {
 		
 		List<PatronAsociadoTO> res=new ArrayList<PatronAsociadoTO>();
+		PatronDictamenTO patron=null;
 		try{
-			 PatronDictamenTO patron=listPatronAsociadoTO.get(0).getCveIdPatronDictamen();
-			 
-			ndtPatronAsociadoDAO.removeByPatronDictamen(patron.getCveIdPatronDictamen());
-			
-			for (PatronAsociadoTO patronAsociadoTO : listPatronAsociadoTO) {
-				NdtPatronAsociadoDO patronAsociadoDO=TransformerServiceUtils.transformer(patronAsociadoTO);
-				patronAsociadoDO.setFecRegistroAlta(new Date());
-				patronAsociadoDO.setFecRegistroActualizado(new Date());
-												
-				boolean val = Pattern.matches(DictamenConstants.EXPRESION_REGULAR_REGISTRO_PATRONAL,patronAsociadoTO.getRegPatronAsociado());
-				if(val){
-					ndtPatronAsociadoDAO.create(patronAsociadoDO);
-					PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
-					to.setEstadoValidacion(EstadoPatronAsociadoEnum.CORRECTO.getDescripcion());
-					res.add(to);
-				}else{
-					PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
-					to.setEstadoValidacion(EstadoPatronAsociadoEnum.FORMATO_INCORRECTO.getDescripcion());
-					res.add(to);
-				}
-			
+             if(listPatronAsociadoTO!=null && !listPatronAsociadoTO.isEmpty()){
+	            	patron=listPatronAsociadoTO.get(0).getCveIdPatronDictamen();
+	            	ndtPatronAsociadoDAO.removeByPatronDictamen(patron.getCveIdPatronDictamen());
+            	
+					for (PatronAsociadoTO patronAsociadoTO : listPatronAsociadoTO) {
+						NdtPatronAsociadoDO patronAsociadoDO=TransformerServiceUtils.transformer(patronAsociadoTO);
+						patronAsociadoDO.setFecRegistroAlta(new Date());
+						patronAsociadoDO.setFecRegistroActualizado(new Date());
+														
+						boolean val = Pattern.matches(DictamenConstants.EXPRESION_REGULAR_REGISTRO_PATRONAL,patronAsociadoTO.getRegPatronAsociado());
+						if(val){
+							ndtPatronAsociadoDAO.create(patronAsociadoDO);
+							PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
+							to.setEstadoValidacion(EstadoPatronAsociadoEnum.CORRECTO.getDescripcion());
+							res.add(to);
+						}else{
+							PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
+							to.setEstadoValidacion(EstadoPatronAsociadoEnum.FORMATO_INCORRECTO.getDescripcion());
+							res.add(to);
+						}
 				
+					}
 			}
 		
 		}catch (Exception e) {

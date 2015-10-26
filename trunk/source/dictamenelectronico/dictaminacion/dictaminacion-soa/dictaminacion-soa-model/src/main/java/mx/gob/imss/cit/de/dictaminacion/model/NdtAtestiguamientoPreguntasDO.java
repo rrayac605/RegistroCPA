@@ -69,6 +69,8 @@ public class NdtAtestiguamientoPreguntasDO implements Serializable {
     @JoinColumn(name = "CVE_ID_ATESTIGUAMIENTO", referencedColumnName = "CVE_ID_ATESTIGUAMIENTO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdcAtestiguamientoDO cveIdAtestiguamiento;
+    @Column(name = "IND_ORDEN")
+    private Integer indOrden;
 
     public NdtAtestiguamientoPreguntasDO() {
     }
@@ -165,5 +167,13 @@ public class NdtAtestiguamientoPreguntasDO implements Serializable {
     public String toString() {
         return "mx.gob.imss.cit.dictamen.model.NdtAtestiguamientoPreguntasDO[ cveIdAtestiguamientos=" + cveIdAtestiguamientos + " ]";
     }
+
+	public Integer getIndOrden() {
+		return indOrden;
+	}
+
+	public void setIndOrden(Integer indOrden) {
+		this.indOrden = indOrden;
+	}
     
 }
