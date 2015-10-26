@@ -1,4 +1,4 @@
-package mx.gob.imss.cit.dictamen.contador.web.beans;
+package mx.gob.imss.cit.dictamen.contador.web.beans.activacion;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
