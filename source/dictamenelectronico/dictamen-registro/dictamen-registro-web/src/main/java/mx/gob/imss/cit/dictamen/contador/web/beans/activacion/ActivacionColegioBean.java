@@ -7,8 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.DictamenIntegrator;
@@ -23,7 +22,7 @@ import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 @ManagedBean(name = "activacionColegioBean")
 @ViewScoped
 public class ActivacionColegioBean extends BaseBean{
-	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionColegioBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ActivacionColegioBean.class);
 
 	private static final long serialVersionUID = 8484045551757214944L;
 	

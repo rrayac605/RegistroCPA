@@ -9,8 +9,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 public class CurpValidator extends BaseValidator  implements Validator {
     
@@ -31,7 +30,7 @@ public class CurpValidator extends BaseValidator  implements Validator {
 
         
     /**Log de la clase.*/
-	private static final Logger LOG = LoggerFactory.getLogger(RFCPersonaFisicaValidator.class);
+	private static final Logger LOG = Logger.getLogger(BaseValidator.class);
     
     /**Leyenda que indica que el mensaje es informativo.*/
     private static final String INFO = "INFO";

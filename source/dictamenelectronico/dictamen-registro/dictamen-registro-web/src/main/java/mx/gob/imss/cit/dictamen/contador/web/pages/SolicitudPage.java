@@ -1,14 +1,17 @@
 package mx.gob.imss.cit.dictamen.contador.web.pages;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+
 
 
 
 import mx.gob.imss.cit.dictamen.contador.web.util.annotations.Reset;
 @ManagedBean(name = "dictamenPage")
 @ViewScoped
-public class SolicitudPage {
+public class SolicitudPage implements Serializable{
 
 	/**
 	 * 

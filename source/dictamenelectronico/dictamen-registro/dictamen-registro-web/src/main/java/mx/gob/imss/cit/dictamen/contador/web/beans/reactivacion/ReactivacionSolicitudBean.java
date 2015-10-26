@@ -17,16 +17,15 @@ import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionSolicitu
 import mx.gob.imss.cit.dictamen.contador.web.pages.reactivacion.ReactivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
+import org.apache.log4j.Logger;
 import org.primefaces.event.ToggleEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @ManagedBean(name = "reactivacionSolicitudBean")
 @ViewScoped
 public class ReactivacionSolicitudBean extends BaseBean {
 
 	private static final long serialVersionUID = -6717550265551435161L;
-	private static final Logger LOGGER = LoggerFactory.getLogger(ReactivacionSolicitudBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ReactivacionSolicitudBean.class);
 
 	
 	@ManagedProperty(value = "#{reactivacionSolicitudPage}")

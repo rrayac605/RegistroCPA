@@ -27,7 +27,7 @@
 			<base-name>bundles.messages_reactivacion</base-name>
 			<var>msg_reactivacion</var>
 		</resource-bundle>
-				<resource-bundle>
+		<resource-bundle>
 			<base-name>bundles.messages_template</base-name>
 			<var>msg_template</var>
 		</resource-bundle>
@@ -35,15 +35,12 @@
 
 
 	<navigation-rule>
-	<from-view-id>*</from-view-id>
-	
-	<navigation-case>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
 			<from-outcome>activacionContadorAceptacion</from-outcome>
 			<to-view-id>/faces/views/registro/activacion/contador.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
-		
 		<navigation-case>
 			<from-outcome>contadores</from-outcome>
 			<to-view-id>/views/contadores.xhtml</to-view-id>
@@ -52,6 +49,31 @@
 		<navigation-case>
 			<from-outcome>solicitudRegistro</from-outcome>
 			<to-view-id>/views/registro/solicitud/solicitudRegistro.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registroDespacho</from-outcome>
+			<to-view-id>/views/registro/solicitud/registroDespacho.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registroColegio</from-outcome>
+			<to-view-id>/views/registro/solicitud/registroColegio.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registroDocumentacion</from-outcome>
+			<to-view-id>/views/registro/solicitud/registroDocumentacion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registroVista</from-outcome>
+			<to-view-id>/views/registro/solicitud/registroVista.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>registroProtesta</from-outcome>
+			<to-view-id>/views/registro/solicitud/registroProtesta.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -64,6 +86,4 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-
-
 </faces-config>

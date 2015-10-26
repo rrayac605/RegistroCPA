@@ -12,8 +12,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.model.SelectItem;
 import javax.faces.model.SelectItemGroup;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.DictamenIntegrator;
@@ -29,10 +28,12 @@ import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.log4j.Logger;
+
 @ManagedBean(name = "reactivacionDespachoBean")
 @ViewScoped
 public class ReactivacionDespachoBean extends BaseBean {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ReactivacionDespachoBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ReactivacionDespachoBean.class);
 
 	private static final long serialVersionUID = -4696391496237240996L;
     

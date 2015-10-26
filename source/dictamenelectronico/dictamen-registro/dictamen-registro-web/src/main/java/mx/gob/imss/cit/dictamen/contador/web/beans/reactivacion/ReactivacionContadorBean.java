@@ -9,9 +9,8 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.primefaces.event.ToggleEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContactoDTO;
@@ -31,7 +30,7 @@ public class ReactivacionContadorBean extends BaseBean {
 	
 	private static final long serialVersionUID = 6140756713835351053L;
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ReactivacionContadorBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ReactivacionContadorBean.class);
 
 	
 	@ManagedProperty(value = "#{activacionContadorPage}")

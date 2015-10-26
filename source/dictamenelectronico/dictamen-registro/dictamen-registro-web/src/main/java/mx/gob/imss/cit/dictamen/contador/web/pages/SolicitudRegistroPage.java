@@ -28,8 +28,6 @@ public class SolicitudRegistroPage implements Serializable {
 
 	private Long folio;
 	private ContadorPublicoAutDTO contador;
-	private String email1;
-	private String email2;
 	private Date fechaActual;
 	private String headerDialog;
 	private String mensajeDialog;
@@ -69,36 +67,6 @@ public class SolicitudRegistroPage implements Serializable {
 	 */
 	public void setContador(ContadorPublicoAutDTO contador) {
 		this.contador = contador;
-	}
-
-	/**
-	 * @return the email1
-	 */
-	public String getEmail1() {
-		return email1;
-	}
-
-	/**
-	 * @param email1
-	 *            the email1 to set
-	 */
-	public void setEmail1(String email1) {
-		this.email1 = email1;
-	}
-
-	/**
-	 * @return the email2
-	 */
-	public String getEmail2() {
-		return email2;
-	}
-
-	/**
-	 * @param email2
-	 *            the email2 to set
-	 */
-	public void setEmail2(String email2) {
-		this.email2 = email2;
 	}
 
 	/**
