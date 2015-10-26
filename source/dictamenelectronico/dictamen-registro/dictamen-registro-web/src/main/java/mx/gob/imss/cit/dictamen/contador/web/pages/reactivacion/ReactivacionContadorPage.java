@@ -8,7 +8,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
 
 
-@ManagedBean(name = "activacionContadorPage")
+@ManagedBean(name = "reactivacionContadorPage")
 @SessionScoped
 public class ReactivacionContadorPage implements Serializable {
 

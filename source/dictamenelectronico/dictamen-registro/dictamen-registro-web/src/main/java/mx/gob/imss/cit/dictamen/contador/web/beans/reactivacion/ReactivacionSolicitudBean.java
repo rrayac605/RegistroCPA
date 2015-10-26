@@ -14,6 +14,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionSolicitudPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.reactivacion.ReactivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import org.primefaces.event.ToggleEvent;
@@ -29,7 +30,8 @@ public class ReactivacionSolicitudBean extends BaseBean {
 
 	
 	@ManagedProperty(value = "#{reactivacionSolicitudPage}")
-	private ActivacionSolicitudPage activacionSolicitudPage;
+	private ReactivacionSolicitudPage reactivacionSolicitudPage;
+
 
 	@EJB(mappedName="contadorPublicoIntegrator", name="contadorPublicoIntegrator")
 	private ContadorPublicoIntegrator contadorPublicoIntegrator;
@@ -61,9 +63,9 @@ public class ReactivacionSolicitudBean extends BaseBean {
 	   personaDTO.setNombreCompleto("LUCIO SILVA DURAN");
 	   personaDTO.setFolioSolicitud("123456789123456789123");
 	   
-	   activacionSolicitudPage.setPersonaDTO(personaDTO);
+	   reactivacionSolicitudPage.setPersonaDTO(personaDTO);
 	   
-	   Long idPersona = activacionSolicitudPage.getPersonaDTO().getIdPersona();
+	   Long idPersona = reactivacionSolicitudPage.getPersonaDTO().getIdPersona();
        ContadorPublicoDTO contadorPublicoDTO = contadorPublicoIntegrator.consultarContadorPublicAut(idPersona);
         
        if(contadorPublicoDTO!=null){
@@ -74,7 +76,7 @@ public class ReactivacionSolicitudBean extends BaseBean {
     		   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Activacion:","Su Registro IMSS:"+contadorPublicoDTO.getNumRegistroCPA()+" valido"));
     	   }
     	   
-    	   activacionSolicitudPage.getPersonaDTO().setContadorPublicoAutDTO(contadorPublicoDTO);
+    	   reactivacionSolicitudPage.getPersonaDTO().setContadorPublicoAutDTO(contadorPublicoDTO);
            this.setActivarContadorNoAutorizado(false);
            this.setActivarContadorAutorizado(true);
            
@@ -197,16 +199,17 @@ public class ReactivacionSolicitudBean extends BaseBean {
 	}
 	
 
-
-
-	public ActivacionSolicitudPage getActivacionSolicitudPage() {
-		return activacionSolicitudPage;
+	public ReactivacionSolicitudPage getReactivacionSolicitudPage() {
+		return reactivacionSolicitudPage;
 	}
 
-	public void setActivacionSolicitudPage(
-			ActivacionSolicitudPage activacionSolicitudPage) {
-		this.activacionSolicitudPage = activacionSolicitudPage;
+	public void setReactivacionSolicitudPage(
+			ReactivacionSolicitudPage reactivacionSolicitudPage) {
+		this.reactivacionSolicitudPage = reactivacionSolicitudPage;
 	}
+
+
+
 
 
 	public String getRegistroIMSS() {

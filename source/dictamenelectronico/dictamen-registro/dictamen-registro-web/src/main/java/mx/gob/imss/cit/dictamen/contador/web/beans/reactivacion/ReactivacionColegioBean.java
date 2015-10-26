@@ -17,7 +17,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralBDTUDTO
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenContadorNegocioException;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
-import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionColegioPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.reactivacion.ReactivacionColegioPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 @ManagedBean(name = "reactivacionColegioBean")
@@ -30,8 +30,9 @@ public class ReactivacionColegioBean extends BaseBean{
 	private boolean activarColegioValido=false;
 
 	@ManagedProperty(value = "#{reactivacionColegioPage}")
-	private ActivacionColegioPage activacionColegioPage;
+	private ReactivacionColegioPage reactivacionColegioPage;
 	
+
 
 	@EJB(mappedName="dictamenIntegrator", name="dictamenIntegrator")
 	private DictamenIntegrator dictamenIntegrator;
@@ -45,32 +46,32 @@ public class ReactivacionColegioBean extends BaseBean{
 	@PostConstruct
 	public void init(){
 
-        if(!this.getActivacionColegioPage().isValido()){
+        if(!this.reactivacionColegioPage.isValido()){
 		PersonaMoralDTO personaMoralDTO = new PersonaMoralDTO();
 		DomicilioFiscalDTO domicilioFiscalDTO = new DomicilioFiscalDTO();
 		personaMoralDTO.setDomicilioFiscalDTO(domicilioFiscalDTO);
-		activacionColegioPage.setPersonaMoralDTO(personaMoralDTO);
+		reactivacionColegioPage.setPersonaMoralDTO(personaMoralDTO);
 		}
 
 	}
     
 	public String accionAtras(){
-	  this.getActivacionColegioPage().setValido(false);
+	  this.reactivacionColegioPage.setValido(false);
 	  return "activacion_despacho";
 	}
 	public void accionBuscarPersonaMoral(){
-	       String rfc = activacionColegioPage.getPersonaMoralDTO().getRfc();
-		   LOGGER.info("RFC="+activacionColegioPage.getPersonaMoralDTO().getRfc());
+	       String rfc = reactivacionColegioPage.getPersonaMoralDTO().getRfc();
+		   LOGGER.info("RFC="+reactivacionColegioPage.getPersonaMoralDTO().getRfc());
 		   PersonaMoralDTO personaMoralDTO = contadorPublicoIntegrator.consultarPersonaMoralPorRFC(rfc);
 		   
 		   if(personaMoralDTO!=null){
 			   try {
 			   PersonaMoralBDTUDTO personaMoralBDTUDTO = dictamenIntegrator.consultarPersonaMoralPorRFC(rfc);
 			   if(personaMoralBDTUDTO!=null){
-				   activacionColegioPage.setPersonaMoralDTO(personaMoralDTO);
+				   reactivacionColegioPage.setPersonaMoralDTO(personaMoralDTO);
 				   this.setActivarColegioValido(true);
 				   
-		    	   activacionColegioPage.setPersonaMoralBDTUDTO(personaMoralBDTUDTO);
+				   reactivacionColegioPage.setPersonaMoralBDTUDTO(personaMoralBDTUDTO);
 			   }else{
 				   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activacion:"," No se encontraron coincidencias en BDTU con el RFC proporcionado:"+rfc+". Favor de verificarlo con el Despacho al que pertenece e intente nuevamente"));
 				   this.setActivarColegioValido(false);
@@ -99,17 +100,21 @@ public class ReactivacionColegioBean extends BaseBean{
 	
 	public String siguiente(){
 		  LOGGER.info("Redirect=activacionContadorAceptacion");
-		  this.activacionColegioPage.setValido(true);
+		  this.reactivacionColegioPage.setValido(true);
 		  return "activacion_acuse";
 	}
 	
-	public ActivacionColegioPage getActivacionColegioPage() {
-		return activacionColegioPage;
-	}
-	public void setActivacionColegioPage(ActivacionColegioPage activacionColegioPage) {
-		this.activacionColegioPage = activacionColegioPage;
+
+
+	public ReactivacionColegioPage getReactivacionColegioPage() {
+		return reactivacionColegioPage;
 	}
 
+	public void setReactivacionColegioPage(
+			ReactivacionColegioPage reactivacionColegioPage) {
+		this.reactivacionColegioPage = reactivacionColegioPage;
+	}
+	
 	public boolean isActivarColegioValido() {
 		return activarColegioValido;
 	}
