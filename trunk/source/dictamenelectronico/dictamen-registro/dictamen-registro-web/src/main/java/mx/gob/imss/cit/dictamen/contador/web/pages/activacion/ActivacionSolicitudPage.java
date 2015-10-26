@@ -1,4 +1,4 @@
-package mx.gob.imss.cit.dictamen.contador.web.pages;
+package mx.gob.imss.cit.dictamen.contador.web.pages.activacion;
 
 import java.io.Serializable;
 

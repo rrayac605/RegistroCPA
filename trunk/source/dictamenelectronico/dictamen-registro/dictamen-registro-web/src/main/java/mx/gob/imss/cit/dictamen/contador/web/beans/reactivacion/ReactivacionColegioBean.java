@@ -17,7 +17,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralBDTUDTO
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenContadorNegocioException;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
-import mx.gob.imss.cit.dictamen.contador.web.pages.ActivacionColegioPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionColegioPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 @ManagedBean(name = "reactivacionColegioBean")
