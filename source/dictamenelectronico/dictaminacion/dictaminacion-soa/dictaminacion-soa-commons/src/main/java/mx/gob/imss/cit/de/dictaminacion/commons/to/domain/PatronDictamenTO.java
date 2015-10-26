@@ -34,6 +34,10 @@ public class PatronDictamenTO extends BaseTO{
     private String cveIdUsuario;
     private TipoDictamenTO cveIdTipoDictamen;    
     private EjercicioFiscalTO cveIdEjerFiscal;
+	private Long cveIdPersonaMoral;
+	private Long cveIdPatronSujetoObligado;
+	private Long cveIdTramite;
+	
 	/**
 	 * @return the cveIdPatronDictamen
 	 */
@@ -213,6 +217,24 @@ public class PatronDictamenTO extends BaseTO{
 	 */
 	public void setCveIdUsuario(String cveIdUsuario) {
 		this.cveIdUsuario = cveIdUsuario;
+	}
+	public Long getCveIdPersonaMoral() {
+		return cveIdPersonaMoral;
+	}
+	public void setCveIdPersonaMoral(Long cveIdPersonaMoral) {
+		this.cveIdPersonaMoral = cveIdPersonaMoral;
+	}
+	public Long getCveIdPatronSujetoObligado() {
+		return cveIdPatronSujetoObligado;
+	}
+	public void setCveIdPatronSujetoObligado(Long cveIdPatronSujetoObligado) {
+		this.cveIdPatronSujetoObligado = cveIdPatronSujetoObligado;
+	}
+	public Long getCveIdTramite() {
+		return cveIdTramite;
+	}
+	public void setCveIdTramite(Long cveIdTramite) {
+		this.cveIdTramite = cveIdTramite;
 	}
 
 
