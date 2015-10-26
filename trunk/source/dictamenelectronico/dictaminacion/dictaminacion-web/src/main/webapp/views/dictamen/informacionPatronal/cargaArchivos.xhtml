@@ -10,9 +10,8 @@
 	<link href="#{facesContext.externalContext.requestContextPath}/css/dropzone.css" rel="stylesheet" type="text/css" />
 	<link href="#{facesContext.externalContext.requestContextPath}/css/custom.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/dropzone.js"  />
-	<h:outputScript>
-	Dropzone.autoDiscover = false;
-	</h:outputScript>
+	<script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/loadFile.js" />
+	
 
 	 <form  action="http://XXXXXx.XXXXXX.com/" method="post" enctype="multipart/form-data" style="width:100%;height:100% " >																	
 	</form>					   
@@ -46,10 +45,35 @@
  												</form>	 												
 												<h:form>	
 													<p:commandButton id="hiddenAction" process="@this" action="#{cargaArchivosBean.registrarEstatusCarga(layout)}" type="submit" immediate="true" style="display:none"/>																		      													       
-												
+													<h:outputScript>
+													Dropzone.autoDiscover = false;
+													$(function() {
+													  var myDropzone = new Dropzone("#drop#{layout.idLayout}",{
+													  	accept: function(file, done){validateFile(file, done);},
+													  	maxFilesize: 500,
+													  	addRemoveLinks: true,
+													  	dictRemoveFile:"Eliminar archivo",
+													  	maxFiles:1,
+													  	dictMaxFilesExceeded:"Sólo se permite un archivo por Aseveración."});
+													  myDropzone.on("success", function(file,responseText) {
+													  	document.getElementById("#{p:component('hiddenAction')}").click();
+													  });
+													  function validateFile(file, done){
+													  	var allowed_extensions = new Array("txt");
+													  	var file_extension = file.name.split('.').pop();
+													  	for(i = 0;  allowed_extensions.length > i ; i++){
+													  		if(allowed_extensions[i]==file_extension){
+													  			done();
+													  			return true;
+													  			}
+													  		}
+													  	done("Tipo de archivo no permitido.");
+													  	return false;											  	
+													  }
+													});
+													</h:outputScript>
 												</h:form>
 											</p:panel>
-												
 									    </p:dataGrid>					 	
 					 	        </p:panel>
 					        </p:tab>
