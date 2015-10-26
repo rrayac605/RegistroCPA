@@ -37,187 +37,18 @@
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
 					<UML:Namespace.ownedElement>
-						<UML:UseCase name="Solicitud de Registro CPA" xmi.id="EAID_35048C97_2B87_4ff1_BC52_385BACA6B47C" visibility="public" namespace="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="testcase"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231"/>
-								<UML:TaggedValue tag="date_created" value="2015-10-22 12:36:57"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 12:37:09"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Registro CPA"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="larredondo"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="stereotype" value="testcase"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="3155"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={72638DB0-1806-4aeb-B389-78E081893E85}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testcase;GUID={66EF5949-83B1-4d5e-9EAA-CDE8EDBC1687};@ENDSTEREO;$DES;$CLT={35048C97-2B87-4ff1-BC52-385BACA6B47C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-							</UML:ModelElement.taggedValue>
-						</UML:UseCase>
-						<UML:UseCase name="Registro de Solicitud CPA" xmi.id="EAID_6954BE6B_5EC0_4b3d_B161_DE47F9966D60" visibility="public" namespace="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="testsuite"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231"/>
-								<UML:TaggedValue tag="date_created" value="2015-10-22 12:34:26"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 12:34:37"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Registro CPA"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="larredondo"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="stereotype" value="testsuite"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="3153"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={24217E6E-0391-46f8-8E0A-0618F68F1F92}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testsuite;FQName=EAUML::testsuite;@ENDSTEREO;$DES;$CLT={6954BE6B-5EC0-4b3d-B161-DE47F9966D60}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-							</UML:ModelElement.taggedValue>
-						</UML:UseCase>
-						<UML:UseCase name="Modificación de Datos del Despacho (Rubro II)" xmi.id="EAID_9084A767_8BF1_427c_9F41_FB5122F4F545" visibility="public" namespace="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="testcase"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231"/>
-								<UML:TaggedValue tag="date_created" value="2015-10-21 13:42:57"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-21 16:00:50"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Registro CPA"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="JROJAS"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="stereotype" value="testcase"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="2183"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={33015B92-798C-444f-8252-AB08FA21307D}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testcase;GUID={8C2415CB-82E7-4854-94B4-933B233B5247};@ENDSTEREO;$DES;$CLT={9084A767-8BF1-427c-9F41-FB5122F4F545}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-							</UML:ModelElement.taggedValue>
-						</UML:UseCase>
-						<UML:UseCase name="TestSet1" xmi.id="EAID_D22A6B9C_724F_4ca5_95B8_C1C47AE22CEA" visibility="public" namespace="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="testset"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231"/>
-								<UML:TaggedValue tag="date_created" value="2015-10-22 12:35:40"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 12:35:40"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Registro CPA"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="larredondo"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="stereotype" value="testset"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="3154"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={C84E56B2-13E6-4108-BA36-4ECC0A4660A5}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testset;FQName=EAUML::testset;@ENDSTEREO;$DES;$CLT={D22A6B9C-724F-4ca5-95B8-C1C47AE22CEA}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-							</UML:ModelElement.taggedValue>
-						</UML:UseCase>
-						<UML:UseCase name="TestSuite1" xmi.id="EAID_E5C08B3C_2B86_4a76_8F15_8F1B61511891" visibility="public" namespace="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231" isRoot="false" isLeaf="false" isAbstract="false">
-							<UML:ModelElement.stereotype>
-								<UML:Stereotype name="testsuite"/>
-							</UML:ModelElement.stereotype>
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="isSpecification" value="false"/>
-								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
-								<UML:TaggedValue tag="ea_ntype" value="0"/>
-								<UML:TaggedValue tag="version" value="1.0"/>
-								<UML:TaggedValue tag="isActive" value="false"/>
-								<UML:TaggedValue tag="package" value="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231"/>
-								<UML:TaggedValue tag="date_created" value="2015-10-22 12:32:40"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 12:32:40"/>
-								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-								<UML:TaggedValue tag="tagged" value="0"/>
-								<UML:TaggedValue tag="package_name" value="Registro CPA"/>
-								<UML:TaggedValue tag="phase" value="1.0"/>
-								<UML:TaggedValue tag="author" value="larredondo"/>
-								<UML:TaggedValue tag="complexity" value="1"/>
-								<UML:TaggedValue tag="status" value="Proposed"/>
-								<UML:TaggedValue tag="stereotype" value="testsuite"/>
-								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="3152"/>
-								<UML:TaggedValue tag="ea_eleType" value="element"/>
-								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={C325A50C-1983-475e-BA96-ABFFACE66519}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=testsuite;FQName=EAUML::testsuite;@ENDSTEREO;$DES;$CLT={E5C08B3C-2B86-4a76-8F15-8F1B61511891}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-							</UML:ModelElement.taggedValue>
-						</UML:UseCase>
+						<UML:Collaboration xmi.id="EAID_BF6278DB_2D99_4c37_A588_087E79E18E58_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement/>
+							<UML:Collaboration.interaction>
+								<UML:Interaction>
+									<UML:Interaction.message/>
+								</UML:Interaction>
+							</UML:Collaboration.interaction>
+						</UML:Collaboration>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
-		<UML:Diagram name="Registro CPA" xmi.id="EAID_0BA516A3_3848_419d_B363_DFED05DC509F" diagramType="UseCaseDiagram" owner="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231" toolName="Enterprise Architect 2.5">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="version" value="1.0"/>
-				<UML:TaggedValue tag="author" value="JROJAS"/>
-				<UML:TaggedValue tag="created_date" value="2015-10-21 13:40:19"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-22 13:13:17"/>
-				<UML:TaggedValue tag="package" value="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231"/>
-				<UML:TaggedValue tag="type" value="Use Case"/>
-				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
-				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="200"/>
-				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=98986B1C;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Test Domain;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-			</UML:ModelElement.taggedValue>
-			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=165;Top=551;Right=270;Bottom=621;" subject="EAID_9084A767_8BF1_427c_9F41_FB5122F4F545" seqno="1" style="DUID=93683012;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-			</UML:Diagram.element>
-		</UML:Diagram>
-		<UML:Diagram name="Registro CPA" xmi.id="EAID_2F9B4B23_9C35_406c_B515_26355CF89FF8" diagramType="CustomDiagram" owner="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231" toolName="Enterprise Architect 2.5">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="version" value="1.0"/>
-				<UML:TaggedValue tag="author" value="JROJAS"/>
-				<UML:TaggedValue tag="created_date" value="2015-10-21 13:42:14"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-22 13:13:17"/>
-				<UML:TaggedValue tag="package" value="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231"/>
-				<UML:TaggedValue tag="type" value="Custom"/>
-				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
-				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="201"/>
-				<UML:TaggedValue tag="parent" value="EAID_9084A767_8BF1_427c_9F41_FB5122F4F545"/>
-				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=4BFF4F6A;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Maintenance;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-			</UML:ModelElement.taggedValue>
-			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=133;Top=228;Right=238;Bottom=298;" subject="EAID_9084A767_8BF1_427c_9F41_FB5122F4F545" seqno="1" style="DUID=5F08FEE7;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-			</UML:Diagram.element>
-		</UML:Diagram>
 		<UML:Diagram name="Solicitud de Registro CPA" xmi.id="EAID_10FCB745_9CC2_40c0_A8FA_715F270DE427" diagramType="UseCaseDiagram" owner="EAPK_CEAD7AD2_A492_4948_A900_948F213A4231" toolName="Enterprise Architect 2.5">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="version" value="1.0"/>
@@ -238,15 +69,5 @@
 		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
-	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
-		<EAModel.test>
-			<EATest name="Modificación de Datos del Despacho (Rubro II)" description="Rol: CPA&#xA;&#xA;Start:&#xA;1. Comenzar a realizar un trámite digital mediante el menú  Zona Personal--&amp;gt; Trámite Digital--&amp;gt; Contadores Públicos.&#xA;&#xA;2. El sistema despliega la pantalla &quot;Contadores Publicos&quot; con una ventana con el nombre, descripción y las instrucciones del módulo de contadores públicos.&#xA;Además de las opciones de:&#xA;&lt;ul&gt;&#xA;	&lt;li&gt;Solicitud de registro&lt;/li&gt;&#xA;	&lt;li&gt;Activación de registro&lt;/li&gt;&#xA;	&lt;li&gt;Reactivación de registro&lt;/li&gt;&#xA;	&lt;li&gt;Acreditación y Membresía&lt;/li&gt;&#xA;	&lt;li&gt;&lt;b&gt;Modificación de datos &lt;/b&gt;&lt;/li&gt;&#xA;	&lt;li&gt;Baja&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;Salir&#xA;&#xA;3. Seleccionar la opción de &lt;b&gt;Modificación de Datos&lt;/b&gt;&#xA;&lt;b&gt;&#xA;&lt;/b&gt;4. El sistema tomará de la sesión del usuario el CURP y lo validará contra el catálogo de &quot;Contadores Públicos Autorizados&quot;, a fin de verificar que cuente con un número de Registro IMSS&#xA;&#xA;&lt;b&gt;SI&lt;/b&gt; cuenta con un número de Registro IMSS, el sistema debe mostrar en una pantalla emergente los siguientes datos del CPA:&#xA;&lt;ul&gt;&#xA;	&lt;li&gt;&lt;i&gt;Apellido Paterno&lt;/i&gt;&lt;/li&gt;&#xA;	&lt;li&gt;&lt;i&gt;Apellido Materno&lt;/i&gt;&lt;/li&gt;&#xA;	&lt;li&gt;&lt;i&gt;Nombre(S)&lt;/i&gt;&lt;/li&gt;&#xA;	&lt;li&gt;&lt;i&gt;CURP&lt;/i&gt;&lt;/li&gt;&#xA;	&lt;li&gt;&lt;i&gt;Registro IMSS&lt;/i&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;El sistema emite un mensaje &lt;b&gt;AG.&lt;/b&gt; “&lt;i&gt;El Registro IMSS es correcto?”&lt;/i&gt;&#xA;&lt;i&gt;&#xA;&lt;/i&gt;Botón &lt;b&gt;SI&lt;/b&gt;&#xA;Botón &lt;b&gt;NO&lt;/b&gt;&#xA;&#xA;5. Seleccionar la opción SI&#xA;&#xA;6. El sistema muestra una ventana con las siguientes opciones:&#xA;&lt;ul&gt;&#xA;	&lt;li&gt;Modificación de Datos (etiqueta)&lt;/li&gt;&#xA;	&lt;li&gt;Datos personales&lt;/li&gt;&#xA;	&lt;li&gt;&lt;b&gt;Datos del Despacho&lt;/b&gt;&lt;/li&gt;&#xA;	&lt;li&gt;Datos del Colegio o Asociación Profesional de Contadores Públicos&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;7. Seleccionar la opción de &lt;b&gt;Datos del Despacho&lt;/b&gt;&#xA;&lt;b&gt;&#xA;&lt;/b&gt;8. El sistema muestra la sección “Datos del Despacho ”, con la siguiente información:&#xA;•	¿Forma parte de un despacho o es Profesional Independiente? &#xA;•	¿Cuenta con trabajadores a su cargo?&#xA;•	*Número de Trabajadores&#xA;•	RFC&#xA;•	Registro Patronal &#xA;•	Nombre, Denominación o Razón Social&#xA;•	Cargo que desempeña el CPA&#xA;•	*Teléfono fijo (a 12 posiciones, numérico, ejemplo: 01 554 27 34 55 21)&#xA;RN. El sistema muestra los datos que están almacenados en la BDTU, en la tabla de contadores&#xA;&#xA;9. El sistema emite un mensaje&lt;b&gt; AG&lt;/b&gt;. &lt;i&gt;“¿Desea Actualizar los datos de su Despacho?” con los botónes:&lt;/i&gt;&#xA;&lt;ul&gt;&#xA;	&lt;li&gt;&lt;b&gt;SI&lt;/b&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ul&gt;&#xA;	&lt;li&gt;&lt;b&gt;NO&lt;/b&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;b&gt;&#xA;&lt;/b&gt;10. " type="Standard" subject="EAID_9084A767_8BF1_427c_9F41_FB5122F4F545">
-				<UML:ModelElement.taggedValue>
-					<UML:TaggedValue tag="class" value="2"/>
-					<UML:TaggedValue tag="input" value="Usuario&#xA;Contraseña&#xA;NSS&#xA;Certificados (Fiel) que proporciona el SAT"/>
-					<UML:TaggedValue tag="status" value="Not Run"/>
-				</UML:ModelElement.taggedValue>
-			</EATest>
-		</EAModel.test>
-	</XMI.extensions>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
 </XMI>
