@@ -14,36 +14,7 @@
 	<h:form>
 		<p:panel style="width:100%; " styleClass="table-no-border">
 			<h2>#{msg['message.contador.titulo']}</h2>
-			<p:panelGrid style="width:100%;"
-				styleClass="table-no-border table-no-padding">
-				<p:row>
-					<p:column style="width:14%;">
-						<p:commandButton value=" " style="width:100%;"
-							styleClass="btn-menu" />
-					</p:column>
-
-					<p:column style="width:14%;">
-						<p:commandButton value=" " style="width:100%;"
-							styleClass="btn-menu-disabled" />
-					</p:column>
-					<p:column style="width:14%;">
-						<p:commandButton value=" " style="width:100%;"
-							styleClass="btn-menu-disabled" />
-					</p:column>
-					<p:column style="width:14%;">
-						<p:commandButton value=" " style="width:100%;"
-							styleClass="btn-menu-disabled" />
-					</p:column>
-					<p:column style="width:14%;">
-						<p:commandButton value=" " style="width:100%;"
-							styleClass="btn-menu-disabled" />
-					</p:column>
-					<p:column style="width:14%;">
-						<p:commandButton value=" " style="width:100%;"
-							styleClass="btn-menu-disabled" />
-					</p:column>
-				</p:row>
-			</p:panelGrid>
+			<ui:include src="comun/template/hrTitle.xhtml" />
 			<br />
 			<p:panelGrid id="tablaOpcionesContador" styleClass="table"
 				style="width:100%; margin: 0 auto; padding: 60px; ">

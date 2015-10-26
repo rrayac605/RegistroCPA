@@ -20,6 +20,10 @@ public class ContadorPublicoAutDTO implements Serializable {
 	private DomicilioDTO domicilio;
 	private DatosContactoDTO contacto;
 	private InfoProfesional infoProf;
+	private DespachoDTO despacho;
+	private boolean independiente;
+	private boolean pertenceDespacho;
+	private int nTrabajadores;
 
 	/**
 	 * @return the curp
@@ -109,6 +113,66 @@ public class ContadorPublicoAutDTO implements Serializable {
 	 */
 	public void setInfoProf(InfoProfesional infoProf) {
 		this.infoProf = infoProf;
+	}
+
+	/**
+	 * @return the despacho
+	 */
+	public DespachoDTO getDespacho() {
+		return despacho;
+	}
+
+	/**
+	 * @param despacho
+	 *            the despacho to set
+	 */
+	public void setDespacho(DespachoDTO despacho) {
+		this.despacho = despacho;
+	}
+
+	/**
+	 * @return the independiente
+	 */
+	public boolean isIndependiente() {
+		return independiente;
+	}
+
+	/**
+	 * @param independiente
+	 *            the independiente to set
+	 */
+	public void setIndependiente(boolean independiente) {
+		this.independiente = independiente;
+	}
+
+	/**
+	 * @return the pertenceDespacho
+	 */
+	public boolean isPertenceDespacho() {
+		return pertenceDespacho;
+	}
+
+	/**
+	 * @param pertenceDespacho
+	 *            the pertenceDespacho to set
+	 */
+	public void setPertenceDespacho(boolean pertenceDespacho) {
+		this.pertenceDespacho = pertenceDespacho;
+	}
+
+	/**
+	 * @return the nTrabajadores
+	 */
+	public int getnTrabajadores() {
+		return nTrabajadores;
+	}
+
+	/**
+	 * @param nTrabajadores
+	 *            the nTrabajadores to set
+	 */
+	public void setnTrabajadores(int nTrabajadores) {
+		this.nTrabajadores = nTrabajadores;
 	}
 
 }

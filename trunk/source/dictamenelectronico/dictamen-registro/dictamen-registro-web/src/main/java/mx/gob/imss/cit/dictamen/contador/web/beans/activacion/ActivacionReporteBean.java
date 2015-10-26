@@ -12,11 +12,10 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorReporteIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
@@ -32,7 +31,7 @@ import javax.annotation.PostConstruct;
 @ManagedBean(name = "activacionReporteBean")
 @ViewScoped
 public class ActivacionReporteBean  extends BaseBean{
-	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionReporteBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ActivacionReporteBean.class);
 
 	private static final long serialVersionUID = -1700645583010439518L;
    

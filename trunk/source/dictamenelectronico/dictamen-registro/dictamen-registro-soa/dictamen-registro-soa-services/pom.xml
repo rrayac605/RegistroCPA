@@ -11,13 +11,11 @@
 	<version>1.0</version>
 	<packaging>ejb</packaging>
 	<dependencies>
-	
-			<dependency>
+		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
 			<version>5.6.1</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>mx.gob.imss.ctirss.delta</groupId>
 			<artifactId>delta-modelo-negocio</artifactId>
@@ -33,30 +31,22 @@
 			<groupId>mx.gob.imss.ctirss.clienteswebservices.sat.consulta.rfc</groupId>
 			<artifactId>ClientesWebservices-sat-consulta-rfc</artifactId>
 			<version>2.2</version>
-
-
-		
 		</dependency>
-
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.servicios.ws</groupId>
 			<artifactId>imss-ws-clientes</artifactId>
 			<version>1.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>mx.gob.imss.cit</groupId>
 			<artifactId>imss-ws-si-clientes</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>soap</groupId>
 			<artifactId>soap</artifactId>
 			<version>2.1</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>mx.gob.imss.ctirss.delta.gestion.solicitud</groupId>
 			<artifactId>gestionSolicitud-interfaces-negocio</artifactId>
@@ -112,7 +102,6 @@
 			<artifactId>dictamen-registro-soa-integration-api</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -150,7 +139,6 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.9</version>
 		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -170,7 +158,6 @@
 			<version>1.10.17</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<resources>
@@ -180,37 +167,36 @@
 			</resource>
 		</resources>
 		<plugins>
-    <plugin>  
-        <groupId>org.apache.maven.plugins</groupId>  
-        <artifactId>maven-resources-plugin</artifactId>  
-        <version>2.5</version>  
-        <configuration>  
-            <nonFilteredFileExtensions>  
-                <nonFilteredFileExtension>jasper</nonFilteredFileExtension>  
-            </nonFilteredFileExtensions>  
-        </configuration>  
-    </plugin>
-    
-    	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-jar-plugin</artifactId>
-		<configuration>
-		        <!-- exclude log4j.properties -->
-			<excludes>
-				<exclude>**/log4j.properties</exclude>
-				<exclude>**/log4j.xml</exclude>
-				
-			</excludes>
-	
-		</configuration>
-	</plugin>
-	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>jasper</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<!-- exclude log4j.properties -->
+					<excludes>
+						<exclude>**/log4j.properties</exclude>
+						<exclude>**/log4j.xml</exclude>
+
+					</excludes>
+
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ejb-plugin</artifactId>
 				<version>${maven-ejb-plugin.version}</version>
 				<configuration>
-				
+
 					<ejbVersion>3.0</ejbVersion>
 					<archive>
 						<manifest>
@@ -235,5 +221,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

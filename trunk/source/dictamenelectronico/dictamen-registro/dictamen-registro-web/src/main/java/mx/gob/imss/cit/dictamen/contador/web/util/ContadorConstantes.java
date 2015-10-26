@@ -36,4 +36,8 @@ public final class ContadorConstantes {
 	public static final int NUM_SESENTA = 60;
 	public static final long NUM_CINCOMIL = 5000;
 	public static final long NUM_UNOlONG = 1l;
+	
+	public static final String INDEPENDIENTE = "Independiente";
+	public static final String DESPACHO = "Despacho";
+	
 }

@@ -10,7 +10,12 @@ package mx.gob.imss.cit.dictamen.contador.web.util;
 public enum EnumPantallasContador {
 
 	CONTADORES(ContadorConstantes.NUM_CERO, "contadores", "Contadores Públicos"),
-	SOLICITUD_REGISTRO(ContadorConstantes.NUM_UNO, "solicitudRegistro", "Solicitud de Registro de CPA");
+	SOLICITUD_REGISTRO(ContadorConstantes.NUM_UNO, "solicitudRegistro", "Solicitud de Registro de CPA"),
+	REGISTRO_DESPACHO(ContadorConstantes.NUM_DOS, "registroDespacho", "Registro de Despacho"),
+	REGISTRO_COLEGIO(ContadorConstantes.NUM_TRES, "registroColegio", "Registro de Colegio"),
+	REGISTRO_DOCUMENTACION(ContadorConstantes.NUM_CUATRO, "registroDocumentacion", "Registro de Documentacion"),
+	REGISTRO_VISTA(ContadorConstantes.NUM_CINCO, "registroVista", "Registro de Vista Previa"),
+	REGISTRO_PROTESTA(ContadorConstantes.NUM_SEIS, "registroProtesta", "Registro de Protesta");
 
 	private int id;
 	private String nombre;

@@ -19,10 +19,10 @@ import mx.gob.imss.cit.dictamen.contador.web.pages.ActualizacionRegistroPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.primefaces.context.RequestContext;
 import org.primefaces.event.TabChangeEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 @ManagedBean(name = "actualizacionRegistroBean")
 @ViewScoped
@@ -32,8 +32,7 @@ public class ActualizacionRegistroBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -640194701499340530L;
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ActualizacionRegistroBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ActualizacionRegistroBean.class);
 
 	private static final String MENSAJE_ERROR_REGISTRO = "#{msg['message.actualizacion.registroinvalido']}";
 	private static final String MENSAJE_ERROR_NO_DATOS = "#{msg['message.actualizacion.no.datos']}";

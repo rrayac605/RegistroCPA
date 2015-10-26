@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<p:panelGrid style="width:50%; margin: auto 0 auto auto; "
+		styleClass="table-no-border table-no-padding">
+		<p:row>
+			<p:column style="width:14%;">
+				<p:commandButton value="#{msg['message.label.uno']}"
+					style="width:100%;" styleClass="btn-sx btn-primary"
+					action="#{solicitudRegistroBean.redireccionarSolicitudRegistro()}" />
+			</p:column>
+
+			<p:column style="width:14%;">
+				<p:commandButton value="#{msg['message.label.dos']}"
+					style="width:100%;" styleClass="btn-sx btn-primary"
+					action="#{solicitudRegistroBean.redireccionarRegistroDespacho()}" />
+			</p:column>
+			<p:column style="width:14%;">
+				<p:commandButton value="#{msg['message.label.tres']}"
+					style="width:100%;" styleClass="btn-sx btn-primary" 
+					action="#{solicitudRegistroBean.redireccionarRegistroColegio()}" />
+			</p:column>
+			<p:column style="width:14%;">
+				<p:commandButton value="#{msg['message.label.cuatro']}"
+					style="width:100%;" styleClass="btn-sx btn-primary" />
+			</p:column>
+			<p:column style="width:14%;">
+				<p:commandButton value="#{msg['message.label.cinco']}"
+					style="width:100%;" styleClass="btn-sx btn-default" />
+			</p:column>
+			<p:column style="width:14%;">
+				<p:commandButton value="#{msg['message.label.seis']}"
+					style="width:100%;" styleClass="btn-sx btn-default" />
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</ui:composition>
