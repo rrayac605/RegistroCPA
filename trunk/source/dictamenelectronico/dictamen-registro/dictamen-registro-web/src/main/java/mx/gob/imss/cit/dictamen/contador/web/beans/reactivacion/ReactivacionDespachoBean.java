@@ -24,6 +24,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenConta
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionDespachoPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.reactivacion.ReactivacionDespachoPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import javax.annotation.PostConstruct;
@@ -47,9 +48,10 @@ public class ReactivacionDespachoBean extends BaseBean {
     private boolean activarProcesar=true;
     
 	@ManagedProperty(value = "#{reactivacionDespachoPage}")
-	private ActivacionDespachoPage activacionDespachoPage;
+	private ReactivacionDespachoPage reactivacionDespachoPage;
 	
     
+
 	private Map<String,Integer> mapTipoProfesion = new HashMap<String,Integer>();
     private Map<String,Integer> mapTieneTrabajador = new HashMap<String,Integer>();
     private Map<String,Integer> mapPuestoCPA = new HashMap<String,Integer>();
@@ -77,16 +79,16 @@ public class ReactivacionDespachoBean extends BaseBean {
 		mapPuestoCPA.put("Gerente", 2);
 		mapPuestoCPA.put("Auditor", 3);
 
-	    if(!this.activacionDespachoPage.isValido()){
+	    if(!this.reactivacionDespachoPage.isValido()){
 			PersonaMoralDTO personaMoralDTO = new PersonaMoralDTO();
 			DomicilioFiscalDTO domicilioFiscalDTO = new DomicilioFiscalDTO();
 			personaMoralDTO.setDomicilioFiscalDTO(domicilioFiscalDTO);
-			activacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);
+			reactivacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);
 	    }
 	}
 	public void accionBuscarCPA(){
-       String rfc = activacionDespachoPage.getPersonaMoralDTO().getRfc();
-	   LOGGER.info("RFC="+activacionDespachoPage.getPersonaMoralDTO().getRfc());
+       String rfc = reactivacionDespachoPage.getPersonaMoralDTO().getRfc();
+	   LOGGER.info("RFC="+reactivacionDespachoPage.getPersonaMoralDTO().getRfc());
 	   PersonaMoralDTO personaMoralDTO = contadorPublicoIntegrator.consultarPersonaMoralPorRFC(rfc);
 	   
 	   if(personaMoralDTO!=null){
@@ -96,11 +98,11 @@ public class ReactivacionDespachoBean extends BaseBean {
 			   PersonaMoralBDTUDTO personaMoralBDTUDTO = dictamenIntegrator.consultarPersonaMoralPorRFC(rfc);
 			   if(personaMoralBDTUDTO!=null){
 				   LOGGER.info("accionBuscarCPA.despacho.idPersona="+personaMoralBDTUDTO.getIdPersona());
-				   activacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);;
+				   reactivacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);;
 				   this.setActivarContadorValido(true);
 		    	   this.setActivarProcesar(false);
 		    	   
-		    	   activacionDespachoPage.setPersonaMoralBDTUDTO(personaMoralBDTUDTO);
+		    	   reactivacionDespachoPage.setPersonaMoralBDTUDTO(personaMoralBDTUDTO);
 			   }else{
 				   FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activacion:"," No se encontraron coincidencias en BDTU con el RFC proporcionado:"+rfc+". Favor de verificarlo con el Despacho al que pertenece e intente nuevamente"));
 				   this.setActivarContadorValido(false);
@@ -152,7 +154,7 @@ public class ReactivacionDespachoBean extends BaseBean {
 	    
 	}
 	public String accionAtras(){
-		this.activacionDespachoPage.setValido(false);
+		this.reactivacionDespachoPage.setValido(false);
 	    return "activacion_contador";
 	}
 	
@@ -197,7 +199,7 @@ public class ReactivacionDespachoBean extends BaseBean {
 	}
 	
 	public String siguiente(){
-		  this.activacionDespachoPage.setValido(true);
+		  this.reactivacionDespachoPage.setValido(true);
 
 		  LOGGER.info("Redirect=activacion_colegio");
 		  return "activacion_colegio";
@@ -258,13 +260,7 @@ public class ReactivacionDespachoBean extends BaseBean {
 		this.mapPuestoCPA = mapPuestoCPA;
 	}
 
-	public ActivacionDespachoPage getActivacionDespachoPage() {
-		return activacionDespachoPage;
-	}
-	public void setActivacionDespachoPage(
-			ActivacionDespachoPage activacionDespachoPage) {
-		this.activacionDespachoPage = activacionDespachoPage;
-	}
+
 	
 	public Integer getSelectedPuestoCPA() {
 		return selectedPuestoCPA;
@@ -301,5 +297,13 @@ public class ReactivacionDespachoBean extends BaseBean {
 	}
 	public void setDictamenIntegrator(DictamenIntegrator dictamenIntegrator) {
 		this.dictamenIntegrator = dictamenIntegrator;
+	}
+	
+	public ReactivacionDespachoPage getReactivacionDespachoPage() {
+		return reactivacionDespachoPage;
+	}
+	public void setReactivacionDespachoPage(
+			ReactivacionDespachoPage reactivacionDespachoPage) {
+		this.reactivacionDespachoPage = reactivacionDespachoPage;
 	}
 }

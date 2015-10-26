@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralBDTUDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 
-@ManagedBean(name = "activacionDespachoPage")
+@ManagedBean(name = "reactivacionDespachoPage")
 @SessionScoped
 public class ReactivacionDespachoPage implements Serializable {
 
