@@ -7,7 +7,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import mx.gob.imss.cit.dictamen.contador.integration.api.FirmaElectronicaIntegrator;
+import mx.gob.imss.cit.dictamen.contador.web.beans.activacion.ActivacionAcuseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.FirmaElectronicaPage;
 
 
@@ -30,13 +34,30 @@ public class FirmaElectronicaBean implements Serializable{
 	private FirmaElectronicaPage firmaElectronicaPage;
 
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionAcuseBean.class);
+
 	
+	public String firma;
 	
+	public void accionFirmar(){
+		LOGGER.info("FIRMA="+firma);
+	}
+	
+	public String getFirma() {
+		return firma;
+	}
+
+
+	public void setFirma(String firma) {
+		this.firma = firma;
+	}
+
+
 	public void initDialog() {
 
-
-
 	}
+	
+
 	
 	
 	public void cerrarDialog(){
