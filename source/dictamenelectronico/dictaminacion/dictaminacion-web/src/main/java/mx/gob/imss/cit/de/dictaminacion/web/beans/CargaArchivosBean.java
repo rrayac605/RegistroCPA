@@ -21,6 +21,7 @@ import mx.gob.imss.cit.de.dictaminacion.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.CargaArchivosPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.DatosPatronalesPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.DictamenPage;
+import mx.gob.imss.cit.de.dictaminacion.web.pages.InformacionPatronalPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.base.BasePage;
 import mx.gob.imss.cit.de.dictaminacion.web.util.CleanBeanUtil;
 import mx.gob.imss.cit.de.dictaminacion.web.util.FacesUtils;
@@ -48,6 +49,8 @@ public class CargaArchivosBean extends BasePage {
 	@ManagedProperty(value = "#{informacionPatronalBean}")
 	private InformacionPatronalBean informacionPatronalBean;
 
+	@ManagedProperty(value = "#{informacionPatronalPage}")
+	private InformacionPatronalPage informacionPatronalPage;
 	
 	public void init(){
 		LOG.info("init sin cargar datos");
@@ -70,6 +73,7 @@ public class CargaArchivosBean extends BasePage {
 			
 			LOG.info("el numero de aseveraciones es:"+cargaArchivosPage.getListaParentLayout().size());
 			informacionPatronalBean.init();
+			LOG.info("el numero de aseveraciones cargadas es:"+informacionPatronalPage.getListadoAseveraciones().size());
 			consolidarLayoutCargados();
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
@@ -80,38 +84,28 @@ public class CargaArchivosBean extends BasePage {
 	
 	private void consolidarLayoutCargados(){
 
-		boolean encontrado=false;
+		boolean cargado=false;
+		String estado="";
 		for (ParentLayoutDTO parentLayoutDTO : cargaArchivosPage.getListaParentLayout()) {
-			for (LayoutDTO layoutDTO : parentLayoutDTO.getListaLayout()) {
-				encontrado=false;
-				for (CargaDocumentoDTO cargaDocumentoDTO : informacionPatronalBean.getInformacionPatronalPage().getListadoAseveraciones()) {
-					System.out.println(cargaDocumentoDTO.getCveIdAseveracion().getCveIdAseveracion()+"="+layoutDTO.getIdLayout());
+			for (LayoutDTO 	layoutDTO : parentLayoutDTO.getListaLayout()) {
+				cargado=false;
+				estado="Sin Subir";
+				for (CargaDocumentoDTO cargaDocumentoDTO : informacionPatronalPage.getListadoAseveraciones()) {
 					if(cargaDocumentoDTO.getCveIdAseveracion().getCveIdAseveracion().equals(layoutDTO.getIdLayout())){
-						encontrado=true;
-						layoutDTO.setDesEstado(cargaDocumentoDTO.getCveIdEstadoCargoDoc().getDesStatusCargaAseveraciones());
-						System.out.println(layoutDTO.getDesEstado());
-						
-						if(layoutDTO.getDesEstado().equals(DictamenWebConstants.ASEVERACION_VALIDADO)){
-							layoutDTO.setCargado(true);
-						}else{
-							layoutDTO.setCargado(false);
-						}
+						estado=cargaDocumentoDTO.getCveIdEstadoCargoDoc().getDesStatusCargaAseveraciones();			
+						if(DictamenWebConstants.ASEVERACION_VALIDADO.equals(cargaDocumentoDTO.getCveIdEstadoCargoDoc().getDesStatusCargaAseveraciones())){
+							cargado=true;
+						}	
 						break;
-					}
-									
+			
+					}									
 				}
-				System.out.println("encontrado:"+encontrado);
-				if(!encontrado){
-					layoutDTO.setDesEstado("Sin cargar");
-					layoutDTO.setCargado(false);
-				}
-				
-					
+
+				layoutDTO.setDesEstado(estado);					
+				layoutDTO.setCargado(cargado);													
 			}
 			
 		}
-		
-
 		
 	}
 	
@@ -169,6 +163,10 @@ public class CargaArchivosBean extends BasePage {
 
 	public void setInformacionPatronalBean(InformacionPatronalBean informacionPatronalBean) {
 		this.informacionPatronalBean = informacionPatronalBean;
+	}
+
+	public void setInformacionPatronalPage(InformacionPatronalPage informacionPatronalPage) {
+		this.informacionPatronalPage = informacionPatronalPage;
 	}
 
 
