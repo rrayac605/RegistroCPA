@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:panel>
+		<h:form id="formGeneral" >
+			<p:selectOneMenu value="#{opinionPage.tipoOpinionSeleccionada}">
+				<p:ajax event="change" listener="#{opinionBean.cambioTipoOpinion}" update="formGeneral" />
+				<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
+				<f:selectItems value="#{opinionBean.tiposOpinion}" var="tipoOpinion" itemLabel="#{tipoOpinion.descripcion}" itemValue="#{tipoOpinion.valor}"/>
+			</p:selectOneMenu>
+			
+			<p:panel rendered="#{not empty opinionPage.tipoOpinionSeleccionada}">
+			
+				<p:outputLabel value="#{msg['message.dictamen.opinion.titulo.sin.salvedad']}" rendered="#{opinionPage.tipoOpinionSeleccionada eq 'SIN_SALVEDAD'}" />
+				<p:outputLabel value="#{msg['message.dictamen.opinion.titulo.con.salvedad']}" rendered="#{opinionPage.tipoOpinionSeleccionada eq 'CON_SALVEDAD'}" />
+				<p:outputLabel value="#{msg['message.dictamen.opinion.titulo.negativa']}" rendered="#{opinionPage.tipoOpinionSeleccionada eq 'NEGATIVA'}" />
+				<p:outputLabel value="#{msg['message.dictamen.opinion.titulo.abstencion']}" rendered="#{opinionPage.tipoOpinionSeleccionada eq 'ABSTENCION'}" />
+			
+				<p:panel rendered="#{opinionPage.tipoOpinionSeleccionada eq 'CON_SALVEDAD'}">
+					<p:panelGrid columns="2">
+						<p:panel>
+							<p:panelGrid columns="3">
+								<p:outputLabel value="#{msg['message.dictamen.opinion.rubro']}" for="rubro" />
+								<p:inputText id="rubro" value="#{opinionPage.rubro.valor}" required="#{request.getParameter('validaRubro')}" />
+								<p:commandButton value="#{msg['message.button.agregar']}" actionListener="#{opinionBean.guardarRubro}" update="rubro rubros">
+									<f:param name="validaRubro" value="true" />
+								</p:commandButton>
+							</p:panelGrid>
+							<p:dataTable id="rubros" value="#{opinionPage.rubros}" var="rubro" rowIndexVar="index" editable="true"
+								emptyMessage="#{msg['message.label.noRecorsFound']}">
+								<p:column headerText="#{msg['message.dictamen.opinion.rubro']}">
+									<p:cellEditor>
+										<f:facet name="output">
+											<h:outputText value="#{rubro.valor}" />
+										</f:facet>
+										<f:facet name="input">
+											<h:inputText value="#{rubro.valor}" required="true" />
+										</f:facet>
+									</p:cellEditor>
+								</p:column>
+								<p:column>
+									<p:rowEditor />
+								</p:column>
+								<p:column>
+									<p:commandButton icon="ui-icon-trash" actionListener="#{opinionBean.eliminarRubro(index)}" update="rubros" />
+								</p:column>
+							</p:dataTable>
+						</p:panel>
+						
+						<p:panel>
+							<p:panelGrid columns="3">
+								<p:outputLabel value="#{msg['message.dictamen.opinion.concepto']}" for="concepto" />
+								<p:inputText id="concepto" value="#{opinionPage.concepto.valor}" required="#{request.getParameter('validaConcepto')}" />
+								<p:commandButton value="#{msg['message.button.agregar']}" actionListener="#{opinionBean.guardarConcepto}" update="concepto conceptos">
+									<f:param name="validaConcepto" value="true" />
+								</p:commandButton>
+							</p:panelGrid>
+							<p:dataTable id="conceptos" value="#{opinionPage.conceptos}" var="concepto" rowIndexVar="index" editable="true"
+								emptyMessage="#{msg['message.label.noRecorsFound']}">
+								<p:column headerText="#{msg['message.dictamen.opinion.concepto']}">
+									<p:cellEditor>
+										<f:facet name="output">
+											<h:outputText value="#{concepto.valor}" />
+										</f:facet>
+										<f:facet name="input">
+											<h:inputText value="#{concepto.valor}" required="true" />
+										</f:facet>
+									</p:cellEditor>
+								</p:column>
+								<p:column>
+									<p:rowEditor />
+								</p:column>
+								<p:column>
+									<p:commandButton icon="ui-icon-trash" actionListener="#{opinionBean.eliminarConcepto(index)}" update="conceptos" />
+								</p:column>
+							</p:dataTable>
+						</p:panel>
+					</p:panelGrid>
+				</p:panel>
+				
+				<p:panelGrid columns="3" rendered="#{opinionPage.tipoOpinionSeleccionada eq 'SIN_SALVEDAD' or opinionPage.tipoOpinionSeleccionada eq 'CON_SALVEDAD'}">
+					<p:outputLabel value="#{msg['message.dictamen.opinion.titulo.corto.sin.salvedad']}" for="opcionesPago" rendered="#{opinionPage.tipoOpinionSeleccionada eq 'SIN_SALVEDAD'}" />
+					<p:outputLabel value="#{msg['message.dictamen.opinion.titulo.corto.con.salvedad']}" for="opcionesPago" rendered="#{opinionPage.tipoOpinionSeleccionada eq 'CON_SALVEDAD'}" />
+					
+					<p:selectOneRadio id="opcionesPago" value="#{opinionPage.opcionPagoSeleccionada}">
+						<p:ajax event="valueChange" update="@form" />
+						<f:selectItem itemLabel="#{msg['message.dictamen.opinion.sin.pago']}" itemValue="SIN_PAGO" />
+						<f:selectItem itemLabel="#{msg['message.dictamen.opinion.con.pago']}" itemValue="CON_PAGO" />
+					</p:selectOneRadio>
+					
+					<p:selectOneMenu value="#{opinionPage.tipoPagoSeleccionado}" rendered="#{opinionPage.opcionPagoSeleccionada eq 'CON_PAGO'}" required="#{request.getParameter('validaOpinion')}">
+						<p:ajax event="change" update="formGeneral" />
+						<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
+						<f:selectItem itemLabel="#{msg['message.dictamen.opinion.una.exhibicion']}" itemValue="UNA_EXHIBICION" />
+						<f:selectItem itemLabel="#{msg['message.dictamen.opinion.parcialidades']}" itemValue="PARCIALIDADES" />
+					</p:selectOneMenu>
+				</p:panelGrid>
+				
+				<p:panelGrid columns="2" rendered="#{opinionPage.opcionPagoSeleccionada eq 'CON_PAGO' and opinionPage.tipoPagoSeleccionado eq 'UNA_EXHIBICION'}">
+					<p:outputLabel for="fechaPago" value="#{msg['message.dictamen.opinion.fecha.pago']}" />
+       				<p:calendar id="fechaPago" value="#{opinionPage.modeloOpinionDTO.fecFechaPagoPrimerpago}" showOn="button" pattern="dd/MM/yyyy" required="#{request.getParameter('validaOpinion')}" />
+				</p:panelGrid>
+				
+				<p:panelGrid columns="4" rendered="#{opinionPage.opcionPagoSeleccionada eq 'CON_PAGO' and opinionPage.tipoPagoSeleccionado eq 'PARCIALIDADES'}">
+   					<p:outputLabel for="numeroConvenio" value="#{msg['message.dictamen.opinion.numero.convenio']}" />
+   					<p:inputText id="numeroConvenio" value="#{opinionPage.modeloOpinionDTO.numNumeroConvenio}" required="#{request.getParameter('validaOpinion')}" />
+   					
+   					<p:outputLabel for="numeroParcialidades" value="#{msg['message.dictamen.opinion.numero.parcialidades']}" />
+   					<p:inputText id="numeroParcialidades" value="#{opinionPage.modeloOpinionDTO.numParcialidades}" required="#{request.getParameter('validaOpinion')}" />
+					
+					<p:outputLabel for="fechaConvenio" value="#{msg['message.dictamen.opinion.fecha.convenio']}" />
+       				<p:calendar id="fechaConvenio" value="#{opinionPage.modeloOpinionDTO.fecFechaConvenio}" showOn="button" pattern="dd/MM/yyyy" required="#{request.getParameter('validaOpinion')}" />
+       				
+       				<p:outputLabel for="fechaPrimerPago" value="#{msg['message.dictamen.opinion.fecha.primer.pago']}" />
+       				<p:calendar id="fechaPrimerPago" value="#{opinionPage.modeloOpinionDTO.fecFechaPagoPrimerpago}" showOn="button" pattern="dd/MM/yyyy" required="#{request.getParameter('validaOpinion')}" />
+				</p:panelGrid>
+				
+				<p:outputLabel for="limitaciones" value="#{msg['message.dictamen.opinion.limitaciones.informacion']}" rendered="#{opinionPage.tipoOpinionSeleccionada eq 'ABSTENCION'}" />
+				<p:inputTextarea id="limitaciones" value="#{opinionPage.modeloOpinionDTO.desLimitacionesInformacion}" cols="100" rows="5"
+					rendered="#{opinionPage.tipoOpinionSeleccionada eq 'ABSTENCION'}" required="#{request.getParameter('validaOpinion')}" />
+				
+				<p:outputLabel for="observaciones" value="#{msg['message.dictamen.opinion.observaciones']}" />
+				<p:inputTextarea id="observaciones" value="#{opinionPage.modeloOpinionDTO.desObservaciones}" cols="100" rows="5"
+					required="#{request.getParameter('validaOpinion')}" />
+				
+				<p:panelGrid columns="4">
+					<p:commandButton value="#{msg['message.button.limpiar']}" />
+					<p:commandButton value="#{msg['message.button.vista.previa']}" />
+					<p:commandButton value="#{msg['message.button.guardar']}" actionListener="#{opinionBean.guardarOpinion}">
+						<f:param name="validaOpinion" value="true" />
+					</p:commandButton>
+					<p:commandButton value="#{msg['message.button.firmar']}" />
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+	</p:panel>
+</ui:composition>
