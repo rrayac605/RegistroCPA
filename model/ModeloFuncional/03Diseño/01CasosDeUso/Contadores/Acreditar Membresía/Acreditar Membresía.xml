@@ -176,7 +176,7 @@
 								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_sourceID" value="60255"/>
-								<UML:TaggedValue tag="ea_targetID" value="60263"/>
+								<UML:TaggedValue tag="ea_targetID" value="60356"/>
 								<UML:TaggedValue tag="privatedata5" value="EDGE=2;"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
@@ -559,12 +559,12 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="68016"/>
+								<UML:TaggedValue tag="ea_localid" value="68235"/>
 								<UML:TaggedValue tag="ea_sourceName" value="patron"/>
 								<UML:TaggedValue tag="ea_targetName" value="Firmar Electrónicamente (Fiel)"/>
 								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="60262"/>
+								<UML:TaggedValue tag="ea_sourceID" value="60355"/>
 								<UML:TaggedValue tag="ea_targetID" value="60256"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
@@ -678,12 +678,12 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
-								<UML:TaggedValue tag="ea_localid" value="67996"/>
+								<UML:TaggedValue tag="ea_localid" value="68215"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
 								<UML:TaggedValue tag="ea_targetName" value="Firmar Electrónicamente (Fiel)"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="60263"/>
+								<UML:TaggedValue tag="ea_sourceID" value="60356"/>
 								<UML:TaggedValue tag="ea_targetID" value="60256"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={1CA3BACC-22DE-408b-9526-B0590D111435}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={E8D44E1D-17F8-44fe-BADD-44841D08B480}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 								<UML:TaggedValue tag="privatedata5" value="SX=45;SY=-1;EX=45;EY=-1;EDGE=2;"/>
@@ -746,7 +746,7 @@
 						</UML:Dependency>
 						<UML:UseCase name="Ver Acreditacion y Membresia" xmi.id="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" visibility="public" namespace="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="documentation" value="El caso de uso describe la funcionalidad requerida a fin de que el contador publico autorizado presente su acreditacion por medio del documento expedido por el colegio de contadores al que pertenece y membresia "/>
+								<UML:TaggedValue tag="documentation" value="El caso de uso describe la funcionalidad requerida a fin de que el contador público autorizado presente su acreditación por medio del documento expedido (membresía) por el colegio de contadores al que pertenece."/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -754,7 +754,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 13:45:59"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-22 12:04:22"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 16:40:33"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Acreditar Membresía"/>
@@ -769,35 +769,35 @@
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={CAD0E078-92DA-41f5-A2FD-7EB0E88BC945}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={864C612E-40AF-4c78-8A19-686E33DB2A81}$CLT;$SUP={671A2F36-4FE3-46b3-963B-9AA6257D4ACB}$SUP;$ENDXREF;$XREFPROP=$XID={DE961336-37AA-4ced-B0BC-042182A5F3B1}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={864C612E-40AF-4c78-8A19-686E33DB2A81}$CLT;$SUP={DE872577-FBF1-43cd-93AD-E2C59A6EC029}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
-								<UML:Constraint name="El CPA debe contar con FIEL ">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="1.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-								<UML:Constraint name="El CPA debe estar registado en el catalogo de contadores publicos autorizados ">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="2.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-								<UML:Constraint name="El registro IMSS no debe tener un estatus &quot;CANCELADO&quot;.">
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="3.00"/>
-										<UML:TaggedValue tag="status" value="Approved"/>
-									</UML:ModelElement.taggedValue>
-								</UML:Constraint>
-								<UML:Constraint name="el usuario debe estar registrado dentro del portal IMSS y autenticarse en el sistema">
+								<UML:Constraint name="El Contador Público Autorizado debe estar registrado dentro del Escritorio Virtual y autenticarse en el sistema.">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
 										<UML:TaggedValue tag="weight" value="1.00"/>
 										<UML:TaggedValue tag="status" value="Validated"/>
 									</UML:ModelElement.taggedValue>
 								</UML:Constraint>
-								<UML:Constraint name="la firma electronica avanzada se debe almacenar en la notaria electronica del portal IMSS Digital">
+								<UML:Constraint name="El Contador Público Autorizado debe estar registrado en el catálogo de contadores públicos autorizados.">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El Contador Público Autorizado deberá contar con su firma electrónica avanzada (FIEL)  proporcionados  por el SAT.">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="El registro IMSS no debe tener un estatus “Cancelado” en la tabla NDT_CPA_ESTATUS.">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="type" value="Pre-condition"/>
+										<UML:TaggedValue tag="weight" value="3.00"/>
+										<UML:TaggedValue tag="status" value="Approved"/>
+									</UML:ModelElement.taggedValue>
+								</UML:Constraint>
+								<UML:Constraint name="La acreditación de membresía es válida y se realizó con éxito. ">
 									<UML:ModelElement.taggedValue>
 										<UML:TaggedValue tag="type" value="Post-condition"/>
 										<UML:TaggedValue tag="weight" value="4.00"/>
@@ -962,6 +962,43 @@
 								</UML:AssociationEnd>
 							</UML:Association.connection>
 						</UML:Association>
+						<UML:Dependency client="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" supplier="EAID_7A2FDC5E_B776_486a_AC5D_607648C00686" xmi.id="EAID_D14BC4D3_E797_4494_B0BB_09478B9EEA16" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="68236"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Ver Acreditacion y Membresia"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-C001 Detalle de Pantallas"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="60257"/>
+								<UML:TaggedValue tag="ea_targetID" value="60139"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
 						<UML:Dependency client="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" supplier="EAID_B93646AA_0AAA_489c_BDFA_09DB2B48EA75" xmi.id="EAID_E04F960B_9FF3_4848_8764_EC81B0270709" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
@@ -1287,12 +1324,12 @@
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
 								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
-								<UML:TaggedValue tag="ea_localid" value="68002"/>
+								<UML:TaggedValue tag="ea_localid" value="68221"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
 								<UML:TaggedValue tag="ea_targetName" value="Enviar Acuse de Tramite"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="60263"/>
+								<UML:TaggedValue tag="ea_sourceID" value="60356"/>
 								<UML:TaggedValue tag="ea_targetID" value="60258"/>
 								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FF3077EC-36E3-4839-B10A-D4ED205FFB18}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={F96B5AF3-691B-467a-8271-F2788A6FC00A};@ENDSTEREO;$DES;$CLT={B884D43C-46DA-4003-B8D2-6C446B8DFE66}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 								<UML:TaggedValue tag="privatedata5" value="EDGE=1;SX=-2;SY=35;EX=-2;EY=35;"/>
@@ -1409,14 +1446,14 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="vlopezr"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 13:30:25"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-27 14:05:55"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-27 16:41:36"/>
 				<UML:TaggedValue tag="package" value="EAPK_A528D8BF_DB02_4944_85F8_AEF06EB07F75"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="6215"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=75;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=BFD8212A;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=ABD2549F;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=826;Top=259;Right=986;Bottom=292;" subject="EAID_0495C340_C8A3_47ed_A621_442F87E8F593" seqno="1" style="DUID=7577D411;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
@@ -1438,18 +1475,19 @@
 				<UML:DiagramElement geometry="Left=164;Top=53;Right=512;Bottom=438;" subject="EAID_60B51267_E97A_43bd_BED4_E2F731C962B5" seqno="17" style="DUID=DAD2DC30;"/>
 				<UML:DiagramElement geometry="Left=195;Top=203;Right=318;Bottom=285;" subject="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" seqno="18" style="DUID=704B1938;"/>
 				<UML:DiagramElement geometry="Left=81;Top=195;Right=127;Bottom=288;" subject="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB" seqno="19" style="DUID=C7FB6A7F;"/>
-				<UML:DiagramElement geometry="SX=-28;SY=-34;EX=-45;EY=-23;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_ECABF7D5_398E_48a3_BD55_7AE578EA383B" style="Mode=2;EOID=6F820D78;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-60;SY=-32;EX=-63;EY=-18;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F453586C_E90B_428d_A925_96928FD67A98" style="Mode=2;EOID=1BEABBD5;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-52;SY=-23;EX=-80;EY=-12;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E1F11C03_FD0A_4cad_AD1B_D0C1F1D422A7" style="Mode=2;EOID=C2009F69;SOID=A97CABB6;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_905A6C06_10F9_4825_B62A_37BE76F64382" style="Mode=3;EOID=C49B73EE;SOID=A97CABB6;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-52;SY=-26;EX=-80;EY=-10;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E903C729_0EE0_4056_915C_E27AFA79DCF1" style="Mode=2;EOID=7577D411;SOID=A97CABB6;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-48;SY=-28;EX=-49;EY=-12;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A76E81F1_8F7B_4b53_A15E_F4E74C25FC01" style="Mode=2;EOID=BA73C3F9;SOID=97D9B4CC;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-48;SY=-22;EX=-49;EY=-6;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A76E81F1_8F7B_4b53_A15E_F4E74C25FC01" style="Mode=2;EOID=BA73C3F9;SOID=97D9B4CC;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-52;SY=8;EX=-55;EY=3;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E54C93E1_83BD_40ef_B856_1E366F4D453A" style="Mode=2;EOID=3EDC7D0A;SOID=97D9B4CC;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-42;SY=-15;EX=-42;EY=-10;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_7F0CB614_2AA0_4132_8E66_CC18694B8268" style="Mode=2;EOID=C2009F69;SOID=97D9B4CC;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_7CFD6D7F_6791_44c6_B00B_042A86ECEBF9" style="Mode=3;EOID=9BDCA2BB;SOID=97D9B4CC;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-12;SY=-4;EX=-11;EY=-4;EDGE=3;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=A97CABB6;SOID=97D9B4CC;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_0700E4E4_B084_442c_8014_399B8BBAAD3B" style="Mode=3;EOID=DDCFA3DC;SOID=9BDCA2BB;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-60;SY=-32;EX=-63;EY=-18;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F453586C_E90B_428d_A925_96928FD67A98" style="Mode=2;EOID=1BEABBD5;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-34;SY=-39;EX=-53;EY=-14;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F9D94F6F_8293_4a35_A027_3E0E698A3104" style="Mode=2;EOID=B872B7D3;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A6CE1928_E1B7_4b69_8D95_42ED445EC5B3" style="Mode=3;EOID=A97CABB6;SOID=C7FB6A7F;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-28;SY=-34;EX=-45;EY=-23;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_ECABF7D5_398E_48a3_BD55_7AE578EA383B" style="Mode=2;EOID=6F820D78;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-50;SY=-24;EX=-69;EY=-10;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E04F960B_9FF3_4848_8764_EC81B0270709" style="Mode=2;EOID=14C8F942;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-16;SY=24;EX=-7;EY=24;EDGE=1;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D0549007_59C2_48cc_8B55_5DCED6892F2A" style="Mode=2;EOID=97D9B4CC;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=-61;SY=-22;EX=-80;EY=-2;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A46EE50E_D8BC_4e95_A060_A90537C8CE97" style="Mode=2;EOID=C81AB13D;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
@@ -1458,7 +1496,7 @@
 				<UML:DiagramElement geometry="SX=-2;SY=-30;EX=9;EY=-21;EDGE=3;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_3E37BBF0_1BEC_4cab_9F50_4333BAEFE44F" style="Mode=2;EOID=A97CABB6;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_FE6FE020_354D_45da_9B34_B0F8C1A6E935" style="Mode=3;EOID=97D9B4CC;SOID=C7FB6A7F;Color=-1;LWidth=0;Hidden=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_BEACBB65_AA0B_4c85_A921_DEE7F737D1E2" style="Mode=3;EOID=704B1938;SOID=C7FB6A7F;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="SX=-34;SY=-39;EX=-53;EY=-14;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F9D94F6F_8293_4a35_A027_3E0E698A3104" style="Mode=2;EOID=B872B7D3;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-47;SY=-33;EX=-66;EY=-11;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D14BC4D3_E797_4494_B0BB_09478B9EEA16" style="Mode=2;EOID=BA73C3F9;SOID=704B1938;Color=-1;LWidth=0;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 		<UML:DiagramElement geometry="Left=121;Top=181;Right=166;Bottom=271;" subject="EAID_05B54E00_3BD8_4bf4_9A27_8FCF944959CB" seqno="28" style="DUID=E3B89479;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
@@ -1598,27 +1636,27 @@
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
-		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=AEE2D371;SOID=0AF60C04;Color=-1;LWidth=0;">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="diagram_guid" value="EAID_26FA547A_C1F4_4f8f_A79A_F079BB601F6C"/>
-				<UML:TaggedValue tag="hidden" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</UML:DiagramElement>
-		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=B537D94B;SOID=44EE2B64;Color=-1;LWidth=0;">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
-				<UML:TaggedValue tag="hidden" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</UML:DiagramElement>
 		<UML:DiagramElement geometry="EDGE=2;SX=0;SY=0;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=91FDC247;SOID=EF6664FC;Color=-1;LWidth=0;TREE=OS;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_6AEB3DB5_8956_41e9_9773_03729E531DB2"/>
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
+		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=AEE2D371;SOID=0AF60C04;Color=-1;LWidth=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_26FA547A_C1F4_4f8f_A79A_F079BB601F6C"/>
+				<UML:TaggedValue tag="hidden" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
 		<UML:DiagramElement geometry="EDGE=4;EX=0;EY=0;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=D6C6AD77;SOID=A83217BE;Color=-1;LWidth=0;TREE=OS;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7"/>
+				<UML:TaggedValue tag="hidden" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=B537D94B;SOID=44EE2B64;Color=-1;LWidth=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
@@ -1678,27 +1716,27 @@
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
-		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=AEE2D371;SOID=0AF60C04;Color=-1;LWidth=0;">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="diagram_guid" value="EAID_26FA547A_C1F4_4f8f_A79A_F079BB601F6C"/>
-				<UML:TaggedValue tag="hidden" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</UML:DiagramElement>
-		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=B537D94B;SOID=44EE2B64;Color=-1;LWidth=0;">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
-				<UML:TaggedValue tag="hidden" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</UML:DiagramElement>
 		<UML:DiagramElement geometry="EDGE=2;SX=0;SY=0;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=91FDC247;SOID=EF6664FC;Color=-1;LWidth=0;TREE=OS;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_6AEB3DB5_8956_41e9_9773_03729E531DB2"/>
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
+		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=AEE2D371;SOID=0AF60C04;Color=-1;LWidth=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_26FA547A_C1F4_4f8f_A79A_F079BB601F6C"/>
+				<UML:TaggedValue tag="hidden" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
 		<UML:DiagramElement geometry="EDGE=4;EX=0;EY=0;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=D6C6AD77;SOID=A83217BE;Color=-1;LWidth=0;TREE=OS;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7"/>
+				<UML:TaggedValue tag="hidden" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=B537D94B;SOID=44EE2B64;Color=-1;LWidth=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
@@ -1740,27 +1778,27 @@
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
-		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=AEE2D371;SOID=0AF60C04;Color=-1;LWidth=0;">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="diagram_guid" value="EAID_26FA547A_C1F4_4f8f_A79A_F079BB601F6C"/>
-				<UML:TaggedValue tag="hidden" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</UML:DiagramElement>
-		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=B537D94B;SOID=44EE2B64;Color=-1;LWidth=0;">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
-				<UML:TaggedValue tag="hidden" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</UML:DiagramElement>
 		<UML:DiagramElement geometry="EDGE=2;SX=0;SY=0;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=91FDC247;SOID=EF6664FC;Color=-1;LWidth=0;TREE=OS;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_6AEB3DB5_8956_41e9_9773_03729E531DB2"/>
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
+		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=AEE2D371;SOID=0AF60C04;Color=-1;LWidth=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_26FA547A_C1F4_4f8f_A79A_F079BB601F6C"/>
+				<UML:TaggedValue tag="hidden" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
 		<UML:DiagramElement geometry="EDGE=4;EX=0;EY=0;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=D6C6AD77;SOID=A83217BE;Color=-1;LWidth=0;TREE=OS;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7"/>
+				<UML:TaggedValue tag="hidden" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=B537D94B;SOID=44EE2B64;Color=-1;LWidth=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
@@ -1818,27 +1856,27 @@
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
-		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=AEE2D371;SOID=0AF60C04;Color=-1;LWidth=0;">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="diagram_guid" value="EAID_26FA547A_C1F4_4f8f_A79A_F079BB601F6C"/>
-				<UML:TaggedValue tag="hidden" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</UML:DiagramElement>
-		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=B537D94B;SOID=44EE2B64;Color=-1;LWidth=0;">
-			<UML:ModelElement.taggedValue>
-				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
-				<UML:TaggedValue tag="hidden" value="0"/>
-			</UML:ModelElement.taggedValue>
-		</UML:DiagramElement>
 		<UML:DiagramElement geometry="EDGE=2;SX=0;SY=0;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=91FDC247;SOID=EF6664FC;Color=-1;LWidth=0;TREE=OS;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_6AEB3DB5_8956_41e9_9773_03729E531DB2"/>
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
+		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=AEE2D371;SOID=0AF60C04;Color=-1;LWidth=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_26FA547A_C1F4_4f8f_A79A_F079BB601F6C"/>
+				<UML:TaggedValue tag="hidden" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
 		<UML:DiagramElement geometry="EDGE=4;EX=0;EY=0;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=D6C6AD77;SOID=A83217BE;Color=-1;LWidth=0;TREE=OS;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_72E7B04E_4014_4f20_A174_52C84DE0BFE7"/>
+				<UML:TaggedValue tag="hidden" value="0"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;" subject="EAID_40B22D22_F562_4b20_B01C_C802F467AFC2" style="Mode=3;EOID=B537D94B;SOID=44EE2B64;Color=-1;LWidth=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_7CEB18FF_6FB2_44ea_8A04_1EF9CF8D5D8A"/>
 				<UML:TaggedValue tag="hidden" value="0"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
@@ -1984,41 +2022,44 @@
 			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" xmi.id="EAID_E73FA811_E87B_4880_9E91_D2B10E299574">
 				<EAScenarioContent>
 					<path>
-						<step name="el actor debe entrar a la zona personal y elegir la seccion de tramites digitales" guid="{FC08057A-7650-4d9b-B86B-358ABDC3A43D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema mostrara en pantalla el actor autenticado, las instrucciones del modulo de contadores publicos y las siguientes opciones: (solicitud de registro, activacion de registro, reactivacion de registro, acreditacion y membresia, modificacion de datos, baja, salir)." guid="{788F5211-41EF-4432-9732-D741F111A147}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor debe seleccionar la opcion de acreditacion y membresia." guid="{B7B0102D-6E47-4a4d-8957-506374D85671}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema mostrara el campo de captura  Registro IMSS de tipo numerico 5 posiciones de tipo entero." guid="{8AD75413-E687-4024-A5E7-F91E020AA599}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor debe capturar su registro IMSS" guid="{0014C6F9-9A7C-4df0-B82B-E8D4B753B22A}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema validara el registro IMSS y el CURP, registrado con el catalogo de contadores publicos autorizados con la finalidad de ver el numero de registro IMSS " guid="{FD7D1DA2-400C-4047-8220-66EDACC9A524}" level="6" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="6a" guid="{9B8AE67A-D6EB-43ed-8D0D-7866BD4B31F2}" join="End"/>
-							<extension level="6b" guid="{14780EB4-9A28-4ced-B94D-073E796EB0AA}" join="End"/>
+						<step name="El actor contador público autorizado debe entrar a opción acreditar membresía. " guid="{FC08057A-7650-4d9b-B86B-358ABDC3A43D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema mostrará en pantalla al actor contador público autorizado autenticado con las siguientes opciones: (solicitud de registro, activación de registro, reactivación de registro, Acreditación y Membresía, modificación de datos, baja)." guid="{788F5211-41EF-4432-9732-D741F111A147}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor contador público autorizado debe seleccionar la opción de Acreditación de Membresía." guid="{B7B0102D-6E47-4a4d-8957-506374D85671}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema validará el registro IMSS y el CURP, registrado con el catálogo de contadores públicos autorizados ver referencia RF-A012 Validar Coincidencias de datos ingresados para ver el número de registro IMSS, de lo contrario Ir a FA2." guid="{8AD75413-E687-4024-A5E7-F91E020AA599}" level="4" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="4a" guid="{9B8AE67A-D6EB-43ed-8D0D-7866BD4B31F2}" join="End"/>
 						</step>
-						<step name="el sistema mostrara en pantalla emergente los datos del CPA (Apellido paterno, materno, nombre, CURP, Registro IMSS) y habilita el boton siguiente." guid="{BC1074E2-BE35-461e-AEF7-19D2880B62AB}" level="7" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="7a" guid="{CD6EF0B7-DB48-442b-95AF-8275F4506869}" join="End"/>
+						<step name="El sistema mostrará en pantalla emergente ver referencia RF-“C002. Detalle de Pantallas Id detalle 11”  (Nombre, CURP, Registro IMSS) y habilita el botón “siguiente” de lo contrario Ir a FA1." guid="{BC1074E2-BE35-461e-AEF7-19D2880B62AB}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="5a" guid="{CD6EF0B7-DB48-442b-95AF-8275F4506869}" join="End"/>
 						</step>
-						<step name="el actor debe seleccionar el boton siguiente " guid="{C4B329E0-11D2-46cd-9044-B13371DD0168}" level="8" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema desplegara la ventana  Acreditacion y Membresia, solicitando fecha del documento 1 con caracter de obligatorio y fecha del documento 2 con caracter opcional, botones adjuntar, eliminar, salir." guid="{E3DB63BE-DE5A-4152-A403-FDB1655ECB69}" level="9" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor debe seleccionar fecha del documento 1 " guid="{BA80B19A-CC3A-4eee-989E-D04618F50815}" level="10" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema desplegara los componentes de calendario " guid="{D0C9D8A7-4217-4912-8DFD-11DE95CF0829}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor debe seleccionar la fecha en el componente de calendario" guid="{6AF81C48-F122-412b-9532-281ABB49A295}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema insertara las fechas seleccionadas por el actor " guid="{5FEC24B2-F7FA-4cf0-B4B0-AB326B9ED831}" level="13" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor debe seleccionar el boton adjuntar " guid="{7B317104-4280-48e4-8367-80B759CE874F}" level="14" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema mostrara ventana emergente para seleccion de ruta de carga del archivo boton abrir boton cancelar " guid="{7F5061B0-73FA-4679-83D7-0C0F5443A8EA}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor debe seleccionar el archivo y el boton abrir " guid="{624327F3-E6EE-450c-A366-6D15C38025A3}" level="16" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema validara que el archivo sea de tipo .pdf y mostrara barra de progreso de carga al termino mostrara el archivo en miniatura" guid="{C6AABF0B-7717-465e-90B6-7C6ADAA2295A}" level="17" uses="" useslist="" result="" state="" trigger="0" link="">
-							<extension level="17a" guid="{E34C6D99-7FD6-4dea-A846-8776A881C0CE}" join="End"/>
+						<step name="El actor contador público autorizado debe seleccionar el botón “siguiente”." guid="{C4B329E0-11D2-46cd-9044-B13371DD0168}" level="6" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema desplegará la ventana  “Acreditación y Membresía”, solicitando fecha del documento 1 con carácter de obligatorio de acuerdo al “RF-A007 Validar campos obligatorios”, y  fecha del documento 2 que es de carácter opcional. Así mismo habilitan los botones examinar y siguiente." guid="{E3DB63BE-DE5A-4152-A403-FDB1655ECB69}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor contador público autorizado debe seleccionar fecha del documento 1 de carácter obligatorio, y puede seleccionar la fecha del documento 2 de carácter opcional." guid="{BA80B19A-CC3A-4eee-989E-D04618F50815}" level="8" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema desplegará los componentes de calendario en pantalla, y validará los campos obligatorios de acuerdo “RF-A007 Validar campos obligatorios”." guid="{D0C9D8A7-4217-4912-8DFD-11DE95CF0829}" level="9" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor contador público autorizado debe seleccionar la fecha en el componente de calendario." guid="{6AF81C48-F122-412b-9532-281ABB49A295}" level="10" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema presentará las fechas seleccionadas por el actor contador público autorizado." guid="{5FEC24B2-F7FA-4cf0-B4B0-AB326B9ED831}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor contador público autorizado debe seleccionar el botón “examinar”." guid="{7B317104-4280-48e4-8367-80B759CE874F}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema mostrará selección de ruta de carga del archivo botón abrir." guid="{7F5061B0-73FA-4679-83D7-0C0F5443A8EA}" level="13" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor contador público autorizado debe seleccionar el archivo y el botón abrir." guid="{624327F3-E6EE-450c-A366-6D15C38025A3}" level="14" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema validará que el archivo sea de tipo .pdf ver referencia “RF-A002 Validar Formato de documento adjunto” y mostrará barra de progreso de carga al termino mostrará el archivo, de lo contrario Ir a FA3." guid="{C6AABF0B-7717-465e-90B6-7C6ADAA2295A}" level="15" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="15a" guid="{14780EB4-9A28-4ced-B94D-073E796EB0AA}" join="End"/>
 						</step>
-						<step name="el sistema mostrara botones con las siguientes acciones: (guardar, Firmar, Enviar tramite, Salir)" guid="{24B3BCFF-C8B6-4cc3-8FD6-197E85A7D00F}" level="18" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el actor puede seleccionar boton &quot;guardar&quot;" guid="{C686F6D5-50F7-4024-85B9-72137EBCCA67}" level="19" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema guardara los datos y documentacion sin enviar la solicitud " guid="{914185D1-1EF9-4443-BFBA-233940419092}" level="20" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el actor puede seleccionar boton &quot;Firmar&quot;" guid="{E53290B3-03E1-4409-BE33-5CCF89AFF114}" level="21" uses="Firmar Electronicamente (Fiel)" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el actor puede seleccionar boton &quot;enviar tramite&quot;" guid="{B4CEDE9D-D781-4688-A478-CF5ACE661649}" level="22" uses="Enviar Acuse de Tramite" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el actor puede seleccionar boton &quot;salir&quot;" guid="{13B7178A-090D-4063-84E3-CBA19F8A3271}" level="23" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="el sistema direccionara a pantalla de ventanilla unica" guid="{668CA32A-A17F-4b7a-93EA-389EF030EA73}" level="24" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="fin de caso de uso " guid="{230CA63A-9517-41d6-8753-2AF6E24F79BE}" level="25" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El actor contador público autorizado puede seleccionar botón &quot;guardar&quot;." guid="{24B3BCFF-C8B6-4cc3-8FD6-197E85A7D00F}" level="16" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema guardará los datos y documentación sin enviar la solicitud, ver referencia “RF-N005 Histórico de registros de acreditación y membresía”." guid="{914185D1-1EF9-4443-BFBA-233940419092}" level="17" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema mostrará la información de acreditación y membresía del contador público autorizado ver referencia “RF-A026 Mostrar información de acreditación y membresía”. " guid="{E53290B3-03E1-4409-BE33-5CCF89AFF114}" level="18" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema mostrará la&#xA;Ventana para firmar su trámite ver “Caso de uso Especificación de caso de uso Firmar Electrónicamente”." guid="{B4CEDE9D-D781-4688-A478-CF5ACE661649}" level="19" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor contador público autorizado debe  seleccionar botón &quot;Enviar trámite&quot; detallado en Especificación de caso de uso Enviar Acuse de Trámite." guid="{13B7178A-090D-4063-84E3-CBA19F8A3271}" level="20" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="Fin de caso de uso." guid="{668CA32A-A17F-4b7a-93EA-389EF030EA73}" level="21" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
+							<item oldname="RF-A037 Habilitación del Cambio de Estatus" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A027 Mostrar Información Documentación del CP o CPA." guid="{6EBA91FB-D703-45c5-A3BE-87B4CD999EC7}"/>
+							<item oldname="RF-A012 Validar Coincidencias de datos ingresados" guid="{833BCFFF-8AE5-4cee-AE5D-A0F6738AC018}"/>
+							<item oldname="RF-A007 Validar campos obligatorios" guid="{9173F5B4-88BC-4890-A0A4-D2B4115AC990}"/>
+							<item oldname="RF-A026 Mostrar Información Acreditación y Membresía" guid="{380B937B-796E-4156-8AD4-AFFACBF1C8B4}"/>
 							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
-							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+							<item oldname="RF-C001 Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-N001 Generar Registro IMSS" guid="{AB40C861-D031-4117-96B9-FCD8CDC58E58}"/>
+							<item oldname="RF-N003 Historico de registros de acreditación y membresia" guid="{B93646AA-0AAA-489c-BDFA-09DB2B48EA75}"/>
+							<item oldname="Firmar Electrónicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
 							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
 						</context>
 					</path>
@@ -2027,12 +2068,20 @@
 			<EAScenario name="FA1" type="Alternate" weight="1.00" subject="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" xmi.id="EAID_CD6EF0B7_DB48_442b_95AF_8275F4506869">
 				<EAScenarioContent>
 					<path>
-						<step name="El sistema mostrara mensaje AG &quot;Usted no cuenta con un registro IMSS de contador publico autorizado&quot;" guid="{19F11F43-413B-4a96-A462-F4C6372DD7F3}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el sistema direccionara a pantalla de ventanilla unica " guid="{9543FCD0-4626-4a2d-95B2-FCEC950EAB55}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema mostrará mensaje  &quot;Usted no cuenta con un registro IMSS de contador público autorizado&quot; ver “RF-C010 Catálogo de mensajes Contadores Idmsg15”." guid="{19F11F43-413B-4a96-A462-F4C6372DD7F3}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Fin de flujo alterno" guid="{9543FCD0-4626-4a2d-95B2-FCEC950EAB55}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
+							<item oldname="RF-A037 Habilitación del Cambio de Estatus" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A027 Mostrar Información Documentación del CP o CPA." guid="{6EBA91FB-D703-45c5-A3BE-87B4CD999EC7}"/>
+							<item oldname="RF-A012 Validar Coincidencias de datos ingresados" guid="{833BCFFF-8AE5-4cee-AE5D-A0F6738AC018}"/>
+							<item oldname="RF-A007 Validar campos obligatorios" guid="{9173F5B4-88BC-4890-A0A4-D2B4115AC990}"/>
+							<item oldname="RF-A026 Mostrar Información Acreditación y Membresía" guid="{380B937B-796E-4156-8AD4-AFFACBF1C8B4}"/>
 							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
+							<item oldname="RF-C001 Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-N001 Generar Registro IMSS" guid="{AB40C861-D031-4117-96B9-FCD8CDC58E58}"/>
+							<item oldname="RF-N003 Historico de registros de acreditación y membresia" guid="{B93646AA-0AAA-489c-BDFA-09DB2B48EA75}"/>
+							<item oldname="Firmar Electrónicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
 							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
-							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -2040,11 +2089,19 @@
 			<EAScenario name="FA2" type="Alternate" weight="2.00" subject="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" xmi.id="EAID_9B8AE67A_D6EB_43ed_8D0D_7866BD4B31F2">
 				<EAScenarioContent>
 					<path>
-						<step name="El sistema mostrara mensaje cuando el estatus sea cancelado &quot;Su registro IMSS se encuentra cancelado&quot; " guid="{CB299FCB-4431-4659-9DA7-0C6E400E15CC}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="El sistema direccionara a pantalla de ventanilla unica" guid="{8FFBB8B9-3BB7-4eb6-91A1-5C159A1583CC}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema mostrará mensaje “su registro IMSS no fue activado ver referencia “RF-C010 Catálogo de mensajes Contadores Idmsg20”." guid="{CB299FCB-4431-4659-9DA7-0C6E400E15CC}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor contador público autorizado debe ingresar al módulo de activación del registro. " guid="{8FFBB8B9-3BB7-4eb6-91A1-5C159A1583CC}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
+							<item oldname="RF-A037 Habilitación del Cambio de Estatus" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A027 Mostrar Información Documentación del CP o CPA." guid="{6EBA91FB-D703-45c5-A3BE-87B4CD999EC7}"/>
+							<item oldname="RF-A012 Validar Coincidencias de datos ingresados" guid="{833BCFFF-8AE5-4cee-AE5D-A0F6738AC018}"/>
+							<item oldname="RF-A007 Validar campos obligatorios" guid="{9173F5B4-88BC-4890-A0A4-D2B4115AC990}"/>
+							<item oldname="RF-A026 Mostrar Información Acreditación y Membresía" guid="{380B937B-796E-4156-8AD4-AFFACBF1C8B4}"/>
 							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
-							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+							<item oldname="RF-C001 Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-N001 Generar Registro IMSS" guid="{AB40C861-D031-4117-96B9-FCD8CDC58E58}"/>
+							<item oldname="RF-N003 Historico de registros de acreditación y membresia" guid="{B93646AA-0AAA-489c-BDFA-09DB2B48EA75}"/>
+							<item oldname="Firmar Electrónicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
 							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
 						</context>
 					</path>
@@ -2053,11 +2110,19 @@
 			<EAScenario name="FA3" type="Alternate" weight="3.00" subject="EAID_864C612E_40AF_4c78_8A19_686E33DB2A81" xmi.id="EAID_14780EB4_9A28_4ced_B94D_073E796EB0AA">
 				<EAScenarioContent>
 					<path>
-						<step name="El sistema validara que el registro IMSS cuente con una fecha de activacion de lo contrario mostrara mensaje &quot;Su registro IMSS no ha sido activado favor de ingresar al modulo de activacion del registro&quot;" guid="{A790267E-2CFB-46cb-987C-B728EFD52530}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="el sistema direcionara a pantalla de ventanilla unica" guid="{43DE7788-4925-4b02-8027-AD21195BD4F8}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema mostrará mensaje “archivo invalido favor de cargar archivo valido” ver referencia RF-A002 Validar formato de documento adjunto." guid="{A790267E-2CFB-46cb-987C-B728EFD52530}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor contador público autorizado debe seleccionar un archivo valido ver referencia RF-A002 Validar Formato de documento adjunto de tipo .pdf." guid="{43DE7788-4925-4b02-8027-AD21195BD4F8}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
+							<item oldname="RF-A037 Habilitación del Cambio de Estatus" guid="{46F0AB0D-57BA-4fe1-B1ED-AB8C3406CFE9}"/>
+							<item oldname="RF-A027 Mostrar Información Documentación del CP o CPA." guid="{6EBA91FB-D703-45c5-A3BE-87B4CD999EC7}"/>
+							<item oldname="RF-A012 Validar Coincidencias de datos ingresados" guid="{833BCFFF-8AE5-4cee-AE5D-A0F6738AC018}"/>
+							<item oldname="RF-A007 Validar campos obligatorios" guid="{9173F5B4-88BC-4890-A0A4-D2B4115AC990}"/>
+							<item oldname="RF-A026 Mostrar Información Acreditación y Membresía" guid="{380B937B-796E-4156-8AD4-AFFACBF1C8B4}"/>
 							<item oldname="CPA" guid="{05B54E00-3BD8-4bf4-9A27-8FCF944959CB}"/>
-							<item oldname="Firmar Electronicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
+							<item oldname="RF-C001 Detalle de Pantallas" guid="{7A2FDC5E-B776-486a-AC5D-607648C00686}"/>
+							<item oldname="RF-N001 Generar Registro IMSS" guid="{AB40C861-D031-4117-96B9-FCD8CDC58E58}"/>
+							<item oldname="RF-N003 Historico de registros de acreditación y membresia" guid="{B93646AA-0AAA-489c-BDFA-09DB2B48EA75}"/>
+							<item oldname="Firmar Electrónicamente (Fiel)" guid="{671A2F36-4FE3-46b3-963B-9AA6257D4ACB}"/>
 							<item oldname="Enviar Acuse de Tramite" guid="{DE872577-FBF1-43cd-93AD-E2C59A6EC029}"/>
 						</context>
 					</path>
@@ -2154,12 +2219,12 @@
 		<EAStub xmi.id="EAID_AB40C861_D031_4117_96B9_FCD8CDC58E58" name="RF-N001 Generar Registro IMSS" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_6EBA91FB_D703_45c5_A3BE_87B4CD999EC7" name="RF-A027 Mostrar Información Documentación del CP o CPA." UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_46F0AB0D_57BA_4fe1_B1ED_AB8C3406CFE9" name="RF-A037 Habilitación del Cambio de Estatus" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_7A2FDC5E_B776_486a_AC5D_607648C00686" name="RF-C001 Detalle de Pantallas" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_B93646AA_0AAA_489c_BDFA_09DB2B48EA75" name="RF-N003 Historico de registros de acreditación y membresia" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_380B937B_796E_4156_8AD4_AFFACBF1C8B4" name="RF-A026 Mostrar Información Acreditación y Membresía" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_833BCFFF_8AE5_4cee_AE5D_A0F6738AC018" name="RF-A012 Validar Coincidencias de datos ingresados" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_9173F5B4_88BC_4890_A0A4_D2B4115AC990" name="RF-A007 Validar campos obligatorios" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_2EFCF1C5_E34C_4821_9EAB_6C825508FA31" name="RF-A004 Validar correo electrónico" UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_7A2FDC5E_B776_486a_AC5D_607648C00686" name="RF-C001 Detalle de Pantallas" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_4EA26ABC_ECAC_4bfe_A6D0_F198581BE3F7" name="RF-C003 Estructura de folio" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_CABEABA1_DEF6_4ba5_BAAD_6F801CF01073" name="Reactivar Registro" UMLType="UseCase"/>
 	</XMI.extensions>
