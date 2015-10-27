@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-10-20 17:18:54"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\CargaDeRegistrosPatronales\Carga de Registros Patronales.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-10-21 10:40:44"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-10-27 16:09:43"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-10-21 10:32:39"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -46,7 +46,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_4B08CEED_A873_44ca_A392_18C42246A804"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-21 10:43:28"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-21 11:40:32"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 17:05:10"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Carga de Registros Patronales"/>
@@ -55,9 +55,10 @@
 								<UML:TaggedValue tag="complexity" value="1"/>
 								<UML:TaggedValue tag="status" value="Proposed"/>
 								<UML:TaggedValue tag="tpos" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="7256"/>
+								<UML:TaggedValue tag="ea_localid" value="22128"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={95F69B8D-E54C-4565-B2E1-FD033A488D15}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={07C6458D-B98A-4e6d-9AFB-5E91D35FC74C}$CLT;$SUP={778C0582-4CF5-4a95-ACC4-E8071AC39E02}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
 								<UML:Constraint name="El CPA debe haber entrado al sistema con su  Firma Electrónica Avanzada (FIEL)">
@@ -102,13 +103,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="8112"/>
+								<UML:TaggedValue tag="ea_localid" value="24482"/>
 								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
 								<UML:TaggedValue tag="ea_targetName" value="Cargar Registros Patronales"/>
 								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
 								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_sourceID" value="6946"/>
-								<UML:TaggedValue tag="ea_targetID" value="7256"/>
+								<UML:TaggedValue tag="ea_sourceID" value="21894"/>
+								<UML:TaggedValue tag="ea_targetID" value="22128"/>
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 							<UML:Association.connection>
@@ -128,6 +129,51 @@
 								</UML:AssociationEnd>
 							</UML:Association.connection>
 						</UML:Association>
+						<UML:Association xmi.id="EAID_B65131B1_97D3_453b_A32F_CFF4D572B491" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="include"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="UseCase"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="subtype" value="Includes"/>
+								<UML:TaggedValue tag="stereotype" value="include"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«include»"/>
+								<UML:TaggedValue tag="ea_localid" value="25169"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CU01 - Registrar datos del patron a dictaminar"/>
+								<UML:TaggedValue tag="ea_targetName" value="Cargar Registros Patronales"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="22190"/>
+								<UML:TaggedValue tag="ea_targetID" value="22128"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={ADCF1089-1904-4543-994B-D95752C1C834}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=include;GUID={5F7C0D00-8817-4a5c-9888-55D5F2FC208F};@ENDSTEREO;$DES;$CLT={B65131B1-97D3-453b-A32F-CFF4D572B491}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«include»"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_778C0582_4CF5_4a95_ACC4_E8071AC39E02">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_07C6458D_B98A_4e6d_9AFB_5E91D35FC74C">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
 						<UML:Dependency client="EAID_07C6458D_B98A_4e6d_9AFB_5E91D35FC74C" supplier="EAID_85B9F9C7_77E9_425e_BD2E_E62DCF4A4312" xmi.id="EAID_D2BEADCC_BB4D_4f7f_8909_A73442EE252F" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
@@ -139,13 +185,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="8113"/>
+								<UML:TaggedValue tag="ea_localid" value="25020"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Cargar Registros Patronales"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-A28 - Validar formato de archivo"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A028 - Validar formato de archivo"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="7256"/>
-								<UML:TaggedValue tag="ea_targetID" value="6969"/>
+								<UML:TaggedValue tag="ea_sourceID" value="22128"/>
+								<UML:TaggedValue tag="ea_targetID" value="21659"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -174,21 +220,24 @@
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="lfierro"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-21 10:42:24"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-21 11:44:38"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-27 17:37:40"/>
 				<UML:TaggedValue tag="package" value="EAPK_4B08CEED_A873_44ca_A392_18C42246A804"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="633"/>
+				<UML:TaggedValue tag="ea_localid" value="1933"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=3529F484;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=FF18AD24;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=471;Top=42;Right=631;Bottom=75;" subject="EAID_85B9F9C7_77E9_425e_BD2E_E62DCF4A4312" seqno="1" style="DUID=D60FE119;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=254;Top=194;Right=359;Bottom=264;" subject="EAID_07C6458D_B98A_4e6d_9AFB_5E91D35FC74C" seqno="2" style="DUID=B0D3597A;"/>
-				<UML:DiagramElement geometry="Left=81;Top=194;Right=114;Bottom=261;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="3" style="DUID=192679C7;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D2BEADCC_BB4D_4f7f_8909_A73442EE252F" style="Mode=3;EOID=D60FE119;SOID=B0D3597A;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="Left=256;Top=53;Right=361;Bottom=123;" subject="EAID_778C0582_4CF5_4a95_ACC4_E8071AC39E02" seqno="1" style="DUID=8F7BDCFE;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=471;Top=42;Right=631;Bottom=75;" subject="EAID_85B9F9C7_77E9_425e_BD2E_E62DCF4A4312" seqno="2" style="DUID=D60FE119;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=259;Top=259;Right=364;Bottom=329;" subject="EAID_07C6458D_B98A_4e6d_9AFB_5E91D35FC74C" seqno="3" style="DUID=B0D3597A;"/>
+				<UML:DiagramElement geometry="Left=74;Top=258;Right=107;Bottom=325;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="4" style="DUID=192679C7;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_AC5FF7EC_0197_463a_A7CE_5DC3B3F76F08" style="Mode=3;EOID=B0D3597A;SOID=192679C7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-1;SY=0;EX=-1;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_BE9CBD76_1A48_4088_B0CC_5BB6C39F87D3" style="Mode=3;EOID=8F7BDCFE;SOID=192679C7;Color=-1;LWidth=0;Hidden=1;"/>
+				<UML:DiagramElement geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D2BEADCC_BB4D_4f7f_8909_A73442EE252F" style="Mode=3;EOID=D60FE119;SOID=B0D3597A;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=CX=47:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B65131B1_97D3_453b_A32F_CFF4D572B491" style="Mode=3;EOID=B0D3597A;SOID=8F7BDCFE;Color=-1;LWidth=0;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -198,18 +247,19 @@
 			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_07C6458D_B98A_4e6d_9AFB_5E91D35FC74C" xmi.id="EAID_73E7FD74_FCC7_4d72_89FD_0BF8E07E49B2">
 				<EAScenarioContent>
 					<path>
-						<step name="FB01. El sistema muestra en pantalla RF-C002 – Encabezado de pantalla con detalle de información del patrón" guid="{403C049B-E54A-451b-81D7-ABF6DB39AD0B}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB01. El caso de uso inicia cuando el actor CPA da un clic en el botón &quot;Guardar&quot; en el CU01 - Registrar datos del patron a dictaminar en el FB.13." guid="{403C049B-E54A-451b-81D7-ABF6DB39AD0B}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="FB02. El sistema habilita un espacio con la leyenda “Arrastre o Seleccione aquí” con la etiqueta “Registros Patronales”" guid="{6D249341-486D-412c-9B9B-2A72A120D7F3}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB03. El actor CPA puede arrastrar el archivo encima del área habilitada o dar un clic en la leyenda “Seleccione aquí” si el usuario arrastra el archivo encima del área habilitada continua flujo básico si no ir al FA01." guid="{003F41AC-8771-4ad7-8A89-01C891316E30}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
+						<step name="FB03. Si el actor CPA arrastra el archivo de Registros patronales encima del área habilitada, continuar con flujo básico; si el usuario da un clic en la leyenda &quot;Seleccione aquí&quot; ir al flujo alterno &quot;FA01. El actor CPA da clic en el texto &quot;Seleccione aquí&quot;&quot;" guid="{003F41AC-8771-4ad7-8A89-01C891316E30}" level="3" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="3a" guid="{AF3E8810-6FC0-46f6-A408-70CFB2A1F1C9}" join="End"/>
 						</step>
 						<step name="FB04. El sistema muestra la barra de progresión de la validación del archivo de carga, indicando el porcentaje de avance con el siguiente mensaje “Validación de archivo en proceso… %”" guid="{B407B1E1-3030-44fa-A73A-DF2B953FA44F}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
-						<step name="FB05. El sistema valida que el archivo selecccionado cuente con un formato válido de acuerdo a requerimieto RF-A28 - Validar formato de archivo en caso de no cumplir ir a FA02" guid="{67F0C42D-A1BA-45f0-B19D-4847D3F9EE90}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
+						<step name="FB05. El sistema valida que el archivo selecccionado cuente con un formato válido de acuerdo a requerimieto RF-A028 - Validar formato de archivo en caso de no cumplir ir a FA02" guid="{67F0C42D-A1BA-45f0-B19D-4847D3F9EE90}" level="5" uses="" useslist="" result="" state="" trigger="0" link="">
 							<extension level="5a" guid="{2584E7B1-D5C2-448f-8A67-C38B788BA78C}" join="End"/>
 						</step>
 						<context>
+							<item oldname="CU01 - Registrar datos del patron a dictaminar" guid="{778C0582-4CF5-4a95-ACC4-E8071AC39E02}"/>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
-							<item oldname="RF-A28 - Validar formato de archivo" guid="{85B9F9C7-77E9-425e-BD2E-E62DCF4A4312}"/>
+							<item oldname="RF-A028 - Validar formato de archivo" guid="{85B9F9C7-77E9-425e-BD2E-E62DCF4A4312}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -232,10 +282,14 @@
 			<EAScenario name="El archivo no cuenta con un formato válido" type="Alternate" weight="2.00" subject="EAID_07C6458D_B98A_4e6d_9AFB_5E91D35FC74C" xmi.id="EAID_2584E7B1_D5C2_448f_8A67_C38B788BA78C">
 				<EAScenarioContent>
 					<path>
-						<step name="El flujo alterno comienza cuando el sistema detecta que el archivo de &quot;Registros Patronales&quot; no cuenta con el formato de acuerdo al requerimiento RF-A28 - Validar formato de archivo" guid="{9B41DC03-E463-4117-AC5B-DB1986CA8D6A}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El flujo alterno comienza cuando el sistema detecta que el archivo de &quot;Registros Patronales&quot; no cuenta con el formato.TXT de acuerdo al requerimiento RF-A028 - Validar formato de archivo." guid="{9B41DC03-E463-4117-AC5B-DB1986CA8D6A}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema muestra en una ventana el siguiente mensaje &quot;El formato del archivo debe ser de tipo texto .TXT, favor de verificar.&quot; con botón &quot;Aceptar&quot;." guid="{0EE11B3D-58C6-4838-8A00-2DEA8E7267D2}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El actor CPA da un clic en el botón &quot;Aceptar&quot;" guid="{9BF0640D-6A02-400a-B87D-371FADDA9CB6}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema cierra la ventana del mensaje y va al flujo básico FB02." guid="{196E8556-2549-4437-859D-1EE74998BA85}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
+							<item oldname="CU01 - Registrar datos del patron a dictaminar" guid="{778C0582-4CF5-4a95-ACC4-E8071AC39E02}"/>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
-							<item oldname="RF-A28 - Validar formato de archivo" guid="{85B9F9C7-77E9-425e-BD2E-E62DCF4A4312}"/>
+							<item oldname="RF-A028 - Validar formato de archivo" guid="{85B9F9C7-77E9-425e-BD2E-E62DCF4A4312}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
@@ -243,6 +297,7 @@
 		</EAModel.scenario>
 		<EAStub xmi.id="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" name="CPA" UMLType="Actor"/>
 		<EAModel.paramSub/>
-		<EAStub xmi.id="EAID_85B9F9C7_77E9_425e_BD2E_E62DCF4A4312" name="RF-A28 - Validar formato de archivo" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_778C0582_4CF5_4a95_ACC4_E8071AC39E02" name="CU01 - Registrar datos del patron a dictaminar" UMLType="UseCase"/>
+		<EAStub xmi.id="EAID_85B9F9C7_77E9_425e_BD2E_E62DCF4A4312" name="RF-A028 - Validar formato de archivo" UMLType="Requirement"/>
 	</XMI.extensions>
 </XMI>
