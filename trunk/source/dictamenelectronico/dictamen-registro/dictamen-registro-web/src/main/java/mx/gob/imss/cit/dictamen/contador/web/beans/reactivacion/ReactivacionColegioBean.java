@@ -56,7 +56,7 @@ public class ReactivacionColegioBean extends BaseBean{
     
 	public String accionAtras(){
 	  this.reactivacionColegioPage.setValido(false);
-	  return "activacion_despacho";
+	  return "reactivacion_despacho";
 	}
 	public void accionBuscarPersonaMoral(){
 	       String rfc = reactivacionColegioPage.getPersonaMoralDTO().getRfc();
@@ -100,7 +100,7 @@ public class ReactivacionColegioBean extends BaseBean{
 	public String siguiente(){
 		  LOGGER.info("Redirect=activacionContadorAceptacion");
 		  this.reactivacionColegioPage.setValido(true);
-		  return "activacion_acuse";
+		  return "reactivacion_acuse";
 	}
 	
 
