@@ -16,11 +16,13 @@ import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.exception.DictamenNegocioException;
+import mx.gob.imss.cit.de.dictaminacion.web.constants.DictamenWebConstants;
 import mx.gob.imss.cit.de.dictaminacion.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.CargaArchivosPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.DatosPatronalesPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.DictamenPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.base.BasePage;
+import mx.gob.imss.cit.de.dictaminacion.web.util.CleanBeanUtil;
 import mx.gob.imss.cit.de.dictaminacion.web.util.FacesUtils;
 
 @ManagedBean(name = "cargaArchivosBean")
@@ -45,18 +47,17 @@ public class CargaArchivosBean extends BasePage {
 	
 	@ManagedProperty(value = "#{informacionPatronalBean}")
 	private InformacionPatronalBean informacionPatronalBean;
-	
-	@ManagedProperty(value = "#{cuestionarioBean}")
-	private CuestionarioBean cuestionarioBean;
+
 	
 	public void init(){
 		LOG.info("init sin cargar datos");
+		CleanBeanUtil.cleanFields(cargaArchivosPage);
 		cargaArchivosPage.setListaParentLayout(new ArrayList<ParentLayoutDTO>());
 	}
 	
 	public String initDictamen(){
 		try {
-
+			CleanBeanUtil.cleanFields(cargaArchivosPage);
 			LOG.info("init una vez cragado el dictamen");
 			LOG.info("rfc patron "+ datosPatronalesPage.getDatosPatron().getRfc());
 			LOG.info("rfc contador "+dictamenPage.getContadorPublicoAutDTO().getRfc());
@@ -68,12 +69,50 @@ public class CargaArchivosBean extends BasePage {
 
 			
 			LOG.info("el numero de aseveraciones es:"+cargaArchivosPage.getListaParentLayout().size());
-			
-		} catch (DictamenNegocioException e) {
+			informacionPatronalBean.init();
+			consolidarLayoutCargados();
+		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_LAYOUTS.getCode());
 		}
 		return "";
+	}
+	
+	private void consolidarLayoutCargados(){
+
+		boolean encontrado=false;
+		for (ParentLayoutDTO parentLayoutDTO : cargaArchivosPage.getListaParentLayout()) {
+			for (LayoutDTO layoutDTO : parentLayoutDTO.getListaLayout()) {
+				encontrado=false;
+				for (CargaDocumentoDTO cargaDocumentoDTO : informacionPatronalBean.getInformacionPatronalPage().getListadoAseveraciones()) {
+					System.out.println(cargaDocumentoDTO.getCveIdAseveracion().getCveIdAseveracion()+"="+layoutDTO.getIdLayout());
+					if(cargaDocumentoDTO.getCveIdAseveracion().getCveIdAseveracion().equals(layoutDTO.getIdLayout())){
+						encontrado=true;
+						layoutDTO.setDesEstado(cargaDocumentoDTO.getCveIdEstadoCargoDoc().getDesStatusCargaAseveraciones());
+						System.out.println(layoutDTO.getDesEstado());
+						
+						if(layoutDTO.getDesEstado().equals(DictamenWebConstants.ASEVERACION_VALIDADO)){
+							layoutDTO.setCargado(true);
+						}else{
+							layoutDTO.setCargado(false);
+						}
+						break;
+					}
+									
+				}
+				System.out.println("encontrado:"+encontrado);
+				if(!encontrado){
+					layoutDTO.setDesEstado("Sin cargar");
+					layoutDTO.setCargado(false);
+				}
+				
+					
+			}
+			
+		}
+		
+
+		
 	}
 	
 
@@ -102,7 +141,6 @@ public class CargaArchivosBean extends BasePage {
 		try {
 			cargaArchivosIntegrator.registrarCargaAseveracion(cargaAseveracionesDTO);
 			
-			cuestionarioBean.init();
 			informacionPatronalBean.init();
 		} catch (DictamenNegocioException e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_GUARDAR_ASEVERACION.getCode());
@@ -131,14 +169,6 @@ public class CargaArchivosBean extends BasePage {
 
 	public void setInformacionPatronalBean(InformacionPatronalBean informacionPatronalBean) {
 		this.informacionPatronalBean = informacionPatronalBean;
-	}
-
-	public CuestionarioBean getCuestionarioBean() {
-		return cuestionarioBean;
-	}
-
-	public void setCuestionarioBean(CuestionarioBean cuestionarioBean) {
-		this.cuestionarioBean = cuestionarioBean;
 	}
 
 

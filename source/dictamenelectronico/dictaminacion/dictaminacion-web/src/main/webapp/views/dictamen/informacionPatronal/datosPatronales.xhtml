@@ -31,7 +31,7 @@
 					<p:commandButton value="#{msg['message.button.buscar']}"
 						action="#{datosPatronalesBean.buscar}"
 						ajax="true" 
-						update=":formDatosPatronales :dictaminacionWizardPanel"
+						update=":formDatosPatronales :#{p:component('solicitudWizard')}"
 						onstart="statusDialog.show();"
 						oncomplete="statusDialog.hide();" 
 						/>
@@ -160,7 +160,7 @@
 						ajax="true" 
 						onstart="statusDialog.show();"
 						oncomplete="statusDialog.hide();"
-						update=":dictaminacionWizardPanel"/>
+						update=":#{p:component('solicitudWizard')}"/>
 						
 					<p:commandButton value="#{msg['message.button.limpiar']}"
 						action="#{dictamenBean.init}" 

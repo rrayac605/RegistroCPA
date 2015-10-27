@@ -32,7 +32,7 @@
 					activeIndex="#{dictamenPage.indexWizard}">
 					<p:ajax event="tabChange"
 						listener="#{dictamenBean.cambiarPestania}"
-						update="informacionPatronalPanel atestiguamientoPanel" />
+						update="atestiguamientoPanel" />
 
 
 					<p:tab id="loadRp"
@@ -50,6 +50,7 @@
 						title="#{msg['message.dictamen.dictaminar.wizard.titulo.adjuntar']}"
 						disabled="#{dictamenPage.banderaOcultaTabs}">
 						<p:panel rendered="#{!dictamenPage.banderaOcultaTabs}">
+							 <p:outputLabel value="#{cargaArchivosBean.initDictamen()}"/>
 							<ui:include
 								src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml" />
 						</p:panel>
@@ -58,15 +59,6 @@
 					</p:tab>
 
 
-					<p:tab id="infoTab"
-						title="#{msg['message.dictamen.dictaminar.wizard.titulo.bitacora']}"
-						disabled="#{dictamenPage.banderaOcultaTabs}">
-						<p:panel rendered="#{!dictamenPage.banderaOcultaTabs}">
-							<ui:include
-								src="/views/dictamen/informacionPatronal/informacionPatronal.xhtml" />
-						</p:panel>
-
-					</p:tab>
 
 					<p:tab id="atestiguamientoTab"
 						title="#{msg['message.dictamen.dictaminar.wizard.titulo.atestiguamiento']}"

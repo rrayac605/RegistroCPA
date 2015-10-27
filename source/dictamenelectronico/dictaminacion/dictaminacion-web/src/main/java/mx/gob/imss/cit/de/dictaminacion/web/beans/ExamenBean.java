@@ -18,7 +18,6 @@ import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PreguntaDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.RubroAtestiguamientoDictDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.RubroDTO;
 import mx.gob.imss.cit.de.dictaminacion.web.beans.base.BaseBean;
-import mx.gob.imss.cit.de.dictaminacion.web.constants.NavigationConstants;
 import mx.gob.imss.cit.de.dictaminacion.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.CuestionarioPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.DatosPatronalesPage;
@@ -45,8 +44,6 @@ public class ExamenBean extends BaseBean {
 	@ManagedProperty(value = "#{datosPatronalesPage}")
 	private DatosPatronalesPage datosPatronalesPage;
 
-	@ManagedProperty(value = "#{datosPatronalesBean}")
-	private DatosPatronalesBean datosPatronalesBean;
 
 	public String init(AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) {
 		CleanBeanUtil.cleanFields(examenPage);
@@ -58,11 +55,6 @@ public class ExamenBean extends BaseBean {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_DET_EXAMEN.getCode());
 		}
 		return "";
-	}
-
-	public String regresar() {
-		datosPatronalesBean.initExamen();
-		return NavigationConstants.PAGE_EXAMEN_REGRESAR;
 	}
 
 	public void guardar() {
@@ -219,8 +211,5 @@ public class ExamenBean extends BaseBean {
 		this.cuestinarioPage = cuestinarioPage;
 	}
 
-	public void setDatosPatronalesBean(DatosPatronalesBean datosPatronalesBean) {
-		this.datosPatronalesBean = datosPatronalesBean;
-	}
 
 }

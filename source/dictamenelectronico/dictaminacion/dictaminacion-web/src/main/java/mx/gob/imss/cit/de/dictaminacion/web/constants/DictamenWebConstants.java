@@ -29,6 +29,7 @@ public final class DictamenWebConstants {
     public static final String EXPRESION_REGULAR_RFC_MORAL="^([A-Z,Ñ,&]{3}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[A-Z|\\d]{3})$";
 
     public static final String ESTADO_RP_CORRECTO="Correcto";
+    public static final String ASEVERACION_VALIDADO="Validado";
     
     public static final String NOMBREA_BASE_ARCHIVO_RP="/registroPatronal.txt";
 
