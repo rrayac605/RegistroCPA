@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.de.dictaminacion.web.beans;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import org.apache.log4j.Logger;
@@ -21,15 +22,26 @@ public class MenuCedulasBean extends BaseBean{
 	 */
 	private Logger LOG=Logger.getLogger(MenuCedulasBean.class) ;
 	
+	@ManagedProperty(value = "#{cedulaRemuneracionesBean}")
+	private CedulaRemuneracionesBean  cedulaRemuneracionesBean;
 	/**
 	 * 
 	 * @return
 	 */
 	public String editarCedulaRemuneraciones(){
 		LOG.info("Editar Cedula Remuneraciones....");
-		
+		cedulaRemuneracionesBean.init();
 		return NavigationConstants.PAGE_CEDULA_REMUNERACIONES;
 	}
 	
+	public CedulaRemuneracionesBean getCedulaRemuneracionesBean() {
+		return cedulaRemuneracionesBean;
+	}
+	public void setCedulaRemuneracionesBean(
+			CedulaRemuneracionesBean cedulaRemuneracionesBean) {
+		this.cedulaRemuneracionesBean = cedulaRemuneracionesBean;
+	}
+	
 
+	
 }
