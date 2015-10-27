@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Local;
 
 import mx.gob.imss.cit.de.dictaminacion.model.NdtA1PercepTrabajadorDO;
+import mx.gob.imss.cit.de.dictaminacion.model.NdtPatronDictamenDO;
 
 @Local
 public interface NdtA1PercepTrabajadorDAO {
@@ -41,5 +42,13 @@ public interface NdtA1PercepTrabajadorDAO {
 	
 	
 	void flush();
+	
+	/**
+	 * 
+	 * @param cveIdPatronDictamen
+	 * @return
+	 */
+	List<NdtA1PercepTrabajadorDO> findByCveIdPatronDictamen(
+			NdtPatronDictamenDO cveIdPatronDictamen);
 
 }

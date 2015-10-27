@@ -39,7 +39,14 @@ public interface NdcRemuneracionesDAO {
 	 */
 	List<NdcRemuneracionesDO> findAll();
 	
+	/**
+	 * 
+	 * @return
+	 */
+	List<NdcRemuneracionesDO> findAllOrder();
+	
 	
 	void flush();
+	
 
 }

@@ -76,6 +76,7 @@ public class ScanBucket {
         		rutasDAO.borrarBitacora(rutas.get(i).getIdBitacora());
         		rutasDAO.borrarTablaAseveracion(rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
         		rutasDAO.actualizaStatus(3, rutas.get(i).getCveIdPatronDictamen(), rutas.get(i).getCveIdAseveracion());
+        		
         		AtestiguamientoTO atestiguamiento=atestiguamientoDAO.obtieneAtestiguamiento(rutas.get(i).getIdAseveracionPadre()!=0 
         				? rutas.get(i).getIdAseveracionPadre():rutas.get(i).getCveIdAseveracion());
         		
