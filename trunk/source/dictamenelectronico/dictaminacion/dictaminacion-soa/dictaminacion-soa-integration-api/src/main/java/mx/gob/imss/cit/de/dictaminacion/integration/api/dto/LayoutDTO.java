@@ -11,6 +11,8 @@ public class LayoutDTO extends BaseDTO  {
 	
 	private Long idLayout;
 	private String name;
+	private boolean cargado;
+	private String desEstado;
 	
 	private AWSPolicyDTO policy; 
 
@@ -48,6 +50,22 @@ public class LayoutDTO extends BaseDTO  {
 
 	public void setIdLayout(Long idLayout) {
 		this.idLayout = idLayout;
+	}
+
+	public boolean getCargado() {
+		return cargado;
+	}
+
+	public void setCargado(boolean cargado) {
+		this.cargado = cargado;
+	}
+
+	public String getDesEstado() {
+		return desEstado;
+	}
+
+	public void setDesEstado(String desEstado) {
+		this.desEstado = desEstado;
 	}
 
 

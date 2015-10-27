@@ -16,6 +16,7 @@ import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PatronDictame
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.TipoDictamenDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.de.dictaminacion.web.beans.base.BaseBean;
+import mx.gob.imss.cit.de.dictaminacion.web.constants.NavigationConstants;
 import mx.gob.imss.cit.de.dictaminacion.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.DatosPatronalesPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.DictamenPage;
@@ -73,10 +74,12 @@ public class DatosPatronalesBean extends BaseBean {
 	
 	
 
-	public void initExamen(){
+	public String initExamen(){
 		habilitaOpciones();
 		calcularValuada();		
 		dictamenPage.setIndexWizard(dictamenPage.getIndexUltimoWizard());
+		
+		return NavigationConstants.PAGE_EXAMEN_REGRESAR;
 		
 	}
 	

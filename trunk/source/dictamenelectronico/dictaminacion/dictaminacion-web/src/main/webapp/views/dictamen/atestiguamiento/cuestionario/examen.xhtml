@@ -49,7 +49,7 @@
 						value="#{msg['message.button.views.dictamen.atestiguamiento.finalizar']}" onstart="statusDialog.show();"
 						          oncomplete="statusDialog.hide();"/>
 						          
-					<p:commandButton action="#{examenBean.regresar()}" 
+					<p:commandButton action="#{datosPatronalesBean.initExamen}" 
 						value="#{msg['message.button.views.dictamen.atestiguamiento.cancelar']}"
 						immediate="true" onstart="statusDialog.show();" oncomplete="statusDialog.hide();"/>
 				</p:panelGrid>

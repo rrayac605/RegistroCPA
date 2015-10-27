@@ -5,7 +5,7 @@ import javax.faces.bean.SessionScoped;
 
 import mx.gob.imss.cit.de.dictaminacion.web.pages.base.BasePage;
 
-@ManagedBean(name = "examenPage")
+@ManagedBean(name = "cedulaRemuneracionesPage")
 @SessionScoped
 public class CedulaRemuneracionesPage extends BasePage{
 
