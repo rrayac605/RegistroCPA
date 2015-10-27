@@ -32,7 +32,7 @@
 					activeIndex="#{dictamenPage.indexWizard}">
 					<p:ajax event="tabChange"
 						listener="#{dictamenBean.cambiarPestania}"
-						update="atestiguamientoPanel" />
+						update="atestiguamientoPanel idCargaArchivosPan" />
 
 
 					<p:tab id="loadRp"
@@ -49,7 +49,7 @@
 				 	<p:tab id="loadData"
 						title="#{msg['message.dictamen.dictaminar.wizard.titulo.adjuntar']}"
 						disabled="#{dictamenPage.banderaOcultaTabs}">
-						<p:panel rendered="#{!dictamenPage.banderaOcultaTabs}">
+						<p:panel rendered="#{!dictamenPage.banderaOcultaTabs}" id="idCargaArchivosPan">
 							 <p:outputLabel value="#{cargaArchivosBean.initDictamen()}"/>
 							<ui:include
 								src="/views/dictamen/informacionPatronal/cargaArchivos.xhtml" />

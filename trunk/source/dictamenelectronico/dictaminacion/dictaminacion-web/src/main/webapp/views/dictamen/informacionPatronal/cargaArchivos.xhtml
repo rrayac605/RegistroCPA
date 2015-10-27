@@ -43,8 +43,41 @@
 		            <p:panel>         							                   
 						   <p:dataGrid  value="#{parentLayout.listaLayout}" var="layout"
 						   columns="4" > 					   
-						        <p:panel columns="1" style="width:250px;height:300px;margin:10px 0px" layout="grid" >									            
-						 			<p:outputLabel value="#{layout.name}" /> 						 										            									 
+						        <p:panel columns="1" style="width:250px;height:300px;margin:10px 0px" layout="grid" >	
+						         							            
+						 			<p:outputLabel value="#{layout.name}" /> 	
+						 			   <p:panelGrid columns="2">
+										  <h:outputLabel value="ESTADO: #{layout.desEstado}" />
+										  <h:graphicImage value="/images/ok.jpg"  style="width: 20px; height: 20px; margin: 0 5px 0 2px;" rendered="#{layout.cargado}"/>
+										</p:panelGrid>	
+
+										<h:outputScript>
+												Dropzone.autoDiscover = false;
+												$(function() {
+												  var myDropzone = new Dropzone("#drop#{layout.idLayout}",{
+												  	accept: function(file, done){validateFile(file, done);},
+												  	maxFilesize: 500,
+												  	addRemoveLinks: true,
+												  	dictRemoveFile:"Eliminar archivo",
+												  	maxFiles:1,
+												  	dictMaxFilesExceeded:"Sólo se permite un archivo por Aseveración."});
+												  myDropzone.on("success", function(file,responseText) {
+												  	document.getElementById("#{p:component('hiddenAction')}").click();
+												  });
+												  function validateFile(file, done){
+												  	var allowed_extensions = new Array("txt");
+												  	var file_extension = file.name.split('.').pop();
+												  	for(i = 0;  allowed_extensions.length > i ; i++){
+												  		if(allowed_extensions[i]==file_extension){
+												  			done();
+												  			return true;
+												  			}
+												  		}
+												  	done("Tipo de archivo no permitido.");
+												  	return false;											  	
+												  }
+												});
+										  </h:outputScript>														  						 										            									
 									<form  action="http://intellegomx.s3.amazonaws.com/" id="drop#{layout.idLayout}" method="post" class="dropzone dz-clickable" enctype="multipart/form-data" style="width:100%;height:100% " >
 											<div class="dz-message" style="width:95%">
 											    #{msg['message.dictamen.patronal.carga.layout.atarrastar']}<br/>
@@ -66,14 +99,9 @@
 										      <input type="hidden" name="Content-Type" value="#{layout.policy.contentType}"/>													      
 										</form>	 												
 									<h:form>	
-										<p:commandButton id="hiddenAction" process="@this" action="#{cargaArchivosBean.registrarEstatusCarga(layout)}" type="submit" immediate="true" style="display:none"/>																		      													       			
-									</h:form>
-									
-									<p:panelGrid columns="2">
-									  <p:outputLabel value="ESTADO: #{layout.desEstado}" />
-									  <h:graphicImage value="/images/ok.jpg"  style="width: 20px; height: 20px; margin: 0 5px 0 2px;" rendered="#{layout.cargado}"/>
-									</p:panelGrid>
-								 	
+										<p:commandButton id="hiddenAction" process="@this" action="#{cargaArchivosBean.registrarEstatusCarga(layout)}" type="submit" immediate="true" style="display:none"/>
+																								      													       			
+									</h:form>								 	
 								</p:panel>
 						    </p:dataGrid>					 	
 		 	        </p:panel>

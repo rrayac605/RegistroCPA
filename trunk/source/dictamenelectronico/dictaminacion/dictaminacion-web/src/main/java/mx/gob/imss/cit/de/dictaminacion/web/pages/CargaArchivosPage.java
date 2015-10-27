@@ -7,6 +7,7 @@ import javax.faces.bean.SessionScoped;
 
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.base.BasePage;
+import mx.gob.imss.cit.de.dictaminacion.web.util.annotations.Reset;
 @ManagedBean(name = "cargaArchivosPage")
 @SessionScoped
 public class CargaArchivosPage extends BasePage {
@@ -16,6 +17,7 @@ public class CargaArchivosPage extends BasePage {
 	 */
 	private static final long serialVersionUID = -4268387060742221657L;
 		
+	@Reset
 	private List<ParentLayoutDTO> listaParentLayout;
 
 	/**
