@@ -12,8 +12,8 @@
 
 	<ui:define name="bodyContainer">
 		<h:form>
-			<p:panelGrid columns="1">
-				<p:panelGrid style="margin-top:20px">
+			<p:panelGrid>
+				
 					<f:facet name="header" >
 						<p:row>
 							<p:column colspan="6"><h3><h:outputText
@@ -23,7 +23,7 @@
 						<p:row>						
 							<p:column rowspan="2">
 								<h4>
-									<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.subtitulo.concepto']}" />
+									<h:outputLabel value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.subtitulo.concepto']}" />
 								</h4>
 							</p:column>
 							<p:column colspan="2">
@@ -59,271 +59,46 @@
 						</p:row>
 
 					</f:facet>
+				</p:panelGrid>
 					
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.sueldos']}" />
-							</p:column>					
-							<p:column colspan="1">							
-								<p:selectOneRadio id="sueldosRadio"  layout="custom">
-						            <f:selectItem itemLabel="Red" itemValue="Red" />
-						            <f:selectItem itemLabel="Green" itemValue="Green" />
-						        </p:selectOneRadio>
-						        
-						        <p:radioButton style="align:center" id="sys1" for="sueldosRadio" itemIndex="0" />
-							</p:column>
-							
-							<p:column>
-								<p:radioButton style="text-align:center" id="sys2" for="sueldosRadio" itemIndex="1" />
-							
-							</p:column>
-							
-							<p:column>
-								<p:selectOneRadio id="sueldosOpRadio"  layout="custom">
-						            <f:selectItem itemValue="Red" />
-						            <f:selectItem itemValue="Green" />
-						        </p:selectOneRadio>
-						        
-						        <p:radioButton id="sysopt1" for="sueldosOpRadio" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:radioButton id="sysopt2" for="sueldosOpRadio" itemIndex="1" align="center"/>
-							</p:column>
-							<p:column>3830175461</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.gratificacion']}" />
-							</p:column>					
-							<p:column>
-								<p:selectOneRadio id="gratificacionRadio"  layout="custom">
-						            <f:selectItem itemValue="gF" />
-						            <f:selectItem itemValue="gV" />
-						        </p:selectOneRadio>
-						        
-						        <p:radioButton id="gF" for="gratificacionRadio" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:radioButton id="gV" for="gratificacionRadio" itemIndex="1" align="center"/>
-							</p:column>
-							<p:column>
-								<p:selectOneRadio id="gratificacionRadioOP"  layout="custom">
-						            <f:selectItem itemValue="gS" />
-						            <f:selectItem itemValue="gN" />
-						        </p:selectOneRadio>
-						        <p:radioButton id="gS" for="gratificacionRadioOP" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:radioButton id="gN" for="gratificacionRadioOP" itemIndex="1" align="center"/>
-							</p:column>
-							<p:column>3830175461</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column style="font-weight: bold;">
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.tExtra']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column style="font-weight: bold;">3830175461</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.tExtraIntegrable']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column>
-								<p:inplace id="ajax1" editor="true">
-						            <p:inputText value="0.00" required="true" label="text" />
-						        </p:inplace>
-							</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.tExtraNoIntegrable']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column>
-								<p:inplace id="ajax2" editor="true">
-						            <p:inputText value="0.00" required="true" label="text" />
-						        </p:inplace>
-							</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.primaVacacional']}" />
-							</p:column>					
-							<p:column>
-								<p:selectOneRadio id="primaVRadio"  layout="custom">
-						            <f:selectItem itemValue="pvF" />
-						            <f:selectItem itemValue="pvV" />
-						        </p:selectOneRadio>
-						        
-						        <p:radioButton id="pvF" for="primaVRadio" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:radioButton id="pvV" for="primaVRadio" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:selectOneRadio id="primaVRadioOP"  layout="custom">
-						            <f:selectItem itemValue="pvF" />
-						            <f:selectItem itemValue="pvV" />
-						        </p:selectOneRadio>
-						        
-						        <p:radioButton id="pvS" for="primaVRadioOP" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:radioButton id="pvN" for="primaVRadioOP" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>3830175461</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.primaDominical']}" />
-							</p:column>					
-							<p:column>
-								<p:selectOneRadio id="primaDRadio"  layout="custom">
-						            <f:selectItem itemValue="pvF" />
-						            <f:selectItem itemValue="pvV" />
-						        </p:selectOneRadio>
-						        
-						        <p:radioButton id="pdF" for="primaDRadio" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:radioButton id="pdV" for="primaDRadio" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:selectOneRadio id="primaDRadioOp"  layout="custom">
-						            <f:selectItem itemValue="pdS" />
-						            <f:selectItem itemValue="pdN" />
-						        </p:selectOneRadio>
-						        
-						        <p:radioButton id="pdS" for="primaDRadioOp" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>
-								<p:radioButton id="pdN" for="primaDRadioOp" itemIndex="0" align="center"/>
-							</p:column>
-							<p:column>3830175461</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column style="font-weight: bold;">
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.ptu']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column style="font-weight: bold;">3830175461</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.ptuIntegrable']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column>
-								<p:inplace id="ajax4" editor="true">
-						            <p:inputText value="0.00" required="true" label="text" />
-						        </p:inplace>
-							</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.ptuNoIntegrable']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column>
-								<p:inplace id="ajax3" editor="true">
-						            <p:inputText value="0.00" required="true" label="text" />
-						        </p:inplace>
-							</p:column>						
-						</p:row>
-						
-						<p:row>	
-							<p:column style="font-weight: bold;">
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.fondoAhorro']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column style="font-weight: bold;">3830175461</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.aportacionPatronal']}" />
-							</p:column>					
-							<p:column colspan="1">
-								<h:outputLabel value="Porcentaje: " />
-							</p:column>
-							<p:column colspan="1">
-        						<p:inplace id="ajax12" editor="true">
-						            <p:inputText value="13" required="true" label="text" />
-						        </p:inplace>
-							</p:column>
-							<p:column colspan="2">
-								<h:outputLabel value=" % " />
-							</p:column>
-							<p:column>
-								<p:inplace id="ajax6" editor="true">
-						            <p:inputText value="0" required="true" label="text" />
-						        </p:inplace>
-							</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.aportacionTrabajador']}" />
-							</p:column>					
-							<p:column colspan="1">
-								<h:outputLabel value="Porcentaje: " />
-							</p:column>
-							<p:column colspan="1">
-        						<p:inplace id="ajax11" editor="true">
-						            <p:inputText value="0.00" required="true" label="text" />
-						        </p:inplace>
-							</p:column>
-							<p:column colspan="2">
-								<h:outputLabel value="% " />
-							</p:column>
-							<p:column>
-								<p:inplace id="ajax7" editor="true">
-						            <p:inputText value="0.00" required="true" label="text" />
-						        </p:inplace>
-							</p:column>						
-						</p:row>
-						
-						<p:row>	
-							<p:column style="font-weight: bold;">
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.vales']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column style="font-weight: bold;">3830175461</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.valesIntegrable']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column>
-								<p:inplace id="ajax8" editor="true">
-						            <p:inputText value="0.00" required="true" label="text" />
-						        </p:inplace>
-							</p:column>						
-						</p:row>
-						<p:row>	
-							<p:column>
-								<h:outputText value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones.concepto.valesNoIntegrable']}" />
-							</p:column>					
-							<p:column colspan="4"></p:column>
-							<p:column>
-								<p:inplace id="ajax9" editor="true">
-						            <p:inputText value="0.00" required="true" label="text" />
-						        </p:inplace>
-							</p:column>						
-						</p:row>
-				</p:panelGrid>
-
-
-				<p:panelGrid columns="2" style="center">
-					<p:commandButton action="#{examenBean.guardar()}"
-						value="#{msg['message.button.guardar']}">
-					</p:commandButton>
-					<p:commandButton action="#{examenBean.regresar()}"
-						value="#{msg['message.button.cancelar']}"
-						immediate="true"></p:commandButton>
-				</p:panelGrid>
-			</p:panelGrid>
+					<p:accordionPanel value="#{cedulaRemuneracionesPage.cedulasDTO}" var="cedulasRem" multiple="true" style="width:830px;margin:10px 0px">
+						<p:tab title="#{cedulasRem.cveIdRemuneraciones.desRemuneraciones}  #{cedulasRem.impImportePagado}" style="width:40px;height:10px">
+							<p:panel >        							                   
+								<p:dataGrid  value="#{cedulasRem.cveIdRemuneraciones}" var="remuneraciones" columns="4" > 					   
+									<p:panel columns="1" layout="grid" >
+										<p:outputLabel value="#{remuneraciones.desRemuneraciones}" /> 	
+									</p:panel>
+								</p:dataGrid>
+													 	
+							</p:panel>
+						</p:tab>
+					</p:accordionPanel>
+			<p:panelGrid columns="2" style="center">
+					<p:commandButton action="#{cedulaRemuneracionesBean.guardar()}" 
+						value="#{msg['message.button.views.dictamen.atestiguamiento.finalizar']}" onstart="statusDialog.show();"
+						          oncomplete="statusDialog.hide();"/>
+						          
+					<p:commandButton action="#{cedulaRemuneracionesBean.cancelar}" 
+						value="#{msg['message.button.views.dictamen.atestiguamiento.cancelar']}"
+						immediate="true" onstart="statusDialog.show();" oncomplete="statusDialog.hide();"/>
+			</p:panelGrid>		
 		</h:form>
+		
+		<style type="text/css">
+					
+			.aui h3 {
+			    line-height:12px;
+			    font-size: 15px;
+			}
+			
+/* 			.ui-widget-header { */
+/* 			    background: #f79c23 none repeat scroll 0 0; */
+/* 			    border: 1px solid #a8a8a8; */
+/* 			    color: #333; */
+/* 			    font-weight: bold; */
+/* 			    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7); */
+/* 			} */
+			
+		  </style>
 	</ui:define>
 </ui:composition>

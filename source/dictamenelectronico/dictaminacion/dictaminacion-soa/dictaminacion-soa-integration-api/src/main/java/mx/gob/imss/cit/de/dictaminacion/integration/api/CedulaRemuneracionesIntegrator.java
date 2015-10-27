@@ -7,5 +7,17 @@ import mx.gob.imss.cit.de.dictaminacion.integration.api.exception.DictamenNegoci
 
 public interface CedulaRemuneracionesIntegrator {
 	
+	/**
+	 * 
+	 * @return
+	 * @throws DictamenNegocioException
+	 */
 	List<CedulaRemuneracionesDTO> obtenerCedulaRemuneraciones() throws DictamenNegocioException;
+	
+	/**
+	 * 
+	 * @param cedulasRemuneraciones
+	 * @throws DictamenNegocioException
+	 */
+	void saveCedulaRemuneraciones(List<CedulaRemuneracionesDTO> cedulasRemuneraciones) throws DictamenNegocioException;
 }

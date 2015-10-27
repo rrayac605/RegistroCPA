@@ -1,6 +1,8 @@
 package mx.gob.imss.cit.de.dictaminacion.services.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -12,8 +14,10 @@ import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.CargaDocumentoTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.CedulaRemuneracionesTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.PatronDictamenTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.RemuneracionesTO;
+import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.CedulaRemuneracionesDTO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdcRemuneracionesDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtA1PercepTrabajadorDO;
+import mx.gob.imss.cit.de.dictaminacion.model.NdtB1CedulaRemuneracionesDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtCargaDocumentoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdcRemuneracionesDAO;
@@ -40,10 +44,31 @@ public class CedulaRemuneracionesServiceImpl implements CedulaRemuneracionesServ
 	private NdtB1CedulaRemuneracionesDAO ndtB1CedulaRemuneracionesDAO;
 	
 	@Override
-	public CedulaRemuneracionesTO saveCedulaRemuneraciones()
+	public void saveCedulaRemuneraciones(List<CedulaRemuneracionesTO> cedulasRemuneraciones)
 			throws DictamenException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		System.out.println("GuardarCedulas ServiceImpl: "+cedulasRemuneraciones.size());
+		NdtB1CedulaRemuneracionesDO entity;
+		Date fecha = new Date();		
+		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
+		try{
+			for(int i=0;i<cedulasRemuneraciones.size();i++){
+				Date fechaActual = new Date();
+				fechaActual = sdf.parse(sdf.format(fecha));
+				entity = TransformerServiceUtils
+					.transformer(cedulasRemuneraciones.get(i));
+				
+				entity.setFecRegistroAlta(fechaActual);
+				ndtB1CedulaRemuneracionesDAO.create(entity);
+				ndtB1CedulaRemuneracionesDAO.flush();
+			}
+			
+		}catch (Exception e) {
+			LOG.error("error al guardar"+e);
+			throw DictamenExceptionBuilder
+				.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_GUARDAR_CEDULA_REMUNERACION,e);
+		}
+		
 	}
 
 	@Override
@@ -135,5 +160,6 @@ public class CedulaRemuneracionesServiceImpl implements CedulaRemuneracionesServ
 		
 		return cedulaRemuneracionesTO; 
 	}
+
 
 }
