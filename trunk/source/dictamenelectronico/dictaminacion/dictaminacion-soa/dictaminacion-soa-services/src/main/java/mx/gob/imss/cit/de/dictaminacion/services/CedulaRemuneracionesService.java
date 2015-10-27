@@ -10,9 +10,19 @@ import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.CedulaRemuner
 
 @Local
 public interface CedulaRemuneracionesService {
-	CedulaRemuneracionesTO saveCedulaRemuneraciones () throws DictamenException;
 	
-
-
+	/**
+	 * 
+	 * @param idPatronDictamen
+	 * @return
+	 */
 	List<CedulaRemuneracionesTO> obtenerCedulaRemuneraciones(Long idPatronDictamen);
+
+	/**
+	 * 
+	 * @param cedulasRemuneraciones
+	 * @return
+	 * @throws DictamenException
+	 */
+	void saveCedulaRemuneraciones(List<CedulaRemuneracionesTO> cedulasRemuneraciones)throws DictamenException;
 }

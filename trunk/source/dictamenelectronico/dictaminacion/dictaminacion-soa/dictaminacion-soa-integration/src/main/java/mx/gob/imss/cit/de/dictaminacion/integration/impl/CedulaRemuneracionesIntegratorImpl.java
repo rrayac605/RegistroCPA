@@ -33,7 +33,7 @@ public class CedulaRemuneracionesIntegratorImpl implements CedulaRemuneracionesI
 		
 		List<CedulaRemuneracionesDTO> listaDTO =null;
 		try {
-			//PatronDictamenTO patronDictamenTO=TransformerIntegrationUtils.transformer(patronDictamenDTO);
+			
 			List<CedulaRemuneracionesTO> listaTO = cedulaRemuneracionesService.obtenerCedulaRemuneraciones(361L);
 			
 			for (CedulaRemuneracionesTO cedulaRemuneracionesTO : listaTO) {
@@ -50,7 +50,27 @@ public class CedulaRemuneracionesIntegratorImpl implements CedulaRemuneracionesI
 		return listaDTO;
 	}
 
+	@Override
+	public void saveCedulaRemuneraciones(List<CedulaRemuneracionesDTO> cedulasRemuneraciones)
+			throws DictamenNegocioException {
+		
+		
+		try {
+			List<CedulaRemuneracionesTO> cedulaRemuneracionesTOLista=new ArrayList<CedulaRemuneracionesTO>();
+			for(int i=0;i<cedulasRemuneraciones.size();i++){
+				
+				
+				cedulaRemuneracionesTOLista.add(TransformerIntegrationUtils.transformer(cedulasRemuneraciones.get(i)));
+			}
+			
+			cedulaRemuneracionesService.saveCedulaRemuneraciones(cedulaRemuneracionesTOLista);
+			
+		} catch (DictamenException e) {
+			LOG.error(e.getMessage(), e);
+			throw new DictamenNegocioException(e.getMessage(), e);
+		}
+		
+	}
 	
-	
-	
+
 }
