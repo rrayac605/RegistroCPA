@@ -5,7 +5,7 @@ import java.util.List;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
-import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
+//import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 
 
@@ -14,5 +14,5 @@ public interface ContadorPublicoIntegrator {
 	DomicilioFiscalDTO consultarDomicilioPorRFC(String rfc);
 	List<DatosPersonalesDTO> consultarDatosPersonales(Long idPersona);
 	PersonaMoralDTO consultarPersonaMoralPorRFC(String rfc);
-	List<MediosContactoDTO> obtenerMediosContactoPorIdPersona(Long idPersona);
+	//List<MediosContactoDTO> obtenerMediosContactoPorIdPersona(Long idPersona);
 }
