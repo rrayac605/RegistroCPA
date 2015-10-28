@@ -40,6 +40,11 @@ public class ActualizacionRegistroPage implements Serializable {
 	private boolean habilitarTrabajadoresDespacho;
 	private boolean habilitaNumeroTrabajadores;
 	private String cuentaConTrabajadores;
+	private String rfcDespacho;
+	private String razonSocialDespacho;
+	private String rfcColegio;
+	private String razonSocialColegio;
+	private boolean habilitaDatosColegio;
 	
 	public ActualizacionRegistroPage(){
 		this.habilitaDatosPersonales = Boolean.FALSE;
@@ -50,6 +55,7 @@ public class ActualizacionRegistroPage implements Serializable {
 		this.habilitaDatosDespacho = Boolean.FALSE;
 		this.habilitarTrabajadoresDespacho = Boolean.FALSE;
 		this.habilitaNumeroTrabajadores = Boolean.FALSE;
+		this.habilitaDatosColegio = Boolean.FALSE;
 	}
 	
 	/**
@@ -362,5 +368,75 @@ public class ActualizacionRegistroPage implements Serializable {
 	 */
 	public void setCuentaConTrabajadores(String cuentaConTrabajadores) {
 		this.cuentaConTrabajadores = cuentaConTrabajadores;
+	}
+
+	/**
+	 * @return the rfcDespacho
+	 */
+	public String getRfcDespacho() {
+		return rfcDespacho;
+	}
+
+	/**
+	 * @param rfcDespacho the rfcDespacho to set
+	 */
+	public void setRfcDespacho(String rfcDespacho) {
+		this.rfcDespacho = rfcDespacho;
+	}
+
+	/**
+	 * @return the razonSocialDespacho
+	 */
+	public String getRazonSocialDespacho() {
+		return razonSocialDespacho;
+	}
+
+	/**
+	 * @param razonSocialDespacho the razonSocialDespacho to set
+	 */
+	public void setRazonSocialDespacho(String razonSocialDespacho) {
+		this.razonSocialDespacho = razonSocialDespacho;
+	}
+
+	/**
+	 * @return the rfcColegio
+	 */
+	public String getRfcColegio() {
+		return rfcColegio;
+	}
+
+	/**
+	 * @param rfcColegio the rfcColegio to set
+	 */
+	public void setRfcColegio(String rfcColegio) {
+		this.rfcColegio = rfcColegio;
+	}
+
+	/**
+	 * @return the razonSocialColegio
+	 */
+	public String getRazonSocialColegio() {
+		return razonSocialColegio;
+	}
+
+	/**
+	 * @param razonSocialColegio the razonSocialColegio to set
+	 */
+	public void setRazonSocialColegio(String razonSocialColegio) {
+		this.razonSocialColegio = razonSocialColegio;
+	}
+
+	/**
+	 * @return the habilitaDatosColegio
+	 */
+	public boolean isHabilitaDatosColegio() {
+		return habilitaDatosColegio;
+	}
+
+	/**
+	 * @param habilitaDatosColegio the habilitaDatosColegio to set
+	 */
+	public void setHabilitaDatosColegio(boolean habilitaDatosColegio) {
+		this.habilitaDatosColegio = habilitaDatosColegio;
 	}
 }

@@ -34,13 +34,16 @@
 			</p:row>
 			<p:row>
 				<p:column>
-					<h:outputText id="txtCalleCA" value="#{actualizacionRegistroPage.domicilioFiscal.calle}"/>
+					<h:outputText id="txtCalleCA"
+						value="#{actualizacionRegistroPage.domicilioFiscal.calle}" />
 				</p:column>
 				<p:column>
-					<h:outputText id="txtNumExtCA" maxlength="6" value="#{actualizacionRegistroPage.domicilioFiscal.numeroExterior}"/>
+					<h:outputText id="txtNumExtCA" maxlength="6"
+						value="#{actualizacionRegistroPage.domicilioFiscal.numeroExterior}" />
 				</p:column>
 				<p:column>
-					<h:outputText id="txtNumIntCA" maxlength="6" value="#{actualizacionRegistroPage.domicilioFiscal.numeroInterior}"/>
+					<h:outputText id="txtNumIntCA" maxlength="6"
+						value="#{actualizacionRegistroPage.domicilioFiscal.numeroInterior}" />
 				</p:column>
 			</p:row>
 		</p:panelGrid>
@@ -55,10 +58,12 @@
 			</p:row>
 			<p:row>
 				<p:column>
-					<h:outputText id="txtEntreCalle" value="#{actualizacionRegistroPage.domicilioFiscal.entreCalle}"/>
+					<h:outputText id="txtEntreCalle"
+						value="#{actualizacionRegistroPage.domicilioFiscal.entreCalle}" />
 				</p:column>
 				<p:column colspan="2">
-					<h:outputText id="txtYCalle" value="#{actualizacionRegistroPage.domicilioFiscal.yCalle}"/>
+					<h:outputText id="txtYCalle"
+						value="#{actualizacionRegistroPage.domicilioFiscal.yCalle}" />
 				</p:column>
 			</p:row>
 		</p:panelGrid>
@@ -76,55 +81,62 @@
 			</p:row>
 			<p:row>
 				<p:column>
-					<h:outputText id="txtColonia" value="#{actualizacionRegistroPage.domicilioFiscal.coloniaAsentamiento}"/>
+					<h:outputText id="txtColonia"
+						value="#{actualizacionRegistroPage.domicilioFiscal.coloniaAsentamiento}" />
 				</p:column>
 				<p:column>
-					<h:outputText id="txtLocalidad" value="#{actualizacionRegistroPage.domicilioFiscal.localidad}"/>
+					<h:outputText id="txtLocalidad"
+						value="#{actualizacionRegistroPage.domicilioFiscal.localidad}" />
 				</p:column>
 				<p:column>
-					<h:outputText id="txtMunicipio" value="#{actualizacionRegistroPage.domicilioFiscal.municipioDelegacion}"/>
+					<h:outputText id="txtMunicipio"
+						value="#{actualizacionRegistroPage.domicilioFiscal.municipioDelegacion}" />
 				</p:column>
 			</p:row>
-			</p:panelGrid>
-			<p:panelGrid id="pngDomicilioFiscalCA4" style="width:100%">
-				<p:row>
-					<p:column>
-						<p:outputLabel id="lblEntidad">#{msg['message.actualizacion.datoscontador.domicilio.entidadobl']}</p:outputLabel>
-					</p:column>
-					<p:column>
-						<p:outputLabel id="lblCodigoPostal">#{msg['message.actualizacion.datoscontador.domicilio.codigoobl']}</p:outputLabel>
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>
-						<h:outputText id="txtEntidad" disabled="true" value="#{actualizacionRegistroPage.domicilioFiscal.entidadFederativa}"/>
-					</p:column>
-					<p:column>
-						<h:outputText id="txtCodigoPostal" value="#{actualizacionRegistroPage.domicilioFiscal.codigoPostal}"/>
-					</p:column>
-				</p:row>
-			</p:panelGrid>
-			<p:panelGrid id="pngDomicilioFiscalCA5" style="width:100%">
-				<p:row>
-					<p:column>
-						<p:outputLabel id="lblCorreoElectronico">#{msg['message.actualizacion.datoscontador.correoelectronico']}</p:outputLabel>
-					</p:column>
-					<p:column>
-						<p:outputLabel id="lblTelefono">#{msg['message.actualizacion.datoscontador.telefono']}</p:outputLabel>
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>
-						<h:outputText id="txtCorreoElectronico" value="#{actualizacionRegistroPage.email}" />
-					</p:column>
-					<p:column>
-						<h:outputText id="txtTelefono" value="#{actualizacionRegistroPage.telefono}"/>
-					</p:column>
-				</p:row>
-			</p:panelGrid>
+		</p:panelGrid>
+		<p:panelGrid id="pngDomicilioFiscalCA4" style="width:100%">
+			<p:row>
+				<p:column>
+					<p:outputLabel id="lblEntidad">#{msg['message.actualizacion.datoscontador.domicilio.entidadobl']}</p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:outputLabel id="lblCodigoPostal">#{msg['message.actualizacion.datoscontador.domicilio.codigoobl']}</p:outputLabel>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<h:outputText id="txtEntidad" disabled="true"
+						value="#{actualizacionRegistroPage.domicilioFiscal.entidadFederativa}" />
+				</p:column>
+				<p:column>
+					<h:outputText id="txtCodigoPostal"
+						value="#{actualizacionRegistroPage.domicilioFiscal.codigoPostal}" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+		<p:panelGrid id="pngDomicilioFiscalCA5" style="width:100%">
+			<p:row>
+				<p:column>
+					<p:outputLabel id="lblCorreoElectronico">#{msg['message.actualizacion.datoscontador.correoelectronico']}</p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:outputLabel id="lblTelefono">#{msg['message.actualizacion.datoscontador.telefono']}</p:outputLabel>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<h:outputText id="txtCorreoElectronico"
+						value="#{actualizacionRegistroPage.email}" />
+				</p:column>
+				<p:column>
+					<h:outputText id="txtTelefono"
+						value="#{actualizacionRegistroPage.telefono}" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
 	</p:panel>
 
-	
+
 
 	<p:panel id="pnDatosContacto"
 		header="#{msg['message.actualizacion.datoscontacto.panel.header']}">
@@ -132,14 +144,20 @@
 			<p:outputLabel id="lblCorreo2">#{msg['message.actualizacion.datoscontacto.correo2']}</p:outputLabel>
 			<p:outputLabel id="lblConCorreo2">#{msg['message.actualizacion.datoscontacto.confirmarcorreo2']}</p:outputLabel>
 
-			<p:inputText id="txtCorreo2" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" value="#{actualizacionRegistroPage.emailsOp[0]}"/>
-			<p:inputText id="txtConfCorreo2" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+			<p:inputText id="txtCorreo2"
+				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"
+				value="#{actualizacionRegistroPage.emailsOp[0]}" />
+			<p:inputText id="txtConfCorreo2"
+				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" />
 
 			<p:outputLabel id="lblCorreo3">#{msg['message.actualizacion.datoscontacto.correo3']}</p:outputLabel>
 			<p:outputLabel id="lblConCorreo3">#{msg['message.actualizacion.datoscontacto.confirmarcorreo3']}</p:outputLabel>
 
-			<p:inputText id="txtCorreo3" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" value="#{actualizacionRegistroPage.emailsOp[1]}"/>
-			<p:inputText id="txtConfCorreo3" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
+			<p:inputText id="txtCorreo3"
+				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"
+				value="#{actualizacionRegistroPage.emailsOp[1]}" />
+			<p:inputText id="txtConfCorreo3"
+				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" />
 		</p:panelGrid>
 	</p:panel>
 
@@ -150,27 +168,31 @@
 			<p:outputLabel id="lblNumCedula">#{msg['message.actualizacion.datoscontador.numcedula']}</p:outputLabel>
 			<p:outputLabel id="lblFechaCed">#{msg['message.actualizacion.datoscontador.fechaexpcedula']}</p:outputLabel>
 
-			<p:inputText id="txtNumCedula" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"/>
-			<p:calendar id="dtFechaCed" showOn="button" pattern="dd-MM-yyyy" disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" />
+			<p:inputText id="txtNumCedula"
+				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" />
+			<p:calendar id="dtFechaCed" showOn="button" pattern="dd-MM-yyyy"
+				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" />
 		</p:panelGrid>
 	</p:panel>
-	
-	<p:dialog id="dlgDatosCorrectos" visible="#{not actualizacionRegistroPage.habilitaDatosPersonales}">
+
+	<p:dialog id="dlgDatosCorrectos"
+		visible="#{not actualizacionRegistroPage.habilitaDatosPersonales}">
 		<p:panel id="pnDatosCorrecto" style="width:100%">
 			<h:panelGroup id="pngDatosCorrectos">
 				<h3>#{msg['message.actualizacion.datoscontador.domicilio.datoscorrectos']}</h3>
 			</h:panelGroup>
 			<p:panelGrid columns="2">
 				<p:commandButton id="btnSiDatosDom"
-					value="#{msg['message.button.si']}"
+					value="#{msg['message.button.si']}" partialSubmit="true"
 					actionListener="#{actualizacionRegistroBean.habilitaPanelPersonales()}"
-					update="dlgDatosCorrectos pnDatosContacto pnInfProf" styleClass="ui-priority-primary"/>
-				<p:commandButton id="btnNoDatosDom"
-					value="#{msg['message.button.no']}"
+					update="dlgDatosCorrectos pnDatosContacto pnInfProf"
+					styleClass="ui-priority-primary" />
+				<p:commandButton id="btnNoDatosDom" update="@form"
+					value="#{msg['message.button.no']}" partialSubmit="true"
 					styleClass="ui-priority-primary"
-					actionListener="#{actualizacionRegistroBean.mostrarMensajeError}"/>
+					actionListener="#{actualizacionRegistroBean.mostrarMensajeError}" />
 			</p:panelGrid>
 		</p:panel>
 	</p:dialog>
-	
+
 </ui:composition>

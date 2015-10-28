@@ -21,7 +21,7 @@ import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.consul
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.insertarpersonaschema.MedioContactoPersona;
 import mx.gob.imss.cit.solicitudPension.serviciosNegocio.ws.serviciosbdtu.insertarpersonaschema.TipoMedioContacto;
 
-@Stateless(name = "bdtuService", mappedName = "bdtuService")
+@Stateless(name = "consultaMedioContacto", mappedName = "consultaMedioContacto")
 public class MedioContadorServiceImpl implements MedioContadorService {
 
 	private static final Logger LOGGER = LoggerFactory
