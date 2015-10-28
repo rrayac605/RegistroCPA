@@ -82,6 +82,13 @@ public class CargaArchivosBean extends BasePage {
 		return "";
 	}
 	
+	public void monitorArchivos(){
+		LOG.info("verificando nuevo estatus de archivos");
+		this.initDictamen();
+		
+		FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_MONITOR_ARCHIVOS.getCode());
+	}
+	
 	private void consolidarLayoutCargados(){
 
 		boolean cargado=false;
@@ -134,8 +141,8 @@ public class CargaArchivosBean extends BasePage {
 		
 		try {
 			cargaArchivosIntegrator.registrarCargaAseveracion(cargaAseveracionesDTO);
+			FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_SUBIR_LAYOUT.getCode());
 			
-			informacionPatronalBean.init();
 		} catch (DictamenNegocioException e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_GUARDAR_ASEVERACION.getCode());
 		}
