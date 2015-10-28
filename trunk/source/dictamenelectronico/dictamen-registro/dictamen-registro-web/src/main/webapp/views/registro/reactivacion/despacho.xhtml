@@ -9,67 +9,22 @@
 	</ui:define>
 	<ui:define name="content">
 
-		<h:form id="formReactivacionRegistro">
-		
-   <p:dialog 
-		        widgetVar="dlgActive" 
-		        showHeader="true" 
-				draggable="false" 
-				closable="false" 
-				resizable="false" 
-				visible="#{!activacionDespachoBean.activacionContadorPage.valido}" 
-				position="center" 
-				maximizable="false" minimizable="false" >
-				<p:panel id="pnActive" header="Mensaje del Sistema">		
-				
-					<p:panelGrid id="pngDatosContador">
-						<p:row>
-							<p:column colspan="1" style="text-align: center;">
-			    <p:outputLabel>No ha registrado alguna solicitud.</p:outputLabel>
-							</p:column>
-						</p:row>
-					
-						<p:row>
-				
-							<p:column colspan="1">
-								
-						<p:commandButton 
-						id="btnActive" 
-					   value="Registrar"
-                       onerror="statusDialog.hide();" 
-                       onclick="statusDialog.show()" 
-                	   onstart="statusDialog.show()" 
-                 	   oncomplete="statusDialog.hide()" 
-                       onsuccess="statusDialog.hide()"
-                       ajax="false"
-                       process="@this,formActivacionRegistro"  
-                       update=":statusDialog,:formActivacionRegistro" 
-                       
-                       immedite="true"
-					   action="#{activacionDespachoBean.accionInicio}" />
-						</p:column>
-						</p:row>
-					</p:panelGrid>
-			    	
-			    </p:panel>	
-			</p:dialog>
-			
 		<p:panel id="pnReactivacionDespacho"
 			header="#{msg_reactivacion['dictamen.reactivacion.form.panel.header']}"
-			footer="#{msg_reactivacion['dictamen.reactivacion.form.panel.footer']}"
-			rendered="#{activacionDespachoBean.activacionContadorPage.valido}">
+			footer="#{msg_reactivacion['dictamen.reactivacion.form.panel.footer']}">
 
 <p:messages id="msgFormActivacionDespacho" autoUpdate="true"  showDetail="true" showSummary="true" />
 
 
-	
+			<h:form id="formReactivacionRegistro">
 
+				<p:growl id="msgs" showDetail="true" />
 
 				<p:fieldset
 					legend="Datos del Despacho"
 					toggleable="true" toggleSpeed="500">
 					<p:ajax event="toggle"
-						listener="#{activacionSolicitudBean.handleToggle}" update="msgFormActivacionDespacho" />
+						listener="#{reactivacionSolicitudBean.handleToggle}" update="msgs" />
 
 
 
@@ -84,10 +39,10 @@
 							<td colspan="3">
 							<h:panelGrid columns="3" >
 
-        <p:selectOneMenu id="txtForDes" style="width:180px" value="#{activacionDespachoBean.selectedTipoProfesion}">
+        <p:selectOneMenu id="txtForDes" style="width:180px" value="#{reactivacionDespachoBean.selectedTipoProfesion}">
                      <f:selectItem itemLabel="Elija Opción" itemValue="0" />  
-            <f:selectItems value="#{activacionDespachoBean.mapTipoProfesion}" />
-             <p:ajax update=":formReactivacionRegistro" listener="#{activacionDespachoBean.selectTipoProfesion()}"/>
+            <f:selectItems value="#{reactivacionDespachoBean.mapTipoProfesion}" />
+             <p:ajax update=":formReactivacionRegistro" listener="#{reactivacionDespachoBean.selectTipoProfesion()}"/>
 
         </p:selectOneMenu>
 								
@@ -101,20 +56,20 @@
 		
 		<tr>
 							<td align="right">
-							<h:outputText value="¿Cuentas con trabajadores a tu cargo?"  rendered="#{activacionDespachoBean.activarTieneTrabajador}" />
+							<h:outputText value="¿Cuentas con trabajadores a tu cargo?"  rendered="#{reactivacionDespachoBean.activarTieneTrabajador}" />
 					          </td>
 							<td colspan="3">
-				<h:panelGrid columns="3" rendered="#{activacionDespachoBean.activarTieneTrabajador}" >
+				<h:panelGrid columns="3" rendered="#{reactivacionDespachoBean.activarTieneTrabajador}" >
 
         
           <p:selectOneMenu id="txtTraCar" style="width:180px" 
-          value="#{activacionDespachoBean.selectedTieneTrabajador}"
+          value="#{reactivacionDespachoBean.selectedTieneTrabajador}"
           effect="fade" 
           process="@this">
              <f:selectItem itemLabel="Elija Opción" itemValue="0" />  
           
-            <f:selectItems value="#{activacionDespachoBean.mapTieneTrabajador}" />
-                 <p:ajax update=":formReactivacionRegistro" listener="#{activacionDespachoBean.selectTrabajadorCargo()}"/>
+            <f:selectItems value="#{reactivacionDespachoBean.mapTieneTrabajador}" />
+                 <p:ajax update=":formReactivacionRegistro" listener="#{reactivacionDespachoBean.selectTrabajadorCargo()}"/>
     
         </p:selectOneMenu>
 								
@@ -125,11 +80,11 @@
 						
 								<tr>
 							<td align="right"><h:outputText  
-							rendered="#{activacionDespachoBean.activarNumTrabajador}" 
+							rendered="#{reactivacionDespachoBean.activarNumTrabajador}" 
 							value="Indica número de trabajadores" />
 								
 							 </td  >
-							<td colspan="3"><h:panelGrid columns="3"  rendered="#{activacionDespachoBean.activarNumTrabajador}">
+							<td colspan="3"><h:panelGrid columns="3"  rendered="#{reactivacionDespachoBean.activarNumTrabajador}">
 				<p:inputText id="txtNumTra" size="20"
 					maxlength="18"  
 									required="true"
@@ -150,16 +105,16 @@
 
 
 								
-								<td align="right" colspan="1"><h:outputText rendered="#{activacionDespachoBean.activarDatoDespacho}" value="RFC " /></td>
-							    <td colspan="3"><h:panelGrid rendered="#{activacionDespachoBean.activarDatoDespacho}" columns="1">
+								<td align="right" colspan="1"><h:outputText rendered="#{reactivacionDespachoBean.activarDatoDespacho}" value="RFC " /></td>
+							    <td colspan="3"><h:panelGrid rendered="#{reactivacionDespachoBean.activarDatoDespacho}" columns="1">
 									<p:inputText id="txtRFC" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.rfc}" 
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.rfc}" 
 									size="20" 
 								    maxlength="12"
 								    requiredMessage="RFC es requerido"
 									required="true" 
-									readonly="#{activacionDespachoBean.activarContadorValido}"
-									disabled="#{activacionDespachoBean.activarContadorValido}"
+									readonly="#{reactivacionDespachoBean.activarContadorValido}"
+									disabled="#{reactivacionDespachoBean.activarContadorValido}"
 									
 									validator="rfcPersonaMoralValidator"/>
 									<p:message for="txtRFC" />
@@ -169,13 +124,13 @@
 						</tr>
 						<tr>
 							<td align="right"><h:outputText value="Razon Social " 
-							rendered="#{activacionDespachoBean.activarContadorValido}" />
+							rendered="#{reactivacionDespachoBean.activarContadorValido}" />
 								
 									</td  >
 							<td colspan="3"><h:panelGrid columns="3" 
-							rendered="#{activacionDespachoBean.activarContadorValido}">
+							rendered="#{reactivacionDespachoBean.activarContadorValido}">
 									<p:inputText id="txtRazonSocial" size="35" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.razonSocial}" 
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.razonSocial}" 
 									readonly="true"
 									disabled="true"
 									required="false" />
@@ -189,17 +144,11 @@
 						</tr>
 						<tr align="right">
 						<td colspan="6">
-                                <p:commandButton rendered="#{ activacionDespachoBean.activarDatoDespacho }"
-								value="Buscar"
-								 onerror="statusDialog.hide();" 
-                       onclick="statusDialog.show()" 
-                	   onstart="statusDialog.show()" 
-                 	   oncomplete="statusDialog.hide()" 
-                       onsuccess="statusDialog.hide()"
-                       ajax="false"
-								disabled="#{activacionDespachoBean.activarContadorValido}"
-								 process="@this,formReactivacionRegistro"
-								action="#{activacionDespachoBean.accionBuscarCPA()}"
+                                <p:commandButton rendered="#{ reactivacionDespachoBean.activarDatoDespacho }"
+								value="(1.1) Buscar"
+								disabled="#{reactivacionDespachoBean.activarContadorValido}"
+								ajax="false" process="@this,formReactivacionRegistro"
+								action="#{reactivacionDespachoBean.accionBuscarCPA()}"
 								update=":formReactivacionRegistro" id="btnBuscarCPA"
 								styleClass="ui-priority-primary" />
 						</td>
@@ -212,7 +161,7 @@
 
 
 
-				<p:panelGrid style="margin-top:20px" rendered="#{activacionDespachoBean.activarContadorValido}">
+				<p:panelGrid style="margin-top:20px" rendered="#{reactivacionDespachoBean.activarContadorValido}">
 						<p:row>
 							<p:column styleClass="ui-widget-header" colspan="1">
 								<h:outputText value="*Calle: " />
@@ -228,21 +177,21 @@
 						<p:row>
 							<p:column  rowspan="3">
 									<p:inputText id="txtCalle" size="35" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
 									<p:message for="txtCalle" />
 									<p:tooltip for="txtCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column>
 									<p:inputText id="txtNumeroExterior" size="25" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroExterior" />
 									<p:tooltip for="txtNumeroExterior" value="Numero Exterior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column>
 									<p:inputText id="txtLetraExterior" size="25" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraExterior" />
 									<p:tooltip for="txtLetraExterior" value="Letra Exterior"
 										showEffect="fade" hideEffect="fade" />
@@ -264,14 +213,14 @@
 						<p:row>
 							<p:column>
 									<p:inputText id="txtNumeroInterior" size="25" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
 									<p:message for="txtNumeroInterior" />
 									<p:tooltip for="txtNumeroInterior" value="Numero Interior"
 										showEffect="fade" hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
 									<p:inputText id="txtLetraInterior" size="25" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
 									<p:message for="txtLetraInterior" />
 									<p:tooltip for="txtLetraInterior" value="Letra Interior"
 										showEffect="fade" hideEffect="fade" />
@@ -292,14 +241,14 @@
 						<p:row>
 							<p:column>
 									<p:inputText id="txtEntreCalle" size="25" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
 									<p:message for="txtEntreCalle" />
 									<p:tooltip for="txtEntreCalle" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
 									<p:inputText id="txtYCalle" size="45" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
 									<p:message for="txtYCalle" />
 									<p:tooltip for="txtYCalle" value="Calle Adyacente"
 										showEffect="fade" hideEffect="fade" />
@@ -319,14 +268,14 @@
 						<p:row>
 							<p:column>
 									<p:inputText id="txtColonia" size="25" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
 									<p:message for="txtColonia" />
 									<p:tooltip for="txtColonia" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2">
 									<p:inputText id="txtLocalidad" size="25" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
 									<p:message for="txtLocalidad" />
 									<p:tooltip for="txtLocalidad" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -343,14 +292,14 @@
 						<p:row>
 							<p:column align="left">
 									<p:inputText id="txtMunDel" size="35" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
 									<p:message for="txtMunDel" />
 									<p:tooltip for="txtMunDel" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 							<p:column colspan="2" align="left">
 									<p:inputText id="txtEntidadFederativa" size="35"
-										value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
+										value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
 									<p:message for="txtEntidadFederativa" />
 									<p:tooltip for="txtEntidadFederativa" value="Localidad"
 										showEffect="fade" hideEffect="fade" />
@@ -366,7 +315,7 @@
 						<p:row>
 							<p:column align="left" colspan="3">
 									<p:inputText id="txtCodigoPostal" size="25" 
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.codigoPostal}" 
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.domicilioFiscalDTO.codigoPostal}" 
 									readonly="true" disabled="true" />
 									<p:message for="txtCodigoPostal" />
 									<p:tooltip for="txtCodigoPostal" value="Calle"
@@ -386,9 +335,9 @@
 						<p:column align="left" colspan="3">
 						
 				
-	<p:selectOneListbox id="txtPuestoCPA"  style="height:400px;width:600px" value="#{activacionDespachoBean.selectedPuestoCPA}">
+	<p:selectOneListbox id="txtPuestoCPA"  style="height:400px;width:600px" value="#{reactivacionDespachoBean.selectedPuestoCPA}">
 
-                 <f:selectItems value="#{activacionDespachoBean.mapPuestoCPA}" />
+                 <f:selectItems value="#{reactivacionDespachoBean.mapPuestoCPA}" />
      
         </p:selectOneListbox>
 
@@ -407,11 +356,10 @@
 							<p:column  align="left" colspan="3">
 									<p:inputText id="txtTelefono" 
 									size="25" 
-									required="true"
-									requiredMessage="Teléfono es requerido."
-									value="#{activacionDespachoBean.activacionDespachoPage.personaMoralDTO.telefono}" />
+									
+									value="#{reactivacionDespachoBean.activacionDespachoPage.personaMoralDTO.telefono}" />
 									<p:message for="txtTelefono" />
-									<p:tooltip for="txtTelefono" value="Telefono" showEffect="fade"
+									<p:tooltip for="txtTelefono" value="Calle" showEffect="fade"
 										hideEffect="fade" />
 								</p:column>
 						</p:row>
@@ -428,26 +376,14 @@
 					<tr align="right">
 						<td> 
 								<p:commandButton
-								 onerror="statusDialog.hide();" 
-                       onclick="statusDialog.show()" 
-                	   onstart="statusDialog.show()" 
-                 	   oncomplete="statusDialog.hide()" 
-                       onsuccess="statusDialog.hide()"
-                       ajax="false"
-						action="#{activacionDespachoBean.accionAtras}"
-								value="Atras"  process="@this,formServer"
+						action="#{reactivacionDespachoBean.accionAtras}"
+								value="Atras" ajax="false" process="@this,formServer"
 								update=":tabView:pnServidor" id="btnAtras"
 								styleClass="ui-priority-primary" immediate="true" />
 						<p:commandButton
-						 onerror="statusDialog.hide();" 
-                       onclick="statusDialog.show()" 
-                	   onstart="statusDialog.show()" 
-                 	   oncomplete="statusDialog.hide()" 
-                       onsuccess="statusDialog.hide()"
-                      
-						disabled="#{activacionDespachoBean.activarProcesar}"
+						disabled="#{reactivacionDespachoBean.activarProcesar}"
 								value="Siguiente" ajax="false" process="@this,formServer"
-								action="#{activacionDespachoBean.siguiente()}"
+								action="#{reactivacionDespachoBean.siguiente()}"
 								update=":tabView:pnServidor" id="btnSiguiente"
 								styleClass="ui-priority-primary" />
 								
@@ -465,12 +401,9 @@
 				</p:fieldset>
 
 
-		
-		
-		
+			</h:form>
 		</p:panel>
 
-			</h:form>
 
 	</ui:define>
 </ui:composition>

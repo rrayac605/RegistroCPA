@@ -7,7 +7,41 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<h:head />
+<h:head >
+	<meta http-equiv="content-type" content="text/html;" charset="UTF-8" />
+	<script type="text/javascript" language="JavaScript">
+		var firmaPopup;
+
+		window.resultadoWidgetFirmaElectronica = function(data) {
+			// Obtener los datos de respuesta del componente
+			alert(data.acuse);
+			console.log(data);
+			//document.getElementById("resultadoFirmaElectronica").innerHTML = "Firmado";
+			jQuery("[id$='cadenaFiel']").val(data)
+			jQuery("[id$='dialogFiel']").hide();
+			
+			alert("Se obtubo resultado ");
+			jQuery("[id$='panelFirmado']").show();
+			//dialogFiel.hide();
+		}
+
+
+		window.resultadoFiel = function(response) {
+			alert("En el response ");
+			alert(response);
+			if (window.opener != null) {
+				window.opener.resultadoWidgetFirmaElectronica(response);
+				// Cerrar el popup al terminar el firmado
+				window.close();
+			} else {
+				// Si es iframe
+				window.parent.resultadoWidgetFirmaElectronica(response);
+			}
+		};
+
+	</script>
+
+</h:head>
 <h:body>
 	<p:panel>
 
@@ -22,6 +56,7 @@
 	<p:dialog widgetVar="dialogFirmaElectronica" id="dialogFirmaElectronica" modal="true" resizable="false" width="80%" height="480" dynamic="true">
 		<p:ajax event="close" update="dialogFirmaElectronica" listener="#{firmaElectronicaBean.cerrarDialog}" />
     	<p:panel id="panelFirmaElectronica" widgetVar="panelFirmaElectronica" rendered="#{firmaElectronicaPage.mostrarDialogFirma}">
+    	<!-- 
 	        <applet width="100%" height="460" 
 	            archive="MtsAppletFielWidget.IMSS.jar" 
 				code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
@@ -34,6 +69,118 @@
                 <param value="S" name="debug"></param>
                 <param value="false" name="codebase_lookup"></param>
             </applet>
+            -->
+            <!-- 
+             <applet id="AppletFirma" width="770" height="455" archive="MtsAppletFielWidget.IMSS.jar" 
+             code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
+             codebase="http://firmadigitalqa.imss.gob.mx/firmaElectronicaWeb/applets/">
+
+                                            <param value="16" name="fontSize"></param>
+                                            <param value="all-permissions" name="permissions"></param>
+                <param name="json" value="{'operacion':'autentica','salida':'rfc,curp,serie_cert'}" />
+                                            <param value="http://firmadigitalqa.imss.gob.mx/WsFirmaElectronicaDT/FirmaElectronicaDTService" name="urlWsFE"></param>
+                                            <param value="http://firmadigitalqa.imss.gob.mx/WsAutenticacion/WsAutenticacionService" name="urlWsAuth"></param>
+                                            <param value="S" name="debug"></param>
+                                            <param value="false" name="codebase_lookup"></param>
+                                            
+                                        </applet>
+                                        
+                                        
+                                                                                 
+                                                      <applet id="AppletFirma" width="770" height="455" archive="MtsAppletFielWidget.IMSS.jar" 
+             code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
+             codebase="http://172.16.5.151:8083/firmaElectronicaWeb/applets/">
+
+                                            <param value="16" name="fontSize"></param>
+                                            <param value="all-permissions" name="permissions"></param>
+                <param name="json" value="{'operacion':'autentica','salida':'rfc,curp,serie_cert'}" />
+                                            <param value="http://172.16.5.151:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService" name="urlWsFE"></param>
+                                            <param value="http://172.16.5.151:8083/WsAutenticacion/WsAutenticacionService" name="urlWsAuth"></param>
+                                            <param value="S" name="debug"></param>
+                                            <param value="false" name="codebase_lookup"></param>
+                                            
+                                        </applet>
+                                         -->
+	<!-- 
+	{"serie_cert":"00001000000101921366","curp_rl":"","folio":"f4033148-720c-4abd-a09c-3e3d7dadf83b","rfc_rl":"",
+	"acuse":"http://172.16.5.151:8083/reader/view/visualizadorcomprobantes/mostrarComprobante?id=f4033148-720c-4abd-a09c-3e3d7dadf83b",
+	"curp":"FOVM830211HDFLLR01","Resultado":0,"rfc":"FOVM830211446"} -->
+                                                               
+              <!-- 
+              <applet id="AppletFirma" width="770" height="455" archive="MtsAppletFielWidget.IMSS.jar" 
+             code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
+             codebase="#{request.contextPath}/applets/">
+                                            <param value="16" name="fontSize"></param>
+                                            <param value="all-permissions" name="permissions"></param>
+                <param name="json" value="{&quot;operacion&quot;:&quot;firmaCMS&quot;,&quot;aplicacion&quot;:&quot;appPrueba&quot;,&quot;acuse&quot;:&quot;AcuseV1.0&quot;,&quot;min_archivos&quot;:1,&quot;max_archivos&quot;:1,&quot;cad_original&quot;:[&quot;Cadena a firmar&quot;],&quot;salida&quot;:&quot;rfc,curp,rfc_rl,curp_rl,serie_cert,acuse&quot;,&quot;tipo_persona&quot;:0,&quot;filtros&quot;:&quot;Archivos IMSS Documentos(pdf,doc)^pdf+doc|Archivos IMSS Imagen(jpg,gif)^jpg+gif&quot;}" />
+                                            <param value="http://172.16.5.151:8083//WsFirmaElectronicaDT/FirmaElectronicaDTService" name="urlWsFE"></param>
+                                            <param value="http://172.16.5.151:8083/WsAutenticacion/WsAutenticacionService" name="urlWsAuth"></param>
+                                            <param value="S" name="debug"></param>
+                                            <param value="false" name="codebase_lookup"></param>
+                                            
+                                        </applet> 
+                                        
+
+                                                                                                    <applet id="AppletFirma" width="770" height="455" archive="MtsAppletFielWidget.IMSS.jar" 
+             code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
+             codebase="http://firmadigitalqa.imss.gob.mx/firmaElectronicaWeb/applets/">
+
+                                            <param value="16" name="fontSize"></param>
+                                            <param value="all-permissions" name="permissions"></param>
+
+                <param name="json" value="{'operacion':'firmaCMS','aplicacion':'appPrueba','acuse':'AcuseV1.0','min_archivos':1,'max_archivos':1,'cad_original':['Cadena a firmar'],'salida':'rfc,curp,rfc_rl,curp_rl,serie_cert,acuse','tipo_persona':0,'filtros':'Archivos IMSS Documentos(pdf,doc)^pdf+doc|Archivos IMSS Imagen(jpg,gif)^jpg+gif'}" />
+
+
+                                            <param value="http://firmadigitalqa.imss.gob.mx/WsFirmaElectronicaDT/FirmaElectronicaDTService" name="urlWsFE"></param>
+                                            <param value="http://firmadigitalqa.imss.gob.mx/WsAutenticacion/WsAutenticacionService" name="urlWsAuth"></param>
+                                            <param value="S" name="debug"></param>
+                                            <param value="false" name="codebase_lookup"></param>
+                                            
+                                        </applet>
+                                        
+                                        -->
+                                        
+                                                
+                             <!--                
+                                        
+       <applet id="AppletFirma" width="770" height="455" archive="MtsAppletFielWidget.IMSS.jar" 
+             code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
+             codebase="http://wsservices.imss.gob.mx:8083/firmaElectronicaWeb/applets/">
+                                            <param value="16" name="fontSize"></param>
+                                            <param value="all-permissions" name="permissions"></param>
+
+
+
+                                            <param name="json" value="{'operacion':'firmaCMS','aplicacion':'appPrueba','acuse':'AcuseV1.0','min_archivos':1,'max_archivos':1,'cad_original':['Cadena a firmar'],'salida':'rfc,curp,rfc_rl,curp_rl,serie_cert,acuse','tipo_persona':0,'filtros':'Archivos IMSS Documentos(pdf,doc)^pdf+doc|Archivos IMSS Imagen(jpg,gif)^jpg+gif'}" />
+
+
+                           <param value="http://wsservices.imss.gob.mx:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService" name="urlWsFE"></param>
+                            <param value="http://wsservices.imss.gob.mx:8083/WsAutenticacion/WsAutenticacionService" name="urlWsAuth"></param>
+                                            
+                                            <param value="S" name="debug"></param>
+                                            <param value="false" name="codebase_lookup"></param>
+                                            
+      </applet>
+                                                
+                      -->
+                      
+                              <applet id="AppletFirma" width="770" height="455" archive="MtsAppletFielWidget.IMSS.jar" 
+             code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
+             codebase="http://firmadigitalqa.imss.gob.mx/firmaElectronicaWeb/applets/">
+
+                                            <param value="16" name="fontSize"></param>
+                                            <param value="all-permissions" name="permissions"></param>
+                <param name="json" value="{'operacion':'autentica','salida':'rfc,curp,serie_cert'}" />
+                                            <param value="http://firmadigitalqa.imss.gob.mx/WsFirmaElectronicaDT/FirmaElectronicaDTService" name="urlWsFE"></param>
+                                            <param value="http://firmadigitalqa.imss.gob.mx/WsAutenticacion/WsAutenticacionService" name="urlWsAuth"></param>
+                                            <param value="S" name="debug"></param>
+                                            <param value="false" name="codebase_lookup"></param>
+                                            
+                                        </applet>                  
+
+                                 
+	<p:inputText id="cadenaFiel" widgetVar="cadenaFiel" value="#{firmaElectronicaBean.firma}"/>
+
 			<br/>
 		</p:panel>
 	</p:dialog>
