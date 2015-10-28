@@ -44,9 +44,9 @@ public class BdtuServiceImplTest  {
 			fisica.setCurp("SAAC820312HDFNLS06");
 			fisica.setRfc("SAAC820312S96");
 		    
-			Persona persona = bdtuServiceImpl.obtenerRegistroPersonaFisicaPorRFC(fisica);
-			LOGGER.debug("persona.curp="+persona.getRfc());
-			LOGGER.debug("persona.curp="+persona.getIdPersona());
+			//Persona persona = bdtuServiceImpl.obtenerRegistroPersonaFisicaPorRFC(fisica);
+			//LOGGER.debug("persona.curp="+persona.getRfc());
+			//LOGGER.debug("persona.curp="+persona.getIdPersona());
 
 			LOGGER.debug("razon: "+to);
 		} catch (Exception e) {

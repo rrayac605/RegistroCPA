@@ -29,18 +29,18 @@ import mx.gob.imss.ctirss.gestionpersonas.servicios.publicos.ServiciosPersonaBus
 
 
 @Stateless(name  = "bdtuService", mappedName = "bdtuService")
-public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
+public class BdtuServiceImpl implements BdtuService {
 
 	private static final Logger LOGGER = Logger.getLogger(BdtuServiceImpl.class);
 
 	
-	private ServiciosPersonaBusinessRemote serviciosPersonaBusinessRemote;
+	//private ServiciosPersonaBusinessRemote serviciosPersonaBusinessRemote;
 
 
-	private AfectarDatosPersonaBusinessRemote afectarDatosPersonaBusinessRemote;
+	//private AfectarDatosPersonaBusinessRemote afectarDatosPersonaBusinessRemote;
 
-	@EJB
-	private PersonaBdtuService personaBdtuService;
+	//@EJB
+	//private PersonaBdtuService personaBdtuService;
 	
 	@EJB
 	private NdtContadorPublicoAutDAO ndtContadorPublicoAutDAO;
@@ -58,7 +58,7 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 		NdtContadorPublicoAutDO  ndtContadorPublicoAutDO =ndtContadorPublicoAutDAO.selectContadorPublicoAutByNumRegistro(NumRegistro);
 		return ndtContadorPublicoAutDO;
 	}
-	
+	/*
 
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
@@ -71,26 +71,28 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 			personaFisica = (Fisica)  personaService;
 			if(personaFisica.getCveFisica() != null){
 				return personaFisica;
-				/*
-				usuarioSesion = new Fisica();
-				usuarioSesion.setIdPersona(personaFisica.getIdPersona());
-				usuarioSesion.setCveFisica(personaFisica.getCveFisica());
-				usuarioSesion.setRfc(personaFisica.getRfc());
-				usuarioSesion.setCurp(personaFisica.getCurp());
-				usuarioSesion.setNss(personaFisica.getNss());
-				usuarioSesion.setNombre(personaFisica.getNombre());
-				usuarioSesion.setPrimerApellido(personaFisica.getPrimerApellido());
-				usuarioSesion.setSegundoApellido(personaFisica.getSegundoApellido());
-				usuarioSesion.setNombreCompleto(personaFisica.getNombreCompleto());
-				usuarioSesion.setDomicilioFiscal(personaFisica.getDomicilioFiscal());
-				usuarioSesion.setMediosContactoFiscales(personaFisica.getMediosContactoFiscales());
-				usuarioSesion.setDomicilios(personaFisica.getDomicilios());
-				*/
+
 			}
 		}
 		return null;
 	}
-
+	*/
+	/*
+	usuarioSesion = new Fisica();
+	usuarioSesion.setIdPersona(personaFisica.getIdPersona());
+	usuarioSesion.setCveFisica(personaFisica.getCveFisica());
+	usuarioSesion.setRfc(personaFisica.getRfc());
+	usuarioSesion.setCurp(personaFisica.getCurp());
+	usuarioSesion.setNss(personaFisica.getNss());
+	usuarioSesion.setNombre(personaFisica.getNombre());
+	usuarioSesion.setPrimerApellido(personaFisica.getPrimerApellido());
+	usuarioSesion.setSegundoApellido(personaFisica.getSegundoApellido());
+	usuarioSesion.setNombreCompleto(personaFisica.getNombreCompleto());
+	usuarioSesion.setDomicilioFiscal(personaFisica.getDomicilioFiscal());
+	usuarioSesion.setMediosContactoFiscales(personaFisica.getMediosContactoFiscales());
+	usuarioSesion.setDomicilios(personaFisica.getDomicilios());
+	*/
+/*
 
 	@Override
 	public Persona obtenerRegistroPersonaFisicaPorRFC(Persona persona) {
@@ -153,7 +155,7 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 		
 	}
 
-	
+
 	public AfectarDatosPersonaBusinessRemote getAfectarDatosPersonaBusinessRemote() {
 		return afectarDatosPersonaBusinessRemote;
 	}
@@ -172,7 +174,7 @@ public class BdtuServiceImpl extends BaseBdtuService implements BdtuService {
 		this.personaBdtuService = personaBdtuService;
 	}
 
-
+*/
 
 
 
