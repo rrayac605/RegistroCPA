@@ -13,6 +13,7 @@
 			
        <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="frmDatosContador4"  />
           
+      <p:messages autoUpdate="true" id="msgs" showDetail="true" showSummary="true" />
             	
 	     <p:panelGrid style="width:100%;"
 				styleClass="table-no-border table-no-padding">
@@ -40,22 +41,15 @@
 			</h:form>
 			          <h:form id="frmDatosContador1">
 			
-	<p:dialog widgetVar="dlgValidarRegIMSS" 
-		closable="false" 
-		resizable="false" 
-		draggable="false"
-		dynamic="true" 
-			visible="#{activacionSolicitudBean.activarValidarRegistroIMSS}">
+			<p:dialog widgetVar="dlgValidarRegIMSS" resizable="false" draggable="false" visible="#{reactivacionSolicitudBean.activarValidarRegistroIMSS}">
 			<p:panel id="pnValidarRegIMSS" header="Mensaje del Sistema">	
-			      <p:messages autoUpdate="true" id="msgs1" showDetail="true" showSummary="true" />
-			
 				<p:panelGrid id="pngValidarRegIMSS">
 				  <p:row>
 				  <p:column>
 				  	<p:outputLabel>Registro IMSS:</p:outputLabel>
 				  	</p:column>
 				  	 <p:column>
-                      <p:inputText id="txtRegistroIMSS" value="#{activacionSolicitudBean.registroIMSS}" size="25" />
+                      <p:inputText id="txtRegistroIMSS" value="#{reactivacionSolicitudBean.registroIMSS}" size="25" />
 									<p:message for="txtRegistroIMSS" />
 									<p:tooltip for="txtRegistroIMSS" value="Numero de Registro IMSS"
 										showEffect="fade" hideEffect="fade" />
@@ -66,16 +60,16 @@
 				  	  	<p:commandButton id="btnAtrasValidarRegIMSS" 
 				  	  	value="Atrás" 
 				  	  	ajax="false"
-						action="#{activacionSolicitudBean.accionAtrasRegistroIMSS}" 
+						action="#{reactivacionSolicitudBean.accionAtrasRegistroIMSS}" 
 						process="@this,frmDatosContador" 
 						update=":frmDatosContador" />
 						
 				  	    <p:commandButton id="btnAceptarValidarRegIMSS" value="Consultar" ajax="false"
-						action="#{activacionSolicitudBean.accionBuscarRegistroIMSS}" />
+						action="#{reactivacionSolicitudBean.accionBuscarRegistroIMSS}" />
 				
 						 <p:commandButton id="btnSiguiente" value="Siguiente" 
-						 disabled="#{activacionSolicitudBean.activarSiguienteRegIMSS}" ajax="false"
-						action="#{activacionSolicitudBean.actionContadorNoAutorizado}" />
+						 disabled="#{reactivacionSolicitudBean.activarSiguienteRegIMSS}" ajax="false"
+						action="#{reactivacionSolicitudBean.actionContadorNoAutorizado}" />
 						</p:column>
 				  </p:row>
 				</p:panelGrid>
@@ -85,10 +79,8 @@
 			</h:form>
 						          <h:form id="frmDatosContador2">
 			
-			<p:dialog widgetVar="dlgContNoAut" resizable="false" draggable="false" visible="#{activacionSolicitudBean.activarContadorNoAutorizado}">
+			<p:dialog widgetVar="dlgContNoAut" resizable="false" draggable="false" visible="#{reactivacionSolicitudBean.activarContadorNoAutorizado}">
 			<p:panel id="pnContNoAut" header="Mensaje del Sistema">	
-			      <p:messages autoUpdate="true" id="msgs2" showDetail="true" showSummary="true" />
-			
 				<p:panelGrid id="pngContNoAutr">
 				  <p:row>
 				  <p:column>
@@ -98,7 +90,7 @@
 				  <p:row>
 				  <p:column>
 				  	<p:commandButton id="btnAceptarNoAut" value="Aceptar" ajax="false"
-						action="#{activacionSolicitudBean.actionContadorNoAutorizado}" />
+						action="#{reactivacionSolicitudBean.actionContadorNoAutorizado}" />
 						</p:column>
 				  </p:row>
 				</p:panelGrid>
@@ -106,21 +98,11 @@
 			</p:dialog>
 			
 			</h:form>
-						          <h:form id="frmDatosContadorPrincipal">
+						          <h:form id="frmDatosContador3">
 			
-		<p:dialog id="dlgDatosContador" 
-		widgetVar="dlgDatosContador" 
-
-		closable="false" 
-		resizable="false" 
-		draggable="false"
-		dynamic="true"  
-	
-		rendered="#{activacionSolicitudBean.activarContadorAutorizado}"
-		visible="#{activacionSolicitudBean.activarContadorAutorizado}">
+		<p:dialog widgetVar="dlgDatosContador" resizable="false" draggable="false" 
+		visible="#{reactivacionSolicitudBean.activarContadorAutorizado}">
 			<p:panel id="pnDatosContador" header="Mensaje del Sistema">		
-
-			
 					<p:panelGrid id="pngDatosContador">
 						<p:row>
 							<p:column colspan="2" style="text-align: center;">
@@ -129,10 +111,10 @@
 						</p:row>
 						<p:row>
 							<p:column>
-								<p:outputLabel>Apellido Paterno</p:outputLabel>
+								<p:outputLabel value="Apellido Paterno"></p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.apellidoPaterno}</p:outputLabel>
+								<p:outputLabel>#{reactivacionSolicitudBean.reactivacionSolicitudPage.personaDTO.apellidoPaterno}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
@@ -140,7 +122,7 @@
 								<p:outputLabel>Apellido Materno</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.apellidoMaterno}</p:outputLabel>
+								<p:outputLabel>#{reactivacionSolicitudBean.reactivacionSolicitudPage.personaDTO.apellidoMaterno}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
@@ -148,7 +130,7 @@
 								<p:outputLabel>Nombre(s)</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.nombre}</p:outputLabel>
+								<p:outputLabel>#{reactivacionSolicitudBean.reactivacionSolicitudPage.personaDTO.nombre}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
@@ -156,7 +138,7 @@
 								<p:outputLabel>CURP</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.curp}</p:outputLabel>
+								<p:outputLabel>#{reactivacionSolicitudBean.reactivacionSolicitudPage.personaDTO.curp}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
@@ -164,31 +146,20 @@
 								<p:outputLabel>Registro IMSS</p:outputLabel>
 							</p:column>
 							<p:column>
-								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.numRegistroCPA}</p:outputLabel>
+								<p:outputLabel>#{reactivacionSolicitudBean.reactivacionSolicitudPage.personaDTO.contadorPublicoAutDTO.numRegistroCPA}</p:outputLabel>
 							</p:column>
 						</p:row>
 						<p:row>
 				
 							<p:column colspan="2">
 								
-						<p:commandButton 
-						id="btnSi" 
-						value="Si"
-                       onerror="statusDialog.hide();" 
-                       onclick="statusDialog.show()" 
-                	   onstart="statusDialog.show()" 
-                 	   oncomplete="statusDialog.hide()" 
-                       onsuccess="statusDialog.hide()"
-                       process="@this,frmDatosContadorPrincipal"  
-                       update=":statusDialog,:frmDatosContadorPrincipal" 
-                       ajax="false"
-					   action="#{activacionSolicitudBean.aceptacion}" />
-						
+						<p:commandButton id="btnSi" value="Si" ajax="false"
+						action="#{reactivacionSolicitudBean.aceptacion}" />
 						<p:commandButton id="btnNo" 
 						process="@this,frmDatosContador" 
 						update=":frmDatosContador:pnDatosContador" 
 						value="No" inmediate="true" ajax="false"
-						actionListener="#{activacionSolicitudBean.accionValidarRegistroImss()}" />
+						actionListener="#{reactivacionSolicitudBean.accionValidarRegistroImss()}" />
 						
 							</p:column>
 						</p:row>
