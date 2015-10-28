@@ -45,6 +45,7 @@ public class NdtContadorPublicoAutDAOImpl extends AbstractBaseDAO<NdtContadorPub
 			}catch (NoResultException noResultException){
 				lOGGER.debug("No hay personas con cveIdPersona="+cveIdPersona);
 			}	
+			
         return rst;
         
 	}
