@@ -23,7 +23,7 @@
 						<UML:TaggedValue tag="owner" value="osanchez"/>
 						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
 						<UML:TaggedValue tag="logxml" value="FALSE"/>
-						<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;CheckedOutTo=osanchez;CRC=0;"/>
+						<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=Dictamen;CRC=0;"/>
 						<UML:TaggedValue tag="batchsave" value="0"/>
 						<UML:TaggedValue tag="batchload" value="0"/>
 						<UML:TaggedValue tag="phase" value="1.0"/>
@@ -34,24 +34,1817 @@
 						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
-					<UML:Namespace.ownedElement/>
+					<UML:Namespace.ownedElement>
+						<UML:ActivityModel xmi.id="EAID_89153980_E7E0_4cf1_9722_F5D8A5B23AB2_ActivityModel" context="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" name="ActivityModel" visibility="public">
+							<UML:StateMachine.transitions/>
+							<UML:StateMachine.top>
+								<UML:CompositeState xmi.id="EAID_89153980_E7E0_4cf1_9722_F5D8A5B23AB2_Activity_Top" name="{top}">
+									<UML:CompositeState.substate>
+										<UML:ActionState name="Servicio Web de Entidades de BDTU" xmi.id="EAID_22BCF517_9414_4049_A131_FA7EAAE2DDE5" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 18:38:32"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 20:15:24"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1257"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={C136E76C-6249-439b-9DD6-484F5A9259C9}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={22BCF517-9414-4049-A131-FA7EAAE2DDE5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={BDEDDDAF-189B-446f-9B0D-A771FF56570C}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={22BCF517-9414-4049-A131-FA7EAAE2DDE5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Firma Electrónica" xmi.id="EAID_39AECC7A_4374_458d_9B88_6FE2044A5C8A" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 17:52:27"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 17:52:40"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1245"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={7C106D9D-2BAC-45c5-B264-3D95CE2FA62F}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={39AECC7A-4374-458d-9B88-6FE2044A5C8A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={57615E60-43A5-499e-B44C-40C0E4B4C688}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={39AECC7A-4374-458d-9B88-6FE2044A5C8A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Registro de Contador Publico Autorizado" xmi.id="EAID_6BE79E3B_3BD6_41bf_8BB5_339AF6DAFA7F" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 17:56:18"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 18:04:26"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1247"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={598E3517-F29B-40e9-AB81-783B98EA82B2}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={6BE79E3B-3BD6-41bf-8BB5-339AF6DAFA7F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={515E9588-A70A-4ae5-8409-C0B1A58B85AF}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={6BE79E3B-3BD6-41bf-8BB5-339AF6DAFA7F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Servicios de Identidad del IMSS Digital" xmi.id="EAID_7A700BBB_6C4E_46dd_8A57_717BDFE15ACD" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 18:10:20"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 18:10:43"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1248"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FF6F237E-B4B1-49b6-9F21-6EA2C0C6E99F}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={7A700BBB-6C4E-46dd-8A57-717BDFE15ACD}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={5A7AA1D0-FFAD-4dc7-9B44-D14424C078A4}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={7A700BBB-6C4E-46dd-8A57-717BDFE15ACD}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Notaria Digital" xmi.id="EAID_80C8882A_75EA_4771_9442_98AB62EB5E1C" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 18:24:30"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 18:24:39"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1254"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={E7BBEE24-F558-424c-9DB5-14E85ACA473F}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={80C8882A-75EA-4771-9442-98AB62EB5E1C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={B528A74F-F74F-428a-BA8C-546605A6B5BE}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={80C8882A-75EA-4771-9442-98AB62EB5E1C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Dictaminacion" xmi.id="EAID_9001211F_6C36_47db_9708_B05F9073BEC6" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 18:45:03"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 18:45:25"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1260"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={AEF3A2A7-690F-4e85-9DD4-884E825143EC}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={9001211F-6C36-47db-9708-B05F9073BEC6}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={18A6C01E-CA60-4baa-B3C1-EFE80FC548DE}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={9001211F-6C36-47db-9708-B05F9073BEC6}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Registro de Contador Publico Autorizado" xmi.id="EAID_A4EE24D1_BA22_4ac8_B81B_6A31E2184A87" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 18:44:28"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 18:44:53"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1259"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={CB6DBB6B-FAB4-4bdb-BB06-A63A94804DF6}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={A4EE24D1-BA22-4ac8-B81B-6A31E2184A87}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={9A296431-A2D6-4879-9E7C-7E6AADBDD888}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={A4EE24D1-BA22-4ac8-B81B-6A31E2184A87}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Boveda Personal" xmi.id="EAID_B9AC6108_4DB8_4de7_916F_B50895881DF5" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 18:15:07"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 18:15:29"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1249"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={76BB06C5-0B6B-49f8-B3D5-522B349FFD2F}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={B9AC6108-4DB8-4de7-916F-B50895881DF5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={A9B36D92-229E-493e-89A8-D20BB7A3A965}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={B9AC6108-4DB8-4de7-916F-B50895881DF5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Escritorio Virtual" xmi.id="EAID_CCF51871_83C4_4ee4_8907_B68EA7705D6A" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 17:50:57"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 17:51:16"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1243"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={197294A3-7C48-4f77-A534-B14D43A5FCA7}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={CCF51871-83C4-4ee4-8907-B68EA7705D6A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={6927A698-1D57-40e9-9B87-9C14299C30C5}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={CCF51871-83C4-4ee4-8907-B68EA7705D6A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Ventanilla IMSS" xmi.id="EAID_D3F9E7F9_F7EA_4071_985D_08364DC81C7D" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 18:44:06"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 18:44:15"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1258"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={5DC70C2F-182D-4537-A4F5-1668D09C627C}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={D3F9E7F9-F7EA-4071-985D-08364DC81C7D}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={4F1A50C7-7D37-40fd-B9C7-7EEB2FF4F594}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={D3F9E7F9-F7EA-4071-985D-08364DC81C7D}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Servicio Digital Contadores Publicos Autorizados" xmi.id="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 17:48:19"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 17:49:06"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1241"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={31D775FE-6E27-4152-83BC-6499B46F15FB}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={F04DFA6D-964A-4c83-AA68-9EB24C31EE6A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={3720D3A4-CACB-4432-980A-4EB2564AA39A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={F04DFA6D-964A-4c83-AA68-9EB24C31EE6A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+										<UML:ActionState name="Servicios Web Amazon" xmi.id="EAID_F781BF9A_FAB9_47e7_981B_7D6AF2CD1A66" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2">
+											<UML:ModelElement.stereotype>
+												<UML:Stereotype name="DFD_Process"/>
+											</UML:ModelElement.stereotype>
+											<UML:ModelElement.taggedValue>
+												<UML:TaggedValue tag="isAbstract" value="false"/>
+												<UML:TaggedValue tag="isSpecification" value="false"/>
+												<UML:TaggedValue tag="ea_stype" value="Activity"/>
+												<UML:TaggedValue tag="ea_ntype" value="0"/>
+												<UML:TaggedValue tag="version" value="1.0"/>
+												<UML:TaggedValue tag="isActive" value="false"/>
+												<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+												<UML:TaggedValue tag="date_created" value="2015-10-27 18:54:09"/>
+												<UML:TaggedValue tag="date_modified" value="2015-10-27 18:54:28"/>
+												<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+												<UML:TaggedValue tag="tagged" value="0"/>
+												<UML:TaggedValue tag="package_name" value="contexto"/>
+												<UML:TaggedValue tag="phase" value="1.0"/>
+												<UML:TaggedValue tag="author" value="osanchez"/>
+												<UML:TaggedValue tag="complexity" value="1"/>
+												<UML:TaggedValue tag="status" value="Proposed"/>
+												<UML:TaggedValue tag="stereotype" value="DFD_Process"/>
+												<UML:TaggedValue tag="tpos" value="0"/>
+												<UML:TaggedValue tag="ea_localid" value="1262"/>
+												<UML:TaggedValue tag="ea_eleType" value="element"/>
+												<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+												<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={4096F94C-8626-41eb-B384-FF2668F32503}$XID;$NAM=CustomProperties$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@PROP=@NAME=_defaultDiagramType@ENDNAME;@TYPE=string@ENDTYPE;@VALU=DiagramProfile::DataFlowDiagram@ENDVALU;@PRMT=@ENDPRMT;@ENDPROP;$DES;$CLT={F781BF9A-FAB9-47e7-981B-7D6AF2CD1A66}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={81FB994C-0911-4283-B51C-611D72B5E72C}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_Process;FQName=DFD::DFD_Process;@ENDSTEREO;$DES;$CLT={F781BF9A-FAB9-47e7-981B-7D6AF2CD1A66}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+											</UML:ModelElement.taggedValue>
+										</UML:ActionState>
+									</UML:CompositeState.substate>
+								</UML:CompositeState>
+							</UML:StateMachine.top>
+						</UML:ActivityModel>
+						<UML:Dependency client="EAID_781AAEF8_5378_49a9_92D2_559AF0100047" supplier="EAID_22BCF517_9414_4049_A131_FA7EAAE2DDE5" name="Insertar y Consultar Información de Personas Fisicas y Morales." xmi.id="EAID_9B796970_397D_4af1_8B01_C4165805F21E" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1430"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Contador, Colegio y Despacho"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Web de Entidades de BDTU"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1253"/>
+								<UML:TaggedValue tag="ea_targetID" value="1257"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={3008DD01-4994-48bb-91F1-40DBB9808153}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={9B796970-397D-4af1-8B01-C4165805F21E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Insertar y Consultar Información de Personas Fisic"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_83C4_CBA6CF0FAD65">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_22BCF517_9414_4049_A131_FA7EAAE2DDE5" supplier="EAID_781AAEF8_5378_49a9_92D2_559AF0100047" name="Validación de Persona Fisica y Moral" xmi.id="EAID_CEA82E1F_4616_4292_94B4_754C08ED5B07" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1431"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Servicio Web de Entidades de BDTU"/>
+								<UML:TaggedValue tag="ea_targetName" value="Contador, Colegio y Despacho"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Class"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1257"/>
+								<UML:TaggedValue tag="ea_targetID" value="1253"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={F4CA6775-0AFD-4854-B328-B1994D4416B3}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={CEA82E1F-4616-4292-94B4-754C08ED5B07}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Validación de Persona Fisica y Moral"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_AAC1_12EBDC224DDF">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Class name="Servicio Consulta Persona Física y Moral - SAT" xmi.id="EAID_38766B76_EA1D_49b1_AF6D_606D5023B016" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_External"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 17:51:59"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 20:10:50"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_External"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1244"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={F39C50CF-2316-4f3f-85CA-1BC3E9C1B817}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_External;FQName=DFD::DFD_External;@ENDSTEREO;$DES;$CLT={38766B76-EA1D-49b1-AF6D-606D5023B016}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Association name="Buscar y Validar a Persona Moral y Fisica" xmi.id="EAID_F0EA8C99_064A_43d5_8DC9_5DC913236B96" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="InformationFlow"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value="«flow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1429"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Contador, Colegio y Despacho"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Consulta Persona Física y Moral - SAT"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
+								<UML:TaggedValue tag="ea_targetType" value="Class"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1253"/>
+								<UML:TaggedValue tag="ea_targetID" value="1244"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value="«flow»"/>
+								<UML:TaggedValue tag="mt" value="Buscar y Validar a Persona Moral y Fisica"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_781AAEF8_5378_49a9_92D2_559AF0100047">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_38766B76_EA1D_49b1_AF6D_606D5023B016">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Dependency client="EAID_EF69E7EA_6060_4868_B7E2_BED27D0620FC" supplier="EAID_39AECC7A_4374_458d_9B88_6FE2044A5C8A" name="Autoriza Acuse" xmi.id="EAID_0CC2E992_8AB3_4ec2_AF22_10200BC87044" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1425"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Documentacion Probatoria"/>
+								<UML:TaggedValue tag="ea_targetName" value="Firma Electrónica"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1250"/>
+								<UML:TaggedValue tag="ea_targetID" value="1245"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={B7E96B2B-A2CF-482a-A8E2-6016FD5EC4DA}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={0CC2E992-8AB3-4ec2-AF22-10200BC87044}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Autoriza Acuse"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_9A77_29A67DA08F70">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_80C8882A_75EA_4771_9442_98AB62EB5E1C" supplier="EAID_39AECC7A_4374_458d_9B88_6FE2044A5C8A" name="Acuse de recibo" xmi.id="EAID_26A92808_DC2A_4db1_9F54_ADB863E69D95" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1427"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Notaria Digital"/>
+								<UML:TaggedValue tag="ea_targetName" value="Firma Electrónica"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1254"/>
+								<UML:TaggedValue tag="ea_targetID" value="1245"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={207EE80A-FE34-48c5-B179-E204BA7C7DA1}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={26A92808-DC2A-4db1-9F54-ADB863E69D95}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Acuse de recibo"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_A2C8_486AC0BDB400">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_781AAEF8_5378_49a9_92D2_559AF0100047" supplier="EAID_39AECC7A_4374_458d_9B88_6FE2044A5C8A" name="Autentica Acuse" xmi.id="EAID_73993CDE_FE77_49b7_8534_4E42D58C57CE" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1424"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Contador, Colegio y Despacho"/>
+								<UML:TaggedValue tag="ea_targetName" value="Firma Electrónica"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1253"/>
+								<UML:TaggedValue tag="ea_targetID" value="1245"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={B312E621-460D-4544-9E01-51BADA405C98}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={73993CDE-FE77-49b7-8534-4E42D58C57CE}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Autentica Acuse"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_BF90_3F72143429E5">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_39AECC7A_4374_458d_9B88_6FE2044A5C8A" supplier="EAID_80C8882A_75EA_4771_9442_98AB62EB5E1C" name="sellar digitalmente y proteccion recibo" xmi.id="EAID_A35D3BA5_7040_4463_B296_179CD658C19F" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1426"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Firma Electrónica"/>
+								<UML:TaggedValue tag="ea_targetName" value="Notaria Digital"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1245"/>
+								<UML:TaggedValue tag="ea_targetID" value="1254"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={FC90775D-0768-4bd0-8DC3-32CBF196DC63}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={A35D3BA5-7040-4463-B296-179CD658C19F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="sellar digitalmente y proteccion recibo"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_85E3_1DB39FA1961E">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Class name="test" xmi.id="EAID_572A5204_E4CD_4921_96EC_B81482AF6BAB" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="MessageEndpoint"/>
+								<UML:TaggedValue tag="ea_ntype" value="2"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 18:53:46"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 18:53:51"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1261"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=3;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Class name="Despacho" xmi.id="EAID_7768087A_53DB_4397_907C_1A6BA5519135" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataStore"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 18:22:18"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 18:22:24"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataStore"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1251"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={2EF3F538-341C-431a-981E-0BFEDC424E17}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataStore;FQName=DFD::DFD_DataStore;@ENDSTEREO;$DES;$CLT={7768087A-53DB-4397-907C-1A6BA5519135}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Class name="Contador, Colegio y Despacho" xmi.id="EAID_781AAEF8_5378_49a9_92D2_559AF0100047" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataStore"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 18:23:13"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 18:25:57"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataStore"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1253"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={9BF4EADC-0F4C-4b6d-A586-290323FD6E65}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataStore;FQName=DFD::DFD_DataStore;@ENDSTEREO;$DES;$CLT={781AAEF8-5378-49a9-92D2-559AF0100047}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Association name="Gestionar Plantilla" xmi.id="EAID_18D91AEE_8609_42ba_843A_5AB36A1362B4" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="InformationFlow"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value="«flow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1437"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Contador, Colegio y Despacho"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Web Plantillas de Dictaminacion - Amazon"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
+								<UML:TaggedValue tag="ea_targetType" value="Class"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1253"/>
+								<UML:TaggedValue tag="ea_targetID" value="1263"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value="«flow»"/>
+								<UML:TaggedValue tag="mt" value="Gestionar Plantilla"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="false" type="EAID_781AAEF8_5378_49a9_92D2_559AF0100047">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_D9DBE0CF_E382_4a30_A692_F74CD8242579">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Dependency client="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" supplier="EAID_781AAEF8_5378_49a9_92D2_559AF0100047" name="Registra, Activa, Acredita, Reactiva, Actualiza, Baja" xmi.id="EAID_53F7F441_3235_496f_978D_F6DF3BCDD0FC" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1422"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_targetName" value="Contador, Colegio y Despacho"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Class"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1241"/>
+								<UML:TaggedValue tag="ea_targetID" value="1253"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={6BF5AEE6-12DC-4eea-B968-7B1506ABAE01}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={53F7F441-3235-496f-978D-F6DF3BCDD0FC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Registra, Activa, Acredita, Reactiva, Actualiza, B"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_871B_F9A054FDD549">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_781AAEF8_5378_49a9_92D2_559AF0100047" supplier="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" name="Ejecuta Proceso de Negocio" xmi.id="EAID_D0A56D59_B5E5_46f3_9193_30D99A3186C4" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1423"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Contador, Colegio y Despacho"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1253"/>
+								<UML:TaggedValue tag="ea_targetID" value="1241"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={DFCBD7B7-848F-42b0-A13D-C90F177A701A}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={D0A56D59-B5E5-46f3-9193-30D99A3186C4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Ejecuta Proceso de Negocio"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_81EF_AB01E04D82F5">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_7A700BBB_6C4E_46dd_8A57_717BDFE15ACD" supplier="EAID_CCF51871_83C4_4ee4_8907_B68EA7705D6A" name="Integra, Valida, Identifica" xmi.id="EAID_2367C76E_787F_4eab_B31A_11BA85007885" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1417"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Servicios de Identidad del IMSS Digital"/>
+								<UML:TaggedValue tag="ea_targetName" value="Escritorio Virtual"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1248"/>
+								<UML:TaggedValue tag="ea_targetID" value="1243"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={B7B4141D-8626-482d-82D3-A8E191AF5520}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={2367C76E-787F-4eab-B31A-11BA85007885}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Integra, Valida, Identifica"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_8027_7BC1AD6AAE60">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_CCF51871_83C4_4ee4_8907_B68EA7705D6A" supplier="EAID_7A700BBB_6C4E_46dd_8A57_717BDFE15ACD" name="Autoriza, Autentica, Asegura" xmi.id="EAID_7A3E4B0B_9883_4a09_AA94_5A2370BB0A13" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1418"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Escritorio Virtual"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicios de Identidad del IMSS Digital"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1243"/>
+								<UML:TaggedValue tag="ea_targetID" value="1248"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={9492A779-D7A5-4a5a-9CC0-1E48F9DDAB26}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={7A3E4B0B-9883-4a09-AA94-5A2370BB0A13}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Autoriza, Autentica, Asegura"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_8381_C05285038D54">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Class name="Ventanilla IMSS" xmi.id="EAID_84FCD72E_9106_412c_B349_5663EF198A39" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataStore"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 18:34:50"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 18:35:09"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataStore"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1255"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={D45E616C-DF08-451b-8956-CDA5F92495AF}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataStore;FQName=DFD::DFD_DataStore;@ENDSTEREO;$DES;$CLT={84FCD72E-9106-412c-B349-5663EF198A39}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Dependency client="EAID_9001211F_6C36_47db_9708_B05F9073BEC6" supplier="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" name="Registrar Dictamen" xmi.id="EAID_4826D73E_526E_47ec_A613_0D3E62A57736" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1439"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Dictaminacion"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1260"/>
+								<UML:TaggedValue tag="ea_targetID" value="1241"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={68D2B286-0BB2-4acb-9CBA-BC7EEFB39B2A}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={4826D73E-526E-47ec-A613-0D3E62A57736}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Registrar Dictamen"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_9160_9096BFC581B8">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" supplier="EAID_9001211F_6C36_47db_9708_B05F9073BEC6" name="Recibir Informacion Patronal" xmi.id="EAID_9BEDF654_8F99_4732_989E_1BB596B58C01" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1434"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_targetName" value="Dictaminacion"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1241"/>
+								<UML:TaggedValue tag="ea_targetID" value="1260"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={7B023E8A-167F-4ea9-863B-B6B7F0467242}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={9BEDF654-8F99-4732-989E-1BB596B58C01}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Recibir Informacion Patronal"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_A018_6700DB60509C">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Class name="BDTU" xmi.id="EAID_92D7355C_A80C_400f_9054_6BC26CBB5B15" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataStore"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 17:49:17"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 17:49:27"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataStore"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1242"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={4876D043-FF5C-42ca-BEED-FD26CE45ABF7}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataStore;FQName=DFD::DFD_DataStore;@ENDSTEREO;$DES;$CLT={92D7355C-A80C-400f-9054-6BC26CBB5B15}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Dependency client="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" supplier="EAID_A4EE24D1_BA22_4ac8_B81B_6A31E2184A87" name="Realiza, Autoriza Comprobante" xmi.id="EAID_05E7C0D3_383D_4cf3_922B_F892C13427FC" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1433"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_targetName" value="Registro de Contador Publico Autorizado"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1241"/>
+								<UML:TaggedValue tag="ea_targetID" value="1259"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={C2924666-894E-457f-A46D-B2A4A16076F8}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={05E7C0D3-383D-4cf3-922B-F892C13427FC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Realiza, Autoriza Comprobante"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_A8FA_8B29DC46BF10">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_A4EE24D1_BA22_4ac8_B81B_6A31E2184A87" supplier="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" name="Registra, Activa, Acredita, Reactiva, Actualiza, Baja Comprobante" xmi.id="EAID_92079D80_E327_4528_97E8_EC84FF623BB1" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1436"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Registro de Contador Publico Autorizado"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1259"/>
+								<UML:TaggedValue tag="ea_targetID" value="1241"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={118E1DBE-CD85-4b01-A736-73D002462DB8}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={92079D80-E327-4528-97E8-EC84FF623BB1}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Registra, Activa, Acredita, Reactiva, Actualiza, B"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_A496_5BEB40CA5E7B">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Class name="Solicitante (GOB.MX)" xmi.id="EAID_AD64E6EF_967A_4e1c_BD4B_39C0A56420B3" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataStore"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 18:35:38"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 18:35:54"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataStore"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1256"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={55969E40-9643-477b-9065-850463B2197B}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataStore;FQName=DFD::DFD_DataStore;@ENDSTEREO;$DES;$CLT={AD64E6EF-967A-4e1c-BD4B-39C0A56420B3}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Dependency client="EAID_EF69E7EA_6060_4868_B7E2_BED27D0620FC" supplier="EAID_B9AC6108_4DB8_4de7_916F_B50895881DF5" name="Deposita Documento" xmi.id="EAID_1798F28F_2A7D_485a_9AB7_5DB4ECC28744" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1420"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Documentacion Probatoria"/>
+								<UML:TaggedValue tag="ea_targetName" value="Boveda Personal"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1250"/>
+								<UML:TaggedValue tag="ea_targetID" value="1249"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={B1709ADB-73EA-4e62-B759-96A10A79282C}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={1798F28F-2A7D-485a-9AB7-5DB4ECC28744}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Deposita Documento"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_AB37_67A07538DBD8">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_CCF51871_83C4_4ee4_8907_B68EA7705D6A" supplier="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" name="Incluye, Muestra" xmi.id="EAID_C200AE0B_7C2D_4950_9D08_26FAEB4625EC" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1416"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Escritorio Virtual"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1243"/>
+								<UML:TaggedValue tag="ea_targetID" value="1241"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={DC3D7BCD-C391-4929-A252-765A71F6C775}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={C200AE0B-7C2D-4950-9D08-26FAEB4625EC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Incluye, Muestra"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_B143_CC9420EA2152">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" supplier="EAID_CCF51871_83C4_4ee4_8907_B68EA7705D6A" name="Se hospeda" xmi.id="EAID_E784B28F_6BC5_4449_BCE1_985CCD6CAB55" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1415"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_targetName" value="Escritorio Virtual"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1241"/>
+								<UML:TaggedValue tag="ea_targetID" value="1243"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={CA757539-BFC4-4cc9-9FF1-64F72B377208}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={E784B28F-6BC5-4449-BCE1-985CCD6CAB55}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Se hospeda"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_9675_ECE6EBB1967D">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Class name="Colegio" xmi.id="EAID_CFE17C3F_736C_4506_BA58_0B4E936BF790" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataStore"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 18:22:49"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 18:22:56"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataStore"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1252"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={29906382-0483-427a-BD66-B61CB16A025A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataStore;FQName=DFD::DFD_DataStore;@ENDSTEREO;$DES;$CLT={CFE17C3F-736C-4506-BA58-0B4E936BF790}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Dependency client="EAID_D3F9E7F9_F7EA_4071_985D_08364DC81C7D" supplier="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" name="Realiza y Solicita Comprobante " xmi.id="EAID_72F74C6B_749B_45ec_B5DB_944A9D3762A2" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1435"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Ventanilla IMSS"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1258"/>
+								<UML:TaggedValue tag="ea_targetID" value="1241"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={E65F5270-ABE7-4696-AC68-A8EF75B00944}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={72F74C6B-749B-45ec-B5DB-944A9D3762A2}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Realiza y Solicita Comprobante "/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_B161_D650D6C136B0">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" supplier="EAID_D3F9E7F9_F7EA_4071_985D_08364DC81C7D" name="Deniega, Autoriza, Regresa Comprobante" xmi.id="EAID_D10AAF33_7442_4608_A8A0_E06FFCE46A51" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1432"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_targetName" value="Ventanilla IMSS"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1241"/>
+								<UML:TaggedValue tag="ea_targetID" value="1258"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={4EFDB250-7691-4717-98DE-EAE78B5666C2}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={D10AAF33-7442-4608-A8A0-E06FFCE46A51}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Deniega, Autoriza, Regresa Comprobante"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_8CE1_2335DB6F8DAB">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Class name="Servicio Web Plantillas de Dictaminacion - Amazon" xmi.id="EAID_D9DBE0CF_E382_4a30_A692_F74CD8242579" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_External"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 18:54:38"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 20:04:55"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_External"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1263"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={DF071C46-94C2-4ed8-BE6B-9BA4B48FBA05}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_External;FQName=DFD::DFD_External;@ENDSTEREO;$DES;$CLT={D9DBE0CF-E382-4a30-A692-F74CD8242579}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Class name="Documentacion Probatoria" xmi.id="EAID_EF69E7EA_6060_4868_B7E2_BED27D0620FC" visibility="public" namespace="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataStore"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="Class"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-27 18:15:45"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-27 18:21:16"/>
+								<UML:TaggedValue tag="gentype" value="Java"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="contexto"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="osanchez"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataStore"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="1250"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={ABB71C36-9745-419f-8660-57A5E7F91009}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataStore;FQName=DFD::DFD_DataStore;@ENDSTEREO;$DES;$CLT={EF69E7EA-6060-4868-B7E2-BED27D0620FC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Class>
+						<UML:Dependency client="EAID_EF69E7EA_6060_4868_B7E2_BED27D0620FC" supplier="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" name="Obtener" xmi.id="EAID_4B52D7D3_F500_4c55_A78D_D93BF2D8A331" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1421"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Documentacion Probatoria"/>
+								<UML:TaggedValue tag="ea_targetName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Class"/>
+								<UML:TaggedValue tag="ea_targetType" value="Activity"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1250"/>
+								<UML:TaggedValue tag="ea_targetID" value="1241"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={F840C15C-D9E6-449e-B39D-C3330E3E7B71}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={4B52D7D3-F500-4c55-A78D-D93BF2D8A331}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Obtener"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_83C5_B844B64A76C0">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" supplier="EAID_EF69E7EA_6060_4868_B7E2_BED27D0620FC" name="Guardar" xmi.id="EAID_846EF12F_D608_4338_8442_EBE7F732A80B" visibility="public">
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype name="DFD_DataFlow"/>
+							</UML:ModelElement.stereotype>
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="stereotype" value="DFD_DataFlow"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="conditional" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="ea_localid" value="1419"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Servicio Digital Contadores Publicos Autorizados"/>
+								<UML:TaggedValue tag="ea_targetName" value="Documentacion Probatoria"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Activity"/>
+								<UML:TaggedValue tag="ea_targetType" value="Class"/>
+								<UML:TaggedValue tag="ea_sourceID" value="1241"/>
+								<UML:TaggedValue tag="ea_targetID" value="1250"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={269CF1BF-D2D3-4095-858D-700F33C2BA17}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=DFD_DataFlow;FQName=DFD::DFD_DataFlow;@ENDSTEREO;$DES;$CLT={846EF12F-D608-4338-8442-EBE7F732A80B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+								<UML:TaggedValue tag="mb" value=" &#xA;«DFD_DataFlow»"/>
+								<UML:TaggedValue tag="mt" value="Guardar"/>
+								<UML:TaggedValue tag="_Bezier" value="1" xmi.id="EAID_7CDE7680_FE95_43fe_817C_C675E1C600DA">
+									<XMI.extension xmi.extender="Enterprise Architect 2.5">
+										<UML:Comment name="Default: 1&#xA;"/>
+									</XMI.extension>
+								</UML:TaggedValue>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
-		<UML:Diagram name="context" xmi.id="EAID_AA77F12C_276B_41fb_8A89_7D5049F292AB" diagramType="CompositeStructureDiagram" owner="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" toolName="Enterprise Architect 2.5">
+		<UML:Diagram name="dictamen-contexto" xmi.id="EAID_1791E2BC_6A96_4e46_977E_DA833C859C09" diagramType="CollaborationDiagram" owner="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2" toolName="Enterprise Architect 2.5">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="osanchez"/>
-				<UML:TaggedValue tag="created_date" value="2015-10-27 17:32:27"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-27 17:32:27"/>
+				<UML:TaggedValue tag="created_date" value="2015-10-27 17:48:14"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-27 20:53:38"/>
 				<UML:TaggedValue tag="package" value="EAPK_89153980_E7E0_4cf1_9722_F5D8A5B23AB2"/>
-				<UML:TaggedValue tag="type" value="CompositeStructure"/>
+				<UML:TaggedValue tag="type" value="Analysis"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="109"/>
-				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=0;PPgs.cy=0;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
-				<UML:TaggedValue tag="styleex" value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=0;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;"/>
+				<UML:TaggedValue tag="ea_localid" value="118"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=2;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=84;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=692BC1F1;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=DFD::DataFlowDiagram;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;"/>
 			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=234;Top=1;Right=366;Bottom=76;" subject="EAID_D9DBE0CF_E382_4a30_A692_F74CD8242579" seqno="1" style="DUID=770DC6D8;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=490;Top=623;Right=590;Bottom=723;" subject="EAID_9001211F_6C36_47db_9708_B05F9073BEC6" seqno="2" style="DUID=5077B1AE;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=311;Top=627;Right=411;Bottom=727;" subject="EAID_A4EE24D1_BA22_4ac8_B81B_6A31E2184A87" seqno="3" style="DUID=AA6EAB80;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=125;Top=524;Right=225;Bottom=624;" subject="EAID_D3F9E7F9_F7EA_4071_985D_08364DC81C7D" seqno="4" style="DUID=34E2C3A8;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=106;Top=97;Right=206;Bottom=197;" subject="EAID_22BCF517_9414_4049_A131_FA7EAAE2DDE5" seqno="5" style="DUID=DA3F9166;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=644;Top=22;Right=744;Bottom=122;" subject="EAID_80C8882A_75EA_4771_9442_98AB62EB5E1C" seqno="6" style="DUID=BD3E5B7A;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=445;Top=201;Right=545;Bottom=251;" subject="EAID_781AAEF8_5378_49a9_92D2_559AF0100047" seqno="7" style="DUID=E1EE5BD7;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=597;Top=418;Right=697;Bottom=468;" subject="EAID_EF69E7EA_6060_4868_B7E2_BED27D0620FC" seqno="8" style="DUID=4D6A17D4;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=616;Top=541;Right=716;Bottom=641;" subject="EAID_B9AC6108_4DB8_4de7_916F_B50895881DF5" seqno="9" style="DUID=B28D6480;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=5;Top=413;Right=105;Bottom=513;" subject="EAID_7A700BBB_6C4E_46dd_8A57_717BDFE15ACD" seqno="10" style="DUID=104BE58E;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=696;Top=199;Right=796;Bottom=299;" subject="EAID_39AECC7A_4374_458d_9B88_6FE2044A5C8A" seqno="11" style="DUID=92F16882;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=466;Top=0;Right=602;Bottom=82;" subject="EAID_38766B76_EA1D_49b1_AF6D_606D5023B016" seqno="12" style="DUID=F90B78DE;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=75;Top=232;Right=175;Bottom=332;" subject="EAID_CCF51871_83C4_4ee4_8907_B68EA7705D6A" seqno="13" style="DUID=872ABCAC;HideIcon=0;"/>
+				<UML:DiagramElement geometry="Left=377;Top=342;Right=482;Bottom=442;" subject="EAID_F04DFA6D_964A_4c83_AA68_9EB24C31EE6A" seqno="14" style="DUID=B143A2F7;HideIcon=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=70:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=741:-387$;" subject="EAID_0CC2E992_8AB3_4ec2_AF22_10200BC87044" style="Mode=8;EOID=92F16882;SOID=4D6A17D4;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=24;SY=-44;EX=24;EY=-25;EDGE=2;$LLB=;LLT=;LMT=CX=221:CY=26:OX=50:OY=8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=495:-330$;" subject="EAID_53F7F441_3235_496f_978D_F6DF3BCDD0FC" style="Mode=8;EOID=E1EE5BD7;SOID=B143A2F7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=52;SY=-23;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=CX=38:CY=13:OX=0:OY=-1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=474:-365$;" subject="EAID_846EF12F_D608_4338_8442_EBE7F732A80B" style="Mode=8;EOID=4D6A17D4;SOID=B143A2F7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=6;SY=-17;EX=6;EY=-17;EDGE=3;$LLB=;LLT=;LMT=CX=132:CY=26:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=343:-469$;" subject="EAID_D10AAF33_7442_4608_A8A0_E06FFCE46A51" style="Mode=8;EOID=34E2C3A8;SOID=B143A2F7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-15;SY=4;EX=-50;EY=-21;EDGE=4;$LLB=;LLT=;LMT=CX=84:CY=26:OX=-18:OY=66:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=334:-503$;" subject="EAID_05E7C0D3_383D_4cf3_922B_F892C13427FC" style="Mode=8;EOID=AA6EAB80;SOID=B143A2F7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=50;EY=8;EDGE=3;$LLB=;LLT=;LMT=CX=135:CY=13:OX=36:OY=77:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=503:-485$;" subject="EAID_9BEDF654_8F99_4732_989E_1BB596B58C01" style="Mode=8;EOID=5077B1AE;SOID=B143A2F7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=49;SY=2;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=CX=77:CY=13:OX=3:OY=-8:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=278:-322$;" subject="EAID_C200AE0B_7C2D_4950_9D08_26FAEB4625EC" style="Mode=8;EOID=B143A2F7;SOID=872ABCAC;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=1;EX=-36;EY=8;EDGE=3;$LLB=;LLT=;LMT=CX=134:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=130:-369$;" subject="EAID_7A3E4B0B_9883_4a09_AA94_5A2370BB0A13" style="Mode=8;EOID=104BE58E;SOID=872ABCAC;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=99:CY=26:OX=39:OY=-6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=789:-154$;" subject="EAID_A35D3BA5_7040_4463_B296_179CD658C19F" style="Mode=8;EOID=BD3E5B7A;SOID=92F16882;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=28;SY=-9;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=CX=120:CY=13:OX=18:OY=19:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=195:-388$;" subject="EAID_2367C76E_787F_4eab_B31A_11BA85007885" style="Mode=8;EOID=872ABCAC;SOID=104BE58E;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-19;SY=-31;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=CX=56:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=258:-365$;" subject="EAID_E784B28F_6BC5_4449_BCE1_985CCD6CAB55" style="Mode=8;EOID=872ABCAC;SOID=B143A2F7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=CX=38:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=477:-444$;" subject="EAID_4B52D7D3_F500_4c55_A78D_D93BF2D8A331" style="Mode=8;EOID=B143A2F7;SOID=4D6A17D4;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=5;SY=-29;EX=5;EY=-29;EDGE=1;$LLB=;LLT=;LMT=CX=89:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=122:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=480:-566$;" subject="EAID_4826D73E_526E_47ec_A613_0D3E62A57736" style="Mode=8;EOID=B143A2F7;SOID=5077B1AE;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=20;SY=-12;EX=-22;EY=26;EDGE=3;$LLB=;LLT=;LMT=CX=133:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=455:-256$;" subject="EAID_D0A56D59_B5E5_46f3_9193_30D99A3186C4" style="Mode=8;EOID=B143A2F7;SOID=E1EE5BD7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=CX=48:CY=26:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=630:-205$;" subject="EAID_73993CDE_FE77_49b7_8534_4E42D58C57CE" style="Mode=8;EOID=92F16882;SOID=E1EE5BD7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=129:CY=26:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=31:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_F0EA8C99_064A_43d5_8DC9_5DC913236B96" style="Mode=1;EOID=F90B78DE;SOID=E1EE5BD7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=CX=119:CY=39:OX=59:OY=-12:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=397:-180$;" subject="EAID_9B796970_397D_4af1_8B01_C4165805F21E" style="Mode=8;EOID=DA3F9166;SOID=E1EE5BD7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=88:CY=13:OX=-24:OY=-21:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=31:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_18D91AEE_8609_42ba_843A_5AB36A1362B4" style="Mode=3;EOID=770DC6D8;SOID=E1EE5BD7;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=CX=75:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=663:-186$;" subject="EAID_26A92808_DC2A_4db1_9F54_ADB863E69D95" style="Mode=8;EOID=92F16882;SOID=BD3E5B7A;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-7;SY=-3;EX=-7;EY=-3;EDGE=2;$LLB=;LLT=;LMT=CX=175:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=352:-233$;" subject="EAID_CEA82E1F_4616_4292_94B4_754C08ED5B07" style="Mode=8;EOID=E1EE5BD7;SOID=DA3F9166;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=150:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=298:-421$;" subject="EAID_72F74C6B_749B_45ec_B5DB_944A9D3762A2" style="Mode=8;EOID=B143A2F7;SOID=34E2C3A8;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=CX=92:CY=52:OX=103:OY=16:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=408:-520$;" subject="EAID_92079D80_E327_4528_97E8_EC84FF623BB1" style="Mode=8;EOID=B143A2F7;SOID=AA6EAB80;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=CX=98:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=169:CY=16:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=614:-474$;" subject="EAID_1798F28F_2A7D_485a_9AB7_5DB4ECC28744" style="Mode=8;EOID=B28D6480;SOID=4D6A17D4;Color=-1;LWidth=0;Hidden=0;"/>
+			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
