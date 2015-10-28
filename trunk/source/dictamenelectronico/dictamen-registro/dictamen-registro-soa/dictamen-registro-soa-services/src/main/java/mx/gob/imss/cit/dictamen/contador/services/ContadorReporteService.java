@@ -10,4 +10,5 @@ public interface ContadorReporteService {
 	boolean generarReportePDF(Map<String, Object> parametrosReporte, Integer tipoReporte) throws RuntimeException;
 	Map<String, Object> generaParametrosActualizacionVoluntariaContador(NdtContadorPublicoAutTO ndtContadorPublicoAutDTO);
 	byte[] generarReportePreliminar(Map<String, Object> parametrosReporte, Integer tipoReporte);
+	String generaCadenaOriginalSolicitud(NdtContadorPublicoAutTO ndtContadorPublicoAutDTO) throws RuntimeException;
 }

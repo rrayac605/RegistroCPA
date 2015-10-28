@@ -9,19 +9,20 @@ import java.util.Map;
 
 import javax.ejb.Stateless;
 
+import org.apache.log4j.Logger;
+
 import mx.gob.imss.cit.dictamen.contador.commons.to.domain.NdtContadorPublicoAutTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.NdtContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.contador.services.ContadorReporteService;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperRunManager;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Stateless(name  = "contadorReporteService", mappedName = "contadorReporteService")
 public class ContadorReporteServiceImpl implements  ContadorReporteService{
 
-	private static final Logger logger = LoggerFactory.getLogger(ContadorReporteServiceImpl.class);
+	private static final Logger LOGGER = Logger.getLogger(BdtuServiceImpl.class);
 
 	@Override
 	public boolean generarReportePDF(Map<String, Object> parametrosReporte, Integer tipoReporte) throws RuntimeException {
@@ -55,10 +56,16 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 					if (byteArray != null) {
 						//notariaServiceLocal.guardarArchivoFirmado(parametrosReporte.get("numTramiteNotaria").toString(), generaArchivo(byteArray), ConstantesDictamen.NOMBRE_ACUSE_SOLICITUD_BAJA_VOLUNTARIA);
 					}
+				case 3:
+					rutaJasper = "/reporte/SolicitudAcreditacionContador.jasper";
+					byteArray = obtenerPDFByteArray(rutaJasper, parametrosReporte);
+					if (byteArray != null) {
+						//notariaServiceLocal.guardarArchivoFirmado(parametrosReporte.get("numTramiteNotaria").toString(), generaArchivo(byteArray), ConstantesDictamen.NOMBRE_ACUSE_SOLICITUD_BAJA_VOLUNTARIA);
+					}
 					break;
 			}
 		} catch (Exception ex) {
-			logger.info("ERROR: Al generar el reporte y el guardado en notaria.", ex);
+			LOGGER.info("ERROR: Al generar el reporte y el guardado en notaria.", ex);
 			throw new RuntimeException("ERROR: Al generar el reporte y el guardado en notar\u00eda.", ex);
 		}
 		return flagEstado;
@@ -74,7 +81,7 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 			iReportParameter.put("imgGobiernoRepublica","/img/gobiernoRepublica.png");
 			iReportParameter.put("imgEscudoNacional","/img/escudoNacional.jpg");
 		} catch (Exception ex) {
-			logger.info("ERROR: Al obtener los parametros del Layaout del reporte.", ex);
+			LOGGER.info("ERROR: Al obtener los parametros del Layaout del reporte.", ex);
 			throw new RuntimeException("ERROR: Al obtener los parametros del Layaout del reporte.", ex);
 		}
 	}
@@ -91,19 +98,19 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 		try {
 			 URL url = ContadorReporteServiceImpl.class.getResource(rutaJasper);
 			String path = url.getFile();
-			logger.info("path="+path);
+			LOGGER.info("path="+path);
 			inputStream = getClass().getResourceAsStream(rutaJasper);
 			
 			byteArray = JasperRunManager.runReportToPdf(path, parametrosReporte, new JREmptyDataSource());
 		}  catch (JRException ex) {
-			logger.error("ERROR: No se pudo crear el arreglo de byte del reporte ", ex);
+			LOGGER.error("ERROR: No se pudo crear el arreglo de byte del reporte ", ex);
 			throw new RuntimeException("Error al generar el reporte y el guardado en notar\u00eda.", ex);
 		}  finally {
             if (inputStream != null) {
                 try {
                 	inputStream.close();
                 } catch (IOException ex) {
-                    logger.error("ERROR: No se pudo cerrar el inputStream.", ex);
+                	LOGGER.error("ERROR: No se pudo cerrar el inputStream.", ex);
                     throw new RuntimeException("ERROR: No se pudo cerrar el inputStream.", ex);
                 }
             }
@@ -116,7 +123,7 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 		try {
 			acusePdf = org.apache.soap.encoding.soapenc.Base64.encode(bytes);
 		} catch (Exception ex) {
-			logger.error("ERROR: No se pudo obtner el encoding Base64 de los Bytes para generar el archivo del Reporte.", ex);
+			LOGGER.error("ERROR: No se pudo obtner el encoding Base64 de los Bytes para generar el archivo del Reporte.", ex);
             throw new RuntimeException("ERROR: No se pudo obtner el encoding Base64 de los Bytes para generar el archivo del Reporte.", ex);
 		}
 		return acusePdf;
@@ -141,13 +148,29 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 					rutaJasper = "/reporte/SolicitudReactivacionContador.jasper";
 					byteArray = obtenerPDFByteArray(rutaJasper, parametrosReporte);
 					break;
+				case 3: //Activacion
+					rutaJasper = "/reporte/SolicitudAcreditacionContador.jasper";
+					byteArray = obtenerPDFByteArray(rutaJasper, parametrosReporte);
+					break;
 			}
 		} catch (Exception ex) {
-			logger.error("ERROR: No se pudo generar el arreglo de bytes del reporte para la visualizacion preliminar.", ex);
+			LOGGER.error("ERROR: No se pudo generar el arreglo de bytes del reporte para la visualizacion preliminar.", ex);
             throw new RuntimeException("ERROR: No se pudo generar el arreglo de bytes del reporte para la visualizacion preliminar.", ex);
 		}
 		return byteArray;
 	}
+    
+	public Map<String, Object> generaParametrosActivacionVoluntariaContador(NdtContadorPublicoAutTO ndtContadorPublicoAutDTO) {
+	   return generaParametrosActualizacionVoluntariaContador(ndtContadorPublicoAutDTO);
+	}
+	
+	public Map<String, Object> generaParametrosReactivacionVoluntariaContador(NdtContadorPublicoAutTO ndtContadorPublicoAutDTO) {
+		   return generaParametrosActualizacionVoluntariaContador(ndtContadorPublicoAutDTO);
+	}
+	
+	public Map<String, Object> generaParametrosAcreditacionVoluntariaContador(NdtContadorPublicoAutTO ndtContadorPublicoAutDTO) {
+		   return generaParametrosActualizacionVoluntariaContador(ndtContadorPublicoAutDTO);
+	} 
 
 	@Override
 	public Map<String, Object> generaParametrosActualizacionVoluntariaContador(NdtContadorPublicoAutTO ndtContadorPublicoAutDTO) {
@@ -212,6 +235,7 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 						numeroCedula = "";
 					}
 				}
+
 				iReportParameter.put("numeroCedulaProfesional", numeroCedula);
 				iReportParameter.put("cadenaOriginal", ndtContadorPublicoAutDTO.getCadenaOriginal() != null ? 
 						ndtContadorPublicoAutDTO.getCadenaOriginal() : "");
@@ -225,10 +249,86 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 				iReportParameter.put("selloDigitalIMSS", selloDigitalIMSS);
 			}
 		} catch (Exception ex) {
-			logger.error("ERROR: al generar los par\u00e1metros preliminares del reporte de solicitud de baja voluntaria de un contador publico.", ex);
+			LOGGER.error("ERROR: al generar los par\u00e1metros preliminares del reporte de solicitud de baja voluntaria de un contador publico.", ex);
 			throw new RuntimeException("ERROR: al generar los par\u00e1metros preliminares del reporte de solicitud de baja voluntaria de un contador publico.", ex);
 		}
 		return iReportParameter;
+	}
+
+	
+	
+
+	public String generaCadenaOriginalSolicitud(NdtContadorPublicoAutTO ndtContadorPublicoAutDTO) throws RuntimeException {
+		StringBuilder cadenaOriginal = new StringBuilder();
+		try {
+			cadenaOriginal.append("|");
+			cadenaOriginal.append(verificaCampo("|FECHA|", ndtContadorPublicoAutDTO.getFecha()));
+			
+			if (ndtContadorPublicoAutDTO.getCveIdTramite()!=null) {
+				cadenaOriginal.append(verificaCampo("|NÚMERO DE TRÁMITE|", ndtContadorPublicoAutDTO.getCveIdTramite()));
+			}
+			
+			if (ndtContadorPublicoAutDTO.getNombreCompleto() != null ) {
+				cadenaOriginal.append(verificaCampo("|NOMBRE DEL CONTADOR PÚBLICO|", ndtContadorPublicoAutDTO.getNombreCompleto()));
+				cadenaOriginal.append(verificaCampo("|RFC|", ndtContadorPublicoAutDTO.getRfc()));
+				cadenaOriginal.append(verificaCampo("|CURP|", ndtContadorPublicoAutDTO.getCurp()));
+			}
+			
+			cadenaOriginal.append(verificaCampo("|NÚMERO DE REGISTRO DE CONTADOR PÚBLICO AUTORIZADO|", ndtContadorPublicoAutDTO.getNumRegistroCpa()));
+			
+				
+			StringBuilder  domicilioFiscal = new StringBuilder();
+				if ( ndtContadorPublicoAutDTO.getDomicilioTO() != null) {
+					
+					domicilioFiscal.append(ndtContadorPublicoAutDTO.getDomicilioTO().getCalle() != null ? 
+							ndtContadorPublicoAutDTO.getDomicilioTO().getCalle() +" " : "");
+					domicilioFiscal.append(ndtContadorPublicoAutDTO.getDomicilioTO().getNumeroExterior() != null ? 
+							ndtContadorPublicoAutDTO.getDomicilioTO().getNumeroExterior() +"" : "");
+					domicilioFiscal.append(ndtContadorPublicoAutDTO.getDomicilioTO().getLetraExterior() != null ? 
+							ndtContadorPublicoAutDTO.getDomicilioTO().getLetraExterior() +" " : "");
+					domicilioFiscal.append(ndtContadorPublicoAutDTO.getDomicilioTO().getNumeroInterior() != null ? 
+							ndtContadorPublicoAutDTO.getDomicilioTO().getNumeroInterior() +" " : "");
+					domicilioFiscal.append(ndtContadorPublicoAutDTO.getDomicilioTO().getLetraInterior() != null ? 
+							ndtContadorPublicoAutDTO.getDomicilioTO().getLetraInterior() +" " : "");
+					if (ndtContadorPublicoAutDTO.getDomicilioTO() != null) {
+						if (ndtContadorPublicoAutDTO.getDomicilioTO().getEntidadFederativa() != null) {
+							domicilioFiscal.append(ndtContadorPublicoAutDTO.getDomicilioTO().getEntidadFederativa() != null ?
+									ndtContadorPublicoAutDTO.getDomicilioTO().getEntidadFederativa() +" " : "");
+						}
+						
+						if (ndtContadorPublicoAutDTO.getDomicilioTO().getMunicipioDelegacion() != null) {
+							domicilioFiscal.append(ndtContadorPublicoAutDTO.getDomicilioTO().getMunicipioDelegacion() != null ? ndtContadorPublicoAutDTO.getDomicilioTO().getMunicipioDelegacion() +" " : "");
+						}
+						//domicilioFiscal.append(ndtContadorPublicoAutDTO.getPersonaFiscal().getDomicilioFiscal().getAsentamiento().getNombre() != null ? 
+						//		ndtContadorPublicoAutDTO.getPersonaFiscal().getDomicilioFiscal().getAsentamiento().getNombre() +" " : "");
+					}
+					if (ndtContadorPublicoAutDTO.getDomicilioTO().getCodigoPostal() != null) {
+						domicilioFiscal.append(ndtContadorPublicoAutDTO.getDomicilioTO().getCodigoPostal() != null ?
+								ndtContadorPublicoAutDTO.getDomicilioTO().getCodigoPostal() : "");
+					}
+				}
+				cadenaOriginal.append(verificaCampo("|DOMICILIO FISCAL|", domicilioFiscal.toString()));
+			
+			
+			String numeroCedula = "";
+			if (ndtContadorPublicoAutDTO.getNumeroCedulaProfesional() != null && !ndtContadorPublicoAutDTO.getNumeroCedulaProfesional().isEmpty()) {
+				numeroCedula = ndtContadorPublicoAutDTO.getNumeroCedulaProfesional();
+				if (numeroCedula == null) {
+					numeroCedula = "";
+				}
+			}
+			
+			cadenaOriginal.append(verificaCampo("|NÚMERO DE CÉDULA PROFESIONAL|", numeroCedula));
+			cadenaOriginal.append("||");
+		} catch (Exception ex) {
+			LOGGER.info("ERROR: En el servicio ContadorPublicoServiceBusinessV2 al generar la cadena original del registro de contador publico.", ex);
+			throw new RuntimeException("ERROR: En el servicio ContadorPublicoServiceBusinessV2 al generar la cadena original del registro de contador publico.", ex);
+		}
+		return cadenaOriginal.toString();
+	}
+	
+	private String verificaCampo(String texto, Object parameter) {
+		return (parameter != null || parameter != "") ? texto + parameter : "";
 	}
 
 

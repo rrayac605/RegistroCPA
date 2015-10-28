@@ -3,6 +3,7 @@ package mx.gob.imss.cit.dictamen.contador.services.impl;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -11,6 +12,7 @@ import javax.naming.NamingException;
 import org.apache.log4j.Logger;
 
 import mx.gob.imss.ctirss.delta.exception.individuo.PersonaFisicaNoEncontradaException;
+import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorReporteIntegrator;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.contador.persistence.dao.NdtContadorPublicoAutDAO;
 import mx.gob.imss.cit.dictamen.contador.services.BaseBdtuService;
