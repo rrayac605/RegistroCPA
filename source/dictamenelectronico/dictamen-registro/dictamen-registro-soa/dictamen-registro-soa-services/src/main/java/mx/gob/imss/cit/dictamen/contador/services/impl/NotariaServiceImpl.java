@@ -106,8 +106,8 @@ public class NotariaServiceImpl implements NotariaService{
 
 			jsonParams = this.convertirAJSON(peticion, PeticionFirmadoSimple.class.getName());
 
-			System.out.println("Los parametros para la firma son: "+ jsonParams);
-			System.out.println("Serie: " + serie);
+			LOGGER.info("Los parametros para la firma son: "+ jsonParams);
+			LOGGER.info("Serie: " + serie);
 
 			ObjectFactory objf = new ObjectFactory();
 			FirmaSimpleRequestType fsrt = objf.createFirmaSimpleRequestType();

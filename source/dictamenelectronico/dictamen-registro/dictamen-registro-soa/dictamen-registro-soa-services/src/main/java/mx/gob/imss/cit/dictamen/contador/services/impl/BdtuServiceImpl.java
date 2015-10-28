@@ -1,31 +1,23 @@
 package mx.gob.imss.cit.dictamen.contador.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
-import javax.naming.NamingException;
+
+import mx.gob.imss.cit.dictamen.contador.commons.to.domain.CedulaTO;
+import mx.gob.imss.cit.dictamen.contador.commons.to.domain.ContadorPublicoTO;
+import mx.gob.imss.cit.dictamen.contador.commons.to.domain.NdtContadorPublicoAutTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
+import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
+import mx.gob.imss.cit.dictamen.contador.model.NdtR1DatosPersonalesDO;
+import mx.gob.imss.cit.dictamen.contador.persistence.dao.NdtContadorPublicoAutDAO;
+import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
 
 import org.apache.log4j.Logger;
-
-import mx.gob.imss.ctirss.delta.exception.individuo.PersonaFisicaNoEncontradaException;
-import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorReporteIntegrator;
-import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
-import mx.gob.imss.cit.dictamen.contador.persistence.dao.NdtContadorPublicoAutDAO;
-import mx.gob.imss.cit.dictamen.contador.services.BaseBdtuService;
-import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
-import mx.gob.imss.cit.dictamen.contador.services.PersonaBdtuService;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.CalificacionEnum;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.ICADatosConsulta;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.ICADatosRespuesta;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.Persona;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.PersonaCalificacion;
-import mx.gob.imss.ctirss.gestionpersonas.servicios.business.AfectarDatosPersonaBusinessRemote;
-import mx.gob.imss.ctirss.gestionpersonas.servicios.publicos.ServiciosPersonaBusinessRemote;
 
 
 @Stateless(name  = "bdtuService", mappedName = "bdtuService")
@@ -46,18 +38,54 @@ public class BdtuServiceImpl implements BdtuService {
 	private NdtContadorPublicoAutDAO ndtContadorPublicoAutDAO;
 	
 	@Override
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public NdtContadorPublicoAutDO obtenerContadorPorIdPersona(Long idPersona) {
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	public ContadorPublicoTO obtenerContadorPorIdPersona(Long idPersona) {
+		ContadorPublicoTO contadorPublicoTO = null;
 		NdtContadorPublicoAutDO  ndtContadorPublicoAutDO =ndtContadorPublicoAutDAO.selectContadorPublicoAutByIdPersona(idPersona);
-		return ndtContadorPublicoAutDO;
+		if(ndtContadorPublicoAutDO!=null){
+			contadorPublicoTO = new ContadorPublicoTO();
+			contadorPublicoTO.setCveIdEstadoCPA(ndtContadorPublicoAutDO.getCveIdEstadoCpa().getCveIdEstadoCpa());
+			contadorPublicoTO.setNumRegistroCPA(ndtContadorPublicoAutDO.getNumRegistroCpa());
+		}
+		return contadorPublicoTO;
 	}
 	
 	@Override
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public NdtContadorPublicoAutDO obtenerContadorPorNumRegistro(Integer NumRegistro) {
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	public ContadorPublicoTO obtenerContadorPorNumRegistro(Integer NumRegistro) {
+		ContadorPublicoTO contadorPublicoTO = null;
+
 		NdtContadorPublicoAutDO  ndtContadorPublicoAutDO =ndtContadorPublicoAutDAO.selectContadorPublicoAutByNumRegistro(NumRegistro);
-		return ndtContadorPublicoAutDO;
+		
+		if(ndtContadorPublicoAutDO!=null){
+			contadorPublicoTO = new ContadorPublicoTO();
+			contadorPublicoTO.setCveIdEstadoCPA(ndtContadorPublicoAutDO.getCveIdEstadoCpa().getCveIdEstadoCpa());
+			contadorPublicoTO.setNumRegistroCPA(ndtContadorPublicoAutDO.getNumRegistroCpa());
+		}
+		return contadorPublicoTO;
 	}
+	
+	@Override
+	public List<CedulaTO> obtenerCedulaPorIdPersona(Long idPersona) {
+		
+		List<CedulaTO> lstCedula = new ArrayList<CedulaTO>(0);
+		NdtContadorPublicoAutDO  ndtContadorPublicoAutDO =ndtContadorPublicoAutDAO.selectContadorPublicoAutByIdPersona(idPersona);
+		List<NdtR1DatosPersonalesDO> lstDatosPersonales = ndtContadorPublicoAutDO.getNdtR1DatosPersonalesDOList();
+		
+		LOGGER.info("Integrator.ndtContadorPublicoAutDO="+ndtContadorPublicoAutDO.getNdtR1DatosPersonalesDOList().size());
+		
+		for(NdtR1DatosPersonalesDO ndtR1DatosPersonalesDO : lstDatosPersonales){
+			CedulaTO cedulaTO = new CedulaTO();
+			cedulaTO.setFechaExpedicionCedula(ndtR1DatosPersonalesDO.getFecExpedicionCedprof());
+			cedulaTO.setInstitucionCedula(ndtR1DatosPersonalesDO.getDesTituloExpedidoPor());
+			cedulaTO.setNumeroCedula(ndtR1DatosPersonalesDO.getCedulaProfesional());
+			lstCedula.add(cedulaTO);
+		}
+		
+		return lstCedula;
+	}
+
+	
 	/*
 
 	@Override
@@ -175,6 +203,7 @@ public class BdtuServiceImpl implements BdtuService {
 	}
 
 */
+
 
 
 

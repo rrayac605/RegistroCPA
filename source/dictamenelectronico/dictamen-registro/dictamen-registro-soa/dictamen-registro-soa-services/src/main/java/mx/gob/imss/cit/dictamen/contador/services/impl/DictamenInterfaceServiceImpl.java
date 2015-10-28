@@ -23,7 +23,8 @@ public class DictamenInterfaceServiceImpl implements DictamenInterfaceService {
 	public static final String QNAME="http://servicios.dictamen.cit.imss.gob.mx/ws/ServiciosBDTU/";
 	public static final String QNAME_SERVICE="ServiciosBDTU";
     public static final String SERVICE_URL= "http://11.254.20.226:8011/DictamenEJB/Proxies/ServiciosBDTU_Dictamen?wsdl";
-	@Override
+	
+    @Override
 	public ConsultaPersonaMoralResponse consultarPersonalMoral(String rfc) throws DictamenContadorWebServiceException{
 	    URL url=null;
 	    ConsultaPersonaMoralResponse consultaPersonaMoralResponse = null;
@@ -36,6 +37,8 @@ public class DictamenInterfaceServiceImpl implements DictamenInterfaceService {
 			consultaPersonaMoralInput.setRfc(rfc);
 			consultaPersonaMoral.setArg0(consultaPersonaMoralInput);
 			consultaPersonaMoralResponse= service.getServiciosBDTUPort().consultaPersonaMoral(consultaPersonaMoral);
+			
+	
 			if(consultaPersonaMoralResponse!=null){
 LOGGER.info("DictamenInterfaceServiceImpl.idpersona="+consultaPersonaMoralResponse.getReturn().getPersonaMoral().getIdPersona());
 			}
@@ -45,5 +48,7 @@ LOGGER.info("DictamenInterfaceServiceImpl.idpersona="+consultaPersonaMoralRespon
 		}
 		return consultaPersonaMoralResponse;
 	}
+    
+    
 
 }
