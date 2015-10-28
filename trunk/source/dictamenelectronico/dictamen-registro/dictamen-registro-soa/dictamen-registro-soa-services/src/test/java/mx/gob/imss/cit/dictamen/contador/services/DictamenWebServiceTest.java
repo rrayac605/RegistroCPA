@@ -14,6 +14,7 @@ import org.junit.Test;
 public class DictamenWebServiceTest  {
 	@Test
 	public void testGetPatronDictamen() throws MalformedURLException{
+		
 	    URL url = new URL( "http://11.254.20.226:8011/DictamenEJB/Proxies/ServiciosBDTU_Dictamen?wsdl" );
 		ServiciosBDTU_Service service = new ServiciosBDTU_Service(url, new QName("http://servicios.dictamen.cit.imss.gob.mx/ws/ServiciosBDTU/", "ServiciosBDTU"));
 		ConsultaPersonaFisica persona = new ConsultaPersonaFisica();
