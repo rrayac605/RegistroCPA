@@ -81,6 +81,10 @@
 			<to-view-id>/faces/views/registro/actualizacion/actualizacionRegistro.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>validacionRegistroActualizacion</from-outcome>
+			<to-view-id>/faces/views/registro/actualizacion/verificacionDatos.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>activacion</from-outcome>
 			<to-view-id>/views/registro/activacion/init.xhtml</to-view-id>
 			<redirect />

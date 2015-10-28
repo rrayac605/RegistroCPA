@@ -15,14 +15,15 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrat
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActualizacionRegistroPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.primefaces.context.RequestContext;
+import org.primefaces.event.FileUploadEvent;
 import org.primefaces.event.TabChangeEvent;
-
 
 @ManagedBean(name = "actualizacionRegistroBean")
 @ViewScoped
@@ -32,14 +33,16 @@ public class ActualizacionRegistroBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -640194701499340530L;
-	private static final Logger LOGGER = Logger.getLogger(ActualizacionRegistroBean.class);
+	private static final Logger LOGGER = Logger
+			.getLogger(ActualizacionRegistroBean.class);
 
 	private static final String MENSAJE_ERROR_REGISTRO = "#{msg['message.actualizacion.registroinvalido']}";
 	private static final String MENSAJE_ERROR_NO_DATOS = "#{msg['message.actualizacion.no.datos']}";
 	private static final String MENSAJE_INICIO_SESION = "Debe Iniciar Sesion";
 	private static final String MENSAJE_ERROR_GENERICO = "Ocurri&oacute; un error, intentelo de nuevo m&aacute;s tarde, por favor";
 	private static final String MENSAJE_ERROR_DATOS_INVALIDOS = "#{msg['message.actualizacion.datoscontador.nocorrectos']}";
-	private static final String MODAL_BUSQUEDA_ABIERTO = "dialogBusqueda.show();";
+	private static final String MENSAJE_ERROR_RFC_DESPACHO = "#{msg['message.actualizacion.despacho.error.norfc']}";
+	private static final String MENSAJE_ERROR_RFC_COLEGIO = "#{msg['message.actualizacion.colegio.error.norfc']}";
 	private static final String MODAL_MENSAJE_ABIERTO = "dialogMensajes.show();";
 	private static final String MODAL_DATOS_CERRADO = "iniData.hide();";
 	private static final String MODAL_DATOS_ABIERTO = "iniData.show();";
@@ -90,10 +93,12 @@ public class ActualizacionRegistroBean implements Serializable {
 						.consultarDomicilioPorRFC(personaDTO.getRfc());
 				this.actualizacionRegistroPage
 						.setDomicilioFiscal(domicilioFiscal);
-				RequestContext.getCurrentInstance()
-						.execute(MODAL_DATOS_ABIERTO);
+				if (!this.actualizacionRegistroPage.isTieneRegistro()) {
+					RequestContext.getCurrentInstance().execute(
+							MODAL_DATOS_ABIERTO);
+				}
 				List<MediosContactoDTO> contactos = contadorPublicoIntegrator
-						.obtenerMediosContactoPorIdPersona(null);
+						.obtenerMediosContactoPorIdPersona(personaDTO.getIdPersona());
 				int index = 0;
 				for (MediosContactoDTO contacto : contactos) {
 					if (contacto.getMedioContacto() == 1L) {
@@ -121,6 +126,11 @@ public class ActualizacionRegistroBean implements Serializable {
 	public void habilitaPanelDespacho() {
 		LOGGER.info("Habilitando el panel de datos del despacho");
 		this.actualizacionRegistroPage.setHabilitaDatosDespacho(Boolean.TRUE);
+	}
+
+	public void habilitaPanelColegio() {
+		LOGGER.info("Habilitando panel de colegio");
+		this.actualizacionRegistroPage.setHabilitaDatosColegio(Boolean.TRUE);
 	}
 
 	public void habilitaEdicionDatos() {
@@ -166,8 +176,8 @@ public class ActualizacionRegistroBean implements Serializable {
 	}
 
 	public void mostrarMensajeError() {
-		generarModalMensaje(MENSAJE_ERROR_DATOS_INVALIDOS,
-				MODAL_MENSAJEG_ABIERTO);
+		generarModalMensaje(MODAL_MENSAJEG_ABIERTO,
+				MENSAJE_ERROR_DATOS_INVALIDOS);
 	}
 
 	public void onTabChange(TabChangeEvent event) {
@@ -180,8 +190,32 @@ public class ActualizacionRegistroBean implements Serializable {
 				&& !this.actualizacionRegistroPage.isHabilitaDatosDespacho()) {
 			this.actualizacionRegistroPage
 					.setHabilitaDatosDespacho(Boolean.TRUE);
+		} else if (indiceTab == 2
+				&& !this.actualizacionRegistroPage.isHabilitaDatosColegio()) {
+			this.actualizacionRegistroPage.setHabilitaDatosColegio(true);
 		}
 
+	}
+
+	public void buscarDespacho() {
+		String rfcDespacho = this.actualizacionRegistroPage.getRfcDespacho();
+		LOGGER.info("Se va a realizar la búsqueda del despaho, por rfc, al sat: "
+				+ rfcDespacho);
+		buscarPersonaMoral(rfcDespacho, MENSAJE_ERROR_RFC_DESPACHO,
+				MODAL_MENSAJE_ABIERTO, 0);
+	}
+
+	public void buscarColegio() {
+		String rfcColegio = this.actualizacionRegistroPage.getRfcColegio();
+		LOGGER.info("Se va a realizar la búsqueda de colegio, por rfc, al sat: "
+				+ rfcColegio);
+		buscarPersonaMoral(rfcColegio, MENSAJE_ERROR_RFC_COLEGIO,
+				MODAL_MENSAJEG_ABIERTO, 1);
+	}
+
+	public void cargandoMembresia(FileUploadEvent event) {
+		// TODO requiere evaluar archivo
+		event.getFile();
 	}
 
 	/**
@@ -213,6 +247,41 @@ public class ActualizacionRegistroBean implements Serializable {
 		this.actualizacionRegistroPage.setMensajesPrevios(context
 				.getApplication().evaluateExpressionGet(context, mensaje,
 						String.class));
+	}
+
+	/**
+	 * Método que realiza una b&uacute;squeda de persona moral de acuerdo a su
+	 * RFC, si no encuentra datos, desplegara un dialog con el mensaje dado
+	 * 
+	 * @param rfc
+	 *            El rfc de la persona moral
+	 * @param mensaje
+	 *            El mensaje a mostrar en caso de que no encuentre datos
+	 *            correspondientes al rfc
+	 * @param modal
+	 *            El modal donde va a mostrar dicho mensaje
+	 */
+	private void buscarPersonaMoral(String rfc, String mensaje, String modal,
+			int busqueda) {
+		if (StringUtils.isNotBlank(rfc) && rfc.length() == 12) {
+			// Buscando via SAT
+			PersonaMoralDTO personaMoralSAT = contadorPublicoIntegrator
+					.consultarPersonaMoralPorRFC(rfc);
+			if (personaMoralSAT != null) {
+				if (busqueda == 0) {
+					this.actualizacionRegistroPage
+							.setRazonSocialDespacho(personaMoralSAT
+									.getRazonSocial());
+				} else if (busqueda == 1) {
+					this.actualizacionRegistroPage
+							.setRazonSocialColegio(personaMoralSAT
+									.getRazonSocial());
+				}
+			} else {
+				generarModalMensaje(modal, mensaje);
+			}
+
+		}
 	}
 
 	/**
