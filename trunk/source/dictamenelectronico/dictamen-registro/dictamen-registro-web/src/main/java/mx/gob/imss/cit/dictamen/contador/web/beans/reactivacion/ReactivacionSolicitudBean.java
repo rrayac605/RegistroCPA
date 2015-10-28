@@ -125,7 +125,7 @@ public class ReactivacionSolicitudBean extends BaseBean {
 	
 	public String aceptacion(){
 	  LOGGER.info("Redirect=activacionContadorAceptacion");
-	  return "activacion_contador";
+	  return "reactivacion_contador";
 	}
 	
 	public void accionValidarRegistroImss(){

@@ -19,12 +19,14 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionSolicitudPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.reactivacion.ReactivacionContadorPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.reactivacion.ReactivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 
-@ManagedBean(name = "activacionContadorBean")
+@ManagedBean(name = "reactivacionContadorBean")
 @ViewScoped
 public class ReactivacionContadorBean extends BaseBean {
 	
@@ -33,11 +35,14 @@ public class ReactivacionContadorBean extends BaseBean {
 	private static final Logger LOGGER = Logger.getLogger(ReactivacionContadorBean.class);
 
 	
-	@ManagedProperty(value = "#{activacionContadorPage}")
-	private ActivacionContadorPage activacionContadorPage;
 
-	@ManagedProperty(value = "#{activacionSolicitudPage}")
-	private ActivacionSolicitudPage activacionSolicitudPage;
+
+
+	@ManagedProperty(value = "#{reactivacionContadorPage}")
+	private ReactivacionContadorPage reactivacionContadorPage;
+
+	@ManagedProperty(value = "#{reactivacionSolicitudPage}")
+	private ReactivacionSolicitudPage reactivacionSolicitudPage;
 	
 
 
@@ -50,26 +55,26 @@ public class ReactivacionContadorBean extends BaseBean {
     public void init() {
     	
     	LOGGER.info("activacionContadorBean.init(");
-    	if(!activacionContadorPage.isValido()){
-       	String rfc = activacionSolicitudPage.getPersonaDTO().getRfc();
-       	Long idPersona = activacionSolicitudPage.getPersonaDTO().getIdPersona();
+    	if(!reactivacionContadorPage.isValido()){
+       	String rfc = reactivacionSolicitudPage.getPersonaDTO().getRfc();
+       	Long idPersona = reactivacionSolicitudPage.getPersonaDTO().getIdPersona();
 
     	DomicilioFiscalDTO domicilioDTO = contadorPublicoIntegrator.consultarDomicilioPorRFC(rfc);
-    	String folioSolicitud = activacionSolicitudPage.getPersonaDTO().getFolioSolicitud();
+    	String folioSolicitud = reactivacionSolicitudPage.getPersonaDTO().getFolioSolicitud();
     	if(domicilioDTO!=null){
     		List<DatosPersonalesDTO> lstDatosPersonalesDTO =  contadorPublicoIntegrator.consultarDatosPersonales(idPersona);
     		LOGGER.info("lstDatosPersonalesDTO.size="+lstDatosPersonalesDTO.size());
     		FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Activación:","El folio de solicitud es:"+folioSolicitud));
-    		activacionSolicitudPage.getPersonaDTO().getContadorPublicoAutDTO().setDomicilioFiscalDTO(domicilioDTO);
+    		reactivacionSolicitudPage.getPersonaDTO().getContadorPublicoAutDTO().setDomicilioFiscalDTO(domicilioDTO);
     	    if(!lstDatosPersonalesDTO.isEmpty()){
-        	    activacionContadorPage.setDatosPersonalesDTO(lstDatosPersonalesDTO.get(0));
-        	    LOGGER.info("cedula.getInstitucionCedula="+activacionContadorPage.getDatosPersonalesDTO().getInstitucionCedula());
-        	    LOGGER.info("cedula.getNumeroCedula="+activacionContadorPage.getDatosPersonalesDTO().getNumeroCedula());
-        	    LOGGER.info("cedula.getFechaExpedicionCedula="+activacionContadorPage.getDatosPersonalesDTO().getFechaExpedicionCedula());
+        	    reactivacionContadorPage.setDatosPersonalesDTO(lstDatosPersonalesDTO.get(0));
+        	    LOGGER.info("cedula.getInstitucionCedula="+reactivacionContadorPage.getDatosPersonalesDTO().getInstitucionCedula());
+        	    LOGGER.info("cedula.getNumeroCedula="+reactivacionContadorPage.getDatosPersonalesDTO().getNumeroCedula());
+        	    LOGGER.info("cedula.getFechaExpedicionCedula="+reactivacionContadorPage.getDatosPersonalesDTO().getFechaExpedicionCedula());
 
     	    }
     	    ContactoDTO contactoDTO = new ContactoDTO();
-    	    activacionContadorPage.setContactoDTO(contactoDTO);
+    	    reactivacionContadorPage.setContactoDTO(contactoDTO);
     	}
     	}
     }
@@ -77,8 +82,8 @@ public class ReactivacionContadorBean extends BaseBean {
 	public boolean validarCorreoElectronico(){
 		  boolean validacion=true;
 		 LOGGER.info("Redirect=accionGuardar");
-		  String correo1 = this.getActivacionContadorPage().getContactoDTO().getCorreoElectronico2();
-		  String ccorreo2 = this.getActivacionContadorPage().getContactoDTO().getCorreoElectronico2Conf();
+		  String correo1 = this.getReactivacionContadorPage().getContactoDTO().getCorreoElectronico2();
+		  String ccorreo2 = this.getReactivacionContadorPage().getContactoDTO().getCorreoElectronico2Conf();
 		  
          if(StringUtils.trimToEmpty(correo1).compareTo(StringUtils.trimToEmpty(ccorreo2))!=0){
      		  FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activación:","Correo Electronico 2 debe Coincidir"));
@@ -87,8 +92,8 @@ public class ReactivacionContadorBean extends BaseBean {
 		  LOGGER.info("Redirect=correo1="+correo1);
 		  LOGGER.info("Redirect=ccorreo2="+ccorreo2);
 
-		  String correo3 = this.getActivacionContadorPage().getContactoDTO().getCorreoElectronico3();
-		  String ccorreo4 = this.getActivacionContadorPage().getContactoDTO().getCorreoElectronico3Conf();
+		  String correo3 = this.getReactivacionContadorPage().getContactoDTO().getCorreoElectronico3();
+		  String ccorreo4 = this.getReactivacionContadorPage().getContactoDTO().getCorreoElectronico3Conf();
 		  
 	      if(StringUtils.trimToEmpty(correo3).compareTo(StringUtils.trimToEmpty(ccorreo4))!=0){
 	      		FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activación:","Correo Electronico 3 debe Coincidir"));
@@ -100,16 +105,16 @@ public class ReactivacionContadorBean extends BaseBean {
 	} 
 	
 	public String accionAtras(){
-		    this.getActivacionContadorPage().setValido(false);
-		    return "activacion_solicitud";
+		    this.getReactivacionContadorPage().setValido(false);
+		    return "reactivacion_solicitud";
 		 
 	}
 	
 	public String accionSiguiente(){
 		  if(validarCorreoElectronico()){
-			    this.getActivacionContadorPage().setValido(true);
+			    this.getReactivacionContadorPage().setValido(true);
 
-		     return "activacion_despacho";
+		     return "reactivacion_despacho";
 		  } 
 		  return "";
 	}
@@ -121,16 +126,6 @@ public class ReactivacionContadorBean extends BaseBean {
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 	
-	public ActivacionContadorPage getActivacionContadorPage() {
-		return activacionContadorPage;
-	}
-
-
-
-	public void setActivacionContadorPage(
-			ActivacionContadorPage activacionContadorPage) {
-		this.activacionContadorPage = activacionContadorPage;
-	}
 
 
 
@@ -146,13 +141,24 @@ public class ReactivacionContadorBean extends BaseBean {
 	}
 	
 
-	public ActivacionSolicitudPage getActivacionSolicitudPage() {
-		return activacionSolicitudPage;
+
+	public ReactivacionContadorPage getReactivacionContadorPage() {
+		return reactivacionContadorPage;
 	}
 
-	public void setActivacionSolicitudPage(
-			ActivacionSolicitudPage activacionSolicitudPage) {
-		this.activacionSolicitudPage = activacionSolicitudPage;
+	public void setReactivacionContadorPage(
+			ReactivacionContadorPage reactivacionContadorPage) {
+		this.reactivacionContadorPage = reactivacionContadorPage;
+	}
+
+
+	public ReactivacionSolicitudPage getReactivacionSolicitudPage() {
+		return reactivacionSolicitudPage;
+	}
+
+	public void setReactivacionSolicitudPage(
+			ReactivacionSolicitudPage reactivacionSolicitudPage) {
+		this.reactivacionSolicitudPage = reactivacionSolicitudPage;
 	}
 
 
