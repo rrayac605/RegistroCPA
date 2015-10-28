@@ -86,6 +86,17 @@ public class NdtContadorPublicoAutTO implements Serializable {
 		this.cadenaOriginal = cadenaOriginal;
 	}
 	
+	public String getCveIdTramite() {
+		return cveIdTramite;
+	}
+
+	public void setCveIdTramite(String cveIdTramite) {
+		this.cveIdTramite = cveIdTramite;
+	}
+	
+	private String cveIdTramite;
+
+
 	private String numTramiteNotaria;
 	private String fecha;
 	private Integer numRegistroCpa;
