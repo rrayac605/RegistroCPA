@@ -18,11 +18,10 @@ public class RegistroDespachoPage implements Serializable {
 	private List<String> opciones;
 	private String opcionSeleccionada;
 	private boolean despachoEncontrado;
-	private boolean trabajadores;
 	private List<CatalogoDTO> cargos;
-	private CatalogoDTO cargoSeleccionado;
-	
-	public RegistroDespachoPage(){
+	private String rfcBusqueda;
+
+	public RegistroDespachoPage() {
 		opciones = SolicitudRegistroUtil.llenarOpcionesDespacho();
 	}
 
@@ -72,21 +71,6 @@ public class RegistroDespachoPage implements Serializable {
 	}
 
 	/**
-	 * @return the trabajadores
-	 */
-	public boolean isTrabajadores() {
-		return trabajadores;
-	}
-
-	/**
-	 * @param trabajadores
-	 *            the trabajadores to set
-	 */
-	public void setTrabajadores(boolean trabajadores) {
-		this.trabajadores = trabajadores;
-	}
-
-	/**
 	 * @return the cargos
 	 */
 	public List<CatalogoDTO> getCargos() {
@@ -102,18 +86,18 @@ public class RegistroDespachoPage implements Serializable {
 	}
 
 	/**
-	 * @return the cargoSeleccionado
+	 * @return the rfcBusqueda
 	 */
-	public CatalogoDTO getCargoSeleccionado() {
-		return cargoSeleccionado;
+	public String getRfcBusqueda() {
+		return rfcBusqueda;
 	}
 
 	/**
-	 * @param cargoSeleccionado
-	 *            the cargoSeleccionado to set
+	 * @param rfcBusqueda
+	 *            the rfcBusqueda to set
 	 */
-	public void setCargoSeleccionado(CatalogoDTO cargoSeleccionado) {
-		this.cargoSeleccionado = cargoSeleccionado;
+	public void setRfcBusqueda(String rfcBusqueda) {
+		this.rfcBusqueda = rfcBusqueda;
 	}
 
 }

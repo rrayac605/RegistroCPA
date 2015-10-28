@@ -31,6 +31,7 @@ public class SolicitudRegistroPage implements Serializable {
 	private Date fechaActual;
 	private String headerDialog;
 	private String mensajeDialog;
+	private int paginaActual;
 
 	public SolicitudRegistroPage() {
 		contador = new ContadorPublicoAutDTO();
@@ -114,4 +115,18 @@ public class SolicitudRegistroPage implements Serializable {
 		this.mensajeDialog = mensajeDialog;
 	}
 
+	/**
+	 * @return the paginaActual
+	 */
+	public int getPaginaActual() {
+		return paginaActual;
+	}
+
+	/**
+	 * @param paginaActual
+	 *            the paginaActual to set
+	 */
+	public void setPaginaActual(int paginaActual) {
+		this.paginaActual = paginaActual;
+	}
 }

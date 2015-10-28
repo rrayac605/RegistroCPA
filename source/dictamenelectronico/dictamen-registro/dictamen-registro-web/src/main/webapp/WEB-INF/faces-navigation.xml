@@ -3,107 +3,85 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 	version="2.0">
-
-
 	<navigation-rule>
-	    <from-view-id>*</from-view-id>
-	
+	    <from-view-id>*</from-view-id>	
 		 <navigation-case>
 			<from-outcome>activacion_solicitud</from-outcome>
 			<to-view-id>/faces/views/registro/activacion/solicitud.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>	
 	     <navigation-case>
 			<from-outcome>activacion_contador</from-outcome>
 			<to-view-id>views/registro/activacion/contador.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>activacion_despacho</from-outcome>
 			<to-view-id>/faces/views/registro/activacion/despacho.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>activacion_colegio</from-outcome>
 			<to-view-id>/faces/views/registro/activacion/colegio.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>activacion_acuse</from-outcome>
 			<to-view-id>/faces/views/registro/activacion/acuse.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>activacion_firma</from-outcome>
 			<to-view-id>/faces/views/registro/activacion/firma.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>activacion_acusefinal</from-outcome>
 			<to-view-id>/faces/views/registro/activacion/reporte.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	</navigation-rule>
-
-
 	<navigation-rule>
 	    <from-view-id>*</from-view-id>
-	
-		 <navigation-case>
+	 <navigation-case>
 			<from-outcome>reactivacion_solicitud</from-outcome>
 			<to-view-id>/faces/views/registro/reactivacion/solicitud.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>reactivacion_contador</from-outcome>
 			<to-view-id>/faces/views/registro/reactivacion/contador.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>reactivacion_despacho</from-outcome>
 			<to-view-id>/faces/views/registro/reactivacion/despacho.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>reactivacion_colegio</from-outcome>
 			<to-view-id>/faces/views/registro/reactivacion/colegio.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>reactivacion_acuse</from-outcome>
 			<to-view-id>/faces/views/registro/reactivacion/acuse.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>reactivacion_documentacion</from-outcome>
 			<to-view-id>/faces/views/registro/reactivacion/documentacion.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>reactivacion_firma</from-outcome>
 			<to-view-id>/faces/views/registro/reactivacion/firma.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	     <navigation-case>
 			<from-outcome>reactivacion_acusefinal</from-outcome>
 			<to-view-id>/faces/views/registro/reactivacion/reporte.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
-		
+		</navigation-case>		
 	</navigation-rule>
-    
 </faces-config>

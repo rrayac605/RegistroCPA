@@ -31,11 +31,13 @@
 			</p:column>
 			<p:column style="width:14%;">
 				<p:commandButton value="#{msg['message.label.cinco']}"
-					style="width:100%;" styleClass="btn-sx btn-primary" />
+					style="width:100%;" styleClass="btn-sx btn-primary" 
+					action="#{solicitudRegistroBean.redireccionarRegistroVista()}"/>
 			</p:column>
 			<p:column style="width:14%;">
 				<p:commandButton value="#{msg['message.label.seis']}"
-					style="width:100%;" styleClass="btn-sx btn-default" />
+					style="width:100%;" styleClass="btn-sx btn-default"
+					action="#{solicitudRegistroBean.redireccionarRegistroProtesta()}" />
 			</p:column>
 		</p:row>
 	</p:panelGrid>

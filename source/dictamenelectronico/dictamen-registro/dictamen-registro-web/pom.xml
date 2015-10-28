@@ -10,15 +10,7 @@
 	<packaging>war</packaging>
 	<name>dictamen-registro-web</name>
 	<description>dictamen-registro-web</description>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>com.liferay.maven.plugins</groupId>
-				<artifactId>liferay-maven-plugin</artifactId>
-				<version>${liferay-maven-plugin.version}</version>
-			</plugin>
-		</plugins>
-	</build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -144,17 +136,37 @@
 			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
-	<profiles>
-		<profile>
-			<id>Liferay_v6.2</id>
-			<properties>
-				<liferay.version>6.2.1</liferay.version>
-				<liferay.maven.plugin.version>7.0.0-m2</liferay.maven.plugin.version>
-				<liferay.auto.deploy.dir>C:\aplicaciones\liferay\bundles\deploy</liferay.auto.deploy.dir>
-				<liferay.app.server.deploy.dir>C:\aplicaciones\liferay\bundles\tomcat-7.0.42\webapps</liferay.app.server.deploy.dir>
-				<liferay.app.server.lib.global.dir>C:\aplicaciones\liferay\bundles\tomcat-7.0.42\lib\ext</liferay.app.server.lib.global.dir>
-				<liferay.app.server.portal.dir>C:\aplicaciones\liferay\bundles\tomcat-7.0.42\webapps\ROOT</liferay.app.server.portal.dir>
-			</properties>
-		</profile>
-	</profiles>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven-war-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${maven-eclipse-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${resources-plugin.version}</version>
+				<configuration>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.liferay.maven.plugins</groupId>
+				<artifactId>liferay-maven-plugin</artifactId>
+				<version>${liferay-maven-plugin.version}</version>
+			</plugin>
+		</plugins>
+	</build>
 </project>

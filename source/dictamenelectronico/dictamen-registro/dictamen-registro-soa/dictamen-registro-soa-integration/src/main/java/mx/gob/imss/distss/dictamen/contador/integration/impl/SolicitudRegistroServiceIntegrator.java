@@ -1,20 +1,20 @@
 package mx.gob.imss.distss.dictamen.contador.integration.impl;
 
+import gob.imss.webservice.sat.rfc.cliente.EntradaSAT;
+import gob.imss.webservice.sat.rfc.cliente.Identificacion;
+import gob.imss.webservice.sat.rfc.cliente.SalidaSAT;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import gob.imss.webservice.sat.rfc.cliente.EntradaSAT;
-import gob.imss.webservice.sat.rfc.cliente.SalidaSAT;
 
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import org.apache.log4j.Logger;
-
 import mx.gob.imss.cit.dictamen.contador.commons.exception.DictamenContadorException;
 import mx.gob.imss.cit.dictamen.contador.integration.api.SolicitudRegistroIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.CatalogoDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ColegioDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DespachoDTO;
@@ -22,6 +22,9 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.InfoProfesional;
 import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenContadorNegocioException;
 import mx.gob.imss.cit.dictamen.contador.services.ConsultaSATService;
 import mx.gob.imss.distss.dictamen.contador.integration.util.TransformerIntegrationUtils;
+
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 
 
 @Remote({mx.gob.imss.cit.dictamen.contador.integration.api.SolicitudRegistroIntegrator.class})
@@ -32,7 +35,7 @@ public class SolicitudRegistroServiceIntegrator implements SolicitudRegistroInte
 
 	@EJB
 	ConsultaSATService consultaSATService;
-
+	
 	@Override
 	public ContadorPublicoAutDTO obtenerContadorPublicoAutDTO(String curp, String rfc) throws DictamenContadorNegocioException {
 		EntradaSAT entrada = new EntradaSAT();
@@ -46,7 +49,7 @@ public class SolicitudRegistroServiceIntegrator implements SolicitudRegistroInte
 				contador.setInfoProf(new InfoProfesional());
 				contador.setCurp(salida.getIdentificacion().get(0).getCURP());
 				contador.setRfc(salida.getRFCOriginal());
-				contador.setNombre(salida.getIdentificacion().get(0).getNomComercial());
+				contador.setNombre(buscarRazonSocial(salida.getIdentificacion()));
 				contador.setDomicilio(TransformerIntegrationUtils.transformer(salida.getUbicacion().get(0)));
 			}
 
@@ -95,15 +98,49 @@ public class SolicitudRegistroServiceIntegrator implements SolicitudRegistroInte
 			if(salida != null && !salida.getUbicacion().isEmpty()){
 				despacho = new DespachoDTO();
 				despacho.setRfc(salida.getRFCOriginal());
-				despacho.setRazonSocial(salida.getIdentificacion().get(0).getNomComercial());
+				despacho.setRazonSocial(buscarRazonSocial(salida.getIdentificacion()));
 				despacho.setDomicilio(TransformerIntegrationUtils.transformer(salida.getUbicacion().get(0)));
+			}
+		} catch (DictamenContadorException e) {
+			LOG.error(e.getMessage(),e);
+			throw new DictamenContadorNegocioException(e.getMessage(), e);
+		}
+		return despacho;
+	}
+	
+	private String buscarRazonSocial(List<Identificacion> list) {
+		String razonSocial = null;
+		for(Identificacion ubi : list){
+			if(StringUtils.isNotBlank(ubi.getRazonSoc())){
+				razonSocial = ubi.getRazonSoc();
+			} else if(StringUtils.isNotBlank(ubi.getNomComercial())){
+				razonSocial = ubi.getNomComercial();
+			} else{
+				razonSocial = ubi.getNombre();
+			}
+		}
+		return razonSocial;
+	}
+
+	@Override
+	public ColegioDTO obtenerColegioDTO(String rfc) throws DictamenContadorNegocioException {
+		EntradaSAT entrada = new EntradaSAT();
+		entrada.setRfc(rfc);
+		ColegioDTO colegio = null;
+		try {
+			SalidaSAT salida = consultaSATService.obtenerDomicilioFiscal(entrada);
+			if(salida != null && !salida.getUbicacion().isEmpty()){
+				colegio = new ColegioDTO();
+				colegio.setRfc(salida.getRFCOriginal());
+				colegio.setRazonSocial(buscarRazonSocial(salida.getIdentificacion()));
+				colegio.setDomicilio(TransformerIntegrationUtils.transformer(salida.getUbicacion().get(0)));
 			}
 
 		} catch (DictamenContadorException e) {
 			LOG.error(e.getMessage(),e);
 			throw new DictamenContadorNegocioException(e.getMessage(), e);
 		}
-		return despacho;
+		return colegio;
 	}
 
 }
