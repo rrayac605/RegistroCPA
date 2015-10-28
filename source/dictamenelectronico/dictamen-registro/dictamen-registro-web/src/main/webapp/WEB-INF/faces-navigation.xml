@@ -16,7 +16,7 @@
 		
 	     <navigation-case>
 			<from-outcome>activacion_contador</from-outcome>
-			<to-view-id>/faces/views/registro/activacion/contador.xhtml</to-view-id>
+			<to-view-id>views/registro/activacion/contador.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		
@@ -52,5 +52,58 @@
 		
 	</navigation-rule>
 
+
+	<navigation-rule>
+	    <from-view-id>*</from-view-id>
+	
+		 <navigation-case>
+			<from-outcome>reactivacion_solicitud</from-outcome>
+			<to-view-id>/faces/views/registro/reactivacion/solicitud.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	     <navigation-case>
+			<from-outcome>reactivacion_contador</from-outcome>
+			<to-view-id>/faces/views/registro/reactivacion/contador.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	     <navigation-case>
+			<from-outcome>reactivacion_despacho</from-outcome>
+			<to-view-id>/faces/views/registro/reactivacion/despacho.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	     <navigation-case>
+			<from-outcome>reactivacion_colegio</from-outcome>
+			<to-view-id>/faces/views/registro/reactivacion/colegio.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	     <navigation-case>
+			<from-outcome>reactivacion_acuse</from-outcome>
+			<to-view-id>/faces/views/registro/reactivacion/acuse.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	     <navigation-case>
+			<from-outcome>reactivacion_documentacion</from-outcome>
+			<to-view-id>/faces/views/registro/reactivacion/documentacion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	     <navigation-case>
+			<from-outcome>reactivacion_firma</from-outcome>
+			<to-view-id>/faces/views/registro/reactivacion/firma.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	     <navigation-case>
+			<from-outcome>reactivacion_acusefinal</from-outcome>
+			<to-view-id>/faces/views/registro/reactivacion/reporte.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	</navigation-rule>
     
 </faces-config>
