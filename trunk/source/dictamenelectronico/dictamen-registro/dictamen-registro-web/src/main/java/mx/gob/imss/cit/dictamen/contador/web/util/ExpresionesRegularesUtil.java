@@ -35,7 +35,6 @@ public class ExpresionesRegularesUtil {
 	public static final String REGEX_CURP = "[A-Z]{1}[AEIOU]{1}[A-Z]{2}[0-9]{2}" + "(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])" + "[HM]{1}"
 			+ "(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)"
 			+ "[B-DF-HJ-NP-TV-Z]{3}" + "[0-9A-Z]{1}[0-9]{1}$";
-
 	/** expresi&oacute;n regular para validar tel&eacute;fono de casa  */
 	public static final String REGEX_TELEFONO ="^([0-9]{10,11}$)";
 	/** expresi&oacute;n regular para validar correos electr&oacute;nicos  */

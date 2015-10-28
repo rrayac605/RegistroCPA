@@ -22,8 +22,11 @@ public class ContadorPublicoAutDTO implements Serializable {
 	private InfoProfesional infoProf;
 	private DespachoDTO despacho;
 	private boolean independiente;
-	private boolean pertenceDespacho;
+	private boolean perteneceDespacho;
+	private boolean trabajadores;
 	private int nTrabajadores;
+	private CatalogoDTO cargo;
+	private ColegioDTO colegio;
 
 	/**
 	 * @return the curp
@@ -146,18 +149,33 @@ public class ContadorPublicoAutDTO implements Serializable {
 	}
 
 	/**
-	 * @return the pertenceDespacho
+	 * @return the perteneceDespacho
 	 */
-	public boolean isPertenceDespacho() {
-		return pertenceDespacho;
+	public boolean isPerteneceDespacho() {
+		return perteneceDespacho;
 	}
 
 	/**
-	 * @param pertenceDespacho
-	 *            the pertenceDespacho to set
+	 * @param perteneceDespacho
+	 *            the perteneceDespacho to set
 	 */
-	public void setPertenceDespacho(boolean pertenceDespacho) {
-		this.pertenceDespacho = pertenceDespacho;
+	public void setPerteneceDespacho(boolean perteneceDespacho) {
+		this.perteneceDespacho = perteneceDespacho;
+	}
+
+	/**
+	 * @return the trabajadores
+	 */
+	public boolean isTrabajadores() {
+		return trabajadores;
+	}
+
+	/**
+	 * @param trabajadores
+	 *            the trabajadores to set
+	 */
+	public void setTrabajadores(boolean trabajadores) {
+		this.trabajadores = trabajadores;
 	}
 
 	/**
@@ -173,6 +191,36 @@ public class ContadorPublicoAutDTO implements Serializable {
 	 */
 	public void setnTrabajadores(int nTrabajadores) {
 		this.nTrabajadores = nTrabajadores;
+	}
+
+	/**
+	 * @return the cargo
+	 */
+	public CatalogoDTO getCargo() {
+		return cargo;
+	}
+
+	/**
+	 * @param cargo
+	 *            the cargo to set
+	 */
+	public void setCargo(CatalogoDTO cargo) {
+		this.cargo = cargo;
+	}
+
+	/**
+	 * @return the colegio
+	 */
+	public ColegioDTO getColegio() {
+		return colegio;
+	}
+
+	/**
+	 * @param colegio
+	 *            the colegio to set
+	 */
+	public void setColegio(ColegioDTO colegio) {
+		this.colegio = colegio;
 	}
 
 }

@@ -1,34 +1,29 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>mx.gob.imss.cit.dictamen.registro</groupId>
-    <artifactId>dictamen-registro-soa</artifactId>
-    <version>1.0</version>
-  </parent>
-  <artifactId>dictamen-registro-soa-app</artifactId>
-  <name>dictamen-registro-soa-app</name>
-  <description>dictamen-registro-soa-app</description>
-  
-  
-  	<packaging>ear</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
+		<artifactId>dictamen-registro-soa</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>dictamen-registro-soa-app</artifactId>
+	<name>dictamen-registro-soa-app</name>
+	<description>dictamen-registro-soa-app</description>
+	<version>${project.parent.version}</version>
+	<packaging>ear</packaging>
 
 	<dependencies>
-	
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 			<artifactId>dictamen-registro-soa-persistence</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
-			<scope>compile</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 			<artifactId>dictamen-registro-soa-services</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
-			<scope>compile</scope>
-
 			<exclusions>
 				<exclusion>
 					<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
@@ -42,7 +37,6 @@
 			<artifactId>dictamen-registro-soa-integration</artifactId>
 			<version>${project.parent.version}</version>
 			<type>ejb</type>
-			<scope>compile</scope>
 			<exclusions>
 				<exclusion>
 					<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
@@ -61,28 +55,27 @@
 					<earSourceDirectory>src/main/resources</earSourceDirectory>
 					<defaultLibBundleDir>APP-INF/lib</defaultLibBundleDir>
 					<generateApplicationXml>false</generateApplicationXml>
-				 	<finalName>${project.ear.final.name}</finalName>
+					<finalName>${project.ear.final.name}</finalName>
 					<modules>
-					
 						<ejbModule>
 							<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 							<artifactId>dictamen-registro-soa-persistence</artifactId>
 						</ejbModule>
-						
+
 						<ejbModule>
 							<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 							<artifactId>dictamen-registro-soa-services</artifactId>
 						</ejbModule>
-						
+
 						<ejbModule>
 							<groupId>mx.gob.imss.cit.dictamen.registro</groupId>
 							<artifactId>dictamen-registro-soa-integration</artifactId>
 						</ejbModule>
-						
+
 					</modules>
 				</configuration>
 			</plugin>
-	    </plugins>
+		</plugins>
 
 		<pluginManagement>
 			<plugins>

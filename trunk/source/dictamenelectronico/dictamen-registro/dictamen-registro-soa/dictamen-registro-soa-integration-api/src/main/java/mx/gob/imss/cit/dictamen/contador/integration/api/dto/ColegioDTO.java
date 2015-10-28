@@ -2,13 +2,12 @@ package mx.gob.imss.cit.dictamen.contador.integration.api.dto;
 
 import java.io.Serializable;
 
-public class DespachoDTO implements Serializable {
+public class ColegioDTO implements Serializable {
 
-	private static final long serialVersionUID = -739802508461439450L;
+	private static final long serialVersionUID = -6461289611184997774L;
 	private String razonSocial;
 	private String rfc;
 	private DomicilioDTO domicilio;
-	private String telefonoFijo;
 
 	/**
 	 * @return the razonSocial
@@ -54,21 +53,4 @@ public class DespachoDTO implements Serializable {
 	public void setDomicilio(DomicilioDTO domicilio) {
 		this.domicilio = domicilio;
 	}
-
-	/**
-	 * @return the telefonoFijo
-	 */
-	public String getTelefonoFijo() {
-		return telefonoFijo;
-	}
-
-	/**
-	 * @param telefonoFijo
-	 *            the telefonoFijo to set
-	 */
-	public void setTelefonoFijo(String telefonoFijo) {
-		this.telefonoFijo = telefonoFijo;
-	}
-	
-
 }

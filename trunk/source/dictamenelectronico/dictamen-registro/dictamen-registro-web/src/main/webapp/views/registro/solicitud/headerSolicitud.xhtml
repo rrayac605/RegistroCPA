@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<p:panelGrid style="width:100%;">
+		<p:row>
+			<p:column>
+				<h1>#{msg['message.contador.solicitud.titulo']}</h1>
+			</p:column>
+			<p:column>
+				<ui:include
+					src="navegador/navegador#{solicitudRegistroPage.paginaActual}.xhtml" />
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+	<p:panelGrid style="width:100%;"
+		styleClass="table-no-border table-no-padding">
+		<p:row>
+			<p:column style="width:14%; ">
+				<p:panel value=" " style="width:100%; height:5px"
+					styleClass="btn-menu" />
+			</p:column>
+
+			<p:column style="width:14%;">
+				<p:panel value=" " style="width:100%; height:5px"
+					styleClass="btn-menu-disabled" />
+			</p:column>
+			<p:column style="width:14%;">
+				<p:panel value=" " style="width:100%; height:5px"
+					styleClass="btn-menu-disabled" />
+			</p:column>
+			<p:column style="width:14%;">
+				<p:panel value=" " style="width:100%; height:5px"
+					styleClass="btn-menu-disabled" />
+			</p:column>
+			<p:column style="width:14%;">
+				<p:panel value=" " style="width:100%; height:5px"
+					styleClass="btn-menu-disabled" />
+			</p:column>
+			<p:column style="width:14%;">
+				<p:panel value=" " style="width:100%; height:5px"
+					styleClass="btn-menu-disabled" />
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+	<br/>
+	<!-- dialogos -->
+	<p:dialog header="#{msg['message.contador.solicitud.titulo']}"
+		width="550px" modal="true" resizable="false" id="datosIncorrectos"
+		widgetVar="datosIncorrectos">
+		<p:panelGrid style="width:100%; " styleClass="table-no-border">
+			<p:row>
+				<p:column colspan="2">
+					<h:outputText styleClass="SubtituloSeccion"
+						value="#{msg['message.contador.datos.incorrectos']}" />
+					<br />
+					<br />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column style="text-align: center;">
+					<p:commandButton value="#{msg['message.button.aceptar']}"
+						styleClass="btn-sm btn-primary"
+						oncomplete="datosIncorrectos.hide();"
+						onclick="cancelarSolicitud.show()" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</p:dialog>
+	<p:dialog header="#{msg['message.button.cancelar']}" width="550px"
+		modal="true" resizable="false" id="cancelarSolicitud"
+		widgetVar="cancelarSolicitud">
+		<p:panelGrid style="width:100%; " styleClass="table-no-border">
+			<p:row>
+				<p:column colspan="2">
+					<h:outputText styleClass="SubtituloSeccion"
+						value="#{msg['message.contador.solicitud.cancelar']}" />
+					<br />
+					<br />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column style="text-align: center;">
+					<p:commandButton value="#{msg['message.button.no']}"
+						styleClass="btn-sm btn-default"
+						oncomplete="cancelarSolicitud.hide()" />
+				</p:column>
+				<p:column style="text-align: center;">
+					<p:commandButton value="#{msg['message.button.si']}"
+						styleClass="btn-sm btn-primary"
+						action="#{solicitudRegistroBean.regresarToContadores()}"
+						oncomplete="cancelarSolicitud.hide(); imagenEsperaWidget.hide();"
+						onclick="imagenEsperaWidget.show()" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</p:dialog>
+	<p:dialog width="550px" id="dialogGeneral" closeOnEscape="true"
+		header="#{msg[solicitudRegistroPage.headerDialog]}"
+		widgetVar="dialogGeneral" modal="true" resizable="false">
+		<br />
+		<h:outputText styleClass="SubtituloSeccion"
+			value="#{msg[solicitudRegistroPage.mensajeDialog]}" />
+		<br />
+		<br />
+		<p style="text-align: center;">
+			<p:commandButton value="#{msg['message.button.aceptar']}"
+				styleClass="btn-sm btn-primary" oncomplete="dialogGeneral.hide();" />
+		</p>
+	</p:dialog>
+	<p:dialog id="imagenEsperaWidget" widgetVar="imagenEsperaWidget"
+		modal="true" resizable="false" closable="false" showHeader="false">
+		<img src="#{liferay.themeImagesURL}/icons/loader.gif" width="50"
+			height="50" />
+	</p:dialog>
+</ui:composition>

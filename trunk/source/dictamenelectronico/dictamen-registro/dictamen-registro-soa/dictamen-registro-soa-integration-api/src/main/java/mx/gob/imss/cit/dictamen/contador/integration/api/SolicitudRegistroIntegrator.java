@@ -2,6 +2,7 @@ package mx.gob.imss.cit.dictamen.contador.integration.api;
 
 import java.util.List;
 
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ColegioDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoAutDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.CatalogoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DespachoDTO;
@@ -40,13 +41,23 @@ public interface SolicitudRegistroIntegrator {
 	List<CatalogoDTO> obtenerCatalogoCargos();
 
 	/**
-	 * Método que consulta los datos del despacho buscado por rfc
+	 * Método que consulta los datos de un despacho buscado por rfc
 	 * 
 	 * @param rfc
 	 * @return
 	 * @throws DictamenContadorNegocioException
 	 */
 	DespachoDTO obtenerDespachoDTO(String rfc)
+			throws DictamenContadorNegocioException;
+
+	/**
+	 * Método que consulta los datos de un colegio buscado por rfc
+	 * 
+	 * @param rfc
+	 * @return
+	 * @throws DictamenContadorNegocioException
+	 */
+	ColegioDTO obtenerColegioDTO(String rfc)
 			throws DictamenContadorNegocioException;
 
 }

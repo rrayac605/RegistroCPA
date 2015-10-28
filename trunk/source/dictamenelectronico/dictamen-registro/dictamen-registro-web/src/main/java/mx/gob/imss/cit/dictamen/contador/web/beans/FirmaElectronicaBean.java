@@ -7,8 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.FirmaElectronicaIntegrator;
 import mx.gob.imss.cit.dictamen.contador.web.beans.activacion.ActivacionAcuseBean;
@@ -34,7 +33,7 @@ public class FirmaElectronicaBean implements Serializable{
 	private FirmaElectronicaPage firmaElectronicaPage;
 
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionAcuseBean.class);
+	private static final Logger LOGGER = Logger.getLogger(ActivacionAcuseBean.class);
 
 	
 	public String firma;

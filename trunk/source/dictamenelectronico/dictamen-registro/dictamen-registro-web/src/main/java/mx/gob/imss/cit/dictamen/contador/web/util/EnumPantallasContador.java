@@ -15,7 +15,8 @@ public enum EnumPantallasContador {
 	REGISTRO_COLEGIO(ContadorConstantes.NUM_TRES, "registroColegio", "Registro de Colegio"),
 	REGISTRO_DOCUMENTACION(ContadorConstantes.NUM_CUATRO, "registroDocumentacion", "Registro de Documentacion"),
 	REGISTRO_VISTA(ContadorConstantes.NUM_CINCO, "registroVista", "Registro de Vista Previa"),
-	REGISTRO_PROTESTA(ContadorConstantes.NUM_SEIS, "registroProtesta", "Registro de Protesta");
+	REGISTRO_PROTESTA(ContadorConstantes.NUM_SEIS, "registroProtesta", "Registro de Protesta"),
+	ACUSE_RECIBO(ContadorConstantes.NUM_SIETE, "acuseReciboSolicitud", "Acuse de Recibo de la Solicitud");
 
 	private int id;
 	private String nombre;

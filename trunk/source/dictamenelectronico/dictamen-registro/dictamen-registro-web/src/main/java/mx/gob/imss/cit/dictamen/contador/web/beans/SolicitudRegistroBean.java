@@ -6,8 +6,9 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.SolicitudRegistroIntegrator;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.CatalogoDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
-import mx.gob.imss.cit.dictamen.contador.web.pages.LoginPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.RegistroDespachoPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.SolicitudRegistroPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.EnumPantallasContador;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
@@ -27,8 +28,8 @@ public class SolicitudRegistroBean extends BaseBean {
 
 	@ManagedProperty(value = "#{solicitudRegistroPage}")
 	private SolicitudRegistroPage solicitudRegistroPage;
-	@ManagedProperty(value = "#{loginPage}")
-	private LoginPage loginPage;
+	@ManagedProperty(value = "#{registroDespachoPage}")
+	private RegistroDespachoPage registroDespachoPage;
 	@EJB
 	SolicitudRegistroIntegrator solicitudRegistroIntegrator;
 
@@ -54,26 +55,30 @@ public class SolicitudRegistroBean extends BaseBean {
 		}		
 		return Boolean.TRUE;
 	}
+	
 	/**
-	 * Método que valida y envia a guardar los datos de contador.
+	 * Método que valida datos de guardado y redirecciona a registro despacho
+	 * @return
 	 */
-	public void guardarDatos() {
-		if(validarDatosContador() && guardarDatosContador()){
-			solicitudRegistroPage.setHeaderDialog("message.contador.solicitud.titulo");
-			solicitudRegistroPage.setMensajeDialog("message.contador.solicitud.datosGuardados");
-			FacesUtils.getRequestContext().execute("dialogGeneral.show();");
+	public void validarRedireccionToDespacho() {
+		LOG.info("::: Validando datos correctos.");
+		if(validarDatosContador()){
+			FacesUtils.getRequestContext().execute("datosCorrectos.show();");
 		}
 	}
-
-	private boolean guardarDatosContador() {
-		try{			
-			return solicitudRegistroIntegrator.guardarDatosContador(solicitudRegistroPage.getContador());			
-		}catch(Exception e){
-			solicitudRegistroPage.setHeaderDialog("message.label.error");
-			solicitudRegistroPage.setMensajeDialog("message.label.errorInesperado");
-			FacesUtils.getRequestContext().execute("dialogGeneral.show();");
-			return Boolean.FALSE;
-		}
+	
+	/**
+	 * Método que inicia las variables para el proceso de registro de despacho y
+	 * redirecciona a la pantalla.
+	 * 
+	 */
+	public String redireccionToDespacho() {
+		solicitudRegistroPage.getContador().setIndependiente(false);
+		solicitudRegistroPage.getContador().setPerteneceDespacho(false);
+		registroDespachoPage = new RegistroDespachoPage();
+		solicitudRegistroPage.getContador().setCargo(new CatalogoDTO());
+		solicitudRegistroPage.setPaginaActual(EnumPantallasContador.REGISTRO_DESPACHO.getId());
+		return redireccionarRegistroDespacho();
 	}
 
 	// ************************* REDIRECTS ************************//
@@ -81,6 +86,7 @@ public class SolicitudRegistroBean extends BaseBean {
 	
 	/**
 	 * Método que regresa a la pantalla anterior
+	 * 
 	 * @return
 	 */
 	public String regresarToContadores() {
@@ -89,54 +95,52 @@ public class SolicitudRegistroBean extends BaseBean {
 	}
 
 	/**
-	 * Método que valida datos de guardado y redirecciona a registro despacho
-	 * @return
+	 * Redirecciona a la pantalla de Solicitud de Registro
 	 */
-	public String redireccionarToDespacho() {
-		LOG.info("::: Validando datos correctos.");
-		if(validarDatosContador()){
-			solicitudRegistroPage.getContador().setIndependiente(false);
-			solicitudRegistroPage.getContador().setPertenceDespacho(false);
-			FacesUtils.getRequestContext().execute("datosCorrectos.show();");
-		}
-		return "";
+	public String redireccionarSolicitudRegistro() {
+		return EnumPantallasContador.SOLICITUD_REGISTRO.getNombre();
 	}
 
 	/**
-	 * Redirecciona a la pantalla de Solicitud de Registro
-	 */
-	public String redireccionarSolicitudRegistro(){
-		return EnumPantallasContador.SOLICITUD_REGISTRO.getNombre();
-	}
-	/**
 	 * Redirecciona a la pantalla de Registro del Despacho
 	 */
-	public String redireccionarRegistroDespacho(){
+	public String redireccionarRegistroDespacho() {
 		return EnumPantallasContador.REGISTRO_DESPACHO.getNombre();
 	}
+
 	/**
 	 * Redirecciona a la pantalla de Registro del Colegio
 	 */
-	public String redireccionarRegistroColegio(){
+	public String redireccionarRegistroColegio() {
 		return EnumPantallasContador.REGISTRO_COLEGIO.getNombre();
 	}
+
 	/**
 	 * Redirecciona a la pantalla de Registro de Documentacion
 	 */
-	public String redireccionarRegistroDocumentacion(){
+	public String redireccionarRegistroDocumentacion() {
 		return EnumPantallasContador.REGISTRO_DOCUMENTACION.getNombre();
 	}
+
 	/**
 	 * Redirecciona a la pantalla de Registro de Vista Previa
 	 */
-	public String redireccionarRegistroVista(){
+	public String redireccionarRegistroVista() {
 		return EnumPantallasContador.REGISTRO_VISTA.getNombre();
 	}
+
 	/**
 	 * Redirecciona a la pantalla de Registro de Protesta
 	 */
-	public String redireccionarRegistroProtesta(){
+	public String redireccionarRegistroProtesta() {
 		return EnumPantallasContador.REGISTRO_PROTESTA.getNombre();
+	}
+	
+	/**
+	 * Redirecciona a la pantalla de Acuse de Recibo
+	 */
+	public String redireccionarAcuseRecibo() {
+		return EnumPantallasContador.ACUSE_RECIBO.getNombre();
 	}
 
 	// ****************** GETTERS AND SETTERS *********************//
@@ -156,21 +160,17 @@ public class SolicitudRegistroBean extends BaseBean {
 	public void setSolicitudRegistroPage(SolicitudRegistroPage solicitudRegistroPage) {
 		this.solicitudRegistroPage = solicitudRegistroPage;
 	}
-
 	/**
-	 * @return the loginPage
+	 * @return the registroDespachoPage
 	 */
-	public LoginPage getLoginPage() {
-		return loginPage;
+	public RegistroDespachoPage getRegistroDespachoPage() {
+		return registroDespachoPage;
 	}
-
 	/**
-	 * @param loginPage
-	 *            the loginPage to set
+	 * @param registroDespachoPage the registroDespachoPage to set
 	 */
-	public void setLoginPage(LoginPage loginPage) {
-		this.loginPage = loginPage;
+	public void setRegistroDespachoPage(RegistroDespachoPage registroDespachoPage) {
+		this.registroDespachoPage = registroDespachoPage;
 	}
-
 
 }

@@ -46,6 +46,7 @@ public class ContadorBean extends BaseBean {
 				return "";
 			}
 			solicitudRegistroPage.setContador(contador);
+			solicitudRegistroPage.setPaginaActual(EnumPantallasContador.SOLICITUD_REGISTRO.getId());
 		}catch(Exception e){
 			solicitudRegistroPage.setHeaderDialog("message.label.error");
 			solicitudRegistroPage.setMensajeDialog("message.label.errorInesperado");

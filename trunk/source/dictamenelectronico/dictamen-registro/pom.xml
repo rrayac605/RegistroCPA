@@ -17,12 +17,11 @@
 		<version>1.0</version>
 	</parent>
 	<properties>
-
+		<certum.mvn.repo>devtools.certum.com</certum.mvn.repo>
 		<java.version>1.6</java.version> 									<!-- local -->
 		<project.encoding>UTF-8</project.encoding> 							<!-- local, portal -->
 
-		<!-- Logging 
-		 -->
+		<!-- Logging -->
 		<org.slf4j-version>1.5.2</org.slf4j-version>						<!-- local -->
 		<log4j.version>1.2.16</log4j.version> 								<!-- local, integration, persistence , portal, services -->
 
@@ -74,7 +73,7 @@
 		<liferay-portal.version>6.2.1</liferay-portal.version>
 		<jboss-el.version>2.0.0.GA</jboss-el.version>
 		<liferay-maven-plugin.version>6.2.10.6</liferay-maven-plugin.version>
-	
+
 		<!-- Configuracion jasper Report -->
 		<commons-collections>3.0</commons-collections>
 		<jasperreport>5.6.1</jasperreport>
@@ -84,11 +83,7 @@
 		<commons-beanutils>1.9.0</commons-beanutils>
 		<com.lowagie.text>2.1.7</com.lowagie.text>
 		<delta.framework.version>2.6-SNAPSHOT</delta.framework.version>
-		<delta.personas>2.4-SNAPSHOT</delta.personas>
-		<interfaz.solicitudes>2.2-SNAPSHOT</interfaz.solicitudes>
-		
 	</properties>
-	
 	<build>
 		<plugins>
 			<plugin>

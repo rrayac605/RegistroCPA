@@ -11,24 +11,17 @@
 	<h:form>
 		<p:panel style="width:100%; " styleClass="table-no-border">
 			<ui:include src="headerSolicitud.xhtml" />
-			<h3>#{msg['message.contador.solicitud.documentacion']}</h3>
+			<h3>#{msg['message.contador.solicitud.acuse']}</h3>
 			<hr class="red" />
 			<br />
-			<br />
+		<br />
 			<br />
 			<p:panelGrid style="width:100%; " styleClass="table-no-border">
 				<p:row>
-					<p:column style="text-align: left;">
-						<p:commandButton value="#{msg['message.button.anterior']}"
-							action="#{solicitudRegistroBean.redireccionarRegistroColegio()}"
-							styleClass="btn-sm btn-default" icon="ui-icon-arrowthick-1-w"
-							onclick="imagenEsperaWidget.show()"
-							oncomplete="imagenEsperaWidget.hide()" />
-					</p:column>
 					<p:column style="text-align: right;">
-						<p:commandButton value="#{msg['message.button.siguiente']}"
+						<p:commandButton value="#{msg['message.button.Finalizar']}"
 							styleClass="btn-sm btn-primary" immediate="true"
-							action="#{solicitudRegistroBean.redireccionarRegistroVista()}"
+							action="#{solicitudRegistroBean.regresarToContadores()}"
 							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
 							oncomplete="imagenEsperaWidget.hide()" update="dialogGeneral" />
 					</p:column>
