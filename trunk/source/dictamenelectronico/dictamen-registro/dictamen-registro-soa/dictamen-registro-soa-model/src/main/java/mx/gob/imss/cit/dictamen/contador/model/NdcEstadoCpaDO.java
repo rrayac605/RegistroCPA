@@ -36,8 +36,12 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdcEstadoCpaDO.findByFecRegistroAlta", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdcEstadoCpaDO.findByFecRegistroBaja", query = "SELECT n FROM NdcEstadoCpaDO n WHERE n.fecRegistroBaja = :fecRegistroBaja")})
 public class NdcEstadoCpaDO implements Serializable {
-    private static final long serialVersionUID = 1L;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6726879596930758272L;
+	// @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
