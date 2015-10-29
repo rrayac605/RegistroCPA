@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -13,6 +14,7 @@ import mx.gob.imss.cit.de.dictaminacion.commons.enums.DictamenExceptionCodeEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.enums.EstadoAtestiguamientoEnum;
 import mx.gob.imss.cit.de.dictaminacion.commons.exception.DictamenException;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.AtestiguamientoDictamenTO;
+import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.RubroTO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdcEstadoAtestiguamientoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtAtestigPreguntasRespuestDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtAtestiguamientoDictamenDO;
@@ -62,6 +64,14 @@ public class ExamenServiceImpl implements ExamenService {
 			NdtAtestiguamientoDictamenDO ndtAtestiguamientoDictamenDO = TransformerServiceUtils.transformer(atestiguamientoDictamenTO);
 			ndtAtestiguamientoDictamenDO = ndtAtestiguamientoDictamenDAO.getDetalleExamenByAtestiguamiento(ndtAtestiguamientoDictamenDO);
 			atestiguamientoDictamenTO = TransformerServiceUtils.transformer(ndtAtestiguamientoDictamenDO);
+			/*provisional*/
+			for(RubroTO rubro :atestiguamientoDictamenTO.getCveIdAtestiguamiento().getNdcRubros()){
+				Random rnd = new Random();
+				int a = (int)(rnd.nextDouble()*2);
+				boolean b = (a != 0);
+				rubro.setIndAplica(b);
+			}
+			/**/
 		} catch (Exception e) {
 			throw DictamenExceptionBuilder.build(DictamenExceptionCodeEnum.ERROR_SERVICIO_CONSULTA_EXAMENES,e);
 		}

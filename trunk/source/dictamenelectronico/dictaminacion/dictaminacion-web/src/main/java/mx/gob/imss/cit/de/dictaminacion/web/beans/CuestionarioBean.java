@@ -21,9 +21,6 @@ import mx.gob.imss.cit.de.dictaminacion.web.util.FacesUtils;
 @ViewScoped
 public class CuestionarioBean extends BaseBean {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4837421797087101L;
 	
 	@EJB

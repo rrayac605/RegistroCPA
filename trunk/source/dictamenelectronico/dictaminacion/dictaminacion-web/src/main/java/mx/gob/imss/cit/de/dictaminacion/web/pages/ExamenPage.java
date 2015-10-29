@@ -17,10 +17,13 @@ public class ExamenPage extends BasePage{
 	 */
 	private static final long serialVersionUID = 4532952060079534807L;
 	
+
+	private AtestiguamientoDictamenDTO atestiguamientoDictamenDTOSeleccionado;
 	
 	private AtestiguamientoDTO atestiguamientoDTO;
 	
-	private AtestiguamientoDictamenDTO atestiguamientoDictamenDTOSeleccionado;
+
+	private Boolean habilitarObservacion;
 
 	public AtestiguamientoDTO getAtestiguamientoDTO() {
 		return atestiguamientoDTO;
@@ -39,4 +42,12 @@ public class ExamenPage extends BasePage{
 		this.atestiguamientoDictamenDTOSeleccionado = atestiguamientoDictamenDTOSeleccionado;
 	}
 
+
+	public Boolean getHabilitarObservacion() {
+		return habilitarObservacion;
+	}
+
+	public void setHabilitarObservacion(Boolean habilitarObservacion) {
+		this.habilitarObservacion = habilitarObservacion;
+	}
 }

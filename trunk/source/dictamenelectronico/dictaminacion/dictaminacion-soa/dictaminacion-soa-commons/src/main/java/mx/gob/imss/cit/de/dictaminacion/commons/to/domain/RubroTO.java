@@ -14,10 +14,11 @@ public class RubroTO extends BaseTO{
     private Date fecActualizadoRegistro;
     private Date fecBajaRegistro;
     private Integer indOrden;
-    private Integer indAplica;
+    private Boolean indAplica;
     private AtestiguamientoTO cveIdAtestiguamiento;
     private List<PreguntaTO> ndcPreguntas;
     private List<RubroAtestiguamientoDictTO> ndtRubrosAtestiguamientoDict;
+    private Boolean habilitaRubro;
 
 	public Long getCveIdRubro() {
 		return cveIdRubro;
@@ -73,10 +74,17 @@ public class RubroTO extends BaseTO{
 	public void setNdtRubrosAtestiguamientoDict(List<RubroAtestiguamientoDictTO> ndtRubrosAtestiguamientoDict) {
 		this.ndtRubrosAtestiguamientoDict = ndtRubrosAtestiguamientoDict;
 	}
-	public Integer getIndAplica() {
+	public Boolean getIndAplica() {
 		return indAplica;
 	}
-	public void setIndAplica(Integer indAplica) {
+	public void setIndAplica(Boolean indAplica) {
 		this.indAplica = indAplica;
 	}
+	public Boolean getHabilitaRubro() {
+		return habilitaRubro;
+	}
+	public void setHabilitaRubro(Boolean aplica) {
+		this.habilitaRubro = aplica;
+	}
+	
 }

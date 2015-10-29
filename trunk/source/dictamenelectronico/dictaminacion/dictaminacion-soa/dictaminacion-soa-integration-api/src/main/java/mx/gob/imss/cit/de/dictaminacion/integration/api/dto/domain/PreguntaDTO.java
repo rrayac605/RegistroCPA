@@ -19,6 +19,8 @@ public class PreguntaDTO extends BaseDTO{
     private List<OpcionPreguntaDTO> ndcOpcionesPregunta;
     private Long opcionSeleccionada;
     private String observaciones;
+    private Boolean habilitaPregunta;
+    private Boolean habilitaObservacion;
     
     
     
@@ -88,11 +90,22 @@ public class PreguntaDTO extends BaseDTO{
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
 	}
+	public Boolean getHabilitaPregunta() {
+		return habilitaPregunta;
+	}
+	public void setHabilitaPregunta(Boolean habilitaPregunta) {
+		this.habilitaPregunta = habilitaPregunta;
+	}
+	public Boolean getHabilitaObservacion() {
+		return habilitaObservacion;
+	}
+	public void setHabilitaObservacion(Boolean habilitaObservacion) {
+		this.habilitaObservacion = habilitaObservacion;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((opcionSeleccionada == null) ? 0 : opcionSeleccionada.hashCode());
 		result = prime * result + ((cveIdPregunta == null) ? 0 : cveIdPregunta.hashCode());
 		result = prime * result + ((cveIdPreguntaPadre == null) ? 0 : cveIdPreguntaPadre.hashCode());
 		result = prime * result + ((cveIdRubro == null) ? 0 : cveIdRubro.hashCode());
@@ -100,9 +113,12 @@ public class PreguntaDTO extends BaseDTO{
 		result = prime * result + ((fecRegistroActualizado == null) ? 0 : fecRegistroActualizado.hashCode());
 		result = prime * result + ((fecRegistroAlta == null) ? 0 : fecRegistroAlta.hashCode());
 		result = prime * result + ((fecRegistroBaja == null) ? 0 : fecRegistroBaja.hashCode());
+		result = prime * result + ((habilitaObservacion == null) ? 0 : habilitaObservacion.hashCode());
+		result = prime * result + ((habilitaPregunta == null) ? 0 : habilitaPregunta.hashCode());
 		result = prime * result + ((indOrden == null) ? 0 : indOrden.hashCode());
 		result = prime * result + ((ndcOpcionesPregunta == null) ? 0 : ndcOpcionesPregunta.hashCode());
 		result = prime * result + ((observaciones == null) ? 0 : observaciones.hashCode());
+		result = prime * result + ((opcionSeleccionada == null) ? 0 : opcionSeleccionada.hashCode());
 		return result;
 	}
 	@Override
@@ -114,11 +130,6 @@ public class PreguntaDTO extends BaseDTO{
 		if (getClass() != obj.getClass())
 			return false;
 		PreguntaDTO other = (PreguntaDTO) obj;
-		if (opcionSeleccionada == null) {
-			if (other.opcionSeleccionada != null)
-				return false;
-		} else if (!opcionSeleccionada.equals(other.opcionSeleccionada))
-			return false;
 		if (cveIdPregunta == null) {
 			if (other.cveIdPregunta != null)
 				return false;
@@ -154,6 +165,16 @@ public class PreguntaDTO extends BaseDTO{
 				return false;
 		} else if (!fecRegistroBaja.equals(other.fecRegistroBaja))
 			return false;
+		if (habilitaObservacion == null) {
+			if (other.habilitaObservacion != null)
+				return false;
+		} else if (!habilitaObservacion.equals(other.habilitaObservacion))
+			return false;
+		if (habilitaPregunta == null) {
+			if (other.habilitaPregunta != null)
+				return false;
+		} else if (!habilitaPregunta.equals(other.habilitaPregunta))
+			return false;
 		if (indOrden == null) {
 			if (other.indOrden != null)
 				return false;
@@ -169,6 +190,12 @@ public class PreguntaDTO extends BaseDTO{
 				return false;
 		} else if (!observaciones.equals(other.observaciones))
 			return false;
+		if (opcionSeleccionada == null) {
+			if (other.opcionSeleccionada != null)
+				return false;
+		} else if (!opcionSeleccionada.equals(other.opcionSeleccionada))
+			return false;
 		return true;
 	}
+	
 }

@@ -18,6 +18,7 @@ import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PreguntaDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.RubroAtestiguamientoDictDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.RubroDTO;
 import mx.gob.imss.cit.de.dictaminacion.web.beans.base.BaseBean;
+import mx.gob.imss.cit.de.dictaminacion.web.constants.NavigationConstants;
 import mx.gob.imss.cit.de.dictaminacion.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.CuestionarioPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.DatosPatronalesPage;
@@ -44,6 +45,8 @@ public class ExamenBean extends BaseBean {
 	@ManagedProperty(value = "#{datosPatronalesPage}")
 	private DatosPatronalesPage datosPatronalesPage;
 
+	@ManagedProperty(value = "#{datosPatronalesBean}")
+	private DatosPatronalesBean datosPatronalesBean;
 
 	public String init(AtestiguamientoDictamenDTO atestiguamientoDictamenDTO) {
 		CleanBeanUtil.cleanFields(examenPage);
@@ -55,6 +58,11 @@ public class ExamenBean extends BaseBean {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_OBTENER_DET_EXAMEN.getCode());
 		}
 		return "";
+	}
+
+	public String regresar() {
+		datosPatronalesBean.initExamen();
+		return NavigationConstants.PAGE_EXAMEN_REGRESAR;
 	}
 
 	public void guardar() {
@@ -100,6 +108,7 @@ public class ExamenBean extends BaseBean {
 			for (RubroAtestiguamientoDictDTO rubroAtestiguamientoDictDTO : rubro.getNdtRubrosAtestiguamientoDict()) {
 				rubroAtestiguamientoDictDTO.setCveIdRubro(rubro);
 				rubroAtestiguamientoDictDTO.setCveIdAtestigDictamen(atestiguamientoDictamenDTO);
+				rubroAtestiguamientoDictDTO.setIndAplica((short) (rubro.getIndAplica() == false ?  0 : 1));
 				List<AtestigPreguntasRespuestDTO> atestigPreguntasRespuestDTOList = new ArrayList<AtestigPreguntasRespuestDTO>();
 				System.out.println("Rubro Atestiguamiento id : " + rubroAtestiguamientoDictDTO.getCveIdRubroAtestigDictamen());
 				for (AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO : rubroAtestiguamientoDictDTO.getNdtAtestigPreguntasRespuesta()) {
@@ -164,6 +173,7 @@ public class ExamenBean extends BaseBean {
 			RubroAtestiguamientoDictDTO rubroAtestiguamientoDictDTO = new RubroAtestiguamientoDictDTO();
 			rubroAtestiguamientoDictDTO.setCveIdAtestigDictamen(atestiguamientoDictamenDTO);
 			rubroAtestiguamientoDictDTO.setCveIdRubro(rubro);
+			rubroAtestiguamientoDictDTO.setIndAplica((short) (rubro.getIndAplica() == false ?  0 : 1));
 			for (PreguntaDTO preguntaDTO : rubro.getNdcPreguntas()) {
 				System.out.println("Pregunta id : " + preguntaDTO.getCveIdPregunta());
 				System.out.println("pregunta  : " + preguntaDTO.getDesPregunta());
@@ -186,7 +196,40 @@ public class ExamenBean extends BaseBean {
 		}
 		atestiguamientoDictamenDTO.setNdtRubrosAtestiguamiento(rubroAtestiguamientoDictDTOList);
 	}
-
+	
+	public void preguntaVisible(RubroDTO rubro){
+		Boolean preguntaVisible =rubro.getHabilitaRubro();
+		System.out.println("valor rubro: "+ preguntaVisible);
+		for(PreguntaDTO pregunta: rubro.getNdcPreguntas()){
+			if (preguntaVisible==null || !preguntaVisible){
+				pregunta.setHabilitaPregunta(false);
+			}else{
+				pregunta.setHabilitaPregunta(true);
+			}
+			System.out.println("valor HabilitaPregunta: "+pregunta.getHabilitaPregunta());
+		}
+		
+	}
+	
+	public void observacionVisible(PreguntaDTO pregunta){
+		Long opcionSelecionada = pregunta.getOpcionSeleccionada();
+		System.out.println("valor OpcionSeleccionada: " + opcionSelecionada);
+		try {
+			if (!opcionSelecionada.equals(2l) || opcionSelecionada==null ) {
+				pregunta.setHabilitaObservacion(false);
+				System.out.println("valor OpcionSeleccionada: " +pregunta.getHabilitaObservacion());
+			} else {
+				pregunta.setHabilitaObservacion(true);
+				System.out.println("valor OpcionSeleccionada: " +pregunta.getHabilitaObservacion());
+			}
+		} catch (Exception e) {
+			System.out.println("en el error " );
+			pregunta.setHabilitaObservacion(false);
+			System.out.println("Pregunta: " +pregunta.getDesPregunta());
+			System.out.println("valor OpcionSeleccionada: " +pregunta.getHabilitaObservacion());
+		}
+	}
+	
 	public ExamenPage getExamenPage() {
 		return examenPage;
 	}
@@ -202,7 +245,7 @@ public class ExamenBean extends BaseBean {
 	public void setDatosPatronalesPage(DatosPatronalesPage datosPatronalesPage) {
 		this.datosPatronalesPage = datosPatronalesPage;
 	}
-
+	
 	public CuestionarioPage getCuestinarioPage() {
 		return cuestinarioPage;
 	}
@@ -211,5 +254,8 @@ public class ExamenBean extends BaseBean {
 		this.cuestinarioPage = cuestinarioPage;
 	}
 
+	public void setDatosPatronalesBean(DatosPatronalesBean datosPatronalesBean) {
+		this.datosPatronalesBean = datosPatronalesBean;
+	}
 
 }

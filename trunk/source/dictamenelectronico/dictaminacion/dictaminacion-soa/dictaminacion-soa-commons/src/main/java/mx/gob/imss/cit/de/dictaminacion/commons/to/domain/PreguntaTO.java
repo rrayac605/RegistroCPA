@@ -19,6 +19,8 @@ public class PreguntaTO extends BaseTO {
     private List<OpcionPreguntaTO> ndcOpcionesPregunta;
     private Long opcionSeleccionada;
     private String observaciones;
+    private Boolean habilitaPregunta;
+    private Boolean habilitaObservacion;
     
     
 	public Long getCveIdPregunta() {
@@ -87,4 +89,17 @@ public class PreguntaTO extends BaseTO {
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
 	}
+	public Boolean getHabilitaPregunta() {
+		return habilitaPregunta;
+	}
+	public void setHabilitaPregunta(Boolean habilitaPregunta) {
+		this.habilitaPregunta = habilitaPregunta;
+	}
+	public Boolean getHabilitaObservacion() {
+		return habilitaObservacion;
+	}
+	public void setHabilitaObservacion(Boolean habilitaObservacion) {
+		this.habilitaObservacion = habilitaObservacion;
+	}
+	
 }
