@@ -20,6 +20,9 @@ import mx.gob.imss.cit.dictamen.contador.web.pages.FirmaElectronicaPage;
 @ViewScoped
 public class FirmaElectronicaBean implements Serializable{
 	
+	private static final Logger LOGGER = Logger.getLogger(FirmaElectronicaBean.class);
+
+	
 	/**
 	 * UID
 	 */
@@ -33,7 +36,6 @@ public class FirmaElectronicaBean implements Serializable{
 	private FirmaElectronicaPage firmaElectronicaPage;
 
 
-	private static final Logger LOGGER = Logger.getLogger(ActivacionAcuseBean.class);
 
 	
 	public String firma;
