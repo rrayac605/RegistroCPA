@@ -265,16 +265,16 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 			cadenaOriginal.append(verificaCampo("|FECHA|", ndtContadorPublicoAutDTO.getFecha()));
 			
 			if (ndtContadorPublicoAutDTO.getCveIdTramite()!=null) {
-				cadenaOriginal.append(verificaCampo("|NÚMERO DE TRÁMITE|", ndtContadorPublicoAutDTO.getCveIdTramite()));
+				cadenaOriginal.append(verificaCampo("|NUMERO DE TRAMITE|", ndtContadorPublicoAutDTO.getCveIdTramite()));
 			}
 			
 			if (ndtContadorPublicoAutDTO.getNombreCompleto() != null ) {
-				cadenaOriginal.append(verificaCampo("|NOMBRE DEL CONTADOR PÚBLICO|", ndtContadorPublicoAutDTO.getNombreCompleto()));
+				cadenaOriginal.append(verificaCampo("|NOMBRE DEL CONTADOR P�BLICO|", ndtContadorPublicoAutDTO.getNombreCompleto()));
 				cadenaOriginal.append(verificaCampo("|RFC|", ndtContadorPublicoAutDTO.getRfc()));
 				cadenaOriginal.append(verificaCampo("|CURP|", ndtContadorPublicoAutDTO.getCurp()));
 			}
 			
-			cadenaOriginal.append(verificaCampo("|NÚMERO DE REGISTRO DE CONTADOR PÚBLICO AUTORIZADO|", ndtContadorPublicoAutDTO.getNumRegistroCpa()));
+			cadenaOriginal.append(verificaCampo("|NUMERO DE REGISTRO DE CONTADOR P�BLICO AUTORIZADO|", ndtContadorPublicoAutDTO.getNumRegistroCpa()));
 			
 				
 			StringBuilder  domicilioFiscal = new StringBuilder();
@@ -318,7 +318,7 @@ public class ContadorReporteServiceImpl implements  ContadorReporteService{
 				}
 			}
 			
-			cadenaOriginal.append(verificaCampo("|NÚMERO DE CÉDULA PROFESIONAL|", numeroCedula));
+			cadenaOriginal.append(verificaCampo("|NUMERO DE CEDULA PROFESIONAL|", numeroCedula));
 			cadenaOriginal.append("||");
 		} catch (Exception ex) {
 			LOGGER.info("ERROR: En el servicio ContadorPublicoServiceBusinessV2 al generar la cadena original del registro de contador publico.", ex);
