@@ -11,17 +11,16 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>IMSS - Contadores Públicos Autorizados</title>
 
-
-
 		<ui:debug />
 		<f:metadata>
 			<ui:insert name="metadata" />
 		</f:metadata>
 		
 		<h:head>
+		
         <link rel="IMSS Digital" type="image/x-icon" href="#{request.contextPath}/images/imss.ico"/>
 		<link rel="stylesheet" type="text/css" href="../../../css/escritorio-virtual.css" media="screen" />
-
+ 
     
             <style type="text/css">
                 .ui-layout-north {
@@ -48,44 +47,72 @@
     }
 </style>
 
-			<p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();"  />
+</h:head>
+
+	<h:body>
+	
+			<div id="page">
+		<div class="wrapper center">
+
+
+			<div id="bodyContainer">
+
+
+				<p:panel id="panelPrincipal">
+			
+			
+		    <p:dialog modal="true" widgetVar="statusDialog" showHeader="true" 
+				draggable="false" closable="false" resizable="false" 
+				visible="false" position="center" maximizable="false" minimizable="false" >
+								<p:panel id="pnActive" header="Mensaje del Sistema">		
+			    
+			    <p:panelGrid id="pngDatosContador">
+						<p:row>
+							<p:column colspan="1" style="text-align: center;">
+			    <p:outputLabel>Su petición se está procesando. Espere un momento</p:outputLabel>
+
+							</p:column>
+						</p:row>
+					
+						<p:row>
+				
+							<p:column colspan="1" style="text-align: center;" >
+											    <p:graphicImage value="/images/ajax-loader.gif" />
+								
+						
+						</p:column>
+						</p:row>
+					</p:panelGrid>
+			    </p:panel>
+			</p:dialog>
+			
+
 
 			<p:layout fullPage="true" resizeTitle="resize" style="background-color:#FFFFFF;">
 
-				<p:layoutUnit position="north" size="68" id="north" >
-					<ui:include src="header.xhtml" />
-				</p:layoutUnit>
-		
-				<p:layoutUnit position="west" collapsible="true" id="west"  header="Contadores Públicos Autorizados" style="height:580px;overflow:hidden;" size="225">
+					<p:layoutUnit position="west" collapsible="true" id="west"  header="Contadores Públicos Autorizados" style="height:580px;overflow:hidden;" size="225">
 								<ui:include src="menu.xhtml" />
 			
 				</p:layoutUnit>
 				
 				<p:layoutUnit	styleClass="layoutUnitCenter" 	position="center">
-					<h:form id="mainForm">
-						<ui:insert name="content" />
-					</h:form>
+								<ui:insert name="content" >
+	                            </ui:insert>
 				</p:layoutUnit>
 				
-				<p:layoutUnit position="east" size="0" style="width:0px; display:none;" id="east">
-				</p:layoutUnit>
-				
-				<p:layoutUnit position="south" resizable="true" id="south">
-					<ui:include src="footer.xhtml" />
-				</p:layoutUnit>
+	
 
 			</p:layout>
 			
-			<p:dialog modal="true" widgetVar="statusDialog" showHeader="false" 
-				draggable="false" closable="false" resizable="false" 
-				visible="false" position="center" maximizable="false" minimizable="false" >
-				<p:graphicImage value="#{resource['images/ajax-loader.gif']}" />
-			</p:dialog>
-			
-		
-		</h:head>
 
-	<h:body onload="statusDialog.hide(); loginBean.iniciarSesion()">
+			
+			
+							</p:panel>
+			</div>
+
+		</div>
+	</div>
+			
 	</h:body>
 
 </f:view>
