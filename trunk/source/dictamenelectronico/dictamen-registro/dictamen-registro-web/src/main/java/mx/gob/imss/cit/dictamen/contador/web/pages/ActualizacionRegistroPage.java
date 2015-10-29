@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 
 
 
@@ -33,17 +34,18 @@ public class ActualizacionRegistroPage implements Serializable {
 	private DomicilioFiscalDTO domicilioFiscal;
 	private String email;
 	private String telefono;
-	private String[] emailsOp;
+	private String email1;
+	private String email2;
+	private String emailConf1;
+	private String emailConf2;
 	private boolean habilitaDatosDespacho;
 	private int indiceTabActivo;
 	private String tipoDespacho;
 	private boolean habilitarTrabajadoresDespacho;
 	private boolean habilitaNumeroTrabajadores;
 	private String cuentaConTrabajadores;
-	private String rfcDespacho;
-	private String razonSocialDespacho;
-	private String rfcColegio;
-	private String razonSocialColegio;
+	private PersonaMoralDTO despacho;
+	private PersonaMoralDTO colegio;
 	private boolean habilitaDatosColegio;
 	
 	public ActualizacionRegistroPage(){
@@ -269,23 +271,6 @@ public class ActualizacionRegistroPage implements Serializable {
 	}
 
 	/**
-	 * @return the emailsOp
-	 */
-	public String[] getEmailsOp() {
-		if(emailsOp == null){
-			emailsOp = new String[2];
-		}
-		return emailsOp;
-	}
-
-	/**
-	 * @param emailsOp the emailsOp to set
-	 */
-	public void setEmailsOp(String[] emailsOp) {
-		this.emailsOp = emailsOp;
-	}
-
-	/**
 	 * @return the habilitaDatosDespacho
 	 */
 	public boolean isHabilitaDatosDespacho() {
@@ -371,59 +356,37 @@ public class ActualizacionRegistroPage implements Serializable {
 	}
 
 	/**
-	 * @return the rfcDespacho
+	 * @return the despacho
 	 */
-	public String getRfcDespacho() {
-		return rfcDespacho;
+	public PersonaMoralDTO getDespacho() {
+		if(despacho == null){
+			despacho = new PersonaMoralDTO();
+		}
+		return despacho;
 	}
 
 	/**
-	 * @param rfcDespacho the rfcDespacho to set
+	 * @param despacho the despacho to set
 	 */
-	public void setRfcDespacho(String rfcDespacho) {
-		this.rfcDespacho = rfcDespacho;
+	public void setDespacho(PersonaMoralDTO despacho) {
+		this.despacho = despacho;
 	}
 
 	/**
-	 * @return the razonSocialDespacho
+	 * @return the colegio
 	 */
-	public String getRazonSocialDespacho() {
-		return razonSocialDespacho;
+	public PersonaMoralDTO getColegio() {
+		if(colegio == null){
+			colegio = new PersonaMoralDTO();
+		}
+		return colegio;
 	}
 
 	/**
-	 * @param razonSocialDespacho the razonSocialDespacho to set
+	 * @param colegio the colegio to set
 	 */
-	public void setRazonSocialDespacho(String razonSocialDespacho) {
-		this.razonSocialDespacho = razonSocialDespacho;
-	}
-
-	/**
-	 * @return the rfcColegio
-	 */
-	public String getRfcColegio() {
-		return rfcColegio;
-	}
-
-	/**
-	 * @param rfcColegio the rfcColegio to set
-	 */
-	public void setRfcColegio(String rfcColegio) {
-		this.rfcColegio = rfcColegio;
-	}
-
-	/**
-	 * @return the razonSocialColegio
-	 */
-	public String getRazonSocialColegio() {
-		return razonSocialColegio;
-	}
-
-	/**
-	 * @param razonSocialColegio the razonSocialColegio to set
-	 */
-	public void setRazonSocialColegio(String razonSocialColegio) {
-		this.razonSocialColegio = razonSocialColegio;
+	public void setColegio(PersonaMoralDTO colegio) {
+		this.colegio = colegio;
 	}
 
 	/**
@@ -438,5 +401,61 @@ public class ActualizacionRegistroPage implements Serializable {
 	 */
 	public void setHabilitaDatosColegio(boolean habilitaDatosColegio) {
 		this.habilitaDatosColegio = habilitaDatosColegio;
+	}
+
+	/**
+	 * @return the email1
+	 */
+	public String getEmail1() {
+		return email1;
+	}
+
+	/**
+	 * @param email1 the email1 to set
+	 */
+	public void setEmail1(String email1) {
+		this.email1 = email1;
+	}
+
+	/**
+	 * @return the email2
+	 */
+	public String getEmail2() {
+		return email2;
+	}
+
+	/**
+	 * @param email2 the email2 to set
+	 */
+	public void setEmail2(String email2) {
+		this.email2 = email2;
+	}
+
+	/**
+	 * @return the emailConf1
+	 */
+	public String getEmailConf1() {
+		return emailConf1;
+	}
+
+	/**
+	 * @param emailConf1 the emailConf1 to set
+	 */
+	public void setEmailConf1(String emailConf1) {
+		this.emailConf1 = emailConf1;
+	}
+
+	/**
+	 * @return the emailConf2
+	 */
+	public String getEmailConf2() {
+		return emailConf2;
+	}
+
+	/**
+	 * @param emailConf2 the emailConf2 to set
+	 */
+	public void setEmailConf2(String emailConf2) {
+		this.emailConf2 = emailConf2;
 	}
 }

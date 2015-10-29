@@ -53,7 +53,7 @@
 			<p:outputLabel id="lblRFCDesp"
 				value="#{msg['message.actualizacion.despacho.rfc']}" />
 			<p:inputText id="txtRFCDesp" maxlength="12" style="width:35%;"
-				value="#{actualizacionRegistroPage.rfcDespacho}">
+				value="#{actualizacionRegistroPage.despacho.rfc}" disabled="#{not actualizacionRegistroPage.habilitaDatosDespacho}">
 				<p:ajax event="valueChange"
 					listener="#{actualizacionRegistroBean.buscarDespacho()}"
 					update="pgRazonSocialDespacho" />
@@ -63,7 +63,7 @@
 			<p:outputLabel id="lblRazonSocialDespacho"
 				value="#{msg['message.actualizacion.despacho.nombre']}" />
 			<p:inputText id="txtRazonSocialDespacho" disabled="true"
-				value="#{actualizacionRegistroPage.razonSocialDespacho}" />
+				value="#{actualizacionRegistroPage.despacho.razonSocial}" />
 		</h:panelGroup>
 		<h:panelGroup id="pgCargo">
 			<p:outputLabel id="lblCargo"

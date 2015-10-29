@@ -35,5 +35,12 @@ public class CorreoElectronicoValidator extends BaseValidator implements Validat
 		}
 
 	}
+	
+	public static boolean validarCorreo(String correo){
+		correo = StringUtils.trimToEmpty(correo);
+		Pattern patron = Pattern.compile(EMAIL_PATTERN);
+		Matcher match = patron.matcher(correo);
+		return match.matches();
+	}
 
 }
