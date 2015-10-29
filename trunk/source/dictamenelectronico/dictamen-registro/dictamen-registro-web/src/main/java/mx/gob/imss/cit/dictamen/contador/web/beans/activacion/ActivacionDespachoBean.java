@@ -1,7 +1,6 @@
 package mx.gob.imss.cit.dictamen.contador.web.beans.activacion;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.ejb.EJB;
@@ -9,8 +8,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.model.SelectItem;
-import javax.faces.model.SelectItemGroup;
+
 
 
 
@@ -20,7 +18,9 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralBDTUDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenContadorNegocioException;
+import mx.gob.imss.cit.dictamen.contador.web.beans.InformacionPatronalBean;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.contador.web.navigation.ActivacionNavigation;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionDespachoPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
@@ -32,8 +32,10 @@ import org.apache.log4j.Logger;
 @ManagedBean(name = "activacionDespachoBean")
 @ViewScoped
 public class ActivacionDespachoBean extends BaseBean {
+
 	private static final Logger LOGGER = Logger.getLogger(ActivacionDespachoBean.class);
 
+	
 	private static final long serialVersionUID = -4696391496237240996L;
     
 	private Integer selectedTipoProfesion;
@@ -50,7 +52,9 @@ public class ActivacionDespachoBean extends BaseBean {
 	@ManagedProperty(value = "#{activacionDespachoPage}")
 	private ActivacionDespachoPage activacionDespachoPage;
 	
-    
+	@ManagedProperty(value = "#{activacionContadorPage}")
+	private ActivacionContadorPage activacionContadorPage;
+	
 	private Map<String,Integer> mapTipoProfesion = new HashMap<String,Integer>();
     private Map<String,Integer> mapTieneTrabajador = new HashMap<String,Integer>();
     private Map<String,Integer> mapPuestoCPA = new HashMap<String,Integer>();
@@ -64,6 +68,7 @@ public class ActivacionDespachoBean extends BaseBean {
 
 	@PostConstruct
 	public void init(){
+		this.setVentanaInicio(ActivacionNavigation.ACTIVACION_SOLICITUD);
 		selectedTipoProfesion = 0;
 		mapTipoProfesion.put( "Despacho",1);
 		mapTipoProfesion.put( "Independiente",2);
@@ -78,13 +83,19 @@ public class ActivacionDespachoBean extends BaseBean {
 		mapPuestoCPA.put("Gerente", 2);
 		mapPuestoCPA.put("Auditor", 3);
 
-	    if(!this.activacionDespachoPage.isValido()){
+	    if(this.activacionContadorPage.isValido()){
 			PersonaMoralDTO personaMoralDTO = new PersonaMoralDTO();
 			DomicilioFiscalDTO domicilioFiscalDTO = new DomicilioFiscalDTO();
 			personaMoralDTO.setDomicilioFiscalDTO(domicilioFiscalDTO);
 			activacionDespachoPage.setPersonaMoralDTO(personaMoralDTO);
 	    }
 	}
+	
+	public String accionInicio(){
+		  this.activacionDespachoPage.setValido(false);
+		  return this.getVentanaInicio();
+	}
+	
 	public void accionBuscarCPA(){
        String rfc = activacionDespachoPage.getPersonaMoralDTO().getRfc();
 	   LOGGER.info("RFC="+activacionDespachoPage.getPersonaMoralDTO().getRfc());
@@ -302,5 +313,15 @@ public class ActivacionDespachoBean extends BaseBean {
 	}
 	public void setDictamenIntegrator(DictamenIntegrator dictamenIntegrator) {
 		this.dictamenIntegrator = dictamenIntegrator;
+	}
+	
+
+	public ActivacionContadorPage getActivacionContadorPage() {
+		return activacionContadorPage;
+	}
+
+	public void setActivacionContadorPage(
+			ActivacionContadorPage activacionContadorPage) {
+		this.activacionContadorPage = activacionContadorPage;
 	}
 }
