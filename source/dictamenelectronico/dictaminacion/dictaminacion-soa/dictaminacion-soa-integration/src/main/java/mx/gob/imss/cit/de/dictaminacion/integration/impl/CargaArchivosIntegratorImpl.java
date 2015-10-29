@@ -43,7 +43,7 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 	private static final Logger LOG = Logger
 			.getLogger(CargaArchivosIntegratorImpl.class);
 	@EJB
-	LayoutPatronAsociadoService layoutPatronAsociadoService;
+	private LayoutPatronAsociadoService layoutPatronAsociadoService;
 
 	@EJB
 	private CargaArchivosService cargaArchivosService;
@@ -138,6 +138,8 @@ public class CargaArchivosIntegratorImpl implements CargaArchivosIntegrator {
 				aseveracionesDTO.setCveIdAseveracion(cargaDocumentoTO.getCveIdAseveracion().getCveIdAseveracion());
 				aseveracionesDTO.setDesTipoAseveracion(cargaDocumentoTO.getCveIdAseveracion().getDesTipoAseveracion());
 				cargaDocumentoDTO.setCveIdAseveracion(aseveracionesDTO);
+				
+				cargaDocumentoDTO.setCveIdBitacoraCargaAsev(cargaDocumentoTO.getCveIdBitacoraCargaAsev());
 				
 				cargaDocumentoDTOList.add(cargaDocumentoDTO);
 			}

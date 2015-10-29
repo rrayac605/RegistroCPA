@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.de.dictaminacion.web.beans;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -9,11 +10,13 @@ import javax.faces.bean.ViewScoped;
 
 import org.apache.log4j.Logger;
 
+import mx.gob.imss.cit.de.dictaminacion.integration.api.BitacoraErroresIntegrator;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.CargaArchivosIntegrator;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.AseveracionesDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.CargaDocumentoDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.ParentLayoutDTO;
+import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.BitacoraErroresDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PatronDictamenDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.de.dictaminacion.web.constants.DictamenWebConstants;
@@ -36,6 +39,9 @@ public class CargaArchivosBean extends BasePage {
 	
 	@EJB
 	private CargaArchivosIntegrator cargaArchivosIntegrator;
+	
+	@EJB
+	private BitacoraErroresIntegrator bitacoraErroresIntegrator;
 	
 	@ManagedProperty(value = "#{cargaArchivosPage}")
 	private CargaArchivosPage cargaArchivosPage;
@@ -117,16 +123,8 @@ public class CargaArchivosBean extends BasePage {
 	}
 	
 
-	/**
-	 * @param cargaArchivosPage the cargaArchivosPage to set
-	 */
-	public void setCargaArchivosPage(CargaArchivosPage cargaArchivosPage) {
-		this.cargaArchivosPage = cargaArchivosPage;
-	}
 
-	/**
-	 * 
-	 */
+
 	public void registrarEstatusCarga(LayoutDTO layoutDTO){
 		PatronDictamenDTO patronDictamenDTO = new PatronDictamenDTO();
 		patronDictamenDTO.setCveIdPatronDictamen(datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
@@ -143,12 +141,43 @@ public class CargaArchivosBean extends BasePage {
 			cargaArchivosIntegrator.registrarCargaAseveracion(cargaAseveracionesDTO);
 			FacesUtils.messageSuccess(MensajesNotificacionesEnum.MSG_EXITO_SUBIR_LAYOUT.getCode());
 			
-		} catch (DictamenNegocioException e) {
+		} catch (Exception e) {
 			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_GUARDAR_ASEVERACION.getCode());
 		}
 	}
 
+	
+	public void verBitacora(Long idCarga){
+		
+		
+		try {
+			List<BitacoraErroresDTO> lista=bitacoraErroresIntegrator.findByIdCargaDocumento(idCarga);
+			
+			if(lista==null ){
+				cargaArchivosPage.setListaBitacora(new ArrayList<BitacoraErroresDTO>());
+			}else{
+				cargaArchivosPage.setListaBitacora(lista);
+			}
+			
+		} catch (Exception e) {
 
+			FacesUtils.messageError(MensajesNotificacionesEnum.MSG_ERROR_CONSULTAR_BITACORA.getCode());
+			
+		}
+		
+	}
+
+	
+	
+	/**
+	 * @param cargaArchivosPage the cargaArchivosPage to set
+	 */
+	public void setCargaArchivosPage(CargaArchivosPage cargaArchivosPage) {
+		this.cargaArchivosPage = cargaArchivosPage;
+	}
+
+	
+	
 	/**
 	 * @param dictamenPage the dictamenPage to set
 	 */

@@ -217,6 +217,14 @@ public class TransformerIntegrationUtils {
 				mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.RemuneracionesDTO.class);
 		mapClass.put(mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.RemuneracionesDTO.class,
 				mx.gob.imss.cit.de.dictaminacion.commons.to.domain.RemuneracionesTO.class);
+		mapClass.put(mx.gob.imss.cit.de.dictaminacion.commons.to.domain.BitacoraErroresTO.class,
+				mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.BitacoraErroresDTO.class);
+		mapClass.put(mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.BitacoraErroresDTO.class,
+				mx.gob.imss.cit.de.dictaminacion.commons.to.domain.BitacoraErroresTO.class);
+		mapClass.put(mx.gob.imss.cit.de.dictaminacion.commons.to.domain.CargaDocumentoTO.class,
+				mx.gob.imss.cit.de.dictaminacion.integration.api.dto.CargaDocumentoDTO.class);
+		mapClass.put(mx.gob.imss.cit.de.dictaminacion.integration.api.dto.CargaDocumentoDTO.class,
+				mx.gob.imss.cit.de.dictaminacion.commons.to.domain.CargaDocumentoTO.class);
 	}
 
 	public static BovedaDocumentoTO transformer(BovedaDocumentoDTO document) throws DictamenException {
@@ -454,9 +462,9 @@ public class TransformerIntegrationUtils {
 	}
 
 	public static RubroAtestiguamientoDictDTO transformer(RubroAtestiguamientoDictTO object) throws DictamenException {
-		RubroAtestiguamientoDictDTO r=  (RubroAtestiguamientoDictDTO) TransformerHelper.get(mapClass, object, RubroAtestiguamientoDictDTO.class,
-				DictamenConstants.PROFUNDIDAD_MAPEO);
-		r.setIndAplica((short)(object.getIndAplica()== null ? 0 : 1));
+		RubroAtestiguamientoDictDTO r = (RubroAtestiguamientoDictDTO) TransformerHelper.get(mapClass, object,
+				RubroAtestiguamientoDictDTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+		r.setIndAplica((short) (object.getIndAplica() == null ? 0 : 1));
 		return r;
 	}
 
@@ -564,4 +572,15 @@ public class TransformerIntegrationUtils {
 		return (RemuneracionesTO) TransformerHelper.get(mapClass, object, RemuneracionesTO.class,
 				DictamenConstants.PROFUNDIDAD_MAPEO);
 	}
+
+	public static BitacoraErroresDTO transformer(BitacoraErroresTO object) throws DictamenException {
+		return (BitacoraErroresDTO) TransformerHelper.get(mapClass, object, BitacoraErroresDTO.class,
+				DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+
+	public static BitacoraErroresTO transformer(BitacoraErroresDTO object) throws DictamenException {
+		return (BitacoraErroresTO) TransformerHelper.get(mapClass, object, BitacoraErroresTO.class,
+				DictamenConstants.PROFUNDIDAD_MAPEO);
+	}
+
 }
