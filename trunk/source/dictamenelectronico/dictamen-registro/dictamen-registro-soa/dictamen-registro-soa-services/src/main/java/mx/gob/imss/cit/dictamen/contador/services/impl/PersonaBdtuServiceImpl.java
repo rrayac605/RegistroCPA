@@ -12,16 +12,11 @@ import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.services.BaseBdtuService;
 import mx.gob.imss.cit.dictamen.contador.services.PersonaBdtuService;
-import mx.gob.imss.ctirss.delta.exception.individuo.PersonasNoLocalizadasException;
-import mx.gob.imss.ctirss.delta.framework.exceptions.ClienteWebserviceRenapoCurpException;
-import mx.gob.imss.ctirss.delta.framework.exceptions.ClienteWebserviceSatRfcException;
 import mx.gob.imss.ctirss.delta.gestion.individuo.service.business.CalificacionesPersonaBusinessServiceRemote;
 import mx.gob.imss.ctirss.delta.gestion.individuo.service.business.IndividuoServiceBusinessRemote;
 import mx.gob.imss.ctirss.delta.gestion.individuo.service.business.PersonaFisicaServiceBusinessRemote;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.ICADatosConsulta;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.ICADatosRespuesta;
-import mx.gob.imss.ctirss.delta.model.gestion.individuo.Moral;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Persona;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.PersonaCalificacion;
 import mx.gob.imss.ctirss.gestionpersonas.servicios.business.PersonaBusinessRemote;
