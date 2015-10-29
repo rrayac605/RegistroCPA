@@ -468,7 +468,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_CB4BFFBC_131A_41e5_BED3_E690366DAD18"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-28 21:52:49"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-29 16:21:49"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-29 16:34:04"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Módulo de Cédulas"/>
@@ -1557,7 +1557,7 @@
 						<step name="El CPA  captura el importe o porcentaje según aplique para los concepto." guid="{049BD264-B0AF-40ae-A40C-33F7BB62C35A}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<step name="El sistema valida que el campo capturado cumpla con las validaciones de acuerdo a RF-C035 Especificaciones para capturar importe RF-N019 Campo Obligatorio" guid="{55C1F7B9-0035-40ba-9F65-24C6AA5B019E}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<step name="El CPA selecciona el botón “ Acciones“ y selecciona la opción Insertar Fila, si el CPA selecciona la opción Editar continúa en FA1 Editar Filas, si el CPA selecciona la opción  Eliminar continúa en FA 2 Eliminar Fila" guid="{40BC413C-980D-4c67-838C-C5482F7B6A48}" level="5" uses="" useslist="" result="" state="" trigger="1" link="">
-							<extension level="5a" guid="{59C1AEED-56B2-4826-BECC-F31DE3D74C83}" join="End"/>
+							<extension level="5a" guid="{59C1AEED-56B2-4826-BECC-F31DE3D74C83}" join="{049BD264-B0AF-40ae-A40C-33F7BB62C35A}"/>
 							<extension level="5b" guid="{66907B55-5B28-4068-953B-88ACE23F9DB0}" join="End"/>
 						</step>
 						<step name="El sistema deberá insertar una Fila  de acuerdo a  RF-C036 Insertar Fila" guid="{362493CB-4E07-4f69-860B-59F84E0E25C9}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
@@ -1572,7 +1572,9 @@
 						<step name="El CPA selecciona el botón “Guardar”,&#xA;Si el CPA selecciona el botón Cancelar continúa  en FA3 Cancelar &#xA;" guid="{237150E7-75F6-408f-A7CC-921E83598663}" level="15" uses="" useslist="" result="" state="" trigger="1" link="">
 							<extension level="15a" guid="{B3B3BB37-687B-4b41-B065-C2BA21E248C1}" join="End"/>
 						</step>
-						<step name="EL sistema valida los importes totales de acuerdo a RF-N020 Comparar Importes si los importes son iguales el sistema deberá guardar la información en la BDTU.&#xA;&#xA;El sistema cierra la pantalla “Cédula de detalle de conceptos de remuneraciones” y envía al CPA a la pantalla de Atestiguamiento.&#xA;En caso de presentar algún error, mientras el sistema  guarda la información en la BDTU el sistema llamará al EX1 Error en almacenamiento de datos.&#xA;&#xA;Si los importes comparados no son iguales muestra el MSG 37 de acuerdo a  RF-C018 - Mensajes de notificación al usuario  y envía al usuario al paso 3" guid="{A2DC16DD-7EB3-45e0-9B61-12415DE1A398}" level="16" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="EL sistema valida los importes totales de acuerdo a RF-N020 Comparar Importes si los importes son iguales el sistema deberá guardar la información en la BDTU.&#xA;&#xA;El sistema cierra la pantalla “Cédula de detalle de conceptos de remuneraciones” y envía al CPA a la pantalla de Atestiguamiento.&#xA;En caso de presentar algún error, mientras el sistema  guarda la información en la BDTU el sistema llamará al EX1 Error en almacenamiento de datos.&#xA;&#xA;Si los importes comparados no son iguales muestra el MSG 37 de acuerdo a  RF-C018 - Mensajes de notificación al usuario  y envía al usuario al paso 3" guid="{A2DC16DD-7EB3-45e0-9B61-12415DE1A398}" level="16" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="16a" guid="{5D764896-E14E-49aa-938F-1227B8277E20}" join="End"/>
+						</step>
 						<step name="Fin de Caso de Uso" guid="{6DE7886F-A8E0-4c97-B3F6-BAE0CD2BAC03}" level="17" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="RF-C037 Capturar concepto de Remuneraciones" guid="{0CF9CA71-3E0B-4742-9722-ADF4791F35FF}"/>
@@ -1596,19 +1598,21 @@
 				<EAScenarioContent>
 					<path>
 						<step name="El sistema mostrará el MSG31 de acuerdo a RF-C018 - Mensajes de notificación al usuario y deberá escribir en el log de la aplicación el detalle de error." guid="{8C8D211B-31C3-4896-A318-48A4B3E90EE3}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Fin de flujo de excepción" guid="{E3CEC61B-C99A-4456-B0C0-9064C5D7FD61}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
 						<context>
 							<item oldname="RF-C037 Capturar concepto de Remuneraciones" guid="{0CF9CA71-3E0B-4742-9722-ADF4791F35FF}"/>
 							<item oldname="RF-C035 Especificaciones para capturar importe" guid="{2D598274-7AE0-4042-93B7-FD354B5B7367}"/>
 							<item oldname="RF-C036 Insertar Fila" guid="{4E0C77D9-3212-4d4f-98D5-097165658DF4}"/>
+							<item oldname="RF-C018 - Mensajes de notificación al usuario" guid="{617BA333-F57F-4437-91FB-E6DC3CC2693D}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF-N019 Campo Obligatorio" guid="{4BB842FD-63B6-4196-8482-9FA1A188B2D0}"/>
-							<item oldname="RF-A032 Extraer importes Remuneraciones" guid="{37C277AE-21DA-45db-8745-7876CC025ABB}"/>
-							<item oldname="RF-A036 Inhabilitar campos adicionales" guid="{491FE574-357F-4bb7-9ADA-5CCB932D7DAC}"/>
 							<item oldname="RF-N018 Mostrar importe  mayor a cero" guid="{5645ABA2-B304-4910-9CCA-F5591C7FE14E}"/>
 							<item oldname="RF-N020 Comparar Importes" guid="{6E534E58-E743-49c5-AF37-8EDFA1F42963}"/>
+							<item oldname="RF-A032 Extraer importes Remuneraciones" guid="{37C277AE-21DA-45db-8745-7876CC025ABB}"/>
+							<item oldname="RF-A036 Inhabilitar campos adicionales" guid="{491FE574-357F-4bb7-9ADA-5CCB932D7DAC}"/>
 							<item oldname="RF-A034 Habilitar Campos capturables" guid="{681B3C0C-D340-4a0b-908D-6CFA3F913800}"/>
 							<item oldname="RF-A033 Mostrar Cédula de Remuneraciones " guid="{B46C9F16-A0ED-4785-8544-5986CD62A426}"/>
 							<item oldname="RF-A035 Campos adicionales" guid="{E3EF663F-C807-4eeb-9BEF-5F289D3AC23D}"/>
-							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 						</context>
 					</path>
 				</EAScenarioContent>
