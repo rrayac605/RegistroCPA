@@ -12,21 +12,21 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrat
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
-import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 import org.apache.log4j.Logger;
 import org.primefaces.event.ToggleEvent;
 
+
 @ManagedBean(name = "activacionSolicitudBean")
 @ViewScoped
 public class ActivacionSolicitudBean extends BaseBean {
 
 	private static final long serialVersionUID = -6717550265551435161L;
-	private static final Logger LOGGER = Logger.getLogger(ActivacionSolicitudBean.class);
 
-	
+	private static final Logger LOGGER = Logger.getLogger(ActivacionDespachoBean.class);
+
 	@ManagedProperty(value = "#{activacionSolicitudPage}")
 	private ActivacionSolicitudPage activacionSolicitudPage;
 
@@ -50,16 +50,27 @@ public class ActivacionSolicitudBean extends BaseBean {
     public void init() {
 		LOGGER.info("Cargar datos de sesion");
 		//Datos Session
-	   PersonaDTO personaDTO = new PersonaDTO();
-	   personaDTO.setNombre("LUCIO");
-	   personaDTO.setApellidoMaterno("DURAN");
-	   personaDTO.setApellidoPaterno("SILVA");
-	   personaDTO.setRfc("DUSL821218LN8");
-	   personaDTO.setCurp("DUSL821218HDFRLC09");
-	   personaDTO.setIdPersona(37472955L);
-	   personaDTO.setNombreCompleto("LUCIO SILVA DURAN");
-	   personaDTO.setFolioSolicitud("123456789123456789123");
-	   
+	   /*
+	    PersonaDTO personaDTO = new PersonaDTO();
+	    personaDTO.setNombre("LUCIO");
+	    personaDTO.setApellidoMaterno("DURAN");
+	    personaDTO.setApellidoPaterno("SILVA");
+	    personaDTO.setRfc("DUSL821218LN8");
+	    personaDTO.setCurp("DUSL821218HDFRLC09");
+	    personaDTO.setIdPersona(37472955L);
+	    personaDTO.setNombreCompleto("LUCIO SILVA DURAN");
+	    personaDTO.setFolioSolicitud("123456789123456789123");
+	   */
+	    PersonaDTO personaDTO = new PersonaDTO();
+	    personaDTO.setNombre("Rodolfo");
+	    personaDTO.setApellidoMaterno("Chibraz");
+	    personaDTO.setApellidoPaterno("Arroyo");
+	    personaDTO.setRfc("CIAR470203QL0");
+	    personaDTO.setCurp("CIAR470203HHGHRD05");
+	    personaDTO.setIdPersona(289436373L);
+	    personaDTO.setNombreCompleto("Rodolfo Chibraz Arroyo");
+	    personaDTO.setFolioSolicitud("123456789123456789123");
+	    
 	   activacionSolicitudPage.setPersonaDTO(personaDTO);
 	   
 	   Long idPersona = activacionSolicitudPage.getPersonaDTO().getIdPersona();
@@ -120,9 +131,10 @@ public class ActivacionSolicitudBean extends BaseBean {
       }*/
       LOGGER.info("FIN INIT ");
 	}
-	
+
 	public String aceptacion(){
 	  LOGGER.info("Redirect=activacionContadorAceptacion");
+	  this.activacionSolicitudPage.setValido(true);
 	  return "activacion_contador";
 	}
 	

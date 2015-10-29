@@ -7,6 +7,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+
+
+
+
 import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
@@ -16,7 +20,9 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralBDTUDTO
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenContadorNegocioException;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.contador.web.navigation.ActivacionNavigation;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionColegioPage;
+import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionDespachoPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
 
 @ManagedBean(name = "activacionColegioBean")
@@ -31,6 +37,9 @@ public class ActivacionColegioBean extends BaseBean{
 	@ManagedProperty(value = "#{activacionColegioPage}")
 	private ActivacionColegioPage activacionColegioPage;
 	
+	@ManagedProperty(value = "#{activacionDespachoPage}")
+	private ActivacionDespachoPage activacionDespachoPage;
+	
 
 	@EJB(mappedName="dictamenIntegrator", name="dictamenIntegrator")
 	private DictamenIntegrator dictamenIntegrator;
@@ -43,20 +52,29 @@ public class ActivacionColegioBean extends BaseBean{
 
 	@PostConstruct
 	public void init(){
-
-        if(!this.getActivacionColegioPage().isValido()){
-		PersonaMoralDTO personaMoralDTO = new PersonaMoralDTO();
-		DomicilioFiscalDTO domicilioFiscalDTO = new DomicilioFiscalDTO();
-		personaMoralDTO.setDomicilioFiscalDTO(domicilioFiscalDTO);
-		activacionColegioPage.setPersonaMoralDTO(personaMoralDTO);
+		this.setVentanaInicio(ActivacionNavigation.ACTIVACION_SOLICITUD);
+        if(this.activacionDespachoPage.isValido()){
+		  PersonaMoralDTO personaMoralDTO = new PersonaMoralDTO();
+		  DomicilioFiscalDTO domicilioFiscalDTO = new DomicilioFiscalDTO();
+		  personaMoralDTO.setDomicilioFiscalDTO(domicilioFiscalDTO);
+		  activacionColegioPage.setPersonaMoralDTO(personaMoralDTO);
 		}
 
 	}
     
+	public String accionInicio(){
+		
+		  this.activacionColegioPage.setValido(false);
+		  return this.getVentanaInicio();
+	
+	}
+	
+	
 	public String accionAtras(){
 	  this.getActivacionColegioPage().setValido(false);
 	  return "activacion_despacho";
 	}
+
 	public void accionBuscarPersonaMoral(){
 	       String rfc = activacionColegioPage.getPersonaMoralDTO().getRfc();
 		   LOGGER.info("RFC="+activacionColegioPage.getPersonaMoralDTO().getRfc());
@@ -124,5 +142,16 @@ public class ActivacionColegioBean extends BaseBean{
 
 	public void setDictamenIntegrator(DictamenIntegrator dictamenIntegrator) {
 		this.dictamenIntegrator = dictamenIntegrator;
+	}
+	
+
+
+	public ActivacionDespachoPage getActivacionDespachoPage() {
+		return activacionDespachoPage;
+	}
+
+	public void setActivacionDespachoPage(
+			ActivacionDespachoPage activacionDespachoPage) {
+		this.activacionDespachoPage = activacionDespachoPage;
 	}
 }

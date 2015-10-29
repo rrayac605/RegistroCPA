@@ -17,6 +17,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
+import mx.gob.imss.cit.dictamen.contador.web.navigation.ActivacionNavigation;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionContadorPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionSolicitudPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
@@ -32,32 +33,27 @@ public class ActivacionContadorBean extends BaseBean {
 
 	private static final Logger LOGGER = Logger.getLogger(ActivacionContadorBean.class);
 
-	
 	@ManagedProperty(value = "#{activacionContadorPage}")
 	private ActivacionContadorPage activacionContadorPage;
 
 	@ManagedProperty(value = "#{activacionSolicitudPage}")
 	private ActivacionSolicitudPage activacionSolicitudPage;
 	
-
-
-
 	@EJB(mappedName="contadorPublicoIntegrator", name="contadorPublicoIntegrator")
 	private ContadorPublicoIntegrator contadorPublicoIntegrator;
 	
-	
 	@PostConstruct
     public void init() {
-    	
+        this.setVentanaInicio(ActivacionNavigation.ACTIVACION_SOLICITUD);
     	LOGGER.info("activacionContadorBean.init(");
-    	if(!activacionContadorPage.isValido()){
+    	if(activacionSolicitudPage.isValido()){
        	String rfc = activacionSolicitudPage.getPersonaDTO().getRfc();
        	Long idPersona = activacionSolicitudPage.getPersonaDTO().getIdPersona();
 
     	DomicilioFiscalDTO domicilioDTO = contadorPublicoIntegrator.consultarDomicilioPorRFC(rfc);
     	String folioSolicitud = activacionSolicitudPage.getPersonaDTO().getFolioSolicitud();
     	if(domicilioDTO!=null){
-    		List<DatosPersonalesDTO> lstDatosPersonalesDTO =  contadorPublicoIntegrator.consultarDatosPersonales(idPersona);
+    		List<DatosPersonalesDTO> lstDatosPersonalesDTO =  contadorPublicoIntegrator.consultarCedulaPorIdPersona(idPersona);
     		LOGGER.info("lstDatosPersonalesDTO.size="+lstDatosPersonalesDTO.size());
     		FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Activación:","El folio de solicitud es:"+folioSolicitud));
     		activacionSolicitudPage.getPersonaDTO().getContadorPublicoAutDTO().setDomicilioFiscalDTO(domicilioDTO);
@@ -68,17 +64,23 @@ public class ActivacionContadorBean extends BaseBean {
         	    LOGGER.info("cedula.getFechaExpedicionCedula="+activacionContadorPage.getDatosPersonalesDTO().getFechaExpedicionCedula());
 
     	    }
+
+    	}
+    	  if(activacionContadorPage.getContactoDTO()==null){
     	    ContactoDTO contactoDTO = new ContactoDTO();
     	    activacionContadorPage.setContactoDTO(contactoDTO);
-    	}
+    	  }
+    	}else{
+    		FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activación:","No tiene registro de solicitud."));
+
     	}
     }
     
 	public boolean validarCorreoElectronico(){
-		  boolean validacion=true;
+		 boolean validacion=true;
 		 LOGGER.info("Redirect=accionGuardar");
-		  String correo1 = this.getActivacionContadorPage().getContactoDTO().getCorreoElectronico2();
-		  String ccorreo2 = this.getActivacionContadorPage().getContactoDTO().getCorreoElectronico2Conf();
+		 String correo1 = this.getActivacionContadorPage().getContactoDTO().getCorreoElectronico2();
+		 String ccorreo2 = this.getActivacionContadorPage().getContactoDTO().getCorreoElectronico2Conf();
 		  
          if(StringUtils.trimToEmpty(correo1).compareTo(StringUtils.trimToEmpty(ccorreo2))!=0){
      		  FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Activación:","Correo Electronico 2 debe Coincidir"));
@@ -99,19 +101,25 @@ public class ActivacionContadorBean extends BaseBean {
 		  return validacion;
 	} 
 	
+	public String accionInicio(){
+		  this.activacionSolicitudPage.setValido(false);
+       
+		  return this.getVentanaInicio();
+
+	}
+	
 	public String accionAtras(){
 		    this.getActivacionContadorPage().setValido(false);
-		    return "activacion_solicitud";
+		    return ActivacionNavigation.ACTIVACION_SOLICITUD;
 		 
 	}
 	
 	public String accionSiguiente(){
 		  if(validarCorreoElectronico()){
 			    this.getActivacionContadorPage().setValido(true);
-
-		     return "activacion_despacho";
+		     return ActivacionNavigation.ACTIVACION_DESPACHO;
 		  } 
-		  return "";
+		     return ActivacionNavigation.ACTIVACION_EMPTY;
 	}
 	
     

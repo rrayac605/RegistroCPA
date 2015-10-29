@@ -8,13 +8,16 @@ import org.apache.log4j.Logger;
 import mx.gob.imss.cit.dictamen.contador.web.beans.base.BaseBean;
 
 
-@ManagedBean(name = "activacionAcuseFinalBean")
+@ManagedBean(name = "activacionReciboBean")
 @ViewScoped
 public class ActivacionAcuseFinalBean extends BaseBean {
 
 	private static final long serialVersionUID = 5172926844548932952L;
 	private static final Logger LOGGER = Logger.getLogger(ActivacionAcuseBean.class);
 
+	public void init(){
+	 
+	}
 
 	
 }
