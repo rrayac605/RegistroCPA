@@ -4,5 +4,4 @@ call mvn install:install-file -Dfile="ojdbc6-11.2.0.2.0.jar" -DgroupId="com.orac
 call mvn install:install-file -Dfile="imss-ws-clients-2.5.jar" -DgroupId="mx.gob.imss" -DartifactId="imss-ws-clients" -Dversion="2.5" -Dpackaging="jar"
 call mvn install:install-file -Dfile="ClientesWebservices-sat-consulta-rfc-2.2.jar" -DgroupId="mx.gob.imss.ctirss.clienteswebservices.sat.consulta.rfc" -DartifactId="ClientesWebservices-sat-consulta-rfc" -Dversion="2.2" -Dpackaging="jar"
 call mvn install:install-file -Dfile="delta-modelo-negocio-2.6-SNAPSHOT.jar" -DgroupId="mx.gob.imss.ctirss.delta" -DartifactId="delta-modelo-negocio" -Dversion="2.6-SNAPSHOT" -Dpackaging="jar"
-call mvn install:install-file -Dfile="delta-framework-base-2.6-SNAPSHOT.jar" -DgroupId="mx.gob.imss.ctirss.delta" -DartifactId="delta-framework-base" -Dversion="2.6-SNAPSHOT" -Dpackaging="jar"
-call mvn install:install-file -Dfile="imss-comunes-ws-clients-1.0.jar" -DgroupId="mx.gob.imss.cit.imss-comunes" -DartifactId="imss-comunes-ws-clients" -Dversion="1.0" -Dpackaging="jar"
+call mvn install:install-file -Dfile="ClienteWebServiceGuardaDocumentos-1.2.jar" -DgroupId="mx.com.metatrust.doctrust" -DartifactId="ClienteWebServiceGuardaDocumentos" -Dversion="1.2" -Dpackaging="jar"
