@@ -17,14 +17,14 @@
 						<UML:TaggedValue tag="modified" value="2015-10-28 19:03:32"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="ModeloFuncional\03Diseño\01CasosDeUso\ModuloDeCedulas\Módulo de Cédulas.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-10-28 19:12:05"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-10-28 20:43:57"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-10-28 19:12:05"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
 						<UML:TaggedValue tag="usedtd" value="FALSE"/>
-						<UML:TaggedValue tag="owner" value="lfierro"/>
 						<UML:TaggedValue tag="xmiver" value="Enterprise Architect XMI/UML 1.3"/>
 						<UML:TaggedValue tag="logxml" value="FALSE"/>
+						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="packageFlags" value="Recurse=0;VCCFG=dictamen;CRC=0;"/>
 						<UML:TaggedValue tag="batchsave" value="0"/>
 						<UML:TaggedValue tag="batchload" value="0"/>
@@ -36,11 +36,355 @@
 						<UML:TaggedValue tag="tpos" value="0"/>
 						<UML:TaggedValue tag="gentype" value="Java"/>
 					</UML:ModelElement.taggedValue>
-					<UML:Namespace.ownedElement/>
+					<UML:Namespace.ownedElement>
+						<UML:UseCase name="Capturar Cédula de Detalle de Conceptos de Remuneraciones" xmi.id="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" visibility="public" namespace="EAPK_CB4BFFBC_131A_41e5_BED3_E690366DAD18" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="isSpecification" value="false"/>
+								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
+								<UML:TaggedValue tag="ea_ntype" value="0"/>
+								<UML:TaggedValue tag="version" value="1.0"/>
+								<UML:TaggedValue tag="isActive" value="false"/>
+								<UML:TaggedValue tag="package" value="EAPK_CB4BFFBC_131A_41e5_BED3_E690366DAD18"/>
+								<UML:TaggedValue tag="date_created" value="2015-10-28 21:52:49"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-28 22:21:21"/>
+								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
+								<UML:TaggedValue tag="tagged" value="0"/>
+								<UML:TaggedValue tag="package_name" value="Módulo de Cédulas"/>
+								<UML:TaggedValue tag="phase" value="1.0"/>
+								<UML:TaggedValue tag="author" value="lfierro"/>
+								<UML:TaggedValue tag="complexity" value="1"/>
+								<UML:TaggedValue tag="status" value="Proposed"/>
+								<UML:TaggedValue tag="tpos" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="25883"/>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+							</UML:ModelElement.taggedValue>
+						</UML:UseCase>
+						<UML:Dependency client="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" supplier="EAID_681B3C0C_D340_4a0b_908D_6CFA3F913800" xmi.id="EAID_3516D28C_853D_459f_9545_E48A3BA00D32" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="29525"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Capturar Cédula de Detalle de Conceptos de Remuneraciones"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A034 Habilitar Campos capturables"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25883"/>
+								<UML:TaggedValue tag="ea_targetID" value="25980"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" supplier="EAID_B46C9F16_A0ED_4785_8544_5986CD62A426" xmi.id="EAID_9CBD477D_D92A_48f3_AE40_67E8786D3F48" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="29487"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Capturar Cédula de Detalle de Conceptos de Remuneraciones"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A033 Mostrar Cédula de Remuneraciones "/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25883"/>
+								<UML:TaggedValue tag="ea_targetID" value="25995"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" supplier="EAID_5645ABA2_B304_4910_9CCA_F5591C7FE14E" xmi.id="EAID_B8DF63D7_A551_484c_BDC2_D1BD2D5B4F29" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="29488"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Capturar Cédula de Detalle de Conceptos de Remuneraciones"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-N018 Mostrar importe  mayor a cero"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25883"/>
+								<UML:TaggedValue tag="ea_targetID" value="25821"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Association xmi.id="EAID_CC7197B0_4774_4771_A9A5_12D1D36F7246" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Association"/>
+								<UML:TaggedValue tag="direction" value="Unspecified"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="29485"/>
+								<UML:TaggedValue tag="ea_sourceName" value="CPA"/>
+								<UML:TaggedValue tag="ea_targetName" value="Capturar Cédula de Detalle de Conceptos de Remuneraciones"/>
+								<UML:TaggedValue tag="ea_sourceType" value="Actor"/>
+								<UML:TaggedValue tag="ea_targetType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25888"/>
+								<UML:TaggedValue tag="ea_targetID" value="25883"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Association.connection>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="sourcestyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="source"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+								<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" targetScope="instance" changeable="none" isNavigable="true" type="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92">
+									<UML:ModelElement.taggedValue>
+										<UML:TaggedValue tag="containment" value="Unspecified"/>
+										<UML:TaggedValue tag="deststyle" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+										<UML:TaggedValue tag="ea_end" value="target"/>
+									</UML:ModelElement.taggedValue>
+								</UML:AssociationEnd>
+							</UML:Association.connection>
+						</UML:Association>
+						<UML:Dependency client="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" supplier="EAID_491FE574_357F_4bb7_9ADA_5CCB932D7DAC" xmi.id="EAID_ED6B026C_F339_42c9_99D9_1696073A9CBC" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="29524"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Capturar Cédula de Detalle de Conceptos de Remuneraciones"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A036 Inhabilitar campos adicionales"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25883"/>
+								<UML:TaggedValue tag="ea_targetID" value="25976"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" supplier="EAID_37C277AE_21DA_45db_8745_7876CC025ABB" xmi.id="EAID_EE83C0ED_0A06_42a0_B1DF_0BC15E32A25E" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="29486"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Capturar Cédula de Detalle de Conceptos de Remuneraciones"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A032 Extraer importes Remuneraciones"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25883"/>
+								<UML:TaggedValue tag="ea_targetID" value="25975"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+						<UML:Dependency client="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" supplier="EAID_E3EF663F_C807_4eeb_9BEF_5F289D3AC23D" xmi.id="EAID_FDDDA2CD_AB03_4bee_A751_3980CC3D060C" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="29489"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Capturar Cédula de Detalle de Conceptos de Remuneraciones"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A035 Campos adicionales"/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25883"/>
+								<UML:TaggedValue tag="ea_targetID" value="25999"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
+					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
+		<UML:Diagram name="Módulo de Cédulas" xmi.id="EAID_BC44E6D8_95F5_4209_B76B_39E94176DFC1" diagramType="UseCaseDiagram" owner="EAPK_CB4BFFBC_131A_41e5_BED3_E690366DAD18" toolName="Enterprise Architect 2.5">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="version" value="1.0"/>
+				<UML:TaggedValue tag="author" value="lfierro"/>
+				<UML:TaggedValue tag="created_date" value="2015-10-28 21:50:31"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-28 22:24:19"/>
+				<UML:TaggedValue tag="package" value="EAPK_CB4BFFBC_131A_41e5_BED3_E690366DAD18"/>
+				<UML:TaggedValue tag="type" value="Use Case"/>
+				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<UML:TaggedValue tag="ea_localid" value="2213"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=815;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=977ED76A;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement geometry="Left=521;Top=430;Right=681;Bottom=463;" subject="EAID_681B3C0C_D340_4a0b_908D_6CFA3F913800" seqno="1" style="DUID=AE0C51E7;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=513;Top=358;Right=673;Bottom=391;" subject="EAID_491FE574_357F_4bb7_9ADA_5CCB932D7DAC" seqno="2" style="DUID=DA1CEAF0;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=509;Top=287;Right=669;Bottom=320;" subject="EAID_E3EF663F_C807_4eeb_9BEF_5F289D3AC23D" seqno="3" style="DUID=D4F5B0BF;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=506;Top=219;Right=666;Bottom=252;" subject="EAID_5645ABA2_B304_4910_9CCA_F5591C7FE14E" seqno="4" style="DUID=689F1D11;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=499;Top=123;Right=659;Bottom=156;" subject="EAID_B46C9F16_A0ED_4785_8544_5986CD62A426" seqno="5" style="DUID=10704BC5;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=473;Top=38;Right=633;Bottom=71;" subject="EAID_37C277AE_21DA_45db_8745_7876CC025ABB" seqno="6" style="DUID=C4C6C7CA;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=250;Top=207;Right=409;Bottom=313;" subject="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" seqno="7" style="DUID=C86BF1A1;"/>
+				<UML:DiagramElement geometry="Left=71;Top=226;Right=104;Bottom=293;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="8" style="DUID=C612DD70;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_3516D28C_853D_459f_9545_E48A3BA00D32" style="Mode=3;EOID=AE0C51E7;SOID=C86BF1A1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_ED6B026C_F339_42c9_99D9_1696073A9CBC" style="Mode=3;EOID=DA1CEAF0;SOID=C86BF1A1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_FDDDA2CD_AB03_4bee_A751_3980CC3D060C" style="Mode=3;EOID=D4F5B0BF;SOID=C86BF1A1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_B8DF63D7_A551_484c_BDC2_D1BD2D5B4F29" style="Mode=3;EOID=689F1D11;SOID=C86BF1A1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9CBD477D_D92A_48f3_AE40_67E8786D3F48" style="Mode=3;EOID=10704BC5;SOID=C86BF1A1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_EE83C0ED_0A06_42a0_B1DF_0BC15E32A25E" style="Mode=3;EOID=C4C6C7CA;SOID=C86BF1A1;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_CC7197B0_4774_4771_A9A5_12D1D36F7246" style="Mode=3;EOID=C86BF1A1;SOID=C612DD70;Color=-1;LWidth=0;Hidden=0;"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
 	</XMI.content>
 	<XMI.difference/>
-	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAModel.scenario>
+			<EAScenario name="Capturar Cédula de Detalle de Conceptos de Remuneraciones" type="Basic Path" weight="0.00" subject="EAID_6CB248F3_C858_4519_935A_E95DD7E75B92" xmi.id="EAID_0DE9D523_4CA8_4a46_88E1_D1BD6175EB44">
+				<EAScenarioContent>
+					<path>
+						<step name="El caso de uso inicia cuándo el CPA selecciona el ícono de cédula" guid="{67B906ED-D514-4d8c-B729-EDDCF85B398E}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema deberá desplegar los datos del CPA solo para consulta:&#xA;-Nombre&#xA;-Registro IMSS&#xA;-Delegación&#xA;-Subdelegación&#xA;-CURP&#xA;-RFC &#xA;&#xA;El sistema deberá extraer los importes totales  del anexo&#xA;A.1. Remuneraciones pagadas en efectivo vía nómina a los trabajadores  de acuerdo a RF-A032 Extraer importes Remuneraciones &#xA;&#xA;&#xA;El sistema deberá mostrar la cédula de Remuneraciones con los importes extraídos de acuerdo a  &#xA;RF-A033 Mostrar Cédula de Remuneraciones &#xA;RF-N018 Mostrar importe  mayor a cero, RF-A035 Campos adicionales  RF-A036 Inhabilitar campos adicionales&#xA;&#xA; y deberá  habilitar el campo “Importe pagado”  para los conceptos de acuerdo a RF-A034 Habilitar Campos capturables  y permitir la captura de acuerdo a R5 Especificaciones para capturar importe&#xA;&#xA;El sistema deberá generar un renglón para captura debajo del nombre de los siguientes conceptos:&#xA;- Otros Ingresos por Salario&#xA;-Otros pagos por separación&#xA;-Pagos de otros empleadores&#xA; &#xA;Para estos conceptos el sistema deberá  habilitar un botón “Agregar” con las opciones :&#xA;-Insertar Fila &#xA;-Editar Fila&#xA;-Eliminar Fila&#xA;&#xA;" guid="{AF1F04CF-11D7-4142-816A-81ECAC576CCF}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El CPA  captura el importe o porcentaje según aplique para los conceptos." guid="{049BD264-B0AF-40ae-A40C-33F7BB62C35A}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema valida que el campo capturado cumpla con las validaciones de acuerdo a R5 Especificaciones para capturar importe RF6 Captura Obligatoria" guid="{55C1F7B9-0035-40ba-9F65-24C6AA5B019E}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="RF-A032 Extraer importes Remuneraciones" guid="{37C277AE-21DA-45db-8745-7876CC025ABB}"/>
+							<item oldname="RF-A036 Inhabilitar campos adicionales" guid="{491FE574-357F-4bb7-9ADA-5CCB932D7DAC}"/>
+							<item oldname="RF-N018 Mostrar importe  mayor a cero" guid="{5645ABA2-B304-4910-9CCA-F5591C7FE14E}"/>
+							<item oldname="RF-A033 Mostrar Cédula de Remuneraciones " guid="{B46C9F16-A0ED-4785-8544-5986CD62A426}"/>
+							<item oldname="RF-A035 Campos adicionales" guid="{E3EF663F-C807-4eeb-9BEF-5F289D3AC23D}"/>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+		</EAModel.scenario>
+		<EAStub xmi.id="EAID_681B3C0C_D340_4a0b_908D_6CFA3F913800" name="RF-A034 Habilitar Campos capturables" UMLType="Requirement"/>
+		<EAModel.paramSub/>
+		<EAStub xmi.id="EAID_B46C9F16_A0ED_4785_8544_5986CD62A426" name="RF-A033 Mostrar Cédula de Remuneraciones " UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_5645ABA2_B304_4910_9CCA_F5591C7FE14E" name="RF-N018 Mostrar importe  mayor a cero" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" name="CPA" UMLType="Actor"/>
+		<EAStub xmi.id="EAID_491FE574_357F_4bb7_9ADA_5CCB932D7DAC" name="RF-A036 Inhabilitar campos adicionales" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_37C277AE_21DA_45db_8745_7876CC025ABB" name="RF-A032 Extraer importes Remuneraciones" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_E3EF663F_C807_4eeb_9BEF_5F289D3AC23D" name="RF-A035 Campos adicionales" UMLType="Requirement"/>
+	</XMI.extensions>
 </XMI>
