@@ -22,6 +22,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtR1DatosPersonalesDO;
 import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
@@ -142,6 +143,13 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 		
         return lstNdtContadorPublicoAutDO;
 	}
+
+	@Override
+	public List<MediosContactoDTO> obtenerMediosContactoPorIdPersona(Long idPersona){
+		return null;
+	}
+
+
 
 	
 	public ContadorPublicoIntegratorImpl() {
