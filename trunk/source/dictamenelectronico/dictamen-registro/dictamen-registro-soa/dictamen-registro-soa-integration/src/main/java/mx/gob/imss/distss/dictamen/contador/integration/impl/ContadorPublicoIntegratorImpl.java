@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.commons.to.domain.CedulaTO;
 import mx.gob.imss.cit.dictamen.contador.commons.to.domain.ContadorPublicoTO;
+import mx.gob.imss.cit.dictamen.contador.commons.to.domain.PersonaMedioContactoTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
