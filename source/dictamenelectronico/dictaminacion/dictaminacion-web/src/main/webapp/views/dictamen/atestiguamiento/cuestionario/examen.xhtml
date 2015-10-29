@@ -12,32 +12,44 @@
 		<h:form>
 			<p:panelGrid columns="1">
 				<p:panelGrid columns="1">
-					<p:panel>
-						<p:outputLabel id= "contestarLabel" value="#{message.label.views.dictamen.atestiguamiento.contestar}"/>
-						<h2><p:outputLabel id = "AtestiguamientoLabel"
-						 value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.desAtestiguamiento}"/></h2>
+					<p:panel id="generalPanel">
+						<p:outputLabel id="contestarLabel"
+							value="#{message.label.views.dictamen.atestiguamiento.contestar}" />
+						<h2>
+							<p:outputLabel id="AtestiguamientoLabel"
+								value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.desAtestiguamiento}" />
+						</h2>
 						<br />
 						<ui:repeat var="rubro"
 							value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.ndcRubros}"
 							varStatus="status">
 							<h4>
-								 <p:outputLabel id = "RubroLabel" value="#{rubro.desRubro}"/>
-					
-								<!--	<h:outputText value="#{rubro.desRubro}" />
-									<p:selectBooleanCheckbox value="#{rubro.indAplica}" />
-									</p:selectBooleanCheckbox>-->
-								
+								<h:outputText value="#{rubro.desRubro}" />
 							</h4>
+							<p:selectBooleanCheckbox id="rubroCheckBox" value="#{rubro.habilitaRubro}" 
+								itemLabel="#{msg['message.label.views.dictamen.atestiguamiento.noAplica']}"
+								rendered="#{rubro.indAplica}">
+								<f:ajax event="change" listener="#{examenBean.preguntaVisible(rubro)}" render=":#{p:component('generalPanel')}" />  
+							</p:selectBooleanCheckbox>
 							<br />
 							<br />
 							<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}" varStatus="status">
-								<p:outputLabel id="preguntaLabel" value="#{pregunta.desPregunta}" for="opcionRadio"/>
-							 	<p:selectOneRadio id="opcionRadio"  value="#{pregunta.opcionSeleccionada}" required="true" 
-									requiredMessage="#{msg['message.label.views.dictamen.atestiguamiento.error']} #{pregunta.desPregunta}" >
-							 		<f:selectItems var="respuesta" value="#{pregunta.ndcOpcionesPregunta}"    
+								<p:panel id="radiopanel">
+								<p:outputLabel id="preguntaLabel" value="#{pregunta.desPregunta}" for="opcionRadio" />
+								<p:selectOneRadio id="opcionRadio" value="#{pregunta.opcionSeleccionada}" required="true"
+									requiredMessage="#{msg['message.label.views.dictamen.atestiguamiento.error']} #{pregunta.desPregunta}"
+									disabled="#{pregunta.habilitaPregunta}" > 
+									<!--p:ajax event="change" listener="#{examenBean.observacionVisible(pregunta)}"  update=":radiopanel" /-->
+									<f:selectItems var="respuesta"
+										value="#{pregunta.ndcOpcionesPregunta}"
 										itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}"
-										itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}"  />
-								</p:selectOneRadio> 
+										itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}" /> 
+								</p:selectOneRadio>
+								</p:panel >
+								<p:panel id="textAreaPanel" rendered="true" >
+									<p:outputLabel id="observacionesLabel" value="#{msg['message.label.views.dictamen.atestiguamiento.omisiones']}" />
+									<p:inputTextarea id="observacionTextArea"  value="#{pregunta.observaciones}" rows="3" cols="100" maxlength="300" autoResize="false" />
+								</p:panel>
 								<br />
 								<br />
 							</ui:repeat>
@@ -45,13 +57,14 @@
 					</p:panel>
 				</p:panelGrid>
 				<p:panelGrid columns="2" style="center">
-					<p:commandButton action="#{examenBean.guardar()}" 
-						value="#{msg['message.button.views.dictamen.atestiguamiento.finalizar']}" onstart="statusDialog.show();"
-						          oncomplete="statusDialog.hide();"/>
-						          
-					<p:commandButton action="#{datosPatronalesBean.initExamen}" 
+					<p:commandButton action="#{examenBean.guardar()}"
+						value="#{msg['message.button.views.dictamen.atestiguamiento.finalizar']}"
+						onstart="statusDialog.show();" oncomplete="statusDialog.hide();" />
+
+					<p:commandButton action="#{examenBean.regresar()}"
 						value="#{msg['message.button.views.dictamen.atestiguamiento.cancelar']}"
-						immediate="true" onstart="statusDialog.show();" oncomplete="statusDialog.hide();"/>
+						immediate="true" onstart="statusDialog.show();"
+						oncomplete="statusDialog.hide();" />
 				</p:panelGrid>
 			</p:panelGrid>
 		</h:form>

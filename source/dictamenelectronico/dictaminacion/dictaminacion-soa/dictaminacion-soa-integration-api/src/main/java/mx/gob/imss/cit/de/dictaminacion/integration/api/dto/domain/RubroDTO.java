@@ -17,10 +17,11 @@ public class RubroDTO extends BaseDTO{
     private Date fecActualizadoRegistro;
     private Date fecBajaRegistro;
     private Integer indOrden;
-    private Integer indAplica;
     private AtestiguamientoDTO cveIdAtestiguamiento;
     private List<PreguntaDTO> ndcPreguntas;
     private List<RubroAtestiguamientoDictDTO> ndtRubrosAtestiguamientoDict;
+    private Boolean indAplica;
+    private Boolean habilitaRubro;
 
 
 	public Long getCveIdRubro() {
@@ -77,16 +78,23 @@ public class RubroDTO extends BaseDTO{
 	public void setCveIdAtestiguamiento(AtestiguamientoDTO cveIdAtestiguamiento) {
 		this.cveIdAtestiguamiento = cveIdAtestiguamiento;
 	}
-	public Integer getIndAplica() {
+	public Boolean getIndAplica() {
 		return indAplica;
 	}
-	public void setIndAplica(Integer indAplica) {
+	public void setIndAplica(Boolean indAplica) {
 		this.indAplica = indAplica;
+	}
+	public Boolean getHabilitaRubro() {
+		return habilitaRubro;
+	}
+	public void setHabilitaRubro(Boolean aplica) {
+		this.habilitaRubro = aplica;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((habilitaRubro == null) ? 0 : habilitaRubro.hashCode());
 		result = prime * result + ((cveIdAtestiguamiento == null) ? 0 : cveIdAtestiguamiento.hashCode());
 		result = prime * result + ((cveIdRubro == null) ? 0 : cveIdRubro.hashCode());
 		result = prime * result + ((desRubro == null) ? 0 : desRubro.hashCode());
@@ -109,6 +117,11 @@ public class RubroDTO extends BaseDTO{
 		if (getClass() != obj.getClass())
 			return false;
 		RubroDTO other = (RubroDTO) obj;
+		if (habilitaRubro == null) {
+			if (other.habilitaRubro != null)
+				return false;
+		} else if (!habilitaRubro.equals(other.habilitaRubro))
+			return false;
 		if (cveIdAtestiguamiento == null) {
 			if (other.cveIdAtestiguamiento != null)
 				return false;
@@ -161,5 +174,4 @@ public class RubroDTO extends BaseDTO{
 			return false;
 		return true;
 	}
-	
 }

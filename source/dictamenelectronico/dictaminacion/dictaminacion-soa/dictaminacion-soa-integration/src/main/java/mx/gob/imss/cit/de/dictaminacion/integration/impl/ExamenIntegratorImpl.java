@@ -77,12 +77,16 @@ public class ExamenIntegratorImpl implements ExamenIntegrator {
 							System.out.println("Opcion Pregunta id : " + opcionPreguntaDTO.getCveIdOpcionPregunta());
 							for (AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO : opcionPreguntaDTO.getNdtAtestigPreguntasRespuestas()) {
 								for (RubroAtestiguamientoDictDTO rubroAtestiguamientoDictDTO : rubro.getNdtRubrosAtestiguamientoDict()) {
+									Boolean r = rubroAtestiguamientoDictDTO.getIndAplica()== null||rubroAtestiguamientoDictDTO.getIndAplica() ==0;
+									rubro.setHabilitaRubro((r  ? false: true));
+									System.out.println("Rubro aplica: "+(rubroAtestiguamientoDictDTO.getIndAplica()== null||rubroAtestiguamientoDictDTO.getIndAplica() ==0));
 									for(AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO1 : rubroAtestiguamientoDictDTO.getNdtAtestigPreguntasRespuesta()){
 										if(atestigPreguntasRespuestDTO1.getCveIdAtestiguamientos().equals(atestigPreguntasRespuestDTO.getCveIdAtestiguamientos())){
 											System.out.println("Atestiguamientos: "+atestigPreguntasRespuestDTO1.getCveIdAtestiguamientos());
 											System.out.println("dentro Opcion Pregunta id : " + opcionPreguntaDTO.getCveIdOpcionPregunta());
 											System.out.println("dentro respuesta : " + opcionPreguntaDTO.getCveIdRespuesta().getDesTipoRespuesta());
 											pregunta.setOpcionSeleccionada( opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
+											pregunta.setObservaciones(atestigPreguntasRespuestDTO.getDesObservaciones());
 										}
 									}
 								}
