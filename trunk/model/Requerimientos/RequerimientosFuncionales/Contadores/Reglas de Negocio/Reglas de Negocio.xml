@@ -17,7 +17,7 @@
 						<UML:TaggedValue tag="modified" value="2015-10-21 11:43:44"/>
 						<UML:TaggedValue tag="iscontrolled" value="TRUE"/>
 						<UML:TaggedValue tag="xmlpath" value="Requerimientos\RequerimientosFuncionales\Contadores\Reglas de Negocio\Reglas de Negocio.xml"/>
-						<UML:TaggedValue tag="lastloaddate" value="2015-10-28 20:10:15"/>
+						<UML:TaggedValue tag="lastloaddate" value="2015-10-28 20:59:09"/>
 						<UML:TaggedValue tag="lastsavedate" value="2015-10-21 15:01:13"/>
 						<UML:TaggedValue tag="version" value="1.0"/>
 						<UML:TaggedValue tag="isprotected" value="FALSE"/>
@@ -63,7 +63,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24127"/>
+										<UML:TaggedValue tag="ea_localid" value="25664"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -95,76 +95,12 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24128"/>
+										<UML:TaggedValue tag="ea_localid" value="25665"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
 										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={CF774B54-5AE2-4716-B4B3-D36AD0DC04A5}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;@ENDSTEREO;$DES;$CLT={39CDD49E-D11C-4fdd-A67D-CDB253D2569B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-									</UML:ModelElement.taggedValue>
-								</UML:ClassifierRole>
-								<UML:ClassifierRole name="RF-N081 Campo Obligatorio" xmi.id="EAID_4BB842FD_63B6_4196_8482_9FA1A188B2D0" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
-									<UML:ModelElement.stereotype>
-										<UML:Stereotype name="Functional"/>
-									</UML:ModelElement.stereotype>
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="documentation" value="Para los campos que son capturables el sistema deberá considerar al menos una opción de cada concepto  al que pertenezcan como campo de captura obligatorio."/>
-										<UML:TaggedValue tag="isAbstract" value="false"/>
-										<UML:TaggedValue tag="isSpecification" value="false"/>
-										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
-										<UML:TaggedValue tag="ea_ntype" value="0"/>
-										<UML:TaggedValue tag="version" value="1.0"/>
-										<UML:TaggedValue tag="isActive" value="false"/>
-										<UML:TaggedValue tag="package" value="EAPK_2FD7C068_0090_452a_9D27_3A995811578E"/>
-										<UML:TaggedValue tag="date_created" value="2015-10-28 20:13:44"/>
-										<UML:TaggedValue tag="date_modified" value="2015-10-28 20:14:31"/>
-										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-										<UML:TaggedValue tag="tagged" value="0"/>
-										<UML:TaggedValue tag="package_name" value="Reglas de Negocio"/>
-										<UML:TaggedValue tag="phase" value="1.0"/>
-										<UML:TaggedValue tag="author" value="lfierro"/>
-										<UML:TaggedValue tag="complexity" value="1"/>
-										<UML:TaggedValue tag="status" value="Proposed"/>
-										<UML:TaggedValue tag="stereotype" value="Functional"/>
-										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24140"/>
-										<UML:TaggedValue tag="ea_eleType" value="element"/>
-										<UML:TaggedValue tag="difficulty" value="Medium"/>
-										<UML:TaggedValue tag="priority" value="Medium"/>
-										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={566B5526-C699-4feb-9D53-429BE3781B92}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;GUID={F445539D-E4CE-4cfa-B0C2-BFF22AD71144};@ENDSTEREO;$DES;$CLT={4BB842FD-63B6-4196-8482-9FA1A188B2D0}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-									</UML:ModelElement.taggedValue>
-								</UML:ClassifierRole>
-								<UML:ClassifierRole name="RF-N080 Mostrar importe  mayor a cero" xmi.id="EAID_5645ABA2_B304_4910_9CCA_F5591C7FE14E" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
-									<UML:ModelElement.stereotype>
-										<UML:Stereotype name="Functional"/>
-									</UML:ModelElement.stereotype>
-									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="documentation" value="El sistema  deberá  mostrar  el importe extraído si y sólo si los totales extraídos son mayores a cero."/>
-										<UML:TaggedValue tag="isAbstract" value="false"/>
-										<UML:TaggedValue tag="isSpecification" value="false"/>
-										<UML:TaggedValue tag="ea_stype" value="Requirement"/>
-										<UML:TaggedValue tag="ea_ntype" value="0"/>
-										<UML:TaggedValue tag="version" value="1.0"/>
-										<UML:TaggedValue tag="isActive" value="false"/>
-										<UML:TaggedValue tag="package" value="EAPK_2FD7C068_0090_452a_9D27_3A995811578E"/>
-										<UML:TaggedValue tag="date_created" value="2015-10-28 20:11:57"/>
-										<UML:TaggedValue tag="date_modified" value="2015-10-28 20:13:18"/>
-										<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
-										<UML:TaggedValue tag="tagged" value="0"/>
-										<UML:TaggedValue tag="package_name" value="Reglas de Negocio"/>
-										<UML:TaggedValue tag="phase" value="1.0"/>
-										<UML:TaggedValue tag="author" value="lfierro"/>
-										<UML:TaggedValue tag="complexity" value="1"/>
-										<UML:TaggedValue tag="status" value="Proposed"/>
-										<UML:TaggedValue tag="stereotype" value="Functional"/>
-										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24139"/>
-										<UML:TaggedValue tag="ea_eleType" value="element"/>
-										<UML:TaggedValue tag="difficulty" value="Medium"/>
-										<UML:TaggedValue tag="priority" value="Medium"/>
-										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
-										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={8696C1DA-5F60-45a2-9491-8D001DE03D3B}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;GUID={F445539D-E4CE-4cfa-B0C2-BFF22AD71144};@ENDSTEREO;$DES;$CLT={5645ABA2-B304-4910-9CCA-F5591C7FE14E}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
 								<UML:ClassifierRole name="RF-N008 Disminuir del número de solicitudes pendientes" xmi.id="EAID_5CBBB1E1_508A_4227_8FE6_E3BA0F842175" visibility="public" base="EAID_11111111_5487_4080_A7F4_41526CB0AA00">
@@ -191,7 +127,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24129"/>
+										<UML:TaggedValue tag="ea_localid" value="25668"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -223,7 +159,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24130"/>
+										<UML:TaggedValue tag="ea_localid" value="25669"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -255,7 +191,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24131"/>
+										<UML:TaggedValue tag="ea_localid" value="25670"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -287,7 +223,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24132"/>
+										<UML:TaggedValue tag="ea_localid" value="25671"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -319,7 +255,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24133"/>
+										<UML:TaggedValue tag="ea_localid" value="25672"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -351,7 +287,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24134"/>
+										<UML:TaggedValue tag="ea_localid" value="25673"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -383,7 +319,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24135"/>
+										<UML:TaggedValue tag="ea_localid" value="25674"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -415,7 +351,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24136"/>
+										<UML:TaggedValue tag="ea_localid" value="25675"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -447,7 +383,7 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24137"/>
+										<UML:TaggedValue tag="ea_localid" value="25676"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
@@ -479,13 +415,13 @@
 										<UML:TaggedValue tag="status" value="Proposed"/>
 										<UML:TaggedValue tag="stereotype" value="Functional"/>
 										<UML:TaggedValue tag="tpos" value="0"/>
-										<UML:TaggedValue tag="ea_localid" value="24138"/>
+										<UML:TaggedValue tag="ea_localid" value="25677"/>
 										<UML:TaggedValue tag="ea_eleType" value="element"/>
 										<UML:TaggedValue tag="difficulty" value="Medium"/>
 										<UML:TaggedValue tag="priority" value="Medium"/>
 										<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 										<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={764FD56B-ABE0-49a9-83EB-232CF00A8CB7}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Functional;GUID={0398836B-57A0-4581-8B3E-71C236476149};@ENDSTEREO;$DES;$CLT={E7ADF8EB-AE44-4824-B1F0-F910EC1CD48B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
-										<UML:TaggedValue tag="modeldocument" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAPyhXEf3FrKK0wgAAA9XAAAHABEAc3RyLmRhdFVUDQAH0iwxVtIsMVbSLDFW
+										<UML:TaggedValue tag="modeldocument" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIADSoXEf3FrKK0wgAAA9XAAAHABEAc3RyLmRhdFVUDQAHljcxVpY3MVaWNzFW
 7Vzfb9s4En5fYP8HvvXugC1E/fYV9+A62WuANCni3D0cBASURNva0pKXpJtmi/7vNyRlSVYk
 10bsbbYRkEjUiPPNkJxvSNuivkRcznBEcpFFKZ0xks8dK8TRTObxb9E6wUo6s37+6Us0K3Ip
 YwYFC0UzcZ8JgcY8I+zNV5BhkPFiSXI4JwvCBZU2us2WVKAreo9u1C1d0e6qOH1YxoUBcirw
@@ -528,7 +464,7 @@ Wt9Nwf3nr8dxBosO9xtxhvXoQpydUfWSkkUhvnPg1w5d3N59OL+ZXl+N795f34wvzXx3dXZ7
 d3Y+/TCevLuePhdfYUI3E/dUz+joX+js/Or6/cXVeHJxfXV3M/4fHKfXk4vx5T//O76ZvBvf
 2H+zPe/vmwbUhN/JcVg8KNF34Xrcy4bvmwl2+3ZU6z15ot+6Kv3ls8ghRJgUjM6zQqAHNNar
 2/QvkVDQ5Pry/N8XP35C0e3aDgzw+rGv+o22xlev9NUrffVULfXJlOuPsf8HUEsBAhcLFAAA
-AAgA/KFcR/cWsorTCAAAD1cAAAcACQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB9IsMVZQ
+AAgANKhcR/cWsorTCAAAD1cAAAcACQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB5Y3MVZQ
 SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 									</UML:ModelElement.taggedValue>
 								</UML:ClassifierRole>
@@ -550,13 +486,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26516"/>
+								<UML:TaggedValue tag="ea_localid" value="28694"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Aceptar Solicitudes"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N007 Incremento del número de solicitudes pendientes"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23501"/>
-								<UML:TaggedValue tag="ea_targetID" value="24127"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25346"/>
+								<UML:TaggedValue tag="ea_targetID" value="25664"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -588,13 +524,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26629"/>
+								<UML:TaggedValue tag="ea_localid" value="28807"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N002 Usuario debe contar con número de registro IMSS "/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23512"/>
-								<UML:TaggedValue tag="ea_targetID" value="24128"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25357"/>
+								<UML:TaggedValue tag="ea_targetID" value="25665"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -626,13 +562,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26735"/>
+								<UML:TaggedValue tag="ea_localid" value="28913"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Solicitar Baja "/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N002 Usuario debe contar con número de registro IMSS "/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23598"/>
-								<UML:TaggedValue tag="ea_targetID" value="24128"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25443"/>
+								<UML:TaggedValue tag="ea_targetID" value="25665"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -664,13 +600,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26522"/>
+								<UML:TaggedValue tag="ea_localid" value="28700"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Aceptar Solicitudes"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N008 Disminuir del número de solicitudes pendientes"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23501"/>
-								<UML:TaggedValue tag="ea_targetID" value="24129"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25346"/>
+								<UML:TaggedValue tag="ea_targetID" value="25668"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -702,13 +638,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26514"/>
+								<UML:TaggedValue tag="ea_localid" value="28692"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Aceptar Solicitudes"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N010 Siguiente Registro CPA"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23501"/>
-								<UML:TaggedValue tag="ea_targetID" value="24130"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25346"/>
+								<UML:TaggedValue tag="ea_targetID" value="25669"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -740,13 +676,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26685"/>
+								<UML:TaggedValue tag="ea_localid" value="28863"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Catálogo de CPA IMSS"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N006 Mostrar información solo para consulta"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23587"/>
-								<UML:TaggedValue tag="ea_targetID" value="24131"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25432"/>
+								<UML:TaggedValue tag="ea_targetID" value="25670"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -778,13 +714,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26666"/>
+								<UML:TaggedValue tag="ea_localid" value="28844"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Consultar Catálogo CPA Público General"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N006 Mostrar información solo para consulta"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23584"/>
-								<UML:TaggedValue tag="ea_targetID" value="24131"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25429"/>
+								<UML:TaggedValue tag="ea_targetID" value="25670"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -816,13 +752,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26650"/>
+								<UML:TaggedValue tag="ea_localid" value="28828"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Cambio de Estatus"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N006 Mostrar información solo para consulta"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23581"/>
-								<UML:TaggedValue tag="ea_targetID" value="24131"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25426"/>
+								<UML:TaggedValue tag="ea_targetID" value="25670"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -854,13 +790,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26631"/>
+								<UML:TaggedValue tag="ea_localid" value="28809"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N006 Mostrar información solo para consulta"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23512"/>
-								<UML:TaggedValue tag="ea_targetID" value="24131"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25357"/>
+								<UML:TaggedValue tag="ea_targetID" value="25670"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -892,13 +828,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26538"/>
+								<UML:TaggedValue tag="ea_localid" value="28715"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Ver Acreditacion y Membresia"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N001 Generar Registro IMSS"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23506"/>
-								<UML:TaggedValue tag="ea_targetID" value="24132"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25351"/>
+								<UML:TaggedValue tag="ea_targetID" value="25671"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -930,13 +866,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26533"/>
+								<UML:TaggedValue tag="ea_localid" value="28711"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Ver Acreditacion y Membresia"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N003 Historico de registros de acreditación y membresia"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23506"/>
-								<UML:TaggedValue tag="ea_targetID" value="24133"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25351"/>
+								<UML:TaggedValue tag="ea_targetID" value="25672"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -968,13 +904,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26654"/>
+								<UML:TaggedValue tag="ea_localid" value="28832"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Cambio de Estatus"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N005 Validar que exista un criterio de búsqueda"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23581"/>
-								<UML:TaggedValue tag="ea_targetID" value="24134"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25426"/>
+								<UML:TaggedValue tag="ea_targetID" value="25673"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -1006,13 +942,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26682"/>
+								<UML:TaggedValue tag="ea_localid" value="28860"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Catálogo de CPA IMSS"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N005 Validar que exista un criterio de búsqueda"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23587"/>
-								<UML:TaggedValue tag="ea_targetID" value="24134"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25432"/>
+								<UML:TaggedValue tag="ea_targetID" value="25673"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -1044,13 +980,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26664"/>
+								<UML:TaggedValue tag="ea_localid" value="28842"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Consultar Catálogo CPA Público General"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N005 Validar que exista un criterio de búsqueda"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23584"/>
-								<UML:TaggedValue tag="ea_targetID" value="24134"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25429"/>
+								<UML:TaggedValue tag="ea_targetID" value="25673"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -1082,13 +1018,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26622"/>
+								<UML:TaggedValue tag="ea_localid" value="28800"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Activar Registro"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N005 Validar que exista un criterio de búsqueda"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23512"/>
-								<UML:TaggedValue tag="ea_targetID" value="24134"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25357"/>
+								<UML:TaggedValue tag="ea_targetID" value="25673"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -1120,13 +1056,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26668"/>
+								<UML:TaggedValue tag="ea_localid" value="28846"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Catálogo de Despachos y Colegios y Asociaciones."/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N005 Validar que exista un criterio de búsqueda"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23589"/>
-								<UML:TaggedValue tag="ea_targetID" value="24134"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25434"/>
+								<UML:TaggedValue tag="ea_targetID" value="25673"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -1158,13 +1094,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26648"/>
+								<UML:TaggedValue tag="ea_localid" value="28826"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Cambio de Estatus"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N004 Contadores activos"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23581"/>
-								<UML:TaggedValue tag="ea_targetID" value="24135"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25426"/>
+								<UML:TaggedValue tag="ea_targetID" value="25674"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -1196,13 +1132,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26520"/>
+								<UML:TaggedValue tag="ea_localid" value="28698"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Aceptar Solicitudes"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N009 Conservar el listado de las solicitudes a la vista"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23501"/>
-								<UML:TaggedValue tag="ea_targetID" value="24136"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25346"/>
+								<UML:TaggedValue tag="ea_targetID" value="25675"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -1234,13 +1170,13 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="26670"/>
+								<UML:TaggedValue tag="ea_localid" value="28848"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Catálogo de Despachos y Colegios y Asociaciones."/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N011 Consulta de la Lista desplegable del campo Razón Social"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="23589"/>
-								<UML:TaggedValue tag="ea_targetID" value="24138"/>
+								<UML:TaggedValue tag="ea_sourceID" value="25434"/>
+								<UML:TaggedValue tag="ea_targetID" value="25677"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -1425,9 +1361,9 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 				<UML:TaggedValue tag="type" value="Custom"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
-				<UML:TaggedValue tag="ea_localid" value="2092"/>
+				<UML:TaggedValue tag="ea_localid" value="2206"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=BDA803C6;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Requirements;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=C713B50C;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=Extended::Requirements;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
 				<UML:DiagramElement geometry="Left=695;Top=93;Right=805;Bottom=137;" subject="EAID_4BB842FD_63B6_4196_8482_9FA1A188B2D0" seqno="1" style="DUID=A371C5D7;"/>
@@ -1507,7 +1443,7 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_491ECE8B_9D5C_4d34_B5BB_A1D6AF8EFD0C"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
-		<UML:DiagramElement geometry="Left=760;Top=440;Right=920;Bottom=499;" subject="EAID_B93646AA_0AAA_489c_BDFA_09DB2B48EA75" seqno="12" style="DUID=14C8F942;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
+		<UML:DiagramElement geometry="Left=760;Top=440;Right=920;Bottom=499;" subject="EAID_B93646AA_0AAA_489c_BDFA_09DB2B48EA75" seqno="13" style="DUID=14C8F942;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_491ECE8B_9D5C_4d34_B5BB_A1D6AF8EFD0C"/>
 			</UML:ModelElement.taggedValue>
@@ -1540,6 +1476,11 @@ SwUGAAAAAAEAAQA+AAAACQkAAAAA</UML:TaggedValue>
 		<UML:DiagramElement geometry="Left=492;Top=565;Right=652;Bottom=624;" subject="EAID_D9EBADD2_4F2D_4a35_BEA8_B450B7D24B38" seqno="6" style="DUID=2E4BE86B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
 			<UML:ModelElement.taggedValue>
 				<UML:TaggedValue tag="diagram_guid" value="EAID_1BC1C640_C9B2_4595_A706_94E0B29BDC19"/>
+			</UML:ModelElement.taggedValue>
+		</UML:DiagramElement>
+		<UML:DiagramElement geometry="Left=793;Top=387;Right=975;Bottom=422;" subject="EAID_DFA0F2C1_1682_4e87_AE1B_028963AEF6C2" seqno="0" style="DUID=A3413689;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="diagram_guid" value="EAID_C6780E20_7834_4429_A990_2B1CA0929902"/>
 			</UML:ModelElement.taggedValue>
 		</UML:DiagramElement>
 		<UML:DiagramElement geometry="Left=540;Top=935;Right=700;Bottom=994;" subject="EAID_E7ADF8EB_AE44_4824_B1F0_F910EC1CD48B" seqno="6" style="DUID=D55BB25B;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;">
