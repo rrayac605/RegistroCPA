@@ -37,54 +37,17 @@ public class ExamenIntegratorImpl implements ExamenIntegrator {
 			AtestiguamientoDictamenTO atestiguamientoDictamenTO = TransformerIntegrationUtils
 					.transformer(atestiguamientoDictamenDTO);
 			atestiguamientoDictamenTO = examenService.getDetalleExamenByAtestiguamiento(atestiguamientoDictamenTO);
-			atestiguamientoDictamenDTO = TransformerIntegrationUtils.transformer(atestiguamientoDictamenTO);
-			System.out.println(
-					"++++++++++++++++++++++++++++++++++++++++++++++++++++++Inicio contenido examen+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			System.out.println("Patron Atestiguamiento: "
-					+ atestiguamientoDictamenDTO.getCveIdPatronDictamen().getCveIdPatronDictamen());
-			System.out.println("Estado Atetsiguamiento: "
-					+ atestiguamientoDictamenDTO.getCveIdEstadoAtestiguamiento().getDesEstadoAtestiguamiento());
-			System.out.println("Atetsiguamiento id : "
-					+ atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
-			System.out.println("Atetsiguamiento  : "
-					+ atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
-			for (RubroDTO rubro : atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getNdcRubros()) {
-				System.out.println("Rubro id : " + rubro.getCveIdRubro());
-				System.out.println("Rubro  : " + rubro.getDesRubro());
-				for (PreguntaDTO pregunta : rubro.getNdcPreguntas()) {
-					System.out.println("Pregunta id : " + pregunta.getCveIdPregunta());
-					System.out.println("pregunta  : " + pregunta.getDesPregunta());
-					for (OpcionPreguntaDTO opcionPregunta : pregunta.getNdcOpcionesPregunta()) {
-						System.out.println("Respuesta id : " + opcionPregunta.getCveIdRespuesta().getCveIdRespuesta());
-						System.out.println("Respuesta  : " + opcionPregunta.getCveIdRespuesta().getDesTipoRespuesta());
-					}
-				}
-			}
-			System.out.println(
-					"++++++++++++++++++++++++++++++++++++++++++++++++++++++Fin Prueba examen+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			atestiguamientoDictamenDTO = TransformerIntegrationUtils.transformer(atestiguamientoDictamenTO);		
 			if (atestiguamientoDictamenDTO.getCveIdEstadoAtestiguamiento().getCveIdEstadoAtestiguamiento()==2l) {
-				System.out.println(
-						"++++++++++++++++++++++++++++++++++++++++++++++++++++++Inicio Prueba respuesta y Observaciones+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-				System.out.println("Atestiguamiento id : " + atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getCveIdAtestiguamiento());
-				System.out.println("Atestiguamiento : " + atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getDesAtestiguamiento());
 				for (RubroDTO rubro : atestiguamientoDictamenDTO.getCveIdAtestiguamiento().getNdcRubros()) {
-					System.out.println("Rubro id : " + rubro.getCveIdRubro());
-					System.out.println("Rubro  : " + rubro.getDesRubro());
 					for (PreguntaDTO pregunta : rubro.getNdcPreguntas()) {
-						System.out.println("Pregunta id : " + pregunta.getCveIdPregunta());
-						System.out.println("pregunta  : " + pregunta.getDesPregunta());
 						for (OpcionPreguntaDTO opcionPreguntaDTO : pregunta.getNdcOpcionesPregunta()) {
-							System.out.println("Opcion Pregunta id : " + opcionPreguntaDTO.getCveIdOpcionPregunta());
 							for (AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO : opcionPreguntaDTO.getNdtAtestigPreguntasRespuestas()) {
 								for (RubroAtestiguamientoDictDTO rubroAtestiguamientoDictDTO : rubro.getNdtRubrosAtestiguamientoDict()) {
 									Boolean r = rubroAtestiguamientoDictDTO.getIndAplica()== null||rubroAtestiguamientoDictDTO.getIndAplica() ==0;
 									rubro.setHabilitaRubro((r  ? false: true));
-									System.out.println("Rubro aplica: "+(rubroAtestiguamientoDictDTO.getIndAplica()== null||rubroAtestiguamientoDictDTO.getIndAplica() ==0));
 									for(AtestigPreguntasRespuestDTO atestigPreguntasRespuestDTO1 : rubroAtestiguamientoDictDTO.getNdtAtestigPreguntasRespuesta()){
 										if(atestigPreguntasRespuestDTO1.getCveIdAtestiguamientos().equals(atestigPreguntasRespuestDTO.getCveIdAtestiguamientos())){
-											System.out.println("Atestiguamientos: "+atestigPreguntasRespuestDTO1.getCveIdAtestiguamientos());
-											System.out.println("dentro Opcion Pregunta id : " + opcionPreguntaDTO.getCveIdOpcionPregunta());
-											System.out.println("dentro respuesta : " + opcionPreguntaDTO.getCveIdRespuesta().getDesTipoRespuesta());
 											pregunta.setOpcionSeleccionada( opcionPreguntaDTO.getCveIdRespuesta().getCveIdRespuesta());
 											pregunta.setObservaciones(atestigPreguntasRespuestDTO.getDesObservaciones());
 										}
@@ -94,8 +57,6 @@ public class ExamenIntegratorImpl implements ExamenIntegrator {
 						}
 					}
 				}
-				System.out.println(
-						"++++++++++++++++++++++++++++++++++++++++++++++++++++++Fin Prueba respuesta y Observaciones+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
