@@ -316,6 +316,7 @@
 						
     <p:splitButton  value="      Acciones     " >
         <p:menuitem value="Activar Registro IMSS"
+        
                        onerror="statusDialog.hide();" 
                        onclick="statusDialog.show()" 
                 	   onstart="statusDialog.show()" 
@@ -324,7 +325,6 @@
                        ajax="false"
                         action="#{activacionColegioBean.siguiente}" />
          <p:menuitem value="Atras" immediate="true"
-                                onerror="statusDialog.hide();" 
                        onclick="statusDialog.show()" 
                 	   onstart="statusDialog.show()" 
                  	   oncomplete="statusDialog.hide()" 
