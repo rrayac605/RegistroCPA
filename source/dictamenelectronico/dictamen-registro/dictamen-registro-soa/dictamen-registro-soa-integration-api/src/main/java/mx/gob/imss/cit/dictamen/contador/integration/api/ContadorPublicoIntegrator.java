@@ -13,7 +13,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 public interface ContadorPublicoIntegrator {
 	ContadorPublicoDTO consultarContadorPublicAut(Long idPersona);
 	DomicilioFiscalDTO consultarDomicilioPorRFC(String rfc);
-	List<DatosPersonalesDTO> consultarDatosPersonales(Long idPersona);
+	List<DatosPersonalesDTO> consultarCedulaPorIdPersona(Long idPersona);
 	PersonaMoralDTO consultarPersonaMoralPorRFC(String rfc);
 	List<MediosContactoDTO> obtenerMediosContactoPorIdPersona(Long idPersona);
 }
