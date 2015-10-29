@@ -82,7 +82,7 @@
 				        <p:tab title="#{parentLayout.name}">
 				            <p:panel>         							                   
 								   <p:dataGrid  value="#{parentLayout.listaLayout}" var="layout" columns="4" > 			
-								   			<!-- h:outputScript>
+								   			<h:outputScript>
 												Dropzone.autoDiscover = false;
 												$(function() {
 												  var myDropzone = new Dropzone("#drop#{layout.idLayout}",{
@@ -108,7 +108,7 @@
 												  	return false;											  	
 												  }
 												});
-										  </h:outputScript-->				   
+										  </h:outputScript>				   
 								        <p:panel columns="1" style="width:250px;height:300px;margin:10px 0px" layout="grid" >	
 								         							            
 								 			<p:outputLabel value="#{layout.name}" /> 
