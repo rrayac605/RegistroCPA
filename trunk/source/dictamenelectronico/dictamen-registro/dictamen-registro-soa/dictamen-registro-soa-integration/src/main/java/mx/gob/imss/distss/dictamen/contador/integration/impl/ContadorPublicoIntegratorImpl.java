@@ -13,7 +13,6 @@ import org.apache.log4j.Logger;
 
 import mx.gob.imss.cit.dictamen.contador.commons.to.domain.CedulaTO;
 import mx.gob.imss.cit.dictamen.contador.commons.to.domain.ContadorPublicoTO;
-import mx.gob.imss.cit.dictamen.contador.commons.to.domain.PersonaMedioContactoTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DatosPersonalesDTO;
@@ -22,11 +21,9 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
-import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtR1DatosPersonalesDO;
 import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
-import mx.gob.imss.cit.dictamen.contador.services.MedioContadorService;
 import mx.gob.imss.cit.dictamen.contador.services.SatService;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Moral;
@@ -48,6 +45,7 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 
 	@EJB(name="consultaMedioContacto", mappedName="consultaMedioContacto")
 	private MedioContadorService medioContadorService;
+
 
     public PersonaMoralDTO consultarPersonaMoralPorRFC(String rfc){
 	PersonaMoralDTO personaMoralDTO = null;
@@ -168,7 +166,7 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 		this.satService = satService;
 	}
 
-	@Override
+@Override
 	public List<MediosContactoDTO> obtenerMediosContactoPorIdPersona(
 			Long idPersona) {
 		List<PersonaMedioContactoTO> contactos = medioContadorService.consultarMedioContacto(idPersona);
@@ -187,7 +185,7 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
 		return mediosContacto;
 	}
 	
-	/**
+		/**
 	 * @return the medioContadorService
 	 */
 	public MedioContadorService getMedioContadorService() {
