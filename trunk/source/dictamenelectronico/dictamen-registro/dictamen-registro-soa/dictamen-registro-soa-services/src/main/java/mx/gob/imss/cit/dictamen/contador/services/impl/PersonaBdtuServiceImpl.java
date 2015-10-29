@@ -43,6 +43,7 @@ public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaB
 	@Override
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public Persona consultarPersonaFisicaIMSSPorRFC(Persona persona) {
+		/*
 		try {
 			init();
 			individuoServiceBusinessRemote = (IndividuoServiceBusinessRemote)locate("service.interface.individuo");
@@ -62,6 +63,8 @@ public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaB
 			close();
 		}
 		return persona;
+		*/
+		return null;
 	}
 	
 	
@@ -70,7 +73,7 @@ public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaB
 	@Override
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public List<PersonaCalificacion> obtenerPersonaCalificaciones(Persona persona) throws RuntimeException {
-		
+		/*
 		List<PersonaCalificacion> calificaciones = null;
 		
 		try {
@@ -91,11 +94,14 @@ public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaB
 			close();
 		}
 		return calificaciones;
+		*/
+		return null;
 	}
 	
 	@Override
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public Persona registroPersona(Persona persona, boolean crearSolicitud) throws RuntimeException {
+		/*
 		try {
 			init();
 			personaBusinessRemote = (PersonaBusinessRemote)locate("service.interface.registro.persona");
@@ -110,12 +116,15 @@ public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaB
 			close();
 		}
 		return persona;
+		*/
+		return null;
 	}
 	
 	
 	@Override
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public ICADatosRespuesta identificarCambiosFisica(ICADatosConsulta icaDatosConsulta) {
+		/*
 		ICADatosRespuesta icaDatosRespuesta = null;
 		try {
 			init();
@@ -131,6 +140,8 @@ public class PersonaBdtuServiceImpl  extends BaseBdtuService implements PersonaB
 			close();
 		}
 		return icaDatosRespuesta;
+		*/
+		return null;
 	}
 	
 	
