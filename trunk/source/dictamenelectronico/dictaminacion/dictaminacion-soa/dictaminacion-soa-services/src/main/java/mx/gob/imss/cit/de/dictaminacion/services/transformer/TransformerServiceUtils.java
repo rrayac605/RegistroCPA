@@ -20,6 +20,7 @@ import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.AseveracionesTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.AtestigPreguntasRespuestTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.AtestiguamientoDictamenTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.AtestiguamientoTO;
+import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.BitacoraErroresTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.CargaDocumentoTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.CedulaPagosDiferenciasTO;
 import mx.gob.imss.cit.de.dictaminacion.commons.to.domain.CedulaPrestacionesTO;
@@ -65,6 +66,7 @@ import mx.gob.imss.cit.de.dictaminacion.model.NdtB1DetOtrosIngXsalarioDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtB1DetOtrosPagXseparacDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtB1DetPagosOtrosEmpleadDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtB2CedulaPrestacionesDO;
+import mx.gob.imss.cit.de.dictaminacion.model.NdtBitacoraErroresDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtCargaDocumentoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtCedulaPagosDiferenciasDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtContadorPublicoAutDO;
@@ -199,6 +201,8 @@ public class TransformerServiceUtils {
 		mapClass.put(mx.gob.imss.cit.de.dictaminacion.model.NdcPrestacionesDO.class	,mx.gob.imss.cit.de.dictaminacion.commons.to.domain.PrestacionesTO.class);
 		mapClass.put(mx.gob.imss.cit.de.dictaminacion.commons.to.domain.RemuneracionesTO.class	,mx.gob.imss.cit.de.dictaminacion.model.NdcRemuneracionesDO.class);
 		mapClass.put(mx.gob.imss.cit.de.dictaminacion.model.NdcRemuneracionesDO.class	,mx.gob.imss.cit.de.dictaminacion.commons.to.domain.RemuneracionesTO.class);
+		mapClass.put(mx.gob.imss.cit.de.dictaminacion.commons.to.domain.BitacoraErroresTO.class	,mx.gob.imss.cit.de.dictaminacion.model.NdtBitacoraErroresDO.class);
+		mapClass.put(mx.gob.imss.cit.de.dictaminacion.model.NdtBitacoraErroresDO.class	,mx.gob.imss.cit.de.dictaminacion.commons.to.domain.BitacoraErroresTO.class);
 	}
 
 	private TransformerServiceUtils() {
@@ -307,6 +311,7 @@ public class TransformerServiceUtils {
 		cargaDocumentoTO.setCveIdAseveracion(aseveracionesTO);
 		cargaDocumentoTO.setCveIdTipoDocumento(tipoDocumentoTO);
 		cargaDocumentoTO.setCveIdPatronDictamen(patronDictamenTO);
+		cargaDocumentoTO.setCveIdBitacoraCargaAsev(ndtCargaDocumentoDO.getCveIdBitacoraCargaAsev());
 
 		return cargaDocumentoTO;
 	}
@@ -561,6 +566,12 @@ public class TransformerServiceUtils {
 	}
 	public static NdcRemuneracionesDO transformer(RemuneracionesTO object) throws DictamenException {
 		return (NdcRemuneracionesDO) TransformerHelper.get(mapClass, object, NdcRemuneracionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}	
+	public static NdtBitacoraErroresDO transformer(BitacoraErroresTO object) throws DictamenException {
+		return (NdtBitacoraErroresDO) TransformerHelper.get(mapClass, object, NdtBitacoraErroresDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+	}	
+	public static BitacoraErroresTO transformer(NdtBitacoraErroresDO object) throws DictamenException {
+		return (BitacoraErroresTO) TransformerHelper.get(mapClass, object, BitacoraErroresTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
 	}
 
 }

@@ -222,11 +222,11 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 						if(val){
 							ndtPatronAsociadoDAO.create(patronAsociadoDO);
 							PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
-							to.setEstadoValidacion(EstadoPatronAsociadoEnum.CORRECTO.getDescripcion());
+							to.setEstadoValidacion(EstadoPatronAsociadoEnum.CON_FORMATO.getDescripcion());
 							res.add(to);
 						}else{
 							PatronAsociadoTO to=TransformerServiceUtils.transformer(patronAsociadoDO);
-							to.setEstadoValidacion(EstadoPatronAsociadoEnum.FORMATO_INCORRECTO.getDescripcion());
+							to.setEstadoValidacion(EstadoPatronAsociadoEnum.FALLO.getDescripcion());
 							res.add(to);
 						}
 				
@@ -251,7 +251,7 @@ public class PatronDictamenServiceImpl implements PatronDictamenService {
 			
 			for (NdtPatronAsociadoDO ndtPatronAsociadoDO : ndtPatronAsociadoDOs) {
 				PatronAsociadoTO to=TransformerServiceUtils.transformer(ndtPatronAsociadoDO);
-				to.setEstadoValidacion(EstadoPatronAsociadoEnum.CORRECTO.getDescripcion());
+				to.setEstadoValidacion(EstadoPatronAsociadoEnum.CON_FORMATO.getDescripcion());
 				res.add(to);
 			}
 		

@@ -92,6 +92,13 @@
 					<p:column headerText="Estatus">
 							<h:outputText value="#{registroPatronal.estadoValidacion}" />
 					</p:column>
+					
+					  <f:facet name="{Exporters}">
+			            <h:commandLink>
+			                <p:graphicImage name="/images/pdf_download.png" style="width: 20px; height: 20px; margin: 0 5px 0 2px;"/>
+			                <p:dataExporter type="pdf" target="dataListRegistrosPatronales" fileName="registrosPatronales" />
+			            </h:commandLink>
+					 </f:facet>
 	
 				</p:dataTable>
 	

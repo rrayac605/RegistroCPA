@@ -39,6 +39,12 @@ public interface NdtBitacoraErroresDAO {
 	 */
 	List<NdtBitacoraErroresDO> findAll();
 	
+	/**
+	 * Metodo de busqueda por por id carga documento.
+	 *
+	 * @return the list
+	 */
+	List<NdtBitacoraErroresDO> findByIdCargaDocumento(Long cveIdBitacoraCargaAsev);
 	
 	void flush();
 

@@ -26,31 +26,54 @@
 								   oncomplete="statusDialog.hide();">
 					    <h:graphicImage value="/images/refresh.png"  style="width: 40px; height: 40px; margin: 0 5px 0 2px;" />
 							    
-					</p:commandLink>
+					</p:commandLink>																			
 				   <p:tooltip id="toolRefrescar" for="linkRefrescar" value="Actualizar estatus de aseveraciones"/>
               </p:panel>
      
 		      <p:panel id="informacionPatronalPanel" header="#{msg['message.dictamen.dictaminar.wizard.titulo.bitacora']}">
 			   		<p:dataTable var="aseveracion" value="#{informacionPatronalPage.listadoAseveraciones}" emptyMessage="Aún no se han cargado aseveraciones">
-					<p:column
-						headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.categoria']}">
-						<p:outputLabel value="#{aseveracion.cveIdAseveracion.desTipoAseveracion}"/>
-					</p:column>
-					
-					<p:column
-						headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.estatus']}">
-						<p:outputLabel value="#{aseveracion.cveIdEstadoCargoDoc.desStatusCargaAseveraciones}" />
-					</p:column>
-					<p:column
-						headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.acciones']}">
-							 <p:commandLink  id="linkVerBitacora" action="#{informacionPatronalBean.verBitacora}" 								 
-										  onstart="statusDialog.show();"
-								          oncomplete="statusDialog.hide();">
-							    <h:graphicImage value="/images/bitacora.png"  style="width: 20px; height: 20px; margin: 0 5px 0 2px;" />
-							    
-							</p:commandLink>
-						   <p:tooltip id="toolVerBitacora" for="linkVerBitacora" value="#{msg['message.dictamen.patronal.carga.patronalesTable.bitacora']}"/>
-					</p:column>
+						<p:column
+							headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.categoria']}">
+							<p:outputLabel value="#{aseveracion.cveIdAseveracion.desTipoAseveracion}"/>
+						</p:column>
+						
+						<p:column
+							headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.estatus']}">
+							<p:outputLabel value="#{aseveracion.cveIdEstadoCargoDoc.desStatusCargaAseveraciones}" />
+						</p:column>
+						<p:column
+							headerText="#{msg['message.dictamen.patronal.carga.patronalesTable.acciones']}">
+								 <p:commandLink  id="linkVerBitacora" action="#{cargaArchivosBean.verBitacora(aseveracion.cveIdBitacoraCargaAsev)}" 								 
+											  onstart="statusDialog.show();"
+									          oncomplete="statusDialog.hide();">
+								    <h:graphicImage value="/images/bitacora.png"  style="width: 20px; height: 20px; margin: 0 5px 0 2px;" />
+								    
+								</p:commandLink>
+							   <p:tooltip id="toolVerBitacora" for="linkVerBitacora" value="#{msg['message.dictamen.patronal.carga.patronalesTable.bitacora']}"/>
+							   
+							    <p:overlayPanel id="bitacoraOverPanel"  for="linkVerBitacora" hideEffect="fade" dynamic="true" my="right top" at="bottom left" style="width: 600px;">
+								        <p:dataTable id="tablaBitacora" rowIndexVar="i" var="bitacora" value="#{cargaArchivosPage.listaBitacora}" rows="5" paginator="true" 
+								        paginatorPosition="top" emptyMessage="Sin registros" resizableColumns="false">
+						
+						                    <p:column headerText="Error" >
+								                <p:outputLabel value="#{i+1}"/>
+								            </p:column>
+								            
+								            <p:column headerText="Descripción" >
+								                <p:inputTextarea value="#{bitacora.desErrores}"  cols="1000" rows="4" style="width: 100%;resize: none" readonly="true"/>
+								            </p:column>
+								            
+								            <f:facet name="{Exporters}">
+									            <h:commandLink>
+									                <p:graphicImage name="/images/pdf_download.png" style="width: 20px; height: 20px; margin: 0 5px 0 2px;"/>
+									                <p:dataExporter type="pdf" target="tablaBitacora" fileName="bitacora"/>
+									            </h:commandLink>
+        									</f:facet>
+ 
+								        </p:dataTable>
+						    </p:overlayPanel>
+						    
+						</p:column>
 				</p:dataTable>
 			 </p:panel>
 	
@@ -59,7 +82,7 @@
 				        <p:tab title="#{parentLayout.name}">
 				            <p:panel>         							                   
 								   <p:dataGrid  value="#{parentLayout.listaLayout}" var="layout" columns="4" > 			
-								   			<h:outputScript>
+								   			<!-- h:outputScript>
 												Dropzone.autoDiscover = false;
 												$(function() {
 												  var myDropzone = new Dropzone("#drop#{layout.idLayout}",{
@@ -85,7 +108,7 @@
 												  	return false;											  	
 												  }
 												});
-										  </h:outputScript>				   
+										  </h:outputScript-->				   
 								        <p:panel columns="1" style="width:250px;height:300px;margin:10px 0px" layout="grid" >	
 								         							            
 								 			<p:outputLabel value="#{layout.name}" /> 

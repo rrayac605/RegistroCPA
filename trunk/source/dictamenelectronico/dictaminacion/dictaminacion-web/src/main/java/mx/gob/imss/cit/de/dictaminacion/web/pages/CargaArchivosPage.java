@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.ParentLayoutDTO;
+import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.BitacoraErroresDTO;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.base.BasePage;
 import mx.gob.imss.cit.de.dictaminacion.web.util.annotations.Reset;
 @ManagedBean(name = "cargaArchivosPage")
@@ -19,6 +20,9 @@ public class CargaArchivosPage extends BasePage {
 		
 	@Reset
 	private List<ParentLayoutDTO> listaParentLayout;
+	
+	@Reset
+	private List<BitacoraErroresDTO> listaBitacora;
 
 	/**
 	 * @return the listaParentLayout
@@ -32,6 +36,14 @@ public class CargaArchivosPage extends BasePage {
 	 */
 	public void setListaParentLayout(List<ParentLayoutDTO> listaParentLayout) {
 		this.listaParentLayout = listaParentLayout;
+	}
+
+	public List<BitacoraErroresDTO> getListaBitacora() {
+		return listaBitacora;
+	}
+
+	public void setListaBitacora(List<BitacoraErroresDTO> listaBitacora) {
+		this.listaBitacora = listaBitacora;
 	}	
 	
 }

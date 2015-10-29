@@ -10,8 +10,8 @@ package mx.gob.imss.cit.de.dictaminacion.commons.enums;
 public enum EstadoPatronAsociadoEnum {
 
 	CORRECTO(1L,"Correcto"),
-	FORMATO_INCORRECTO(2L,"Formato incorrecto"),
-	NO_EXISTE(3L,"Formato incorrecto"),
+	FALLO(2L,"Fallo"),
+	CON_FORMATO(3L,"Con formato"),
 
 	
 	

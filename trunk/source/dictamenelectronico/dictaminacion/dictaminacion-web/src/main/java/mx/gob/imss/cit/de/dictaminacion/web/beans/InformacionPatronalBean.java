@@ -52,11 +52,7 @@ public class InformacionPatronalBean extends BaseBean{
 		return "";
 	}
 	
-	
-	public void verBitacora() {
 
-	}
-	
 	/**
 	 * @return the informacionPatronalPage
 	 */

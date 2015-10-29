@@ -33,6 +33,7 @@ import javax.validation.constraints.Size;
 @Table(name = "NDT_BITACORA_ERRORES")
 @NamedQueries({
     @NamedQuery(name = "NdtBitacoraErroresDO.findAll", query = "SELECT n FROM NdtBitacoraErroresDO n"),
+    @NamedQuery(name = "NdtBitacoraErroresDO.findByIdCargaDocumento", query = "SELECT n FROM NdtBitacoraErroresDO n where n.cveIdBitacoraCargaAsev.cveIdBitacoraCargaAsev = :cveIdBitacoraCargaAsev"),
     @NamedQuery(name = "NdtBitacoraErroresDO.findByCveIdBitErrores", query = "SELECT n FROM NdtBitacoraErroresDO n WHERE n.cveIdBitErrores = :cveIdBitErrores"),
     @NamedQuery(name = "NdtBitacoraErroresDO.findByDesErrores", query = "SELECT n FROM NdtBitacoraErroresDO n WHERE n.desErrores = :desErrores"),
     @NamedQuery(name = "NdtBitacoraErroresDO.findByFecRegistroAlta", query = "SELECT n FROM NdtBitacoraErroresDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
@@ -61,7 +62,7 @@ public class NdtBitacoraErroresDO implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecRegistroActualizado;
     @JoinColumn(name = "CVE_ID_BITACORA_CARGA_ASEV", referencedColumnName = "CVE_ID_BITACORA_CARGA_ASEV")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private NdtCargaDocumentoDO cveIdBitacoraCargaAsev;
 
     public NdtBitacoraErroresDO() {
