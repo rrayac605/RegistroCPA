@@ -76,6 +76,12 @@
 			<to-view-id>/views/dictamen/cedula/cedulaRemuneraciones.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>cedulaPrestaciones</from-outcome>
+			<to-view-id>/views/dictamen/cedula/cedulaPrestaciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
 
 	</navigation-rule>
 </faces-config>

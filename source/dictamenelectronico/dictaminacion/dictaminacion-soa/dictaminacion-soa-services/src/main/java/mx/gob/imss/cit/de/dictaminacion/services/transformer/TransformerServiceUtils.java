@@ -543,11 +543,24 @@ public class TransformerServiceUtils {
 	public static NdtB1DetPagosOtrosEmpleadDO transformer(DetPagosOtrosEmpleadTO object) throws DictamenException {
 		return (NdtB1DetPagosOtrosEmpleadDO) TransformerHelper.get(mapClass, object, NdtB1DetPagosOtrosEmpleadDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
 	}
-	public static CedulaPrestacionesTO transformer(NdtB2CedulaPrestacionesDO object) throws DictamenException {
-		return (CedulaPrestacionesTO) TransformerHelper.get(mapClass, object, CedulaPrestacionesTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
-	}
+	public static CedulaPrestacionesTO transformer(NdtB2CedulaPrestacionesDO ndtB2CedulaPrestacionesDO) throws DictamenException {
+		CedulaPrestacionesTO cedulaPrestacionesTO = (CedulaPrestacionesTO) TransformerHelper.get(mapClass, ndtB2CedulaPrestacionesDO, CedulaPrestacionesTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+
+		PrestacionesTO prestacionesTO = new PrestacionesTO();
+		prestacionesTO.setCveIdPrestaciones(ndtB2CedulaPrestacionesDO.getCveIdPrestaciones().getCveIdPrestaciones());
+		prestacionesTO.setDesPrestaciones(ndtB2CedulaPrestacionesDO.getCveIdPrestaciones().getDesPrestaciones());
+		
+		return cedulaPrestacionesTO;
+	
+}
 	public static NdtB2CedulaPrestacionesDO transformer(CedulaPrestacionesTO object) throws DictamenException {
-		return (NdtB2CedulaPrestacionesDO) TransformerHelper.get(mapClass, object, NdtB2CedulaPrestacionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+		NdtB2CedulaPrestacionesDO ndtB2CedulaPrestacionesDO = (NdtB2CedulaPrestacionesDO) TransformerHelper.get(mapClass, object, NdtB2CedulaPrestacionesDO.class, DictamenConstants.PROFUNDIDAD_MAPEO);
+		
+		NdcPrestacionesDO ndcPrestacionesDO = new NdcPrestacionesDO();
+		ndcPrestacionesDO.setCveIdPrestaciones(ndtB2CedulaPrestacionesDO.getCveIdPrestaciones().getCveIdPrestaciones());
+		ndcPrestacionesDO.setDesPrestaciones(ndtB2CedulaPrestacionesDO.getCveIdPrestaciones().getDesPrestaciones());
+		
+		return ndtB2CedulaPrestacionesDO;
 	}
 	public static CedulaPagosDiferenciasTO transformer(NdtCedulaPagosDiferenciasDO object) throws DictamenException {
 		return (CedulaPagosDiferenciasTO) TransformerHelper.get(mapClass, object, CedulaPagosDiferenciasTO.class, DictamenConstants.PROFUNDIDAD_MAPEO);

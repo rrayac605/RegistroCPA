@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain;
 
 import java.io.Serializable;
@@ -23,13 +18,6 @@ public class CedulaPrestacionesDTO implements Serializable {
     private PrestacionesDTO cveIdPrestaciones;
     private EstadoAtestiguamientoDTO cveIdEstadoAtestiguamiento;
     private AtestiguamientoDTO cveIdAtestiguamiento;
-
-    public CedulaPrestacionesDTO() {
-    }
-
-    public CedulaPrestacionesDTO(Long cveIdCedulaPrestaciones) {
-        this.cveIdCedulaPrestaciones = cveIdCedulaPrestaciones;
-    }
 
     public Long getCveIdCedulaPrestaciones() {
         return cveIdCedulaPrestaciones;

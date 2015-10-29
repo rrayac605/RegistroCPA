@@ -21,13 +21,6 @@ public class PrestacionesTO implements Serializable {
 	private Date fecRegistroActualizado;
 	private List<CedulaPrestacionesTO> cedulaPrestacionesList;
 
-	public PrestacionesTO() {
-	}
-
-	public PrestacionesTO(Long cveIdPrestaciones) {
-		this.cveIdPrestaciones = cveIdPrestaciones;
-	}
-
 	public Long getCveIdPrestaciones() {
 		return cveIdPrestaciones;
 	}

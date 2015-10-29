@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mx.gob.imss.cit.de.dictaminacion.model;
 
 import java.io.Serializable;
@@ -38,7 +33,17 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtB2CedulaPrestacionesDO.findByFecRegistroAlta", query = "SELECT n FROM NdtB2CedulaPrestacionesDO n WHERE n.fecRegistroAlta = :fecRegistroAlta"),
     @NamedQuery(name = "NdtB2CedulaPrestacionesDO.findByFecRegistroBaja", query = "SELECT n FROM NdtB2CedulaPrestacionesDO n WHERE n.fecRegistroBaja = :fecRegistroBaja"),
     @NamedQuery(name = "NdtB2CedulaPrestacionesDO.findByFecRegistroActualizado", query = "SELECT n FROM NdtB2CedulaPrestacionesDO n WHERE n.fecRegistroActualizado = :fecRegistroActualizado"),
-    @NamedQuery(name = "NdtB2CedulaPrestacionesDO.findByCveIdUsuario", query = "SELECT n FROM NdtB2CedulaPrestacionesDO n WHERE n.cveIdUsuario = :cveIdUsuario")})
+    @NamedQuery(name = "NdtB2CedulaPrestacionesDO.findByCveIdUsuario", query = "SELECT n FROM NdtB2CedulaPrestacionesDO n WHERE n.cveIdUsuario = :cveIdUsuario"),
+    @NamedQuery(name = "NdtB2CedulaPrestacionesDO.findPrestacionByIdCedulaByImporte", query =  "SELECT A "
+    		+ "FROM NdtB2CedulaPrestacionesDO A, "
+    		+ "NdcAtestiguamientoDO B, " 
+    		+ "NdtPatronDictamenDO D, " 
+    		+ "NdcPrestacionesDO C "
+    		+ "WHERE A.cveIdAtestiguamiento.cveIdAtestiguamiento = B.cveIdAtestiguamiento "
+    		+ "AND A.cveIdPatronDictamen.cveIdPatronDictamen = D.cveIdPatronDictamen "
+    		+ "AND A.cveIdPrestaciones.cveIdPrestaciones = C.cveIdPrestaciones "
+    		+ "AND A.cveIdPatronDictamen.cveIdPatronDictamen =:cveIdPatronDictamen "
+    		+ "AND B.cveIdAtestiguamiento =:cveIdAtestiguamiento")})
 public class NdtB2CedulaPrestacionesDO implements Serializable {
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
