@@ -14,20 +14,21 @@
 
 		window.resultadoWidgetFirmaElectronica = function(data) {
 			// Obtener los datos de respuesta del componente
-			//alert(data.acuse);
+			alert(data.acuse);
 			console.log(data);
 			//document.getElementById("resultadoFirmaElectronica").innerHTML = "Firmado";
 			jQuery("[id$='cadenaFiel']").val(data)
-			jQuery("[id$='dialogFirmaElectronica']").hide();
-		    jQuery("[id$='btnFirmar']").click();
-			//alert("Se obtubo resultado ");
-			//jQuery("[id$='panelFirmado']").show();
+			jQuery("[id$='dialogFiel']").hide();
+			
+			alert("Se obtubo resultado ");
+			jQuery("[id$='panelFirmado']").show();
 			//dialogFiel.hide();
 		}
 
 
 		window.resultadoFiel = function(response) {
-
+			alert("En el response ");
+			alert(response);
 			if (window.opener != null) {
 				window.opener.resultadoWidgetFirmaElectronica(response);
 				// Cerrar el popup al terminar el firmado
@@ -150,14 +151,6 @@
 								action="#{activacionAcuseBean.accionSiguiente}"
 								update=":formFirmaElectronica" id="btnSiguiente"
 								styleClass="ui-priority-primary" />
-								
-								<p:commandButton
-								value="Firmar" 
-								ajax="false"
-								process="@this,formActivacionRegistro"
-								action="#{activacionAcuseBean.accionValidarFirmaElectronica}"
-								id="btnFirmar"
-								styleClass="ui-priority-primary" />
 						</td>
 					</tr>
 			
@@ -167,24 +160,22 @@
 			
 			
 			</p:panel>
-	
-		</p:fieldset>
-	
-</p:panel>
-<p:panel id="pnFirmaElectronicaDlg" >
-			    
+		    
 	<p:dialog widgetVar="dialogFirmaElectronica" id="dialogFirmaElectronica" 
 	visible="#{activacionAcuseBean.activarFirmaElectronicaDialog}" 
 	rendered="#{activacionAcuseBean.activarFirmaElectronicaDialog}"
 			width="850" 
 			height="410">
+			
     	    	<p:panel id="panelFirmaElectronica" widgetVar="panelFirmaElectronica" >
     	
     		<p:inputText id="cadenaFiel" 
 			    	widgetVar="cadenaFiel" 
-			    	value="#{activacionAcuseBean.firma}" type="hidden" >
-			</p:inputText>
+			    	value="#{activacionAcuseBean.firma}" 
+			    	/>
 			    
+			    
+                       
        <applet id="AppletFirma" width="770" height="350" archive="MtsAppletFielWidget.IMSS.jar" 
              code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
              codebase="http://firmadigitalqa.imss.gob.mx/firmaElectronicaWeb/applets/">
@@ -211,14 +202,20 @@
 	"acuse":"http://172.16.5.151:8083/reader/view/visualizadorcomprobantes/mostrarComprobante?id=f4033148-720c-4abd-a09c-3e3d7dadf83b",
 	"curp":"FOVM830211HDFLLR01","Resultado":0,"rfc":"FOVM830211446"} -->                                         
        <br/>                
-
+<p:commandButton
+								value="Firmar" 
+								ajax="false"
+								process="@this,formActivacionRegistro"
+								action="#{activacionAcuseBean.accionFirmar}"
+								id="btnFirmar"
+								styleClass="ui-priority-primary" />
 
 	
 		</p:panel>
 	</p:dialog>
 				
+	</p:fieldset>
 		</p:panel>
 				</h:form>	
 	</ui:define>
 </ui:composition>
-		

@@ -9,7 +9,7 @@
 	</ui:define>
 	<ui:define name="content">
           
-						          <h:form id="frmDatosContador4">
+	<h:form id="frmDatosContador4">
 			
        <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="frmDatosContador4"  />
           
@@ -83,9 +83,12 @@
 			</p:dialog>
 			
 			</h:form>
-						          <h:form id="frmDatosContador2">
-			
-			<p:dialog widgetVar="dlgContNoAut" resizable="false" draggable="false" visible="#{activacionSolicitudBean.activarContadorNoAutorizado}">
+	<h:form id="frmDatosContador2">
+			<p:dialog widgetVar="dlgContNoAut" 
+		     closable="false" 
+		     resizable="false" 
+		    draggable="false"		    
+		    visible="#{activacionSolicitudBean.activarContadorNoAutorizado}">
 			<p:panel id="pnContNoAut" header="Mensaje del Sistema">	
 			      <p:messages autoUpdate="true" id="msgs2" showDetail="true" showSummary="true" />
 			
