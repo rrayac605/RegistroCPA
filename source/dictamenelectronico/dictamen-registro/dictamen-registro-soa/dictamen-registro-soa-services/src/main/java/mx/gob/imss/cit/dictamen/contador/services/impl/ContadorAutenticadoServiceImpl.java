@@ -2,7 +2,7 @@ package mx.gob.imss.cit.dictamen.contador.services.impl;
 
 import javax.ejb.Stateless;
 
-import org.apache.commons.lang.StringUtils;
+//import org.apache.commons.lang.StringUtils;
 
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.services.ContadorAutenticadoService;
@@ -18,8 +18,10 @@ public class ContadorAutenticadoServiceImpl implements
 
 	@Override
 	public boolean validarSesionContador(String rfc, String curp) {
-		return StringUtils.isNotBlank(curp)
-				&& StringUtils.isNotBlank(rfc);
+		//return StringUtils.isNotBlank(curp)
+		//		&& StringUtils.isNotBlank(rfc);
+
+		return false;
 	}
 	
 	@Override

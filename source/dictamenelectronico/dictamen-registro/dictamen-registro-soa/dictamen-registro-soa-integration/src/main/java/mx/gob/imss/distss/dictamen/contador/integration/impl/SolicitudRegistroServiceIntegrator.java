@@ -23,7 +23,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.exception.DictamenConta
 import mx.gob.imss.cit.dictamen.contador.services.ConsultaSATService;
 import mx.gob.imss.distss.dictamen.contador.integration.util.TransformerIntegrationUtils;
 
-import org.apache.commons.lang.StringUtils;
+//import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 
@@ -110,7 +110,7 @@ public class SolicitudRegistroServiceIntegrator implements SolicitudRegistroInte
 	
 	private String buscarRazonSocial(List<Identificacion> list) {
 		String razonSocial = null;
-		for(Identificacion ubi : list){
+	/*	for(Identificacion ubi : list){
 			if(StringUtils.isNotBlank(ubi.getRazonSoc())){
 				razonSocial = ubi.getRazonSoc();
 			} else if(StringUtils.isNotBlank(ubi.getNomComercial())){
@@ -118,7 +118,7 @@ public class SolicitudRegistroServiceIntegrator implements SolicitudRegistroInte
 			} else{
 				razonSocial = ubi.getNombre();
 			}
-		}
+		}*/
 		return razonSocial;
 	}
 

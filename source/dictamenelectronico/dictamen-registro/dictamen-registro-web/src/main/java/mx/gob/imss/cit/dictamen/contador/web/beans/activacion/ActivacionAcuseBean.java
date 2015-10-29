@@ -12,15 +12,15 @@ import mx.gob.imss.cit.dictamen.contador.web.navigation.ActivacionNavigation;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionColegioPage;
 import mx.gob.imss.cit.dictamen.contador.web.pages.activacion.ActivacionDespachoPage;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 @ManagedBean(name = "activacionAcuseBean")
 @ViewScoped
 public class ActivacionAcuseBean extends BaseBean{
 
 	private static final long serialVersionUID = -7431536406907320285L;
-	private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionAcuseBean.class);
+	//private static final Logger LOGGER = LoggerFactory.getLogger(ActivacionAcuseBean.class);
     
 	private boolean activarFirmaElectronicaDialog=false;
 	
@@ -52,7 +52,7 @@ public class ActivacionAcuseBean extends BaseBean{
 	
 	
  	public void accionFirmar(){
-		LOGGER.info("FIRMA="+firma);
+		//LOGGER.info("FIRMA="+firma);
 	}
  	public void accionFirmaElectronica(){
  	    this.setActivarFirmaElectronicaDialog(true);
