@@ -146,18 +146,20 @@
 
 			<p:inputText id="txtCorreo2"
 				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"
-				value="#{actualizacionRegistroPage.emailsOp[0]}" />
+				value="#{actualizacionRegistroPage.email1}" />
 			<p:inputText id="txtConfCorreo2"
-				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" />
+				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" 
+				value="#{actualizacionRegistroPage.emailConf1}"/>
 
 			<p:outputLabel id="lblCorreo3">#{msg['message.actualizacion.datoscontacto.correo3']}</p:outputLabel>
 			<p:outputLabel id="lblConCorreo3">#{msg['message.actualizacion.datoscontacto.confirmarcorreo3']}</p:outputLabel>
 
 			<p:inputText id="txtCorreo3"
 				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}"
-				value="#{actualizacionRegistroPage.emailsOp[1]}" />
+				value="#{actualizacionRegistroPage.email2}" />
 			<p:inputText id="txtConfCorreo3"
-				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" />
+				disabled="#{not actualizacionRegistroPage.habilitaDatosPersonales}" 
+				value="#{actualizacionRegistroPage.emailConf2}"/>
 		</p:panelGrid>
 	</p:panel>
 

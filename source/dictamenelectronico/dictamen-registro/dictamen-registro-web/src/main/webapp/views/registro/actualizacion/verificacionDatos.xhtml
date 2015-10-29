@@ -11,7 +11,7 @@
 	<ui:define name="content">
 		<p:dialog widgetVar="iniData" id="dlDatosIniciales" visible="#{actualizacionRegistroBean.actualizacionRegistroPage.tieneRegistro}">
 			<p:panel id="pnValidaDatos">
-				<p:panelGrid id="pngDatosContador">
+				<p:panelGrid id="pngContadorData">
 					<p:row>
 						<p:column colspan="2" style="text-align: center;">
 							<p:outputLabel id="lblDatoCorrecto">#{msg['message.actualizacion.datos.correctos']}</p:outputLabel>
@@ -71,9 +71,9 @@
 
 		<p:dialog widgetVar="dlgNoReg" id="dlgNoRegistros"
 			visible="#{not actualizacionRegistroPage.tieneRegistro}">
-			<p:panelGrid id="pngSinRegistros">
+			<p:panelGrid id="pngSinRegistros" columns="1">
 				<p:outputLabel id="msgNoDatos"
-					value="#{msg['message.actualizacion.no.datos']}"></p:outputLabel>
+					value="#{msg['message.actualizacion.no.datos']}"/>
 				<p:button id="btnNoDataAceptar"
 					value="#{msg['message.button.aceptar']}" onclick="dlgNoReg.hide()" />
 			</p:panelGrid>

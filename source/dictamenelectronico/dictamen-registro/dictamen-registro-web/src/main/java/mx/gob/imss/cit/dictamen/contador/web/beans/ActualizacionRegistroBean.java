@@ -11,13 +11,16 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
+import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorAutenticadoIntegrator;
 import mx.gob.imss.cit.dictamen.contador.integration.api.ContadorPublicoIntegrator;
+import mx.gob.imss.cit.dictamen.contador.integration.api.dto.ContadorPublicoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.DomicilioFiscalDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.MediosContactoDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaDTO;
 import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.web.pages.ActualizacionRegistroPage;
 import mx.gob.imss.cit.dictamen.contador.web.util.FacesUtils;
+import mx.gob.imss.cit.dictamen.contador.web.validator.CorreoElectronicoValidator;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -43,6 +46,10 @@ public class ActualizacionRegistroBean implements Serializable {
 	private static final String MENSAJE_ERROR_DATOS_INVALIDOS = "#{msg['message.actualizacion.datoscontador.nocorrectos']}";
 	private static final String MENSAJE_ERROR_RFC_DESPACHO = "#{msg['message.actualizacion.despacho.error.norfc']}";
 	private static final String MENSAJE_ERROR_RFC_COLEGIO = "#{msg['message.actualizacion.colegio.error.norfc']}";
+	private static final String MENSAJE_ERROR_CORREO = "#{msg['message.actualizacion.error.ingresar.correo']}";
+	private static final String MENSAJE_ERROR_CORREO_INVALIDO = "#{msg['message.actualizacion.error.valido.correo']}";
+	private static final String MENSAJE_ERROR_CORREO_IGUAL = "#{msg['message.actualizacion.error.igual.correo']}";
+	private static final String MENSAJE_ERROR_REGISTRO_CANCELADO = "#{msg['message.actualizacion.error.usuario.cancelado']}";
 	private static final String MODAL_MENSAJE_ABIERTO = "dialogMensajes.show();";
 	private static final String MODAL_DATOS_CERRADO = "iniData.hide();";
 	private static final String MODAL_DATOS_ABIERTO = "iniData.show();";
@@ -53,6 +60,9 @@ public class ActualizacionRegistroBean implements Serializable {
 
 	@EJB(mappedName = "contadorPublicoIntegrator", name = "contadorPublicoIntegrator")
 	private ContadorPublicoIntegrator contadorPublicoIntegrator;
+	
+	@EJB(mappedName = "contadorAutenticadoIntegrator", name = "contadorAutenticadoIntegrator")
+	private ContadorAutenticadoIntegrator contadorAutenticadoIntegrator;
 
 	@PostConstruct
 	public void init() {
@@ -68,15 +78,15 @@ public class ActualizacionRegistroBean implements Serializable {
 		personaDTO.setFolioSolicitud("123456789123456789123");
 		personaDTO.setCorreoElectronico("test@test.com");
 		personaDTO.setTelefono("55984634");
-		if (StringUtils.isBlank(personaDTO.getCurp())
-				&& StringUtils.isBlank(personaDTO.getRfc())) {
+		
+		if (!contadorAutenticadoIntegrator.validarSesionContador(personaDTO.getRfc(), personaDTO.getCurp())) {
 			FacesUtils.messageError(1, MENSAJE_INICIO_SESION);
 		} else {
-			LOGGER.info("Actualización de registro: se va a buscar el registro con los siguientes datos: curp->"
-					+ personaDTO.getCurp() + ", rfc->" + personaDTO.getRfc());
-			if (personaDTO != null) {
-				// ContadorPublicoDTO contadorAutorizado =
-				// contadorPublicoIntegrator.consultarContadorPublicAut(personaDTO.getIdPersona());
+			LOGGER.info("Actualización de registro: se va a buscar el registro con el id de persona");
+			ContadorPublicoDTO contadorAut = contadorPublicoIntegrator.consultarContadorPublicAut(personaDTO.getIdPersona());
+			int respuesta = contadorAutenticadoIntegrator.validarContadorAutenticado(contadorAut);
+			switch(respuesta){
+			case 0:
 				this.actualizacionRegistroPage.setApellidoMaterno(personaDTO
 						.getApellidoMaterno());
 				this.actualizacionRegistroPage.setApellidoPaterno(personaDTO
@@ -98,12 +108,16 @@ public class ActualizacionRegistroBean implements Serializable {
 							MODAL_DATOS_ABIERTO);
 				}
 				List<MediosContactoDTO> contactos = contadorPublicoIntegrator
-						.obtenerMediosContactoPorIdPersona(personaDTO.getIdPersona());
+						.obtenerMediosContactoPorIdPersona(personaDTO
+								.getIdPersona());
 				int index = 0;
 				for (MediosContactoDTO contacto : contactos) {
 					if (contacto.getMedioContacto() == 1L) {
-						this.actualizacionRegistroPage.getEmailsOp()[index] = contacto
-								.getDescripcion();
+						if(index == 0){
+							this.actualizacionRegistroPage.setEmail1(contacto.getDescripcion());
+						} else if(index == 1){
+							this.actualizacionRegistroPage.setEmail2(contacto.getDescripcion());
+						}
 						index++;
 					}
 					if (index == 2) {
@@ -111,9 +125,14 @@ public class ActualizacionRegistroBean implements Serializable {
 					}
 				}
 				this.actualizacionRegistroPage.setTieneRegistro(Boolean.TRUE);
-			} else {
+				break;
+			case 1: // Registro nulo
 				generarModalMensaje(MODAL_DATOS_CERRADO, MODAL_MENSAJE_ABIERTO,
 						MENSAJE_ERROR_NO_DATOS);
+				break;
+			case 2: // Registro cancelado
+				generarModalMensaje(MODAL_MENSAJE_ABIERTO, MENSAJE_ERROR_REGISTRO_CANCELADO);
+				break;
 			}
 		}
 	}
@@ -198,7 +217,7 @@ public class ActualizacionRegistroBean implements Serializable {
 	}
 
 	public void buscarDespacho() {
-		String rfcDespacho = this.actualizacionRegistroPage.getRfcDespacho();
+		String rfcDespacho = this.actualizacionRegistroPage.getDespacho().getRfc();
 		LOGGER.info("Se va a realizar la búsqueda del despaho, por rfc, al sat: "
 				+ rfcDespacho);
 		buscarPersonaMoral(rfcDespacho, MENSAJE_ERROR_RFC_DESPACHO,
@@ -206,7 +225,7 @@ public class ActualizacionRegistroBean implements Serializable {
 	}
 
 	public void buscarColegio() {
-		String rfcColegio = this.actualizacionRegistroPage.getRfcColegio();
+		String rfcColegio = this.actualizacionRegistroPage.getColegio().getRfc();
 		LOGGER.info("Se va a realizar la búsqueda de colegio, por rfc, al sat: "
 				+ rfcColegio);
 		buscarPersonaMoral(rfcColegio, MENSAJE_ERROR_RFC_COLEGIO,
@@ -216,6 +235,12 @@ public class ActualizacionRegistroBean implements Serializable {
 	public void cargandoMembresia(FileUploadEvent event) {
 		// TODO requiere evaluar archivo
 		event.getFile();
+	}
+
+	public void validarCambios() {
+		LOGGER.info("Se validarán los cambios antes de guardar la información");
+		boolean isDatosPersonalesValido = validarDatosPersonales();
+		// TODO validar campos de despacho y colegio
 	}
 
 	/**
@@ -270,18 +295,64 @@ public class ActualizacionRegistroBean implements Serializable {
 			if (personaMoralSAT != null) {
 				if (busqueda == 0) {
 					this.actualizacionRegistroPage
-							.setRazonSocialDespacho(personaMoralSAT
-									.getRazonSocial());
+							.setDespacho(personaMoralSAT);
 				} else if (busqueda == 1) {
 					this.actualizacionRegistroPage
-							.setRazonSocialColegio(personaMoralSAT
-									.getRazonSocial());
+							.setColegio(personaMoralSAT);
 				}
 			} else {
 				generarModalMensaje(modal, mensaje);
 			}
 
 		}
+	}
+
+	private boolean validarDatosPersonales() {
+		boolean isValido = Boolean.TRUE;
+		if (this.actualizacionRegistroPage.isHabilitaDatosPersonales()) {
+			// Comprobando que exista un dato en el correo opcional 2
+			String correoObligatorio = this.actualizacionRegistroPage
+					.getEmail1();
+			String confCorreoObl = this.actualizacionRegistroPage
+					.getEmailConf1();
+			String correoSecundario = this.actualizacionRegistroPage
+					.getEmail2();
+			String confCorreoSec = this.actualizacionRegistroPage
+					.getEmail2();
+			if (StringUtils.isBlank(correoObligatorio)) {
+				generarModalMensaje(MODAL_MENSAJEG_ABIERTO,
+						MENSAJE_ERROR_CORREO);
+				isValido = Boolean.FALSE;
+			} else if (!CorreoElectronicoValidator
+					.validarCorreo(correoObligatorio)) {
+				generarModalMensaje(MODAL_MENSAJEG_ABIERTO,
+						MENSAJE_ERROR_CORREO_INVALIDO);
+				isValido = Boolean.FALSE;
+			} else if (!StringUtils.trimToEmpty(correoObligatorio).equals(
+					StringUtils.trimToEmpty(confCorreoObl))) {
+				generarModalMensaje(MODAL_MENSAJEG_ABIERTO,
+						MENSAJE_ERROR_CORREO_IGUAL);
+				isValido = Boolean.FALSE;
+			} else if (StringUtils.isNotBlank(correoSecundario)) {
+				if (!StringUtils.trimToEmpty(correoSecundario).equals(
+						StringUtils.trimToEmpty(confCorreoSec))) {
+					generarModalMensaje(MODAL_MENSAJEG_ABIERTO,
+							MENSAJE_ERROR_CORREO_IGUAL);
+					isValido = Boolean.FALSE;
+				}
+			}
+			correoObligatorio = null;
+			confCorreoObl = null;
+			correoSecundario = null;
+			confCorreoSec = null;
+		}
+		return isValido;
+	}
+	
+	private boolean validarDatosDespacho(){
+		boolean isValido = Boolean.TRUE;
+		// TODO validar campos de despacho
+		return isValido;
 	}
 
 	/**

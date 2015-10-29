@@ -10,50 +10,50 @@
 	</ui:define>
 
 	<ui:define name="content">
+		<h:form id="frmActReg" prependId="false">
+			<p:fieldset id="fsActReg" toggleable="false" legend="#{msg['message.actualizacion.panel.legend']}">
+				<p:tabView id="tvActualizacion"
+				activeIndex="#{actualizacionRegistroPage.indiceTabActivo}">
+				<p:ajax event="tabChange"
+					actionListener="#{actualizacionRegistroBean.onTabChange}" />
+				<p:tab title="#{msg['message.actualizacion.datos.personales']}">
+					<ui:include src="contador.xhtml" />
+				</p:tab>
+				<p:tab title="#{msg['message.actualizacion.datos.despacho']}">
+					<ui:include src="despacho.xhtml" />
+				</p:tab>
+				<p:tab title="#{msg['message.actualizacion.colegio.title']}">
+					<ui:include src="colegio.xhtml" />
+				</p:tab>
+				<p:tab title="#{msg['message.actualizacion.documentos.title']}"
+					rendered="#{actualizacionRegistroPage.habilitaDatosColegio}">
+					<ui:include src="documentosProbatorios.xhtml"/>
+				</p:tab>
+			</p:tabView>
+			<h:panelGroup id="pngBotones" style="width:100%; text-align: right;">
+				<p:panelGrid id="pgBotones" columns="2" >
+					<p:commandButton id="btnFirmar"
+						value="#{msg['message.actualizacion.button.firmar']}"
+						disabled="#{not actualizacionRegistroPage.habiliatrBotonesAccion}"
+						styleClass="ui-priority-primary" />
+					<p:commandButton id="btnTerminar"
+						value="#{msg['message.actualizacion.button.terminar']}"
+						actionListener="#{actualizacionRegistroBean.validarCambios}"
+						styleClass="ui-priority-primary" update="diaMensajesAct" />
+				</p:panelGrid>
+			</h:panelGroup>
+			</p:fieldset>
+			
 	
-		<p:fieldset id="fsActReg" toggleable="false" legend="#{msg['message.actualizacion.panel.legend']}">
-			<p:tabView id="tvActualizacion"
-			activeIndex="#{actualizacionRegistroPage.indiceTabActivo}">
-			<p:ajax event="tabChange"
-				actionListener="#{actualizacionRegistroBean.onTabChange}" />
-			<p:tab title="#{msg['message.actualizacion.datos.personales']}">
-				<ui:include src="contador.xhtml" />
-			</p:tab>
-			<p:tab title="#{msg['message.actualizacion.datos.despacho']}">
-				<ui:include src="despacho.xhtml" />
-			</p:tab>
-			<p:tab title="#{msg['message.actualizacion.colegio.title']}">
-				<ui:include src="colegio.xhtml" />
-			</p:tab>
-			<p:tab title="#{msg['message.actualizacion.documentos.title']}"
-				rendered="#{actualizacionRegistroPage.habilitaDatosColegio}">
-				<ui:include src="documentosProbatorios.xhtml"/>
-			</p:tab>
-		</p:tabView>
-		<h:panelGroup id="pngBotones" style="width:100%; text-align: right;">
-			<p:panelGrid id="pgBotones" columns="2" >
-				<p:commandButton id="btnFirmar"
-					value="#{msg['message.actualizacion.button.firmar']}"
-					disabled="#{not actualizacionRegistroPage.habiliatrBotonesAccion}"
-					styleClass="ui-priority-primary" />
-				<p:commandButton id="btnTerminar"
-					value="#{msg['message.actualizacion.button.terminar']}"
-					actionListener="#{actualizacionRegistroBean.habilitaEdicionDatos}"
-					styleClass="ui-priority-primary" />
-			</p:panelGrid>
-		</h:panelGroup>
-		</p:fieldset>
-		
-
-		<p:dialog id="diaMensajesAct" widgetVar="dialogMensajesAct">
-			<p:panelGrid id="pngMensajesPrevios" columns="1">
-				<p:outputLabel id="lblMensajeAlerts"
-					value="#{actualizacionRegistroPage.mensajesPrevios}" />
-					<p:button id="btnSalir"
-					value="#{msg['message.button.salir']}"
-					onclick="dialogMensajes.hide()" styleClass="ui-priority-primary"/>
-			</p:panelGrid>
-		</p:dialog>
-
+			<p:dialog id="diaMensajesAct" widgetVar="dialogMensajesAct">
+				<p:panelGrid id="pngMensajesPrevios" columns="1">
+					<p:outputLabel id="lblMensajeAlerts"
+						value="#{actualizacionRegistroPage.mensajesPrevios}" />
+						<p:button id="btnSalir"
+						value="#{msg['message.button.salir']}"
+						onclick="dialogMensajes.hide()" styleClass="ui-priority-primary"/>
+				</p:panelGrid>
+			</p:dialog>
+		</h:form>
 	</ui:define>
 </ui:composition>
