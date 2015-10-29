@@ -18,7 +18,6 @@ import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.LayoutDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.ParentLayoutDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.BitacoraErroresDTO;
 import mx.gob.imss.cit.de.dictaminacion.integration.api.dto.domain.PatronDictamenDTO;
-import mx.gob.imss.cit.de.dictaminacion.integration.api.exception.DictamenNegocioException;
 import mx.gob.imss.cit.de.dictaminacion.web.constants.DictamenWebConstants;
 import mx.gob.imss.cit.de.dictaminacion.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.CargaArchivosPage;
