@@ -22,7 +22,10 @@ public class RemuneracionesTO implements Serializable {
 	private Date fecRegistroActualizado;
 	private String cveIdUsuario;
 	private List<CedulaRemuneracionesTO> cedulaRemuneracionesList;
-
+	private RemuneracionesTO cveIdRemuneracionPadre; 
+    private String nombreCampoAseveracion;
+    private Integer tipoConcepto;
+	
 	public RemuneracionesTO() {
 	}
 
@@ -94,4 +97,29 @@ public class RemuneracionesTO implements Serializable {
 			List<CedulaRemuneracionesTO> cedulaRemuneracionesList) {
 		this.cedulaRemuneracionesList = cedulaRemuneracionesList;
 	}
+
+	public RemuneracionesTO getCveIdRemuneracionPadre() {
+		return cveIdRemuneracionPadre;
+	}
+
+	public void setCveIdRemuneracionPadre(RemuneracionesTO cveIdRemuneracionPadre) {
+		this.cveIdRemuneracionPadre = cveIdRemuneracionPadre;
+	}
+
+	public String getNombreCampoAseveracion() {
+		return nombreCampoAseveracion;
+	}
+
+	public void setNombreCampoAseveracion(String nombreCampoAseveracion) {
+		this.nombreCampoAseveracion = nombreCampoAseveracion;
+	}
+
+	public Integer getTipoConcepto() {
+		return tipoConcepto;
+	}
+
+	public void setTipoConcepto(Integer tipoConcepto) {
+		this.tipoConcepto = tipoConcepto;
+	}
+	
 }

@@ -15,6 +15,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -32,7 +34,7 @@ import javax.validation.constraints.Size;
 @Table(name = "NDC_REMUNERACIONES")
 @NamedQueries({
     @NamedQuery(name = "NdcRemuneracionesDO.findAll", query = "SELECT n FROM NdcRemuneracionesDO n"),
-    @NamedQuery(name = "NdcRemuneracionesDO.findAllOrder", query = "SELECT n FROM NdcRemuneracionesDO n order by n.cveIdRemuneraciones asc"),
+    @NamedQuery(name = "NdcRemuneracionesDO.findAllOrder", query = "SELECT n FROM NdcRemuneracionesDO n order by n.indOrden asc"),
     @NamedQuery(name = "NdcRemuneracionesDO.findByCveIdRemuneraciones", query = "SELECT n FROM NdcRemuneracionesDO n WHERE n.cveIdRemuneraciones = :cveIdRemuneraciones"),
     @NamedQuery(name = "NdcRemuneracionesDO.findByDesRemuneraciones", query = "SELECT n FROM NdcRemuneracionesDO n WHERE n.desRemuneraciones = :desRemuneraciones"),
     @NamedQuery(name = "NdcRemuneracionesDO.findByIndOrden", query = "SELECT n FROM NdcRemuneracionesDO n WHERE n.indOrden = :indOrden"),
@@ -67,7 +69,14 @@ public class NdcRemuneracionesDO implements Serializable {
     private String cveIdUsuario;
     @OneToMany(mappedBy = "cveIdRemuneraciones", fetch = FetchType.LAZY)
     private List<NdtB1CedulaRemuneracionesDO> ndtB1CedulaRemuneracionesDOList;
-
+    @JoinColumn(name = "ID_PADRE", referencedColumnName = "CVE_ID_REMUNERACIONES")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private NdcRemuneracionesDO cveIdRemuneracionPadre;
+    @Column(name = "NOMBRE_CAMPO_ASEVERACIONES")
+    private String nombreCampoAseveracion;
+    @Column(name = "TIPO_CONCEPTO")
+    private Integer tipoConcepto;
+    
     public NdcRemuneracionesDO() {
     }
 
@@ -137,9 +146,33 @@ public class NdcRemuneracionesDO implements Serializable {
 
     public void setNdtB1CedulaRemuneracionesDOList(List<NdtB1CedulaRemuneracionesDO> ndtB1CedulaRemuneracionesDOList) {
         this.ndtB1CedulaRemuneracionesDOList = ndtB1CedulaRemuneracionesDOList;
-    }
+    }    
 
-    @Override
+	public NdcRemuneracionesDO getCveIdRemuneracionPadre() {
+		return cveIdRemuneracionPadre;
+	}
+
+	public void setCveIdRemuneracionPadre(NdcRemuneracionesDO cveIdRemuneracionPadre) {
+		this.cveIdRemuneracionPadre = cveIdRemuneracionPadre;
+	}
+
+	public String getNombreCampoAseveracion() {
+		return nombreCampoAseveracion;
+	}
+
+	public void setNombreCampoAseveracion(String nombreCampoAseveracion) {
+		this.nombreCampoAseveracion = nombreCampoAseveracion;
+	}
+
+	public Integer getTipoConcepto() {
+		return tipoConcepto;
+	}
+
+	public void setTipoConcepto(Integer tipoConcepto) {
+		this.tipoConcepto = tipoConcepto;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (cveIdRemuneraciones != null ? cveIdRemuneraciones.hashCode() : 0);

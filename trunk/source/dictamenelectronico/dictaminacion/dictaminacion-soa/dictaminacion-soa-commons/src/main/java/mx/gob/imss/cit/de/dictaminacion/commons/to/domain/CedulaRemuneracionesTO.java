@@ -50,10 +50,12 @@ public class CedulaRemuneracionesTO implements Serializable {
 	private List<DetOtrosIngXsalarioTO> ndtB1DetOtrosIngXsalarioList;
 
 	private List<DetOtrosPagXseparacTO> ndtB1DetOtrosPagXseparacList;
+	
+	
 
 	public CedulaRemuneracionesTO() {
-	}
-
+	}	
+	
 	public CedulaRemuneracionesTO(Long cveIdB1CedRemunera) {
 		this.cveIdB1CedRemunera = cveIdB1CedRemunera;
 	}

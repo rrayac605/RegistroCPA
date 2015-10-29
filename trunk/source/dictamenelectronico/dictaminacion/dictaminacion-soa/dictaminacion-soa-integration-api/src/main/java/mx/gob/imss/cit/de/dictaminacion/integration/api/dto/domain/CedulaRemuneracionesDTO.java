@@ -51,7 +51,13 @@ public class CedulaRemuneracionesDTO extends BaseDTO {
 	private List<DetOtrosIngXsalarioDTO> ndtB1DetOtrosIngXsalarioList;
 
 	private List<DetOtrosPagXseparacDTO> ndtB1DetOtrosPagXseparacList;
-
+	
+	private RemuneracionesDTO cveIdRemuneracionPadre; 
+	
+    private Integer nombreCampoAseveracion;
+    
+    private Integer tipoConcepto;
+	
 	public CedulaRemuneracionesDTO() {
 	}
 
@@ -206,6 +212,30 @@ public class CedulaRemuneracionesDTO extends BaseDTO {
 	public void setNdtB1DetOtrosPagXseparacList(
 			List<DetOtrosPagXseparacDTO> ndtB1DetOtrosPagXseparacList) {
 		this.ndtB1DetOtrosPagXseparacList = ndtB1DetOtrosPagXseparacList;
+	}
+
+	public RemuneracionesDTO getCveIdRemuneracionPadre() {
+		return cveIdRemuneracionPadre;
+	}
+
+	public void setCveIdRemuneracionPadre(RemuneracionesDTO cveIdRemuneracionPadre) {
+		this.cveIdRemuneracionPadre = cveIdRemuneracionPadre;
+	}
+
+	public Integer getNombreCampoAseveracion() {
+		return nombreCampoAseveracion;
+	}
+
+	public void setNombreCampoAseveracion(Integer nombreCampoAseveracion) {
+		this.nombreCampoAseveracion = nombreCampoAseveracion;
+	}
+
+	public Integer getTipoConcepto() {
+		return tipoConcepto;
+	}
+
+	public void setTipoConcepto(Integer tipoConcepto) {
+		this.tipoConcepto = tipoConcepto;
 	}
 
 	@Override

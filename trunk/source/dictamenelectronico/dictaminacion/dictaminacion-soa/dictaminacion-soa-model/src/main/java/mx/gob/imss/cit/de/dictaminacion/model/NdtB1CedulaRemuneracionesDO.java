@@ -24,6 +24,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -97,8 +98,8 @@ public class NdtB1CedulaRemuneracionesDO implements Serializable {
     private List<NdtB1DetOtrosIngXsalarioDO> ndtB1DetOtrosIngXsalarioList;
     @OneToMany(mappedBy = "cveIdB1CedRemunera", fetch = FetchType.LAZY)
     private List<NdtB1DetOtrosPagXseparacDO> ndtB1DetOtrosPagXseparacList;
-
-    public NdtB1CedulaRemuneracionesDO() {
+ 
+	public NdtB1CedulaRemuneracionesDO() {
     }
 
     public NdtB1CedulaRemuneracionesDO(Long cveIdB1CedRemunera) {

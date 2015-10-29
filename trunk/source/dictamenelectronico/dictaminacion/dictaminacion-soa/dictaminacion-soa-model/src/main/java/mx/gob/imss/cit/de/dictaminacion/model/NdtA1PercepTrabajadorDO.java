@@ -35,6 +35,7 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "NdtA1PercepTrabajadorDO.findAll", query = "SELECT n FROM NdtA1PercepTrabajadorDO n"),
     @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByCveIdA1Perceptrab", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.cveIdA1Perceptrab = :cveIdA1Perceptrab"),
     @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByCveIdPatronDictamen", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.cveIdPatronDictamen = :cveIdPatronDictamen"),
+    @NamedQuery(name = "NdtA1PercepTrabajadorDO.findTotals", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.cveIdPatronDictamen = :cveIdPatronDictamen and n.isTotal = :isTotal"),
     @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByRegPatronal", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.regPatronal = :regPatronal"),
     @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByNomPrimerApellidoTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.nomPrimerApellidoTrabajador = :nomPrimerApellidoTrabajador"),
     @NamedQuery(name = "NdtA1PercepTrabajadorDO.findByNomSegundoAellidoTrabajador", query = "SELECT n FROM NdtA1PercepTrabajadorDO n WHERE n.nomSegundoAellidoTrabajador = :nomSegundoAellidoTrabajador"),
@@ -191,8 +192,10 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
     @JoinColumn(name = "CVE_ID_PATRON_ASOCIADO", referencedColumnName = "CVE_ID_PATRON_ASOCIADO")
     @ManyToOne(fetch = FetchType.LAZY)
     private NdtPatronAsociadoDO cveIdPatronAsociado;
+    @Column(name = "ID_TOTAL", length = 1)
+    private Integer isTotal;
 
-    public NdtA1PercepTrabajadorDO() {
+    public NdtA1PercepTrabajadorDO() {    	
     }
 
     public NdtA1PercepTrabajadorDO(Long cveIdA1Perceptrab) {
@@ -566,8 +569,17 @@ public class NdtA1PercepTrabajadorDO implements Serializable {
     public void setCveIdPatronAsociado(NdtPatronAsociadoDO cveIdPatronAsociado) {
         this.cveIdPatronAsociado = cveIdPatronAsociado;
     }
+    
 
-    @Override
+    public Integer getIsTotal() {
+		return isTotal;
+	}
+
+	public void setIsTotal(Integer isTotal) {
+		this.isTotal = isTotal;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (cveIdA1Perceptrab != null ? cveIdA1Perceptrab.hashCode() : 0);
