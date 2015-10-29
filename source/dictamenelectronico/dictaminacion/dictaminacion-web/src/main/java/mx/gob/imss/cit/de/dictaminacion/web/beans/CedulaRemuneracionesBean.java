@@ -1,6 +1,8 @@
 package mx.gob.imss.cit.de.dictaminacion.web.beans;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -16,6 +18,7 @@ import mx.gob.imss.cit.de.dictaminacion.web.beans.base.BaseBean;
 import mx.gob.imss.cit.de.dictaminacion.web.constants.NavigationConstants;
 import mx.gob.imss.cit.de.dictaminacion.web.enums.MensajesNotificacionesEnum;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.CedulaRemuneracionesPage;
+import mx.gob.imss.cit.de.dictaminacion.web.pages.DatosPatronalesPage;
 import mx.gob.imss.cit.de.dictaminacion.web.pages.ExamenPage;
 import mx.gob.imss.cit.de.dictaminacion.web.util.CleanBeanUtil;
 import mx.gob.imss.cit.de.dictaminacion.web.util.FacesUtils;
@@ -38,14 +41,25 @@ public class CedulaRemuneracionesBean extends BaseBean{
 	@ManagedProperty(value = "#{cedulaRemuneracionesPage}")
 	private CedulaRemuneracionesPage cedulaRemuneracionesPage;
 	
+	@ManagedProperty(value = "#{datosPatronalesPage}")
+	private DatosPatronalesPage datosPatronalesPage;
+	
+	
 	public String init() {
 		CleanBeanUtil.cleanFields(cedulaRemuneracionesPage);
 		try {
 			
-			List<CedulaRemuneracionesDTO> cedulasDTO;
-			cedulasDTO=cedulaRemuneracionesIntegrator.obtenerCedulaRemuneraciones();
+			Map<CedulaRemuneracionesDTO, List<CedulaRemuneracionesDTO>> cedulasDTO=new HashMap<CedulaRemuneracionesDTO, List<CedulaRemuneracionesDTO>>();
+			System.out.println("DatosPatronales: "+ datosPatronalesPage.getDatosPatron().getCveIdPatronDictamen());
 			
-			cedulaRemuneracionesPage.setCedulasDTO(cedulasDTO);
+//			cedulasDTO=cedulaRemuneracionesIntegrator.obtenerCedulaRemuneraciones(datosPatronalesPage.getDatosPatron());
+//			if(cedulasDTO.size()>0){
+//				cedulaRemuneracionesPage.setCedulasDTO(cedulasDTO);
+//			}else{
+				cedulasDTO=cedulaRemuneracionesIntegrator.generarCedulaRemuneraciones(datosPatronalesPage.getDatosPatron());
+								
+				cedulaRemuneracionesPage.setCedulasDTO(cedulasDTO);
+			//}
 			
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
@@ -58,7 +72,7 @@ public class CedulaRemuneracionesBean extends BaseBean{
 	 * Metodo que se encargara del guardado de las cedulas
 	 */
 	public void guardar(){
-		List<CedulaRemuneracionesDTO> cedulasRemuneraciones=cedulaRemuneracionesPage.getCedulasDTO();
+		Map<CedulaRemuneracionesDTO, List<CedulaRemuneracionesDTO>> cedulasRemuneraciones=cedulaRemuneracionesPage.getCedulasDTO();
 		//System.out.println("cedulasREmuneracion a guardar"+cedulasRemuneraciones.size());
 		try{
 			cedulaRemuneracionesIntegrator.saveCedulaRemuneraciones(cedulasRemuneraciones);
@@ -85,6 +99,14 @@ public class CedulaRemuneracionesBean extends BaseBean{
 	public void setCedulaRemuneracionesPage(
 			CedulaRemuneracionesPage cedulaRemuneracionesPage) {
 		this.cedulaRemuneracionesPage = cedulaRemuneracionesPage;
+	}
+
+	public DatosPatronalesPage getDatosPatronalesPage() {
+		return datosPatronalesPage;
+	}
+
+	public void setDatosPatronalesPage(DatosPatronalesPage datosPatronalesPage) {
+		this.datosPatronalesPage = datosPatronalesPage;
 	}
 	
 	

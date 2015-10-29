@@ -1,6 +1,7 @@
 package mx.gob.imss.cit.de.dictaminacion.web.pages;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -21,9 +22,12 @@ public class CedulaRemuneracionesPage extends BasePage{
 	private CedulaRemuneracionesDTO cedulaRemuneracionesDTO;
 	
 	@Reset
-	private List<CedulaRemuneracionesDTO> cedulasDTO;
+	private Map<CedulaRemuneracionesDTO, List<CedulaRemuneracionesDTO>> cedulasDTO;
 	
+//	@Reset
+//	private List<CedulaRemuneracionesDTO> cedulasDTO;
 	
+		
 	public CedulaRemuneracionesDTO getCedulaRemuneracionesDTO() {
 		return cedulaRemuneracionesDTO;
 	}
@@ -33,13 +37,18 @@ public class CedulaRemuneracionesPage extends BasePage{
 		this.cedulaRemuneracionesDTO = cedulaRemuneracionesDTO;
 	}
 
-	public List<CedulaRemuneracionesDTO> getCedulasDTO() {
+	public Map<CedulaRemuneracionesDTO, List<CedulaRemuneracionesDTO>> getCedulasDTO() {
 		return cedulasDTO;
 	}
 
-	public void setCedulasDTO(List<CedulaRemuneracionesDTO> cedulasDTO) {
+	public void setCedulasDTO(
+			Map<CedulaRemuneracionesDTO, List<CedulaRemuneracionesDTO>> cedulasDTO) {
 		this.cedulasDTO = cedulasDTO;
 	}
+
+	
+
+	
 	
 	
 }

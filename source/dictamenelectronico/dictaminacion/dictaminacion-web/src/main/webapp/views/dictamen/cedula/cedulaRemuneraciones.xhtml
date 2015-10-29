@@ -16,6 +16,26 @@
 				
 					<f:facet name="header" >
 						<p:row>
+							<p:column colspan="1">
+								<h:outputText value="CPA" />
+							</p:column>
+							<p:column colspan="1">
+								<h:outputText value="|Delegacion" />
+							</p:column>
+							<p:column colspan="1">
+								<h:outputText value="|Subdelegacion" />
+							</p:column>
+							<p:column colspan="1">
+								<h:outputText value="|Registro IMSS" />
+							</p:column>
+							<p:column colspan="1">
+								<h:outputText value="|CURP" />
+							</p:column>
+							<p:column colspan="1">
+								<h:outputText value="|RFC" />
+							</p:column>
+						</p:row>
+						<p:row>
 							<p:column colspan="6"><h3><h:outputText
 							value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones']}" />
 							</h3></p:column>
@@ -61,13 +81,25 @@
 					</f:facet>
 				</p:panelGrid>
 					
-					<p:accordionPanel value="#{cedulaRemuneracionesPage.cedulasDTO}" var="cedulasRem" multiple="true" style="width:830px;margin:10px 0px">
+					<p:accordionPanel value="#{cedulaRemuneracionesPage.cedulasDTO}" var="cedulasRem" multiple="true" style="width:900px;margin:10px 0px">
 						<p:tab title="#{cedulasRem.cveIdRemuneraciones.desRemuneraciones}  #{cedulasRem.impImportePagado}" style="width:40px;height:10px">
-							<p:panel >        							                   
+							
+							<p:panel rendered="#{cedulasRem.tipoDist==1}">        							                   
 								<p:dataGrid  value="#{cedulasRem.cveIdRemuneraciones}" var="remuneraciones" columns="4" > 					   
 									<p:panel columns="1" layout="grid" >
 										<p:outputLabel value="#{remuneraciones.desRemuneraciones}" /> 	
 									</p:panel>
+									
+									
+								</p:dataGrid>
+													 	
+							</p:panel>
+
+							<p:panel >        							                   
+								<p:dataGrid  value="#{cedulasRem.cveIdRemuneraciones}" var="remuneraciones" columns="4" > 					   
+									<p:panel columns="1" layout="grid" >
+										<p:outputLabel value="#{remuneraciones.desRemuneraciones}" /> 	
+									</p:panel>																		
 								</p:dataGrid>
 													 	
 							</p:panel>
@@ -75,11 +107,11 @@
 					</p:accordionPanel>
 			<p:panelGrid columns="2" style="center">
 					<p:commandButton action="#{cedulaRemuneracionesBean.guardar()}" 
-						value="#{msg['message.button.views.dictamen.atestiguamiento.finalizar']}" onstart="statusDialog.show();"
+						value="#{msg['message.button.guardar']}" onstart="statusDialog.show();"
 						          oncomplete="statusDialog.hide();"/>
 						          
 					<p:commandButton action="#{cedulaRemuneracionesBean.cancelar}" 
-						value="#{msg['message.button.views.dictamen.atestiguamiento.cancelar']}"
+						value="#{msg['message.button.cancelar']}"
 						immediate="true" onstart="statusDialog.show();" oncomplete="statusDialog.hide();"/>
 			</p:panelGrid>		
 		</h:form>

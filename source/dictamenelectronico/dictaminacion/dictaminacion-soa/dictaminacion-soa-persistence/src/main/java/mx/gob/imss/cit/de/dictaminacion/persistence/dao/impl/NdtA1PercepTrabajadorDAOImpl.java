@@ -4,9 +4,11 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import mx.gob.imss.cit.de.dictaminacion.model.NdcAtestiguamientoDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtA1PercepTrabajadorDO;
 import mx.gob.imss.cit.de.dictaminacion.model.NdtPatronDictamenDO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.AbstractBaseDAO;
@@ -36,17 +38,22 @@ public class NdtA1PercepTrabajadorDAOImpl extends AbstractBaseDAO<NdtA1PercepTra
 	 * Obtiene lista de NdtA1PercepTrabajadorDO
 	 */
 	@Override
-	public List<NdtA1PercepTrabajadorDO> findByCveIdPatronDictamen(NdtPatronDictamenDO cveIdPatronDictamen) {
+	public Long findTotalImporte(NdtPatronDictamenDO cveIdPatronDictamen,String campo) {
 		
-		List<NdtA1PercepTrabajadorDO> list = null;
-	
-		Query q = null;
-		q = em.createNamedQuery("NdtA1PercepTrabajadorDO.findByCveIdPatronDictamen");
-		q.setParameter("cveIdPatronDictamen", cveIdPatronDictamen);
-
-		list = (List<NdtA1PercepTrabajadorDO>)q.getResultList();
-
-		return list;
+			Long totalImporte;
+			String sqlString = "SELECT n."+campo+" FROM NdtA1PercepTrabajadorDO n WHERE n.cveIdPatronDictamen = :cveIdPatronDictamen and n.isTotal = :isTotal";
+			Query q = em.createQuery(sqlString);
+			q.setParameter("cveIdPatronDictamen", cveIdPatronDictamen);
+			q.setParameter("isTotal", 1);
+			try{
+			totalImporte=(Long) q.getResultList().get(0);
+			
+			}catch (NoResultException e){
+				return null;
+			}
+			
+			return totalImporte;
+		
 	}
 
 }

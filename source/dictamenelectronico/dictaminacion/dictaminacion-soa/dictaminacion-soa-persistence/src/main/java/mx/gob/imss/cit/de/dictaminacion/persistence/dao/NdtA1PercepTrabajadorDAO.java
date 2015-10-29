@@ -48,7 +48,6 @@ public interface NdtA1PercepTrabajadorDAO {
 	 * @param cveIdPatronDictamen
 	 * @return
 	 */
-	List<NdtA1PercepTrabajadorDO> findByCveIdPatronDictamen(
-			NdtPatronDictamenDO cveIdPatronDictamen);
+	Long findTotalImporte(NdtPatronDictamenDO cveIdPatronDictamen,String campo);
 
 }
