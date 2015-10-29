@@ -24,6 +24,7 @@ import mx.gob.imss.cit.dictamen.contador.integration.api.dto.PersonaMoralDTO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtContadorPublicoAutDO;
 import mx.gob.imss.cit.dictamen.contador.model.NdtR1DatosPersonalesDO;
 import mx.gob.imss.cit.dictamen.contador.services.BdtuService;
+import mx.gob.imss.cit.dictamen.contador.services.MedioContadorService;
 import mx.gob.imss.cit.dictamen.contador.services.SatService;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Fisica;
 import mx.gob.imss.ctirss.delta.model.gestion.individuo.Moral;
