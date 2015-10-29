@@ -144,13 +144,6 @@ public class ContadorPublicoIntegratorImpl implements ContadorPublicoIntegrator 
         return lstNdtContadorPublicoAutDO;
 	}
 
-	@Override
-	public List<MediosContactoDTO> obtenerMediosContactoPorIdPersona(Long idPersona){
-		return null;
-	}
-
-
-
 	
 	public ContadorPublicoIntegratorImpl() {
 	}
