@@ -18,15 +18,12 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
-
 import mx.gob.imss.cit.de.dictaminacion.commons.util.ReflectionHelper;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdcAseveracionesDAO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdcAtestiguamientoDAO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtAtestigPreguntasRespuestDAO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtAtestiguamientoDictamenDAO;
+import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtB2CedulaPrestacionesDAO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtCargaDocumentoDAO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtContadorPublicoAutDAO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.NdtPatronDictamenDAO;
@@ -36,11 +33,16 @@ import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdcAseveracionesDAO
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdcAtestiguamientoDAOImpl;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtAtestigPreguntasRespuestDAOImpl;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtAtestiguamientoDictamenDAOImpl;
+import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtB2CedulaPrestacionesDAOImpl;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtCargaDocumentoDAOImpl;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtContadorPublicoAutDAOImpl;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtPatronDictamenDAOImpl;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtR2DespachoDAOImpl;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl.NdtRubroAtestiguamientoDictDAOImpl;
+
+import org.apache.log4j.Logger;
+import org.junit.After;
+import org.junit.Before;
 
 /**
  * Clase de prueba unitaria de la que deben extender los
@@ -134,7 +136,7 @@ public abstract class AbstractDBTestUnit {
 		mapDAO.put(NdcAseveracionesDAO.class, NdcAseveracionesDAOImpl.class);
 		mapDAO.put(NdtRubroAtestiguamientoDictDAO.class, NdtRubroAtestiguamientoDictDAOImpl.class);
 		mapDAO.put(NdtAtestigPreguntasRespuestDAO.class, NdtAtestigPreguntasRespuestDAOImpl.class);
-		
+		mapDAO.put(NdtB2CedulaPrestacionesDAO.class, NdtB2CedulaPrestacionesDAOImpl.class);
 	}
 
 	protected void connect(Object o) {

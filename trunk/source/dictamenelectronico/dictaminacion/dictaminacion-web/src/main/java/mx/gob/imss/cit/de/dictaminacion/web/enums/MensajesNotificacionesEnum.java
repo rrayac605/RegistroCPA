@@ -34,6 +34,7 @@ public enum MensajesNotificacionesEnum {
 	MSG_EXITO_MONITOR_ARCHIVOS(23),
 	MSG_EXITO_SUBIR_LAYOUT(24),
 	MSG_ERROR_CONSULTAR_BITACORA(25),
+	MSG_ERROR_CARGAR_CEDULA_PRESTACIONES(26),
     ;
 
 	private int code;

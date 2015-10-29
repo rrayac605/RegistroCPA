@@ -58,7 +58,8 @@
 							value="#{msg['message.dictamen.cedulas.titulo.estatus.habilitado']}" />
 					</p:column>
 					<p:column>
-						<p:commandLink id="linkEditarC2" onstart="statusDialog.show();"
+						<p:commandLink id="linkEditarC2" action="#{menuCedulasBean.editarCedulaPrestaciones()}"
+									onstart="statusDialog.show();"
 							oncomplete="statusDialog.hide();">
 							<h:graphicImage
 								style="width: 20px; height: 20px; margin: 0 5px 0 2px"

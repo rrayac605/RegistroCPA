@@ -40,6 +40,7 @@ public interface NdtB2CedulaPrestacionesDAO {
 	List<NdtB2CedulaPrestacionesDO> findAll();
 	
 	
-	void flush();
+	void flush();	
+	List<NdtB2CedulaPrestacionesDO> findPrestacionByIdCedulaByImporte(Long cveIdPatronDictamen, Long cveIdAtestiguamiento);
 
 }

@@ -42,6 +42,9 @@ public class MenuCedulasBean extends BaseBean{
 		this.cedulaRemuneracionesBean = cedulaRemuneracionesBean;
 	}
 	
-
+	public String editarCedulaPrestaciones(){
+		LOG.info("Editar Cedula ---Prestaciones....");
+		return NavigationConstants.PAGE_CEDULA_PRESTACIONES;
+	}
 	
 }

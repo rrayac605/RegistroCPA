@@ -26,4 +26,6 @@ public final class NavigationConstants {
     
     public static final String PAGE_CEDULA_REMUNERACIONES= "cedulaRemuneraciones";
     
+    public static final String PAGE_CEDULA_PRESTACIONES= "cedulaPrestaciones";
+
 }

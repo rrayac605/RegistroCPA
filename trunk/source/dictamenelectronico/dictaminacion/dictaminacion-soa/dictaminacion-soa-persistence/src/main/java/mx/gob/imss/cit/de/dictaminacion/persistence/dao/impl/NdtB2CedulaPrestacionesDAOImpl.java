@@ -1,8 +1,11 @@
 package mx.gob.imss.cit.de.dictaminacion.persistence.dao.impl;
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import mx.gob.imss.cit.de.dictaminacion.model.NdtB2CedulaPrestacionesDO;
 import mx.gob.imss.cit.de.dictaminacion.persistence.dao.AbstractBaseDAO;
@@ -28,5 +31,17 @@ public class NdtB2CedulaPrestacionesDAOImpl extends AbstractBaseDAO<NdtB2CedulaP
 		return em;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public 	List<NdtB2CedulaPrestacionesDO> findPrestacionByIdCedulaByImporte(Long cveIdPatronDictamen, Long cveIdAtestiguamiento){
+		List<NdtB2CedulaPrestacionesDO> list = null;
+		Query q = null;
+		q = em.createNamedQuery("NdtB2CedulaPrestacionesDO.findPrestacionByIdCedulaByImporte");
+		q.setParameter("cveIdPatronDictamen", cveIdPatronDictamen);
+		q.setParameter("cveIdAtestiguamiento",  2L);
+		list = (List<NdtB2CedulaPrestacionesDO>)q.getResultList();
+
+		return list;
+	}
 }
 

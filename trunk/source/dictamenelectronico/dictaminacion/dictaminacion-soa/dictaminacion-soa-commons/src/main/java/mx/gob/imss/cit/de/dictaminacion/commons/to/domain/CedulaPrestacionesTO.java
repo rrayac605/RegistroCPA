@@ -24,13 +24,6 @@ public class CedulaPrestacionesTO implements Serializable {
 	private EstadoAtestiguamientoTO cveIdEstadoAtestiguamiento;
 	private AtestiguamientoTO cveIdAtestiguamiento;
 
-	public CedulaPrestacionesTO() {
-	}
-
-	public CedulaPrestacionesTO(Long cveIdCedulaPrestaciones) {
-		this.cveIdCedulaPrestaciones = cveIdCedulaPrestaciones;
-	}
-
 	public Long getCveIdCedulaPrestaciones() {
 		return cveIdCedulaPrestaciones;
 	}
