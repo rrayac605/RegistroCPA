@@ -62,7 +62,7 @@ public class ReactivacionContadorBean extends BaseBean {
     	DomicilioFiscalDTO domicilioDTO = contadorPublicoIntegrator.consultarDomicilioPorRFC(rfc);
     	String folioSolicitud = reactivacionSolicitudPage.getPersonaDTO().getFolioSolicitud();
     	if(domicilioDTO!=null){
-    		List<DatosPersonalesDTO> lstDatosPersonalesDTO =  contadorPublicoIntegrator.consultarDatosPersonales(idPersona);
+    		List<DatosPersonalesDTO> lstDatosPersonalesDTO =  contadorPublicoIntegrator.consultarCedulaPorIdPersona(idPersona);
     		LOGGER.info("lstDatosPersonalesDTO.size="+lstDatosPersonalesDTO.size());
     		FacesUtils.getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Activación:","El folio de solicitud es:"+folioSolicitud));
     		reactivacionSolicitudPage.getPersonaDTO().getContadorPublicoAutDTO().setDomicilioFiscalDTO(domicilioDTO);
