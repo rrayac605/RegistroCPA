@@ -1,0 +1,120 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="../../comun/template/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+
+	<ui:define name="content">
+		<p:dialog widgetVar="iniData" id="dlDatosIniciales" visible="#{actualizacionRegistroBean.actualizacionRegistroPage.tieneRegistro}">
+			<p:panel id="pnValidaDatos">
+				<p:panelGrid id="pngContadorData">
+					<p:row>
+						<p:column colspan="2" style="text-align: center;">
+							<p:outputLabel id="lblDatoCorrecto">#{msg['message.actualizacion.datos.correctos']}</p:outputLabel>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel id="lblApPaterno">Apellido Paterno</p:outputLabel>
+						</p:column>
+						<p:column>
+							<p:outputLabel id="lblApPaternoData">#{actualizacionRegistroBean.actualizacionRegistroPage.apellidoPaterno}</p:outputLabel>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel id="lblApMaterno">Apellido Materno</p:outputLabel>
+						</p:column>
+						<p:column>
+							<p:outputLabel id="lblApMaternoData">#{actualizacionRegistroBean.actualizacionRegistroPage.apellidoMaterno}</p:outputLabel>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel id="lblNombre">Nombre(s)</p:outputLabel>
+						</p:column>
+						<p:column>
+							<p:outputLabel id="lblNombreData">#{actualizacionRegistroBean.actualizacionRegistroPage.nombre}</p:outputLabel>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel id="lblCurp">CURP</p:outputLabel>
+						</p:column>
+						<p:column>
+							<p:outputLabel id="lblCurpData">#{actualizacionRegistroBean.actualizacionRegistroPage.curp}</p:outputLabel>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<p:outputLabel id="lblRegistroImss">Registro IMSS</p:outputLabel>
+						</p:column>
+						<p:column>
+							<p:outputLabel id="lblRegistroImssData">#{actualizacionRegistroBean.actualizacionRegistroPage.registroImss}</p:outputLabel>
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+				<p:panelGrid id="pngSiNoValue" columns="2"
+					style="text-align:center;">
+					<p:button value="#{msg['message.button.si']}"
+						styleClass="ui-priority-primary"
+						outcome="actualizacionRegistro"/>
+					<p:commandButton value="#{msg['message.button.no']}" 
+						onclick="iniData.hide();dialogBusqueda.show();"/>
+				</p:panelGrid>
+			</p:panel>
+		</p:dialog>
+
+		<p:dialog widgetVar="dlgNoReg" id="dlgNoRegistros"
+			visible="#{not actualizacionRegistroPage.tieneRegistro}">
+			<p:panelGrid id="pngSinRegistros" columns="1">
+				<p:outputLabel id="msgNoDatos"
+					value="#{msg['message.actualizacion.no.datos']}"/>
+				<p:button id="btnNoDataAceptar"
+					value="#{msg['message.button.aceptar']}" onclick="dlgNoReg.hide()" />
+			</p:panelGrid>
+		</p:dialog>
+
+		<p:dialog id="diaBusqueda" widgetVar="dialogBusqueda">
+			<p:panelGrid id="pgBusquedaInfo">
+				<p:row>
+					<p:column>
+						<p:outputLabel id="lblRegImss" for="txtRegImss">Registro IMSS</p:outputLabel>
+					</p:column>
+					<p:column>
+						<p:inputText id="txtRegImss"
+							value="#{actualizacionRegistroPage.regImssBusqueda}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column colspan="2">
+						<p:commandButton id="btnBusqueda"
+							actionListener="#{actualizacionRegistroBean.busquedaRegistroImss}"
+							value="#{msg['message.button.buscar']}"
+							styleClass="ui-priority-primary" update="pgBusquedaInfo lblMensajeAlerts"
+							rendered="#{not actualizacionRegistroPage.existeRegistroImss}" />
+						<p:commandButton id="btnSig"
+							value="#{msg['message.button.siguiente']}" ajax="false"
+							styleClass="ui-priority-primary" action="actualizacionRegistro"
+							rendered="#{actualizacionRegistroPage.existeRegistroImss}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:dialog>
+
+		<p:dialog id="diaMensajes" widgetVar="dialogMensajes">
+			<p:panelGrid id="pngMensajesPrevios" columns="1">
+				<p:outputLabel id="lblMensajeAlerts"
+					value="#{actualizacionRegistroPage.mensajesPrevios}" />
+				<p:commandButton id="btnSalir"
+					value="#{msg['message.button.salir']}"
+					onclick="dialogMensajes.hide()" styleClass="ui-priority-primary" />
+			</p:panelGrid>
+		</p:dialog>
+
+	</ui:define>
+</ui:composition>

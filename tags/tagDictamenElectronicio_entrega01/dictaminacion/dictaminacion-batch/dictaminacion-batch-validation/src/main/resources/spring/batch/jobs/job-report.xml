@@ -1,0 +1,197 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+		http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/task
+    	http://www.springframework.org/schema/task/spring-task-3.2.xsd
+    	http://www.springframework.org/schema/util
+    	http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+    	
+    <context:component-scan base-package="mx.gob.imss.cit.de.dictaminacion.batch.validation.scheduler" />
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>spring/batch/properties/configuration.properties</value>
+		</property>
+	</bean>	
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>	
+    <bean id="rutasDaoImpl" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.RutasDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="atestiguamientoDaoImpl" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.AtestiguamientoDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="atestiguamientoDictamenDaoImpl" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.impl.AtestiguamientoDictamenDAOImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+       	
+    <bean id="txtFile" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.to.TxtFileTO" scope="prototype" />
+    <bean id="a1" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.to.A1TO" scope="prototype" />
+    <bean id="bitacoraErroresTO" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.to.BitacoraErroresTO"/>
+    <bean id="invalidLinesArray" class="java.util.ArrayList"/>
+    <bean id="linesTO" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.to.LinesTO">
+    	<property name="processedLines" value="0"></property>
+    	<property name="invalidLines" ref="invalidLinesArray"></property>
+    </bean>
+    <bean id="itemProcessor" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.processors.TxtFileProcessor" >
+    	<property name="linesTO" ref="linesTO"></property>
+    </bean>
+
+    <bean id="itemProcessor2" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.processors.TxtFileProcessor2" scope="step">
+    	<property name="linesTO" ref="linesTO"></property>
+    	<property name="rutasDAO" ref="rutasDaoImpl"/>
+    	<property name="cveIdPatronDictamen" value="#{jobParameters[cveIdPatronDictamen]}"></property>
+    	<property name="cveIdAseveracion" value="#{jobParameters[cveIdAseveracion]}"></property>
+    </bean>              
+    
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>		
+	</bean>
+		
+	<bean id="jobRepository"
+		class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="databaseType" value="oracle" />
+		<property name="isolationLevelForCreate" value="ISOLATION_READ_COMMITTED "/>
+	</bean>
+ 
+	<bean id="jobLauncher"
+		class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>	
+     
+	<batch:job id="reportJob">
+		<batch:step id="step1" next="step2">
+			<batch:tasklet>
+				<batch:chunk reader="cvsFileItemReader" writer="oracleItemWriter" processor="itemProcessor"
+					commit-interval="1">
+				</batch:chunk>
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="step2">
+					<batch:tasklet>
+				<batch:chunk reader="cvsFileItemReader" writer="oracleItemWriter2" processor="itemProcessor2"
+					commit-interval="1">
+				</batch:chunk>
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+	
+	 <bean id="cvsFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
+	
+		<!-- Read a csv file -->
+		<property name="resource" value="file:#{jobParameters[origen]}" />
+		<property name="linesToSkip" value="1"/>
+		<property name="lineMapper">
+			<bean class="mx.gob.imss.cit.de.dictaminacion.batch.validation.mapper.AseveracionesMapper">				
+				<property name="lineTokenizer">
+		        	<bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
+		        		<property name="delimiter">
+    						<util:constant static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_TAB"/>
+						</property>
+						<property name="strict" value="false"/>
+						<property name="names" value="#{jobParameters[fields]}" />
+					</bean>
+				</property>
+				<property name="fieldSetMapper">
+					<bean class="mx.gob.imss.cit.de.dictaminacion.batch.validation.mapper.ResourceFieldSetMapper"/>
+				</property>
+				<property name="idAseveracion" value="#{jobParameters[idAseveracion]}"/>
+				<property name="cveIdBitacoraCargaAsev" value="#{jobParameters[cveIdBitacoraCargaAsev]}"/>
+				<property name="cveIdPatronDictamen" value="#{jobParameters[cveIdPatronDictamen]}"></property>
+			</bean>
+		</property>
+	
+	</bean>	
+	
+	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+	    <property name="resource" value="file:#{jobParameters[destino]}" />
+	    <property name="lineAggregator">
+			<bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+				<property name="delimiter" value="," />
+	            <property name="fieldExtractor">
+	                <bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+	                    <property name="names" value="#{jobParameters[fields]}" />
+	                </bean>
+	            </property>
+            </bean>
+		</property>
+	</bean>
+	
+	<bean id="oracleItemWriter" class="org.springframework.batch.item.database.JdbcBatchItemWriter" scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql">
+			<value>
+            <![CDATA[
+				INSERT
+			    INTO NDT_BITACORA_ERRORES
+			      (
+			        FEC_REGISTRO_ACTUALIZADO,
+			        FEC_REGISTRO_BAJA,
+			        CVE_ID_BITACORA_CARGA_ASEV,
+			        CVE_ID_BIT_ERRORES,
+			        FEC_REGISTRO_ALTA,
+			        DES_ERRORES
+			      )
+			      VALUES
+			      (
+			        :fecRegistroActualizado,
+			        :fecRegistroBaja,
+			        :cveIdBitacoraCargaAsev,
+			        SEQ_NDTBITACORAERRORES.nextVal,
+			        :fecRegistroAlta,
+			        :desErrores
+			      )
+            ]]>
+			</value>
+		</property>
+		<!-- It will take care matching between object property and sql name parameter -->
+		<property name="itemSqlParameterSourceProvider">
+			<bean
+				class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+		</property>
+	</bean>
+	
+	<bean id="oracleItemWriter2" class="org.springframework.batch.item.database.JdbcBatchItemWriter" scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql" value="#{jobParameters[query]}"/>
+		<!-- It will take care matching between object property and sql name parameter -->
+		<property name="itemSqlParameterSourceProvider">
+			<bean
+				class="org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider" />
+		</property>
+	</bean>		
+	
+	<bean id="scanScheduler" class="mx.gob.imss.cit.de.dictaminacion.batch.validation.scanner.ScanBucket" >
+		<property name="rutaOrigen" value="${aws.ruta.origen}"/>
+		<property name="rutaDestino" value="${configuracion.ruta.destino}"/>
+		<property name="rutaProcesamiento" value="${aws.ruta.procesamiento}"/>
+		<property name="bucketName" value="${aws.bucket}"/>
+		<property name="rutaAWSCredentials" value="${aws.ruta.credentials}"/>
+		<property name="extension" value="#{'${configuracion.extensiones.permitidas}'.split(',')}"/>
+		<property name="rutasDAO" ref="rutasDaoImpl"/>
+		<property name="atestiguamientoDAO" ref="atestiguamientoDaoImpl"/>
+		<property name="atestiguamientoDictamenDAO" ref="atestiguamientoDictamenDaoImpl"/>
+	</bean>
+
+	<task:scheduled-tasks>
+		<task:scheduled ref="scanScheduler" method="run" fixed-delay="${configuracion.scheduler.delay}"/>
+	</task:scheduled-tasks>
+
+</beans>
+

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:panel id="pMembresiaAcreditacion"
+		header="#{msg['message.actualizacion.memebresia.title']}">
+		<p:fileUpload id="fuMembresia" mode="advanced" dragDropSupport="true"
+			auto="true" allowTypes="/(\.|\/)(pdf|gif|jpe?g|png)$/" sizeLimit="5242880"
+			fileUploadListener="#{actualizacionRegistroBean.cargandoMembresia}" label="#{msg['message.button.elegir']}"/>
+	</p:panel>
+
+</ui:composition>

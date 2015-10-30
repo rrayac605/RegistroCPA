@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<!-- Base de datos de la 10.11.6.238 -->
+	<persistence-unit name="DictamenPU" transaction-type="JTA">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>jdbc/dictamenDS</jta-data-source>
+		<!-- jta-data-source>jdbc/dictamenDSLocal</jta-data-source-->
+
+
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcAseveracionesDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcAtestiguamientoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcEjercicioFiscalDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcEstadoAtestiguamientoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcEstadoCargaDocumentoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcEstadoCpaDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcEstadoDictamenDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcFormaPagoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcOpcionPreguntaDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcPreguntaDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcPrestacionesDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcRemuneracionesDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcRubroDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcTipoDictamenDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcTipoDocumentoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcTipoModeloOpinionDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcTipoPagoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdcTipoRespuestaDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA1PercepTrabajadorDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA2OtraPrestOtorgadaDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA3CuotaObreroPatronalDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA4PagoPersonaFisicaDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA51PersonalProporcionadDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA5PrestadoraServiciosDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA61PersonalProporcionadDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA6SubcontratacionSpDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA71CeProcesoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA72CeBienDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA73CeMaquinariaDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA74CeTransporteDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA75CePersonalDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA76CeActCompDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA8BalanzaComprobacionDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA911PersonalObraDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA91ObrasConstruccionDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA921PersSubcontratadoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtA92ObrasSubcontrataDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtAtestigPreguntasRespuestDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtAtestiguamientoDictamenDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtAtestiguamientoPreguntasDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtB1CedulaRemuneracionesDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtB1DetFondoAhorroDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtB1DetOtrosIngXsalarioDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtB1DetOtrosPagXseparacDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtB1DetPagosOtrosEmpleadDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtB2CedulaPrestacionesDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtBitacoraErroresDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtCargaDocumentoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtCedulaPagosDiferenciasDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtColegioDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtContadorPublicoAutDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtCpaAcreditacionDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtCpaEstatusDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtCpaTramiteDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtDespachosDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtDictamenEstadosDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtDocumentoProbatorioDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtModeloOpinionDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtNotasDictamenDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtPatronAsociadoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtPatronDictamenCpaDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtPatronDictamenDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtR1DatosPersonalesDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtR1FormacontactoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtR2DespachoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtR2FormacontactoDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtR3ColegioDO</class>
+		<class>mx.gob.imss.cit.de.dictaminacion.model.NdtRubroAtestiguamientoDictDO</class>
+
+
+
+		<properties>
+			<property name="eclipselink.logging.level" value="${eclipselink.logging.level}" />
+			<property name="eclipselink.query-results-cache" value="false" />
+			<property name="eclipselink.cache.shared.default" value="false" /> 
+			<property name="eclipselink.cache.size.default" value="0" /> 
+			<property name="eclipselink.cache.type.default" value="None" />
+		</properties>
+	</persistence-unit>
+</persistence>

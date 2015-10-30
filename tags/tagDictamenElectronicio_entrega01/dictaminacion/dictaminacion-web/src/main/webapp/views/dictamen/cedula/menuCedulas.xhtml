@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:panel>
+		<h:form>
+
+			<p:panelGrid style="width: 100%; border: 1px solid !important">
+				<f:facet name="header">
+					<p:row>
+						<p:column>
+							<h:outputText
+								value="#{msg['message.dictamen.cedulas.etiqueta.cedulas']}" />
+						</p:column>
+						<p:column>
+							<h:outputText
+								value="#{msg['message.dictamen.cedulas.etiqueta.estatus']}" />
+						</p:column>
+						<p:column>
+							<h:outputText
+								value="#{msg['message.dictamen.cedulas.etiqueta.acciones']}" />
+						</p:column>
+					</p:row>
+				</f:facet>
+				<p:row>
+					<p:column>
+						<h:outputText
+							value="#{msg['message.dictamen.cedulas.cedulaRemuneraciones']}" />
+					</p:column>
+					<p:column>
+						<h:outputText
+							value="#{msg['message.dictamen.cedulas.titulo.estatus.habilitado']}" />
+					</p:column>
+					<p:column>
+						<p:commandLink action="#{menuCedulasBean.editarCedulaRemuneraciones()}"
+									onstart="statusDialog.show();"
+							oncomplete="statusDialog.hide();">
+							<h:graphicImage
+								style="width: 20px; height: 20px; margin: 0 5px 0 2px"
+								value="/images/editar.png" />
+						</p:commandLink>
+						
+<!-- 						 <p:tooltip id="toolTipEditarC1" for="linkEditarC1" value="Capturar"/> -->
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText
+							value="#{msg['message.dictamen.cedulas.cedulaPrestaciones']}" />
+					</p:column>
+					<p:column>
+						<h:outputText
+							value="#{msg['message.dictamen.cedulas.titulo.estatus.habilitado']}" />
+					</p:column>
+					<p:column>
+						<p:commandLink id="linkEditarC2" action="#{menuCedulasBean.editarCedulaPrestaciones()}"
+									onstart="statusDialog.show();"
+							oncomplete="statusDialog.hide();">
+							<h:graphicImage
+								style="width: 20px; height: 20px; margin: 0 5px 0 2px"
+								value="/images/editar.png" />
+						</p:commandLink>
+						 <p:tooltip id="toolTipEditarC2" for="linkEditarC2" value="Capturar"/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText
+							value="#{msg['message.dictamen.cedulas.cedulaPagos']}" />
+					</p:column>
+					<p:column>
+						<h:outputText
+							value="#{msg['message.dictamen.cedulas.titulo.estatus.habilitado']}" />
+					</p:column>
+					<p:column>
+						<p:commandLink  id="linkEditarC3" onstart="statusDialog.show();"
+							oncomplete="statusDialog.hide();">
+							<h:graphicImage
+								style="width: 20px; height: 20px; margin: 0 5px 0 2px"
+								value="/images/editar.png" />
+						</p:commandLink>
+						<p:tooltip id="toolTipEditarC3" for="linkEditarC3" value="Capturar"/>
+					</p:column>
+				</p:row>
+
+			</p:panelGrid>
+		</h:form>
+	</p:panel>
+</ui:composition>

@@ -1,0 +1,503 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="../../comun/template/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+	
+				<h:form id="formActivacionRegistro">
+				<p:ajaxStatus 
+				        onstart="statusDialog.show();"
+				        onerror="statusDialog.hide();" 
+				        onsuccess="statusDialog.hide();"  />
+
+		    <p:dialog 
+		        widgetVar="dlgActive" 
+		        showHeader="true" 
+				draggable="false" 
+				closable="false" 
+				resizable="false" 
+				visible="#{!activacionContadorBean.activacionSolicitudPage.valido}" 
+				position="center" 
+				maximizable="false" minimizable="false" >
+				<p:panel id="pnActive" header="Mensaje del Sistema">		
+				
+			  
+			  
+			  
+					<p:panelGrid id="pngDatosContador">
+						<p:row>
+							<p:column colspan="1" style="text-align: center;">
+			    <p:outputLabel>No ha registrado alguna solicitud.</p:outputLabel>
+							</p:column>
+						</p:row>
+					
+						<p:row>
+				
+							<p:column colspan="1">
+								
+						<p:commandButton 
+						id="btnActive" 
+					   value="Registrar"
+                       onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+                       process="@this,formActivacionRegistro"  
+                       update=":statusDialog,:formActivacionRegistro" 
+                       
+                       immedite="true"
+					   action="#{activacionContadorBean.accionInicio}" />
+						</p:column>
+						</p:row>
+					</p:panelGrid>
+			    	
+			    </p:panel>	
+			</p:dialog>
+			
+	
+			
+           <p:messages id="msgFormActivacionRegistro" autoUpdate="true"  showDetail="true" showSummary="true" />
+	
+		  <p:panelGrid style="width:100%;"
+				styleClass="table-no-border table-no-padding">
+				<p:row>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu" />
+					</p:column>
+
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					
+				</p:row>
+			</p:panelGrid>
+			
+		<p:panel id="pnActivacionRegistro" 
+		rendered="#{activacionContadorBean.activacionSolicitudPage.valido}"
+		header="Activación de Registro"
+			footer="Activación de Registro de Contadores Públicos Autorizados">
+			
+			<p:fieldset legend="Datos del Contador Publico"
+			            onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+			 
+			           toggleable="true" toggleSpeed="500">
+
+<p:ajax event="toggle"  update="msgFormActivacionRegistro" />
+    
+		
+			
+		   <p:panelGrid id="tableDatosPersonales"
+				style="width:650px;">
+				<p:row>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion" value="RFC" />
+					</p:column>
+					<p:column>
+<p:inputText id="txtRFC" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.rfc}" readonly="true" disabled="true" />
+					</p:column>
+
+				</p:row>
+				<p:row>
+					<p:column>
+					<h:outputText styleClass="SubtituloSeccion" value="Nombre " />	
+					</p:column>
+					<p:column>
+<p:inputText id="txtNombre" size="45"  value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.nombreCompleto}" readonly="true" disabled="true"/>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+					<h:outputText styleClass="SubtituloSeccion" value="CURP " />	
+					</p:column>
+					<p:column>
+<p:inputText id="txtCURP" size="30"  value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.curp}" readonly="true" disabled="true" />
+					</p:column>
+				</p:row>
+				
+			</p:panelGrid>
+			
+				<br />
+				
+
+				<p:panelGrid style="margin-top:20px">
+						<p:row>
+							<p:column styleClass="ui-widget-header" colspan="1">
+								<h:outputText value="*Calle: " />
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">
+								<h:outputText value="*Numero Exterior " />
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">
+								<h:outputText value="Letra Exterior " />
+							</p:column>
+						</p:row>
+						
+						<p:row>
+							<p:column  rowspan="3">
+									<p:inputText id="txtCalle" size="35" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
+									<p:message for="txtCalle" />
+									<p:tooltip for="txtCalle" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+							<p:column>
+									<p:inputText id="txtNumeroExterior" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
+									<p:message for="txtNumeroExterior" />
+									<p:tooltip for="txtNumeroExterior" value="Numero Exterior"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+							<p:column>
+									<p:inputText id="txtLetraExterior" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
+									<p:message for="txtLetraExterior" />
+									<p:tooltip for="txtLetraExterior" value="Letra Exterior"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+
+
+						</p:row>
+						
+						<p:row>
+							<p:column  styleClass="ui-widget-header" colspan="1">
+							<h:outputText value="Numero Interior " /> 
+
+							</p:column>
+							<p:column  styleClass="ui-widget-header" colspan="1"><h:outputText value="Letra Interior " /> 
+							</p:column>
+
+						</p:row>
+						
+						<p:row>
+							<p:column>
+									<p:inputText id="txtNumeroInterior" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
+									<p:message for="txtNumeroInterior" />
+									<p:tooltip for="txtNumeroInterior" value="Numero Interior"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+							<p:column colspan="2">
+									<p:inputText id="txtLetraInterior" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
+									<p:message for="txtLetraInterior" />
+									<p:tooltip for="txtLetraInterior" value="Letra Interior"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+
+
+						</p:row>
+
+
+						<p:row>
+							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="Entre la Calle " /> 
+
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="y la Calle " /> 
+
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+									<p:inputText id="txtEntreCalle" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
+									<p:message for="txtEntreCalle" />
+									<p:tooltip for="txtEntreCalle" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+							<p:column colspan="2">
+									<p:inputText id="txtYCalle" size="45" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
+									<p:message for="txtYCalle" />
+									<p:tooltip for="txtYCalle" value="Calle Adyacente"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+						</p:row>
+						
+
+
+						<p:row>
+							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="*Colonia(Asentamiento) " />
+
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="*Localidad " />
+
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+									<p:inputText id="txtColonia" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
+									<p:message for="txtColonia" />
+									<p:tooltip for="txtColonia" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+							<p:column colspan="2">
+									<p:inputText id="txtLocalidad" size="25" value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
+									<p:message for="txtLocalidad" />
+									<p:tooltip for="txtLocalidad" value="Localidad"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+						</p:row>
+						<p:row>
+							<p:column align="left" styleClass="ui-widget-header" colspan="1"><h:outputText
+									value="*Municipio o Delegación " />
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="2" align="left"><h:outputText
+									value="*Entidad Federativa " /> 
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column align="left">
+									<p:inputText id="txtMunDel" size="35" 
+									value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
+									<p:message for="txtMunDel" />
+									<p:tooltip for="txtMunDel" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+							<p:column colspan="2" align="left">
+									<p:inputText id="txtEntidadFederativa" size="35"
+										value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
+									<p:message for="txtEntidadFederativa" />
+									<p:tooltip for="txtEntidadFederativa" value="Localidad"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+						</p:row>
+						
+					<p:row>
+							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText
+									value="*Código Postal " /> 
+							</p:column>
+
+						</p:row>
+						<p:row>
+							<p:column align="left" colspan="3">
+									<p:inputText id="txtCodigoPostal" size="25" 
+									value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.domicilioFiscalDTO.codigoPostal}" 
+									readonly="true" disabled="true" />
+									<p:message for="txtCodigoPostal" />
+
+								</p:column>
+						</p:row>
+						<p:row>
+							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText
+									value="Correo Electronico " /> 
+							</p:column>
+
+						</p:row>
+						<p:row>
+							<p:column align="left" colspan="3">
+									<p:inputText id="txtCorreoElectronico" 
+									    size="35"
+									    value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.correoElectronico}"
+										readonly="true" disabled="true" />
+									<p:message for="txtCorreoElectronico" />
+									<p:tooltip for="txtCorreoElectronico" value="Correo Electronico"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+						</p:row>
+						<p:row>
+							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText value="Telefono " />
+							
+							</p:column>
+
+						</p:row>
+						<p:row>
+							<p:column  align="left" colspan="3">
+									<p:inputText id="txtTelefono" 
+									size="25" 
+									readonly="true" disabled="true"
+									value="#{activacionContadorBean.activacionSolicitudPage.personaDTO.telefono}" />
+									<p:message for="txtTelefono" />
+									<p:tooltip for="txtTelefono" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+						</p:row>
+					</p:panelGrid>
+				
+				
+    </p:fieldset>
+    
+    <p:fieldset legend="Datos de Contacto"
+     onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+                       toggleable="true" toggleSpeed="500">
+    
+    <p:panelGrid style="margin-top:20px">
+
+						<p:row>
+							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 2</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">Confirmar Correo Electronico 2</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+									<p:inputText 
+									    id="txtCorreoElectronico1" 
+									    size="35"
+										required="true"
+										maxlength="30"
+										requiredMessage="Correo Electronico 2 es requerido." 
+										value="#{activacionContadorBean.activacionContadorPage.contactoDTO.correoElectronico2}"
+									
+										validator="correoElectronicoValidator"/>
+									<p:message for="txtCorreoElectronico1" />
+									<p:tooltip for="txtCorreoElectronico1" value="Correo Eletronico 2"
+										showEffect="fade" hideEffect="fade" />
+							</p:column>
+							<p:column>
+									<p:inputText id="txtCorreoElectronico2" 
+									    size="35"
+										maxlength="30"
+										requiredMessage="Confirmar Correo Electronico 2 es requerido."
+										required="true"
+										value="#{activacionContadorBean.activacionContadorPage.contactoDTO.correoElectronico2Conf}"
+										validator="correoElectronicoValidator" />
+									<p:message for="txtCorreoElectronico2" />
+									<p:tooltip for="txtCorreoElectronico2" value="Confirmar Correo Eletronico 2"
+										showEffect="fade" hideEffect="fade" />
+							</p:column>
+						</p:row>
+
+   <p:row>
+							<p:column styleClass="ui-widget-header" colspan="1">Correo Electronico 3</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">Confirmar Correo Electronico 3</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+									<p:inputText id="txtCorreoElectronico3" size="35"
+									    maxlength="30"
+										required="false" 
+										value="#{activacionContadorBean.activacionContadorPage.contactoDTO.correoElectronico3}"
+										validator="correoElectronicoValidator"  />
+									<p:message for="txtCorreoElectronico3" />
+									<p:tooltip for="txtCorreoElectronico3" value="Correo Eletronico 3"
+										showEffect="fade" hideEffect="fade" />
+							</p:column>
+							<p:column>
+									<p:inputText id="txtCorreoElectronico4" size="35"
+									    maxlength="30"
+										required="false"
+										value="#{activacionContadorBean.activacionContadorPage.contactoDTO.correoElectronico3Conf}"
+										validator="correoElectronicoValidator"  />
+									<p:message for="txtCorreoElectronico4" />
+									<p:tooltip for="txtCorreoElectronico4" value="Confirmar Correo Eletronico 3"
+										showEffect="fade" hideEffect="fade" />
+							</p:column>
+						</p:row>
+
+
+
+					</p:panelGrid>
+    </p:fieldset>
+    
+    <p:fieldset
+     onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+     legend="Datos Profesionales" toggleable="true" toggleSpeed="500">
+    
+        <p:panelGrid style="margin-top:20px">
+                         <p:row>
+							<p:column styleClass="ui-widget-header" colspan="1">Numero de Cedula Profesional</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">Fecha de Expedicion de Cedula</p:column>
+						</p:row>
+						
+						<p:row>
+							<p:column>
+									<p:inputText id="txtCedulaProfesional" size="25"
+										readonly="true" disabled="true" value="#{activacionContadorBean.activacionContadorPage.datosPersonalesDTO.numeroCedula}" />
+									<p:message for="txtCedulaProfesional" />
+									<p:tooltip for="txtCedulaProfesional" value="Calle"
+										showEffect="fade" hideEffect="fade" />
+							</p:column>
+							<p:column>
+								<h:panelGrid columns="3">
+	
+        <p:calendar id="cldFechaExpCedula" showOn="button" value="#{activacionContadorBean.activacionContadorPage.datosPersonalesDTO.fechaExpedicionCedula}" />
+								</h:panelGrid>
+							</p:column>
+						</p:row>
+						
+						 <p:row>
+							<p:column styleClass="ui-widget-header" colspan="1">Institución que expidio la Cedula</p:column>
+						</p:row>
+						
+<p:row>
+							<p:column>
+									<p:inputText id="txtInstitucionCedula" 
+									 value="#{activacionContadorBean.activacionContadorPage.datosPersonalesDTO.institucionCedula}" size="35"
+										readonly="true" disabled="true" />
+									<p:message for="txtInstitucionCedula" />
+									<p:tooltip for="txtInstitucionCedula" value="Calle"
+										showEffect="fade" hideEffect="fade" />
+							</p:column>
+							<p:column>
+
+							</p:column>
+						</p:row>
+        </p:panelGrid>
+    </p:fieldset>
+    
+    <table width="700px" cellpadding="1" border="0">
+					<tr>
+					
+					<td align="right">
+						<p:commandButton
+								value="Atras" 
+								ajax="false"
+								 onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+								immediate="true"
+								process="@this,formActivacionRegistro"
+								action="#{activacionContadorBean.accionAtras}"
+								update=":formActivacionRegistro" id="btnAtras"
+								styleClass="ui-priority-primary" />
+						<p:commandButton
+								value="Siguiente" 
+								ajax="false" 
+								 onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+								process="@this,formActivacionRegistro"
+								action="#{activacionContadorBean.accionSiguiente}"
+								update=":formActivacionRegistro" id="btnSiguiente"
+								styleClass="ui-priority-primary" />
+					
+					</td>
+					</tr>
+			
+
+				</table>
+				
+		</p:panel>
+
+				</h:form>
+
+
+	</ui:define>
+</ui:composition>
+

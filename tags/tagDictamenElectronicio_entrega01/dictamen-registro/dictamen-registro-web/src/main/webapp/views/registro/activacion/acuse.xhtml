@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="../../comun/template/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+            
+     <script type="text/javascript" language="JavaScript">
+		var firmaPopup;
+
+		window.resultadoWidgetFirmaElectronica = function(data) {
+			// Obtener los datos de respuesta del componente
+			alert(data.acuse);
+			console.log(data);
+			//document.getElementById("resultadoFirmaElectronica").innerHTML = "Firmado";
+			jQuery("[id$='cadenaFiel']").val(data)
+			jQuery("[id$='dialogFiel']").hide();
+			
+			alert("Se obtubo resultado ");
+			jQuery("[id$='panelFirmado']").show();
+			//dialogFiel.hide();
+		}
+
+
+		window.resultadoFiel = function(response) {
+			alert("En el response ");
+			alert(response);
+			if (window.opener != null) {
+				window.opener.resultadoWidgetFirmaElectronica(response);
+				// Cerrar el popup al terminar el firmado
+				window.close();
+			} else {
+				// Si es iframe
+				window.parent.resultadoWidgetFirmaElectronica(response);
+			}
+		};
+
+	</script>
+	
+<h:form id="formFirmaElectronica">
+
+   <p:dialog 
+		        widgetVar="dlgActive" 
+		        showHeader="true" 
+				draggable="false" 
+				closable="false" 
+				resizable="false" 
+				visible="#{!activacionAcuseBean.activacionColegioPage.valido}" 
+				position="center" 
+				maximizable="false" minimizable="false" >
+				<p:panel id="pnActive" header="Mensaje del Sistema">		
+				
+					<p:panelGrid id="pngDatosContador">
+						<p:row>
+							<p:column colspan="1" style="text-align: center;">
+			    <p:outputLabel>No ha registrado alguna solicitud.</p:outputLabel>
+							</p:column>
+						</p:row>
+					
+						<p:row>
+				
+							<p:column colspan="1">
+								
+						<p:commandButton 
+						id="btnActive" 
+					   value="Registrar"
+                       onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+                       process="@this,formActivacionRegistro"  
+                       update=":statusDialog,:formActivacionRegistro" 
+                       
+                       immedite="true"
+					   action="#{activacionAcuseBean.accionInicio}" />
+						</p:column>
+						</p:row>
+					</p:panelGrid>
+			    	
+			    </p:panel>	
+			</p:dialog>
+			
+			
+					<p:panel id="pnActivacionRegistro"
+			header="Activacion de Registro"
+			footer="Activacion de Registro de Contadores Públicos Autorizados"
+			rendered="#{activacionAcuseBean.activacionColegioPage.valido}">
+			
+       <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="formFirmaElectronica"  />
+            		
+				<p:fieldset id="fsActivacionContadorAcuse"
+					legend="Acuse de Activacion de Contador"
+					toggleable="true" toggleSpeed="500">
+					
+	
+
+						<p:panel header="Mensaje del Sistema">		
+			
+
+<p:media value="/faces/views/registro/activacion/reporte.xhtml" width="100%" height="400px" player="pdf">
+</p:media>
+
+
+    <table width="700px" cellpadding="1" border="0">
+					<tr>
+					
+					<td>
+					<p:commandButton
+								value="Atras" 
+								 onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+								process="@this,formActivacionRegistro"
+								action="#{activacionAcuseBean.accionAtras}"
+								update=":formActivacionRegistro" id="btnAtras"
+								styleClass="ui-priority-primary" />
+
+<p:commandButton id="btnFirmarPrimero"
+				value="Firma Digital" 
+				 onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false" 
+				 action="#{activacionAcuseBean.accionFirmaElectronica}"
+				 process="@this" 
+				 immediate="true"
+				 update=":formFirmaElectronica"
+				 />
+				
+						<p:commandButton
+								value="Siguiente" 
+								 onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+								disabled="#{!activacionAcuseBean.activarFirmaElectronicaDialog}" 
+								process="@this,formFirmaElectronica"
+								action="#{activacionAcuseBean.accionSiguiente}"
+								update=":formFirmaElectronica" id="btnSiguiente"
+								styleClass="ui-priority-primary" />
+						</td>
+					</tr>
+			
+
+				</table>
+			
+			
+			
+			</p:panel>
+	
+	
+
+			    
+	<p:dialog widgetVar="dialogFirmaElectronica" id="dialogFirmaElectronica" 
+	visible="#{activacionAcuseBean.activarFirmaElectronicaDialog}" 
+	rendered="#{activacionAcuseBean.activarFirmaElectronicaDialog}"
+			width="850" 
+			height="410">
+			
+    	    	<p:panel id="panelFirmaElectronica" widgetVar="panelFirmaElectronica" >
+    	
+    		<p:inputText id="cadenaFiel" 
+			    	widgetVar="cadenaFiel" 
+			    	value="#{activacionAcuseBean.firma}" 
+			    	/>
+			    
+			    
+                       
+       <applet id="AppletFirma" width="770" height="350" archive="MtsAppletFielWidget.IMSS.jar" 
+             code="mx.com.metatrust.idtrust.mtsappletfielwidget.mtsafwidgetimss.MtsAFWidgetIMSS.class" 
+             codebase="http://firmadigitalqa.imss.gob.mx/firmaElectronicaWeb/applets/">
+                                            <param value="16" name="fontSize"></param>
+                                            <param value="all-permissions" name="permissions"></param>
+
+
+
+                                            <param name="json" value="{'operacion':'firmaCMS','aplicacion':'appPrueba','acuse':'AcuseV1.0','min_archivos':1,'max_archivos':1,'cad_original':['Cadena a firmar'],'salida':'rfc,curp,rfc_rl,curp_rl,serie_cert,acuse','tipo_persona':0,'filtros':'Archivos IMSS Documentos(pdf,doc)^pdf+doc|Archivos IMSS Imagen(jpg,gif)^jpg+gif'}" />
+
+
+                           <param value="http://firmadigitalqa.imss.gob.mx/WsFirmaElectronicaDT/FirmaElectronicaDTService" name="urlWsFE"></param>
+                            <param value="http://firmadigitalqa.imss.gob.mx/WsAutenticacion/WsAutenticacionService" name="urlWsAuth"></param>
+                                            
+                                            <param value="S" name="debug"></param>
+                                            <param value="false" name="codebase_lookup"></param>
+                                            
+      </applet>
+                                                
+                                        
+                             
+ 	<!-- 
+	{"serie_cert":"00001000000101921366","curp_rl":"","folio":"f4033148-720c-4abd-a09c-3e3d7dadf83b","rfc_rl":"",
+	"acuse":"http://172.16.5.151:8083/reader/view/visualizadorcomprobantes/mostrarComprobante?id=f4033148-720c-4abd-a09c-3e3d7dadf83b",
+	"curp":"FOVM830211HDFLLR01","Resultado":0,"rfc":"FOVM830211446"} -->                                         
+       <br/>                
+<p:commandButton
+								value="Firmar" 
+								ajax="false"
+								process="@this,formActivacionRegistro"
+								action="#{activacionAcuseBean.accionFirmar}"
+								id="btnFirmar"
+								styleClass="ui-priority-primary" />
+
+	
+		</p:panel>
+	</p:dialog>
+				
+	</p:fieldset>
+		</p:panel>
+				</h:form>	
+	</ui:define>
+</ui:composition>
+		

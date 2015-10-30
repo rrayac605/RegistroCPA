@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="../../comun/template/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+          
+						          <h:form id="frmDatosContador4">
+			
+       <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="frmDatosContador4"  />
+          
+            	
+	     <p:panelGrid style="width:100%;"
+				styleClass="table-no-border table-no-padding">
+				<p:row>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu" />
+					</p:column>
+
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					
+				</p:row>
+			</p:panelGrid>
+			</h:form>
+			          <h:form id="frmDatosContador1">
+			
+	<p:dialog widgetVar="dlgValidarRegIMSS" 
+		closable="false" 
+		resizable="false" 
+		draggable="false"
+		dynamic="true" 
+			visible="#{activacionSolicitudBean.activarValidarRegistroIMSS}">
+			<p:panel id="pnValidarRegIMSS" header="Mensaje del Sistema">	
+			      <p:messages autoUpdate="true" id="msgs1" showDetail="true" showSummary="true" />
+			
+				<p:panelGrid id="pngValidarRegIMSS">
+				  <p:row>
+				  <p:column>
+				  	<p:outputLabel>Registro IMSS:</p:outputLabel>
+				  	</p:column>
+				  	 <p:column>
+                      <p:inputText id="txtRegistroIMSS" value="#{activacionSolicitudBean.registroIMSS}" size="25" />
+									<p:message for="txtRegistroIMSS" />
+									<p:tooltip for="txtRegistroIMSS" value="Numero de Registro IMSS"
+										showEffect="fade" hideEffect="fade" />
+				  	</p:column>
+				  </p:row>
+				  <p:row>
+				  <p:column colspan="2">
+				  	  	<p:commandButton id="btnAtrasValidarRegIMSS" 
+				  	  	value="Atrás" 
+				  	  	ajax="false"
+						action="#{activacionSolicitudBean.accionAtrasRegistroIMSS}" 
+						process="@this,frmDatosContador" 
+						update=":frmDatosContador" />
+						
+				  	    <p:commandButton id="btnAceptarValidarRegIMSS" value="Consultar" ajax="false"
+						action="#{activacionSolicitudBean.accionBuscarRegistroIMSS}" />
+				
+						 <p:commandButton id="btnSiguiente" value="Siguiente" 
+						 disabled="#{activacionSolicitudBean.activarSiguienteRegIMSS}" ajax="false"
+						action="#{activacionSolicitudBean.actionContadorNoAutorizado}" />
+						</p:column>
+				  </p:row>
+				</p:panelGrid>
+			  </p:panel>
+			</p:dialog>
+			
+			</h:form>
+						          <h:form id="frmDatosContador2">
+			
+			<p:dialog widgetVar="dlgContNoAut" resizable="false" draggable="false" visible="#{activacionSolicitudBean.activarContadorNoAutorizado}">
+			<p:panel id="pnContNoAut" header="Mensaje del Sistema">	
+			      <p:messages autoUpdate="true" id="msgs2" showDetail="true" showSummary="true" />
+			
+				<p:panelGrid id="pngContNoAutr">
+				  <p:row>
+				  <p:column>
+				  	<p:outputLabel>Usted no cuenta con un Registro IMSS de Contador Público Autorizado</p:outputLabel>
+				  	</p:column>
+				  </p:row>
+				  <p:row>
+				  <p:column>
+				  	<p:commandButton id="btnAceptarNoAut" value="Aceptar" ajax="false"
+						action="#{activacionSolicitudBean.actionContadorNoAutorizado}" />
+						</p:column>
+				  </p:row>
+				</p:panelGrid>
+			  </p:panel>
+			</p:dialog>
+			
+			</h:form>
+						          <h:form id="frmDatosContadorPrincipal">
+			
+		<p:dialog id="dlgDatosContador" 
+		widgetVar="dlgDatosContador" 
+
+		closable="false" 
+		resizable="false" 
+		draggable="false"
+		dynamic="true"  
+	
+		rendered="#{activacionSolicitudBean.activarContadorAutorizado}"
+		visible="#{activacionSolicitudBean.activarContadorAutorizado}">
+			<p:panel id="pnDatosContador" header="Mensaje del Sistema">		
+
+			
+					<p:panelGrid id="pngDatosContador">
+						<p:row>
+							<p:column colspan="2" style="text-align: center;">
+								<p:outputLabel>¿El Registro IMSS es correcto?</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>Apellido Paterno</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.apellidoPaterno}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>Apellido Materno</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.apellidoMaterno}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>Nombre(s)</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.nombre}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>CURP</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.curp}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:outputLabel>Registro IMSS</p:outputLabel>
+							</p:column>
+							<p:column>
+								<p:outputLabel>#{activacionSolicitudBean.activacionSolicitudPage.personaDTO.contadorPublicoAutDTO.numRegistroCPA}</p:outputLabel>
+							</p:column>
+						</p:row>
+						<p:row>
+				
+							<p:column colspan="2">
+								
+						<p:commandButton 
+						id="btnSi" 
+						value="Si"
+                       onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       process="@this,frmDatosContadorPrincipal"  
+                       update=":statusDialog,:frmDatosContadorPrincipal" 
+                       ajax="false"
+					   action="#{activacionSolicitudBean.aceptacion}" />
+						
+						<p:commandButton id="btnNo" 
+						process="@this,frmDatosContador" 
+						update=":frmDatosContador:pnDatosContador" 
+						value="No" inmediate="true" ajax="false"
+						actionListener="#{activacionSolicitudBean.accionValidarRegistroImss()}" />
+						
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+
+			</p:panel>
+		</p:dialog>
+		
+		<p:dialog widgetVar="dlgNoReg" id="dlgNoRegistros" visible="false">
+			<p:panelGrid>
+				<p:outputLabel id="msgNoDatos">#{msg['message.actualizacion.no.datos']}</p:outputLabel>
+				<p:button id="btnNoDataAceptar" value="#{msg['message.button.aceptar']}" onclick="dlgNoReg.hide()"/>
+			</p:panelGrid>	
+		</p:dialog>
+		
+	</h:form>
+	
+
+
+	</ui:define>
+</ui:composition>
+
+		

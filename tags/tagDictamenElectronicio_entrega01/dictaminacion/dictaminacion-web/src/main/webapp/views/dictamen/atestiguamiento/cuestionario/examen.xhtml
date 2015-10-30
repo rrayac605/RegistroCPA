@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/views/comun/template/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core">
+	<ui:define name="bodyContainer">
+		<h:form>
+			<p:panelGrid columns="1">
+				<p:panelGrid columns="1">
+					<p:panel id="generalPanel">
+						<p:outputLabel id="contestarLabel"
+							value="#{message.label.views.dictamen.atestiguamiento.contestar}" />
+						<h2>
+							<p:outputLabel id="AtestiguamientoLabel"
+								value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.desAtestiguamiento}" />
+						</h2>
+						<br />
+						<ui:repeat var="rubro"
+							value="#{examenPage.atestiguamientoDictamenDTOSeleccionado.cveIdAtestiguamiento.ndcRubros}"
+							varStatus="status">
+							<h4>
+								<h:outputText value="#{rubro.desRubro}" />
+							</h4>
+							<p:selectBooleanCheckbox id="rubroCheckBox" value="#{rubro.habilitaRubro}" 
+								itemLabel="#{msg['message.label.views.dictamen.atestiguamiento.noAplica']}"
+								rendered="#{rubro.indAplica}">
+								<f:ajax event="change" listener="#{examenBean.preguntaVisible(rubro)}" render=":#{p:component('generalPanel')}" />  
+							</p:selectBooleanCheckbox>
+							<br />
+							<br />
+							<ui:repeat var="pregunta" value="#{rubro.ndcPreguntas}" varStatus="status">
+								<p:panel id="radiopanel">
+								<p:outputLabel id="preguntaLabel" value="#{pregunta.desPregunta}" for="opcionRadio" />
+								<p:selectOneRadio id="opcionRadio" value="#{pregunta.opcionSeleccionada}" required="true"
+									requiredMessage="#{msg['message.label.views.dictamen.atestiguamiento.error']} #{pregunta.desPregunta}"
+									disabled="#{pregunta.habilitaPregunta}" > 
+									<!--p:ajax event="change" listener="#{examenBean.observacionVisible(pregunta)}"  update=":radiopanel" /-->
+									<f:selectItems var="respuesta"
+										value="#{pregunta.ndcOpcionesPregunta}"
+										itemLabel="#{respuesta.cveIdRespuesta.desTipoRespuesta}"
+										itemValue="#{respuesta.cveIdRespuesta.cveIdRespuesta}" /> 
+								</p:selectOneRadio>
+								</p:panel >
+								<p:panel id="textAreaPanel" rendered="true" >
+									<p:outputLabel id="observacionesLabel" value="#{msg['message.label.views.dictamen.atestiguamiento.omisiones']}" />
+									<p:inputTextarea id="observacionTextArea"  value="#{pregunta.observaciones}" rows="3" cols="100" 
+									maxlength="300" autoResize="false" style="resize: none" />
+								</p:panel>
+								<br />
+								<br />
+							</ui:repeat>
+						</ui:repeat>
+					</p:panel>
+				</p:panelGrid>
+				<p:panelGrid columns="2" style="center">
+					<p:commandButton action="#{examenBean.guardar()}"
+						value="#{msg['message.button.views.dictamen.atestiguamiento.finalizar']}"
+						onstart="statusDialog.show();" oncomplete="statusDialog.hide();" />
+
+					<p:commandButton action="#{examenBean.regresar()}"
+						value="#{msg['message.button.views.dictamen.atestiguamiento.cancelar']}"
+						immediate="true" onstart="statusDialog.show();"
+						oncomplete="statusDialog.hide();" />
+				</p:panelGrid>
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

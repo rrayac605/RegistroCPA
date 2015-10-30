@@ -1,0 +1,72 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+		http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/task
+    	http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+    	
+    <context:component-scan base-package="mx.gob.imss.cit.de.dictaminacion.batch.scheduler" />    	
+	
+    <bean id="transactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
+	
+	<bean id="jobRepository"
+		class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+ 
+	<bean id="jobLauncher"
+		class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>
+     
+	<batch:job id="reportJob">
+		<batch:step id="step1">
+			<batch:tasklet>
+				<batch:chunk reader="awsReader" writer="itemWriter"
+					commit-interval="2">
+				</batch:chunk>
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>spring/batch/properties/configuration.properties</value>
+		</property>
+	</bean>
+	
+	<bean id="awsReader" class="mx.gob.imss.cit.de.dictaminacion.batch.readers.AWSReader" scope="job">
+		<property name="key" value="#{jobParameters[key]}"/>
+		<property name="destino" value="#{jobParameters[destino]}"></property>
+		<property name="bucketName" value="${aws.bucket}"></property>
+		<property name="rutaAWSCredentials" value="${aws.ruta.credentials}"></property>
+	</bean>
+
+	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
+	    <property name="resource" value="file:#{jobParameters[destino]}" />
+	    <property name="lineAggregator">
+			<bean class="org.springframework.batch.item.file.transform.PassThroughLineAggregator"/>
+		</property>
+	</bean>			
+	
+	<bean id="scanScheduler" class="mx.gob.imss.cit.de.dictaminacion.batch.scanner.ScanBucket" >
+		<property name="rutaOrigen" value="${aws.ruta.origen}"/>
+		<property name="rutaDestino" value="${configuracion.ruta.destino}"/>
+		<property name="rutaProcesamiento" value="${aws.ruta.procesamiento}"/>
+		<property name="bucketName" value="${aws.bucket}"/>
+		<property name="rutaAWSCredentials" value="${aws.ruta.credentials}"/>
+	</bean>
+
+	<task:scheduled-tasks>
+		<task:scheduled ref="scanScheduler" method="run" fixed-delay="${configuracion.scheduler.delay}"/>
+	</task:scheduled-tasks>
+
+</beans>
+

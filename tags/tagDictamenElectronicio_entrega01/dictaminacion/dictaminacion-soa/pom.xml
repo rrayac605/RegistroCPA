@@ -1,0 +1,28 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>mx.gob.imss.cit.dictamenelectronico.dictaminacion</groupId>
+  <artifactId>dictaminacion-soa</artifactId>
+  <packaging>pom</packaging>
+  <name>dictaminacion - soa</name>
+
+
+  <parent>
+    <groupId>mx.gob.imss.cit.dictamenelectronico</groupId>
+    <artifactId>dictaminacion</artifactId>
+    <version>1.0</version>
+  </parent>
+
+
+  <modules>
+    <module>dictaminacion-soa-model</module>
+    <module>dictaminacion-soa-commons</module>
+    <module>dictaminacion-soa-persistence</module>
+    <module>dictaminacion-soa-services</module>
+    <module>dictaminacion-soa-integration-api</module>
+    <module>dictaminacion-soa-integration</module>
+    <module>dictaminacion-soa-app</module>
+  </modules>
+
+</project>

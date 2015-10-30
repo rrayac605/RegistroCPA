@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panel style="width:100%; " styleClass="table-no-border">
+			<ui:include src="headerSolicitud.xhtml" />
+			<h3>#{msg['message.contador.colegio.titulo']}</h3>
+			<hr class="red" />
+			<br />
+			<p:panelGrid id="gridColegio" style="width:98%; margin: 0 auto; "
+				styleClass="table table-striped">
+				<p:row>
+				</p:row>
+				<p:row>
+					<p:column style="width:50%">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="* #{msg['message.contador.colegio.rfc']}" />
+					</p:column>
+					<p:column>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="width:50%">
+						<h:inputText style="width:80%"
+							value="#{registroColegioPage.rfcBusqueda}">
+							<p:ajax event="change" update="@this" />
+						</h:inputText>
+					</p:column>
+					<p:column style="text-align:left;">
+						<p:commandButton value="#{msg['message.button.buscar']}"
+							styleClass="btn-sm btn-primary" immediate="true"
+							action="#{registroColegioBean.buscarColegio()}"
+							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" update="lblRazonSocial dialogGeneral" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="width:50%">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="* #{msg['message.contador.datos.razonSocial']}" />
+					</p:column>
+					<p:column></p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText id="lblRazonSocial"
+							value="#{solicitudRegistroPage.contador.colegio.razonSocial}" />
+					</p:column>
+					<p:column></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br />
+			<br />
+			<p:panelGrid style="width:100%; " styleClass="table-no-border">
+				<p:row>
+					<p:column style="text-align: left;">
+						<p:commandButton value="#{msg['message.button.anterior']}"
+							action="#{solicitudRegistroBean.redireccionarRegistroDespacho()}"
+							styleClass="btn-sm btn-default" icon="ui-icon-arrowthick-1-w"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+					<p:column style="text-align: right;">
+						<p:commandButton value="#{msg['message.button.siguiente']}"
+							styleClass="btn-sm btn-primary" immediate="true"
+							action="#{registroColegioBean.validarRedireccionToRegistroDocumentacion()}"
+							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" update="dialogGeneral" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:panel>
+		<!-- dialogos -->
+		<p:dialog header="#{msg['message.contador.solicitud.titulo']}"
+			width="550px" modal="true" resizable="false" id="datosCorrectos"
+			widgetVar="datosCorrectos">
+			<p:panelGrid style="width:100%; " styleClass="table-no-border">
+				<p:row>
+					<p:column colspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.solicitud.datosCorrectos']}" />
+						<br />
+						<br />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.no']}"
+							styleClass="btn-sm btn-default"
+							onclick="datosCorrectos.hide(); cancelarSolicitud.show();" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.si']}"
+							styleClass="btn-sm btn-primary"
+							action="#{registroColegioBean.redireccionarToRegistroDocumentacion()}"
+							oncomplete="datosCorrectos.hide(); imagenEsperaWidget.hide();"
+							onclick="imagenEsperaWidget.show()" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

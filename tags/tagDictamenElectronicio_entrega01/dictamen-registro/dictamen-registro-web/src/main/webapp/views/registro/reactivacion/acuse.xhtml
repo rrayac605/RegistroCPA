@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="../../comun/template/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+          
+   <h:form id="frmDatosContador4">
+				<p:panel id="pnActivacionRegistro"
+			header="Reactivacion de Registro"
+			footer="Reactivacion de Registro de Contadores Públicos Autorizados">
+
+			
+     <p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" update="frmDatosContador4"  />
+          
+      <p:messages autoUpdate="true" id="msgs" showDetail="true" showSummary="true" />
+            	
+	     <p:panelGrid style="width:100%;"
+				styleClass="table-no-border table-no-padding">
+				<p:row>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu" />
+					</p:column>
+
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					<p:column style="width:25%;">
+						<p:commandButton value=" " style="width:100%;"
+							styleClass="btn-menu-disabled" />
+					</p:column>
+					
+				</p:row>
+			</p:panelGrid>
+			</h:form>
+			     
+						  
+	 <h:form id="frmDatosContador3">
+			
+				<p:fieldset
+					legend="Datos del Colegio o Asociación"
+					toggleable="true" toggleSpeed="500">
+					<p:ajax event="toggle"
+						listener="#{activacionSolicitudBean.handleToggle}" update="msgs" />
+
+			
+						<p:panel header="Mensaje del Sistema">		
+			
+			
+	
+
+<p:media value="/faces/views/registro/activacion/reporte.xhtml" width="100%" height="400px" player="pdf">
+</p:media>
+
+
+    <table width="700px" cellpadding="1" border="0">
+					<tr>
+					
+					<td>
+					<p:commandButton
+								value="Atras" 
+								ajax="false" 
+								process="@this,formActivacionRegistro"
+								action="#{activacionAcuseBean.accionAtras}"
+								update=":formActivacionRegistro" id="btnAtras"
+								styleClass="ui-priority-primary" />
+						<p:commandButton
+								value="Siguiente" 
+								ajax="false" 
+								process="@this,formActivacionRegistro"
+								action="#{activacionAcuseBean.accionSiguiente}"
+								update=":formActivacionRegistro" id="btnSiguiente"
+								styleClass="ui-priority-primary" />
+						</td>
+					</tr>
+			
+
+				</table>
+			
+			
+			
+			
+			</p:panel>
+	
+	</p:fieldset>
+
+		
+	</h:form>
+	
+</p:panel>
+
+	</ui:define>
+</ui:composition>
+
+		

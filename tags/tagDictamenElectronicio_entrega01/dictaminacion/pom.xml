@@ -1,0 +1,125 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+
+  <parent>
+    <groupId>mx.gob.imss.cit</groupId>
+    <artifactId>dictamenelectronico</artifactId>
+    <version>1.0</version>
+  </parent>
+
+
+  <groupId>mx.gob.imss.cit.dictamenelectronico</groupId>
+  <artifactId>dictaminacion</artifactId>
+  <version>${project.parent.version}</version>
+  <packaging>pom</packaging>
+  <name>dictaminacion</name>
+
+
+
+	<modules>
+		<module>dictaminacion-soa</module>
+		<module>dictaminacion-web</module>
+		<module>dictaminacion-ws</module>
+		<module>dictaminacion-batch</module>
+	</modules>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<javax.persistence.jdbc.driver>org.hsqldb.jdbcDriver</javax.persistence.jdbc.driver>
+				<javax.persistence.jdbc.url>jdbc:hsqldb:mem:testdb</javax.persistence.jdbc.url>
+				<javax.persistence.jdbc.user>sa</javax.persistence.jdbc.user>
+				<javax.persistence.jdbc.password></javax.persistence.jdbc.password>
+				<eclipselink.ddl-generation.output-mode>database</eclipselink.ddl-generation.output-mode>
+				<eclipselink.ddl-generation>create-tables</eclipselink.ddl-generation>
+				<eclipselink.logging.level>FINE</eclipselink.logging.level>
+				<db.embedida>true</db.embedida>
+				<bovedaws.endpoint>http://11.254.20.207:8011/BovedaPersonalEscritorio/Proxies/ServiceProxyDocumentoWS?wsdl</bovedaws.endpoint>
+				<bovedaws.namespace>http://documentows.ws.bp.cit.imss.gob.mx/</bovedaws.namespace>
+				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>				
+				<bdtu.endpoint>http://11.254.20.207:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl</bdtu.endpoint>
+				<bdtu.namespace>http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/</bdtu.namespace>
+				<bdtu.service>ServiciosBDTU</bdtu.service>				
+				<aws.bucket>intellegomx</aws.bucket>
+				<aws.x-amz-credential>AKIAI4H4UF5WBC7ZG45A/20150903/us-east-1/s3/aws4_request</aws.x-amz-credential>
+				<aws.url>http://intellegomx.s3.amazonaws.com/</aws.url>
+				<aws.aws_secret_key>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</aws.aws_secret_key>
+				<aws.ruta_base>Dictamen/</aws.ruta_base>
+				<aws.awsAccessKeyId>AKIAI4H4UF5WBC7ZG45A</aws.awsAccessKeyId>
+				<firma.URL_APPLET_FIEL>URLAPPLETFIEL_PRUEBA</firma.URL_APPLET_FIEL>
+				<firma.FIEL_CODEBASE>http://172.16.5.151:8083/firmaElectronicaWeb/applets/</firma.FIEL_CODEBASE>
+				<firma.FIEL_PARAM_URL_WS_FE>http://172.16.5.151:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService</firma.FIEL_PARAM_URL_WS_FE>
+				<firma.FIEL_PARAM_URL_WS_AUTH>http://172.16.5.151:8083/WsAutenticacion/WsAutenticacionService</firma.FIEL_PARAM_URL_WS_AUTH>
+				
+			</properties>
+		</profile>
+
+		<profile>
+			<id>localPersistencia</id>
+			<properties>
+				<javax.persistence.jdbc.driver>oracle.jdbc.OracleDriver</javax.persistence.jdbc.driver>
+				<javax.persistence.jdbc.url>jdbc:oracle:thin:@172.16.8.166:1630/MGPBDTU9X</javax.persistence.jdbc.url>
+				<javax.persistence.jdbc.user>MGPNDIC1</javax.persistence.jdbc.user>
+				<javax.persistence.jdbc.password>MGPnd1cI</javax.persistence.jdbc.password>
+				<eclipselink.ddl-generation.output-mode>sql-script</eclipselink.ddl-generation.output-mode>
+				<eclipselink.ddl-generation>none</eclipselink.ddl-generation>
+				<eclipselink.logging.level>FINE</eclipselink.logging.level>
+				<db.embedida>false</db.embedida>
+				<bovedaws.endpoint>http://11.254.20.207:8011/BovedaPersonalEscritorio/Proxies/ServiceProxyDocumentoWS?wsdl</bovedaws.endpoint>
+				<bovedaws.namespace>http://documentows.ws.bp.cit.imss.gob.mx/</bovedaws.namespace>
+				<bovedaws.service>DocumentoWSServiceImplService</bovedaws.service>				
+				<bdtu.endpoint>http://11.254.20.207:8011/ServiciosBDTU/Proxies/ProxyServiceBDTU?wsdl</bdtu.endpoint>
+				<bdtu.namespace>http://serviciosNegocio.solicitudPension.cit.imss.gob.mx/ws/ServiciosBDTU/</bdtu.namespace>
+				<bdtu.service>ServiciosBDTU</bdtu.service>
+				<aws.bucket>intellegomx</aws.bucket>
+				<aws.x-amz-credential>AKIAI4H4UF5WBC7ZG45A/20150903/us-east-1/s3/aws4_request</aws.x-amz-credential>
+				<aws.url>http://intellegomx.s3.amazonaws.com/</aws.url>
+				<aws.aws_secret_key>hOl3xkQUgHxfr9WrIeeYmjq</aws.aws_secret_key>
+				<aws.ruta_base>Dictamen/</aws.ruta_base>
+				<aws.awsAccessKeyId>AKIAI4H4UF5WBC7ZG45A</aws.awsAccessKeyId>
+			    <firma.URL_APPLET_FIEL>URLAPPLETFIEL_PRUEBA</firma.URL_APPLET_FIEL>
+				<firma.FIEL_CODEBASE>http://172.16.5.151:8083/firmaElectronicaWeb/applets/</firma.FIEL_CODEBASE>
+				<firma.FIEL_PARAM_URL_WS_FE>http://172.16.5.151:8083/WsFirmaElectronicaDT/FirmaElectronicaDTService</firma.FIEL_PARAM_URL_WS_FE>
+				<firma.FIEL_PARAM_URL_WS_AUTH>http://172.16.5.151:8083/WsAutenticacion/WsAutenticacionService</firma.FIEL_PARAM_URL_WS_AUTH>
+				
+			</properties>
+			
+		</profile>
+
+	</profiles>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${resources-plugin.version}</version>
+				<configuration>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+
+
+	</build>
+
+	
+</project>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panel style="width:100%; " styleClass="table-no-border">
+			<ui:include src="headerSolicitud.xhtml" />
+			<h3>#{msg['message.contador.despacho.titulo']}</h3>
+			<hr class="red" />
+			<br />
+			<p:panelGrid id="tableDatosDespacho"
+				style="width:98%; margin: 0 auto; ">
+				<p:row>
+					<p:column style="width:50%">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.despacho.pregunta.uno']}" />
+					</p:column>
+					<p:column style="text-align:left;">
+						<p:selectOneMenu
+							value="#{registroDespachoPage.opcionSeleccionada}">
+							<p:ajax event="change"
+								listener="#{registroDespachoBean.elegirOpcion()}" update="@form" />
+							<f:selectItem itemLabel="#{msg['message.label.seleccione']}" />
+							<f:selectItems value="#{registroDespachoPage.opciones}"
+								var="opcion" itemLabel="#{opcion}" itemValue="#{opcion}" />
+						</p:selectOneMenu>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid id="gridIndependiente"
+				style="width:98%; margin: 0 auto; " styleClass="table table-striped"
+				rendered="#{solicitudRegistroPage.contador.independiente}">
+				<p:row>
+				</p:row>
+				<p:row>
+					<p:column style="width:50%">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.despacho.pregunta.dos']}" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.despacho.nTrabajadores']}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="text-align:center;">
+						<p:selectOneRadio
+							value="#{solicitudRegistroPage.contador.trabajadores}"
+							inmediate="true">
+							<f:selectItem itemValue="#{true}"
+								itemLabel="#{msg['message.contador.despacho.si']}" />
+							<f:selectItem itemValue="#{false}"
+								itemLabel="#{msg['message.contador.despacho.no']}" />
+							<p:ajax event="change" update="nTrabajadores"
+								listener="#{registroDespachoBean.activarNumTrabajadores()}" />
+						</p:selectOneRadio>
+					</p:column>
+					<p:column>
+						<p:inputMask mask="9?9999" id="nTrabajadores"
+							disabled="#{!solicitudRegistroPage.contador.trabajadores}"
+							value="#{solicitudRegistroPage.contador.nTrabajadores}">
+							<p:ajax event="blur" update="@this" />
+						</p:inputMask>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid id="gridDespacho" style="width:98%; margin: 0 auto; "
+				rendered="#{solicitudRegistroPage.contador.perteneceDespacho}">
+				<p:row>
+					<p:column style="width:50%">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="* #{msg['message.contador.despacho.rfc']}" />
+					</p:column>
+					<p:column>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="width:50%">
+						<h:inputText style="width:98%"
+							value="#{registroDespachoPage.rfcBusqueda}">
+							<p:ajax event="change" update="@this" />
+						</h:inputText>
+					</p:column>
+					<p:column style="text-align:left;">
+						<p:commandButton value="#{msg['message.button.buscar']}"
+							styleClass="btn-sm btn-primary" immediate="true"
+							action="#{registroDespachoBean.buscarDespacho()}"
+							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" update="@form" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<br />
+			<p:panelGrid id="datosDespacho" style="width:98%; margin: 0 auto; "
+				styleClass="table table-striped"
+				rendered="#{registroDespachoPage.despachoEncontrado}">
+				<p:row>
+					<p:column style="width:50%">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="* #{msg['message.contador.datos.razonSocial']}" />
+					</p:column>
+					<p:column></p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputText
+							value="#{solicitudRegistroPage.contador.despacho.razonSocial}" />
+					</p:column>
+					<p:column></p:column>
+				</p:row>
+				<p:row>
+					<p:column style="width:50%">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="* #{msg['message.contador.despacho.cargo']}" />
+					</p:column>
+					<p:column>
+						<h:outputText styleClass="SubtituloSeccion"
+							value="* #{msg['message.contador.despacho.telFijo']}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="width:50%">
+						<p:selectOneMenu
+							value="#{solicitudRegistroPage.contador.cargo.id}">
+							<p:ajax event="change" update="@this" />
+							<f:selectItem itemLabel="#{msg['message.label.seleccione']}"
+								itemValue="0" />
+							<f:selectItems value="#{registroDespachoPage.cargos}" var="cargo"
+								itemLabel="#{cargo.descripcion}" itemValue="#{cargo.id}" />
+						</p:selectOneMenu>
+					</p:column>
+					<p:column>
+						<p:inputMask mask="999?9999999999"
+							value="#{solicitudRegistroPage.contador.despacho.telefonoFijo}">
+							<p:ajax event="blur" update="@this" />
+						</p:inputMask>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<br />
+			<br />
+			<p:panelGrid style="width:98%; margin: 0 auto; "
+				styleClass="table-no-border">
+				<p:row>
+					<p:column style="text-align: left;">
+						<p:commandButton value="#{msg['message.button.anterior']}"
+							action="#{solicitudRegistroBean.redireccionarSolicitudRegistro()}"
+							styleClass="btn-sm btn-default" icon="ui-icon-arrowthick-1-w"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+					<p:column style="text-align: right;">
+						<p:commandButton value="#{msg['message.button.siguiente']}"
+							styleClass="btn-sm btn-primary" immediate="true"
+							action="#{registroDespachoBean.validarRedireccionToRegistroColegio()}"
+							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" update="dialogGeneral" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:panel>
+		<!-- dialogos -->
+		<p:dialog header="#{msg['message.contador.solicitud.titulo']}"
+			width="550px" modal="true" resizable="false" id="datosCorrectos"
+			widgetVar="datosCorrectos">
+			<p:panelGrid style="width:100%; " styleClass="table-no-border">
+				<p:row>
+					<p:column colspan="2">
+						<h:outputText styleClass="SubtituloSeccion"
+							value="#{msg['message.contador.solicitud.datosCorrectos']}" />
+						<br />
+						<br />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.no']}"
+							styleClass="btn-sm btn-default"
+							onclick="datosCorrectos.hide(); cancelarSolicitud.show();" />
+					</p:column>
+					<p:column style="text-align: center;">
+						<p:commandButton value="#{msg['message.button.si']}"
+							styleClass="btn-sm btn-primary"
+							action="#{registroDespachoBean.redireccionarToRegistroColegio()}"
+							oncomplete="datosCorrectos.hide(); imagenEsperaWidget.hide();"
+							onclick="imagenEsperaWidget.show()" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

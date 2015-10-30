@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<p:panelGrid id="pngColegio" columns="1" style="width:100%">
+		<p:outputLabel id="lblRfcColegio"
+			value="#{msg['message.actualizacion.colegio.rfc']}" />
+		<p:inputText id="txtRfcColegio"
+			value="#{actualizacionRegistroPage.colegio.rfc}"
+			disabled="#{not actualizacionRegistroPage.habilitaDatosColegio}">
+			<p:ajax event="valueChange"
+				listener="#{actualizacionRegistroBean.buscarColegio()}"
+				update="txtNombreColegio" partialSubmit="true" />
+		</p:inputText>
+		<p:outputLabel id="lblNombreColegio"
+			value="#{msg['message.actualizacion.colegio.nombre']}" />
+		<p:inputText id="txtNombreColegio"
+			value="#{actualizacionRegistroPage.colegio.razonSocial}"
+			disabled="true" style="width:40%" />
+	</p:panelGrid>
+
+	<p:dialog id="dlgDatosColegioCorrectos" widgetVar="dialogDatosColegio"
+		visible="#{not actualizacionRegistroPage.habilitaDatosColegio}">
+		<p:panel id="pnDatosColegioCorrecto" style="width:100%">
+			<h:panelGroup id="pngDatosColegioCorrectos">
+				<h3>#{msg['message.actualizacion.colegio.datoscorrectos']}</h3>
+			</h:panelGroup>
+			<p:panelGrid columns="2" id="pgColegioButtons">
+				<p:commandButton id="btnSiDatosColegio"
+					value="#{msg['message.button.si']}" partialSubmit="true"
+					actionListener="#{actualizacionRegistroBean.habilitaPanelColegio()}"
+					update="tvActualizacion" styleClass="ui-priority-primary" />
+				<p:commandButton id="btnNoDatosColegio"
+					value="#{msg['message.button.no']}"
+					styleClass="ui-priority-primary"
+					onclick="dialogDatosColegio.hide()" />
+			</p:panelGrid>
+		</p:panel>
+	</p:dialog>
+</ui:composition>

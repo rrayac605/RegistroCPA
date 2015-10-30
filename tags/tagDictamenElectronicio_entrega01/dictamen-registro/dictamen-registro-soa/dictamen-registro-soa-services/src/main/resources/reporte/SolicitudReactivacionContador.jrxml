@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportePrueba" pageWidth="612" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="c49a4e7a-415f-4be3-8b1c-610bf178a532">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="isSummaryNewPage" value="false"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="13"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.JRMapCollectionDataSource"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="numTramiteNotaria" class="java.lang.String"/>
+	<parameter name="nombreCompleto" class="java.lang.String"/>
+	<parameter name="RFC" class="java.lang.String"/>
+	<parameter name="CURP" class="java.lang.String"/>
+	<parameter name="numRegistroCpa" class="java.lang.String"/>
+	<parameter name="domicilioFiscal" class="java.lang.String"/>
+	<parameter name="numeroCedulaProfesional" class="java.lang.String"/>
+	<parameter name="selloDigitalIMSS" class="java.lang.String"/>
+	<parameter name="cadenaOriginal" class="java.lang.String"/>
+	<parameter name="imgLogoImss" class="java.lang.String"/>
+	<parameter name="imgGobiernoRepublica" class="java.lang.String"/>
+	<parameter name="imgEscudoNacional" class="java.lang.String"/>
+	<background>
+		<band height="802">
+			<image scaleImage="FillFrame">
+				<reportElement positionType="Float" mode="Transparent" x="43" y="175" width="466" height="466" uuid="20871b32-637f-42fb-9372-d09fb18ee1e2"/>
+				<imageExpression><![CDATA[$P{imgEscudoNacional}.toString()]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<columnHeader>
+		<band height="83">
+			<image scaleImage="FillFrame">
+				<reportElement positionType="Float" x="0" y="0" width="182" height="54" uuid="585cf976-1b6f-4626-bf26-09b6bd0e3691"/>
+				<imageExpression><![CDATA[$P{imgGobiernoRepublica}.toString()]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement positionType="Float" x="498" y="0" width="54" height="54" uuid="35d7557f-84fb-4149-94b6-dd63b2c74f7f"/>
+				<imageExpression><![CDATA[$P{imgLogoImss}.toString()]]></imageExpression>
+			</image>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="719">
+			<staticText>
+				<reportElement x="349" y="0" width="31" height="20" uuid="286b87bc-25ba-4212-b68b-a6a6b9d32b1e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[FECHA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="20" width="69" height="20" uuid="d1e79e2e-5fe6-49f7-8e99-36b807c01c0b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Número de trámite:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="349" y="20" width="160" height="20" forecolor="#000000" uuid="faeaae4e-e2cc-4a69-b8b1-0c387acef3d2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numTramiteNotaria}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="380" y="0" width="129" height="20" uuid="b9b592a6-0c39-4c8c-9df3-a77262c01519"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="43" y="107" width="466" height="90" uuid="9a81a869-776e-4ce9-b62d-b753c79cfd25"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[De conformidad con lo establecido en los artículos 16 y 251, fracción XXIX de la Ley del Seguro Social; 17-D, 17-E, 17-I del Código Fiscal de la Federación, así como el punto 5.11 y 6.4 de las “Reglas de carácter general para la realización de actos ante el Instituto Mexicano del Seguro Social, a través del Buzón IMSS Digital, mediante el uso de la firma electrónica avanzada, cuyo certificado digital sea emitido por el Servicio de Administración Tributaria”, aprobadas por el Consejo Técnico del Instituto Mexicano del Seguro Social mediante el ACUERDO XXXX, publicado en el Diario Oficial de la Federación el día XXXX; se hace constar la transmisión y recepción del trámite de SOLICITUD DE AUTORIZACIÓN PARA INSCRIBIRSE EN EL REGISTRO DE CONTADORES PÚBLICOS AUTORIZADOS, a que se refiere el artículo XXX (153 vigente) del Reglamento de la Ley del Seguro Social en materia de Afiliación, Clasificación de Empresas, Recaudación y Fiscalización, correspondiente a:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="65" width="466" height="30" uuid="f9489f78-34bd-4647-a828-9c6326f8a35c"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACUSE DE RECIBO
+SOLICITUD DE REACTIVACION EN EL REGISTRO DE CONTADORES PÚBLICOS AUTORIZADOS
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="201" width="466" height="20" uuid="bf54104a-0ae6-4683-9db0-393f215a284b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autoridad que recibe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="235" width="157" height="20" uuid="ad44b58c-52a3-42fa-b8e8-82baa80c76b0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Instituto Mexicano del Seguro Social:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="258" width="155" height="20" uuid="2e745396-db86-4458-b6a0-70eb38e185df"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Coordinación de Corrección y Dictamen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="282" width="466" height="20" uuid="c248e7d8-2e8a-4cd0-8bee-bdd8c3d71c54"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Datos del solicitante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="315" width="102" height="12" uuid="7d0e177d-1fb8-4743-9959-846e326eb9cb"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Nombre del Contador Público:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="327" width="135" height="11" uuid="c0db1226-0b5a-406c-a35d-07d1ec159e1f"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RFC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="338" width="123" height="11" uuid="6612de74-6136-440b-b693-2d286071a9c7"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CURP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="43" y="338" width="39" height="11" uuid="f36f4321-3518-4a8a-ab04-e83fa2707825"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[C.U.R.P.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="327" width="27" height="11" uuid="538e36dd-fe59-4bb4-8e5f-ae9da18f022c"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[R.F.C.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="360" width="62" height="12" uuid="aefd69fb-4f67-47b7-9e30-5c50bce9eee4"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Domicilio fiscal:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="105" y="360" width="404" height="24" uuid="9f7a461c-d39b-4b55-9645-4f617b97de74"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{domicilioFiscal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="43" y="384" width="117" height="13" uuid="b06caa77-fe4a-4b35-9b23-5f49958a927c"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Número de cédula profesional: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="384" width="136" height="13" uuid="9f7c6f76-f54f-4ecc-8a8b-7fda37677a6d"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numeroCedulaProfesional}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="87" y="622" width="422" height="15" uuid="950447b5-d9af-4066-99dc-24b45983ab64"/>
+				<textElement>
+					<font fontName="SansSerif" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{selloDigitalIMSS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="43" y="622" width="40" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="1ca791d3-31ac-43a4-9f00-22368386d9cf">
+					<printWhenExpression><![CDATA[!$P{selloDigitalIMSS}.trim().isEmpty() && $P{selloDigitalIMSS} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="5" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Sello Digital IMSS:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="87" y="641" width="422" height="77" forecolor="#000000" backcolor="#FFFFFF" uuid="640132f6-35a4-4703-9ba3-8c4e0d6050e2"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cadenaOriginal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="43" y="641" width="40" height="77" forecolor="#000000" backcolor="#FFFFFF" uuid="579c420b-bb2d-4a72-97b2-5150a127154e">
+					<printWhenExpression><![CDATA[!$P{cadenaOriginal}.trim().isEmpty() && $P{cadenaOriginal} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="5" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cadena Original:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="145" y="316" width="364" height="11" uuid="a160b95f-360d-4e2c-b538-5df1765154e2"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreCompleto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="43" y="349" width="102" height="11" uuid="2c5c179d-9767-466e-a673-7c43b705fcf7"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Número de Registro IMSS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="145" y="349" width="123" height="11" uuid="bb58594a-a9c6-45ff-9d5b-9fc9ef7e3e0d"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numRegistroCpa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

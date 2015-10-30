@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panel style="width:100%; " styleClass="table-no-border">
+			<ui:include src="headerSolicitud.xhtml" />
+			<h3>#{msg['message.contador.solicitud.documentacion']}</h3>
+			<hr class="red" />
+			<br />
+			<br />
+			<br />
+			<p:panelGrid style="width:100%; " styleClass="table-no-border">
+				<p:row>
+					<p:column style="text-align: left;">
+						<p:commandButton value="#{msg['message.button.anterior']}"
+							action="#{solicitudRegistroBean.redireccionarRegistroColegio()}"
+							styleClass="btn-sm btn-default" icon="ui-icon-arrowthick-1-w"
+							onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" />
+					</p:column>
+					<p:column style="text-align: right;">
+						<p:commandButton value="#{msg['message.button.siguiente']}"
+							styleClass="btn-sm btn-primary" immediate="true"
+							action="#{solicitudRegistroBean.redireccionarRegistroVista()}"
+							icon="ui-icon-arrowthick-1-e" onclick="imagenEsperaWidget.show()"
+							oncomplete="imagenEsperaWidget.hide()" update="dialogGeneral" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
