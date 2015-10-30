@@ -39,6 +39,7 @@
 					<UML:Namespace.ownedElement>
 						<UML:UseCase name="Cédula de Pagos por Dictamen" xmi.id="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" visibility="public" namespace="EAPK_681B9FBB_CDAD_47fd_8FBB_6D4D7DD747FC" isRoot="false" isLeaf="false" isAbstract="false">
 							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="documentation" value="El presente caso de uso describe la funcionalidad para que el Contador Público Autorizado realice la carga de la “Cédula de pagos por dictamen” correspondiente a las diferencias de cuotas obrero patronales detectadas en la formulación del dictamen. "/>
 								<UML:TaggedValue tag="isSpecification" value="false"/>
 								<UML:TaggedValue tag="ea_stype" value="UseCase"/>
 								<UML:TaggedValue tag="ea_ntype" value="0"/>
@@ -46,7 +47,7 @@
 								<UML:TaggedValue tag="isActive" value="false"/>
 								<UML:TaggedValue tag="package" value="EAPK_681B9FBB_CDAD_47fd_8FBB_6D4D7DD747FC"/>
 								<UML:TaggedValue tag="date_created" value="2015-10-28 23:48:10"/>
-								<UML:TaggedValue tag="date_modified" value="2015-10-29 19:00:40"/>
+								<UML:TaggedValue tag="date_modified" value="2015-10-29 20:15:08"/>
 								<UML:TaggedValue tag="gentype" value="&lt;none&gt;"/>
 								<UML:TaggedValue tag="tagged" value="0"/>
 								<UML:TaggedValue tag="package_name" value="Cargar Cédula de Pagos por Dicatamen"/>
@@ -58,21 +59,21 @@
 								<UML:TaggedValue tag="ea_localid" value="30064"/>
 								<UML:TaggedValue tag="ea_eleType" value="element"/>
 								<UML:TaggedValue tag="style" value="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+								<UML:TaggedValue tag="$ea_xref_property" value="$XREFPROP=$XID={1D59A057-2579-45cf-AA38-9A770E297CF1}$XID;$NAM=Element$NAM;$TYP=reference$TYP;$VIS=Public$VIS;$CLT={6C47FCDA-6283-4074-918B-920FA8A00D53}$CLT;$SUP={053744D6-C8D3-4888-98E6-7B514AB79E3F}$SUP;$ENDXREF;"/>
 							</UML:ModelElement.taggedValue>
 							<UML:ModelElement.constraint>
-								<UML:Constraint name="&lt; Autentificación &gt; Inicio de Sesión">
+								<UML:Constraint name="Aseveración en estado &quot;Correcto&quot;">
 									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="description" value="El usuario debe contar con su Firma Electrónica Avanzada (FIEL), con la cual podrá tener acceso al portal IMSS"/>
+										<UML:TaggedValue tag="description" value="El CPA debió haber cargado al menos una de las 19 Aseveraciones (Layouts) y esta se encuentre en estado &quot;correcto&quot;."/>
 										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="0.00"/>
+										<UML:TaggedValue tag="weight" value="1.00"/>
 										<UML:TaggedValue tag="status" value="Approved"/>
 									</UML:ModelElement.taggedValue>
 								</UML:Constraint>
-								<UML:Constraint name="Acceso al Módulo de Contadores Públicos y Dictamen en caso de cambio de CURP">
+								<UML:Constraint name="Se logra cargar la Cédula de Pago por Dictamen.">
 									<UML:ModelElement.taggedValue>
-										<UML:TaggedValue tag="description" value="El sistema deberá llevar a cabo la asociación de registros existentes de los módulos de contadores públicos y dictámenes cuando exista el supuesto del cambio de CURP"/>
-										<UML:TaggedValue tag="type" value="Pre-condition"/>
-										<UML:TaggedValue tag="weight" value="1.00"/>
+										<UML:TaggedValue tag="type" value="Post-condition"/>
+										<UML:TaggedValue tag="weight" value="2.00"/>
 										<UML:TaggedValue tag="status" value="Approved"/>
 									</UML:ModelElement.taggedValue>
 								</UML:Constraint>
@@ -152,10 +153,10 @@
 								</UML:AssociationEnd>
 							</UML:Association.connection>
 						</UML:Association>
-						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_D9AD3499_45CC_48b4_9EA3_41B00F8DD212" xmi.id="EAID_6218992B_F254_4ce5_A135_6298AFE375CB" visibility="public">
+						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_FF9DBF41_4915_4cc0_BC67_56D847B8204B" xmi.id="EAID_4969AF13_6B18_4c0c_BF6B_4A3352F70710" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
 								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
 								<UML:TaggedValue tag="linemode" value="3"/>
 								<UML:TaggedValue tag="linecolor" value="-1"/>
@@ -163,13 +164,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="34907"/>
+								<UML:TaggedValue tag="ea_localid" value="34927"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Cédula de Pagos por Dictamen"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-A024 Validar estructura de registros patronales"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-N020 Validar Campos Obligatorios archivo Cédula de Pago por Dictamen"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
 								<UML:TaggedValue tag="ea_sourceID" value="30064"/>
-								<UML:TaggedValue tag="ea_targetID" value="30025"/>
+								<UML:TaggedValue tag="ea_targetID" value="29840"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -189,7 +190,7 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_FF9DBF41_4915_4cc0_BC67_56D847B8204B" xmi.id="EAID_6EAB3420_3DAD_469c_A2F8_1C3DEB3A9E7D" visibility="public">
+						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_D9AD3499_45CC_48b4_9EA3_41B00F8DD212" xmi.id="EAID_6218992B_F254_4ce5_A135_6298AFE375CB" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
 								<UML:TaggedValue tag="ea_type" value="Realisation"/>
@@ -200,13 +201,13 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="34906"/>
+								<UML:TaggedValue tag="ea_localid" value="34907"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Cédula de Pagos por Dictamen"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-N020 Validar Campos Obligatorios archivo Cédula de Pago por Dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-A024 Validar estructura de registros patronales"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
 								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
 								<UML:TaggedValue tag="ea_sourceID" value="30064"/>
-								<UML:TaggedValue tag="ea_targetID" value="29840"/>
+								<UML:TaggedValue tag="ea_targetID" value="30025"/>
 								<UML:TaggedValue tag="src_visibility" value="Public"/>
 								<UML:TaggedValue tag="src_aggregation" value="0"/>
 								<UML:TaggedValue tag="src_isOrdered" value="false"/>
@@ -300,43 +301,6 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_8C1A4EB8_F7F7_4ebf_8286_A1AC79C84D66" xmi.id="EAID_7CCD2EC9_5B55_4ac2_A7B6_C173927E05F4" visibility="public">
-							<UML:ModelElement.taggedValue>
-								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="Realisation"/>
-								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
-								<UML:TaggedValue tag="linemode" value="3"/>
-								<UML:TaggedValue tag="linecolor" value="-1"/>
-								<UML:TaggedValue tag="linewidth" value="0"/>
-								<UML:TaggedValue tag="seqno" value="0"/>
-								<UML:TaggedValue tag="headStyle" value="0"/>
-								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="34903"/>
-								<UML:TaggedValue tag="ea_sourceName" value="Cédula de Pagos por Dictamen"/>
-								<UML:TaggedValue tag="ea_targetName" value="RF-N021 Inserción de campo vacío de campos No obligatorios."/>
-								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
-								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
-								<UML:TaggedValue tag="ea_sourceID" value="30064"/>
-								<UML:TaggedValue tag="ea_targetID" value="29828"/>
-								<UML:TaggedValue tag="src_visibility" value="Public"/>
-								<UML:TaggedValue tag="src_aggregation" value="0"/>
-								<UML:TaggedValue tag="src_isOrdered" value="false"/>
-								<UML:TaggedValue tag="src_targetScope" value="instance"/>
-								<UML:TaggedValue tag="src_changeable" value="none"/>
-								<UML:TaggedValue tag="src_isNavigable" value="false"/>
-								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
-								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
-								<UML:TaggedValue tag="dst_visibility" value="Public"/>
-								<UML:TaggedValue tag="dst_aggregation" value="0"/>
-								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
-								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
-								<UML:TaggedValue tag="dst_changeable" value="none"/>
-								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
-								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
-								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
-								<UML:TaggedValue tag="virtualInheritance" value="0"/>
-							</UML:ModelElement.taggedValue>
-						</UML:Dependency>
 						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_F83FB94C_AE33_42c4_AAD6_660137B797B7" xmi.id="EAID_7D2AE5AC_6720_4fb2_BDF3_F8496FD1E288" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
@@ -411,6 +375,43 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
+						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_8C1A4EB8_F7F7_4ebf_8286_A1AC79C84D66" xmi.id="EAID_975BF8F3_9130_4d4e_BAE0_53EC219FC090" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="34928"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Cédula de Pagos por Dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-N021 Inserción de campo vacío de campos No obligatorios."/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="30064"/>
+								<UML:TaggedValue tag="ea_targetID" value="29828"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
 						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_F94C435C_7B01_489f_8DDC_4F0A7B7C2821" xmi.id="EAID_C6553430_AA76_41d6_AC36_50FBA0C57DD4" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
@@ -448,10 +449,10 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
-						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_92305436_BE91_4a00_BFD6_409CE93BFFF0" xmi.id="EAID_D17F9061_5CFA_4d9d_91EF_E5ADA1670966" visibility="public">
+						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_92305436_BE91_4a00_BFD6_409CE93BFFF0" xmi.id="EAID_E5E1267A_8563_48dd_92BB_0A45F680CE2B" visibility="public">
 							<UML:ModelElement.taggedValue>
 								<UML:TaggedValue tag="style" value="3"/>
-								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="ea_type" value="Dependency"/>
 								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
 								<UML:TaggedValue tag="linemode" value="3"/>
 								<UML:TaggedValue tag="linecolor" value="-1"/>
@@ -459,7 +460,7 @@
 								<UML:TaggedValue tag="seqno" value="0"/>
 								<UML:TaggedValue tag="headStyle" value="0"/>
 								<UML:TaggedValue tag="lineStyle" value="0"/>
-								<UML:TaggedValue tag="ea_localid" value="34899"/>
+								<UML:TaggedValue tag="ea_localid" value="34929"/>
 								<UML:TaggedValue tag="ea_sourceName" value="Cédula de Pagos por Dictamen"/>
 								<UML:TaggedValue tag="ea_targetName" value="RF-N022 Inserción de 4 posiciones 0.00 en campos no obligatorios"/>
 								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
@@ -485,48 +486,95 @@
 								<UML:TaggedValue tag="virtualInheritance" value="0"/>
 							</UML:ModelElement.taggedValue>
 						</UML:Dependency>
+						<UML:Collaboration xmi.id="EAID_951080BE_0394_4fd6_A308_04215FBA7CA5_Collaboration" name="Collaborations">
+							<UML:Namespace.ownedElement/>
+							<UML:Collaboration.interaction>
+								<UML:Interaction>
+									<UML:Interaction.message/>
+								</UML:Interaction>
+							</UML:Collaboration.interaction>
+						</UML:Collaboration>
+						<UML:Dependency client="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" supplier="EAID_8C1A4EB8_F7F7_4ebf_8286_A1AC79C84D66" xmi.id="EAID_7CCD2EC9_5B55_4ac2_A7B6_C173927E05F4" visibility="public">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="style" value="3"/>
+								<UML:TaggedValue tag="ea_type" value="Realisation"/>
+								<UML:TaggedValue tag="direction" value="Source -&gt; Destination"/>
+								<UML:TaggedValue tag="linemode" value="3"/>
+								<UML:TaggedValue tag="linecolor" value="-1"/>
+								<UML:TaggedValue tag="linewidth" value="0"/>
+								<UML:TaggedValue tag="seqno" value="0"/>
+								<UML:TaggedValue tag="headStyle" value="0"/>
+								<UML:TaggedValue tag="lineStyle" value="0"/>
+								<UML:TaggedValue tag="ea_localid" value="34903"/>
+								<UML:TaggedValue tag="ea_sourceName" value="Cédula de Pagos por Dictamen"/>
+								<UML:TaggedValue tag="ea_targetName" value="RF-N021 Inserción de campo vacío de campos No obligatorios."/>
+								<UML:TaggedValue tag="ea_sourceType" value="UseCase"/>
+								<UML:TaggedValue tag="ea_targetType" value="Requirement"/>
+								<UML:TaggedValue tag="ea_sourceID" value="30064"/>
+								<UML:TaggedValue tag="ea_targetID" value="29828"/>
+								<UML:TaggedValue tag="src_visibility" value="Public"/>
+								<UML:TaggedValue tag="src_aggregation" value="0"/>
+								<UML:TaggedValue tag="src_isOrdered" value="false"/>
+								<UML:TaggedValue tag="src_targetScope" value="instance"/>
+								<UML:TaggedValue tag="src_changeable" value="none"/>
+								<UML:TaggedValue tag="src_isNavigable" value="false"/>
+								<UML:TaggedValue tag="src_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="src_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+								<UML:TaggedValue tag="dst_visibility" value="Public"/>
+								<UML:TaggedValue tag="dst_aggregation" value="0"/>
+								<UML:TaggedValue tag="dst_isOrdered" value="false"/>
+								<UML:TaggedValue tag="dst_targetScope" value="instance"/>
+								<UML:TaggedValue tag="dst_changeable" value="none"/>
+								<UML:TaggedValue tag="dst_isNavigable" value="true"/>
+								<UML:TaggedValue tag="dst_containment" value="Unspecified"/>
+								<UML:TaggedValue tag="dst_style" value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+								<UML:TaggedValue tag="virtualInheritance" value="0"/>
+							</UML:ModelElement.taggedValue>
+						</UML:Dependency>
 					</UML:Namespace.ownedElement>
 				</UML:Package>
 			</UML:Namespace.ownedElement>
 		</UML:Model>
 		<UML:Diagram name="Cargar cédula de pagos por dictamen" xmi.id="EAID_0393DB63_EB41_4d4b_B84F_BE1A1E8ACBC2" diagramType="UseCaseDiagram" owner="EAPK_681B9FBB_CDAD_47fd_8FBB_6D4D7DD747FC" toolName="Enterprise Architect 2.5">
 			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="documentation" value="Este documento describe el grupo de instancias de un caso de uso, incluyendo su flujo básico y los diferentes flujos alternos o instancias del caso de uso, las precondiciones o pos condiciones de ejecución del caso de uso."/>
 				<UML:TaggedValue tag="version" value="1.0"/>
 				<UML:TaggedValue tag="author" value="bhernandezj"/>
 				<UML:TaggedValue tag="created_date" value="2015-10-28 23:49:26"/>
-				<UML:TaggedValue tag="modified_date" value="2015-10-29 19:02:49"/>
+				<UML:TaggedValue tag="modified_date" value="2015-10-29 20:21:55"/>
 				<UML:TaggedValue tag="package" value="EAPK_681B9FBB_CDAD_47fd_8FBB_6D4D7DD747FC"/>
 				<UML:TaggedValue tag="type" value="Use Case"/>
 				<UML:TaggedValue tag="swimlanes" value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
 				<UML:TaggedValue tag="matrixitems" value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
 				<UML:TaggedValue tag="ea_localid" value="2570"/>
 				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=803;DocSize.cy=1067;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
-				<UML:TaggedValue tag="styleex" value="SaveTag=88945829;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
+				<UML:TaggedValue tag="styleex" value="SaveTag=931FE07B;ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=;DefaultLang=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;OverrideLinkedF=0;HideConnStereotype=0;ShowFQN=0;NoFullScope=0;"/>
 			</UML:ModelElement.taggedValue>
 			<UML:Diagram.element>
-				<UML:DiagramElement geometry="Left=19;Top=188;Right=53;Bottom=256;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="1" style="DUID=047863B4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=133;Top=36;Right=293;Bottom=69;" subject="EAID_9CF9252F_8176_44ee_802C_880A80FC0AF1" seqno="2" style="DUID=AF8BDEA0;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=302;Top=20;Right=462;Bottom=79;" subject="EAID_8DC44079_5144_425f_A5B4_61593D907C99" seqno="3" style="DUID=4A9BA4A2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=39;Top=449;Right=199;Bottom=482;" subject="EAID_D9AD3499_45CC_48b4_9EA3_41B00F8DD212" seqno="4" style="DUID=73D37E83;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=169;Top=508;Right=329;Bottom=567;" subject="EAID_92305436_BE91_4a00_BFD6_409CE93BFFF0" seqno="5" style="DUID=3B9FCE5C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=350;Top=491;Right=510;Bottom=550;" subject="EAID_8C1A4EB8_F7F7_4ebf_8286_A1AC79C84D66" seqno="6" style="DUID=737E73F4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=522;Top=451;Right=682;Bottom=510;" subject="EAID_FF9DBF41_4915_4cc0_BC67_56D847B8204B" seqno="7" style="DUID=DACDA177;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=573;Top=349;Right=733;Bottom=382;" subject="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" seqno="8" style="DUID=7D960B4F;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=547;Top=232;Right=707;Bottom=291;" subject="EAID_F83FB94C_AE33_42c4_AAD6_660137B797B7" seqno="9" style="DUID=D73BCD0A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=489;Top=127;Right=649;Bottom=160;" subject="EAID_F94C435C_7B01_489f_8DDC_4F0A7B7C2821" seqno="10" style="DUID=787E5BED;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=477;Top=14;Right=637;Bottom=86;" subject="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" seqno="11" style="DUID=AFD3F526;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
-				<UML:DiagramElement geometry="Left=195;Top=186;Right=310;Bottom=263;" subject="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" seqno="12" style="DUID=778FEA13;"/>
+				<UML:DiagramElement geometry="Left=29;Top=365;Right=63;Bottom=433;" subject="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" seqno="1" style="DUID=047863B4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=75;Right=712;Bottom=108;" subject="EAID_9CF9252F_8176_44ee_802C_880A80FC0AF1" seqno="2" style="DUID=AF8BDEA0;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=144;Right=712;Bottom=203;" subject="EAID_8DC44079_5144_425f_A5B4_61593D907C99" seqno="3" style="DUID=4A9BA4A2;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=793;Right=712;Bottom=826;" subject="EAID_D9AD3499_45CC_48b4_9EA3_41B00F8DD212" seqno="4" style="DUID=73D37E83;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=708;Right=712;Bottom=767;" subject="EAID_92305436_BE91_4a00_BFD6_409CE93BFFF0" seqno="5" style="DUID=3B9FCE5C;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=623;Right=712;Bottom=682;" subject="EAID_8C1A4EB8_F7F7_4ebf_8286_A1AC79C84D66" seqno="6" style="DUID=737E73F4;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=536;Right=712;Bottom=595;" subject="EAID_FF9DBF41_4915_4cc0_BC67_56D847B8204B" seqno="7" style="DUID=DACDA177;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=476;Right=712;Bottom=509;" subject="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" seqno="8" style="DUID=7D960B4F;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=389;Right=712;Bottom=448;" subject="EAID_F83FB94C_AE33_42c4_AAD6_660137B797B7" seqno="9" style="DUID=D73BCD0A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=327;Right=712;Bottom=360;" subject="EAID_F94C435C_7B01_489f_8DDC_4F0A7B7C2821" seqno="10" style="DUID=787E5BED;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=552;Top=226;Right=712;Bottom=298;" subject="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" seqno="11" style="DUID=AFD3F526;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;italic=0;ul=0;charset=0;pitch=0;"/>
+				<UML:DiagramElement geometry="Left=208;Top=358;Right=323;Bottom=435;" subject="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" seqno="12" style="DUID=778FEA13;"/>
 				<UML:DiagramElement geometry="SX=0;SY=0;EX=0;EY=0;EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_33BA1F91_B5CC_467c_AB8C_646A0EBC166B" style="Mode=3;EOID=778FEA13;SOID=047863B4;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_073E5CF7_B615_4a90_B940_2E43AAC02A7D" style="Mode=3;EOID=7D960B4F;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6218992B_F254_4ce5_A135_6298AFE375CB" style="Mode=3;EOID=73D37E83;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6EAB3420_3DAD_469c_A2F8_1C3DEB3A9E7D" style="Mode=3;EOID=DACDA177;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6FA722B8_972A_4b6c_919D_821A2EAFC782" style="Mode=3;EOID=4A9BA4A2;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_70DB71DC_01D5_443c_A58F_051CFE257DBF" style="Mode=3;EOID=AF8BDEA0;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=34;SY=20;EX=-80;EY=-28;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=268:-740$;" subject="EAID_E5E1267A_8563_48dd_92BB_0A45F680CE2B" style="Mode=3;EOID=3B9FCE5C;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=15;SY=-13;EX=-79;EY=-29;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=268:-657$;" subject="EAID_975BF8F3_9130_4d4e_BAE0_53EC219FC090" style="Mode=3;EOID=737E73F4;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="SX=-43;SY=-16;EX=-8;EY=-6;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=268:-566$;" subject="EAID_4969AF13_6B18_4c0c_BF6B_4A3352F70710" style="Mode=3;EOID=DACDA177;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=3;EX=-2;EY=-6;SX=-51;SY=-24;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=268:-496$;" subject="EAID_073E5CF7_B615_4a90_B940_2E43AAC02A7D" style="Mode=3;EOID=7D960B4F;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=3;EX=-54;EY=-13;SX=51;SY=-37;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=268:-811$;" subject="EAID_6218992B_F254_4ce5_A135_6298AFE375CB" style="Mode=3;EOID=73D37E83;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=1;SX=-3;SY=30;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=262:-177$;" subject="EAID_6FA722B8_972A_4b6c_919D_821A2EAFC782" style="Mode=3;EOID=4A9BA4A2;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=4;SX=-57;SY=38;EX=-39;EY=15;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=262:-93$;" subject="EAID_70DB71DC_01D5_443c_A58F_051CFE257DBF" style="Mode=3;EOID=AF8BDEA0;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=2;EX=1;EY=-13;SX=1;SY=-13;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_7D2AE5AC_6720_4fb2_BDF3_F8496FD1E288" style="Mode=3;EOID=D73BCD0A;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=1;SX=-6;SY=-28;EX=-80;EY=34;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=262:-259$;" subject="EAID_8EDAB614_B023_424d_B4F8_8696CE62D8ED" style="Mode=3;EOID=AFD3F526;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				<UML:DiagramElement geometry="EDGE=4;SX=-57;SY=38;EX=-27;EY=16;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=262:-343$;" subject="EAID_C6553430_AA76_41d6_AC36_50FBA0C57DD4" style="Mode=3;EOID=787E5BED;SOID=778FEA13;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
 				<UML:DiagramElement geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_7CCD2EC9_5B55_4ac2_A7B6_C173927E05F4" style="Mode=3;EOID=737E73F4;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_7D2AE5AC_6720_4fb2_BDF3_F8496FD1E288" style="Mode=3;EOID=D73BCD0A;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_8EDAB614_B023_424d_B4F8_8696CE62D8ED" style="Mode=3;EOID=AFD3F526;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=2;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_C6553430_AA76_41d6_AC36_50FBA0C57DD4" style="Mode=3;EOID=787E5BED;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
-				<UML:DiagramElement geometry="EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D17F9061_5CFA_4d9d_91EF_E5ADA1670966" style="Mode=3;EOID=3B9FCE5C;SOID=778FEA13;Color=-1;LWidth=0;Hidden=0;"/>
 			</UML:Diagram.element>
 		</UML:Diagram>
 	</XMI.content>
@@ -536,8 +584,47 @@
 			<EAScenario name="Basic Path" type="Basic Path" weight="0.00" subject="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" xmi.id="EAID_AB0A4FD9_0F63_4c16_B734_91CB7D73A580">
 				<EAScenarioContent>
 					<path>
-						<step name="El caso de uso inicia cuando el Usuario CPA ingresa al módulo de formulación y presentación del dictamen y selecciona Atestiguamiento." guid="{AF6B6B9B-363C-426b-A315-9F1681C7079D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
-						<step name="El sistema mostrará la sección de datos del patrón a Dictaminar de acuerdo a: &#xA;&quot;RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&quot;.&#xA;El sistema mostrará la sección de Atestiguamiento.&#xA;&#xA;El sistema habilita un icono con  la etiqueta, Cargar archivo Cédula de pagos por dictamen, Guardar y Eliminar.&#xA;" guid="{93DEE251-4485-460a-B884-0F161C3B2F1F}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB01. El caso de uso inicia cuando el Usuario CPA ingresa al módulo de formulación y presentación del dictamen y selecciona Atestiguamiento." guid="{AF6B6B9B-363C-426b-A315-9F1681C7079D}" level="1" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB02. El sistema mostrará la sección de datos del patrón a Dictaminar de acuerdo a:RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;&#xA;El sistema mostrará la sección de Atestiguamiento.&#xA;&#xA;El sistema habilita un icono con  la etiqueta, Cargar archivo Cédula de pagos por dictamen, Guardar y Eliminar.&#xA;" guid="{BF5BBDE7-E6CB-4ffd-A8BC-2F81C2525196}" level="2" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB03. El usuario CPA selecciona Cédula de Pagos por Dictamen." guid="{DF256854-60FB-44b3-A52F-48F702610E32}" level="3" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB04. El sistema habilita una ventana emergente con las opciones:&#xA;Seleccionar Archivo (Selecciona ruta del Archivo)&#xA;Aceptar y Cancelar." guid="{82BC3385-35C2-40a9-892D-82A30714E90D}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FB05. El usuario CPA selecciona la ruta del archivo y  la opción Aceptar.&#xA;En caso de seleccionar Cancelar, el sistema regresa al punto FB01." guid="{5028C525-BF50-433e-9654-640961F0E64A}" level="5" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FB06. El sistema comienza la carga del archivo de acuerdo a:&#xA;RF-A023 Verificar tipo de archivo .TXT&#xA;RF-A032 Validar Encabezado archivo Cédula de Pago por Dictamen.&#xA;MSJ’s 36, 37, 38 según RF-C016 - Mensajes de notificación al usuario " guid="{9FB17598-AC5D-4674-9348-16CEB2A64EB5}" level="6" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema almacena el archivo de carga en memoria temporal y valida de acuerdo a:&#xA;&quot;RF-N020 Validar Campos Obligatorios archivo Cédula de Pago por Dictamen.&quot;&#xA;&quot;RF-N021 Inserción de campo vacío de campos No obligatorios.&quot;&#xA;&quot;RF-N022 Inserción de 4 posiciones 0.00 en campos no obligatorios.&quot;" guid="{33F4607F-AD9B-4e12-8419-932344C851EB}" level="7" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El sistema valida la información contenida del archivo cargado acuerdo a:&#xA;&quot;RF-A024 Validar estructura de registros patronales”.&#xA;&quot;RF-A033 Validar mínimo y máximo de campos tipo nombre.”&#xA;&quot;RF-A034 Validar campos de tipo Entero.”&#xA;El sistema valida las reglas funcionales, si y solo si, los campos contienen datos." guid="{492B4D68-D492-4cca-8694-EFD1CED748AD}" level="8" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El archivo cumple con todas las validaciones el sistema emite un mensaje de acuerdo a:&#xA;MSG’s 39 según &quot;RF-C016 - Mensajes de notificación al usuario”&#xA;Habilita botón Aceptar.&#xA;En caso de encontrar errores habilita el botón Generar bitácora de errores. FA01 Bitácora de Errores. " guid="{400AB07D-D12F-471a-A9F1-B045B5028761}" level="9" uses="" useslist="" result="" state="" trigger="0" link="">
+							<extension level="9a" guid="{E64CFA50-A93C-44ca-A8B5-1B69137835D6}" join="End"/>
+						</step>
+						<step name="El usuario CPA selecciona el botón Aceptar" guid="{3C39F058-EDB1-43f9-8005-53FD7E2A90B8}" level="10" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema habilita el botón Guardar y Eliminar" guid="{665FB85D-8FA5-4861-AF2D-D31EAEB8A5DD}" level="11" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario Selecciona el botón Guardar" guid="{9691FBE6-5A13-4063-8750-1F70DF1EBC32}" level="12" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema gurda la información en la BDTU" guid="{61A51354-FD7A-4377-AD5B-CE19EA3AD0E2}" level="13" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="El usuario Selecciona la opción Eliminar" guid="{12FE212B-9AB7-4b4f-B5FD-802D4D56AB9F}" level="14" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="El sistema Elimina el archivo cargado, “Cédula de pagos por dictamen”, y elimina los registros cargados a la BDTU.  " guid="{44D23DD6-7B25-43f5-9431-362E8E283A94}" level="15" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="Fin de caso de uso" guid="{68C0DF6B-DB10-4523-894E-5AF54923637D}" level="16" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<context>
+							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
+							<item oldname="RF-A033 Validar mínimo y máximo de campos tipo nombre." guid="{8DC44079-5144-425f-A5B4-61593D907C99}"/>
+							<item oldname="RF-A034 Validar campos de tipo Entero." guid="{9CF9252F-8176-44ee-802C-880A80FC0AF1}"/>
+							<item oldname="RF-N021 Inserción de campo vacío de campos No obligatorios." guid="{8C1A4EB8-F7F7-4ebf-8286-A1AC79C84D66}"/>
+							<item oldname="RF-N022 Inserción de 4 posiciones 0.00 en campos no obligatorios" guid="{92305436-BE91-4a00-BFD6-409CE93BFFF0}"/>
+							<item oldname="RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" guid="{053744D6-C8D3-4888-98E6-7B514AB79E3F}"/>
+							<item oldname="RF-C016 - Mensajes de notificación al usuario" guid="{617BA333-F57F-4437-91FB-E6DC3CC2693D}"/>
+							<item oldname="RF-N020 Validar Campos Obligatorios archivo Cédula de Pago por Dictamen" guid="{FF9DBF41-4915-4cc0-BC67-56D847B8204B}"/>
+							<item oldname="RF-A024 Validar estructura de registros patronales" guid="{D9AD3499-45CC-48b4-9EA3-41B00F8DD212}"/>
+							<item oldname="RF-A032 Validar Encabezado archivo Cédula de Pago por Dictamen." guid="{F83FB94C-AE33-42c4-AAD6-660137B797B7}"/>
+							<item oldname="RF-A023 Verificar tipo de archivo .TXT" guid="{F94C435C-7B01-489f-8DDC-4F0A7B7C2821}"/>
+						</context>
+					</path>
+				</EAScenarioContent>
+			</EAScenario>
+			<EAScenario name="FA01 Bitácora de Errores." type="Alternate" weight="1.00" subject="EAID_6C47FCDA_6283_4074_918B_920FA8A00D53" xmi.id="EAID_E64CFA50_A93C_44ca_A8B5_1B69137835D6">
+				<EAScenarioContent>
+					<path>
+						<step name="FA01.1 El archivo Cédula de pago por dictamen no cumple con los requerimientos, el sistema emite un mensaje de acuerdo a:&#xA;MSG 40 según &quot;RF-C016 - Mensajes de notificación al usuario”&#xA;Se habilita el botón Generar bitácora de errores.&#xA;" guid="{DA58E231-46EA-4324-87BB-42A3C702BEAE}" level="1" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA01.2 El usuario CPA selecciona la Opción “Generar bitácora de errores”." guid="{2B307738-B856-4cba-8A7D-4D0C0AFC4A11}" level="2" uses="" useslist="" result="" state="" trigger="1" link=""/>
+						<step name="FA01.3 El sistema presenta en pantalla  la bitácora de errores en un archivo de formato .PDF, con las siguientes columnas:&#xA;&#xA;Campo&#xA;Mensaje&#xA;Número de línea&#xA;Total número de errores&#xA;&#xA;El sistema regresa al punto FB03." guid="{7978F559-6B06-45f6-B27C-05A36BD25F3B}" level="3" uses="" useslist="" result="" state="" trigger="0" link=""/>
+						<step name="FA01.4 Termina flujo alterno." guid="{EB34D4A1-B4A7-4a06-8369-F1E11F57C619}" level="4" uses="" useslist="" result="" state="" trigger="0" link=""/>
 						<context>
 							<item oldname="CPA" guid="{B48FC839-FD4F-4297-81F1-3C0254D8B6B3}"/>
 							<item oldname="RF-A033 Validar mínimo y máximo de campos tipo nombre." guid="{8DC44079-5144-425f-A5B4-61593D907C99}"/>
@@ -558,13 +645,13 @@
 		<EAStub xmi.id="EAID_617BA333_F57F_4437_91FB_E6DC3CC2693D" name="RF-C016 - Mensajes de notificación al usuario" UMLType="Requirement"/>
 		<EAModel.paramSub/>
 		<EAStub xmi.id="EAID_B48FC839_FD4F_4297_81F1_3C0254D8B6B3" name="CPA" UMLType="Actor"/>
-		<EAStub xmi.id="EAID_D9AD3499_45CC_48b4_9EA3_41B00F8DD212" name="RF-A024 Validar estructura de registros patronales" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_FF9DBF41_4915_4cc0_BC67_56D847B8204B" name="RF-N020 Validar Campos Obligatorios archivo Cédula de Pago por Dictamen" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_D9AD3499_45CC_48b4_9EA3_41B00F8DD212" name="RF-A024 Validar estructura de registros patronales" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_8DC44079_5144_425f_A5B4_61593D907C99" name="RF-A033 Validar mínimo y máximo de campos tipo nombre." UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_9CF9252F_8176_44ee_802C_880A80FC0AF1" name="RF-A034 Validar campos de tipo Entero." UMLType="Requirement"/>
-		<EAStub xmi.id="EAID_8C1A4EB8_F7F7_4ebf_8286_A1AC79C84D66" name="RF-N021 Inserción de campo vacío de campos No obligatorios." UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_F83FB94C_AE33_42c4_AAD6_660137B797B7" name="RF-A032 Validar Encabezado archivo Cédula de Pago por Dictamen." UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_053744D6_C8D3_4888_98E6_7B514AB79E3F" name="RF-C002 - Encabezado de pantalla con detalle información del patron a dictaminar&#xA;" UMLType="Requirement"/>
+		<EAStub xmi.id="EAID_8C1A4EB8_F7F7_4ebf_8286_A1AC79C84D66" name="RF-N021 Inserción de campo vacío de campos No obligatorios." UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_F94C435C_7B01_489f_8DDC_4F0A7B7C2821" name="RF-A023 Verificar tipo de archivo .TXT" UMLType="Requirement"/>
 		<EAStub xmi.id="EAID_92305436_BE91_4a00_BFD6_409CE93BFFF0" name="RF-N022 Inserción de 4 posiciones 0.00 en campos no obligatorios" UMLType="Requirement"/>
 	</XMI.extensions>
