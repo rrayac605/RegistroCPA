@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="../../comun/template/template.xhtml">
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+			<h:form id="formReactivacionRegistro">
+
+
+   <p:dialog 
+		        widgetVar="dlgActive" 
+		        showHeader="true" 
+				draggable="false" 
+				closable="false" 
+				resizable="false" 
+				visible="#{!activacionColegioBean.activacionDespachoPage.valido}" 
+				position="center" 
+				maximizable="false" minimizable="false" >
+				<p:panel id="pnActive" header="Mensaje del Sistema">		
+				
+					<p:panelGrid id="pngDatosContador">
+						<p:row>
+							<p:column colspan="1" style="text-align: center;">
+			    <p:outputLabel>No ha registrado alguna solicitud.</p:outputLabel>
+							</p:column>
+						</p:row>
+					
+						<p:row>
+				
+							<p:column colspan="1">
+								
+						<p:commandButton 
+						id="btnActive" 
+					   value="Registrar"
+                       onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+                       process="@this,formActivacionRegistro"  
+                       update=":statusDialog,:formActivacionRegistro" 
+                       
+                       immedite="true"
+					   action="#{activacionColegioBean.accionInicio}" />
+						</p:column>
+						</p:row>
+					</p:panelGrid>
+			    	
+			    </p:panel>	
+			</p:dialog>
+			
+			
+		<p:panel id="pnActivacionRegistro"
+			header="Activacion de Registro"
+			footer="Activacion de Registro de Contadores Públicos Autorizados"
+			rendered="#{activacionColegioBean.activacionDespachoPage.valido}">
+
+	<p:messages id="msgFormActivacionColegio" autoUpdate="true"  showDetail="true" showSummary="true" />
+	
+				<p:fieldset
+					legend="Datos del Colegio o Asociación"
+					toggleable="true" 
+					 onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+					toggleSpeed="500">
+					<p:ajax event="toggle"
+					 update="msgFormActivacionColegio" />
+
+
+
+					<table width="850px" cellpadding="2" border="0">
+
+						<tr>
+								<td align="right" colspan="1"><h:outputText value="RFC " />
+								</td>
+							<td colspan="1"><h:panelGrid columns="3">
+									<p:inputText id="txtRFC" 
+									size="12"
+									requiredMessage="RFC es requerido."
+									maxlength="25"
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.rfc}"
+									required="true" />
+									<p:message for="txtRFC" />
+									<p:tooltip for="txtRFC" value="RFC" showEffect="fade"
+										hideEffect="fade" />
+								</h:panelGrid></td>
+								</tr><tr>
+							<td align="right" colspan="1"><h:outputText value="RAZON SOCIAL " />
+								
+						 
+						</td>
+							<td colspan="1"><h:panelGrid columns="3">
+									<p:inputText id="txtRazonSocial" 
+									size="35" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.razonSocial}"
+									readonly="true"
+									disabled="true"
+									maxlength="35" />
+									<p:message for="txtRazonSocial" />
+									<p:tooltip for="txtRazonSocial" value="Razon Social" showEffect="fade"
+										hideEffect="fade" />
+								</h:panelGrid></td>
+								
+
+
+						</tr>
+						<tr>
+						<td colspan="2">
+						 <p:commandButton
+						         onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+								value="Buscar"
+								disabled="#{activacionColegioBean.activarColegioValido}"
+								ajax="false" process="@this,formReactivacionRegistro"
+								action="#{activacionColegioBean.accionBuscarPersonaMoral()}"
+								update=":formReactivacionRegistro" id="btnBuscarCPA"
+								styleClass="ui-priority-primary" />
+								
+						</td>
+						</tr>
+					</table>
+
+
+
+				<p:panelGrid style="margin-top:20px" rendered="#{activacionColegioBean.activarColegioValido}">
+						<p:row>
+							<p:column styleClass="ui-widget-header" colspan="1">
+								<h:outputText value="*Calle: " />
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">
+								<h:outputText value="*Numero Exterior " />
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="1">
+								<h:outputText value="Letra Exterior " />
+							</p:column>
+						</p:row>
+						
+						<p:row>
+							<p:column  rowspan="3">
+									<p:inputText id="txtCalle" size="35" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.calle}" readonly="true" disabled="true" />
+									<p:message for="txtCalle" />
+									<p:tooltip for="txtCalle" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+							<p:column>
+									<p:inputText id="txtNumeroExterior" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.numeroExterior}" readonly="true" disabled="true" />
+									<p:message for="txtNumeroExterior" />
+									<p:tooltip for="txtNumeroExterior" value="Numero Exterior"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+							<p:column>
+									<p:inputText id="txtLetraExterior" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.letraExterior}" readonly="true" disabled="true" />
+									<p:message for="txtLetraExterior" />
+									<p:tooltip for="txtLetraExterior" value="Letra Exterior"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+
+
+						</p:row>
+						
+						<p:row>
+							<p:column  styleClass="ui-widget-header" colspan="1">
+							<h:outputText value="Numero Interior " /> 
+
+							</p:column>
+							<p:column  styleClass="ui-widget-header" colspan="1"><h:outputText value="Letra Interior " /> 
+							</p:column>
+
+						</p:row>
+						
+						<p:row>
+							<p:column>
+									<p:inputText id="txtNumeroInterior" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.numeroInterior}" readonly="true" disabled="true" />
+									<p:message for="txtNumeroInterior" />
+									<p:tooltip for="txtNumeroInterior" value="Numero Interior"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+							<p:column colspan="2">
+									<p:inputText id="txtLetraInterior" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.letraInterior}" readonly="true" disabled="true" />
+									<p:message for="txtLetraInterior" />
+									<p:tooltip for="txtLetraInterior" value="Letra Interior"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+
+
+						</p:row>
+
+
+						<p:row>
+							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="Entre la Calle " /> 
+
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="y la Calle " /> 
+
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+									<p:inputText id="txtEntreCalle" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.entreCalle}" readonly="true" disabled="true" />
+									<p:message for="txtEntreCalle" />
+									<p:tooltip for="txtEntreCalle" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+							<p:column colspan="2">
+									<p:inputText id="txtYCalle" size="45" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.yCalle}" readonly="true" disabled="true" />
+									<p:message for="txtYCalle" />
+									<p:tooltip for="txtYCalle" value="Calle Adyacente"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+						</p:row>
+						
+
+
+						<p:row>
+							<p:column styleClass="ui-widget-header" colspan="1"><h:outputText value="*Colonia(Asentamiento) " />
+
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="2"><h:outputText value="*Localidad " />
+
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+									<p:inputText id="txtColonia" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.coloniaAsentamiento}" readonly="true" disabled="true" />
+									<p:message for="txtColonia" />
+									<p:tooltip for="txtColonia" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+							<p:column colspan="2">
+									<p:inputText id="txtLocalidad" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.localidad}" readonly="true" disabled="true" />
+									<p:message for="txtLocalidad" />
+									<p:tooltip for="txtLocalidad" value="Localidad"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+						</p:row>
+						<p:row>
+							<p:column align="left" styleClass="ui-widget-header" colspan="1"><h:outputText
+									value="*Municipio o Delegación " />
+							</p:column>
+							<p:column styleClass="ui-widget-header" colspan="2" align="left"><h:outputText
+									value="*Entidad Federativa " /> 
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column align="left">
+									<p:inputText id="txtMunDel" size="35" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.municipioDelegacion}" readonly="true" disabled="true" />
+									<p:message for="txtMunDel" />
+									<p:tooltip for="txtMunDel" value="Calle" showEffect="fade"
+										hideEffect="fade" />
+								</p:column>
+							<p:column colspan="2" align="left">
+									<p:inputText id="txtEntidadFederativa" size="35"
+										value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.entidadFederativa}" readonly="true" disabled="true" />
+									<p:message for="txtEntidadFederativa" />
+									<p:tooltip for="txtEntidadFederativa" value="Localidad"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+						</p:row>
+						
+					<p:row>
+							<p:column styleClass="ui-widget-header"  align="left" colspan="3"><h:outputText
+									value="*Código Postal " /> 
+							</p:column>
+
+						</p:row>
+						<p:row>
+							<p:column align="left" colspan="3">
+									<p:inputText id="txtCodigoPostal" size="25" 
+									value="#{activacionColegioBean.activacionColegioPage.personaMoralDTO.domicilioFiscalDTO.codigoPostal}" 
+									readonly="true" disabled="true" />
+									<p:message for="txtCodigoPostal" />
+									<p:tooltip for="txtCodigoPostal" value="Calle"
+										showEffect="fade" hideEffect="fade" />
+								</p:column>
+						</p:row>
+
+
+						
+					
+
+						
+					
+					</p:panelGrid>
+					
+					<br/>
+				</p:fieldset>
+				<br />
+
+				<table width="100%"  border="0">
+					<tr align="right">
+						<td>
+						
+						
+						
+    <p:splitButton  value="      Acciones     " >
+        <p:menuitem value="Activar Registro IMSS"
+                       onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+                        action="#{activacionColegioBean.siguiente}" />
+         <p:menuitem value="Atras" immediate="true"
+                                onerror="statusDialog.hide();" 
+                       onclick="statusDialog.show()" 
+                	   onstart="statusDialog.show()" 
+                 	   oncomplete="statusDialog.hide()" 
+                       onsuccess="statusDialog.hide()"
+                       ajax="false"
+                        action="#{activacionColegioBean.accionAtras}" />
+    </p:splitButton>						
+						</td>
+					</tr>
+
+
+				</table>
+
+		</p:panel>
+		
+			</h:form>
+
+	</ui:define>
+</ui:composition>
